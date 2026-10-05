@@ -1,0 +1,203 @@
+# Cyber Neo Security Report
+
+**Project:** cocina-de-autor (Ascua)
+**Path:** `c:\Users\pc\OneDrive - Universidad EIA\Escritorio\cocina-de-autor\cocina-de-autor`
+**Date:** 2026-08-28
+**Tech Stack:** React 19 + Vite 8 (static frontend, client-rendered), Tailwind CSS, GSAP/Motion for animation, `@google/model-viewer` for 3D/AR. No backend server, no API routes, no database owned by this repo — the only network call is a read from a shared third-party Supabase project.
+**Scan Coverage:** 100% — small-tier project (75 files total, ~32 relevant source files under `src/`). No files skipped for size or type reasons.
+
+---
+
+## Executive Summary
+
+**Risk Score:** 6/100
+**Overall Assessment:** Low Risk
+
+| Severity | Count |
+|----------|-------|
+| Critical | 0 |
+| High     | 0 |
+| Medium   | 1 |
+| Low      | 3 |
+| Info     | 1 |
+
+**Top 3 Priority Actions:**
+1. Add a `Content-Security-Policy` and basic security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`) via a hosting-config file (e.g. `vercel.json`) — the site currently ships with none.
+2. Move the hardcoded Supabase project URL and anon key in `src/lib/arAssets.js` into Vite environment variables, and confirm with the owner of that Supabase project that Row Level Security is correctly scoped on `dish_assets` (this repo has no visibility into that policy).
+3. Remove or gate the currently-unused `fetchActiveAsset()` function in `arAssets.js` before wiring it into any future dynamic-menu feature, since it would feed Supabase response data unvalidated into the AR viewer and Android intent URL.
+
+This is a small, static, frontend-only marketing/landing site with no authentication, no sessions, no server-side code, and no CI/CD pipeline. `npm audit` came back completely clean (0 vulnerabilities across 188 dependencies), no secrets other than a by-design-public Supabase anon key were found, and manual SAST review found no XSS, injection, SSRF, or open-redirect sinks anywhere in the codebase. The findings below are hardening recommendations, not active exploits.
+
+---
+
+## Findings
+
+### Medium Findings
+
+#### [CN-001] Missing Content-Security-Policy and security headers
+- **Severity:** Medium (CVSS ~5.0)
+- **CWE:** CWE-1021 (Improper Restriction of Rendered UI Layers) / CWE-693 (Protection Mechanism Failure)
+- **OWASP:** A02:2025 (Security Misconfiguration)
+- **Location:** `index.html:1-14` (whole file); no `vercel.json`, `netlify.toml`, `_headers`, or `_redirects` exists anywhere in the repo
+- **Description:** No CSP meta tag is present, and there is no hosting-config file that would let the deployment platform (the site appears to deploy to Vercel, based on `.vercel` in `.gitignore`) inject `Content-Security-Policy`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, or `Permissions-Policy` at the HTTP-header level. Vercel's platform defaults do not include CSP or `X-Frame-Options` unless explicitly configured. Practical impact: the page can currently be framed by any origin (no clickjacking protection), and there is no CSP to limit script/connect sources if a future XSS or a compromised third-party script (`@google/model-viewer`, `gsap`, `motion`) is ever introduced.
+- **Evidence:**
+  ```html
+  <!-- index.html <head> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="..." />
+  <link rel="icon" href="/favicon.svg" />
+  <title>...</title>
+  <!-- no CSP /ti X-Frame-Opons / Referrer-Policy anywhere -->
+  ```
+- **Remediation:**
+  ```json
+  // vercel.json
+  {
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://vnztoczhwrqjrgatiutz.supabase.co https://cdn.simpleicons.org; connect-src 'self' https://vnztoczhwrqjrgatiutz.supabase.co; frame-src https://www.google.com; frame-ancestors 'none'"
+          },
+          { "key": "X-Frame-Options", "value": "DENY" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        ]
+      }
+    ]
+  }
+  ```
+  This is low-effort for a static site and meaningfully reduces blast radius even though no active injection sink exists today (confirmed clean — see "What Was Verified Clean" below).
+- **References:** [CWE-1021](https://cwe.mitre.org/data/definitions/1021.html), OWASP A02:2025
+
+---
+
+### Low Findings
+
+#### [CN-002] Third-party Supabase anon key and URL hardcoded in client bundle
+- **Severity:** Low (CVSS ~3.0)
+- **CWE:** CWE-798 (Use of Hard-coded Credentials) — mitigated by design intent
+- **OWASP:** A05:2025 (Security Misconfiguration)
+- **Location:** `src/lib/arAssets.js:4-6`
+- **Description:** `SUPABASE_URL` and `SUPABASE_ANON_KEY` are hardcoded string literals rather than loaded from Vite env vars. The code comment states this points to "the same Supabase project as ARFOODS" — a third-party project this repo doesn't own or control.
+  Decoding the JWT payload (base64, no external tooling needed) confirms it is the public **anon** key, not a `service_role` secret:
+  ```json
+  {"iss":"supabase","ref":"vnztoczhwrqjrgatiutz","role":"anon","iat":1787246997,"exp":2102822997}
+  ```
+  A Supabase anon key is explicitly designed to be embedded in client-side code — it is not equivalent in sensitivity to a database password or `service_role` key, and its safety depends entirely on Row Level Security (RLS) policies enforced on the Supabase project side, which is outside this repo's visibility. The code itself (line 33-36 comment) acknowledges the app doesn't know whether RLS is blocking the anon query and falls back to a hardcoded asset if so — meaning the author is already aware this dependency is soft.
+- **Evidence:**
+  ```javascript
+  // src/lib/arAssets.js:4-6
+  const SUPABASE_URL = 'https://vnztoczhwrqjrgatiutz.supabase.co'
+  const SUPABASE_ANON_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' // role: anon, exp: ~2036
+  ```
+- **Remediation:**
+  ```javascript
+  // .env.example
+  VITE_SUPABASE_URL=https://your-project.supabase.co
+  VITE_SUPABASE_ANON_KEY=your-anon-key
+
+  // src/lib/arAssets.js
+  const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
+  const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
+  ```
+  Separately (outside this repo), confirm with the ARFOODS project owner that RLS on `dish_assets` grants `anon` only `SELECT` scoped to `is_active = true`, with no write policies. This is a hygiene/architecture fix, not an emergency key rotation.
+- **References:** [CWE-798](https://cwe.mitre.org/data/definitions/798.html), OWASP A05:2025
+
+#### [CN-003] Unused `fetchActiveAsset()` would feed unvalidated Supabase data into AR viewer if wired up
+- **Severity:** Low (CVSS ~3.5)
+- **CWE:** CWE-829 (Inclusion of Functionality from Untrusted Control Sphere) — contingent, not currently reachable
+- **OWASP:** A08:2025 (Software or Data Integrity Failures)
+- **Location:** `src/lib/arAssets.js:37-51` (dead code — not called anywhere in the app; only `getAssetForDishIndex()`, which returns exclusively the two hardcoded `PUBLISHED_ASSETS` entries, is used by `src/components/Menu.jsx:43`)
+- **Description:** `fetchActiveAsset(dishId)` queries the `dish_assets` table and returns `glb_url`/`usdz_url`/`poster_url` directly from the row. If this were ever wired into the running app, those URLs would flow into `viewer.setAttribute('src', glb)` (`ArViewer.jsx:38`) and into an Android `intent://` URL (`launchAr.js:39-42`) without validating the URL's origin. Today this path is inert — `dishId` is never derived from user input, and the function itself is never invoked — so there is no active vulnerability, but if `dish_assets` RLS is ever misconfigured to allow writes from the `anon` role, this dormant code would become a live injection point the moment it's wired up.
+- **Evidence:** `fetchActiveAsset` is exported from `arAssets.js` but has zero call sites in the codebase (confirmed via search across all `src/` files).
+- **Remediation:** Either remove the dead code if unneeded, or — before wiring it into a future dynamic-menu feature — validate that `row.glb_url` / `row.usdz_url` start with the expected `https://vnztoczhwrqjrgatiutz.supabase.co/storage/...` prefix before passing them to the viewer/intent builder, as defense-in-depth against an upstream RLS misconfiguration.
+- **References:** [CWE-829](https://cwe.mitre.org/data/definitions/829.html), OWASP A08:2025
+
+#### [CN-004] Google Maps iframe embed missing `sandbox` attribute
+- **Severity:** Low (CVSS ~2.5)
+- **CWE:** CWE-1021 (Improper Restriction of Rendered UI Layers)
+- **OWASP:** A05:2025 (Security Misconfiguration)
+- **Location:** `src/components/ContactSection.jsx:74-80`
+- **Description:** The location `<iframe>` embedding `google.com/maps` sets `loading="lazy"` and `referrerPolicy="no-referrer-when-downgrade"` but no `sandbox` attribute. Risk is very low since the embedded origin is fixed and trusted (Google Maps, not user-controlled), but adding `sandbox` is a small defense-in-depth improvement.
+- **Evidence:**
+  ```jsx
+  <iframe title="Ubicación de Ascua" src="https://www.google.com/maps?q=...&output=embed"
+    loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+  ```
+- **Remediation:**
+  ```jsx
+  <iframe title="Ubicación de Ascua" src="https://www.google.com/maps?q=...&output=embed"
+    loading="lazy" referrerPolicy="no-referrer" sandbox="allow-scripts allow-same-origin" />
+  ```
+- **References:** [CWE-1021](https://cwe.mitre.org/data/definitions/1021.html), OWASP A05:2025
+
+---
+
+### Low & Informational Findings
+
+#### [CN-005] `.gitignore` doesn't cover broader secret-file patterns
+- **Severity:** Info
+- **CWE:** CWE-200 (Exposure of Sensitive Information) — preventive gap only, no current exposure
+- **Location:** `.gitignore:28-31`
+- **Description:** `.gitignore` correctly excludes `.env` / `.env.*` (and un-excludes `.env.example`), matching this project's documented policy. It has no entries for other common credential file types (`*.pem`, `*.key`, `*.p12`, `*.pfx`, `*.jks`, `id_rsa`, `credentials.json`, `service-account*.json`). No such files currently exist anywhere in the repo (confirmed via full-tree search) — this is a defense-in-depth gap for the future, not an active issue.
+- **Remediation:** Optionally extend `.gitignore` with `*.pem`, `*.key`, `*.p12`, `*.pfx`, `*.jks`, `id_rsa`, `id_ed25519`, `credentials.json`, `service-account*.json` so such a file can't be accidentally committed later.
+
+---
+
+## What Was Verified Clean
+
+The following categories were actively checked and found to have **no issues**, which is worth documenting to show the scan's actual coverage rather than just its findings:
+
+- **Dependency vulnerabilities (SCA):** `npm audit` returned 0 vulnerabilities across all 188 dependencies (26 prod, 162 dev, 48 optional, 3 peer). No known supply-chain-compromised packages (event-stream, ua-parser-js, node-ipc, colors, faker, coa, rc) present. No deprecated packages flagged. All 188 lockfile entries resolve from the official `registry.npmjs.org` — no dependency-confusion signal. No typosquat matches against known-popular-package names.
+- **XSS / code injection:** Zero occurrences of `dangerouslySetInnerHTML`, `innerHTML`, `document.write`, `eval(`, `new Function(`, or string-argument `setTimeout`/`setInterval` anywhere in `src/`.
+- **SSRF / unsafe fetch:** The only `fetch()` call in the codebase targets a fixed, hardcoded Supabase REST endpoint; no attacker-controlled URL construction exists.
+- **Open redirect:** The only `window.location` assignment is a fixed-scheme, fixed-package Android AR intent built from app-controlled data (fallback URL is properly `encodeURIComponent`-encoded), not from user/query-string input.
+- **Contact form:** Confirmed to be client-side-only (mock `setTimeout` "submission", per project design) — no network call exists, and all form values are rendered only as controlled React input `value` props, never injected into raw HTML.
+- **`localStorage`/`sessionStorage`:** Only stores a `'light'|'dark'` theme preference and an `'es'|'en'` language preference — no sensitive data.
+- **External links:** `target="_blank"` links correctly pair with `rel="noreferrer"` (reverse-tabnabbing mitigated).
+- **Console logging:** Zero `console.log`/`error`/`warn` calls anywhere in `src/` — no risk of leaking the Supabase key or user data to the browser console.
+- **Build configuration:** `vite.config.js` has no proxy config, no `server.cors` override, and does not force sourcemaps on for production; the default (`build.sourcemap: false`) applies.
+- **Supply chain / CI-CD:** No `.github/workflows`, `.gitlab-ci.yml`, or `Jenkinsfile` exist — not applicable, confirmed via search. `package-lock.json` is committed and not gitignored (reproducible installs). Lockfile integrity check (`check_lockfiles.py`) returned zero issues.
+- **Docker / IaC:** No Dockerfile, docker-compose, or Kubernetes manifests exist — not applicable.
+- **Cookies / sessions / CORS / auth:** Not applicable — this is a static site with no backend, no authentication, and no session management, so there is no such attack surface to secure.
+
+---
+
+## Dependency Vulnerabilities
+
+`npm audit --json` (re-run and confirmed twice during this scan):
+
+```json
+{
+  "vulnerabilities": {},
+  "metadata": {
+    "vulnerabilities": { "info": 0, "low": 0, "moderate": 0, "high": 0, "critical": 0, "total": 0 },
+    "dependencies": { "prod": 26, "dev": 162, "optional": 48, "peer": 3, "peerOptional": 0, "total": 188 }
+  }
+}
+```
+
+No CVEs found. Trivy, pip-audit, and cargo-audit were not available in this environment and were not applicable anyway (no Python/Rust/Go dependencies).
+
+---
+
+## Supply Chain Assessment
+- **Lock file status:** Present and committed (`package-lock.json`, lockfileVersion 3, not in `.gitignore`). `check_lockfiles.py` reported zero integrity issues.
+- **Dependency pinning:** All dependencies use caret (`^`) ranges rather than exact pins — standard for an application (not a published library) and fully mitigated by the committed, exact-version lockfile.
+- **CI/CD security:** Not applicable — no CI/CD pipeline is configured in this repository (no `.github/workflows`, no `.gitlab-ci.yml`, no `Jenkinsfile`).
+
+---
+
+## Scan Metadata
+- **Scanner:** Cyber Neo v0.1.0
+- **Duration:** ~15 minutes (5 parallel analysis phases)
+- **External tools used:** npm audit only. Semgrep, Trivy, gitleaks, pip-audit, and cargo-audit were not installed in this environment; the Cyber Neo native `scan_secrets.py` and `check_lockfiles.py` scripts were used in their place.
+- **Files scanned:** 75 total project files (excluding `node_modules`, `.git`); ~32 relevant source files under `src/` fully reviewed, plus `index.html`, `package.json`, `package-lock.json`, `vite.config.js`, `tailwind.config.js`, `postcss.config.js`, `.oxlintrc.json`, `.gitignore`.
+- **Files skipped:** None of significance — no binaries, no oversized files, no generated code directories present in this small project.
+- **Scan coverage:** 100%
