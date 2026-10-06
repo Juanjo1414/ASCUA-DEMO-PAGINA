@@ -10,11 +10,15 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-103 — Puertos y casos de uso (`application`). **Estado:** completada ✅.
-Siguiente tarea: **P-104** — Adaptadores AR (QuickLookLauncher, SceneViewerLauncher, ModelViewerFallbackLauncher, BrowserEnvironmentDetector).
+P-104 — Adaptadores AR. **Estado:** completada ✅.
+Siguiente tarea: **P-105** — Repositorio de contenido estático.
 
 ## Último paso completado
 
+- **P-104 (Adaptadores AR):**
+  - Implementados los adaptadores nativos `QuickLookLauncher`, `SceneViewerLauncher` y `ModelViewerFallbackLauncher` en `src/infrastructure/ar/`.
+  - Implementado `BrowserEnvironmentDetector` en `src/infrastructure/browser/` preservando las detecciones de in-app browsers y de SO del proyecto antiguo.
+  - Creadas las pruebas de contrato en Vitest (`describe.each`) asegurando que los 3 lanzadores cumplen con `ArLauncher`.
 - **P-103 (Puertos y Casos de Uso - Capa `application`):**
   - Creados los puertos (interfaces TypeScript puras) en `src/application/ports/`:
     - `RestaurantRepository`: consulta por slug con tipado estricto.
@@ -40,10 +44,11 @@ Siguiente tarea: **P-104** — Adaptadores AR (QuickLookLauncher, SceneViewerLau
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-104** — Adaptadores AR:
-   - Migrar la lógica de `src/lib/launchAr.js` y `src/lib/browserEnv.js` hacia adaptadores que implementen los puertos `ArLauncher` y `EnvironmentDetector` (`QuickLookLauncher`, `SceneViewerLauncher`, `ModelViewerFallbackLauncher`, `BrowserEnvironmentDetector`).
-   - Preservar exactamente el comportamiento probado en dispositivos (el `<img>` dentro del `<a rel="ar">`, el `intent://` con fallback y detección de in-app browsers).
-   - Escribir pruebas de contrato para los adaptadores.
+1. Iniciar la tarea **P-105** — Repositorio de contenido estático:
+   - Crear `StaticJsonRestaurantRepository` en `infrastructure/content/`.
+   - Implementar un guardia para rechazar slugs inválidos (mayúsculas, rutas relativas `../`) antes del fetch.
+   - Usar el esquema zod para validar el JSON descargado.
+   - Pruebas unitarias y manejo de errores controlados.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

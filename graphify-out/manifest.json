@@ -252,9 +252,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791309461.9238942,
-    "seen": 1791310393.4495003,
-    "ast_hash": "6d00cdaf179551a064682f8ed557b39d",
+    "mtime": 1791310889.8507288,
+    "seen": 1791310910.130532,
+    "ast_hash": "51fb3c3812ee647194dbef21ecda5635",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "docs/sesiones/2026-10-06-fundaciones.md": {
-    "mtime": 1791309480.7907412,
-    "seen": 1791310393.4495144,
-    "ast_hash": "a7bf0789b729cb8005868d8e0520cfaa",
+    "mtime": 1791310435.3070853,
+    "seen": 1791310910.1305478,
+    "ast_hash": "4fe1499d7457b535d8148d8c6f9d6b8d",
     "semantic_hash": ""
   },
   "index.html": {
@@ -630,21 +630,21 @@
     "semantic_hash": ""
   },
   "src/application/use-cases/buildMenuView.ts": {
-    "mtime": 1791310063.793919,
-    "seen": 1791310393.449351,
-    "ast_hash": "ec93a97c67b2fe543aac6328f309f03a",
+    "mtime": 1791310497.125839,
+    "seen": 1791310910.1303656,
+    "ast_hash": "f83a60b508414b1574e04efccc095ef5",
     "semantic_hash": ""
   },
   "src/application/use-cases/buildReservationLink.ts": {
-    "mtime": 1791310087.3603592,
-    "seen": 1791310393.4493532,
-    "ast_hash": "568b0431d275213e03e4b8190ef4c2b4",
+    "mtime": 1791310497.146475,
+    "seen": 1791310910.1303692,
+    "ast_hash": "7b74a4dba4d241431e017bbc45157077",
     "semantic_hash": ""
   },
   "src/application/use-cases/getRestaurant.ts": {
-    "mtime": 1791310049.1953263,
-    "seen": 1791310393.4493551,
-    "ast_hash": "56741f558fadaede0b5dea976e976155",
+    "mtime": 1791310497.1701999,
+    "seen": 1791310910.1303713,
+    "ast_hash": "afe5b69550a8890c59632b33bbd78be3",
     "semantic_hash": ""
   },
   "src/application/use-cases/index.ts": {
@@ -654,9 +654,9 @@
     "semantic_hash": ""
   },
   "src/application/use-cases/launchDishAr.ts": {
-    "mtime": 1791310075.3582451,
-    "seen": 1791310393.4493582,
-    "ast_hash": "fc02012c41926ed69e8b35ad3a97e2da",
+    "mtime": 1791310497.1946342,
+    "seen": 1791310910.1303756,
+    "ast_hash": "3034a02520e2068097345b214811e7e3",
     "semantic_hash": ""
   },
   "src/application/use-cases/toggleSoldOut.ts": {
@@ -672,21 +672,21 @@
     "semantic_hash": ""
   },
   "tests/unit/application/buildReservationLink.test.ts": {
-    "mtime": 1791310197.9271126,
-    "seen": 1791310393.4494476,
-    "ast_hash": "3066a4e593e7a8e43f1a4394f7792217",
+    "mtime": 1791310497.2531943,
+    "seen": 1791310910.1304734,
+    "ast_hash": "75f5f181af9be9dc3a1ae06a091a5013",
     "semantic_hash": ""
   },
   "tests/unit/application/doubles.ts": {
-    "mtime": 1791310133.3752294,
-    "seen": 1791310393.4494495,
-    "ast_hash": "9e00e31685c7dd1a47244313f067de60",
+    "mtime": 1791310497.2747107,
+    "seen": 1791310910.1304755,
+    "ast_hash": "ce873a16a2b1996d1571f17022f56a8d",
     "semantic_hash": ""
   },
   "tests/unit/application/getRestaurant.test.ts": {
-    "mtime": 1791310148.2987015,
-    "seen": 1791310393.4494512,
-    "ast_hash": "601fbd7e35fe7f6bed91a1580e79a40e",
+    "mtime": 1791310497.2924652,
+    "seen": 1791310910.1304774,
+    "ast_hash": "55acc245fa98bd67ed0e97085b53268c",
     "semantic_hash": ""
   },
   "tests/unit/application/launchDishAr.test.ts": {
@@ -696,9 +696,51 @@
     "semantic_hash": ""
   },
   "tests/unit/application/toggleSoldOut.test.ts": {
-    "mtime": 1791310206.5970676,
-    "seen": 1791310393.4494545,
-    "ast_hash": "a326f406bc411b6f9fdb20f65581dec7",
+    "mtime": 1791310497.3254354,
+    "seen": 1791310910.1304815,
+    "ast_hash": "c03147b5f578b839592421af3c621a6d",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/ar/ModelViewerFallbackLauncher.ts": {
+    "mtime": 1791310999.8778257,
+    "seen": 1791311004.77353,
+    "ast_hash": "90ac03c814b116af1c48e752a391d646",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/ar/QuickLookLauncher.ts": {
+    "mtime": 1791310999.904963,
+    "seen": 1791311004.7735329,
+    "ast_hash": "6f6e54d057c17a928495b3686de83653",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/ar/SceneViewerLauncher.ts": {
+    "mtime": 1791310999.9232059,
+    "seen": 1791311004.773535,
+    "ast_hash": "ca833796dc05029267e5c0b3d77481bd",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/browser/BrowserEnvironmentDetector.ts": {
+    "mtime": 1791310999.9512043,
+    "seen": 1791311004.773537,
+    "ast_hash": "6a19ad049e0b5ccf070800d3a234ff4f",
+    "semantic_hash": ""
+  },
+  "tests/unit/infrastructure/ar/arLaunchers.test.ts": {
+    "mtime": 1791310999.992078,
+    "seen": 1791311004.7735844,
+    "ast_hash": "28a7b1fcdd3ee6d353c6b6337dcc934e",
+    "semantic_hash": ""
+  },
+  "tests/unit/infrastructure/browser/BrowserEnvironmentDetector.test.ts": {
+    "mtime": 1791311000.0232894,
+    "seen": 1791311004.7735865,
+    "ast_hash": "d5f2668bc78ab707cc9765ab468fe04a",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md": {
+    "mtime": 1791310999.7510915,
+    "seen": 1791311004.7736251,
+    "ast_hash": "3cbf3038065097271c938f4e6e8859ec",
     "semantic_hash": ""
   }
 }
