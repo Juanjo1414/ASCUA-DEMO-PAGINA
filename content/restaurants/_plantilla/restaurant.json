@@ -11,7 +11,7 @@
   "nombre": "La Brasa",
   "idiomas": ["es", "en"],
   "tema": {
-    "primario": "#C2410C",
+    "primario": "#e6ff55",
     "parTipografico": "editorial",
     "logo": "assets/logo.svg"
   },

@@ -61,6 +61,29 @@ export async function validateContent() {
 
       const data = parsed.data
 
+      // Validación de contraste AA (4.5:1)
+      const getLuminance = (hex: string) => {
+        const rgb = parseInt(hex.replace('#', ''), 16)
+        const r = (rgb >> 16) & 0xff
+        const g = (rgb >> 8) & 0xff
+        const b = (rgb >> 0) & 0xff
+        const [Rs, Gs, Bs] = [r, g, b].map((c) => {
+          c /= 255
+          return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
+        })
+        return 0.2126 * Rs + 0.7152 * Gs + 0.0722 * Bs
+      }
+      const l1 = getLuminance(data.tema.primario)
+      const l2 = getLuminance('#0e150e')
+      const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05)
+
+      if (ratio < 4.5) {
+        console.error(
+          `❌ [${folderName}] El color primario (${data.tema.primario}) no tiene contraste AA suficiente con el texto oscuro (#0e150e). Ratio: ${ratio.toFixed(2)}:1 (mínimo 4.5:1)`
+        )
+        hasErrors = true
+      }
+
       // Validación de slug vs carpeta
       if (!isTemplate && data.slug !== folderName) {
         console.error(
