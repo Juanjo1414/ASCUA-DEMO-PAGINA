@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1791309100.6049728,
-    "seen": 1791309424.0430045,
-    "ast_hash": "460e81441b552ca287703462ca13e70d",
+    "mtime": 1791312699.889089,
+    "seen": 1791312942.028482,
+    "ast_hash": "04a7e10cdc09fed00858d6311a3ab313",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -179,12 +179,6 @@
     "ast_hash": "cb5a19a1e0da3d7a170f1b510dc7149d",
     "semantic_hash": ""
   },
-  "src/main.jsx": {
-    "mtime": 1791308773.521668,
-    "seen": 1791309424.0430727,
-    "ast_hash": "a7c320026e73e1c9604daf4cc27adccd",
-    "semantic_hash": ""
-  },
   "tailwind.config.js": {
     "mtime": 1791308773.5576823,
     "seen": 1791309424.0430746,
@@ -252,9 +246,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791311255.1496208,
-    "seen": 1791312656.3109863,
-    "ast_hash": "f5dd4869770b275ece82ff6bd5e8d61e",
+    "mtime": 1791312803.9342847,
+    "seen": 1791312942.0286584,
+    "ast_hash": "5e609681711da3561e2a9868e35de719",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -360,9 +354,9 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1791308575.7441843,
-    "seen": 1791308660.3400714,
-    "ast_hash": "f6ffc750e8bc19f6154783105c987a11",
+    "mtime": 1791312739.610809,
+    "seen": 1791312942.0286794,
+    "ast_hash": "e5619dd8eb8ae235963f858de3ae071d",
     "semantic_hash": ""
   },
   "content/raw/IMAGENES AR/Filete a la parrilla.jpeg": {
@@ -759,6 +753,36 @@
     "mtime": 1791312650.8369572,
     "seen": 1791312656.3109996,
     "ast_hash": "5089604534bce1a853c5b051262566da",
+    "semantic_hash": ""
+  },
+  "src/app/DependenciesContext.tsx": {
+    "mtime": 1791312934.7523923,
+    "seen": 1791312942.0284953,
+    "ast_hash": "6b07ce7548cae26dba5dca57f2e43a41",
+    "semantic_hash": ""
+  },
+  "src/app/compositionRoot.ts": {
+    "mtime": 1791312934.9731855,
+    "seen": 1791312942.0284975,
+    "ast_hash": "77912e4f3fcd91831baf698f28ec55ce",
+    "semantic_hash": ""
+  },
+  "src/app/router.tsx": {
+    "mtime": 1791312935.167353,
+    "seen": 1791312942.0284994,
+    "ast_hash": "edfea8392ee662d7abb54a4d942d6bff",
+    "semantic_hash": ""
+  },
+  "src/main.tsx": {
+    "mtime": 1791312772.895176,
+    "seen": 1791312942.0285995,
+    "ast_hash": "19a7731cb5e52ccd3732730232ec87a7",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P106-Composition-Router.md": {
+    "mtime": 1791312934.464913,
+    "seen": 1791312942.0286736,
+    "ast_hash": "1b5d8e6b8f0502f969fd07e36ac1bedc",
     "semantic_hash": ""
   }
 }

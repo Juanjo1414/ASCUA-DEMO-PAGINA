@@ -10,11 +10,14 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-106 — Composition root y router. **Estado:** completada ✅.
-Siguiente tarea: **P-107** — Store reactivo global.
+P-107 — Store reactivo global. **Estado:** completada ✅.
+Siguiente tarea: **P-108** — Hooks de aplicación (casos de uso en UI).
 
 ## Último paso completado
 
+- **P-107 (Store reactivo global):**
+  - Instalado `jotai` como gestor de estado.
+  - Creado `src/app/store.ts` con el átomo `restaurantAtom` tipado estrictamente con la interfaz `Restaurant`.
 - **P-106 (Composition root y router):**
   - Implementado `src/app/compositionRoot.ts` inyectando instancias concretas (repositorio estático, adaptadores AR, detector de entorno).
   - Configurado `DependenciesContext.tsx` para inyectar los puertos en React y asegurar Clean Architecture en los componentes.
@@ -33,10 +36,9 @@ Siguiente tarea: **P-107** — Store reactivo global.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-107** — Store reactivo global:
-   - Instalar Jotai.
-   - Crear `src/app/store.ts` para mantener la data del restaurante descargado.
-   - Asegurar un solo punto de verdad reactivo, tipado con la interfaz `Restaurant`.
+1. Iniciar la tarea **P-108** — Hooks de aplicación (casos de uso en UI):
+   - Crear `hooks/useRestaurant.ts`: debe inyectar el repositorio y disparar `getRestaurant`, actualizando el store Jotai y gestionando redirecciones (`404` / `expirado`).
+   - Crear `hooks/useMenu.ts`: leer el store y mapear la carta usando `buildMenuView`.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
