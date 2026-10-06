@@ -1,0 +1,70 @@
+# Despliegue de ASCUA-DEMO-PAGINA en Cloudflare Pages (Direct Upload).
+# - push a dev/**  → CI completo → preview  → smoke test contra el preview.
+# - push a main    → CI completo → producción → smoke test contra producción.
+# Se despliega EXACTAMENTE el artefacto `dist` que pasó las pruebas.
+# Requiere (X-007): secrets CLOUDFLARE_API_TOKEN y CLOUDFLARE_ACCOUNT_ID,
+# variable CF_PAGES_PROJECT. Sin ellos, el job de despliegue se omite.
+name: Deploy
+
+on:
+  push:
+    branches: [main, 'dev/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    name: deploy
+    needs: ci
+    if: vars.CF_PAGES_PROJECT != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: ${{ github.ref_name == 'main' && 'production' || 'preview' }}
+      url: ${{ steps.publish.outputs.deployment-url }}
+    outputs:
+      url: ${{ steps.publish.outputs.deployment-url }}
+    steps:
+      - uses: actions/download-artifact@v4 # TODO(X-008): fijar por SHA
+        with:
+          name: dist
+          path: dist
+      - name: Publicar en Cloudflare Pages
+        id: publish
+        uses: cloudflare/wrangler-action@v3 # TODO(X-008): fijar por SHA
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=${{ vars.CF_PAGES_PROJECT }} --branch=${{ github.ref_name }}
+
+  smoke:
+    name: smoke
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Smoke test contra la URL desplegada
+        if: hashFiles('playwright.config.ts') != ''
+        env:
+          BASE_URL: ${{ github.ref_name == 'main' && vars.PROD_URL || needs.deploy.outputs.url }}
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:smoke
+      - name: Aviso de rollback
+        if: failure() && github.ref_name == 'main'
+        run: |
+          echo "::error::Smoke test de PRODUCCIÓN falló. Sigue docs/runbooks/rollback.md (Cloudflare Pages → Deployments → Rollback)."
