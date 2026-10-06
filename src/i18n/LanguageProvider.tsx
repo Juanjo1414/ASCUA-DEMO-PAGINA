@@ -1,18 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
-import { LanguageContext } from './LanguageContext'
+import { LanguageContext, Lang } from './LanguageContext'
 import { translations } from './translations'
 
-function detectInitialLang() {
+function detectInitialLang(): Lang {
   if (typeof window === 'undefined') return 'es'
   const stored = window.localStorage.getItem('ascua-lang')
-  if (stored === 'es' || stored === 'en') return stored
+  if (stored === 'es' || stored === 'en') return stored as Lang
   return navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'es'
 }
 
-export function LanguageProvider({ children }) {
-  const [lang, setLangState] = useState(detectInitialLang)
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  const [lang, setLangState] = useState<Lang>(detectInitialLang)
 
-  const setLang = (next) => {
+  const setLang = (next: Lang) => {
     setLangState(next)
     try {
       window.localStorage.setItem('ascua-lang', next)
@@ -21,7 +21,6 @@ export function LanguageProvider({ children }) {
     }
   }
 
-  // El lector de pantalla y el traductor del navegador leen este atributo.
   useEffect(() => {
     document.documentElement.lang = lang
   }, [lang])

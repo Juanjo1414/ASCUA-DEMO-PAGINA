@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
+import * as React from 'react'
 
-// Visor 3D puro: la realidad aumentada ya no sale de acá sino del botón de la
-// tarjeta, que llama a Quick Look o Scene Viewer directo (ver lib/launchAr.js).
-// Así el comensal entra a la RA con un solo toque en vez de dos.
-//
-// Los atributos se ponen por setAttribute y no por JSX a propósito: React 19
-// asigna a los custom elements por propiedad cuando esa propiedad existe, y un
-// `algo=""` termina como propiedad vacía — falsy — en vez de atributo presente.
+declare module 'react' {
+  namespace JSX {
+    interface IntrinsicElements {
+      'model-viewer': any
+    }
+  }
+}
+
 const VIEWER_ATTRS = {
   'camera-controls': '',
   'touch-action': 'pan-y',
@@ -14,8 +16,14 @@ const VIEWER_ATTRS = {
   scale: '1 1 1',
 }
 
-export default function ArViewer({ glb, poster, alt }) {
-  const viewerRef = useRef(null)
+interface ArViewerProps {
+  glb: string
+  poster?: string
+  alt?: string
+}
+
+export default function ArViewer({ glb, poster, alt }: ArViewerProps) {
+  const viewerRef = useRef<HTMLElement>(null)
   const [ready, setReady] = useState(false)
 
   useEffect(() => {

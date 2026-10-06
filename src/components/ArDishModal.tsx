@@ -4,11 +4,32 @@ import ArViewer from './ArViewer'
 import { useLanguage } from '../i18n/useLanguage'
 import { detectInAppBrowser } from '../lib/browserEnv'
 
-export default function ArDishModal({ dish, asset, mode, onClose }) {
+interface Dish {
+  name: string
+  description: string
+}
+
+interface Asset {
+  glbUrl: string
+  posterUrl: string
+}
+
+interface ArDishModalProps {
+  dish: Dish
+  asset: Asset
+  mode: string
+  onClose: () => void
+}
+
+export default function ArDishModal({
+  dish,
+  asset,
+  mode,
+  onClose,
+}: ArDishModalProps) {
   const { t } = useLanguage()
   const arUnavailable = mode === 'ar'
   const [copied, setCopied] = useState(false)
-  // Se calcula una vez: el user agent no cambia mientras el modal vive.
   const [inAppName] = useState(() => detectInAppBrowser())
 
   const copyLink = async () => {
@@ -17,13 +38,12 @@ export default function ArDishModal({ dish, asset, mode, onClose }) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch {
-      // Sin permiso de portapapeles no hay alternativa silenciosa: el
-      // usuario todavía puede copiar la URL desde la barra de direcciones.
+      // Ignored
     }
   }
 
   useEffect(() => {
-    const onKey = (event) => {
+    const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
     }
     document.addEventListener('keydown', onKey)
@@ -93,7 +113,6 @@ export default function ArDishModal({ dish, asset, mode, onClose }) {
               )}
             </div>
           )}
-          {/* Ley 1480 de 2011: el modelo es publicidad, no la presentación exacta. */}
           <p className="mt-3 text-xs text-ceniza/70">{t.ar.disclaimer}</p>
         </div>
       </div>

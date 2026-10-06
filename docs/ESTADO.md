@@ -6,14 +6,27 @@
 
 ## Fase actual
 
-Fase P-1 — Re-arquitectura de PAGINA (en progreso).
+Fase P-4 — Diseño (en progreso).
 
 ## Tarea actual
 
-Fase P-3 completada. Se completaron P-301 a P-308.
-Siguiente paso: Revisión y push de todos los commits, luego continuar con Fase P-4 (Optimización de Assets 3D).
+Se completó P-403 (Rediseño de componentes).
 
 ## Último paso completado
+
+- **P-403 (Rediseño de componentes):**
+  - Refactorizados todos los componentes a `.tsx` (`Reserva`, `Contacto`, `Pie`, `LoadingScreen`, `FranjaReserva`, `ArViewer`, `ArDishModal`, etc.).
+  - Aplicado el sistema de diseño Sweetgreen (fondos de color crema, texto forest-shadow, botones corporativos).
+  - Corregidos errores de TypeScript en `useLanguage` y componentes React.
+  - Pasaron exitosamente todas las pruebas (`npm run verify`).
+
+- **P-402 (Tema por restaurante):**
+  - Implementada la validación de contraste AA en `scripts/validate-content.ts` (asegurando un ratio mínimo de 4.5:1 entre el color primario y el texto oscuro #0e150e).
+  - Actualizado el color de `_plantilla/restaurant.json` a `#e6ff55` para que pase la validación.
+- **P-401 (Tokens desde DESIGN.md):**
+  - Creado `src/presentation/theme/tokens.css` con todas las variables CSS de `docs/DESIGN.md`.
+  - Actualizado `tailwind.config.js` para usar estos tokens (manteniendo temporalmente compatibilidad hacia atrás).
+  - Verificado que no hay colores hexadecimales "quemados" en los componentes.
 
 - **P-308 (Ayuda contextual y estados):**
   - Implementado `FloatingHelp.jsx` en `App.jsx`.
@@ -65,10 +78,8 @@ Siguiente paso: Revisión y push de todos los commits, luego continuar con Fase 
 
 ## Siguiente paso exacto
 
-1. Revisión final por parte de Juan de todo el bloque P-3.
-2. Hacer el push pendiente de todos los commits de la Fase P-3 al remoto.
-3. Iniciar la Fase P-4 (Optimización de Assets 3D) o la que indique Juan.
-4. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
+1. Revisión de Juan de los cambios de P-403 y push de las tareas.
+2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
    - X-008: Habilitar CodeQL en GitHub (Security → Code scanning).

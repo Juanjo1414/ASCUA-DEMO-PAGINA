@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "tailwind.config.js": {
-    "mtime": 1791308773.5576823,
-    "seen": 1791309424.0430746,
-    "ast_hash": "fed7222dc16bc57d1062c4f98a9ed722",
+    "mtime": 1791326300.2435794,
+    "seen": 1791326419.4608479,
+    "ast_hash": "e4a8d46621263c8827b8bc12185bf085",
     "semantic_hash": ""
   },
   "vite.config.js": {
@@ -810,9 +810,9 @@
     "semantic_hash": ""
   },
   "content/restaurants/_plantilla/restaurant.json": {
-    "mtime": 1791313995.9208865,
-    "seen": 1791316567.3382857,
-    "ast_hash": "db693aef0929c4de6d267b1e85226c4f",
+    "mtime": 1791326350.0063114,
+    "seen": 1791326419.4604833,
+    "ast_hash": "573631fe6cd9d51f5e24dab46af5c2a7",
     "semantic_hash": ""
   },
   "playwright.config.ts": {
@@ -828,9 +828,9 @@
     "semantic_hash": ""
   },
   "scripts/validate-content.ts": {
-    "mtime": 1791315137.9487584,
-    "seen": 1791316567.338295,
-    "ast_hash": "3540633968648ce114bfd821b92ca5c9",
+    "mtime": 1791326290.3003805,
+    "seen": 1791326419.46052,
+    "ast_hash": "e02256c23f27ffc1b5bed2959533b168",
     "semantic_hash": ""
   },
   "src/components/ArGuideModal.tsx": {

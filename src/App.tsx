@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import { restaurantAtom } from '@/app/store'
 import { useRestaurant } from '@/hooks/useRestaurant'
 import Nav from './components/Nav'
-import Escena from './components/Escena'
 import FranjaReserva from './components/FranjaReserva'
 import HeroFuego from './components/HeroFuego'
 import Manifiesto from './components/Manifiesto'
@@ -34,12 +33,15 @@ export default function App() {
 
   if (error) {
     return (
-      <div className="flex h-screen w-full flex-col items-center justify-center bg-fondo px-6 text-center text-crema">
-        <h1 className="font-display text-3xl font-medium text-llama">
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-cream-canvas px-6 text-center text-forest-shadow">
+        <h1 className="font-sweetsans text-3xl font-medium text-deep-forest">
           Algo salió mal
         </h1>
-        <p className="mt-4 max-w-[40ch] text-ceniza">{error}</p>
-        <button onClick={() => window.location.reload()} className="boton mt-8">
+        <p className="mt-4 max-w-[40ch] text-forest-shadow/80">{error}</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="btn-primary mt-8"
+        >
           Volver a intentar
         </button>
       </div>
@@ -51,8 +53,7 @@ export default function App() {
       <LoadingScreen isReady={isReady} />
       {isReady && (
         <>
-          <Escena />
-          <div className="relative z-10 min-h-[100dvh] pb-14 lg:pb-0">
+          <div className="relative z-10 min-h-[100dvh] pb-14 lg:pb-0 bg-cream-canvas">
             <Nav />
             <main>
               <HeroFuego />

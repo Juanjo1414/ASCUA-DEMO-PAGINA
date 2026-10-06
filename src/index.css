@@ -1,14 +1,6 @@
 /*
-  Ascua — el fuego que se aviva.
-
-  Toda la página es un solo fuego visto en la oscuridad: el canvas de fondo
-  (components/Escena.jsx) pinta la brasa, las llamas y las chispas, y su color
-  sigue la temperatura del scroll (lib/calor.js). Los colores de aquí son los
-  del fuego a distintas temperaturas: rescoldo, brasa, llama y el blanco
-  caliente del final. Por eso no hay tema claro: el concepto es fuego de noche.
-
-  Los nombres carbon, brasa, llama, rescoldo, ceniza y loza los usan el modal
-  de RA y el visor 3D (bloqueados); se conservan aunque cambien sus valores.
+  Sweetgreen-inspired design system.
+  Warm, farm-stand-meets-modern-typography aesthetic.
 */
 
 @import './presentation/theme/tokens.css';
@@ -18,65 +10,30 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Carbón: negro de verdad, sin el marrón de antes. El calor lo ponen los
-       campos de color, no un negro teñido. */
-    --c-carbon: 15 12 11;
-    --c-carbon-900: 26 21 19;
-    --c-carbon-800: 38 31 28;
-    --c-carbon-700: 58 48 43;
-
-    /* Brasa: rojo-naranja de llama viva. Llama: el amarillo del núcleo.
-       Rescoldo: el rojo hondo del carbón que se va apagando. */
-    --c-brasa: 238 64 28;
-    --c-llama: 255 178 46;
-    --c-rescoldo: 122 20 14;
-
-    --c-ceniza: 178 166 154;
-    --c-loza: 250 241 228;
-
-    /* Acento de texto sobre el carbón. */
-    --c-acento: 255 178 46;
-
-    /* El blanco caliente: el fuego por encima de los mil grados. */
-    --c-blanco: 255 236 200;
-
-    /* Kraft: el papel de las etiquetas de la leña. */
-    --c-kraft: 200 168 122;
-
-    /* Tintas fijas para escribir encima de los campos de color. */
-    --c-tinta: 15 12 11;
-    --c-crema: 250 241 228;
-  }
-
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
-    scrollbar-color: rgb(var(--c-brasa)) rgb(var(--c-carbon));
+    color-scheme: light;
+    scrollbar-color: var(--color-deep-forest) var(--color-cream-canvas);
   }
 
   section[id] {
     scroll-margin-top: 72px;
   }
 
-  /* clip y no hidden: corta lo que se sale de lado (los platos girados) sin
-     crear un contenedor de scroll, que rompería los pines de GSAP. */
   html,
   body {
     overflow-x: clip;
   }
 
   body {
-    @apply bg-carbon font-sans text-loza antialiased;
+    @apply bg-cream-canvas font-sweetsanstext text-forest-shadow antialiased;
     font-feature-settings: 'kern', 'liga';
   }
 
   h1,
   h2,
   h3 {
-    @apply font-display;
-    letter-spacing: -0.015em;
-    line-height: 1.02;
+    @apply font-sweetsans;
     text-wrap: balance;
   }
 
@@ -85,233 +42,59 @@
   }
 
   ::selection {
-    background: rgb(var(--c-llama));
-    color: rgb(var(--c-tinta));
+    background: var(--color-lime-glow);
+    color: var(--color-forest-shadow);
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--c-llama));
+    outline: 2px solid var(--color-deep-forest);
     outline-offset: 3px;
-  }
-
-  input,
-  textarea {
-    caret-color: rgb(var(--c-brasa));
   }
 
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: rgb(var(--c-carbon));
+    background: var(--color-cream-canvas);
   }
   ::-webkit-scrollbar-thumb {
-    background: rgb(var(--c-brasa));
-    border: 3px solid rgb(var(--c-carbon));
+    background: var(--color-deep-forest);
+    border: 3px solid var(--color-cream-canvas);
   }
 }
 
 @layer components {
-  /*
-    El botón es un bloque recto con el calor por dentro: al pasar por encima,
-    la llama sube desde abajo y llena el bloque. Nada de píldoras.
-  */
-  .boton {
-    @apply relative inline-flex items-center justify-center gap-3 overflow-hidden px-7 py-4
-           font-sans text-[0.8rem] font-semibold uppercase;
-    letter-spacing: 0.14em;
-    font-stretch: 112%;
-    background: rgb(var(--c-brasa));
-    color: rgb(var(--c-tinta));
-    isolation: isolate;
-    transition: color 0.35s ease;
+  /* Pill CTA Button (Lime Fill) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-lime-glow text-forest-shadow font-sweetsanstext font-bold text-[16px] px-[24px] py-[16px] rounded-buttons tracking-[0.017em] transition-transform hover:scale-[1.02] active:scale-[0.98];
   }
 
-  .boton::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: rgb(var(--c-llama));
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+  /* Pill Outline Button (Forest Border) */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-transparent border-[2px] border-deep-forest text-deep-forest font-sweetsanstext font-bold text-[16px] px-[20px] py-[12px] rounded-buttons transition-colors hover:bg-deep-forest hover:text-cream-canvas;
   }
 
-  .boton:hover::before,
-  .boton:focus-visible::before {
-    transform: scaleY(1);
+  /* Ghost Text Link */
+  .ghost-link {
+    @apply inline-flex items-center gap-1 bg-transparent text-forest-shadow font-sweetsanstext font-bold text-[16px] hover:underline;
   }
 
-  .boton svg {
-    transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+  /* Online Only Badge */
+  .badge-online {
+    @apply absolute top-4 left-4 bg-lime-glow text-forest-shadow font-sweetsanstext font-bold text-[12px] uppercase tracking-[0.05em] px-[12px] py-[4px] rounded-badges;
   }
 
-  .boton:hover svg {
-    transform: translateX(4px);
+  /* Split Content Section */
+  .split-section {
+    @apply bg-sage-mist py-[80px] lg:py-[120px];
+  }
+  .split-section--alt {
+    @apply bg-warm-sand py-[80px] lg:py-[120px];
   }
 
-  .boton:disabled {
-    cursor: progress;
-    opacity: 0.6;
-  }
-
-  /* Sobre un campo de color el bloque va en tinta, y se enciende en crema. */
-  .boton--tinta {
-    background: rgb(var(--c-tinta));
-    color: rgb(var(--c-crema));
-  }
-
-  .boton--tinta::before {
-    background: rgb(var(--c-crema));
-  }
-
-  .boton--tinta:hover {
-    color: rgb(var(--c-tinta));
-  }
-
-  /* Rótulo: la letra ancha y espaciada de una etiqueta de fosforera. Nunca
-     encima de un titular: acompaña datos, pies de foto y controles. */
-  .rotulo {
-    @apply font-sans text-[0.7rem] font-semibold uppercase;
-    letter-spacing: 0.22em;
-    font-stretch: 125%;
-  }
-
-  /*
-    La comanda: papel de ticket con el borde de abajo cortado en dientes, como
-    sale de la impresora del pase. La letra impresa es Archivo angosta y en
-    mayúsculas, la de una ticketera; la nota del cliente va en Bodoni.
-  */
-  .comanda {
-    --diente: 7px;
-    -webkit-mask: conic-gradient(
-        from -45deg at bottom,
-        #0000,
-        #000 1deg 89deg,
-        #0000 90deg
-      )
-      50% / calc(2 * var(--diente)) 100%;
-    mask: conic-gradient(
-        from -45deg at bottom,
-        #0000,
-        #000 1deg 89deg,
-        #0000 90deg
-      )
-      50% / calc(2 * var(--diente)) 100%;
-  }
-
-  .comanda-impresa {
-    @apply font-sans text-[0.72rem] font-semibold uppercase;
-    letter-spacing: 0.08em;
-    font-stretch: 75%;
-  }
-
-  /* Colgada del riel, se mece apenas. La sombra va aquí y no en el papel:
-     la máscara de los dientes la recortaría. */
-  .comanda-colgada {
-    animation: mecer 6s ease-in-out infinite;
-    filter: drop-shadow(0 22px 26px rgb(0 0 0 / 0.55));
-  }
-
-  @keyframes mecer {
-    0%,
-    100% {
-      transform: rotate(-0.8deg);
-    }
-    50% {
-      transform: rotate(0.8deg);
-    }
-  }
-
-  /*
-    La etiqueta de saco: papel kraft con las esquinas cortadas, un filete
-    impreso adentro y fibras apenas visibles. El nombre de la madera va en
-    Archivo angosta y pesada, como un esténcil; el sello, en tinta brasa.
-  */
-  .etiqueta-sombra {
-    filter: drop-shadow(0 24px 28px rgb(0 0 0 / 0.55));
-  }
-
-  .etiqueta {
-    --corte: 14px;
-    padding: 1.5rem 1.5rem 1.4rem;
-    background-color: rgb(var(--c-kraft));
-    background-image: repeating-linear-gradient(
-      115deg,
-      rgb(0 0 0 / 0.028) 0 2px,
-      transparent 2px 7px
-    );
-    box-shadow:
-      inset 0 0 0 7px rgb(var(--c-kraft)),
-      inset 0 0 0 8px rgb(var(--c-tinta) / 0.35);
-    clip-path: polygon(
-      var(--corte) 0,
-      calc(100% - var(--corte)) 0,
-      100% var(--corte),
-      100% calc(100% - var(--corte)),
-      calc(100% - var(--corte)) 100%,
-      var(--corte) 100%,
-      0 calc(100% - var(--corte)),
-      0 var(--corte)
-    );
-  }
-
-  .etiqueta-nombre {
-    @apply font-sans text-5xl font-extrabold uppercase leading-[0.9];
-    letter-spacing: 0.01em;
-    font-stretch: 75%;
-  }
-
-  .sello {
-    @apply inline-block whitespace-nowrap px-2 py-1 font-sans text-[0.58rem] font-bold uppercase;
-    letter-spacing: 0.16em;
-    font-stretch: 75%;
-    color: rgb(var(--c-brasa));
-    border: 2px solid rgb(var(--c-brasa));
-    transform: rotate(-10deg);
-    opacity: 0.85;
-    mix-blend-mode: multiply;
-  }
-
-  /* El visor de RA de la carta: después de colocar el plato se retira, y
-     vuelve tenue mientras el cursor o el foco están en «Ponerlo en mi mesa». */
-  .ar-colocado [data-reticula] {
-    opacity: 0;
-    transform: scale(1.04);
-    transition:
-      opacity 0.4s ease,
-      transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-
-  .plato-ar:has([data-boton-ar]:hover) .ar-colocado [data-reticula],
-  .plato-ar:has([data-boton-ar]:focus-visible) .ar-colocado [data-reticula] {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-
-  /* El campo de la reserva se funde arriba y abajo con la noche. */
-  .reserva-campo {
-    -webkit-mask-image: linear-gradient(
-      180deg,
-      transparent 0%,
-      #000 22%,
-      #000 78%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      180deg,
-      transparent 0%,
-      #000 22%,
-      #000 78%,
-      transparent 100%
-    );
-  }
-
-  /* El campo rojo con su tinta (el menú móvil). */
-  .campo-brasa {
-    background: rgb(var(--c-brasa));
-    color: rgb(var(--c-tinta));
+  /* Eyebrow Label */
+  .eyebrow {
+    @apply font-sweetsanstext font-bold text-[14px] uppercase tracking-[0.05em] text-forest-shadow mb-[16px];
   }
 }
 
@@ -323,32 +106,6 @@
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;
-  }
-
-  /*
-    Texto hecho de brasa: la textura del carbón (lib/brasa.js) recortada a la
-    forma de la letra. Sólo para palabras sueltas («la técnica» del
-    manifiesto). Hasta que la textura está lista (html.brasa-lista) el texto
-    se ve en rojo brasa liso.
-  */
-  .en-brasa {
-    color: rgb(var(--c-brasa));
-  }
-
-  .brasa-lista .en-brasa {
-    background-size: auto 100%;
-    background-repeat: repeat-x;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-image: var(--brasa-carbon);
-  }
-
-  /* El mapa de Google entra en la noche de la página: invertido, sin color y
-     con un poco de sepia para que las calles queden del tono de la ceniza. */
-  .mapa {
-    filter: invert(0.92) hue-rotate(180deg) grayscale(0.85) sepia(0.3)
-      brightness(0.9);
   }
 }
 
