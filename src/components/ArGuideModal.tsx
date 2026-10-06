@@ -15,7 +15,7 @@ export default function ArGuideModal({
   onContinue,
   isReplay = false,
 }: ArGuideModalProps) {
-  const { t } = useLanguage() as { t: any }
+  const { t } = useLanguage()
   const [mounted, setMounted] = useState(isOpen)
 
   // Al abrir, marcamos el modal como montado durante el render (patrón de React para
@@ -92,8 +92,9 @@ export default function ArGuideModal({
         </div>
 
         <ul className="mt-8 space-y-8">
-          {texts.steps.map((step: any, i: number) => {
-            const Icon = icons[i] as any
+          {texts.steps.map((step, i) => {
+            const Icon = icons[i]
+            if (!Icon) return null
             return (
               <li key={i} className="flex items-start gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-loza/5 text-llama">

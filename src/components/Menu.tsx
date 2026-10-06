@@ -8,15 +8,22 @@ import { useDependencies } from '@/app/DependenciesContext'
 import ArDishModal from './ArDishModal'
 import ArGuideModal from './ArGuideModal'
 import { launchAr } from '../lib/launchAr'
+import type { Dish } from '@/domain/dish'
 
 export default function Menu() {
   const { t, lang } = useLanguage()
   const raiz = useRef<HTMLDivElement>(null)
-  const [activo, setActivo] = useState<{ dish: any; mode: string } | null>(null)
+  const [activo, setActivo] = useState<{ dish: Dish; mode: string } | null>(
+    null
+  )
   const restaurant = useAtomValue(restaurantAtom)
   const { soldOutStore } = useDependencies()
   const [soldOutDict, setSoldOutDict] = useState<Record<string, boolean>>({})
-  const [guideState, setGuideState] = useState({
+  const [guideState, setGuideState] = useState<{
+    isOpen: boolean
+    dish: Dish | null
+    isReplay: boolean
+  }>({
     isOpen: false,
     dish: null,
     isReplay: false,
@@ -26,8 +33,8 @@ export default function Menu() {
     if (!restaurant) return
     const updateDict = () => {
       const dict: Record<string, boolean> = {}
-      restaurant.categorias.forEach((cat: any) => {
-        cat.platos.forEach((p: any) => {
+      restaurant.categorias.forEach((cat) => {
+        cat.platos.forEach((p) => {
           dict[p.id] = soldOutStore.isSoldOut(restaurant.slug, p.id)
         })
       })
@@ -38,7 +45,7 @@ export default function Menu() {
     return () => window.removeEventListener('ascua:soldout-changed', updateDict)
   }, [restaurant, soldOutStore])
 
-  const handleArClick = (plato: any, isReplay = false) => {
+  const handleArClick = (plato: Dish, isReplay = false) => {
     if (!plato.modelo) return
     const hasSeenGuide = localStorage.getItem('ascua:ar-guide-seen') === '1'
     if (!hasSeenGuide || isReplay) {
@@ -48,7 +55,7 @@ export default function Menu() {
     }
   }
 
-  const abrirAr = (plato: any) => {
+  const abrirAr = (plato: Dish) => {
     if (!plato.modelo) return
     const abierto = launchAr({
       glbUrl: plato.modelo.glb,
@@ -60,10 +67,10 @@ export default function Menu() {
   }
 
   const platos = restaurant
-    ? restaurant.categorias.flatMap((cat: any) => cat.platos)
+    ? restaurant.categorias.flatMap((cat) => cat.platos)
     : []
-  const destacados = platos.filter((p: any) => p.modelo && p.modelo.aprobado)
-  const resto = platos.filter((p: any) => !p.modelo || !p.modelo.aprobado)
+  const destacados = platos.filter((p) => p.modelo && p.modelo.aprobado)
+  const resto = platos.filter((p) => !p.modelo || !p.modelo.aprobado)
 
   useEffect(() => {
     const el = raiz.current
@@ -112,7 +119,7 @@ export default function Menu() {
             </h3>
 
             <ul className="grid gap-x-6 gap-y-16 md:grid-cols-3">
-              {destacados.map((plato: any) => {
+              {destacados.map((plato) => {
                 const isSoldOut = soldOutDict[plato.id]
                 return (
                   <li
@@ -175,7 +182,7 @@ export default function Menu() {
 
         {/* El resto de la carta */}
         <ul className="grid gap-x-6 gap-y-16 md:grid-cols-3 lg:grid-cols-4 pt-16 border-t border-deep-forest/20">
-          {resto.map((plato: any) => {
+          {resto.map((plato) => {
             const isSoldOut = soldOutDict[plato.id]
             return (
               <li
@@ -212,10 +219,20 @@ export default function Menu() {
         </ul>
       </div>
 
-      {activo && (
+      {activo && activo.dish.modelo && (
         <ArDishModal
-          dish={activo.dish}
-          asset={activo.dish.modelo}
+          // ArDishModal espera nombre/descripción ya localizados y las rutas como
+          // glbUrl/posterUrl; el dominio las llama nombre/descripcion y glb/poster.
+          dish={{
+            name: activo.dish.nombre[lang] || activo.dish.nombre.es,
+            description: activo.dish.descripcion
+              ? activo.dish.descripcion[lang] || activo.dish.descripcion.es
+              : '',
+          }}
+          asset={{
+            glbUrl: activo.dish.modelo.glb,
+            posterUrl: activo.dish.modelo.poster,
+          }}
           mode={activo.mode}
           onClose={() => setActivo(null)}
         />

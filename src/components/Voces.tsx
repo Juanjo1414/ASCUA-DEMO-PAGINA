@@ -11,7 +11,7 @@ export default function Voces() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {t.testimonials.items.map((item: any) => (
+          {t.testimonials.items.map((item) => (
             <div
               key={item.name}
               className="flex flex-col items-center text-center"

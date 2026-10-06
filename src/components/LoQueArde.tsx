@@ -18,7 +18,7 @@ export default function LoQueArde() {
             </p>
 
             <div className="flex flex-col gap-8">
-              {maderas.map((m: any) => (
+              {maderas.map((m) => (
                 <div
                   key={m.nombre}
                   className="border-t border-deep-forest/20 pt-6"

@@ -38,7 +38,7 @@ describe('Dominio: Theme', () => {
     expect(() =>
       themeSchema.parse({
         primario: '#B91C1C',
-        parTipografico: 'comic-sans' as any,
+        parTipografico: 'comic-sans' as never,
       })
     ).toThrow()
   })

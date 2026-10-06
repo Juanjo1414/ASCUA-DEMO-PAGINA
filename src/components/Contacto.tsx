@@ -36,11 +36,13 @@ export default function Contacto() {
     return next
   }
 
-  const handleChange = (field: string) => (e: any) => {
-    setValues((v) => ({ ...v, [field]: e.target.value }))
-  }
+  const handleChange =
+    (field: string) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setValues((v) => ({ ...v, [field]: e.target.value }))
+    }
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const nextErrors = validate(values)
     setErrors(nextErrors)
