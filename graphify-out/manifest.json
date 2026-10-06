@@ -252,9 +252,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791308820.8810415,
-    "seen": 1791309424.0431147,
-    "ast_hash": "43397db41e1408472f1861dd9d42e174",
+    "mtime": 1791309461.9238942,
+    "seen": 1791310393.4495003,
+    "ast_hash": "6d00cdaf179551a064682f8ed557b39d",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -348,15 +348,15 @@
     "semantic_hash": ""
   },
   "docs/seguridad/2026-08-28-cyber-neo.md": {
-    "mtime": 1791308767.9955428,
-    "seen": 1791309424.0431247,
-    "ast_hash": "820d3f73cd127ed436e10cd3c9897f5f",
+    "mtime": 1791309693.9248202,
+    "seen": 1791310393.4495122,
+    "ast_hash": "7ddc507f917fa4350474c4acb6ea0253",
     "semantic_hash": ""
   },
   "docs/sesiones/2026-10-06-fundaciones.md": {
-    "mtime": 1791308846.0868309,
-    "seen": 1791309424.0431266,
-    "ast_hash": "6ba7be7b3bde3395ce5317699c6af05f",
+    "mtime": 1791309480.7907412,
+    "seen": 1791310393.4495144,
+    "ast_hash": "a7bf0789b729cb8005868d8e0520cfaa",
     "semantic_hash": ""
   },
   "index.html": {
@@ -522,15 +522,15 @@
     "semantic_hash": ""
   },
   "src/domain/ar.ts": {
-    "mtime": 1791309137.038526,
-    "seen": 1791309424.043041,
-    "ast_hash": "6ec687d33bccb77ff9b57b10889788d5",
+    "mtime": 1791309577.341673,
+    "seen": 1791310393.4493964,
+    "ast_hash": "4e4cdf5aaec03aedcfdaa6c9f9fc6018",
     "semantic_hash": ""
   },
   "src/domain/dish.ts": {
-    "mtime": 1791309152.5092258,
-    "seen": 1791309424.043043,
-    "ast_hash": "b2ffe707437221f17ab1e615e470931c",
+    "mtime": 1791309577.3785615,
+    "seen": 1791310393.4493988,
+    "ast_hash": "2c02f93556efe35439988f11488cf9a2",
     "semantic_hash": ""
   },
   "src/domain/index.ts": {
@@ -546,33 +546,33 @@
     "semantic_hash": ""
   },
   "src/domain/restaurant.ts": {
-    "mtime": 1791309178.7237334,
-    "seen": 1791309424.043048,
-    "ast_hash": "053a54911250d5f3a76878789b6896c4",
+    "mtime": 1791309577.4447446,
+    "seen": 1791310393.449406,
+    "ast_hash": "43d1e7f6246580fbe147addbd688c7c2",
     "semantic_hash": ""
   },
   "src/domain/theme.ts": {
-    "mtime": 1791309162.462839,
-    "seen": 1791309424.0430496,
-    "ast_hash": "98bfad719ba2e0d7b10c3779dc41e0e4",
+    "mtime": 1791309577.4602344,
+    "seen": 1791310393.449408,
+    "ast_hash": "b57e36ae2436a95b1f52785a517fbca8",
     "semantic_hash": ""
   },
   "tests/unit/domain/ar.test.ts": {
-    "mtime": 1791309223.3326638,
-    "seen": 1791309424.0430791,
-    "ast_hash": "85c7ca29a2034c3a033d5b9664988ca7",
+    "mtime": 1791309577.5171683,
+    "seen": 1791310393.4494593,
+    "ast_hash": "af65ff42f47bba8f5d6d2699d8d872dd",
     "semantic_hash": ""
   },
   "tests/unit/domain/dish.test.ts": {
-    "mtime": 1791309236.7518082,
-    "seen": 1791309424.0430808,
-    "ast_hash": "d4019e91f806309116f1461273b4e9d1",
+    "mtime": 1791309577.547852,
+    "seen": 1791310393.449461,
+    "ast_hash": "7f7a02c5340b98c66170841c8ac24c28",
     "semantic_hash": ""
   },
   "tests/unit/domain/price.test.ts": {
-    "mtime": 1791309207.0872366,
-    "seen": 1791309424.0430822,
-    "ast_hash": "b2ce05f0809348b99da1a4d49abd6354",
+    "mtime": 1791309577.5661514,
+    "seen": 1791310393.4494631,
+    "ast_hash": "cccd0acf746a9414a77e2975293e73f4",
     "semantic_hash": ""
   },
   "tests/unit/domain/restaurant.test.ts": {
@@ -582,9 +582,123 @@
     "semantic_hash": ""
   },
   "tests/unit/domain/theme.test.ts": {
-    "mtime": 1791309246.1999376,
-    "seen": 1791309424.0430856,
-    "ast_hash": "98d5cc45b996e57537feee499083bdaa",
+    "mtime": 1791309577.6073823,
+    "seen": 1791310393.4494677,
+    "ast_hash": "f4af6ed7a83dd080ff3f3ec2a01685e8",
+    "semantic_hash": ""
+  },
+  "src/application/index.ts": {
+    "mtime": 1791310115.8030994,
+    "seen": 1791310393.4493334,
+    "ast_hash": "16ba18770dd818fabf3e5299eec8d045",
+    "semantic_hash": ""
+  },
+  "src/application/ports/analyticsTracker.ts": {
+    "mtime": 1791310024.6417778,
+    "seen": 1791310393.4493384,
+    "ast_hash": "b297571c0cb58603b33f3a2898f1026a",
+    "semantic_hash": ""
+  },
+  "src/application/ports/arLauncher.ts": {
+    "mtime": 1791309996.6507006,
+    "seen": 1791310393.4493413,
+    "ast_hash": "d1615b5a9457a2027d1610c72e91131c",
+    "semantic_hash": ""
+  },
+  "src/application/ports/environmentDetector.ts": {
+    "mtime": 1791310006.8901725,
+    "seen": 1791310393.4493432,
+    "ast_hash": "475e229d093f9f46dea8f8ad86ad4985",
+    "semantic_hash": ""
+  },
+  "src/application/ports/index.ts": {
+    "mtime": 1791310034.624117,
+    "seen": 1791310393.4493456,
+    "ast_hash": "686fe73588759e0971d173d8101cd275",
+    "semantic_hash": ""
+  },
+  "src/application/ports/restaurantRepository.ts": {
+    "mtime": 1791309979.103741,
+    "seen": 1791310393.4493475,
+    "ast_hash": "460a442aaa60a9a4993f1879255daaf4",
+    "semantic_hash": ""
+  },
+  "src/application/ports/soldOutStore.ts": {
+    "mtime": 1791310015.9398334,
+    "seen": 1791310393.4493494,
+    "ast_hash": "d966936dd7a8033026c9e6a1d016e665",
+    "semantic_hash": ""
+  },
+  "src/application/use-cases/buildMenuView.ts": {
+    "mtime": 1791310063.793919,
+    "seen": 1791310393.449351,
+    "ast_hash": "ec93a97c67b2fe543aac6328f309f03a",
+    "semantic_hash": ""
+  },
+  "src/application/use-cases/buildReservationLink.ts": {
+    "mtime": 1791310087.3603592,
+    "seen": 1791310393.4493532,
+    "ast_hash": "568b0431d275213e03e4b8190ef4c2b4",
+    "semantic_hash": ""
+  },
+  "src/application/use-cases/getRestaurant.ts": {
+    "mtime": 1791310049.1953263,
+    "seen": 1791310393.4493551,
+    "ast_hash": "56741f558fadaede0b5dea976e976155",
+    "semantic_hash": ""
+  },
+  "src/application/use-cases/index.ts": {
+    "mtime": 1791310108.0603392,
+    "seen": 1791310393.4493568,
+    "ast_hash": "750fc4a8102d8c44b0b51f4ddb917e78",
+    "semantic_hash": ""
+  },
+  "src/application/use-cases/launchDishAr.ts": {
+    "mtime": 1791310075.3582451,
+    "seen": 1791310393.4493582,
+    "ast_hash": "fc02012c41926ed69e8b35ad3a97e2da",
+    "semantic_hash": ""
+  },
+  "src/application/use-cases/toggleSoldOut.ts": {
+    "mtime": 1791310096.8334255,
+    "seen": 1791310393.44936,
+    "ast_hash": "8ece0c942f2424f454601f0f7e0212e9",
+    "semantic_hash": ""
+  },
+  "tests/unit/application/buildMenuView.test.ts": {
+    "mtime": 1791310162.8034966,
+    "seen": 1791310393.4494455,
+    "ast_hash": "5091ddb4d7acf45e750b3daac011926f",
+    "semantic_hash": ""
+  },
+  "tests/unit/application/buildReservationLink.test.ts": {
+    "mtime": 1791310197.9271126,
+    "seen": 1791310393.4494476,
+    "ast_hash": "3066a4e593e7a8e43f1a4394f7792217",
+    "semantic_hash": ""
+  },
+  "tests/unit/application/doubles.ts": {
+    "mtime": 1791310133.3752294,
+    "seen": 1791310393.4494495,
+    "ast_hash": "9e00e31685c7dd1a47244313f067de60",
+    "semantic_hash": ""
+  },
+  "tests/unit/application/getRestaurant.test.ts": {
+    "mtime": 1791310148.2987015,
+    "seen": 1791310393.4494512,
+    "ast_hash": "601fbd7e35fe7f6bed91a1580e79a40e",
+    "semantic_hash": ""
+  },
+  "tests/unit/application/launchDishAr.test.ts": {
+    "mtime": 1791310183.3963003,
+    "seen": 1791310393.449453,
+    "ast_hash": "dee2b8439f97a06e1c1a679a49abca1d",
+    "semantic_hash": ""
+  },
+  "tests/unit/application/toggleSoldOut.test.ts": {
+    "mtime": 1791310206.5970676,
+    "seen": 1791310393.4494545,
+    "ast_hash": "a326f406bc411b6f9fdb20f65581dec7",
     "semantic_hash": ""
   }
 }

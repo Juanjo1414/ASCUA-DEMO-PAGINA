@@ -1,7 +1,7 @@
 # Sesión 2026-10-06 — fundaciones
 
 - **Herramienta:** Antigravity
-- **Tareas:** X-000, X-001, X-002, X-005, X-004, X-003, X-009, X-010, P-101, P-102
+- **Tareas:** X-000, X-001, X-002, X-005, X-004, X-003, X-009, X-010, P-101, P-102, P-103
 
 ## Decisiones tomadas
 
@@ -14,25 +14,26 @@
 - **TypeScript y Vitest configurados (P-101):** se añadió `tsconfig.json` estricto (`strict: true`, `noUncheckedIndexedAccess: true`, `allowJs: true`, `moduleResolution: "bundler"`, alias `@/*`), Vitest con entorno `jsdom`, testing-library y pruebas unitarias iniciales para la carta (`tests/unit/carta.test.ts`).
 - **Desacople de contexto y hook de internacionalización (P-101):** se resolvió la advertencia de React Fast Refresh (`react(only-export-components)`) separando `LanguageContext.js` (contexto), `useLanguage.js` (hook) y `LanguageProvider.jsx` (componente React). Oxlint queda en 0 advertencias y 0 errores.
 - **Capa de dominio pura con Zod (P-102):** se crearon las entidades y esquemas Zod en `src/domain/` (`Price`, `ArAsset`, `DeviceCapabilities`, `Dish`, `Category`, `Theme`, `Restaurant`). Se implementó la política pura `selectArLaunchMode` que prioriza Quick Look en iOS, Scene Viewer en Android y degrada a visor 3D interactivo en navegadores dentro de aplicaciones (Instagram, WhatsApp). Se alcanzó 100 % de cobertura en la capa con cero dependencias del navegador ni de React.
+- **Puertos y casos de uso en Application (P-103):** se estructuró la capa `application/` con puertos desacoplados (`RestaurantRepository`, `ArLauncher`, `EnvironmentDetector`, `SoldOutStore`, `AnalyticsTracker`) y los casos de uso principales (`getRestaurant`, `buildMenuView`, `launchDishAr`, `buildReservationLink`, `toggleSoldOut`). Se verificó con dobles en memoria alcanzando 100 % de cobertura de líneas.
 
 ## Cambios
 
-- `src/domain/`: módulos `price.ts`, `ar.ts`, `dish.ts`, `theme.ts`, `restaurant.ts` e `index.ts`.
-- `tests/unit/domain/`: suites completas `price.test.ts`, `ar.test.ts`, `dish.test.ts`, `theme.test.ts`, `restaurant.test.ts`.
-- `package.json` y `package-lock.json`: dependencia de producción `zod`.
-- `docs/ESTADO.md`: reflejando la culminación de P-102.
-- `graphify-out/`: grafo ampliado a 440 nodos y 633 aristas.
+- `src/application/ports/`: interfaces para acceso a datos, lanzadores AR, detección ambiental, platos agotados y analítica.
+- `src/application/use-cases/`: lógica de orquestación de negocio y transformación de modelos de vista.
+- `tests/unit/application/`: dobles de prueba (`doubles.ts`) y suites unitarias completas para cada caso de uso.
+- `docs/ESTADO.md`: reflejando la culminación de P-103.
+- `graphify-out/`: grafo ampliado a 500 nodos y 867 aristas.
 
 ## Verificación
 
-- `npm run verify` → Exitoso (oxlint 0 warn/err, tsc 0 err, vitest 39/39 tests pass, vite build exitoso).
-- `npm run test:coverage` → 100 % de cobertura en todas las métricas de `src/domain/`.
+- `npm run verify` → Exitoso (oxlint 0 warn/err, tsc 0 err, vitest 57/57 tests pass, vite build exitoso).
+- `npm run test:coverage` → 100 % líneas en `domain/` y `application/use-cases/`.
 - `graphify update .` → Completado exitosamente.
 
 ## Pendiente / siguiente paso exacto
 
-- **Siguiente paso exacto:** Iniciar la tarea **P-103** — Puertos y casos de uso (`application`).
+- **Siguiente paso exacto:** Iniciar la tarea **P-104** — Adaptadores AR (QuickLookLauncher, SceneViewerLauncher, ModelViewerFallbackLauncher, BrowserEnvironmentDetector).
 
 ## Notas para el grafo
 
-- Las entidades de dominio son la raíz del modelo multi-restaurante, vinculadas a las especificaciones de seguridad y aislamiento del plan de implementación.
+- La capa `application` implementa la inversión de dependencias conectando el dominio con los puertos que la capa de infraestructura implementará en P-104 y P-105.
