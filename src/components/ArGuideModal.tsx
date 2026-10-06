@@ -2,12 +2,19 @@ import { useEffect, useState } from 'react'
 import { X, ArrowRight, Lightbulb, Grid3x3, Move } from 'lucide-react'
 import { useLanguage } from '../i18n/useLanguage'
 
+interface ArGuideModalProps {
+  isOpen: boolean
+  onClose: () => void
+  onContinue: () => void
+  isReplay?: boolean
+}
+
 export default function ArGuideModal({
   isOpen,
   onClose,
   onContinue,
   isReplay = false,
-}) {
+}: ArGuideModalProps) {
   const { t } = useLanguage()
   const [mounted, setMounted] = useState(false)
 

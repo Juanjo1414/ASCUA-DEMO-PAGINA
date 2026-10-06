@@ -12,6 +12,7 @@
 
 ## Diferencias para Antigravity
 
+- **React y TypeScript:** Todo nuevo componente o archivo React que contenga JSX debe usar la extensión `.tsx` (y utilizar TypeScript) para facilitar la transición progresiva del proyecto hacia TS. Evita crear archivos `.jsx`.
 - **Skills de Claude Code** (`/security-review`, `cyber-neo`, `engineering:*`, `design:*`): si no existen en esta herramienta, sigue la columna "Si no está instalada" de la sección 7 de `CLAUDE.md`. Nunca omitas el paso.
 - **graphify:** usa la CLI desde la terminal integrada (`graphify query "…"`, `graphify explain "…"`, `graphify path "A" "B"`) antes de buscar archivos a ciegas.
 - **Artefactos de Antigravity** (planes, walkthroughs): lo importante debe quedar también en el repo (`docs/ESTADO.md`, `docs/sesiones/`, `docs/adr/`), porque Juan alterna con Claude Code.
