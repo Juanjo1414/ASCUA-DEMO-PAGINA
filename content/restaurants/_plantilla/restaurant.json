@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "slug": "la-brasa-7k2p",
+  "estado": "activo",
+  "expira": "2026-12-15",
+  "autorizacion": {
+    "fecha": "2026-10-10",
+    "medio": "whatsapp",
+    "contacto": "Nombre del dueño"
+  },
+  "nombre": "La Brasa",
+  "idiomas": ["es", "en"],
+  "tema": {
+    "primario": "#C2410C",
+    "parTipografico": "editorial",
+    "logo": "assets/logo.svg"
+  },
+  "contacto": {
+    "whatsapp": "573001234567",
+    "direccion": "Calle 10 #43-22, Medellín",
+    "horario": ["Lun - Sáb: 12:00 - 22:00", "Dom: 12:00 - 18:00"],
+    "mapsUrl": "https://maps.google.com/?q=medellin"
+  },
+  "categorias": [
+    {
+      "id": "fuertes",
+      "nombre": {
+        "es": "Platos fuertes",
+        "en": "Mains"
+      },
+      "platos": [
+        {
+          "id": "hamburguesa-casa",
+          "nombre": {
+            "es": "Hamburguesa de la Casa",
+            "en": "House Burger"
+          },
+          "descripcion": {
+            "es": "Doble carne Angus, tocineta, queso cheddar y salsa especial.",
+            "en": "Double Angus beef, bacon, cheddar cheese and special sauce."
+          },
+          "precio": 28000,
+          "foto": "assets/platos/hamburguesa-casa/foto.webp",
+          "modelo": {
+            "glb": "assets/platos/hamburguesa-casa/modelo.glb",
+            "usdz": "assets/platos/hamburguesa-casa/modelo.usdz",
+            "poster": "assets/platos/hamburguesa-casa/poster.webp",
+            "escalaRealCm": 18,
+            "aprobado": true,
+            "aprobadoPor": "Juan",
+            "fechaAprobacion": "2026-10-12"
+          }
+        }
+      ]
+    }
+  ]
+}

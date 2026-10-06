@@ -10,10 +10,15 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-108 — Reglas de arquitectura en CI. **Estado:** completada ✅.
-Siguiente tarea: **P-201** — Esquema de contenido v1.
+P-201 — Esquema de contenido v1. **Estado:** completada ✅.
+Siguiente tarea: **P-202** — Validador de contenido.
 
 ## Último paso completado
+
+- **P-201 (Esquema de contenido v1):**
+  - Creada la carpeta `content/restaurants/_plantilla/` con el archivo `restaurant.json` base.
+  - Verificado el esquema Zod `restaurantSchema` existente en `domain/restaurant.ts`.
+  - Creado el documento `docs/runbooks/nuevo-restaurante.md` con los pasos operativos para añadir un restaurante.
 
 - **P-108 (Reglas de arquitectura en CI):**
   - Instalado `dependency-cruiser`.
@@ -41,10 +46,11 @@ Siguiente tarea: **P-201** — Esquema de contenido v1.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-201** — Esquema de contenido v1:
-   - Crear el directorio `content/restaurants/_plantilla/`.
-   - Asegurar que el esquema Zod de la capa de dominio cubre completamente el JSON especificado en 3.4.
-   - Crear la documentación `docs/runbooks/nuevo-restaurante.md`.
+1. Iniciar la tarea **P-202** — Validador de contenido:
+   - Crear `scripts/validate-content.ts`.
+   - Validar schema, slugs, aislamiento de assets y tamaños máximos (GLB, USDZ, WebP).
+   - Comprobar "aprobado: true" y "autorizacion".
+   - Añadir el script al pipeline local y remoto.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

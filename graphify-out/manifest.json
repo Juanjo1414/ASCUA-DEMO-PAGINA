@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1791312956.672958,
-    "seen": 1791313099.5278847,
-    "ast_hash": "c8b90312db10d0f4357de8cdacb1c30e",
+    "mtime": 1791313881.8350124,
+    "seen": 1791313971.1424372,
+    "ast_hash": "f3151c4870edf815ce828dac4378bfa0",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -246,9 +246,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791312996.1864076,
-    "seen": 1791313099.5280657,
-    "ast_hash": "d5f5bdd5c392e3a5b7ec321a0ee2cd5f",
+    "mtime": 1791313948.6428795,
+    "seen": 1791313971.142543,
+    "ast_hash": "889e1ae233e1b5f8c128cb440d29895e",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -540,8 +540,8 @@
     "semantic_hash": ""
   },
   "src/domain/restaurant.ts": {
-    "mtime": 1791309577.4447446,
-    "seen": 1791310393.449406,
+    "mtime": 1791313914.1682029,
+    "seen": 1791313971.1424856,
     "ast_hash": "43d1e7f6246580fbe147addbd688c7c2",
     "semantic_hash": ""
   },
@@ -795,6 +795,18 @@
     "mtime": 1791313094.36031,
     "seen": 1791313099.5280828,
     "ast_hash": "d2f1b814fb80db860229b57df208737f",
+    "semantic_hash": ""
+  },
+  ".dependency-cruiser.cjs": {
+    "mtime": 1791313904.7602372,
+    "seen": 1791313971.1424189,
+    "ast_hash": "b623a42445d7fa39bed41bedf7359af3",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P108-Arch-Check.md": {
+    "mtime": 1791313966.112991,
+    "seen": 1791313971.142555,
+    "ast_hash": "c2ca0bd24bdede1023b9c5f6c04e58d3",
     "semantic_hash": ""
   }
 }
