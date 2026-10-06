@@ -16,12 +16,14 @@ import Contacto from './components/Contacto'
 import Pie from './components/Pie'
 import LoadingScreen from './components/LoadingScreen'
 import { LanguageProvider } from './i18n/LanguageProvider'
+import DemoPanel from './components/DemoPanel'
 
 export default function App() {
   const { slug } = useParams()
   const { isLoading, error } = useRestaurant(slug)
   const restaurant = useAtomValue(restaurantAtom)
   const isReady = !isLoading && !error
+  const isDemo = new URLSearchParams(window.location.search).get('demo') === '1'
 
   useEffect(() => {
     if (restaurant) {
@@ -58,6 +60,7 @@ export default function App() {
             <Pie />
           </div>
           <FranjaReserva />
+          {isDemo && <DemoPanel />}
         </>
       )}
     </LanguageProvider>

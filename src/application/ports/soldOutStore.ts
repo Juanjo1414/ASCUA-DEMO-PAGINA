@@ -13,23 +13,26 @@ export interface SoldOutStore {
   /**
    * Consulta si un plato específico está marcado como agotado.
    *
+   * @param slug - Identificador del restaurante.
    * @param dishId - Identificador del plato (ej: 'asado-tira').
    */
-  isSoldOut(dishId: string): boolean
+  isSoldOut(slug: string, dishId: string): boolean
 
   /**
    * Actualiza el estado de disponibilidad de un plato.
    *
+   * @param slug - Identificador del restaurante.
    * @param dishId - Identificador del plato.
    * @param soldOut - true si se agotó, false si está disponible.
    */
-  setSoldOut(dishId: string, soldOut: boolean): void
+  setSoldOut(slug: string, dishId: string, soldOut: boolean): void
 
   /**
    * Alterna el estado de disponibilidad del plato y retorna el nuevo estado.
    *
+   * @param slug - Identificador del restaurante.
    * @param dishId - Identificador del plato.
    * @returns El nuevo estado (true si quedó agotado, false si disponible).
    */
-  toggleSoldOut(dishId: string): boolean
+  toggleSoldOut(slug: string, dishId: string): boolean
 }

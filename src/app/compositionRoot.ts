@@ -3,12 +3,15 @@ import { QuickLookLauncher } from '@/infrastructure/ar/QuickLookLauncher'
 import { SceneViewerLauncher } from '@/infrastructure/ar/SceneViewerLauncher'
 import { ModelViewerFallbackLauncher } from '@/infrastructure/ar/ModelViewerFallbackLauncher'
 import { BrowserEnvironmentDetector } from '@/infrastructure/browser/BrowserEnvironmentDetector'
+import { LocalStorageSoldOutStore } from '@/infrastructure/storage/LocalStorageSoldOutStore'
 import type { ArLauncher } from '@/application/ports/arLauncher'
+import type { SoldOutStore } from '@/application/ports/soldOutStore'
 
 export interface AppDependencies {
   restaurantRepository: StaticJsonRestaurantRepository
   environmentDetector: BrowserEnvironmentDetector
   arLaunchers: ArLauncher[]
+  soldOutStore: SoldOutStore
 }
 
 const environmentDetector = new BrowserEnvironmentDetector()
@@ -26,4 +29,5 @@ export const compositionRoot: AppDependencies = {
     new SceneViewerLauncher(),
     new ModelViewerFallbackLauncher(),
   ],
+  soldOutStore: new LocalStorageSoldOutStore(),
 }

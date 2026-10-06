@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Box, Scan } from 'lucide-react'
 import { gsap } from '../lib/gsap'
 import { useLanguage } from '../i18n/useLanguage'
-import { getAssetForDishIndex } from '../lib/arAssets'
-import { FOTOS, TEMPERATURAS } from '../lib/carta'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '../app/store'
+import { useDependencies } from '../app/DependenciesContext'
 import ArDishModal from './ArDishModal'
 import { launchAr } from '../lib/launchAr'
 
@@ -24,32 +25,47 @@ import { launchAr } from '../lib/launchAr'
   redondo que había que adivinar.
 */
 export default function Menu() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const raiz = useRef(null)
   const [activo, setActivo] = useState(null)
+  const restaurant = useAtomValue(restaurantAtom)
+  const { soldOutStore } = useDependencies()
+  const [soldOutDict, setSoldOutDict] = useState({})
 
-  // El toque en el botón de RA es el gesto de usuario que Quick Look y Scene
-  // Viewer exigen, así que la RA se lanza acá mismo. Si el aparato no tiene
-  // ninguna de las dos vías (un escritorio, por ejemplo) se cae al modal 3D,
-  // que ya explica por qué no hay RA.
+  // Listener para cuando DemoPanel cambie el estado de un plato
+  useEffect(() => {
+    if (!restaurant) return
+    const updateDict = () => {
+      const dict = {}
+      restaurant.categorias.forEach((cat) => {
+        cat.platos.forEach((p) => {
+          dict[p.id] = soldOutStore.isSoldOut(restaurant.slug, p.id)
+        })
+      })
+      setSoldOutDict(dict)
+    }
+    updateDict()
+    window.addEventListener('ascua:soldout-changed', updateDict)
+    return () => window.removeEventListener('ascua:soldout-changed', updateDict)
+  }, [restaurant, soldOutStore])
+
   const abrirAr = (plato) => {
+    if (!plato.modelo) return
     const abierto = launchAr({
-      glbUrl: plato.asset.glbUrl,
-      usdzUrl: plato.asset.usdzUrl,
-      posterUrl: plato.asset.posterUrl,
-      title: plato.name,
+      glbUrl: plato.modelo.glb,
+      usdzUrl: plato.modelo.usdz,
+      posterUrl: plato.modelo.poster,
+      title: plato.nombre[lang] || plato.nombre.es,
     })
     if (!abierto) setActivo({ dish: plato, mode: 'ar' })
   }
 
-  const platos = t.menuSection.dishes.map((plato, i) => ({
-    ...plato,
-    image: FOTOS[i],
-    temp: TEMPERATURAS[i],
-    asset: getAssetForDishIndex(i),
-  }))
-  const destacados = platos.filter((p) => p.asset)
-  const resto = platos.filter((p) => !p.asset)
+  // Aplanar platos de todas las categorías
+  const platos = restaurant
+    ? restaurant.categorias.flatMap((cat) => cat.platos)
+    : []
+  const destacados = platos.filter((p) => p.modelo && p.modelo.aprobado)
+  const resto = platos.filter((p) => !p.modelo || !p.modelo.aprobado)
 
   useEffect(() => {
     const el = raiz.current
@@ -145,6 +161,8 @@ export default function Menu() {
     return () => ctx.revert()
   }, [])
 
+  if (!restaurant) return null
+
   return (
     <section
       id="menu"
@@ -176,130 +194,142 @@ export default function Menu() {
             </div>
 
             <ul className="mt-14 grid gap-20 md:grid-cols-2 md:gap-12">
-              {destacados.map((plato) => (
-                <li
-                  key={plato.name}
-                  data-sube
-                  className="plato-ar flex flex-col items-center text-center md:items-start md:text-left"
-                >
-                  <div data-ar className="relative w-[min(84vw,440px)]">
-                    {/* La retícula de la realidad aumentada: el aro de dónde se
-                        va a apoyar el plato y las cuatro esquinas del visor. */}
-                    <svg
-                      data-reticula
-                      aria-hidden="true"
-                      viewBox="0 0 100 100"
-                      className="pointer-events-none absolute inset-[-9%] h-[118%] w-[118%] text-llama"
-                    >
-                      <circle
-                        data-aro
-                        cx="50"
-                        cy="50"
-                        r="45"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="0.35"
-                        strokeDasharray="1.2 1.6"
-                      />
-                      <g
-                        data-esquinas
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="0.6"
-                        strokeLinecap="square"
+              {destacados.map((plato) => {
+                const isSoldOut = soldOutDict[plato.id]
+                return (
+                  <li
+                    key={plato.id}
+                    data-sube
+                    className={`plato-ar flex flex-col items-center text-center md:items-start md:text-left ${isSoldOut ? 'opacity-60 grayscale' : ''}`}
+                  >
+                    <div data-ar className="relative w-[min(84vw,440px)]">
+                      <svg
+                        data-reticula
+                        aria-hidden="true"
+                        viewBox="0 0 100 100"
+                        className="pointer-events-none absolute inset-[-9%] h-[118%] w-[118%] text-llama"
                       >
-                        <path d="M4 14V4h10" />
-                        <path d="M86 4h10v10" />
-                        <path d="M96 86v10H86" />
-                        <path d="M14 96H4V86" />
-                      </g>
-                    </svg>
-                    <img
-                      data-giro
-                      data-plato-ar
-                      src={plato.image}
-                      alt={plato.name}
-                      loading="lazy"
-                      className="relative aspect-square w-full rounded-full object-cover will-change-transform"
-                      style={{
-                        boxShadow: '0 40px 70px -30px rgb(0 0 0 / 0.9)',
-                      }}
-                    />
-                    <p className="rotulo absolute right-[4%] top-[6%] bg-tinta px-3 py-2 text-llama">
-                      {plato.temp} °C
-                    </p>
-                  </div>
-
-                  <h4 className="mt-10 font-display text-[clamp(1.9rem,3.2vw,2.8rem)] font-medium leading-tight">
-                    {plato.name}
-                  </h4>
-                  <p className="mt-3 max-w-[40ch] leading-relaxed text-crema/80">
-                    {plato.description}
-                  </p>
-
-                  <div className="mt-8 flex w-full flex-col items-center gap-5 sm:w-auto sm:flex-row">
-                    <button
-                      type="button"
-                      data-boton-ar
-                      onClick={() => abrirAr(plato)}
-                      aria-label={`${t.ar.viewOnTable}: ${plato.name}`}
-                      className="boton w-full sm:w-auto"
-                    >
-                      <Scan size={18} strokeWidth={2} />
-                      {t.ar.viewOnTable}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setActivo({ dish: plato, mode: '3d' })}
-                      className="rotulo group/v relative inline-flex items-center gap-2 py-2 transition-colors hover:text-llama"
-                    >
-                      <Box size={15} strokeWidth={1.9} />
-                      {t.ar.view3d}
-                      <ArrowRight
-                        size={14}
-                        strokeWidth={2}
-                        className="transition-transform group-hover/v:translate-x-1"
+                        <circle
+                          data-aro
+                          cx="50"
+                          cy="50"
+                          r="45"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="0.35"
+                          strokeDasharray="1.2 1.6"
+                        />
+                        <g
+                          data-esquinas
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="0.6"
+                          strokeLinecap="square"
+                        >
+                          <path d="M4 14V4h10" />
+                          <path d="M86 4h10v10" />
+                          <path d="M96 86v10H86" />
+                          <path d="M14 96H4V86" />
+                        </g>
+                      </svg>
+                      <img
+                        data-giro
+                        data-plato-ar
+                        src={plato.foto}
+                        alt={plato.nombre[lang] || plato.nombre.es}
+                        loading="lazy"
+                        className="relative aspect-square w-full rounded-full object-cover will-change-transform"
+                        style={{
+                          boxShadow: '0 40px 70px -30px rgb(0 0 0 / 0.9)',
+                        }}
                       />
-                    </button>
-                  </div>
-                </li>
-              ))}
+                      <p className="rotulo absolute right-[4%] top-[6%] bg-tinta px-3 py-2 text-llama">
+                        {isSoldOut ? 'Agotado' : 'Disponible'}
+                      </p>
+                    </div>
+
+                    <h4 className="mt-10 font-display text-[clamp(1.9rem,3.2vw,2.8rem)] font-medium leading-tight">
+                      {plato.nombre[lang] || plato.nombre.es}
+                    </h4>
+                    <p className="mt-3 max-w-[40ch] leading-relaxed text-crema/80">
+                      {plato.descripcion[lang] || plato.descripcion.es}
+                    </p>
+
+                    <div className="mt-8 flex w-full flex-col items-center gap-5 sm:w-auto sm:flex-row">
+                      <button
+                        type="button"
+                        data-boton-ar
+                        disabled={isSoldOut}
+                        onClick={() => !isSoldOut && abrirAr(plato)}
+                        aria-label={`${t.ar.viewOnTable}: ${plato.nombre[lang] || plato.nombre.es}`}
+                        className="boton w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <Scan size={18} strokeWidth={2} />
+                        {t.ar.viewOnTable}
+                      </button>
+                      <button
+                        type="button"
+                        disabled={isSoldOut}
+                        onClick={() =>
+                          !isSoldOut && setActivo({ dish: plato, mode: '3d' })
+                        }
+                        className="rotulo group/v relative inline-flex items-center gap-2 py-2 transition-colors hover:text-llama disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <Box size={15} strokeWidth={1.9} />
+                        {t.ar.view3d}
+                        <ArrowRight
+                          size={14}
+                          strokeWidth={2}
+                          className="transition-transform group-hover/v:translate-x-1"
+                        />
+                      </button>
+                    </div>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         )}
 
         {/* El resto de la carta. */}
         <ul className="mt-24 grid grid-cols-2 gap-x-6 gap-y-14 border-t border-crema/15 pt-14 md:mt-32 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-20">
-          {resto.map((plato) => (
-            <li key={plato.name} data-sube className="group">
-              <div className="relative">
-                <img
-                  data-giro
-                  src={plato.image}
-                  alt={plato.name}
-                  loading="lazy"
-                  className="aspect-square w-full rounded-full object-cover will-change-transform"
-                  style={{ boxShadow: '0 30px 50px -28px rgb(0 0 0 / 0.9)' }}
-                />
-                <p className="rotulo absolute right-0 top-[4%] bg-tinta px-2.5 py-1.5 text-llama">
-                  {plato.temp} °C
+          {resto.map((plato) => {
+            const isSoldOut = soldOutDict[plato.id]
+            return (
+              <li
+                key={plato.id}
+                data-sube
+                className={`group ${isSoldOut ? 'opacity-60 grayscale' : ''}`}
+              >
+                <div className="relative">
+                  <img
+                    data-giro
+                    src={plato.foto}
+                    alt={plato.nombre[lang] || plato.nombre.es}
+                    loading="lazy"
+                    className="aspect-square w-full rounded-full object-cover will-change-transform"
+                    style={{ boxShadow: '0 30px 50px -28px rgb(0 0 0 / 0.9)' }}
+                  />
+                  <p className="rotulo absolute right-0 top-[4%] bg-tinta px-2.5 py-1.5 text-llama">
+                    {isSoldOut ? 'Agotado' : 'Disponible'}
+                  </p>
+                </div>
+                <h3 className="mt-6 font-display text-xl font-medium leading-snug md:text-2xl">
+                  {plato.nombre[lang] || plato.nombre.es}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-crema/75">
+                  {plato.descripcion[lang] || plato.descripcion.es}
                 </p>
-              </div>
-              <h3 className="mt-6 font-display text-xl font-medium leading-snug md:text-2xl">
-                {plato.name}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-crema/75">
-                {plato.description}
-              </p>
-            </li>
-          ))}
+              </li>
+            )
+          })}
         </ul>
       </div>
 
       {activo && (
         <ArDishModal
           dish={activo.dish}
-          asset={activo.dish.asset}
+          asset={activo.dish.modelo}
           mode={activo.mode}
           onClose={() => setActivo(null)}
         />

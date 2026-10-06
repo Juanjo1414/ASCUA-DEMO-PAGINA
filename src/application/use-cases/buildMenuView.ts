@@ -81,7 +81,7 @@ export function buildMenuView(
           : undefined
 
         const isSoldOut = soldOutStore
-          ? soldOutStore.isSoldOut(plato.id)
+          ? soldOutStore.isSoldOut(restaurant.slug, plato.id)
           : plato.agotado
 
         const arLaunchMode = selectArLaunchMode(device, plato.modelo)

@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { AlertCircle, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { AlertCircle, ArrowRight } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
 import { useLanguage } from '../i18n/useLanguage'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '../app/store'
+import { buildReservationLink } from '../application/use-cases/buildReservationLink'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -13,11 +16,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   hay un error. La lógica del envío es la de siempre: valida y simula la respuesta.
 */
 export default function Contacto() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
+  const restaurant = useAtomValue(restaurantAtom)
   const scope = useReveal({ y: 20 })
   const [values, setValues] = useState({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
   const primerCampo = useRef(null)
 
   // El botón de la reserva no manda a un formulario en blanco: deja escrito el
@@ -53,14 +56,19 @@ export default function Contacto() {
     const nextErrors = validate(values)
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) {
-      setStatus('error')
       return
     }
-    setStatus('sending')
-    window.setTimeout(() => {
-      setStatus('success')
+
+    if (restaurant) {
+      const comentarios = `Nombre: ${values.name}\nEmail: ${values.email}\n${values.message}`
+      const link = buildReservationLink({
+        restaurant,
+        comentarios,
+        lang,
+      })
+      window.open(link, '_blank', 'noopener,noreferrer')
       setValues({ name: '', email: '', message: '' })
-    }, 900)
+    }
   }
 
   const campo = (field) =>
@@ -159,27 +167,13 @@ export default function Contacto() {
           </div>
 
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="boton w-full sm:w-auto"
-            >
-              {status === 'sending' ? t.contact.sending : t.contact.send}
-              {status !== 'sending' && <ArrowRight size={16} strokeWidth={2} />}
+            <button type="submit" className="boton w-full sm:w-auto">
+              {t.contact.send}
+              <ArrowRight size={16} strokeWidth={2} />
             </button>
 
             <div aria-live="polite" className="text-sm">
-              {status === 'success' && (
-                <p className="flex items-center gap-2 text-acento">
-                  <CheckCircle2
-                    size={16}
-                    strokeWidth={2}
-                    className="shrink-0"
-                  />
-                  {t.contact.success}
-                </p>
-              )}
-              {status === 'error' && (
+              {Object.keys(errors).length > 0 && (
                 <p className="flex items-center gap-2 text-acento">
                   <AlertCircle size={16} strokeWidth={2} className="shrink-0" />
                   {t.contact.error}
