@@ -43,3 +43,8 @@ service-account*.json
 
 # Capturas de revisión de diseño (pesadas, sólo locales)
 .impeccable/review/
+
+# graphify cache y archivos temporales de ejecución
+graphify-out/cache/
+graphify-out/.graphify_*
+graphify-out/graph.html

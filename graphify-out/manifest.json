@@ -1,0 +1,314 @@
+{
+  ".impeccable/design.json": {
+    "mtime": 1791169516.9281723,
+    "seen": 1791304933.7975795,
+    "ast_hash": "3b68978d31fcda11310fa7ce7f8394f7",
+    "semantic_hash": "3b68978d31fcda11310fa7ce7f8394f7"
+  },
+  ".oxlintrc.json": {
+    "mtime": 1791169516.9281723,
+    "seen": 1791304933.7975984,
+    "ast_hash": "2d750bd852cf8fe072f64a62ab29084b",
+    "semantic_hash": "2d750bd852cf8fe072f64a62ab29084b"
+  },
+  "package.json": {
+    "mtime": 1791169517.0236614,
+    "seen": 1791304933.7976065,
+    "ast_hash": "263a9eece43419a02e1142167f2353b0",
+    "semantic_hash": "263a9eece43419a02e1142167f2353b0"
+  },
+  "postcss.config.js": {
+    "mtime": 1791169517.0236614,
+    "seen": 1791304933.7976112,
+    "ast_hash": "5b84f4567208c7c747079c0477373231",
+    "semantic_hash": "5b84f4567208c7c747079c0477373231"
+  },
+  "scripts/carta.mjs": {
+    "mtime": 1791169517.0409694,
+    "seen": 1791304933.7976155,
+    "ast_hash": "40c2ba7b92435c1f501ae60be53f7e79",
+    "semantic_hash": "40c2ba7b92435c1f501ae60be53f7e79"
+  },
+  "scripts/fuentes.mjs": {
+    "mtime": 1791169517.0409694,
+    "seen": 1791304933.797619,
+    "ast_hash": "3bbacedf82c5b441129c30701be1f3bb",
+    "semantic_hash": "3bbacedf82c5b441129c30701be1f3bb"
+  },
+  "src/App.jsx": {
+    "mtime": 1791169517.0409694,
+    "seen": 1791304933.7976234,
+    "ast_hash": "4b44e5fda26aa90aa89ab73960345238",
+    "semantic_hash": "4b44e5fda26aa90aa89ab73960345238"
+  },
+  "src/components/ArDishModal.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976263,
+    "ast_hash": "2377ea0aaaa73d02a7288b1f68cadf44",
+    "semantic_hash": "2377ea0aaaa73d02a7288b1f68cadf44"
+  },
+  "src/components/ArViewer.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976294,
+    "ast_hash": "c4e10127911e8026e7c2f9ac3ade26f7",
+    "semantic_hash": "c4e10127911e8026e7c2f9ac3ade26f7"
+  },
+  "src/components/Contacto.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976327,
+    "ast_hash": "00e06747a99be6e1d852f6a8a0e7bb6c",
+    "semantic_hash": "00e06747a99be6e1d852f6a8a0e7bb6c"
+  },
+  "src/components/Escena.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976358,
+    "ast_hash": "4ce922add4f6dd3a719d75b1f93b8782",
+    "semantic_hash": "4ce922add4f6dd3a719d75b1f93b8782"
+  },
+  "src/components/FranjaReserva.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976396,
+    "ast_hash": "64259786fa6d9ee7ae36907f2f5b72cd",
+    "semantic_hash": "64259786fa6d9ee7ae36907f2f5b72cd"
+  },
+  "src/components/HeroFuego.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976427,
+    "ast_hash": "b9b175e4a77c6600dd7e138d8e989c40",
+    "semantic_hash": "b9b175e4a77c6600dd7e138d8e989c40"
+  },
+  "src/components/LoQueArde.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976458,
+    "ast_hash": "6fdfb0029f5438aef87283fa23cc5e7c",
+    "semantic_hash": "6fdfb0029f5438aef87283fa23cc5e7c"
+  },
+  "src/components/LoadingScreen.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.797649,
+    "ast_hash": "f9753bda2af9f1b2ec4148616bb5ced5",
+    "semantic_hash": "f9753bda2af9f1b2ec4148616bb5ced5"
+  },
+  "src/components/Manifiesto.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976525,
+    "ast_hash": "f296d898427fdaa4ee8fe0ae4050e1a3",
+    "semantic_hash": "f296d898427fdaa4ee8fe0ae4050e1a3"
+  },
+  "src/components/Menu.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976553,
+    "ast_hash": "e768cd5215d28bc8fc958a668af1e9e2",
+    "semantic_hash": "e768cd5215d28bc8fc958a668af1e9e2"
+  },
+  "src/components/Nav.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976582,
+    "ast_hash": "5fc1c6a5a9d29b2dd24e74aeb3a68ed7",
+    "semantic_hash": "5fc1c6a5a9d29b2dd24e74aeb3a68ed7"
+  },
+  "src/components/Pie.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.797661,
+    "ast_hash": "35ee8fa9da545c16e90573e6c55f6dbc",
+    "semantic_hash": "35ee8fa9da545c16e90573e6c55f6dbc"
+  },
+  "src/components/Reserva.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976644,
+    "ast_hash": "69209fe2397c7f1d71b097edd73131ad",
+    "semantic_hash": "69209fe2397c7f1d71b097edd73131ad"
+  },
+  "src/components/Voces.jsx": {
+    "mtime": 1791169517.0452447,
+    "seen": 1791304933.7976677,
+    "ast_hash": "ec51d12c8e215d9df9a5dcbdd85cbd37",
+    "semantic_hash": "ec51d12c8e215d9df9a5dcbdd85cbd37"
+  },
+  "src/hooks/useReveal.js": {
+    "mtime": 1791169517.0521605,
+    "seen": 1791304933.7976706,
+    "ast_hash": "6423faca0d5a65e58a41fb0678e41e3a",
+    "semantic_hash": "6423faca0d5a65e58a41fb0678e41e3a"
+  },
+  "src/i18n/LanguageContext.jsx": {
+    "mtime": 1791169517.0521605,
+    "seen": 1791304933.7976758,
+    "ast_hash": "5d3136626915437194de5996b6e0f23f",
+    "semantic_hash": "5d3136626915437194de5996b6e0f23f"
+  },
+  "src/i18n/translations.js": {
+    "mtime": 1791169517.0521605,
+    "seen": 1791304933.797679,
+    "ast_hash": "eaf530d2c8e4dde10392e73b3e53d48a",
+    "semantic_hash": "eaf530d2c8e4dde10392e73b3e53d48a"
+  },
+  "src/lib/arAssets.js": {
+    "mtime": 1791169517.0554407,
+    "seen": 1791304933.7976816,
+    "ast_hash": "a8b76a926f3c8e1ae161183193c7eb6d",
+    "semantic_hash": "a8b76a926f3c8e1ae161183193c7eb6d"
+  },
+  "src/lib/brasa.js": {
+    "mtime": 1791169517.0554407,
+    "seen": 1791304933.7976851,
+    "ast_hash": "ddc50ca599d1a49b888a043bb2a81ff1",
+    "semantic_hash": "ddc50ca599d1a49b888a043bb2a81ff1"
+  },
+  "src/lib/browserEnv.js": {
+    "mtime": 1791169517.0554407,
+    "seen": 1791304933.7976885,
+    "ast_hash": "f8f141388590182707340060835ff347",
+    "semantic_hash": "f8f141388590182707340060835ff347"
+  },
+  "src/lib/calor.js": {
+    "mtime": 1791169517.0554407,
+    "seen": 1791304933.7976916,
+    "ast_hash": "91388ff62bf0759c02acb1074ebd3eb3",
+    "semantic_hash": "91388ff62bf0759c02acb1074ebd3eb3"
+  },
+  "src/lib/carta.js": {
+    "mtime": 1791169517.0574603,
+    "seen": 1791304933.7976947,
+    "ast_hash": "a677deebb1a4f2f09777c027163e8e83",
+    "semantic_hash": "a677deebb1a4f2f09777c027163e8e83"
+  },
+  "src/lib/gsap.js": {
+    "mtime": 1791169517.0574603,
+    "seen": 1791304933.7976978,
+    "ast_hash": "75a15cecedf0192f146d9c8202f97450",
+    "semantic_hash": "75a15cecedf0192f146d9c8202f97450"
+  },
+  "src/lib/launchAr.js": {
+    "mtime": 1791169517.0574603,
+    "seen": 1791304933.797701,
+    "ast_hash": "f6fb5c654a2ac34bd4fce2e59fcdaaf9",
+    "semantic_hash": "f6fb5c654a2ac34bd4fce2e59fcdaaf9"
+  },
+  "src/main.jsx": {
+    "mtime": 1791169517.0574603,
+    "seen": 1791304933.7977037,
+    "ast_hash": "4c798e4e20182c81fe7f1ab57e636fff",
+    "semantic_hash": "4c798e4e20182c81fe7f1ab57e636fff"
+  },
+  "tailwind.config.js": {
+    "mtime": 1791169517.0594811,
+    "seen": 1791304933.7977068,
+    "ast_hash": "5bc4b243780c701448daebb6d8233626",
+    "semantic_hash": "5bc4b243780c701448daebb6d8233626"
+  },
+  "vercel.json": {
+    "mtime": 1791169517.0594811,
+    "seen": 1791304933.7977102,
+    "ast_hash": "9b1a3affc6b8ea411e9c586d0571125b",
+    "semantic_hash": "9b1a3affc6b8ea411e9c586d0571125b"
+  },
+  "vite.config.js": {
+    "mtime": 1791169517.0594811,
+    "seen": 1791304933.7977138,
+    "ast_hash": "199e1221ae03d6974fdc8b5e23787b98",
+    "semantic_hash": "199e1221ae03d6974fdc8b5e23787b98"
+  },
+  "ANIMACION RESTAURANTE.mp4": {
+    "mtime": 1791169516.9439163,
+    "seen": 1791304933.7977164,
+    "ast_hash": "ae3c2c9a0a17c14677e86f28c95bdec5",
+    "semantic_hash": "ae3c2c9a0a17c14677e86f28c95bdec5"
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1791305162.48869,
+    "seen": 1791305862.1017036,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": "a0e4d192b9e2e17256124dbfc8e24e6a"
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1791305162.5029745,
+    "seen": 1791305862.1017065,
+    "ast_hash": "a831cf3669f1e6ab85d8a80ebe655f99",
+    "semantic_hash": "a831cf3669f1e6ab85d8a80ebe655f99"
+  },
+  ".github/dependabot.yml": {
+    "mtime": 1791231690.689115,
+    "seen": 1791305862.1017077,
+    "ast_hash": "26e5464aec6779ca79f3e3c0bf0a7a68",
+    "semantic_hash": "26e5464aec6779ca79f3e3c0bf0a7a68"
+  },
+  ".github/pull_request_template.md": {
+    "mtime": 1791231690.6800017,
+    "seen": 1791305862.1017094,
+    "ast_hash": "59a58b9f3def8ccc38abd571cbcaf099",
+    "semantic_hash": "59a58b9f3def8ccc38abd571cbcaf099"
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1791231690.7210972,
+    "seen": 1791305862.1017108,
+    "ast_hash": "29d824877c9097dec24e64f90e0ad59e",
+    "semantic_hash": "29d824877c9097dec24e64f90e0ad59e"
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1791231690.7497768,
+    "seen": 1791305862.1017122,
+    "ast_hash": "b4570a6bb5deeaca065a231e2953f184",
+    "semantic_hash": "b4570a6bb5deeaca065a231e2953f184"
+  },
+  "AGENTS.md": {
+    "mtime": 1791231690.6414425,
+    "seen": 1791305862.1017134,
+    "ast_hash": "3526bcee5fc50fba9394289f9f8b8c12",
+    "semantic_hash": "3526bcee5fc50fba9394289f9f8b8c12"
+  },
+  "CLAUDE.md": {
+    "mtime": 1791231690.6135666,
+    "seen": 1791305862.1017165,
+    "ast_hash": "27c59e9254b4ccb16792806cb5e09f7c",
+    "semantic_hash": "27c59e9254b4ccb16792806cb5e09f7c"
+  },
+  "PRODUCT.md": {
+    "mtime": 1791169516.984203,
+    "seen": 1791305862.1017177,
+    "ast_hash": "2f350d3b2c1ca4ac121cca8fa17e9ef0",
+    "semantic_hash": "2f350d3b2c1ca4ac121cca8fa17e9ef0"
+  },
+  "PROYECTO.md": {
+    "mtime": 1791169516.9859996,
+    "seen": 1791305862.1017191,
+    "ast_hash": "13f3167cf1391c273c84267f7baa2dee",
+    "semantic_hash": "13f3167cf1391c273c84267f7baa2dee"
+  },
+  "cyber-neo-report-cocina-de-autor-2026-08-28.md": {
+    "mtime": 1791169516.9859996,
+    "seen": 1791305862.1017203,
+    "ast_hash": "f58a52c18eb3568f93f57e043186372c",
+    "semantic_hash": "f58a52c18eb3568f93f57e043186372c"
+  },
+  "docs/DESIGN.md": {
+    "mtime": 1791304141.412348,
+    "seen": 1791305862.1017213,
+    "ast_hash": "288dba9d0b501af6dbb8bd4a16378e0e",
+    "semantic_hash": "288dba9d0b501af6dbb8bd4a16378e0e"
+  },
+  "docs/ESTADO.md": {
+    "mtime": 1791231690.786741,
+    "seen": 1791305862.1017227,
+    "ast_hash": "7b1e8c7565c453fa25bb4321eb6ac055",
+    "semantic_hash": "7b1e8c7565c453fa25bb4321eb6ac055"
+  },
+  "docs/PLAN-IMPLEMENTACION.md": {
+    "mtime": 1791231690.8007922,
+    "seen": 1791305862.1017234,
+    "ast_hash": "ce34c65f28d557fa3dfae67bd0efa912",
+    "semantic_hash": "ce34c65f28d557fa3dfae67bd0efa912"
+  },
+  "docs/adr/0001-demo-estatica-multi-restaurante.md": {
+    "mtime": 1791231690.8326218,
+    "seen": 1791305862.1017246,
+    "ast_hash": "a62dcd304eb2f491550eb488d9d9b7c6",
+    "semantic_hash": "a62dcd304eb2f491550eb488d9d9b7c6"
+  },
+  "fuentes/PROCEDENCIA.md": {
+    "mtime": 1791169516.9859996,
+    "seen": 1791305862.1017263,
+    "ast_hash": "e69e953368b859b3d0a1c4788e635f3e",
+    "semantic_hash": "e69e953368b859b3d0a1c4788e635f3e"
+  }
+}
