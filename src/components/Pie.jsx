@@ -1,5 +1,5 @@
 import { ArrowUp } from 'lucide-react'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 /*
   El pie cierra con el nombre a todo lo ancho, cortado por el borde de abajo
@@ -19,7 +19,9 @@ export default function Pie() {
       <div className="mx-auto max-w-content px-5 sm:px-6 lg:px-10">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="max-w-[28ch] font-display text-2xl italic">{t.footer.tagline}</p>
+            <p className="max-w-[28ch] font-display text-2xl italic">
+              {t.footer.tagline}
+            </p>
           </div>
           <div className="text-ceniza md:col-span-4">
             <p className="text-loza">Calle 10 #45-20, local 3, Medellín</p>
@@ -34,7 +36,10 @@ export default function Pie() {
             >
               Instagram
             </a>
-            <a href="#top" className="rotulo inline-flex items-center gap-2 transition-colors hover:text-acento">
+            <a
+              href="#top"
+              className="rotulo inline-flex items-center gap-2 transition-colors hover:text-acento"
+            >
               {t.backToTop}
               <ArrowUp size={14} strokeWidth={2} />
             </a>

@@ -5,45 +5,56 @@
 **Última actualización:** 2026-10-06 · **Por:** Antigravity · **Rama:** `dev/Juanjo`
 
 ## Fase actual
-Fase 0 — Fundaciones (completada) → Fase P-1 — Re-arquitectura de PAGINA (iniciando).
+
+Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
-P-101 — TypeScript + herramientas de prueba (tsconfig estricto, Vitest, scripts typecheck/test/verify, corrección de warning de oxlint). **Estado:** lista para iniciar.
+
+P-101 — TypeScript + herramientas de prueba. **Estado:** completada ✅.
+Siguiente tarea: **P-102** — Zod y esquemas del borde.
 
 ## Último paso completado
-- **X-000 / X-001 / X-002:** Rama `dev/Juanjo` creada y subida a GitHub; reglas de gobierno (`CLAUDE.md`, `AGENTS.md`), plan de implementación, ADR-0001, `docs/DESIGN.md` y workflows de CI/CD.
-- **X-005:** Node 22 fijado en `.nvmrc` y `engines` en `package.json`.
-- **X-004:** Hooks locales con Husky (`pre-commit` con lint-staged y `pre-push` con `npm run verify` provisional).
-- **X-003:** graphify instalado y grafo construido con 183 nodos y 338 aristas (código + `docs/`), integración en `.agents/`, `.gitignore` y hooks post-commit/post-checkout.
-- **X-009:** Cortada la dependencia del Supabase de terceros en `src/lib/arAssets.js`, `.env.example` y `vercel.json` (0 ocurrencias de `vnztoczhwrqjrgatiutz`).
-- **X-010:** Limpieza del repo: renombrado a `ascua-demo`, retirada de `vercel.json`, `PRODUCT.md` y `PROYECTO.md` (marcado como histórico) trasladados a `docs/`, reporte de seguridad a `docs/seguridad/` y assets fuente a `content/raw/`.
+
+- **P-101 (TypeScript + Vitest + Pipeline de calidad):**
+  - `tsconfig.json` estricto configurado (`strict: true`, `noUncheckedIndexedAccess: true`, `allowJs: true`, `moduleResolution: "bundler"`, paths `@/*`).
+  - Vitest + Testing Library + jsdom configurados en `vitest.config.js` y `tests/setup.ts`.
+  - Prueba unitaria inicial implementada en `tests/unit/carta.test.ts` (100% pasando).
+  - Scripts creados en `package.json`: `typecheck` (`tsc --noEmit`), `test` (`vitest run`), `test:coverage`, `format` (`prettier --write .`), `format:check`.
+  - `npm run verify` ampliado para correr la suite completa en cadena: `lint && typecheck && test && build`.
+  - Warning de oxlint en `LanguageContext.jsx` resuelto limpiamente desacoplando `LanguageContext.js` (contexto), `useLanguage.js` (hook) y `LanguageProvider.jsx` (componente React). 0 advertencias, 0 errores.
+  - `.prettierrc` configurado respetando las convenciones del repositorio (`singleQuote: true`, `semi: false`).
+- **Fase 0 (X-000 a X-010):**
+  - Fundaciones completadas: Node 22 fijado, Husky + lint-staged activos, Graphify indexando el repositorio, desacople total de Supabase y reorganización limpia de la raíz.
 
 ## Siguiente paso exacto
-1. Comenzar la **Fase P-1**, tarea **P-101**:
-   - Configurar `tsconfig.json` estricto con `allowJs: true` para migración incremental.
-   - Instalar dependencias de prueba (Vitest, Testing Library, jsdom).
-   - Crear scripts `typecheck`, `test`, `test:coverage` y ampliar `verify`.
-   - Corregir el warning de oxlint en `src/i18n/LanguageContext.jsx`.
+
+1. Iniciar la tarea **P-102** — Zod y esquemas del borde:
+   - Instalar `zod`.
+   - Definir esquemas para datos de entrada externa (platos, carta, restaurante, configuración visual, idioma).
+   - Validar datos de la carta en el borde contra los esquemas Zod con pruebas unitarias.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
    - X-008: Habilitar CodeQL en GitHub (Security → Code scanning).
 
 ## Línea base verificada (2026-10-06)
+
 - `node -v`: v22.13.0 ✅
-- `npm run verify` (lint + build): ✅ en verde (paquete `ascua-demo`, 0 errores).
-- Git hooks: `pre-commit` (oxlint sobre staged files) y `pre-push` (`npm run verify`) activos.
-- Grafo de conocimiento: operativo en `graphify-out/`.
+- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest 2/2 tests pass, vite build exitoso).
+- Git hooks: `pre-commit` (oxlint + prettier) y `pre-push` (`npm run verify`) activos.
+- Grafo de conocimiento: operativo y actualizado en `graphify-out/` (402 nodos, 554 aristas).
 
 ## Bloqueos
+
 - Ninguno.
 
 ## Pendientes detectados (fuera de alcance de la tarea actual)
+
 - 8 vulnerabilidades detectadas por npm audit asociadas a herramientas de desarrollo (se auditarán con cyber-neo / P-703).
-- Advertencia de oxlint en `LanguageContext.jsx` (`only-export-components`), a resolver en la tarea inmediata P-101.
-- Chunk de `@google/model-viewer` > 500 kB en build (presupuesto de rendimiento en P-702).
+- Advertencia de chunk de `@google/model-viewer` > 500 kB en build (presupuesto de rendimiento en P-702).
 
 ## Comandos para verificar
+
 ```powershell
 npm run verify
 git status --short

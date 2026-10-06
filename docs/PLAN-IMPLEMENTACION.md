@@ -24,16 +24,16 @@
 
 **Objetivo de negocio:** validar con restaurantes reales de Medellín si pagarían la suscripción del catálogo Ascua, mostrándoles una demo funcional con su marca y sus platos en 3D/AR, **sin gastar dinero** en infraestructura durante la validación.
 
-| # | Decisión | Por qué | ADR |
-|---|---|---|---|
-| D1 | **ASCUA-DEMO-PAGINA** se convierte en una **demo estática multi-restaurante**: una plantilla, un paquete de contenido por restaurante. | La demo no necesita base de datos; estática = nada se pausa, nada se cae, costo $0. | `ADR-0001` (PAGINA) |
-| D2 | **ASCUA-DEMO-AR (ARFOODS)** tiene dos roles: **(a) Estudio 3D** ya, como CLI local que produce los modelos de la demo; **(b) Plataforma SaaS** después de validar. | Reutiliza el pipeline existente (optimize, normalize-scale, usdz, poster) sin depender de Supabase ni de GPU en vivo. | `ADR-0001` (AR) |
-| D3 | Hosting de la demo en **Cloudflare Pages** (plan gratuito). | Permite uso comercial y ancho de banda ilimitado en el plan gratuito; Vercel Hobby es solo para uso no comercial. | ADR-0001 (PAGINA) |
-| D4 | **Gitflow simplificado:** todo se trabaja en `dev/Juanjo`; `main` es producción; se despliega **solo desde GitHub Actions** cuando todo el CI pasa. | Producción la ven usuarios reales; nada llega a `main` sin pruebas. | — |
-| D5 | La landing migra de JavaScript a **TypeScript** (incremental). | Los puertos/interfaces de la arquitectura por capas necesitan tipos; ARFOODS ya es TypeScript. | — |
-| D6 | Los datos de cada restaurante son **contenido versionado** (`content/restaurants/<slug>/`), validado con esquema en cada build. | Aislamiento verificable entre restaurantes y control de calidad de modelos (`aprobado: true`). | ADR-0001 (PAGINA) |
-| D7 | Node **22 LTS** en todos los entornos. | Node 20 llegó a fin de soporte en abril de 2026; Vite 8 y el Dockerfile del worker ya usan 22. | — |
-| D8 | La plataforma ARFOODS (fase 8) se re-arquitecta **solo después** de tener al menos 1 restaurante dispuesto a pagar. | Evita invertir semanas en algo no validado. La decisión de hosting de producción (Vercel Pro vs. Cloudflare) se toma en ese momento. | ADR futuro |
+| #   | Decisión                                                                                                                                                           | Por qué                                                                                                                              | ADR                 |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
+| D1  | **ASCUA-DEMO-PAGINA** se convierte en una **demo estática multi-restaurante**: una plantilla, un paquete de contenido por restaurante.                             | La demo no necesita base de datos; estática = nada se pausa, nada se cae, costo $0.                                                  | `ADR-0001` (PAGINA) |
+| D2  | **ASCUA-DEMO-AR (ARFOODS)** tiene dos roles: **(a) Estudio 3D** ya, como CLI local que produce los modelos de la demo; **(b) Plataforma SaaS** después de validar. | Reutiliza el pipeline existente (optimize, normalize-scale, usdz, poster) sin depender de Supabase ni de GPU en vivo.                | `ADR-0001` (AR)     |
+| D3  | Hosting de la demo en **Cloudflare Pages** (plan gratuito).                                                                                                        | Permite uso comercial y ancho de banda ilimitado en el plan gratuito; Vercel Hobby es solo para uso no comercial.                    | ADR-0001 (PAGINA)   |
+| D4  | **Gitflow simplificado:** todo se trabaja en `dev/Juanjo`; `main` es producción; se despliega **solo desde GitHub Actions** cuando todo el CI pasa.                | Producción la ven usuarios reales; nada llega a `main` sin pruebas.                                                                  | —                   |
+| D5  | La landing migra de JavaScript a **TypeScript** (incremental).                                                                                                     | Los puertos/interfaces de la arquitectura por capas necesitan tipos; ARFOODS ya es TypeScript.                                       | —                   |
+| D6  | Los datos de cada restaurante son **contenido versionado** (`content/restaurants/<slug>/`), validado con esquema en cada build.                                    | Aislamiento verificable entre restaurantes y control de calidad de modelos (`aprobado: true`).                                       | ADR-0001 (PAGINA)   |
+| D7  | Node **22 LTS** en todos los entornos.                                                                                                                             | Node 20 llegó a fin de soporte en abril de 2026; Vite 8 y el Dockerfile del worker ya usan 22.                                       | —                   |
+| D8  | La plataforma ARFOODS (fase 8) se re-arquitecta **solo después** de tener al menos 1 restaurante dispuesto a pagar.                                                | Evita invertir semanas en algo no validado. La decisión de hosting de producción (Vercel Pro vs. Cloudflare) se toma en ese momento. | ADR futuro          |
 
 ---
 
@@ -41,19 +41,19 @@
 
 Ejecutado sobre un clon limpio de ambos repos.
 
-| Repo | Comando | Resultado | Acción |
-|---|---|---|---|
-| PAGINA | `npm ci` | ✅ OK | — |
-| PAGINA | `npm run lint` (oxlint) | ✅ 0 errores, 1 warning (`LanguageContext.jsx`) | Corregir en P-101 |
-| PAGINA | `npm run build` | ✅ OK, ⚠️ chunk > 500 kB | Presupuesto de rendimiento en P-702 |
-| PAGINA | pruebas | ❌ **No existen** (0 tests) | Fase P-1 |
-| PAGINA | dependencia externa | ⚠️ `arAssets.js`, `.env.example` y la CSP de `vercel.json` apuntan al Supabase **de un tercero** (`vnztoczhwrqjrgatiutz`) | Eliminar en X-009 |
-| AR | `pnpm install --frozen-lockfile` | ⚠️ Falla el `postinstall` de Puppeteer si no puede descargar Chromium | `PUPPETEER_SKIP_DOWNLOAD=1` en CI (A-002) |
-| AR | `pnpm -r test` | ✅ **103 tests**: db 2, worker 16, web 85 | Mantener y ampliar |
-| AR | `tsc --noEmit` (web y worker) | ✅ OK | Agregar `typecheck` al CI |
-| AR | `pnpm --filter web lint` | ❌ **Roto**: ESLint 9 sin `eslint.config.*` → el CI actual queda en rojo | A-001 |
-| AR | seguridad | ✅ Ya corregidos CN-001/002/003/005/007/009/010/014/016/018 (dockerignore, ssrf-guard, USER no-root, base pinneada por digest, multi-stage, headers, `timingSafeEqual`, CI) | Re-auditar en A-004 |
-| AR | documentación | ⚠️ `PROJECT_CONTEXT.md` desactualizado (dice CI vacío y 5 migraciones; hay CI y 10 migraciones) | A-003 |
+| Repo   | Comando                          | Resultado                                                                                                                                                                   | Acción                                    |
+| ------ | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| PAGINA | `npm ci`                         | ✅ OK                                                                                                                                                                       | —                                         |
+| PAGINA | `npm run lint` (oxlint)          | ✅ 0 errores, 1 warning (`LanguageContext.jsx`)                                                                                                                             | Corregir en P-101                         |
+| PAGINA | `npm run build`                  | ✅ OK, ⚠️ chunk > 500 kB                                                                                                                                                    | Presupuesto de rendimiento en P-702       |
+| PAGINA | pruebas                          | ❌ **No existen** (0 tests)                                                                                                                                                 | Fase P-1                                  |
+| PAGINA | dependencia externa              | ⚠️ `arAssets.js`, `.env.example` y la CSP de `vercel.json` apuntan al Supabase **de un tercero** (`vnztoczhwrqjrgatiutz`)                                                   | Eliminar en X-009                         |
+| AR     | `pnpm install --frozen-lockfile` | ⚠️ Falla el `postinstall` de Puppeteer si no puede descargar Chromium                                                                                                       | `PUPPETEER_SKIP_DOWNLOAD=1` en CI (A-002) |
+| AR     | `pnpm -r test`                   | ✅ **103 tests**: db 2, worker 16, web 85                                                                                                                                   | Mantener y ampliar                        |
+| AR     | `tsc --noEmit` (web y worker)    | ✅ OK                                                                                                                                                                       | Agregar `typecheck` al CI                 |
+| AR     | `pnpm --filter web lint`         | ❌ **Roto**: ESLint 9 sin `eslint.config.*` → el CI actual queda en rojo                                                                                                    | A-001                                     |
+| AR     | seguridad                        | ✅ Ya corregidos CN-001/002/003/005/007/009/010/014/016/018 (dockerignore, ssrf-guard, USER no-root, base pinneada por digest, multi-stage, headers, `timingSafeEqual`, CI) | Re-auditar en A-004                       |
+| AR     | documentación                    | ⚠️ `PROJECT_CONTEXT.md` desactualizado (dice CI vacío y 5 migraciones; hay CI y 10 migraciones)                                                                             | A-003                                     |
 
 ---
 
@@ -77,6 +77,7 @@ Ejecutado sobre un clon limpio de ambos repos.
 ```
 
 **Regla de dependencias** (verificada en CI con `dependency-cruiser`, tarea P-108):
+
 - `domain` no importa nada de las otras capas, ni `react`, ni `window`/`document`.
 - `application` importa solo `domain`.
 - `infrastructure` importa `application` (puertos) y `domain`.
@@ -139,24 +140,24 @@ ASCUA-DEMO-PAGINA/
 
 ### 3.3 Principios SOLID aplicados (concreto, no teórico)
 
-| Principio | Aplicación en PAGINA |
-|---|---|
-| **S** — Responsabilidad única | Hoy `launchAr.js` decide la plataforma **y** lanza; se divide en `EnvironmentDetector` (qué dispositivo/navegador), `ArLaunchPolicy` (qué modo usar, función pura de dominio) y un `ArLauncher` por plataforma. `Menu.jsx` (256 líneas) se separa en contenedor + componentes de presentación. |
-| **O** — Abierto/cerrado | Los lanzadores AR se registran en un mapa `ArLaunchMode → ArLauncher`. Agregar WebXR en el futuro = un adaptador nuevo, sin tocar los existentes. |
-| **L** — Sustitución de Liskov | Todo `ArLauncher` cumple el mismo contrato (`launch(asset): LaunchResult`) y las mismas pruebas de contrato (`describe.each` sobre los tres adaptadores). |
-| **I** — Segregación de interfaces | Puertos pequeños: `RestaurantRepository` solo lee; `SoldOutStore` solo `isSoldOut/toggle`. Nadie implementa métodos que no usa. |
-| **D** — Inversión de dependencias | Los casos de uso reciben puertos por parámetro. El `compositionRoot` decide las implementaciones. En pruebas se inyectan dobles en memoria, sin `window` ni red. |
+| Principio                         | Aplicación en PAGINA                                                                                                                                                                                                                                                                           |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **S** — Responsabilidad única     | Hoy `launchAr.js` decide la plataforma **y** lanza; se divide en `EnvironmentDetector` (qué dispositivo/navegador), `ArLaunchPolicy` (qué modo usar, función pura de dominio) y un `ArLauncher` por plataforma. `Menu.jsx` (256 líneas) se separa en contenedor + componentes de presentación. |
+| **O** — Abierto/cerrado           | Los lanzadores AR se registran en un mapa `ArLaunchMode → ArLauncher`. Agregar WebXR en el futuro = un adaptador nuevo, sin tocar los existentes.                                                                                                                                              |
+| **L** — Sustitución de Liskov     | Todo `ArLauncher` cumple el mismo contrato (`launch(asset): LaunchResult`) y las mismas pruebas de contrato (`describe.each` sobre los tres adaptadores).                                                                                                                                      |
+| **I** — Segregación de interfaces | Puertos pequeños: `RestaurantRepository` solo lee; `SoldOutStore` solo `isSoldOut/toggle`. Nadie implementa métodos que no usa.                                                                                                                                                                |
+| **D** — Inversión de dependencias | Los casos de uso reciben puertos por parámetro. El `compositionRoot` decide las implementaciones. En pruebas se inyectan dobles en memoria, sin `window` ni red.                                                                                                                               |
 
 ### 3.4 Modelo multi-restaurante (aislamiento)
 
 **Rutas públicas**
 
-| Ruta | Contenido |
-|---|---|
-| `/` | Página genérica de Ascua/PITS con la demo `ascua-demo`. **Nunca** lista restaurantes. |
-| `/r/<slug>/` | Landing + carta del restaurante (HTML pre-generado con `<title>`, descripción y OpenGraph propios → buena vista previa al compartir por WhatsApp). |
-| `/r/<slug>/qr` | QR imprimible que apunta a `/r/<slug>/`. |
-| `/data/<slug>/…` | `restaurant.json` y assets de ese restaurante. |
+| Ruta             | Contenido                                                                                                                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`              | Página genérica de Ascua/PITS con la demo `ascua-demo`. **Nunca** lista restaurantes.                                                              |
+| `/r/<slug>/`     | Landing + carta del restaurante (HTML pre-generado con `<title>`, descripción y OpenGraph propios → buena vista previa al compartir por WhatsApp). |
+| `/r/<slug>/qr`   | QR imprimible que apunta a `/r/<slug>/`.                                                                                                           |
+| `/data/<slug>/…` | `restaurant.json` y assets de ese restaurante.                                                                                                     |
 
 **Esquema `restaurant.json` (resumen; el esquema zod en `domain/restaurant` es la fuente de verdad)**
 
@@ -197,19 +198,19 @@ ASCUA-DEMO-PAGINA/
 
 **Principio:** una persona que nunca ha usado AR debe poder ver un plato sobre su mesa **sin que nadie le explique nada**. El producto se entiende solo.
 
-| Regla | Detalle |
-|---|---|
-| Mobile-first | Se diseña primero para 360 × 640 px y se amplía hacia arriba. Se prueba en 360, 390, 430, 768 y 1280 px. Sin scroll horizontal nunca. |
-| Áreas táctiles | Todo botón o enlace ≥ 48 × 48 px, con separación suficiente para el pulgar. Nada depende de *hover*. |
-| Texto legible | Cuerpo ≥ 16 px, contraste AA mínimo, máximo ~70 caracteres por línea. |
-| Lenguaje sin tecnicismos | "**Ver en mi mesa**" (no "AR" ni "realidad aumentada" como botón), "Girar el plato", "Volver a la carta". Íconos siempre acompañados de texto. |
-| Una acción principal por pantalla | En la ficha del plato, el botón "Ver en mi mesa" es el elemento más visible. |
-| Pocos toques | Carta → plato → "Ver en mi mesa" → cámara. La guía (3.6) aparece la **primera vez**; después, 2 toques. |
-| Ayuda siempre a mano | Botón fijo "¿Cómo funciona?" con 3 pasos ilustrados. Pista la primera vez: "Toca un plato para verlo en tu mesa". |
-| Estados claros | Cargando (esqueleto + texto "Preparando tu plato…"), error en palabras simples **con una acción** ("Revisa tu conexión y toca Reintentar"), sin conexión, plato agotado. |
-| Zonas seguras | Respeta notch y barra inferior (`env(safe-area-inset-*)`). Botones principales al alcance del pulgar. |
-| Movimiento | Animaciones cortas y útiles; respeta `prefers-reduced-motion`. Fluido en Android de gama media. |
-| Validación real | Prueba de usabilidad con 5 personas no técnicas antes de la v1.0.0 (tarea P-406). |
+| Regla                             | Detalle                                                                                                                                                                  |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Mobile-first                      | Se diseña primero para 360 × 640 px y se amplía hacia arriba. Se prueba en 360, 390, 430, 768 y 1280 px. Sin scroll horizontal nunca.                                    |
+| Áreas táctiles                    | Todo botón o enlace ≥ 48 × 48 px, con separación suficiente para el pulgar. Nada depende de _hover_.                                                                     |
+| Texto legible                     | Cuerpo ≥ 16 px, contraste AA mínimo, máximo ~70 caracteres por línea.                                                                                                    |
+| Lenguaje sin tecnicismos          | "**Ver en mi mesa**" (no "AR" ni "realidad aumentada" como botón), "Girar el plato", "Volver a la carta". Íconos siempre acompañados de texto.                           |
+| Una acción principal por pantalla | En la ficha del plato, el botón "Ver en mi mesa" es el elemento más visible.                                                                                             |
+| Pocos toques                      | Carta → plato → "Ver en mi mesa" → cámara. La guía (3.6) aparece la **primera vez**; después, 2 toques.                                                                  |
+| Ayuda siempre a mano              | Botón fijo "¿Cómo funciona?" con 3 pasos ilustrados. Pista la primera vez: "Toca un plato para verlo en tu mesa".                                                        |
+| Estados claros                    | Cargando (esqueleto + texto "Preparando tu plato…"), error en palabras simples **con una acción** ("Revisa tu conexión y toca Reintentar"), sin conexión, plato agotado. |
+| Zonas seguras                     | Respeta notch y barra inferior (`env(safe-area-inset-*)`). Botones principales al alcance del pulgar.                                                                    |
+| Movimiento                        | Animaciones cortas y útiles; respeta `prefers-reduced-motion`. Fluido en Android de gama media.                                                                          |
+| Validación real                   | Prueba de usabilidad con 5 personas no técnicas antes de la v1.0.0 (tarea P-406).                                                                                        |
 
 ### 3.6 Experiencia AR: que el plato aparezca bien, en su tamaño real
 
@@ -223,7 +224,7 @@ ASCUA-DEMO-PAGINA/
    1. "Apunta la cámara a tu mesa".
    2. "Mueve el teléfono despacio de lado a lado hasta que aparezca el plato".
    3. "Acércate o camina alrededor para verlo desde todos los ángulos".
-   Más dos notas: "El plato aparece en su tamaño real" y "Funciona mejor con buena luz". El botón "Entendido, abrir cámara" es el toque que lanza el AR (iOS exige un toque del usuario para abrir Quick Look). Se muestra la primera vez por dispositivo; luego queda accesible desde "¿Cómo funciona?".
+      Más dos notas: "El plato aparece en su tamaño real" y "Funciona mejor con buena luz". El botón "Entendido, abrir cámara" es el toque que lanza el AR (iOS exige un toque del usuario para abrir Quick Look). Se muestra la primera vez por dispositivo; luego queda accesible desde "¿Cómo funciona?".
 4. **Escaneo del espacio (nativo):** Quick Look y Scene Viewer muestran su propia animación pidiendo mover el teléfono hasta detectar una superficie, y colocan el plato sobre ella. La guía previa hace que esa animación ya resulte familiar.
 
 **Si el teléfono no admite AR**, o está en un navegador embebido (Instagram, WhatsApp): mensaje claro y amable ("Tu teléfono no permite ver el plato sobre tu mesa, pero puedes girarlo aquí") y visor 3D interactivo en la página, con el mismo encuadre cuidado (cámara a ~45°, plato completo visible, rotación automática lenta).
@@ -285,31 +286,31 @@ Basada en la pirámide (skill `engineering:testing-strategy`): muchas pruebas un
 
 ### 5.1 PAGINA
 
-| Nivel | Herramienta | Qué cubre | Meta |
-|---|---|---|---|
-| Unitarias | Vitest | `domain/` y `application/` (reglas, casos de uso con dobles) | **≥ 90 %** líneas y ramas en esas capas (umbral en `vitest.config`) |
-| Contrato | Vitest `describe.each` | Los 3 `ArLauncher` y los repositorios cumplen el mismo contrato | 100 % de adaptadores |
-| Componentes | Vitest + Testing Library + jsdom | Tarjeta de plato, botón AR, aviso de navegador embebido, selector de idioma | Flujos críticos cubiertos |
-| Contenido | `validate-content.ts` (+ pruebas del propio validador) | Esquema, aislamiento, pesos, `aprobado`, expiración | Corre en cada build |
-| Arquitectura | dependency-cruiser | Regla de dependencias entre capas | 0 violaciones |
-| E2E | Playwright (proyectos: Desktop Chrome, Pixel 7, iPhone 14) | Carga por slug, 404, expirado, abrir AR (atributos `rel="ar"` y `intent://` correctos), reservas por WhatsApp, **aislamiento de red** | Flujos críticos verdes |
-| Accesibilidad | `@axe-core/playwright` | Sin violaciones serias/críticas | 0 serias/críticas |
-| Rendimiento | Lighthouse CI (móvil) | Performance ≥ 85, Accesibilidad ≥ 95, Buenas prácticas ≥ 95 | Umbrales en `lighthouserc` |
-| Responsive | Playwright (360, 390, 430, 768, 1280 px) | Sin scroll horizontal, áreas táctiles ≥ 48 px, botón "Ver en mi mesa" visible sin desplazarse en la ficha del plato | 0 fallos |
-| Guía AR | Playwright | La guía aparece la primera vez y no la segunda; "¿Cómo funciona?" siempre la abre; sin AR → visor 3D con mensaje | Verde |
-| Usabilidad | Sesión con 5 personas no técnicas (P-406) | "Encuentra este plato y míralo sobre tu mesa" sin ayuda | ≥ 4 de 5 lo logran solos |
-| Manual | `docs/runbooks/qa-dispositivos.md` | AR real en el iPhone y el Android de Juan, con datos móviles, dentro y fuera de Instagram/WhatsApp | Checklist firmado antes de cada merge a `main` que toque AR o contenido |
+| Nivel         | Herramienta                                                | Qué cubre                                                                                                                             | Meta                                                                    |
+| ------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Unitarias     | Vitest                                                     | `domain/` y `application/` (reglas, casos de uso con dobles)                                                                          | **≥ 90 %** líneas y ramas en esas capas (umbral en `vitest.config`)     |
+| Contrato      | Vitest `describe.each`                                     | Los 3 `ArLauncher` y los repositorios cumplen el mismo contrato                                                                       | 100 % de adaptadores                                                    |
+| Componentes   | Vitest + Testing Library + jsdom                           | Tarjeta de plato, botón AR, aviso de navegador embebido, selector de idioma                                                           | Flujos críticos cubiertos                                               |
+| Contenido     | `validate-content.ts` (+ pruebas del propio validador)     | Esquema, aislamiento, pesos, `aprobado`, expiración                                                                                   | Corre en cada build                                                     |
+| Arquitectura  | dependency-cruiser                                         | Regla de dependencias entre capas                                                                                                     | 0 violaciones                                                           |
+| E2E           | Playwright (proyectos: Desktop Chrome, Pixel 7, iPhone 14) | Carga por slug, 404, expirado, abrir AR (atributos `rel="ar"` y `intent://` correctos), reservas por WhatsApp, **aislamiento de red** | Flujos críticos verdes                                                  |
+| Accesibilidad | `@axe-core/playwright`                                     | Sin violaciones serias/críticas                                                                                                       | 0 serias/críticas                                                       |
+| Rendimiento   | Lighthouse CI (móvil)                                      | Performance ≥ 85, Accesibilidad ≥ 95, Buenas prácticas ≥ 95                                                                           | Umbrales en `lighthouserc`                                              |
+| Responsive    | Playwright (360, 390, 430, 768, 1280 px)                   | Sin scroll horizontal, áreas táctiles ≥ 48 px, botón "Ver en mi mesa" visible sin desplazarse en la ficha del plato                   | 0 fallos                                                                |
+| Guía AR       | Playwright                                                 | La guía aparece la primera vez y no la segunda; "¿Cómo funciona?" siempre la abre; sin AR → visor 3D con mensaje                      | Verde                                                                   |
+| Usabilidad    | Sesión con 5 personas no técnicas (P-406)                  | "Encuentra este plato y míralo sobre tu mesa" sin ayuda                                                                               | ≥ 4 de 5 lo logran solos                                                |
+| Manual        | `docs/runbooks/qa-dispositivos.md`                         | AR real en el iPhone y el Android de Juan, con datos móviles, dentro y fuera de Instagram/WhatsApp                                    | Checklist firmado antes de cada merge a `main` que toque AR o contenido |
 
 ### 5.2 AR (ARFOODS)
 
-| Nivel | Herramienta | Qué cubre | Meta |
-|---|---|---|---|
-| Unitarias/integración (existentes) | Vitest | 103 pruebas actuales | Ninguna se elimina sin reemplazo |
-| CLI Estudio 3D | Vitest + modelo de prueba pequeño | `build-asset` produce los 4 archivos, respeta pesos y escala | Pruebas de integración con fixture |
-| Tipos | `tsc --noEmit` | web, worker, db | 0 errores |
-| Lint | ESLint 9 (flat config) | web | 0 errores |
-| Imagen Docker | `docker build` del worker | Que el Dockerfile construya | En CI solo si cambia `apps/worker/**` |
-| Fase 8 | Playwright + Supabase dev | Menú público, panel, aislamiento RLS con dos usuarios | Antes de la primera venta |
+| Nivel                              | Herramienta                       | Qué cubre                                                    | Meta                                  |
+| ---------------------------------- | --------------------------------- | ------------------------------------------------------------ | ------------------------------------- |
+| Unitarias/integración (existentes) | Vitest                            | 103 pruebas actuales                                         | Ninguna se elimina sin reemplazo      |
+| CLI Estudio 3D                     | Vitest + modelo de prueba pequeño | `build-asset` produce los 4 archivos, respeta pesos y escala | Pruebas de integración con fixture    |
+| Tipos                              | `tsc --noEmit`                    | web, worker, db                                              | 0 errores                             |
+| Lint                               | ESLint 9 (flat config)            | web                                                          | 0 errores                             |
+| Imagen Docker                      | `docker build` del worker         | Que el Dockerfile construya                                  | En CI solo si cambia `apps/worker/**` |
+| Fase 8                             | Playwright + Supabase dev         | Menú público, panel, aislamiento RLS con dos usuarios        | Antes de la primera venta             |
 
 **Reglas transversales:** todo bug corregido trae su prueba de regresión; prohibido desactivar o saltar pruebas (`.skip`, `.only`) en commits; nada de snapshots gigantes.
 
@@ -349,7 +350,7 @@ Basada en la pirámide (skill `engineering:testing-strategy`): muchas pruebas un
 - Un PR = una tarea del plan (o pocas relacionadas). El título lleva el ID: `feat(P-203): validador de contenido`.
 - Merge **squash** a `main`; después se sincroniza `dev/Juanjo` con `main`.
 - Versionado: tags `vMAJOR.MINOR.PATCH` en `main` + `CHANGELOG.md`.
-- Producción solo se despliega desde GitHub Actions (Cloudflare Pages en modo *Direct Upload*, **sin** la integración Git automática) para que **nada** se publique sin pasar el CI.
+- Producción solo se despliega desde GitHub Actions (Cloudflare Pages en modo _Direct Upload_, **sin** la integración Git automática) para que **nada** se publique sin pasar el CI.
 
 ### 6.3 Protección de rama `main` (GitHub → Settings → Branches/Rulesets)
 
@@ -360,13 +361,13 @@ Basada en la pirámide (skill `engineering:testing-strategy`): muchas pruebas un
 
 ### 6.4 Secretos y variables (GitHub → Settings → Secrets and variables → Actions)
 
-| Nombre | Tipo | Repo | Uso |
-|---|---|---|---|
-| `CLOUDFLARE_API_TOKEN` | Secret | PAGINA | Token con permiso *Cloudflare Pages: Edit* únicamente |
-| `CLOUDFLARE_ACCOUNT_ID` | Secret | PAGINA | ID de cuenta |
-| `CF_PAGES_PROJECT` | Variable | PAGINA | Nombre del proyecto en Cloudflare Pages |
-| `PROD_URL` | Variable | PAGINA | URL de producción para el smoke test |
-| (fase 8) `SUPABASE_*` | Secret | AR | Solo cuando exista la plataforma; nunca en el repo |
+| Nombre                  | Tipo     | Repo   | Uso                                                   |
+| ----------------------- | -------- | ------ | ----------------------------------------------------- |
+| `CLOUDFLARE_API_TOKEN`  | Secret   | PAGINA | Token con permiso _Cloudflare Pages: Edit_ únicamente |
+| `CLOUDFLARE_ACCOUNT_ID` | Secret   | PAGINA | ID de cuenta                                          |
+| `CF_PAGES_PROJECT`      | Variable | PAGINA | Nombre del proyecto en Cloudflare Pages               |
+| `PROD_URL`              | Variable | PAGINA | URL de producción para el smoke test                  |
+| (fase 8) `SUPABASE_*`   | Secret   | AR     | Solo cuando exista la plataforma; nunca en el repo    |
 
 Environments de GitHub: `preview` y `production` (este último puede exigir confirmación manual si lo deseas).
 
@@ -374,20 +375,20 @@ Environments de GitHub: `preview` y `production` (este último puede exigir conf
 
 ## 7. Seguridad
 
-| Control | Dónde | Cuándo |
-|---|---|---|
-| Escaneo de secretos (gitleaks) | CI | Cada push y PR |
-| `npm audit --omit=dev --audit-level=high` / `pnpm audit --prod` | CI | Cada push y PR (bloquea en `high`/`critical` de producción) |
-| Dependabot (npm + GitHub Actions) | GitHub | Semanal |
-| CodeQL (gratuito en repos públicos) | GitHub | Semanal + PR a `main` |
-| Auditoría completa **cyber-neo** (solo lectura) | Claude Code | Antes de cada release a `main` con cambios de código y cada 2 semanas. Reporte en `docs/seguridad/AAAA-MM-DD.md` |
-| `/security-review` (comando incorporado de Claude Code) | Claude Code | Sobre el diff antes de abrir cada PR |
-| Cabeceras: CSP sin dominios de terceros, HSTS, `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy` | `public/_headers` | P-701 |
-| Validación de toda entrada externa (JSON de contenido, parámetros de URL) con zod | Código | Siempre |
-| Sin datos personales del comensal (sin cookies, sin login, analítica sin cookies) | Diseño | Siempre (Ley 1581 de 2012) |
-| Autorización escrita del restaurante para usar su carta y fotos + borrado al expirar | `restaurant.json` + runbook | Cada restaurante |
-| Disclaimer Ley 1480 de 2011 visible en el visor 3D | UI | Siempre |
-| Licencias de dependencias y de generadores 3D (prohibido GPL/AGPL; licencias de modelos verificadas y archivadas) | CI (`license-checker`) + `docs/licencias/` | P-704 / A-201 |
+| Control                                                                                                              | Dónde                                      | Cuándo                                                                                                           |
+| -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| Escaneo de secretos (gitleaks)                                                                                       | CI                                         | Cada push y PR                                                                                                   |
+| `npm audit --omit=dev --audit-level=high` / `pnpm audit --prod`                                                      | CI                                         | Cada push y PR (bloquea en `high`/`critical` de producción)                                                      |
+| Dependabot (npm + GitHub Actions)                                                                                    | GitHub                                     | Semanal                                                                                                          |
+| CodeQL (gratuito en repos públicos)                                                                                  | GitHub                                     | Semanal + PR a `main`                                                                                            |
+| Auditoría completa **cyber-neo** (solo lectura)                                                                      | Claude Code                                | Antes de cada release a `main` con cambios de código y cada 2 semanas. Reporte en `docs/seguridad/AAAA-MM-DD.md` |
+| `/security-review` (comando incorporado de Claude Code)                                                              | Claude Code                                | Sobre el diff antes de abrir cada PR                                                                             |
+| Cabeceras: CSP sin dominios de terceros, HSTS, `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy` | `public/_headers`                          | P-701                                                                                                            |
+| Validación de toda entrada externa (JSON de contenido, parámetros de URL) con zod                                    | Código                                     | Siempre                                                                                                          |
+| Sin datos personales del comensal (sin cookies, sin login, analítica sin cookies)                                    | Diseño                                     | Siempre (Ley 1581 de 2012)                                                                                       |
+| Autorización escrita del restaurante para usar su carta y fotos + borrado al expirar                                 | `restaurant.json` + runbook                | Cada restaurante                                                                                                 |
+| Disclaimer Ley 1480 de 2011 visible en el visor 3D                                                                   | UI                                         | Siempre                                                                                                          |
+| Licencias de dependencias y de generadores 3D (prohibido GPL/AGPL; licencias de modelos verificadas y archivadas)    | CI (`license-checker`) + `docs/licencias/` | P-704 / A-201                                                                                                    |
 
 ---
 
@@ -409,6 +410,7 @@ graphify hook install              # reconstruye el grafo en cada commit
 **Qué se indexa:** el código + `docs/` completo. Como cada decisión de arquitectura (`docs/adr/`), cada bitácora de sesión (`docs/sesiones/`) y este plan viven en `docs/`, **las conversaciones y decisiones quedan como nodos del grafo**, conectadas al código que afectan.
 
 **Uso obligatorio (ver CLAUDE.md):**
+
 1. Al iniciar sesión: consultar el grafo antes de leer archivos a ciegas (`graphify query "…"`, `graphify path "A" "B"`, `graphify explain "X"`).
 2. Al cerrar sesión: escribir la bitácora en `docs/sesiones/AAAA-MM-DD-<tema>.md` y actualizar (`/graphify . --update`).
 3. En Antigravity: la CLI `graphify query` funciona igual desde la terminal integrada.
@@ -417,20 +419,20 @@ Verifica tras la primera ejecución en qué carpeta guarda el grafo y decide si 
 
 ### 8.2 Skills y comandos (cuándo usar cada uno)
 
-| Momento | Skill / comando |
-|---|---|
-| Planear una tarea de más de un archivo | Modo plan de Claude Code; `product-management:write-spec` para funcionalidades nuevas |
-| Tomar una decisión técnica | `engineering:architecture` → ADR en `docs/adr/` |
-| Diseñar pruebas de una funcionalidad | `engineering:testing-strategy` |
-| Depurar | `engineering:debug` |
-| Revisar el diff antes del PR | `engineering:code-review` + `/security-review` |
-| Auditoría de seguridad completa | `cyber-neo` (solo lectura) |
-| Antes de merge a `main` | `engineering:deploy-checklist` |
-| Documentación / runbooks | `engineering:documentation` |
-| Deuda técnica (cada fin de fase) | `engineering:tech-debt` |
-| UI: accesibilidad y crítica visual | `design:accessibility-review`, `design:design-critique` |
-| Evitar sobreingeniería | `ponytail` (modo `lite`) cuando una solución crezca más de lo necesario |
-| Mapa del proyecto / memoria entre sesiones | `graphify` |
+| Momento                                    | Skill / comando                                                                       |
+| ------------------------------------------ | ------------------------------------------------------------------------------------- |
+| Planear una tarea de más de un archivo     | Modo plan de Claude Code; `product-management:write-spec` para funcionalidades nuevas |
+| Tomar una decisión técnica                 | `engineering:architecture` → ADR en `docs/adr/`                                       |
+| Diseñar pruebas de una funcionalidad       | `engineering:testing-strategy`                                                        |
+| Depurar                                    | `engineering:debug`                                                                   |
+| Revisar el diff antes del PR               | `engineering:code-review` + `/security-review`                                        |
+| Auditoría de seguridad completa            | `cyber-neo` (solo lectura)                                                            |
+| Antes de merge a `main`                    | `engineering:deploy-checklist`                                                        |
+| Documentación / runbooks                   | `engineering:documentation`                                                           |
+| Deuda técnica (cada fin de fase)           | `engineering:tech-debt`                                                               |
+| UI: accesibilidad y crítica visual         | `design:accessibility-review`, `design:design-critique`                               |
+| Evitar sobreingeniería                     | `ponytail` (modo `lite`) cuando una solución crezca más de lo necesario               |
+| Mapa del proyecto / memoria entre sesiones | `graphify`                                                                            |
 
 Si alguna skill no está instalada en tu Claude Code, el agente debe decirlo y seguir el procedimiento manual equivalente descrito en `CLAUDE.md`, nunca omitir el paso.
 
@@ -472,7 +474,7 @@ CA: CI y local usan Node 22; todo sigue pasando.
 Sección 6.3. CA: un push directo a `main` es rechazado; un PR con CI rojo no se puede mergear.
 
 **X-007 — Cuenta y proyecto en Cloudflare Pages** · PAGINA · manual · —
-Crear proyecto en modo *Direct Upload* (sin conectar Git), token con permiso mínimo, secretos y variables (sección 6.4).
+Crear proyecto en modo _Direct Upload_ (sin conectar Git), token con permiso mínimo, secretos y variables (sección 6.4).
 CA: `deploy.yml` publica un preview desde `dev/Juanjo`.
 
 **X-008 — Dependabot y CodeQL** · ambos · cualquiera · X-002
@@ -488,7 +490,7 @@ Renombrar el paquete (`cocina-de-autor` → `ascua-demo`), sacar `ANIMACION REST
 CA: raíz limpia; build y lint pasan.
 
 **X-011 — Código que se explica solo** · ambos · Claude (define) + Antigravity (aplica) · X-002
-Aplicar la sección "Comentarios y documentación" de `CLAUDE.md`: encabezado en cada archivo, TSDoc en español en todo lo exportado, comentarios del *porqué*, `README.md` corto en cada capa/módulo y `docs/ARQUITECTURA.md` con el recorrido de un toque en "Ver en mi mesa". Se aplica de forma continua: cada tarea deja documentado lo que toca.
+Aplicar la sección "Comentarios y documentación" de `CLAUDE.md`: encabezado en cada archivo, TSDoc en español en todo lo exportado, comentarios del _porqué_, `README.md` corto en cada capa/módulo y `docs/ARQUITECTURA.md` con el recorrido de un toque en "Ver en mi mesa". Se aplica de forma continua: cada tarea deja documentado lo que toca.
 CA: un archivo nuevo sin encabezado o un export sin TSDoc se señala en la revisión (`engineering:code-review`); `docs/ARQUITECTURA.md` existe y está al día.
 
 ### Fase A — Saneamiento de ARFOODS (en paralelo con Fase P-1)
@@ -622,7 +624,7 @@ CA: `design:design-critique` sin problemas mayores; E2E verdes.
 CA: 0 violaciones serias/críticas.
 
 **P-405 — Mobile-first y responsive** · PAGINA · Antigravity · P-403
-Aplicar las reglas de la sección 3.5: diseño desde 360 px, áreas táctiles ≥ 48 px, zonas seguras, sin *hover*, `prefers-reduced-motion`.
+Aplicar las reglas de la sección 3.5: diseño desde 360 px, áreas táctiles ≥ 48 px, zonas seguras, sin _hover_, `prefers-reduced-motion`.
 CA: pruebas de responsive verdes en los 5 anchos; revisión visual en ambos celulares.
 
 **P-406 — Prueba de usabilidad con personas no técnicas** · PAGINA · manual (Juan) + Claude para el guion · P-306, P-308, P-405
@@ -705,22 +707,22 @@ CA: producción sirve la demo genérica y los 3 restaurantes; runbook de rollbac
 
 ## 11. Riesgos
 
-| Riesgo | Impacto | Mitigación |
-|---|---|---|
-| Calidad de modelos con generadores gratuitos | Alto (credibilidad) | Elegir platos aptos; 2–3 generadores por plato; limpieza en Blender; `aprobado` obligatorio; si no sale bien, el plato va solo con foto. |
-| La refactorización rompe el AR que hoy funciona | Alto | P-104 preserva el comportamiento exacto con pruebas de contrato + QA manual antes de seguir. |
-| Cuota semanal de Claude insuficiente | Medio | Tareas pequeñas, ESTADO.md, graphify, Antigravity para tareas mecánicas. |
-| Cambios en planes gratuitos (Cloudflare, generadores) | Medio | Todo es estático y portable a cualquier hosting estático (Netlify, GitHub Pages). |
-| Uso de fotos/cartas sin autorización | Medio-alto (legal) | Campo `autorizacion` obligatorio + borrado al expirar. |
-| Comensales no técnicos se pierden o no entienden el AR | Alto | Guía previa (P-306), lenguaje sin tecnicismos, ayuda fija, prueba de usabilidad (P-406). |
-| El plato abre demasiado grande o pequeño | Alto | Medida real por plato + origen en la base (A-204, P-307) y escala fija. |
-| Sobreingeniería en una demo | Medio | Fases P-1/P-2 son la base mínima; lo demás se agrega solo si la validación lo justifica (`ponytail` lite). |
+| Riesgo                                                 | Impacto             | Mitigación                                                                                                                               |
+| ------------------------------------------------------ | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Calidad de modelos con generadores gratuitos           | Alto (credibilidad) | Elegir platos aptos; 2–3 generadores por plato; limpieza en Blender; `aprobado` obligatorio; si no sale bien, el plato va solo con foto. |
+| La refactorización rompe el AR que hoy funciona        | Alto                | P-104 preserva el comportamiento exacto con pruebas de contrato + QA manual antes de seguir.                                             |
+| Cuota semanal de Claude insuficiente                   | Medio               | Tareas pequeñas, ESTADO.md, graphify, Antigravity para tareas mecánicas.                                                                 |
+| Cambios en planes gratuitos (Cloudflare, generadores)  | Medio               | Todo es estático y portable a cualquier hosting estático (Netlify, GitHub Pages).                                                        |
+| Uso de fotos/cartas sin autorización                   | Medio-alto (legal)  | Campo `autorizacion` obligatorio + borrado al expirar.                                                                                   |
+| Comensales no técnicos se pierden o no entienden el AR | Alto                | Guía previa (P-306), lenguaje sin tecnicismos, ayuda fija, prueba de usabilidad (P-406).                                                 |
+| El plato abre demasiado grande o pequeño               | Alto                | Medida real por plato + origen en la base (A-204, P-307) y escala fija.                                                                  |
+| Sobreingeniería en una demo                            | Medio               | Fases P-1/P-2 son la base mínima; lo demás se agrega solo si la validación lo justifica (`ponytail` lite).                               |
 
 ---
 
 ## 12. Registro de cambios del plan
 
-| Fecha | Versión | Cambio |
-|---|---|---|
-| 2026-10-05 | 1.0 | Versión inicial. |
-| 2026-10-05 | 1.1 | Experiencia móvil e intuitiva (§3.5), experiencia AR con medida real por plato y guía previa (§3.6), código auto-explicativo (X-011). Nuevas tareas P-306, P-307, P-308, P-405, P-406, A-204, X-011. |
+| Fecha      | Versión | Cambio                                                                                                                                                                                               |
+| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-10-05 | 1.0     | Versión inicial.                                                                                                                                                                                     |
+| 2026-10-05 | 1.1     | Experiencia móvil e intuitiva (§3.5), experiencia AR con medida real por plato y guía previa (§3.6), código auto-explicativo (X-011). Nuevas tareas P-306, P-307, P-308, P-405, P-406, A-204, X-011. |

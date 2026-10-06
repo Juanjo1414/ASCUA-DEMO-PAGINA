@@ -15,7 +15,7 @@ web
 
 - Comensales de Medellín buscando dónde cenar una noche especial, casi siempre
   desde el celular y muchas veces dentro del navegador de Instagram o WhatsApp
-  *(inferido: el sitio ya detecta navegadores embebidos para la RA)*.
+  _(inferido: el sitio ya detecta navegadores embebidos para la RA)_.
 - El titular del proyecto usa la página como pieza de portafolio de "webs
   premium": tiene que verse al nivel de un estudio, no de una plantilla.
 

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { calor } from '../lib/calor'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 /*
   Sólo en el celular: una franja fina al pie de la pantalla con el horario y
@@ -20,7 +20,9 @@ export default function FranjaReserva() {
     let visible = null
     const paso = () => {
       cuadro = requestAnimationFrame(paso)
-      const enPie = pie ? pie.getBoundingClientRect().top < window.innerHeight * 0.8 : false
+      const enPie = pie
+        ? pie.getBoundingClientRect().top < window.innerHeight * 0.8
+        : false
       const ver = (calor.salida > 0.5 || calor.portal > 0.45) && !enPie
       if (ver === visible) return
       visible = ver
@@ -39,8 +41,13 @@ export default function FranjaReserva() {
     >
       {/* El horario sólo si cabe al lado del botón; en pantallas angostas el
           botón ocupa la franja entera y no se corta. */}
-      <p className="rotulo hidden whitespace-nowrap text-ceniza min-[440px]:block">{t.contact.hoursCorto}</p>
-      <a href="#reservar" className="boton flex-1 px-4 py-2.5 min-[440px]:flex-none">
+      <p className="rotulo hidden whitespace-nowrap text-ceniza min-[440px]:block">
+        {t.contact.hoursCorto}
+      </p>
+      <a
+        href="#reservar"
+        className="boton flex-1 px-4 py-2.5 min-[440px]:flex-none"
+      >
         {t.nav.reservar}
       </a>
     </div>

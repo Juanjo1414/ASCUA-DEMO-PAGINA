@@ -10,20 +10,34 @@
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || ''
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
 
-const ASSET_BASE = SUPABASE_URL ? `${SUPABASE_URL}/storage/v1/object/public/dish-assets` : ''
+const ASSET_BASE = SUPABASE_URL
+  ? `${SUPABASE_URL}/storage/v1/object/public/dish-assets`
+  : ''
 
 // Assets provisionales. En Fase 5 y P-2 se sustituyen por los modelos
 // normalizados generados localmente por la CLI Estudio 3D en content/.
 const PUBLISHED_ASSETS = {
   '1aaa9c9d-833b-4179-9396-b40610db0a4a': {
-    glbUrl: ASSET_BASE ? `${ASSET_BASE}/1aaa9c9d-833b-4179-9396-b40610db0a4a/993724c47f799279.glb` : '',
-    usdzUrl: ASSET_BASE ? `${ASSET_BASE}/1aaa9c9d-833b-4179-9396-b40610db0a4a/1c73ce63841209bd.usdz` : '',
-    posterUrl: ASSET_BASE ? `${ASSET_BASE}/1aaa9c9d-833b-4179-9396-b40610db0a4a/dbf5275bbd404a8c.webp` : '',
+    glbUrl: ASSET_BASE
+      ? `${ASSET_BASE}/1aaa9c9d-833b-4179-9396-b40610db0a4a/993724c47f799279.glb`
+      : '',
+    usdzUrl: ASSET_BASE
+      ? `${ASSET_BASE}/1aaa9c9d-833b-4179-9396-b40610db0a4a/1c73ce63841209bd.usdz`
+      : '',
+    posterUrl: ASSET_BASE
+      ? `${ASSET_BASE}/1aaa9c9d-833b-4179-9396-b40610db0a4a/dbf5275bbd404a8c.webp`
+      : '',
   },
   '9e3c1bcc-f81f-4319-a40e-19ed426bec5f': {
-    glbUrl: ASSET_BASE ? `${ASSET_BASE}/9e3c1bcc-f81f-4319-a40e-19ed426bec5f/13669505254372c7.glb` : '',
-    usdzUrl: ASSET_BASE ? `${ASSET_BASE}/9e3c1bcc-f81f-4319-a40e-19ed426bec5f/9f052e1d5944b5c8.usdz` : '',
-    posterUrl: ASSET_BASE ? `${ASSET_BASE}/9e3c1bcc-f81f-4319-a40e-19ed426bec5f/6f916b57bc33d859.webp` : '',
+    glbUrl: ASSET_BASE
+      ? `${ASSET_BASE}/9e3c1bcc-f81f-4319-a40e-19ed426bec5f/13669505254372c7.glb`
+      : '',
+    usdzUrl: ASSET_BASE
+      ? `${ASSET_BASE}/9e3c1bcc-f81f-4319-a40e-19ed426bec5f/9f052e1d5944b5c8.usdz`
+      : '',
+    posterUrl: ASSET_BASE
+      ? `${ASSET_BASE}/9e3c1bcc-f81f-4319-a40e-19ed426bec5f/6f916b57bc33d859.webp`
+      : '',
   },
 }
 
@@ -50,14 +64,19 @@ export async function fetchActiveAsset(dishId) {
   try {
     const response = await fetch(
       `${SUPABASE_URL}/rest/v1/dish_assets?select=glb_url,usdz_url,poster_url&dish_id=eq.${dishId}&is_active=eq.true&limit=1`,
-      { headers: { apikey: SUPABASE_ANON_KEY } },
+      { headers: { apikey: SUPABASE_ANON_KEY } }
     )
     if (!response.ok) return null
     const [row] = await response.json()
     if (!row?.glb_url || !row?.poster_url) return null
-    if (!isTrustedAssetUrl(row.glb_url) || !isTrustedAssetUrl(row.poster_url)) return null
+    if (!isTrustedAssetUrl(row.glb_url) || !isTrustedAssetUrl(row.poster_url))
+      return null
     if (row.usdz_url && !isTrustedAssetUrl(row.usdz_url)) return null
-    return { glbUrl: row.glb_url, usdzUrl: row.usdz_url, posterUrl: row.poster_url }
+    return {
+      glbUrl: row.glb_url,
+      usdzUrl: row.usdz_url,
+      posterUrl: row.poster_url,
+    }
   } catch {
     return null
   }

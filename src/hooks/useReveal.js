@@ -1,12 +1,18 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from '../lib/gsap'
 
-export function useReveal({ selector = '.reveal-item', y = 24, stagger = 0.08 } = {}) {
+export function useReveal({
+  selector = '.reveal-item',
+  y = 24,
+  stagger = 0.08,
+} = {}) {
   const scope = useRef(null)
 
   useEffect(() => {
     if (!scope.current) return
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
 
     const ctx = gsap.context(() => {
       const targets = gsap.utils.toArray(selector)

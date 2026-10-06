@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { gsap } from '../lib/gsap'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 /*
   El clímax: la mesa al rojo.
@@ -22,20 +22,44 @@ export default function Reserva() {
   useEffect(() => {
     const el = raiz.current
     if (!el) return
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reducido = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
     if (reducido) {
-      gsap.set(el.querySelectorAll('[data-capa-llama], [data-blanco]'), { opacity: 1 })
+      gsap.set(el.querySelectorAll('[data-capa-llama], [data-blanco]'), {
+        opacity: 1,
+      })
       return
     }
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
-        scrollTrigger: { trigger: el, start: 'top 90%', end: 'center 45%', scrub: 0.5 },
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+          end: 'center 45%',
+          scrub: 0.5,
+        },
       })
-      tl.fromTo('[data-capa-llama]', { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0)
-        .fromTo('[data-blanco]', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.6)
-        .fromTo('[data-frase]', { scale: 0.86, yPercent: 10 }, { scale: 1, yPercent: 0 }, 0)
+      tl.fromTo(
+        '[data-capa-llama]',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.6 },
+        0
+      )
+        .fromTo(
+          '[data-blanco]',
+          { opacity: 0 },
+          { opacity: 1, duration: 0.4 },
+          0.6
+        )
+        .fromTo(
+          '[data-frase]',
+          { scale: 0.86, yPercent: 10 },
+          { scale: 1, yPercent: 0 },
+          0
+        )
     }, el)
     return () => ctx.revert()
   }, [])
@@ -66,10 +90,14 @@ export default function Reserva() {
         </h2>
 
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <p className="max-w-[40ch] text-lg leading-relaxed md:text-xl">{t.cta.body}</p>
+          <p className="max-w-[40ch] text-lg leading-relaxed md:text-xl">
+            {t.cta.body}
+          </p>
           <a
             href="#contacto"
-            onClick={() => window.dispatchEvent(new CustomEvent('ascua:reservar'))}
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent('ascua:reservar'))
+            }
             className="boton boton--tinta w-full md:w-auto md:px-10 md:py-5"
           >
             {t.cta.button}

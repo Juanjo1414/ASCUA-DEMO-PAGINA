@@ -26,7 +26,11 @@ const URL_CSS =
 const NAVEGADOR =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 
-const css = execFileSync('curl', ['-s', '--max-time', '30', '-A', NAVEGADOR, URL_CSS], { encoding: 'utf8' })
+const css = execFileSync(
+  'curl',
+  ['-s', '--max-time', '30', '-A', NAVEGADOR, URL_CSS],
+  { encoding: 'utf8' }
+)
 
 const bloques = css.split('/* ').slice(1)
 const salida = []
@@ -37,12 +41,19 @@ for (const bloque of bloques) {
   const estilo = bloque.match(/font-style: (\w+)/)[1]
   const url = bloque.match(/url\((https:[^)]+)\)/)[1]
   const nombre = `${familia.toLowerCase().replace(/\s+/g, '-')}-${estilo}-${subconjunto}.woff2`
-  execFileSync('curl', ['-s', '--max-time', '60', '-o', join(destino, nombre), url])
+  execFileSync('curl', [
+    '-s',
+    '--max-time',
+    '60',
+    '-o',
+    join(destino, nombre),
+    url,
+  ])
   salida.push('/* ' + bloque.replace(url, `/fonts/${nombre}`).trim())
   console.log(`${familia} ${estilo} ${subconjunto} -> public/fonts/${nombre}`)
 }
 
 writeFileSync(
   join(raiz, 'src/fuentes.css'),
-  `/* Generado por scripts/fuentes.mjs: Bodoni Moda y Archivo, alojadas en el sitio. */\n\n${salida.join('\n\n')}\n`,
+  `/* Generado por scripts/fuentes.mjs: Bodoni Moda y Archivo, alojadas en el sitio. */\n\n${salida.join('\n\n')}\n`
 )

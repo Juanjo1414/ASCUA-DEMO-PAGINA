@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { LanguageContext } from './LanguageContext'
 import { translations } from './translations'
-
-const LanguageContext = createContext(null)
 
 function detectInitialLang() {
   if (typeof window === 'undefined') return 'es'
@@ -27,13 +26,14 @@ export function LanguageProvider({ children }) {
     document.documentElement.lang = lang
   }, [lang])
 
-  const value = useMemo(() => ({ lang, setLang, t: translations[lang] }), [lang])
+  const value = useMemo(
+    () => ({ lang, setLang, t: translations[lang] }),
+    [lang]
+  )
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
-}
-
-export function useLanguage() {
-  const ctx = useContext(LanguageContext)
-  if (!ctx) throw new Error('useLanguage must be used within LanguageProvider')
-  return ctx
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  )
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Box, Scan } from 'lucide-react'
 import { gsap } from '../lib/gsap'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 import { getAssetForDishIndex } from '../lib/arAssets'
 import { FOTOS, TEMPERATURAS } from '../lib/carta'
 import ArDishModal from './ArDishModal'
@@ -54,11 +54,15 @@ export default function Menu() {
   useEffect(() => {
     const el = raiz.current
     if (!el) return
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reducido = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
     if (reducido) {
       // Sin animación, el plato ya está colocado: el visor sólo aparece al
       // pasar por el botón.
-      el.querySelectorAll('[data-ar]').forEach((ar) => ar.classList.add('ar-colocado'))
+      el.querySelectorAll('[data-ar]').forEach((ar) =>
+        ar.classList.add('ar-colocado')
+      )
       return
     }
 
@@ -70,8 +74,13 @@ export default function Menu() {
           {
             rotate: 0,
             ease: 'none',
-            scrollTrigger: { trigger: plato, start: 'top bottom', end: 'center 40%', scrub: 0.6 },
-          },
+            scrollTrigger: {
+              trigger: plato,
+              start: 'top bottom',
+              end: 'center 40%',
+              scrub: 0.6,
+            },
+          }
         )
       })
       // Los platos con RA entran como los pone la realidad aumentada: aparece
@@ -83,19 +92,43 @@ export default function Menu() {
             defaults: { ease: 'expo.out' },
             scrollTrigger: { trigger: ar, start: 'top 75%', once: true },
           })
-          .from(ar.querySelector('[data-reticula]'), { scale: 1.25, opacity: 0, duration: 0.9 })
+          .from(ar.querySelector('[data-reticula]'), {
+            scale: 1.25,
+            opacity: 0,
+            duration: 0.9,
+          })
           .from(
             ar.querySelector('[data-plato-ar]'),
-            { y: -70, scale: 1.14, opacity: 0, duration: 1.3, ease: 'back.out(1.3)' },
-            0.35,
+            {
+              y: -70,
+              scale: 1.14,
+              opacity: 0,
+              duration: 1.3,
+              ease: 'back.out(1.3)',
+            },
+            0.35
           )
-          .to(ar.querySelector('[data-esquinas]'), { scale: 0.94, transformOrigin: '50% 50%', duration: 0.5 }, 1.2)
-          .to(ar.querySelector('[data-aro]'), { opacity: 0.25, duration: 0.8 }, 1.3)
+          .to(
+            ar.querySelector('[data-esquinas]'),
+            { scale: 0.94, transformOrigin: '50% 50%', duration: 0.5 },
+            1.2
+          )
+          .to(
+            ar.querySelector('[data-aro]'),
+            { opacity: 0.25, duration: 0.8 },
+            1.3
+          )
           // Ya colocado, el visor se va, como en una app de RA. Desde ahí lo
           // maneja el CSS: vuelve tenue al pasar por «Ponerlo en mi mesa».
-          .to(ar.querySelector('[data-reticula]'), { opacity: 0, duration: 0.7, ease: 'power2.out' }, 2)
+          .to(
+            ar.querySelector('[data-reticula]'),
+            { opacity: 0, duration: 0.7, ease: 'power2.out' },
+            2
+          )
           .add(() => {
-            gsap.set(ar.querySelector('[data-reticula]'), { clearProps: 'opacity,transform' })
+            gsap.set(ar.querySelector('[data-reticula]'), {
+              clearProps: 'opacity,transform',
+            })
             ar.classList.add('ar-colocado')
           })
       })
@@ -122,8 +155,12 @@ export default function Menu() {
     >
       <div className="mx-auto max-w-content px-5 sm:px-6 lg:px-10">
         <div data-sube className="max-w-2xl">
-          <h2 className="font-display text-[clamp(2.6rem,5.4vw,5rem)] font-medium">{t.menuSection.title}</h2>
-          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-crema/80">{t.menuSection.body}</p>
+          <h2 className="font-display text-[clamp(2.6rem,5.4vw,5rem)] font-medium">
+            {t.menuSection.title}
+          </h2>
+          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-crema/80">
+            {t.menuSection.body}
+          </p>
         </div>
 
         {/* Los platos que se pueden poner sobre la mesa. */}
@@ -133,7 +170,9 @@ export default function Menu() {
               <h3 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] italic text-llama">
                 {t.menuSection.destacado}
               </h3>
-              <p className="mt-4 max-w-[48ch] leading-relaxed text-crema/80">{t.menuSection.destacadoBody}</p>
+              <p className="mt-4 max-w-[48ch] leading-relaxed text-crema/80">
+                {t.menuSection.destacadoBody}
+              </p>
             </div>
 
             <ul className="mt-14 grid gap-20 md:grid-cols-2 md:gap-12">
@@ -162,7 +201,13 @@ export default function Menu() {
                         strokeWidth="0.35"
                         strokeDasharray="1.2 1.6"
                       />
-                      <g data-esquinas fill="none" stroke="currentColor" strokeWidth="0.6" strokeLinecap="square">
+                      <g
+                        data-esquinas
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="0.6"
+                        strokeLinecap="square"
+                      >
                         <path d="M4 14V4h10" />
                         <path d="M86 4h10v10" />
                         <path d="M96 86v10H86" />
@@ -176,7 +221,9 @@ export default function Menu() {
                       alt={plato.name}
                       loading="lazy"
                       className="relative aspect-square w-full rounded-full object-cover will-change-transform"
-                      style={{ boxShadow: '0 40px 70px -30px rgb(0 0 0 / 0.9)' }}
+                      style={{
+                        boxShadow: '0 40px 70px -30px rgb(0 0 0 / 0.9)',
+                      }}
                     />
                     <p className="rotulo absolute right-[4%] top-[6%] bg-tinta px-3 py-2 text-llama">
                       {plato.temp} °C
@@ -186,7 +233,9 @@ export default function Menu() {
                   <h4 className="mt-10 font-display text-[clamp(1.9rem,3.2vw,2.8rem)] font-medium leading-tight">
                     {plato.name}
                   </h4>
-                  <p className="mt-3 max-w-[40ch] leading-relaxed text-crema/80">{plato.description}</p>
+                  <p className="mt-3 max-w-[40ch] leading-relaxed text-crema/80">
+                    {plato.description}
+                  </p>
 
                   <div className="mt-8 flex w-full flex-col items-center gap-5 sm:w-auto sm:flex-row">
                     <button
@@ -236,8 +285,12 @@ export default function Menu() {
                   {plato.temp} °C
                 </p>
               </div>
-              <h3 className="mt-6 font-display text-xl font-medium leading-snug md:text-2xl">{plato.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-crema/75">{plato.description}</p>
+              <h3 className="mt-6 font-display text-xl font-medium leading-snug md:text-2xl">
+                {plato.name}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-crema/75">
+                {plato.description}
+              </p>
             </li>
           ))}
         </ul>

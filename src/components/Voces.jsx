@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from '../lib/gsap'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 /*
   Tercer tramo: brasa viva (de 950 a 1000 °C).
@@ -22,12 +22,20 @@ export default function Voces() {
   useEffect(() => {
     const el = raiz.current
     if (!el) return
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reducido = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
     if (reducido) return
 
     const ctx = gsap.context(() => {
       gsap
-        .timeline({ scrollTrigger: { trigger: '[data-riel]', start: 'top 78%', once: true } })
+        .timeline({
+          scrollTrigger: {
+            trigger: '[data-riel]',
+            start: 'top 78%',
+            once: true,
+          },
+        })
         .from('[data-riel-barra]', { scaleX: 0, duration: 1, ease: 'expo.out' })
         .from(
           '[data-ticket]',
@@ -39,7 +47,7 @@ export default function Voces() {
             stagger: 0.16,
             ease: 'elastic.out(1, 0.45)',
           },
-          0.2,
+          0.2
         )
     }, el)
     return () => ctx.revert()
@@ -75,48 +83,53 @@ export default function Voces() {
             }}
           />
           <ul className="flex gap-6 lg:gap-8">
-          {t.testimonials.items.map((item, i) => (
-            <li
-              key={item.name}
-              data-ticket
-              className="w-[78vw] max-w-[340px] shrink-0 snap-center origin-top lg:w-auto lg:max-w-none lg:flex-1"
-            >
-              {/* Se mece apenas, colgado; cada uno a su ritmo. */}
-              <div
-                className="comanda-colgada relative origin-top"
-                style={{ animationDelay: `-${i * 1.3}s` }}
+            {t.testimonials.items.map((item, i) => (
+              <li
+                key={item.name}
+                data-ticket
+                className="w-[78vw] max-w-[340px] shrink-0 snap-center origin-top lg:w-auto lg:max-w-none lg:flex-1"
               >
-                {/* La pinza que lo sostiene del riel. */}
-                <span
-                  aria-hidden="true"
-                  className="absolute left-1/2 top-[-14px] z-10 h-5 w-10 -translate-x-1/2 bg-carbon-700 ring-1 ring-crema/25"
-                />
-                <article className="comanda relative bg-crema px-6 pb-12 pt-8 text-tinta">
-                  <header className="comanda-impresa flex items-baseline justify-between">
-                    <span>Ascua · {t.testimonials.comanda}</span>
-                    <span className="tabular-nums">{item.hora}</span>
-                  </header>
-                  <p className="comanda-impresa mt-2 text-tinta/70">
-                    {t.testimonials.mesa} <span className="tabular-nums">{item.mesa}</span>
-                  </p>
-                  <hr className="my-5 border-0 border-t border-dashed border-tinta/40" />
-                  <p className="comanda-impresa text-tinta/70">{t.testimonials.nota}:</p>
-                  <blockquote className="mt-3">
-                    <p className="font-display text-2xl italic leading-[1.15]">
-                      <span aria-hidden="true">{abre}</span>
-                      {item.quote}
-                      <span aria-hidden="true">{cierra}</span>
+                {/* Se mece apenas, colgado; cada uno a su ritmo. */}
+                <div
+                  className="comanda-colgada relative origin-top"
+                  style={{ animationDelay: `-${i * 1.3}s` }}
+                >
+                  {/* La pinza que lo sostiene del riel. */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-1/2 top-[-14px] z-10 h-5 w-10 -translate-x-1/2 bg-carbon-700 ring-1 ring-crema/25"
+                  />
+                  <article className="comanda relative bg-crema px-6 pb-12 pt-8 text-tinta">
+                    <header className="comanda-impresa flex items-baseline justify-between">
+                      <span>Ascua · {t.testimonials.comanda}</span>
+                      <span className="tabular-nums">{item.hora}</span>
+                    </header>
+                    <p className="comanda-impresa mt-2 text-tinta/70">
+                      {t.testimonials.mesa}{' '}
+                      <span className="tabular-nums">{item.mesa}</span>
                     </p>
-                  </blockquote>
-                  <hr className="my-5 border-0 border-t border-dashed border-tinta/40" />
-                  <footer>
-                    <cite className="comanda-impresa not-italic">{item.name}</cite>
-                    <p className="mt-1 text-sm text-tinta/70">{item.role}</p>
-                  </footer>
-                </article>
-              </div>
-            </li>
-          ))}
+                    <hr className="my-5 border-0 border-t border-dashed border-tinta/40" />
+                    <p className="comanda-impresa text-tinta/70">
+                      {t.testimonials.nota}:
+                    </p>
+                    <blockquote className="mt-3">
+                      <p className="font-display text-2xl italic leading-[1.15]">
+                        <span aria-hidden="true">{abre}</span>
+                        {item.quote}
+                        <span aria-hidden="true">{cierra}</span>
+                      </p>
+                    </blockquote>
+                    <hr className="my-5 border-0 border-t border-dashed border-tinta/40" />
+                    <footer>
+                      <cite className="comanda-impresa not-italic">
+                        {item.name}
+                      </cite>
+                      <p className="mt-1 text-sm text-tinta/70">{item.role}</p>
+                    </footer>
+                  </article>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

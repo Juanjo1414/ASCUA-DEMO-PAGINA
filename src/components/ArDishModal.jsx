@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Check, Copy, X } from 'lucide-react'
 import ArViewer from './ArViewer'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 import { detectInAppBrowser } from '../lib/browserEnv'
 
 export default function ArDishModal({ dish, asset, mode, onClose }) {
@@ -59,13 +59,17 @@ export default function ArDishModal({ dish, asset, mode, onClose }) {
         <ArViewer glb={asset.glbUrl} poster={asset.posterUrl} alt={dish.name} />
 
         <div className="mt-5">
-          <p className="font-display text-lg font-semibold tracking-tight text-loza">{dish.name}</p>
+          <p className="font-display text-lg font-semibold tracking-tight text-loza">
+            {dish.name}
+          </p>
           <p className="mt-1 text-sm text-ceniza">{dish.description}</p>
           {arUnavailable && (
             <div className="mt-3 rounded-xl border border-rescoldo/50 bg-carbon-800 px-4 py-3">
               {inAppName ? (
                 <>
-                  <p className="text-xs font-medium text-loza">{t.ar.inAppTitle}</p>
+                  <p className="text-xs font-medium text-loza">
+                    {t.ar.inAppTitle}
+                  </p>
                   <p className="mt-1.5 text-xs leading-relaxed text-ceniza">
                     {t.ar.inAppBody.replaceAll('{app}', inAppName)}
                   </p>
@@ -74,12 +78,18 @@ export default function ArDishModal({ dish, asset, mode, onClose }) {
                     onClick={copyLink}
                     className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-rescoldo/60 px-3 py-1.5 text-xs text-loza transition-colors hover:bg-brasa hover:text-carbon"
                   >
-                    {copied ? <Check size={13} strokeWidth={2} /> : <Copy size={13} strokeWidth={2} />}
+                    {copied ? (
+                      <Check size={13} strokeWidth={2} />
+                    ) : (
+                      <Copy size={13} strokeWidth={2} />
+                    )}
                     {copied ? t.ar.copied : t.ar.copyLink}
                   </button>
                 </>
               ) : (
-                <p className="text-xs leading-relaxed text-ceniza">{t.ar.arUnavailable}</p>
+                <p className="text-xs leading-relaxed text-ceniza">
+                  {t.ar.arUnavailable}
+                </p>
               )}
             </div>
           )}

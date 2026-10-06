@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AlertCircle, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -24,8 +24,13 @@ export default function Contacto() {
   // pedido de mesa para completar y pone el cursor en el nombre.
   useEffect(() => {
     const alReservar = () => {
-      setValues((v) => (v.message ? v : { ...v, message: t.contact.reservaPrefill }))
-      window.setTimeout(() => primerCampo.current?.focus({ preventScroll: true }), 700)
+      setValues((v) =>
+        v.message ? v : { ...v, message: t.contact.reservaPrefill }
+      )
+      window.setTimeout(
+        () => primerCampo.current?.focus({ preventScroll: true }),
+        700
+      )
     }
     window.addEventListener('ascua:reservar', alReservar)
     return () => window.removeEventListener('ascua:reservar', alReservar)
@@ -78,13 +83,19 @@ export default function Contacto() {
     >
       <div className="mx-auto grid max-w-content gap-16 px-5 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
         <div className="reveal-item lg:col-span-5">
-          <h2 className="font-display text-[clamp(2.6rem,5vw,4.6rem)] font-medium">{t.contact.title}</h2>
-          <p className="mt-6 max-w-[40ch] text-lg leading-relaxed text-ceniza">{t.contact.body}</p>
+          <h2 className="font-display text-[clamp(2.6rem,5vw,4.6rem)] font-medium">
+            {t.contact.title}
+          </h2>
+          <p className="mt-6 max-w-[40ch] text-lg leading-relaxed text-ceniza">
+            {t.contact.body}
+          </p>
 
           <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
             <div>
               <dt className="rotulo text-ceniza">{t.contact.addressTitle}</dt>
-              <dd className="mt-2 font-display text-2xl">Calle 10 #45-20, local 3</dd>
+              <dd className="mt-2 font-display text-2xl">
+                Calle 10 #45-20, local 3
+              </dd>
               <dd className="text-ceniza">Medellín</dd>
             </div>
             <div>
@@ -94,7 +105,11 @@ export default function Contacto() {
           </dl>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate className="reveal-item lg:col-span-6 lg:col-start-7">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="reveal-item lg:col-span-6 lg:col-start-7"
+        >
           <div className="space-y-9">
             {FILAS.map(({ id, type, autoComplete }) => (
               <div key={id}>
@@ -144,7 +159,11 @@ export default function Contacto() {
           </div>
 
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <button type="submit" disabled={status === 'sending'} className="boton w-full sm:w-auto">
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="boton w-full sm:w-auto"
+            >
               {status === 'sending' ? t.contact.sending : t.contact.send}
               {status !== 'sending' && <ArrowRight size={16} strokeWidth={2} />}
             </button>
@@ -152,7 +171,11 @@ export default function Contacto() {
             <div aria-live="polite" className="text-sm">
               {status === 'success' && (
                 <p className="flex items-center gap-2 text-acento">
-                  <CheckCircle2 size={16} strokeWidth={2} className="shrink-0" />
+                  <CheckCircle2
+                    size={16}
+                    strokeWidth={2}
+                    className="shrink-0"
+                  />
                   {t.contact.success}
                 </p>
               )}

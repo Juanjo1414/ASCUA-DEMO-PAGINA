@@ -8,7 +8,9 @@ import { useEffect, useState } from 'react'
 */
 export default function LoadingScreen() {
   // aparece | sube | fuera. Con movimiento reducido arranca ya fuera.
-  const [reducido] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+  const [reducido] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
   const [fase, setFase] = useState(reducido ? 'fuera' : 'aparece')
 
   useEffect(() => {
@@ -33,7 +35,9 @@ export default function LoadingScreen() {
       }}
     >
       <div className="flex flex-col items-center">
-        <p className="carga-nombre font-display text-xl uppercase tracking-[0.5em] text-crema">Ascua</p>
+        <p className="carga-nombre font-display text-xl uppercase tracking-[0.5em] text-crema">
+          Ascua
+        </p>
         <span className="carga-linea mt-5 block h-px w-40" />
       </div>
       <style>{`

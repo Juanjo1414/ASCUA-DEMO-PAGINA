@@ -1,14 +1,17 @@
 ## Tarea(s)
+
 <!-- IDs del plan, p. ej. P-202 -->
 
 ## Qué cambia y por qué
 
 ## Cómo se probó
+
 - [ ] `npm run verify` en verde local
 - [ ] Pruebas nuevas / de regresión agregadas
 - [ ] (Si toca AR o contenido) QA manual en iPhone y Android sobre el preview — runbook `qa-dispositivos`
 
 ## Revisión
+
 - [ ] `engineering:code-review` sin hallazgos altos
 - [ ] `/security-review` sin hallazgos altos
 - [ ] `engineering:deploy-checklist` completado
@@ -19,4 +22,5 @@
 - [ ] `docs/ESTADO.md`, bitácora de sesión y ADR (si aplica) actualizados
 
 ## Riesgos y rollback
+
 <!-- Qué podría fallar en producción y cómo se revierte -->

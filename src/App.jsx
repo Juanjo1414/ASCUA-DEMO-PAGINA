@@ -10,7 +10,7 @@ import Reserva from './components/Reserva'
 import Contacto from './components/Contacto'
 import Pie from './components/Pie'
 import LoadingScreen from './components/LoadingScreen'
-import { LanguageProvider } from './i18n/LanguageContext'
+import { LanguageProvider } from './i18n/LanguageProvider'
 
 /*
   Una sola experiencia de principio a fin: la vida de una brasa.

@@ -4,46 +4,236 @@
   "title": "Design System: Ascua",
   "extensions": {
     "colorMeta": {
-      "carbon": { "role": "neutral", "displayName": "Carbón", "canonical": "rgb(15 12 11)", "tonalRamp": ["#0F0C0B", "#1A1513", "#261F1C", "#3A302B", "#564A43", "#786A61", "#A0938A", "#D1C6BD"] },
-      "carbon-900": { "role": "neutral", "displayName": "Carbón 900", "canonical": "rgb(26 21 19)" },
-      "carbon-800": { "role": "neutral", "displayName": "Carbón 800", "canonical": "rgb(38 31 28)" },
-      "carbon-700": { "role": "neutral", "displayName": "Carbón 700", "canonical": "rgb(58 48 43)" },
-      "brasa": { "role": "primary", "displayName": "Brasa", "canonical": "oklch(62.8% 0.215 33.1)", "tonalRamp": ["#2E0000", "#560000", "#810000", "#AE1700", "#DD3612", "#FF6242", "#FF9375", "#FFC7AB"] },
-      "llama": { "role": "secondary", "displayName": "Llama", "canonical": "oklch(81.7% 0.160 74.9)", "tonalRamp": ["#1A0500", "#3A1C00", "#5C3600", "#825200", "#A97000", "#D28F14", "#FFB330", "#FFE07B"] },
-      "acento": { "role": "secondary", "displayName": "Acento (alias de llama)", "canonical": "oklch(81.7% 0.160 74.9)" },
-      "rescoldo": { "role": "tertiary", "displayName": "Rescoldo", "canonical": "oklch(37.6% 0.137 29.0)", "tonalRamp": ["#2B0000", "#500000", "#78120C", "#973C32", "#B66256", "#D4877B", "#F5B0A6", "#FFDFD5"] },
-      "blanco": { "role": "tertiary", "displayName": "Blanco caliente", "canonical": "oklch(94.9% 0.051 83.4)", "tonalRamp": ["#0F0A04", "#292319", "#463F31", "#665C4B", "#877C66", "#AA9D83", "#D2C2A3", "#FFECC8"] },
-      "ceniza": { "role": "neutral", "displayName": "Ceniza", "canonical": "oklch(73.2% 0.022 67.5)", "tonalRamp": ["#0E0A07", "#28231E", "#453E38", "#645C54", "#857B71", "#A89C91", "#CDC2B7", "#F7EDE2"] },
-      "loza": { "role": "neutral", "displayName": "Loza", "canonical": "oklch(96.2% 0.020 77.3)", "tonalRamp": ["#0D0B08", "#262420", "#423F3A", "#615D57", "#827C75", "#A49D94", "#CAC3B8", "#F6EDE0"] },
-      "tinta": { "role": "neutral", "displayName": "Tinta (sobre campos de color)", "canonical": "rgb(15 12 11)" },
-      "crema": { "role": "neutral", "displayName": "Crema (sobre el fuego)", "canonical": "rgb(250 241 228)" }
+      "carbon": {
+        "role": "neutral",
+        "displayName": "Carbón",
+        "canonical": "rgb(15 12 11)",
+        "tonalRamp": [
+          "#0F0C0B",
+          "#1A1513",
+          "#261F1C",
+          "#3A302B",
+          "#564A43",
+          "#786A61",
+          "#A0938A",
+          "#D1C6BD"
+        ]
+      },
+      "carbon-900": {
+        "role": "neutral",
+        "displayName": "Carbón 900",
+        "canonical": "rgb(26 21 19)"
+      },
+      "carbon-800": {
+        "role": "neutral",
+        "displayName": "Carbón 800",
+        "canonical": "rgb(38 31 28)"
+      },
+      "carbon-700": {
+        "role": "neutral",
+        "displayName": "Carbón 700",
+        "canonical": "rgb(58 48 43)"
+      },
+      "brasa": {
+        "role": "primary",
+        "displayName": "Brasa",
+        "canonical": "oklch(62.8% 0.215 33.1)",
+        "tonalRamp": [
+          "#2E0000",
+          "#560000",
+          "#810000",
+          "#AE1700",
+          "#DD3612",
+          "#FF6242",
+          "#FF9375",
+          "#FFC7AB"
+        ]
+      },
+      "llama": {
+        "role": "secondary",
+        "displayName": "Llama",
+        "canonical": "oklch(81.7% 0.160 74.9)",
+        "tonalRamp": [
+          "#1A0500",
+          "#3A1C00",
+          "#5C3600",
+          "#825200",
+          "#A97000",
+          "#D28F14",
+          "#FFB330",
+          "#FFE07B"
+        ]
+      },
+      "acento": {
+        "role": "secondary",
+        "displayName": "Acento (alias de llama)",
+        "canonical": "oklch(81.7% 0.160 74.9)"
+      },
+      "rescoldo": {
+        "role": "tertiary",
+        "displayName": "Rescoldo",
+        "canonical": "oklch(37.6% 0.137 29.0)",
+        "tonalRamp": [
+          "#2B0000",
+          "#500000",
+          "#78120C",
+          "#973C32",
+          "#B66256",
+          "#D4877B",
+          "#F5B0A6",
+          "#FFDFD5"
+        ]
+      },
+      "blanco": {
+        "role": "tertiary",
+        "displayName": "Blanco caliente",
+        "canonical": "oklch(94.9% 0.051 83.4)",
+        "tonalRamp": [
+          "#0F0A04",
+          "#292319",
+          "#463F31",
+          "#665C4B",
+          "#877C66",
+          "#AA9D83",
+          "#D2C2A3",
+          "#FFECC8"
+        ]
+      },
+      "ceniza": {
+        "role": "neutral",
+        "displayName": "Ceniza",
+        "canonical": "oklch(73.2% 0.022 67.5)",
+        "tonalRamp": [
+          "#0E0A07",
+          "#28231E",
+          "#453E38",
+          "#645C54",
+          "#857B71",
+          "#A89C91",
+          "#CDC2B7",
+          "#F7EDE2"
+        ]
+      },
+      "loza": {
+        "role": "neutral",
+        "displayName": "Loza",
+        "canonical": "oklch(96.2% 0.020 77.3)",
+        "tonalRamp": [
+          "#0D0B08",
+          "#262420",
+          "#423F3A",
+          "#615D57",
+          "#827C75",
+          "#A49D94",
+          "#CAC3B8",
+          "#F6EDE0"
+        ]
+      },
+      "tinta": {
+        "role": "neutral",
+        "displayName": "Tinta (sobre campos de color)",
+        "canonical": "rgb(15 12 11)"
+      },
+      "crema": {
+        "role": "neutral",
+        "displayName": "Crema (sobre el fuego)",
+        "canonical": "rgb(250 241 228)"
+      }
     },
     "typographyMeta": {
-      "display-monumental": { "displayName": "Display monumental", "purpose": "A S C U A del hero, titular de la reserva, ASCUA del pie." },
-      "display": { "displayName": "Display", "purpose": "El manifiesto, palabra por palabra." },
-      "headline": { "displayName": "Headline", "purpose": "El h2 de cada sección." },
-      "title": { "displayName": "Title", "purpose": "Nombres de platos y zonas del fuego." },
-      "voz": { "displayName": "Voz", "purpose": "Testimonios y frases de la cinta, en cursiva." },
+      "display-monumental": {
+        "displayName": "Display monumental",
+        "purpose": "A S C U A del hero, titular de la reserva, ASCUA del pie."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "El manifiesto, palabra por palabra."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "El h2 de cada sección."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Nombres de platos y zonas del fuego."
+      },
+      "voz": {
+        "displayName": "Voz",
+        "purpose": "Testimonios y frases de la cinta, en cursiva."
+      },
       "body": { "displayName": "Body", "purpose": "Párrafos, máx. 40–48ch." },
-      "label": { "displayName": "Rótulo", "purpose": "Clase .rotulo: navegación, firmas, etiquetas, etapa, chip de temperatura." },
+      "label": {
+        "displayName": "Rótulo",
+        "purpose": "Clase .rotulo: navegación, firmas, etiquetas, etapa, chip de temperatura."
+      },
       "button": { "displayName": "Botón", "purpose": "Sólo dentro de .boton." },
-      "lectura": { "displayName": "Lectura", "purpose": "Grados del termómetro, cifras tabulares." },
-      "marca": { "displayName": "Marca", "purpose": "La palabra ASCUA en la barra y la carga." }
+      "lectura": {
+        "displayName": "Lectura",
+        "purpose": "Grados del termómetro, cifras tabulares."
+      },
+      "marca": {
+        "displayName": "Marca",
+        "purpose": "La palabra ASCUA en la barra y la carga."
+      }
     },
     "shadows": [
-      { "name": "plato-destacado", "value": "0 40px 70px -30px rgb(0 0 0 / 0.9)", "purpose": "Platos grandes de la carta, como apoyados en la mesa." },
-      { "name": "plato-rejilla", "value": "0 30px 50px -28px rgb(0 0 0 / 0.9)", "purpose": "Platos pequeños de la rejilla." },
-      { "name": "texto-sobre-fuego", "value": "0 2px 14px rgb(0 0 0 / 0.75)", "purpose": "text-shadow para leer texto encima de las llamas." },
-      { "name": "resplandor-brasa", "value": "radial-gradient(closest-side, rgb(var(--c-brasa) / 0.35), rgb(var(--c-rescoldo) / 0.15) 60%, transparent)", "purpose": "Halo detrás de los platos destacados y del punto de carga." }
+      {
+        "name": "plato-destacado",
+        "value": "0 40px 70px -30px rgb(0 0 0 / 0.9)",
+        "purpose": "Platos grandes de la carta, como apoyados en la mesa."
+      },
+      {
+        "name": "plato-rejilla",
+        "value": "0 30px 50px -28px rgb(0 0 0 / 0.9)",
+        "purpose": "Platos pequeños de la rejilla."
+      },
+      {
+        "name": "texto-sobre-fuego",
+        "value": "0 2px 14px rgb(0 0 0 / 0.75)",
+        "purpose": "text-shadow para leer texto encima de las llamas."
+      },
+      {
+        "name": "resplandor-brasa",
+        "value": "radial-gradient(closest-side, rgb(var(--c-brasa) / 0.35), rgb(var(--c-rescoldo) / 0.15) 60%, transparent)",
+        "purpose": "Halo detrás de los platos destacados y del punto de carga."
+      }
     ],
     "motion": [
-      { "name": "llama-sube", "value": "cubic-bezier(0.19, 1, 0.22, 1) 0.45s", "purpose": "Relleno del botón (scaleY) y avance de la flecha." },
-      { "name": "cortina", "value": "cubic-bezier(0.76, 0, 0.24, 1) 0.7s", "purpose": "La cortina de carga sube con translateY." },
-      { "name": "entrada", "value": "expo.out 1.1–1.2s, y 40–50px + opacity", "purpose": "Entradas al aparecer, una sola vez." },
-      { "name": "scrub", "value": "scrub 0.3–0.6", "purpose": "Coreografías atadas al scroll (disco, mercurio, platos que giran, reserva)." },
-      { "name": "gira", "value": "gira 60s linear infinite", "purpose": "Anillo de texto grabado alrededor del disco del hero." },
-      { "name": "llama-acerca", "value": "lerp 0.06 por frame", "purpose": "data-llama se acerca de a poco; nunca salta entre secciones." },
-      { "name": "canvas", "value": "resolución reducida, 30 fps en táctil, pausa con document.hidden", "purpose": "Presupuesto de la escena para Android de gama media." }
+      {
+        "name": "llama-sube",
+        "value": "cubic-bezier(0.19, 1, 0.22, 1) 0.45s",
+        "purpose": "Relleno del botón (scaleY) y avance de la flecha."
+      },
+      {
+        "name": "cortina",
+        "value": "cubic-bezier(0.76, 0, 0.24, 1) 0.7s",
+        "purpose": "La cortina de carga sube con translateY."
+      },
+      {
+        "name": "entrada",
+        "value": "expo.out 1.1–1.2s, y 40–50px + opacity",
+        "purpose": "Entradas al aparecer, una sola vez."
+      },
+      {
+        "name": "scrub",
+        "value": "scrub 0.3–0.6",
+        "purpose": "Coreografías atadas al scroll (disco, mercurio, platos que giran, reserva)."
+      },
+      {
+        "name": "gira",
+        "value": "gira 60s linear infinite",
+        "purpose": "Anillo de texto grabado alrededor del disco del hero."
+      },
+      {
+        "name": "llama-acerca",
+        "value": "lerp 0.06 por frame",
+        "purpose": "data-llama se acerca de a poco; nunca salta entre secciones."
+      },
+      {
+        "name": "canvas",
+        "value": "resolución reducida, 30 fps en táctil, pausa con document.hidden",
+        "purpose": "Presupuesto de la escena para Android de gama media."
+      }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
@@ -51,14 +241,49 @@
       { "name": "lg", "value": "1024px" }
     ],
     "temperatura": [
-      { "seccion": "HeroFuego", "calor": "420,420", "etapa": "rescoldo", "llama": 0 },
-      { "seccion": "Manifiesto", "calor": "420,700", "etapa": "aviva", "llama": 0.35 },
-      { "seccion": "ElFuego", "calor": "700,950", "etapa": "llama", "llama": 1 },
+      {
+        "seccion": "HeroFuego",
+        "calor": "420,420",
+        "etapa": "rescoldo",
+        "llama": 0
+      },
+      {
+        "seccion": "Manifiesto",
+        "calor": "420,700",
+        "etapa": "aviva",
+        "llama": 0.35
+      },
+      {
+        "seccion": "ElFuego",
+        "calor": "700,950",
+        "etapa": "llama",
+        "llama": 1
+      },
       { "seccion": "Menu", "calor": "950,950", "etapa": "pase", "llama": 0 },
-      { "seccion": "Voces", "calor": "950,1000", "etapa": "viva", "llama": 0.12 },
-      { "seccion": "Reserva", "calor": "1000,1100", "etapa": "blanco", "llama": 0.4 },
-      { "seccion": "Contacto", "calor": "1100,300", "etapa": "sobremesa", "llama": 0.1 },
-      { "seccion": "Pie", "calor": "300,180", "etapa": "sobremesa", "llama": 0.05 }
+      {
+        "seccion": "Voces",
+        "calor": "950,1000",
+        "etapa": "viva",
+        "llama": 0.12
+      },
+      {
+        "seccion": "Reserva",
+        "calor": "1000,1100",
+        "etapa": "blanco",
+        "llama": 0.4
+      },
+      {
+        "seccion": "Contacto",
+        "calor": "1100,300",
+        "etapa": "sobremesa",
+        "llama": 0.1
+      },
+      {
+        "seccion": "Pie",
+        "calor": "300,180",
+        "etapa": "sobremesa",
+        "llama": 0.05
+      }
     ]
   },
   "components": [
@@ -130,18 +355,66 @@
       "Sin fotos fuera de la carta, sin logo, sin tema claro."
     ],
     "rules": [
-      { "name": "The Temperature Spine Rule", "body": "Toda sección nueva declara su tramo con `data-calor=\"desde,hasta\"` y su `data-etapa`, y encaja en la curva: sube de 420 °C a 1100 °C en la reserva y baja a 180 °C en la sobremesa. Una sección sin tramo no existe para la escena ni para el termómetro.", "section": "overview" },
-      { "name": "The Flame Budget Rule", "body": "`data-llama` (0 a 1) dice cuánta llama se ve detrás del texto. 0 es sólo brasa: se usa donde hay que leer o mirar platos (hero, carta). 1 sólo en el tramo del fuego, sin párrafos largos encima. Detrás de texto corrido, no más de 0.4.", "section": "overview" },
-      { "name": "The Locked Names Rule", "body": "`carbon`, `brasa`, `llama`, `rescoldo`, `ceniza` y `loza` los leen los archivos bloqueados de RA/3D (`lib/launchAr.js`, `lib/arAssets.js`, `lib/browserEnv.js`, `ArDishModal.jsx`, `ArViewer.jsx`). Sus valores pueden cambiar; sus nombres, nunca.", "section": "colors" },
-      { "name": "The Ink On Field Rule", "body": "Sobre un campo de color sólido se escribe en `tinta`; sobre el carbón y el fuego, en `crema`/`loza`. El termómetro cambia a tinta en la etapa `blanco`. Nunca texto claro sobre llama o blanco.", "section": "colors" },
-      { "name": "The Black Body Rule", "body": "Todo color que represente temperatura (aguja, punto de lectura, luz del canvas) sale de `colorDeCalor(t)`, no de un token. Las cifras grandes del termómetro no bajan del color de 750 °C para que se lean sobre el carbón.", "section": "colors" },
-      { "name": "The Two Blades Rule", "body": "Bodoni habla (titulares, voces, nombres); Archivo ancho rotula (datos, controles, firmas). No hay una tercera voz en pantalla.", "section": "typography" },
-      { "name": "The Italic Heat Rule", "body": "El énfasis dentro de un titular es cursiva de Bodoni en `llama`, nunca negrita ni otro color.", "section": "typography" },
-      { "name": "The Tabular Reading Rule", "body": "Toda cifra que cambia en vivo (grados) va en `tabular-nums` para que no salte.", "section": "typography" },
-      { "name": "The HUD Clearance Rule", "body": "En escritorio el contenido de las secciones deja 160 px a la derecha (`lg:pr-40`) para que el termómetro nunca pise texto. Excepción legítima: campos a sangre (la reserva, la cinta), cuyo fondo puede pasar por debajo, pero su texto y sus botones no.", "section": "layout" },
-      { "name": "The Flat Field Rule", "body": "Un campo de color es plano: el clímax de la reserva es el cambio de color (brasa → llama → blanco por opacidad de tres capas quietas), no un brillo encima.", "section": "elevation" },
-      { "name": "The Circle Is Food Rule", "body": "El círculo se reserva para platos y puntos de lectura. Un control nunca es redondo ni píldora.", "section": "shapes" },
-      { "name": "The Reduced Motion Rule", "body": "Cada animación tiene su camino con `prefers-reduced-motion`: el estado final se fija con `gsap.set` (o no se anima), la carga no se muestra, el canvas no corre en el tiempo, y el CSS global lleva transiciones y animaciones a 0.001 ms.", "section": "components" }
+      {
+        "name": "The Temperature Spine Rule",
+        "body": "Toda sección nueva declara su tramo con `data-calor=\"desde,hasta\"` y su `data-etapa`, y encaja en la curva: sube de 420 °C a 1100 °C en la reserva y baja a 180 °C en la sobremesa. Una sección sin tramo no existe para la escena ni para el termómetro.",
+        "section": "overview"
+      },
+      {
+        "name": "The Flame Budget Rule",
+        "body": "`data-llama` (0 a 1) dice cuánta llama se ve detrás del texto. 0 es sólo brasa: se usa donde hay que leer o mirar platos (hero, carta). 1 sólo en el tramo del fuego, sin párrafos largos encima. Detrás de texto corrido, no más de 0.4.",
+        "section": "overview"
+      },
+      {
+        "name": "The Locked Names Rule",
+        "body": "`carbon`, `brasa`, `llama`, `rescoldo`, `ceniza` y `loza` los leen los archivos bloqueados de RA/3D (`lib/launchAr.js`, `lib/arAssets.js`, `lib/browserEnv.js`, `ArDishModal.jsx`, `ArViewer.jsx`). Sus valores pueden cambiar; sus nombres, nunca.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink On Field Rule",
+        "body": "Sobre un campo de color sólido se escribe en `tinta`; sobre el carbón y el fuego, en `crema`/`loza`. El termómetro cambia a tinta en la etapa `blanco`. Nunca texto claro sobre llama o blanco.",
+        "section": "colors"
+      },
+      {
+        "name": "The Black Body Rule",
+        "body": "Todo color que represente temperatura (aguja, punto de lectura, luz del canvas) sale de `colorDeCalor(t)`, no de un token. Las cifras grandes del termómetro no bajan del color de 750 °C para que se lean sobre el carbón.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Blades Rule",
+        "body": "Bodoni habla (titulares, voces, nombres); Archivo ancho rotula (datos, controles, firmas). No hay una tercera voz en pantalla.",
+        "section": "typography"
+      },
+      {
+        "name": "The Italic Heat Rule",
+        "body": "El énfasis dentro de un titular es cursiva de Bodoni en `llama`, nunca negrita ni otro color.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Reading Rule",
+        "body": "Toda cifra que cambia en vivo (grados) va en `tabular-nums` para que no salte.",
+        "section": "typography"
+      },
+      {
+        "name": "The HUD Clearance Rule",
+        "body": "En escritorio el contenido de las secciones deja 160 px a la derecha (`lg:pr-40`) para que el termómetro nunca pise texto. Excepción legítima: campos a sangre (la reserva, la cinta), cuyo fondo puede pasar por debajo, pero su texto y sus botones no.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Field Rule",
+        "body": "Un campo de color es plano: el clímax de la reserva es el cambio de color (brasa → llama → blanco por opacidad de tres capas quietas), no un brillo encima.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Circle Is Food Rule",
+        "body": "El círculo se reserva para platos y puntos de lectura. Un control nunca es redondo ni píldora.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Reduced Motion Rule",
+        "body": "Cada animación tiene su camino con `prefers-reduced-motion`: el estado final se fija con `gsap.set` (o no se anima), la carga no se muestra, el canvas no corre en el tiempo, y el CSS global lleva transiciones y animaciones a 0.001 ms.",
+        "section": "components"
+      }
     ],
     "dos": [
       "Do declarar `data-calor`, `data-etapa` y `data-llama` en toda sección nueva y respetar la curva 420 → 1100 → 180 °C.",

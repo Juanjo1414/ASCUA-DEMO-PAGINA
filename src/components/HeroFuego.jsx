@@ -2,10 +2,9 @@ import { useEffect, useRef } from 'react'
 import { ArrowRight, Scan } from 'lucide-react'
 import { gsap, ScrollTrigger } from '../lib/gsap'
 import { calor } from '../lib/calor'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 const LETRAS = ['A', 'S', 'C', 'U', 'A']
-
 
 /*
   El hero: el horizonte de fuego.
@@ -29,7 +28,9 @@ export default function HeroFuego() {
   useEffect(() => {
     const raiz = escena.current
     if (!raiz) return
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reducido = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
 
     // La salida: cuando el hero se va, el fuego baja a ser la cama de carbón
     // del resto de la página. Se crea después del pin (y con prioridad baja)
@@ -79,10 +80,20 @@ export default function HeroFuego() {
         })
         .from(
           '[data-letra-dentro]',
-          { yPercent: 40, opacity: 0, duration: 1.8, stagger: 0.09, ease: 'expo.out' },
-          0.9,
+          {
+            yPercent: 40,
+            opacity: 0,
+            duration: 1.8,
+            stagger: 0.09,
+            ease: 'expo.out',
+          },
+          0.9
         )
-        .from('[data-pie]', { y: 20, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'expo.out' }, 1.5)
+        .from(
+          '[data-pie]',
+          { y: 20, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'expo.out' },
+          1.5
+        )
 
       const tl = gsap.timeline({
         defaults: { ease: 'none' },
@@ -105,18 +116,26 @@ export default function HeroFuego() {
             calor.portal = avance.p
           },
         },
-        0,
+        0
       )
 
       // Las letras suben y se apagan mientras la línea baja hacia el carbón.
       raiz.querySelectorAll('[data-letra]').forEach((letra, i) => {
-        tl.to(letra, { y: -30 - i * 6, opacity: 0, duration: 0.3, ease: 'power1.in' }, 0.02 + i * 0.015)
+        tl.to(
+          letra,
+          { y: -30 - i * 6, opacity: 0, duration: 0.3, ease: 'power1.in' },
+          0.02 + i * 0.015
+        )
       })
 
       // El pie del hero se va antes de que la línea baje por él: el fuego
       // no pasa por encima del texto. La reserva sigue en la barra (y en la
       // franja del celular, que aparece justo después).
-      tl.to('[data-pie-hero]', { opacity: 0, y: 24, duration: 0.2, ease: 'power1.in' }, 0.12)
+      tl.to(
+        '[data-pie-hero]',
+        { opacity: 0, y: 24, duration: 0.2, ease: 'power1.in' },
+        0.12
+      )
 
       crearSalida()
     }, raiz)
@@ -172,7 +191,9 @@ export default function HeroFuego() {
             >
               <span className="text-ceniza">{t.hero.headline[0]}</span>
               <br />
-              <span className="not-italic text-llama">{t.hero.headline[1]}</span>
+              <span className="not-italic text-llama">
+                {t.hero.headline[1]}
+              </span>
             </p>
             {/* Lo que Ascua tiene y nadie más: la carta en realidad aumentada. */}
             <a

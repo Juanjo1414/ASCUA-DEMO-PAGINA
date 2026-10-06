@@ -5,7 +5,13 @@
 */
 export const translations = {
   es: {
-    nav: { fuego: 'El fuego', menu: 'Carta', voces: 'Voces', contacto: 'Contacto', reservar: 'Reservar mesa' },
+    nav: {
+      fuego: 'El fuego',
+      menu: 'Carta',
+      voces: 'Voces',
+      contacto: 'Contacto',
+      reservar: 'Reservar mesa',
+    },
     hero: {
       headline: ['Cocina de autor.', 'Servida con fuego.'],
       cta: 'Reservar mesa',
@@ -19,7 +25,13 @@ export const translations = {
     fuego: {
       title: 'Lo que arde.',
       body: 'En Ascua no hay gas ni hornillas. El fuego sale de tres maderas y un carbón, y cada uno le deja al plato algo distinto.',
-      etiquetas: { origen: 'Origen', humo: 'Humo', temperatura: 'Arde a', lote: 'Lote', sello: 'Leña seca · Ascua' },
+      etiquetas: {
+        origen: 'Origen',
+        humo: 'Humo',
+        temperatura: 'Arde a',
+        lote: 'Lote',
+        sello: 'Leña seca · Ascua',
+      },
       maderas: [
         {
           nombre: 'Guayabo',
@@ -62,14 +74,41 @@ export const translations = {
       destacadoBody:
         'Dos platos de la carta se pueden poner sobre tu mesa en realidad aumentada, a tamaño real, desde el navegador del celular. Sin descargar nada.',
       dishes: [
-        { name: 'Lubina a la plancha', description: 'Puré de arveja, espárragos blancos y ensalada de hinojo con naranja.' },
-        { name: 'Filete a la parrilla', description: 'Puré de papa, espárragos y zanahorias baby asadas.' },
-        { name: 'Tagliatelle con hongos', description: 'Hongos salteados, parmesano curado y hierbas frescas.' },
-        { name: 'Vieiras sobre risotto', description: 'Risotto cremoso, hierbas de temporada y una copa de vino blanco.' },
-        { name: 'Pechuga de pato', description: 'Puré de nabo, col morada braseada y salsa de frutos rojos.' },
-        { name: 'Gnocchi con trufa', description: 'Salvia crujiente, parmesano y láminas de trufa negra.' },
-        { name: 'Langosta con cabello de ángel', description: 'Salsa de coco y lima, maní tostado y cilantro fresco.' },
-        { name: 'Lomo de cerdo', description: 'Gnocchi dorado, ejotes salteados y almendras tostadas.' },
+        {
+          name: 'Lubina a la plancha',
+          description:
+            'Puré de arveja, espárragos blancos y ensalada de hinojo con naranja.',
+        },
+        {
+          name: 'Filete a la parrilla',
+          description: 'Puré de papa, espárragos y zanahorias baby asadas.',
+        },
+        {
+          name: 'Tagliatelle con hongos',
+          description: 'Hongos salteados, parmesano curado y hierbas frescas.',
+        },
+        {
+          name: 'Vieiras sobre risotto',
+          description:
+            'Risotto cremoso, hierbas de temporada y una copa de vino blanco.',
+        },
+        {
+          name: 'Pechuga de pato',
+          description:
+            'Puré de nabo, col morada braseada y salsa de frutos rojos.',
+        },
+        {
+          name: 'Gnocchi con trufa',
+          description: 'Salvia crujiente, parmesano y láminas de trufa negra.',
+        },
+        {
+          name: 'Langosta con cabello de ángel',
+          description: 'Salsa de coco y lima, maní tostado y cilantro fresco.',
+        },
+        {
+          name: 'Lomo de cerdo',
+          description: 'Gnocchi dorado, ejotes salteados y almendras tostadas.',
+        },
       ],
     },
     testimonials: {
@@ -88,7 +127,8 @@ export const translations = {
         },
         {
           title: 'La cocina abierta lo cambia todo',
-          quote: 'Ver al equipo trabajar es parte del plato. Volvería solo por eso.',
+          quote:
+            'Ver al equipo trabajar es parte del plato. Volvería solo por eso.',
           name: 'Camila Restrepo',
           mesa: '12',
           hora: '20:03',
@@ -96,7 +136,8 @@ export const translations = {
         },
         {
           title: 'Un menú que siempre da motivos para volver',
-          quote: 'El servicio es cercano y el menú cambia lo suficiente para siempre volver.',
+          quote:
+            'El servicio es cercano y el menú cambia lo suficiente para siempre volver.',
           name: 'Julián Vélez',
           mesa: '03',
           hora: '22:41',
@@ -134,7 +175,8 @@ export const translations = {
       namePlaceholder: 'Tu nombre',
       emailPlaceholder: 'tucorreo@ejemplo.com',
       messagePlaceholder: '¿En qué te ayudamos?',
-      reservaPrefill: 'Quiero reservar una mesa para __ personas el __ a las __.',
+      reservaPrefill:
+        'Quiero reservar una mesa para __ personas el __ a las __.',
       send: 'Enviar mensaje',
       sending: 'Enviando…',
       success: 'Mensaje enviado. Te responderemos pronto.',
@@ -156,7 +198,13 @@ export const translations = {
     backToTop: 'Volver arriba',
   },
   en: {
-    nav: { fuego: 'The fire', menu: 'Menu', voces: 'Voices', contacto: 'Contact', reservar: 'Book a table' },
+    nav: {
+      fuego: 'The fire',
+      menu: 'Menu',
+      voces: 'Voices',
+      contacto: 'Contact',
+      reservar: 'Book a table',
+    },
     hero: {
       headline: ['Chef-driven cooking.', 'Served with fire.'],
       cta: 'Book a table',
@@ -170,7 +218,13 @@ export const translations = {
     fuego: {
       title: 'What burns.',
       body: 'There is no gas and no burners at Ascua. The fire comes from three woods and one charcoal, and each leaves something different on the plate.',
-      etiquetas: { origen: 'Origin', humo: 'Smoke', temperatura: 'Burns at', lote: 'Lot', sello: 'Dry wood · Ascua' },
+      etiquetas: {
+        origen: 'Origin',
+        humo: 'Smoke',
+        temperatura: 'Burns at',
+        lote: 'Lot',
+        sello: 'Dry wood · Ascua',
+      },
       maderas: [
         {
           nombre: 'Guava',
@@ -213,14 +267,41 @@ export const translations = {
       destacadoBody:
         'Two dishes on the menu can be placed on your table in augmented reality, at real size, from your phone’s browser. Nothing to download.',
       dishes: [
-        { name: 'Pan-seared sea bass', description: 'Pea purée, white asparagus and fennel-orange salad.' },
-        { name: 'Grilled steak', description: 'Potato purée, roasted asparagus and baby carrots.' },
-        { name: 'Mushroom tagliatelle', description: 'Sautéed mushrooms, aged parmesan and fresh herbs.' },
-        { name: 'Scallops over risotto', description: 'Creamy risotto, seasonal herbs and a glass of white wine.' },
-        { name: 'Duck breast', description: 'Turnip purée, braised red cabbage and red berry sauce.' },
-        { name: 'Truffle gnocchi', description: 'Crispy sage, parmesan and shaved black truffle.' },
-        { name: 'Lobster with angel hair', description: 'Coconut-lime sauce, toasted peanuts and fresh cilantro.' },
-        { name: 'Pork loin', description: 'Golden gnocchi, sautéed green beans and toasted almonds.' },
+        {
+          name: 'Pan-seared sea bass',
+          description: 'Pea purée, white asparagus and fennel-orange salad.',
+        },
+        {
+          name: 'Grilled steak',
+          description: 'Potato purée, roasted asparagus and baby carrots.',
+        },
+        {
+          name: 'Mushroom tagliatelle',
+          description: 'Sautéed mushrooms, aged parmesan and fresh herbs.',
+        },
+        {
+          name: 'Scallops over risotto',
+          description:
+            'Creamy risotto, seasonal herbs and a glass of white wine.',
+        },
+        {
+          name: 'Duck breast',
+          description: 'Turnip purée, braised red cabbage and red berry sauce.',
+        },
+        {
+          name: 'Truffle gnocchi',
+          description: 'Crispy sage, parmesan and shaved black truffle.',
+        },
+        {
+          name: 'Lobster with angel hair',
+          description:
+            'Coconut-lime sauce, toasted peanuts and fresh cilantro.',
+        },
+        {
+          name: 'Pork loin',
+          description:
+            'Golden gnocchi, sautéed green beans and toasted almonds.',
+        },
       ],
     },
     testimonials: {
@@ -239,7 +320,8 @@ export const translations = {
         },
         {
           title: 'The open kitchen changes everything',
-          quote: 'Watching the team work is part of the dish. I’d come back just for that.',
+          quote:
+            'Watching the team work is part of the dish. I’d come back just for that.',
           name: 'Camila Restrepo',
           mesa: '12',
           hora: '20:03',
@@ -247,7 +329,8 @@ export const translations = {
         },
         {
           title: 'A menu that always gives you a reason to return',
-          quote: 'The service feels personal and the menu changes just enough to keep coming back.',
+          quote:
+            'The service feels personal and the menu changes just enough to keep coming back.',
           name: 'Julián Vélez',
           mesa: '03',
           hora: '22:41',

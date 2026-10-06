@@ -1,4 +1,5 @@
 # sweetgreen — Style Reference
+
 > farm-stand chalkboard at golden hour
 
 **Theme:** light
@@ -9,21 +10,22 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 
 ## Tokens — Colors
 
-| Name | Value | Token | Role |
-|------|-------|-------|------|
-| Deep Forest | `#00473c` | `--color-deep-forest` | Primary brand color, nav logo, dark pill buttons, text accents, badge borders, link colors — the structural green that anchors the palette |
-| Lime Glow | `#e6ff55` | `--color-lime-glow` | Green action color for filled buttons, selected navigation states, and focused conversion moments. |
-| Sage Mist | `#d8e5d6` | `--color-sage-mist` | Section backgrounds, card surfaces, content band alternation — soft botanical green that signals freshness without competing with the food photography |
-| Warm Sand | `#e8dcc6` | `--color-warm-sand` | Accent surface for alternate section bands — warm beige that pairs with food photography and adds earthy variety to the green-dominant palette |
-| Cream Canvas | `#f4f3e7` | `--color-cream-canvas` | Primary page background, the warm off-white that gives the entire system its organic, non-clinical feel |
-| Forest Shadow | `#0e150e` | `--color-forest-shadow` | Primary text color, borders, input strokes — near-black with a barely-perceptible green undertone that harmonizes with the brand greens |
-| Pure Ink | `#000000` | `--color-pure-ink` | Maximum-contrast text, hairlines, icon strokes — used where absolute sharpness is needed |
-| Warm Gray | `#8c8c82` | `--color-warm-gray` | Medium-contrast borders, control outlines, and structural separators. Do not promote it to the primary CTA color |
-| Slate Gray | `#555555` | `--color-slate-gray` | Secondary text in disabled or low-emphasis button contexts |
+| Name          | Value     | Token                   | Role                                                                                                                                                   |
+| ------------- | --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Deep Forest   | `#00473c` | `--color-deep-forest`   | Primary brand color, nav logo, dark pill buttons, text accents, badge borders, link colors — the structural green that anchors the palette             |
+| Lime Glow     | `#e6ff55` | `--color-lime-glow`     | Green action color for filled buttons, selected navigation states, and focused conversion moments.                                                     |
+| Sage Mist     | `#d8e5d6` | `--color-sage-mist`     | Section backgrounds, card surfaces, content band alternation — soft botanical green that signals freshness without competing with the food photography |
+| Warm Sand     | `#e8dcc6` | `--color-warm-sand`     | Accent surface for alternate section bands — warm beige that pairs with food photography and adds earthy variety to the green-dominant palette         |
+| Cream Canvas  | `#f4f3e7` | `--color-cream-canvas`  | Primary page background, the warm off-white that gives the entire system its organic, non-clinical feel                                                |
+| Forest Shadow | `#0e150e` | `--color-forest-shadow` | Primary text color, borders, input strokes — near-black with a barely-perceptible green undertone that harmonizes with the brand greens                |
+| Pure Ink      | `#000000` | `--color-pure-ink`      | Maximum-contrast text, hairlines, icon strokes — used where absolute sharpness is needed                                                               |
+| Warm Gray     | `#8c8c82` | `--color-warm-gray`     | Medium-contrast borders, control outlines, and structural separators. Do not promote it to the primary CTA color                                       |
+| Slate Gray    | `#555555` | `--color-slate-gray`    | Secondary text in disabled or low-emphasis button contexts                                                                                             |
 
 ## Tokens — Typography
 
 ### SweetSans — Display headlines, hero text, large category labels — used at extreme sizes (70–80px) with tight leading (0.85) that lets letterforms nearly touch; weight 400 at this size is the signature choice, creating a calm authority that doesn't shout · `--font-sweetsans`
+
 - **Substitute:** Dazzed, Supreme, or NB Architekt as a geometric grotesque alternative
 - **Weights:** 400
 - **Sizes:** 40px, 70px, 80px
@@ -31,6 +33,7 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 - **Role:** Display headlines, hero text, large category labels — used at extreme sizes (70–80px) with tight leading (0.85) that lets letterforms nearly touch; weight 400 at this size is the signature choice, creating a calm authority that doesn't shout
 
 ### Grenette — Secondary display accent — ultra-thin weight with extreme negative tracking creates a delicate, editorial counterpoint to the geometric SweetSans display · `--font-grenette`
+
 - **Substitute:** Migra, Canela, or Editorial New as a thin editorial serif/grotesque alternative
 - **Weights:** 200
 - **Sizes:** 48px
@@ -39,6 +42,7 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 - **Role:** Secondary display accent — ultra-thin weight with extreme negative tracking creates a delicate, editorial counterpoint to the geometric SweetSans display
 
 ### SweetSansText — Body text, navigation, button labels, card descriptions, footers — positive tracking (0.01–0.05em) improves readability at small sizes; weight 700 for labels and CTAs, 400 for body · `--font-sweetsanstext`
+
 - **Substitute:** Söhne, Inter, or GT America as a geometric grotesque alternative
 - **Weights:** 400, 700
 - **Sizes:** 12px, 14px, 16px, 18px, 20px, 24px
@@ -47,6 +51,7 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 - **Role:** Body text, navigation, button labels, card descriptions, footers — positive tracking (0.01–0.05em) improves readability at small sizes; weight 700 for labels and CTAs, 400 for body
 
 ### SweetSansText-Regular — Small UI text, micro-labels, fine print — the regular-weight variant for the smallest readable sizes · `--font-sweetsanstext-regular`
+
 - **Substitute:** Söhne, Inter
 - **Weights:** 400
 - **Sizes:** 12px, 14px
@@ -56,18 +61,18 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 
 ### Type Scale
 
-| Role | Family | Weight | Size | Line Height | Letter Spacing | Token |
-|------|--------|--------|------|-------------|----------------|-------|
-| caption | — | — | 12px | 1.33 | 0.2px | `--text-caption` |
-| body-sm | — | — | 14px | 1.29 | 0.24px | `--text-body-sm` |
-| body | — | — | 16px | 1.25 | 0.27px | `--text-body` |
-| body-lg | — | — | 18px | 1.33 | 0.54px | `--text-body-lg` |
-| subheading | — | — | 20px | 1.2 | 0.6px | `--text-subheading` |
-| heading-sm | — | — | 24px | 1.21 | 1.2px | `--text-heading-sm` |
-| heading | — | — | 40px | 0.85 | 0px | `--text-heading` |
-| heading-lg | — | — | 48px | 1 | -2.26px | `--text-heading-lg` |
-| display | — | — | 70px | 0.85 | 0px | `--text-display` |
-| display-lg | — | — | 80px | 1 | 0px | `--text-display-lg` |
+| Role       | Family | Weight | Size | Line Height | Letter Spacing | Token               |
+| ---------- | ------ | ------ | ---- | ----------- | -------------- | ------------------- |
+| caption    | —      | —      | 12px | 1.33        | 0.2px          | `--text-caption`    |
+| body-sm    | —      | —      | 14px | 1.29        | 0.24px         | `--text-body-sm`    |
+| body       | —      | —      | 16px | 1.25        | 0.27px         | `--text-body`       |
+| body-lg    | —      | —      | 18px | 1.33        | 0.54px         | `--text-body-lg`    |
+| subheading | —      | —      | 20px | 1.2         | 0.6px          | `--text-subheading` |
+| heading-sm | —      | —      | 24px | 1.21        | 1.2px          | `--text-heading-sm` |
+| heading    | —      | —      | 40px | 0.85        | 0px            | `--text-heading`    |
+| heading-lg | —      | —      | 48px | 1           | -2.26px        | `--text-heading-lg` |
+| display    | —      | —      | 70px | 0.85        | 0px            | `--text-display`    |
+| display-lg | —      | —      | 80px | 1           | 0px            | `--text-display-lg` |
 
 ## Tokens — Spacing & Shapes
 
@@ -77,33 +82,33 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 
 ### Spacing Scale
 
-| Name | Value | Token |
-|------|-------|-------|
-| 4 | 4px | `--spacing-4` |
-| 8 | 8px | `--spacing-8` |
-| 12 | 12px | `--spacing-12` |
-| 16 | 16px | `--spacing-16` |
-| 20 | 20px | `--spacing-20` |
-| 24 | 24px | `--spacing-24` |
-| 40 | 40px | `--spacing-40` |
-| 60 | 60px | `--spacing-60` |
+| Name | Value | Token          |
+| ---- | ----- | -------------- |
+| 4    | 4px   | `--spacing-4`  |
+| 8    | 8px   | `--spacing-8`  |
+| 12   | 12px  | `--spacing-12` |
+| 16   | 16px  | `--spacing-16` |
+| 20   | 20px  | `--spacing-20` |
+| 24   | 24px  | `--spacing-24` |
+| 40   | 40px  | `--spacing-40` |
+| 60   | 60px  | `--spacing-60` |
 
 ### Border Radius
 
-| Element | Value |
-|---------|-------|
-| cards | 24px |
-| small | 4px |
-| badges | 20px |
-| images | 20px |
-| inputs | 8px |
+| Element | Value  |
+| ------- | ------ |
+| cards   | 24px   |
+| small   | 4px    |
+| badges  | 20px   |
+| images  | 20px   |
+| inputs  | 8px    |
 | buttons | 9999px |
 
 ### Shadows
 
-| Name | Value | Token |
-|------|-------|-------|
-| xl | `rgba(14, 21, 14, 0.4) 3px 3px 32px -10px` | `--shadow-xl` |
+| Name | Value                                      | Token         |
+| ---- | ------------------------------------------ | ------------- |
+| xl   | `rgba(14, 21, 14, 0.4) 3px 3px 32px -10px` | `--shadow-xl` |
 
 ### Layout
 
@@ -115,56 +120,67 @@ Sweetgreen's design system is a warm, farm-stand-meets-modern-typography aesthet
 ## Components
 
 ### Pill CTA Button (Lime Fill)
+
 **Role:** Primary action button — used for 'Order Now', 'Add to Bag', and any conversion action
 
 Fully rounded (9999px) pill shape, #e6ff55 background, #0e150 text in SweetSansText weight 700 at 16–18px with 0.017em tracking, padding 16px 24px. The lime fill against the cream canvas creates the highest-contrast functional element on any page.
 
 ### Pill Outline Button (Forest Border)
+
 **Role:** Secondary or navigation action — used for nav 'ORDER' pill, secondary CTAs
 
 Fully rounded (9999px) pill, transparent or cream fill, 2px #00473c border, #00473c text in SweetSansText weight 700 at 16px, padding 12px 20px. Outlined rather than filled to maintain a lighter visual weight than the primary CTA.
 
 ### Ghost Text Link
+
 **Role:** Inline action link — used for 'Order now →' on product cards, footer links, inline CTAs
 
 No background, no border, #0e150 text in SweetSansText weight 700 at 16px, right-arrow glyph appended. Underline on hover only. The arrow is the visual anchor.
 
 ### Navigation Bar
+
 **Role:** Top-level site navigation — persistent across all pages
 
 Horizontal bar on #f4f3e7 background, centered logo 'sweetgreen' in #00473c at 24–28px SweetSansText weight 700, nav items flanking in SweetSansText weight 700 at 14px with 0.05em tracking, all-caps. Right-side 'ORDER' item rendered as a Pill Outline Button in #00473c.
 
 ### Menu Category Tab
+
 **Role:** Section filter for menu browsing — 'Salads', 'Warm Bowls', 'Sides'
 
 Large text-only tab, no border, no background change between states. Active tab: #0e150 in SweetSans at 40px weight 400 with a small dot indicator beneath. Inactive: #0e150 at 40px with no indicator. The typographic scale itself is the navigation signal.
 
 ### Product Card
+
 **Role:** Menu item display — one card per food item in the browsing grid
 
 Top: square food photograph with 20px border-radius. Below image: 24px padding, product name in SweetSansText weight 700 at 20px #0e150, 8px gap, description in SweetSansText weight 400 at 16px #0e150 with 1.25 line-height, 16px gap, 'Order now →' Ghost Text Link. No card background, no border, no shadow — the photograph IS the card surface.
 
 ### Online Only Badge
+
 **Role:** Availability indicator on exclusive digital products
 
 Absolute-positioned top-left of product card, #e6ff55 background, #0e150 text in SweetSansText weight 700 at 12px all-caps with 0.05em tracking, padding 4px 12px, 20px border-radius. Small, bright, unmissable.
 
 ### Full-Bleed Hero with Text Overlay
+
 **Role:** Landing page hero — single product or campaign feature
 
 Full-viewport-width photograph (no border-radius) as the background layer. Semi-transparent text overlay panel in cream (#f4f3e7 at ~90% opacity) anchored bottom-left, 40px padding, containing: small-caps eyebrow text in SweetSansText weight 700 at 14px, 8px gap, product name in SweetSans at 70–80px weight 400 line-height 0.85, 24px gap, Pill CTA Button (Lime Fill).
 
 ### Split Content Section
+
 **Role:** Feature/editorial content — catering, about, mission sections
 
 Two-column layout on a Sage Mist or Warm Sand section background. Left column: text stack with large display headline in SweetSans at 48–70px weight 400, 24px gap, structured sub-sections with bolded labels in SweetSansText weight 700 at 18px and body text in weight 400 at 16px. Right column: single full-bleed photograph with 20px border-radius. Generous 80–120px vertical padding.
 
 ### Eyebrow Label
+
 **Role:** Pre-headline context label — 'SUNSHINE IN A SALAD', section identifiers
 
 All-caps, SweetSansText weight 700 at 14px, 0.05em tracking, #0e150 or #00473c. Positioned 16–24px above the headline it qualifies. Functions as a typographic subtitle that adds context without visual weight.
 
 ### Food Photograph (Standard)
+
 **Role:** Product and editorial photography
 
 Overhead or 3/4 angle shots, high saturation, warm natural lighting. Rounded corners at 20px. No overlays, no text burned in. Full-bleed within their container — the food is the entire visual.
@@ -172,6 +188,7 @@ Overhead or 3/4 angle shots, high saturation, warm natural lighting. Rounded cor
 ## Do's and Don'ts
 
 ### Do
+
 - Use SweetSans at 70–80px weight 400 with 0.85 line-height for all primary display headlines — the weight-to-size ratio is the brand voice
 - Default to #f4f3e7 as the page background; use #d8e5d6 or #e8dcc6 for alternating full-width content bands only
 - Use #e6ff55 fill + #0e150 text exclusively for the primary action button — never invert the relationship
@@ -181,6 +198,7 @@ Overhead or 3/4 angle shots, high saturation, warm natural lighting. Rounded cor
 - Apply positive letter-spacing (0.01–0.05em) to all text below 24px in SweetSansText for legibility
 
 ### Don't
+
 - Don't use multiple accent colors — the palette is intentionally restricted to one lime (#e6ff55) and one forest green (#00473c) for action and brand respectively
 - Don't set headlines in weight 700 or above — the brand's authority comes from the calm confidence of 400 at large sizes
 - Don't add card backgrounds, borders, or drop shadows to product cards — the photograph is the card
@@ -191,13 +209,13 @@ Overhead or 3/4 angle shots, high saturation, warm natural lighting. Rounded cor
 
 ## Surfaces
 
-| Level | Name | Value | Purpose |
-|-------|------|-------|---------|
-| 0 | Cream Canvas | `#f4f3e7` | Base page background — warm off-white that reads as organic rather than clinical |
-| 1 | Sage Mist Band | `#d8e5d6` | Full-width content sections alternating with the canvas — calm botanical background for text-forward or split-layout content |
-| 2 | Warm Sand Band | `#e8dcc6` | Alternate section background — earthy warm tone for visual rhythm variation |
-| 3 | Lime Glow Highlight | `#e6ff55` | Accent surface for badges and CTA fills — the only chromatic surface that draws functional attention |
-| 4 | Deep Forest Surface | `#00473c` | Dark accent surface for nav pills, dark-mode content blocks, or reversed text sections |
+| Level | Name                | Value     | Purpose                                                                                                                      |
+| ----- | ------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 0     | Cream Canvas        | `#f4f3e7` | Base page background — warm off-white that reads as organic rather than clinical                                             |
+| 1     | Sage Mist Band      | `#d8e5d6` | Full-width content sections alternating with the canvas — calm botanical background for text-forward or split-layout content |
+| 2     | Warm Sand Band      | `#e8dcc6` | Alternate section background — earthy warm tone for visual rhythm variation                                                  |
+| 3     | Lime Glow Highlight | `#e6ff55` | Accent surface for badges and CTA fills — the only chromatic surface that draws functional attention                         |
+| 4     | Deep Forest Surface | `#00473c` | Dark accent surface for nav pills, dark-mode content blocks, or reversed text sections                                       |
 
 ## Elevation
 
@@ -214,6 +232,7 @@ Full-bleed hero photography with bottom-left text overlay panel on the landing p
 ## Agent Prompt Guide
 
 ## Quick Color Reference
+
 - text: #0e150e
 - background: #f4f3e7
 - border: #0e150e or #00473c
@@ -260,10 +279,18 @@ Full-bleed hero photography with bottom-left text overlay panel on the landing p
   --color-slate-gray: #555555;
 
   /* Typography — Font Families */
-  --font-sweetsans: 'SweetSans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-grenette: 'Grenette', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sweetsanstext: 'SweetSansText', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sweetsanstext-regular: 'SweetSansText-Regular', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sweetsans:
+    'SweetSans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  --font-grenette:
+    'Grenette', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  --font-sweetsanstext:
+    'SweetSansText', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sweetsanstext-regular:
+    'SweetSansText-Regular', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 12px;
@@ -363,10 +390,18 @@ Full-bleed hero photography with bottom-left text overlay panel on the landing p
   --color-slate-gray: #555555;
 
   /* Typography */
-  --font-sweetsans: 'SweetSans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-grenette: 'Grenette', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sweetsanstext: 'SweetSansText', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-sweetsanstext-regular: 'SweetSansText-Regular', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sweetsans:
+    'SweetSans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  --font-grenette:
+    'Grenette', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  --font-sweetsanstext:
+    'SweetSansText', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sweetsanstext-regular:
+    'SweetSansText-Regular', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Typography — Scale */
   --text-caption: 12px;

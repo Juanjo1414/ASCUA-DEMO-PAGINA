@@ -43,7 +43,11 @@ export default function ArViewer({ glb, poster, alt }) {
   if (!ready) {
     return (
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-carbon-800">
-        <img src={poster} alt={alt} className="h-full w-full object-cover opacity-40" />
+        <img
+          src={poster}
+          alt={alt}
+          className="h-full w-full object-cover opacity-40"
+        />
         <div className="absolute inset-0 grid place-items-center">
           <div className="flex gap-2">
             {[0, 1, 2].map((i) => (
@@ -59,5 +63,10 @@ export default function ArViewer({ glb, poster, alt }) {
     )
   }
 
-  return <model-viewer ref={viewerRef} class="aspect-square w-full rounded-2xl bg-carbon-800" />
+  return (
+    <model-viewer
+      ref={viewerRef}
+      class="aspect-square w-full rounded-2xl bg-carbon-800"
+    />
+  )
 }

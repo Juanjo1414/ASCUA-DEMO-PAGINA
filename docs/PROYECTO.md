@@ -23,19 +23,19 @@ para cualquiera que vaya a tocar el código.
 
 ## 2. Stack tecnológico
 
-| Capa | Tecnología | Notas |
-|---|---|---|
-| Framework UI | React 19 | Sin router — página única, navegación por anclas `#id` |
-| Build tool | Vite 8 (`@vitejs/plugin-react`) | Config default, sin plugins extra |
-| Estilos | Tailwind CSS 3.4 + PostCSS/autoprefixer | Paleta custom vía CSS variables (dark/light) |
-| Animación de scroll | GSAP 3 + `ScrollTrigger` | Hero con video "scrubbed" por scroll |
-| Micro-interacciones | `motion` (Framer Motion, paquete `motion/react`) | Tilt de tarjetas, efecto magnético en botones |
-| Iconos | `lucide-react` | — |
-| Tipografías | `@fontsource/*` (Work Sans, Newsreader, JetBrains Mono) | Self-hosted, sin Google Fonts CDN |
-| Visor 3D | `@google/model-viewer` (web component) | Carga perezosa (`import()` dinámico) |
-| RA nativa | Sin librería — invocación directa de Quick Look (iOS) / Scene Viewer (Android) | Ver sección 5 |
-| Lint | `oxlint` (motor Oxc, Rust) | `npm run lint` |
-| Datos de modelos 3D | Supabase (REST + Storage) de **otro proyecto** (ARFOODS) | Cliente directo desde el navegador con anon key |
+| Capa                | Tecnología                                                                     | Notas                                                  |
+| ------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| Framework UI        | React 19                                                                       | Sin router — página única, navegación por anclas `#id` |
+| Build tool          | Vite 8 (`@vitejs/plugin-react`)                                                | Config default, sin plugins extra                      |
+| Estilos             | Tailwind CSS 3.4 + PostCSS/autoprefixer                                        | Paleta custom vía CSS variables (dark/light)           |
+| Animación de scroll | GSAP 3 + `ScrollTrigger`                                                       | Hero con video "scrubbed" por scroll                   |
+| Micro-interacciones | `motion` (Framer Motion, paquete `motion/react`)                               | Tilt de tarjetas, efecto magnético en botones          |
+| Iconos              | `lucide-react`                                                                 | —                                                      |
+| Tipografías         | `@fontsource/*` (Work Sans, Newsreader, JetBrains Mono)                        | Self-hosted, sin Google Fonts CDN                      |
+| Visor 3D            | `@google/model-viewer` (web component)                                         | Carga perezosa (`import()` dinámico)                   |
+| RA nativa           | Sin librería — invocación directa de Quick Look (iOS) / Scene Viewer (Android) | Ver sección 5                                          |
+| Lint                | `oxlint` (motor Oxc, Rust)                                                     | `npm run lint`                                         |
+| Datos de modelos 3D | Supabase (REST + Storage) de **otro proyecto** (ARFOODS)                       | Cliente directo desde el navegador con anon key        |
 
 No hay TypeScript (JS + JSX puro, aunque sí están instalados `@types/react` para el editor).
 No hay testing framework configurado (no hay `*.test.*` en el repo).
@@ -166,7 +166,7 @@ propia — no cuenta como integración con Google Maps Platform (no hay JS API, 
   lleguen a una base de datos propia) — el riesgo principal está fuera de este repo.
 - **Credencial expuesta en el bundle**: la Supabase anon key de ARFOODS queda en el JS
   público servido al navegador. Es el comportamiento esperado de una anon key de Supabase
-  (está diseñada para ser pública) *siempre que* las Row Level Security policies de esa tabla
+  (está diseñada para ser pública) _siempre que_ las Row Level Security policies de esa tabla
   estén bien configuradas del lado de Supabase — algo que este repo no controla ni puede
   verificar. Vale la pena confirmarlo del lado de ARFOODS antes de depender más de esta
   integración.

@@ -67,14 +67,20 @@ export function generarBrasa(W, H, trozos = 12, piso = 0.12) {
   const k2 = (Math.PI * 2) / (celda * 0.55)
   // Cada grieta tiene su propio calor: unas arden, otras están casi apagadas.
   const calorGrieta = (a, c) => {
-    const v = Math.sin(Math.min(a, c) * 12.9898 + Math.max(a, c) * 78.233) * 43758.5453
+    const v =
+      Math.sin(Math.min(a, c) * 12.9898 + Math.max(a, c) * 78.233) * 43758.5453
     return v - Math.floor(v)
   }
 
   for (let y0 = 0; y0 < base.height; y0++) {
     for (let x0 = 0; x0 < base.width; x0++) {
-      const x = x0 + tuerce * (Math.sin(y0 * k1 + 1.3) + 0.45 * Math.sin((x0 + y0) * k2))
-      const y = y0 + tuerce * (Math.sin(x0 * k1 + 2.1) + 0.45 * Math.sin((x0 - y0) * k2 + 0.7))
+      const x =
+        x0 +
+        tuerce * (Math.sin(y0 * k1 + 1.3) + 0.45 * Math.sin((x0 + y0) * k2))
+      const y =
+        y0 +
+        tuerce *
+          (Math.sin(x0 * k1 + 2.1) + 0.45 * Math.sin((x0 - y0) * k2 + 0.7))
       const ci = Math.floor(x / celda) + 2
       const cj = Math.floor(y / celda) + 2
       let f1 = 1e12
@@ -108,7 +114,9 @@ export function generarBrasa(W, H, trozos = 12, piso = 0.12) {
       const grano = rnd() * 7
       const vena = calorGrieta(id, id2)
       // Manchas grandes de calor: zonas enteras más vivas que otras.
-      const mancha = 0.5 + 0.5 * Math.sin(x0 / (celda * 2.2) + 1.7 * Math.sin(y0 / (celda * 2.9)))
+      const mancha =
+        0.5 +
+        0.5 * Math.sin(x0 / (celda * 2.2) + 1.7 * Math.sin(y0 / (celda * 2.9)))
 
       // El carbón: más claro al centro de cada trozo, hundido en las grietas.
       const v = (12 + 22 * centro * centro + grano) * (1 - 0.75 * brillo)
@@ -158,7 +166,10 @@ let pedido = null
 
 const aUrl = (lienzoFuente) =>
   new Promise((resolver) => {
-    lienzoFuente.toBlob((blob) => resolver(blob ? URL.createObjectURL(blob) : null), 'image/png')
+    lienzoFuente.toBlob(
+      (blob) => resolver(blob ? URL.createObjectURL(blob) : null),
+      'image/png'
+    )
   })
 
 export function prepararBrasaTexto() {
@@ -179,7 +190,6 @@ export function prepararBrasaTexto() {
     cctx.drawImage(brasa.grietas, 0, 0)
     cctx.drawImage(brasa.grietas, 0, 0)
     cctx.drawImage(brasa.chico, 0, 0, W, H)
-
 
     const urlCarbon = await aUrl(carbon)
     if (!urlCarbon) return

@@ -38,10 +38,8 @@ export default {
       maxWidth: {
         content: '1400px',
       },
-      keyframes: {
-      },
-      animation: {
-      },
+      keyframes: {},
+      animation: {},
     },
   },
   plugins: [],

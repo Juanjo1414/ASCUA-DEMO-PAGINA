@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from '../lib/gsap'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 import { prepararBrasaTexto } from '../lib/brasa'
 
 /*
@@ -22,7 +22,9 @@ export default function Manifiesto() {
     const el = raiz.current
     if (!el) return
     prepararBrasaTexto()
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reducido = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
     if (reducido) return
 
     const ctx = gsap.context(() => {
@@ -40,7 +42,7 @@ export default function Manifiesto() {
             end: 'bottom 40%',
             scrub: 0.3,
           },
-        },
+        }
       )
     }, el)
 
@@ -48,7 +50,12 @@ export default function Manifiesto() {
   }, [t])
 
   return (
-    <section ref={raiz} data-calor="420,700" data-llama="0.35" className="relative overflow-hidden">
+    <section
+      ref={raiz}
+      data-calor="420,700"
+      data-llama="0.35"
+      className="relative overflow-hidden"
+    >
       <div className="mx-auto max-w-content px-5 pb-[34svh] pt-28 sm:px-6 md:pt-40 lg:px-10">
         <h2
           data-manifiesto

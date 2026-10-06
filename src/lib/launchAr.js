@@ -53,7 +53,13 @@ function launchSceneViewer(glbUrl, title, allowScaling) {
 // alejarse de esa medida, y el punto del AR aca es que el comensal vea la
 // porcion tal como se la van a traer — un plato que se puede agrandar a
 // gusto deja de ser referencia de tamano.
-export function launchAr({ glbUrl, usdzUrl, posterUrl, title, allowScaling = false }) {
+export function launchAr({
+  glbUrl,
+  usdzUrl,
+  posterUrl,
+  title,
+  allowScaling = false,
+}) {
   if (isIOS()) {
     if (!usdzUrl) return false
     launchQuickLook(usdzUrl, posterUrl, allowScaling)

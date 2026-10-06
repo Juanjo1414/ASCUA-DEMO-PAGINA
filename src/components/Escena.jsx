@@ -1,5 +1,11 @@
 import { useEffect, useRef } from 'react'
-import { actualizarCalor, calor, colorDeCalor, entre, iniciarCalor } from '../lib/calor'
+import {
+  actualizarCalor,
+  calor,
+  colorDeCalor,
+  entre,
+  iniciarCalor,
+} from '../lib/calor'
 import { azar, generarBrasa, lienzo } from '../lib/brasa'
 
 /*
@@ -54,7 +60,9 @@ export default function Escena() {
     const canvas = ref.current
     if (!canvas) return
     const ctx = canvas.getContext('2d', { alpha: false })
-    const reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reducido = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
     const tactil = window.matchMedia('(pointer: coarse)').matches
     const detenerCalor = iniciarCalor()
 
@@ -112,7 +120,6 @@ export default function Escena() {
           fase2: rnd() * 10,
         }
       })
-
     }
 
     const lanzarChispa = (x, y, fuerza) => {
@@ -144,7 +151,9 @@ export default function Escena() {
       const t = calor.t
       const portal = calor.portal
       const salida = calor.salida
-      const pulso = reducido ? 0.85 : 0.78 + 0.12 * Math.sin(tiempo * 1.4) + 0.08 * Math.sin(tiempo * 3.7)
+      const pulso = reducido
+        ? 0.85
+        : 0.78 + 0.12 * Math.sin(tiempo * 1.4) + 0.08 * Math.sin(tiempo * 3.7)
 
       ctx.globalCompositeOperation = 'source-over'
       ctx.globalAlpha = 1
@@ -155,7 +164,14 @@ export default function Escena() {
       const fuerza = entre(t, 420, 1100) * salida
       if (fuerza > 0.01) {
         const [r, g, b] = colorDeCalor(t)
-        const grad = ctx.createRadialGradient(W / 2, H * 1.05, 0, W / 2, H * 1.05, H * (0.55 + 0.6 * fuerza))
+        const grad = ctx.createRadialGradient(
+          W / 2,
+          H * 1.05,
+          0,
+          W / 2,
+          H * 1.05,
+          H * (0.55 + 0.6 * fuerza)
+        )
         grad.addColorStop(0, `rgba(${r},${g},${b},${0.55 * fuerza})`)
         grad.addColorStop(1, 'rgba(0,0,0,0)')
         ctx.fillStyle = grad
@@ -182,14 +198,17 @@ export default function Escena() {
             lineaCss = abajo + (arriba - abajo) * 0.5
           }
         }
-        const yBase = lineaCss !== null ? lineaCss * q : (cssW < 768 ? 0.6 : 0.64) * H
+        const yBase =
+          lineaCss !== null ? lineaCss * q : (cssW < 768 ? 0.6 : 0.64) * H
         const y = yBase + (H * 0.985 - yBase) * baja
         const vida = calor.linea * enHero * (1 - encendido * 0.85)
         // La línea se enciende desde el centro hacia los lados, como una mecha.
         const medio = (W / 2) * Math.min(1, calor.linea * 1.05)
         const x0 = W / 2 - medio
         const ancho = medio * 2
-        const late = reducido ? 1 : 0.9 + 0.06 * Math.sin(tiempo * 2.3) + 0.04 * Math.sin(tiempo * 7.1)
+        const late = reducido
+          ? 1
+          : 0.9 + 0.06 * Math.sin(tiempo * 2.3) + 0.04 * Math.sin(tiempo * 7.1)
 
         ctx.globalCompositeOperation = 'lighter'
         ctx.globalAlpha = 1
@@ -231,7 +250,9 @@ export default function Escena() {
           const borde = Math.sin(Math.PI * u)
           const ruido = reducido
             ? 0.6
-            : 0.5 + 0.3 * Math.sin(x * 0.043 + tiempo * 3.2) + 0.2 * Math.sin(x * 0.117 - tiempo * 5.7)
+            : 0.5 +
+              0.3 * Math.sin(x * 0.043 + tiempo * 3.2) +
+              0.2 * Math.sin(x * 0.117 - tiempo * 5.7)
           // Cada lengua con su propio tamaño fijo, para que no se lea como un peine.
           const azarLengua = Math.sin(x * 12.9898) * 43758.5453
           const propia = 0.35 + 0.95 * (azarLengua - Math.floor(azarLengua))
@@ -244,7 +265,12 @@ export default function Escena() {
           ctx.fillStyle = lengua
           ctx.beginPath()
           ctx.moveTo(x - w, y)
-          ctx.quadraticCurveTo(x - w * 0.2, y - h * 0.5, x + (reducido ? 0 : Math.sin(tiempo * 4 + x) * w * 0.4), y - h)
+          ctx.quadraticCurveTo(
+            x - w * 0.2,
+            y - h * 0.5,
+            x + (reducido ? 0 : Math.sin(tiempo * 4 + x) * w * 0.4),
+            y - h
+          )
           ctx.quadraticCurveTo(x + w * 0.2, y - h * 0.5, x + w, y)
           ctx.fill()
         }
@@ -262,7 +288,11 @@ export default function Escena() {
         if (encendido > 0.08 && !estallo) {
           estallo = true
           for (let i = 0; i < (tactil ? 40 : 90); i++) {
-            lanzarChispa(W * (0.5 + (Math.random() - 0.5) * 0.6), H - altoCama * 0.4, 1.8)
+            lanzarChispa(
+              W * (0.5 + (Math.random() - 0.5) * 0.6),
+              H - altoCama * 0.4,
+              1.8
+            )
           }
         }
         if (encendido < 0.02) estallo = false
@@ -274,7 +304,7 @@ export default function Escena() {
       // se queda en un resplandor bajo detrás de la carta o del contacto.
       const cama01 = Math.max(
         salida * (0.25 + 0.75 * entre(t, 300, 800)) * (0.3 + 0.7 * calor.llama),
-        enHero * encendido,
+        enHero * encendido
       )
       if (cama01 > 0.01) {
         const y0 = H - altoCama
@@ -282,7 +312,10 @@ export default function Escena() {
         ctx.globalAlpha = cama01
         ctx.drawImage(cama.base, 0, y0)
         ctx.globalCompositeOperation = 'lighter'
-        ctx.globalAlpha = cama01 * pulso * Math.max(salida * (0.35 + 0.65 * entre(t, 300, 900)), encendido * 0.9)
+        ctx.globalAlpha =
+          cama01 *
+          pulso *
+          Math.max(salida * (0.35 + 0.65 * entre(t, 300, 900)), encendido * 0.9)
         ctx.drawImage(cama.grietas, 0, y0)
       }
 
@@ -291,7 +324,7 @@ export default function Escena() {
       // fogata crece desde que el carbón prende.
       const intensidad = Math.max(
         salida * entre(t, 560, 1050) * calor.llama * (cssW < 768 ? 0.6 : 1),
-        encendido,
+        encendido
       )
       if (intensidad > 0.01) {
         const fw = fuego.width
@@ -307,10 +340,19 @@ export default function Escena() {
           for (const l of llamas) {
             const oscila = reducido
               ? 0
-              : Math.sin(tiempo * 1.7 + l.fase) * 0.5 + Math.sin(tiempo * 4.1 + l.fase2) * 0.22
-            const vive = reducido ? 1 : 0.8 + 0.2 * Math.sin(tiempo * 4.7 + l.fase * 2)
-            const alto = fh * (0.08 + 0.52 * intensidad) * l.alto * vive * (nucleo ? 0.55 : 1)
-            const ancho = fw * l.ancho * (nucleo ? 0.5 : 1) * (0.75 + 0.25 * intensidad)
+              : Math.sin(tiempo * 1.7 + l.fase) * 0.5 +
+                Math.sin(tiempo * 4.1 + l.fase2) * 0.22
+            const vive = reducido
+              ? 1
+              : 0.8 + 0.2 * Math.sin(tiempo * 4.7 + l.fase * 2)
+            const alto =
+              fh *
+              (0.08 + 0.52 * intensidad) *
+              l.alto *
+              vive *
+              (nucleo ? 0.55 : 1)
+            const ancho =
+              fw * l.ancho * (nucleo ? 0.5 : 1) * (0.75 + 0.25 * intensidad)
             const x = fw * l.x
             const puntaX = x + oscila * ancho * (nucleo ? 0.5 : 0.9)
             const puntaY = pie - alto
@@ -327,8 +369,22 @@ export default function Escena() {
             fctx.fillStyle = grad
             fctx.beginPath()
             fctx.moveTo(x - ancho / 2, pie)
-            fctx.bezierCurveTo(x - ancho / 2, pie - alto * 0.45, puntaX - ancho * 0.3, pie - alto * 0.7, puntaX, puntaY)
-            fctx.bezierCurveTo(puntaX + ancho * 0.3, pie - alto * 0.7, x + ancho / 2, pie - alto * 0.45, x + ancho / 2, pie)
+            fctx.bezierCurveTo(
+              x - ancho / 2,
+              pie - alto * 0.45,
+              puntaX - ancho * 0.3,
+              pie - alto * 0.7,
+              puntaX,
+              puntaY
+            )
+            fctx.bezierCurveTo(
+              puntaX + ancho * 0.3,
+              pie - alto * 0.7,
+              x + ancho / 2,
+              pie - alto * 0.45,
+              x + ancho / 2,
+              pie
+            )
             fctx.closePath()
             fctx.fill()
           }
@@ -338,7 +394,14 @@ export default function Escena() {
         ctx.drawImage(fuego, 0, 0, W, H)
 
         // El resplandor que la fogata echa sobre todo lo de alrededor.
-        const brillo = ctx.createRadialGradient(W / 2, H, 0, W / 2, H, Math.max(W, H) * 0.5)
+        const brillo = ctx.createRadialGradient(
+          W / 2,
+          H,
+          0,
+          W / 2,
+          H,
+          Math.max(W, H) * 0.5
+        )
         brillo.addColorStop(0, `rgba(255,140,40,${0.28 * intensidad})`)
         brillo.addColorStop(1, 'rgba(0,0,0,0)')
         ctx.fillStyle = brillo
@@ -348,7 +411,12 @@ export default function Escena() {
       // 3. Chispas.
       if (!reducido) {
         const tasa = salida * entre(t, 380, 1100) * (tactil ? 0.6 : 1.1)
-        if (Math.random() < tasa) lanzarChispa(W * (0.5 + (Math.random() - 0.5) * 0.55), H - altoCama * 0.4, 0.6 + tasa)
+        if (Math.random() < tasa)
+          lanzarChispa(
+            W * (0.5 + (Math.random() - 0.5) * 0.55),
+            H - altoCama * 0.4,
+            0.6 + tasa
+          )
         ctx.globalCompositeOperation = 'lighter'
         for (let i = chispas.length - 1; i >= 0; i--) {
           const c = chispas[i]

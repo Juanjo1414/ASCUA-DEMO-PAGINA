@@ -47,13 +47,11 @@
     --c-crema: 250 241 228;
   }
 
-
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
     scrollbar-color: rgb(var(--c-brasa)) rgb(var(--c-carbon));
   }
-
 
   section[id] {
     scroll-margin-top: 72px;
@@ -170,7 +168,6 @@
     color: rgb(var(--c-tinta));
   }
 
-
   /* Rótulo: la letra ancha y espaciada de una etiqueta de fosforera. Nunca
      encima de un titular: acompaña datos, pies de foto y controles. */
   .rotulo {
@@ -186,8 +183,20 @@
   */
   .comanda {
     --diente: 7px;
-    -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--diente)) 100%;
-    mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--diente)) 100%;
+    -webkit-mask: conic-gradient(
+        from -45deg at bottom,
+        #0000,
+        #000 1deg 89deg,
+        #0000 90deg
+      )
+      50% / calc(2 * var(--diente)) 100%;
+    mask: conic-gradient(
+        from -45deg at bottom,
+        #0000,
+        #000 1deg 89deg,
+        #0000 90deg
+      )
+      50% / calc(2 * var(--diente)) 100%;
   }
 
   .comanda-impresa {
@@ -204,8 +213,13 @@
   }
 
   @keyframes mecer {
-    0%, 100% { transform: rotate(-0.8deg); }
-    50% { transform: rotate(0.8deg); }
+    0%,
+    100% {
+      transform: rotate(-0.8deg);
+    }
+    50% {
+      transform: rotate(0.8deg);
+    }
   }
 
   /*
@@ -221,14 +235,23 @@
     --corte: 14px;
     padding: 1.5rem 1.5rem 1.4rem;
     background-color: rgb(var(--c-kraft));
-    background-image: repeating-linear-gradient(115deg, rgb(0 0 0 / 0.028) 0 2px, transparent 2px 7px);
+    background-image: repeating-linear-gradient(
+      115deg,
+      rgb(0 0 0 / 0.028) 0 2px,
+      transparent 2px 7px
+    );
     box-shadow:
       inset 0 0 0 7px rgb(var(--c-kraft)),
       inset 0 0 0 8px rgb(var(--c-tinta) / 0.35);
     clip-path: polygon(
-      var(--corte) 0, calc(100% - var(--corte)) 0, 100% var(--corte),
-      100% calc(100% - var(--corte)), calc(100% - var(--corte)) 100%,
-      var(--corte) 100%, 0 calc(100% - var(--corte)), 0 var(--corte)
+      var(--corte) 0,
+      calc(100% - var(--corte)) 0,
+      100% var(--corte),
+      100% calc(100% - var(--corte)),
+      calc(100% - var(--corte)) 100%,
+      var(--corte) 100%,
+      0 calc(100% - var(--corte)),
+      0 var(--corte)
     );
   }
 
@@ -254,7 +277,9 @@
   .ar-colocado [data-reticula] {
     opacity: 0;
     transform: scale(1.04);
-    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transition:
+      opacity 0.4s ease,
+      transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .plato-ar:has([data-boton-ar]:hover) .ar-colocado [data-reticula],
@@ -265,8 +290,20 @@
 
   /* El campo de la reserva se funde arriba y abajo con la noche. */
   .reserva-campo {
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 22%,
+      #000 78%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 22%,
+      #000 78%,
+      transparent 100%
+    );
   }
 
   /* El campo rojo con su tinta (el menú móvil). */
@@ -308,7 +345,8 @@
   /* El mapa de Google entra en la noche de la página: invertido, sin color y
      con un poco de sepia para que las calles queden del tono de la ceniza. */
   .mapa {
-    filter: invert(0.92) hue-rotate(180deg) grayscale(0.85) sepia(0.3) brightness(0.9);
+    filter: invert(0.92) hue-rotate(180deg) grayscale(0.85) sepia(0.3)
+      brightness(0.9);
   }
 }
 

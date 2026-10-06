@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../i18n/useLanguage'
 
 const LINK_IDS = ['fuego', 'menu', 'voces', 'contacto']
 
@@ -18,7 +18,11 @@ export default function Nav() {
   const [abierto, setAbierto] = useState(false)
   const [activo, setActivo] = useState(null)
 
-  const enlaces = LINK_IDS.map((id) => ({ id, href: `#${id}`, label: t.nav[id] }))
+  const enlaces = LINK_IDS.map((id) => ({
+    id,
+    href: `#${id}`,
+    label: t.nav[id],
+  }))
 
   // Se mide en cada scroll y no con IntersectionObserver: el pin del hero
   // mueve el marcador sin que cruce el borde, y un salto largo (un ancla, el
@@ -45,14 +49,16 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const objetivos = LINK_IDS.map((id) => document.getElementById(id)).filter(Boolean)
+    const objetivos = LINK_IDS.map((id) => document.getElementById(id)).filter(
+      Boolean
+    )
     if (!objetivos.length) return
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.find((entry) => entry.isIntersecting)
         if (visible) setActivo(visible.target.id)
       },
-      { rootMargin: '-45% 0px -45% 0px', threshold: 0 },
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
     )
     objetivos.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
@@ -141,7 +147,11 @@ export default function Nav() {
             aria-controls="menu-movil"
             className="-mr-2 grid h-11 w-11 place-items-center lg:hidden"
           >
-            {abierto ? <X size={22} strokeWidth={1.6} /> : <Menu size={22} strokeWidth={1.6} />}
+            {abierto ? (
+              <X size={22} strokeWidth={1.6} />
+            ) : (
+              <Menu size={22} strokeWidth={1.6} />
+            )}
           </button>
         </div>
       </nav>
@@ -166,7 +176,11 @@ export default function Nav() {
             ))}
           </ul>
           <div className="mt-10 space-y-6">
-            <a href="#reservar" onClick={() => setAbierto(false)} className="boton boton--tinta w-full">
+            <a
+              href="#reservar"
+              onClick={() => setAbierto(false)}
+              className="boton boton--tinta w-full"
+            >
               {t.nav.reservar}
               <ArrowRight size={16} strokeWidth={2} />
             </a>

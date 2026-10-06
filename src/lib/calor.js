@@ -36,10 +36,13 @@ let tramos = []
 function medir() {
   tramos = [...document.querySelectorAll('[data-calor]')].map((el) => {
     // Si la sección está fijada, la que ocupa el espacio real es su envoltorio.
-    const caja = el.parentElement?.classList.contains('pin-spacer') ? el.parentElement : el
+    const caja = el.parentElement?.classList.contains('pin-spacer')
+      ? el.parentElement
+      : el
     const r = caja.getBoundingClientRect()
     const [desde, hasta] = el.dataset.calor.split(',').map(Number)
-    const llama = el.dataset.llama === undefined ? 0.3 : Number(el.dataset.llama)
+    const llama =
+      el.dataset.llama === undefined ? 0.3 : Number(el.dataset.llama)
     return { top: r.top + window.scrollY, alto: r.height, desde, hasta, llama }
   })
 }
@@ -65,13 +68,19 @@ export function actualizarCalor() {
     desde = tramo.top + window.innerHeight * 0.5
     recorrido = Math.max(tramo.alto - window.innerHeight * 0.5, 1)
   } else if (tramo === tramos[tramos.length - 1]) {
-    const fondo = document.documentElement.scrollHeight - window.innerHeight + window.innerHeight * 0.5
+    const fondo =
+      document.documentElement.scrollHeight -
+      window.innerHeight +
+      window.innerHeight * 0.5
     recorrido = Math.max(fondo - tramo.top, 1)
   }
   let p = Math.min(Math.max((centro - desde) / Math.max(recorrido, 1), 0), 1)
   // Tocando fondo, la página termina en el final del último tramo aunque el
   // centro de la pantalla no haya llegado a él (pasa en pantallas altas).
-  if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight - 2) {
+  if (
+    window.scrollY >=
+    document.documentElement.scrollHeight - window.innerHeight - 2
+  ) {
     tramo = tramos[tramos.length - 1]
     p = 1
   }
