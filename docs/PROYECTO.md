@@ -1,4 +1,6 @@
-# Ascua — landing de "cocina de autor"
+# Ascua — landing de "cocina de autor" (Histórico)
+
+> **Nota:** Este documento es un registro histórico del estado inicial del repositorio (monolito JS estático de un solo restaurante antes de la reestructuración multi-restaurante de Ascua). La fuente actual de verdad técnica es `docs/PLAN-IMPLEMENTACION.md`, `CLAUDE.md` y `docs/ESTADO.md`.
 
 Landing page de una sola página (SPA sin routing) para un restaurante ficticio/real llamado
 **Ascua**, con menú visual y una función diferencial: ver los platos en 3D y en Realidad
