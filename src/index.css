@@ -11,6 +11,8 @@
   de RA y el visor 3D (bloqueados); se conservan aunque cambien sus valores.
 */
 
+@import './presentation/theme/tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -4,6 +4,19 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_components_arguidemodal_arguidemodalprops",
+      "label": "ArGuideModalProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "arguidemodalprops",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L5"
+    },
+    {
       "id": "src_application_ports_restaurantrepository_restaurantrepository",
       "label": "RestaurantRepository",
       "_callable": true,
@@ -15,6 +28,32 @@
       "norm_label": "restaurantrepository",
       "source_file": "src/application/ports/restaurantRepository.ts",
       "source_location": "L14"
+    },
+    {
+      "id": "src_application_use_cases_buildmenuview_categoryviewmodel",
+      "label": "CategoryViewModel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "categoryviewmodel",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_application_use_cases_buildmenuview_menuviewmodel",
+      "label": "MenuViewModel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "menuviewmodel",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L39"
     },
     {
       "id": "src_application_use_cases_buildreservationlink_reservationparams",
@@ -41,6 +80,19 @@
       "norm_label": "getrestaurantresult",
       "source_file": "src/application/use-cases/getRestaurant.ts",
       "source_location": "L17"
+    },
+    {
+      "id": "src_domain_price_price",
+      "label": "Price",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L23"
     },
     {
       "id": "src_domain_restaurant_restaurant",
@@ -186,19 +238,6 @@
       "source_location": "L13"
     },
     {
-      "id": "src_application_use_cases_buildmenuview_categoryviewmodel",
-      "label": "CategoryViewModel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "categoryviewmodel",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L33"
-    },
-    {
       "id": "src_application_use_cases_buildmenuview_dishviewmodel",
       "label": "DishViewModel",
       "_callable": true,
@@ -210,19 +249,6 @@
       "norm_label": "dishviewmodel",
       "source_file": "src/application/use-cases/buildMenuView.ts",
       "source_location": "L19"
-    },
-    {
-      "id": "src_application_use_cases_buildmenuview_menuviewmodel",
-      "label": "MenuViewModel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "menuviewmodel",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L39"
     },
     {
       "id": "src_application_use_cases_launchdishar_launchdisharparams",
@@ -316,17 +342,17 @@
       "source_location": "L21"
     },
     {
-      "id": "src_domain_price_price",
-      "label": "Price",
+      "id": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker",
+      "label": "NoopAnalyticsTracker",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
       "community_name": "doubles.ts",
       "file_type": "code",
-      "norm_label": "price",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L23"
+      "norm_label": "noopanalyticstracker",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L6"
     },
     {
       "id": "src_infrastructure_ar_modelviewerfallbacklauncher_modelviewerfallbacklauncher",
@@ -496,6 +522,18 @@
       "source_location": "L7"
     },
     {
+      "id": "src_components_arguidemodal_arguidemodal",
+      "label": "ArGuideModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "arguidemodal()",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L12"
+    },
+    {
       "id": "src_components_arviewer_arviewer",
       "label": "ArViewer()",
       "_callable": true,
@@ -518,6 +556,18 @@
       "norm_label": "contacto()",
       "source_file": "src/components/Contacto.jsx",
       "source_location": "L15"
+    },
+    {
+      "id": "src_components_floatinghelp_floatinghelp",
+      "label": "FloatingHelp()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "floatinghelp()",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L6"
     },
     {
       "id": "src_components_franjareserva_franjareserva",
@@ -688,18 +738,6 @@
       "source_location": "L7"
     },
     {
-      "id": "src_lib_arassets_getassetfordishindex",
-      "label": "getAssetForDishIndex()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "getassetfordishindex()",
-      "source_file": "src/lib/arAssets.js",
-      "source_location": "L91"
-    },
-    {
       "id": "src_lib_browserenv_detectinappbrowser",
       "label": "detectInAppBrowser()",
       "_callable": true,
@@ -710,6 +748,54 @@
       "norm_label": "detectinappbrowser()",
       "source_file": "src/lib/browserEnv.js",
       "source_location": "L20"
+    },
+    {
+      "id": "src_lib_browserenv_isios",
+      "label": "isIOS()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "isios()",
+      "source_file": "src/lib/browserEnv.js",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_lib_launchar_launchar",
+      "label": "launchAr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "launchar()",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_lib_launchar_launchquicklook",
+      "label": "launchQuickLook()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "launchquicklook()",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_lib_launchar_launchsceneviewer",
+      "label": "launchSceneViewer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "launchsceneviewer()",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L29"
     },
     {
       "id": "src_application_ports_restaurantrepository_restaurantrepository_getbyslug",
@@ -724,6 +810,18 @@
       "source_location": "L21"
     },
     {
+      "id": "src_application_use_cases_buildmenuview_buildmenuview",
+      "label": "buildMenuView()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview()",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L55"
+    },
+    {
       "id": "src_application_use_cases_buildreservationlink_buildreservationlink",
       "label": "buildReservationLink()",
       "_callable": true,
@@ -734,6 +832,54 @@
       "norm_label": "buildreservationlink()",
       "source_file": "src/application/use-cases/buildReservationLink.ts",
       "source_location": "L26"
+    },
+    {
+      "id": "src_application_use_cases_getrestaurant_getrestaurant",
+      "label": "getRestaurant()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "getrestaurant()",
+      "source_file": "src/application/use-cases/getRestaurant.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_application_use_cases_launchdishar_launchdishar",
+      "label": "launchDishAr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "launchdishar()",
+      "source_file": "src/application/use-cases/launchDishAr.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_domain_ar_selectarlaunchmode",
+      "label": "selectArLaunchMode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "selectarlaunchmode()",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L85"
+    },
+    {
+      "id": "src_domain_price_formatcopprice",
+      "label": "formatCopPrice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "formatcopprice()",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L35"
     },
     {
       "id": "src_domain_restaurant_isrestaurantexpired",
@@ -832,64 +978,16 @@
       "source_location": "L17"
     },
     {
-      "id": "src_application_use_cases_buildmenuview_buildmenuview",
-      "label": "buildMenuView()",
+      "id": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker_track",
+      "label": ".track()",
       "_callable": true,
       "_origin": "ast",
       "community": 14,
       "community_name": "doubles.ts",
       "file_type": "code",
-      "norm_label": "buildmenuview()",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_application_use_cases_getrestaurant_getrestaurant",
-      "label": "getRestaurant()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "getrestaurant()",
-      "source_file": "src/application/use-cases/getRestaurant.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_application_use_cases_launchdishar_launchdishar",
-      "label": "launchDishAr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "launchdishar()",
-      "source_file": "src/application/use-cases/launchDishAr.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_domain_ar_selectarlaunchmode",
-      "label": "selectArLaunchMode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "selectarlaunchmode()",
-      "source_file": "src/domain/ar.ts",
-      "source_location": "L85"
-    },
-    {
-      "id": "src_domain_price_formatcopprice",
-      "label": "formatCopPrice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "formatcopprice()",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L35"
+      "norm_label": ".track()",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L7"
     },
     {
       "id": "src_infrastructure_ar_modelviewerfallbacklauncher_modelviewerfallbacklauncher_launch",
@@ -1058,54 +1156,6 @@
       "norm_label": "qrpage()",
       "source_file": "src/app/router.tsx",
       "source_location": "L12"
-    },
-    {
-      "id": "src_lib_browserenv_isios",
-      "label": "isIOS()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "isios()",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_lib_launchar_launchar",
-      "label": "launchAr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "launchar()",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_lib_launchar_launchquicklook",
-      "label": "launchQuickLook()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "launchquicklook()",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_launchar_launchsceneviewer",
-      "label": "launchSceneViewer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "launchsceneviewer()",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L29"
     },
     {
       "id": "src_components_escena_escena",
@@ -1372,6 +1422,18 @@
       "source_location": "L62"
     },
     {
+      "id": "src_lib_arassets_getassetfordishindex",
+      "label": "getAssetForDishIndex()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "code",
+      "norm_label": "getassetfordishindex()",
+      "source_file": "src/lib/arAssets.js",
+      "source_location": "L91"
+    },
+    {
       "id": "src_lib_arassets_istrustedasseturl",
       "label": "isTrustedAssetUrl()",
       "_callable": true,
@@ -1406,6 +1468,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_arguidemodal",
+      "label": "ArGuideModal.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "arguidemodal.tsx",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_arviewer",
       "label": "ArViewer.jsx",
       "_origin": "ast",
@@ -1436,6 +1509,17 @@
       "file_type": "code",
       "norm_label": "contacto.jsx",
       "source_file": "src/components/Contacto.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_floatinghelp",
+      "label": "FloatingHelp.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "floatinghelp.tsx",
+      "source_file": "src/components/FloatingHelp.tsx",
       "source_location": "L1"
     },
     {
@@ -1659,6 +1743,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_browserenv",
+      "label": "browserEnv.js",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "browserenv.js",
+      "source_file": "src/lib/browserEnv.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_browserenv_in_app_markers",
+      "label": "IN_APP_MARKERS",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "in_app_markers",
+      "source_file": "src/lib/browserEnv.js",
+      "source_location": "L5"
+    },
+    {
       "id": "src_lib_carta",
       "label": "carta.js",
       "_origin": "ast",
@@ -1703,6 +1809,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_launchar",
+      "label": "launchAr.js",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "launchar.js",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_unit_carta_test",
       "label": "carta.test.ts",
       "_origin": "ast",
@@ -1712,6 +1829,17 @@
       "norm_label": "carta.test.ts",
       "source_file": "tests/unit/carta.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_google_model_viewer",
+      "label": "@google/model-viewer",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "concept",
+      "norm_label": "@google/model-viewer",
+      "source_file": "package.json",
+      "source_location": "L33"
     },
     {
       "id": "ref_lucide_react",
@@ -1780,6 +1908,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_application_use_cases_buildmenuview",
+      "label": "buildMenuView.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview.ts",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_application_use_cases_buildreservationlink",
       "label": "buildReservationLink.ts",
       "_origin": "ast",
@@ -1822,6 +1961,28 @@
       "norm_label": "domain/index.ts",
       "source_file": "src/domain/index.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_domain_price",
+      "label": "price.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price.ts",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_price_priceschema",
+      "label": "priceSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "priceschema",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L16"
     },
     {
       "id": "src_domain_restaurant",
@@ -1912,6 +2073,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tests_unit_application_buildmenuview_test",
+      "label": "buildMenuView.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview.test.ts",
+      "source_file": "tests/unit/application/buildMenuView.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_unit_application_buildreservationlink_test",
       "label": "buildReservationLink.test.ts",
       "_origin": "ast",
@@ -1931,6 +2103,17 @@
       "file_type": "code",
       "norm_label": "getrestaurant.test.ts",
       "source_file": "tests/unit/application/getRestaurant.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_price_test",
+      "label": "price.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price.test.ts",
+      "source_file": "tests/unit/domain/price.test.ts",
       "source_location": "L1"
     },
     {
@@ -1978,6 +2161,17 @@
       "source_location": "L35"
     },
     {
+      "id": "ref_vitest",
+      "label": "vitest",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "concept",
+      "norm_label": "vitest",
+      "source_file": "package.json",
+      "source_location": "L61"
+    },
+    {
       "id": "ref_zod",
       "label": "zod",
       "_origin": "ast",
@@ -1989,16 +2183,28 @@
       "source_location": "L40"
     },
     {
-      "id": "docs_plan_implementacion_fase_p_3_funciones_de_la_demo",
-      "label": "Fase P-3 \u2014 Funciones de la demo",
+      "id": "docs_estado_\u00faltimo_paso_completado",
+      "label": "\u00daltimo paso completado",
       "_origin": "ast",
       "community": 1,
       "community_name": "restaurant.ts",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "fase p-3 \u2014 funciones de la demo",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L574"
+      "norm_label": "ultimo paso completado",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
+      "label": "Decisiones tomadas",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisiones tomadas",
+      "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
+      "source_location": "L6"
     },
     {
       "id": "docs_sesiones_2026_10_06_p105_static_repo",
@@ -2058,66 +2264,6 @@
       "node_kind": "heading",
       "norm_label": "siguiente tarea",
       "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
-      "source_location": "L17"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store",
-      "label": "2026-10-06-P107-Jotai-Store.md",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "2026-10-06-p107-jotai-store.md",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_acciones_realizadas",
-      "label": "Acciones realizadas",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "acciones realizadas",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_bit\u00e1cora_de_sesi\u00f3n_p_107_store_reactivo_global_jotai",
-      "label": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "bitacora de sesion: p-107 store reactivo global (jotai)",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_objetivos",
-      "label": "Objetivos",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "objetivos",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L6"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_siguiente_tarea",
-      "label": "Siguiente Tarea",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "siguiente tarea",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L17"
     },
     {
@@ -2203,6 +2349,78 @@
       "norm_label": "2. linea base verificada (5 oct 2026)",
       "source_file": "docs/PLAN-IMPLEMENTACION.md",
       "source_location": "L40"
+    },
+    {
+      "id": "docs_plan_implementacion_3_1_capas_clean_architecture_ligera",
+      "label": "3.1 Capas (Clean Architecture ligera)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.1 capas (clean architecture ligera)",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L62"
+    },
+    {
+      "id": "docs_plan_implementacion_3_2_estructura_de_carpetas_objetivo",
+      "label": "3.2 Estructura de carpetas objetivo",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.2 estructura de carpetas objetivo",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L86"
+    },
+    {
+      "id": "docs_plan_implementacion_3_4_modelo_multi_restaurante_aislamiento",
+      "label": "3.4 Modelo multi-restaurante (aislamiento)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.4 modelo multi-restaurante (aislamiento)",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L151"
+    },
+    {
+      "id": "docs_plan_implementacion_3_5_experiencia_m\u00f3vil_intuitiva_y_auto_explicativa",
+      "label": "3.5 Experiencia m\u00f3vil, intuitiva y auto-explicativa",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.5 experiencia movil, intuitiva y auto-explicativa",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L197"
+    },
+    {
+      "id": "docs_plan_implementacion_3_6_experiencia_ar_que_el_plato_aparezca_bien_en_su_tama\u00f1o_real",
+      "label": "3.6 Experiencia AR: que el plato aparezca bien, en su tama\u00f1o real",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.6 experiencia ar: que el plato aparezca bien, en su tamano real",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L215"
+    },
+    {
+      "id": "docs_plan_implementacion_3_arquitectura_objetivo_ascua_demo_pagina",
+      "label": "3. Arquitectura objetivo \u2014 ASCUA-DEMO-PAGINA",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3. arquitectura objetivo \u2014 ascua-demo-pagina",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L60"
     },
     {
       "id": "docs_plan_implementacion_4_1_rol_inmediato_estudio_3d_cli_local",
@@ -2491,6 +2709,18 @@
       "norm_label": "fase p-2 \u2014 multi-restaurante",
       "source_file": "docs/PLAN-IMPLEMENTACION.md",
       "source_location": "L552"
+    },
+    {
+      "id": "docs_plan_implementacion_fase_p_3_funciones_de_la_demo",
+      "label": "Fase P-3 \u2014 Funciones de la demo",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fase p-3 \u2014 funciones de la demo",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L574"
     },
     {
       "id": "docs_plan_implementacion_fase_p_4_dise\u00f1o",
@@ -3523,17 +3753,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_application_use_cases_buildmenuview",
-      "label": "buildMenuView.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview.ts",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_application_use_cases_launchdishar",
       "label": "launchDishAr.ts",
       "_origin": "ast",
@@ -3622,26 +3841,15 @@
       "source_location": "L16"
     },
     {
-      "id": "src_domain_price",
-      "label": "price.ts",
+      "id": "src_infrastructure_analytics_noopanalyticstracker",
+      "label": "NoopAnalyticsTracker.ts",
       "_origin": "ast",
       "community": 14,
       "community_name": "doubles.ts",
       "file_type": "code",
-      "norm_label": "price.ts",
-      "source_file": "src/domain/price.ts",
+      "norm_label": "noopanalyticstracker.ts",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_domain_price_priceschema",
-      "label": "priceSchema",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "priceschema",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L16"
     },
     {
       "id": "src_infrastructure_ar_modelviewerfallbacklauncher",
@@ -3699,17 +3907,6 @@
       "source_location": "L4"
     },
     {
-      "id": "tests_unit_application_buildmenuview_test",
-      "label": "buildMenuView.test.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview.test.ts",
-      "source_file": "tests/unit/application/buildMenuView.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "tests_unit_application_doubles",
       "label": "doubles.ts",
       "_origin": "ast",
@@ -3751,17 +3948,6 @@
       "file_type": "code",
       "norm_label": "dish.test.ts",
       "source_file": "tests/unit/domain/dish.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_unit_domain_price_test",
-      "label": "price.test.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "price.test.ts",
-      "source_file": "tests/unit/domain/price.test.ts",
       "source_location": "L1"
     },
     {
@@ -3809,17 +3995,6 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "concept",
-      "norm_label": "vitest",
-      "source_file": "package.json",
-      "source_location": "L61"
-    },
-    {
       "id": "claude_0_2_reglas_espec\u00edficas_de_este_repo",
       "label": "0.2 Reglas espec\u00edficas de este repo",
       "_origin": "ast",
@@ -3832,16 +4007,16 @@
       "source_location": "L27"
     },
     {
-      "id": "docs_estado_\u00faltimo_paso_completado",
-      "label": "\u00daltimo paso completado",
+      "id": "docs_plan_implementacion_3_3_principios_solid_aplicados_concreto_no_te\u00f3rico",
+      "label": "3.3 Principios SOLID aplicados (concreto, no te\u00f3rico)",
       "_origin": "ast",
       "community": 14,
       "community_name": "doubles.ts",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "ultimo paso completado",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L16"
+      "norm_label": "3.3 principios solid aplicados (concreto, no teorico)",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L141"
     },
     {
       "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
@@ -3854,18 +4029,6 @@
       "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
       "source_file": "docs/PLAN-IMPLEMENTACION.md",
       "source_location": "L518"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
-      "label": "Decisiones tomadas",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decisiones tomadas",
-      "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
-      "source_location": "L6"
     },
     {
       "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_acciones_realizadas",
@@ -4158,169 +4321,64 @@
       "source_location": "L13"
     },
     {
-      "id": "src_lib_browserenv",
-      "label": "browserEnv.js",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store",
+      "label": "2026-10-06-P107-Jotai-Store.md",
       "_origin": "ast",
       "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "browserenv.js",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_browserenv_in_app_markers",
-      "label": "IN_APP_MARKERS",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "in_app_markers",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_lib_launchar",
-      "label": "launchAr.js",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "code",
-      "norm_label": "launchar.js",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_product",
-      "label": "PRODUCT.md",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "product.md",
-      "source_file": "docs/PRODUCT.md",
+      "norm_label": "2026-10-06-p107-jotai-store.md",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_product_brand_commitments",
-      "label": "Brand Commitments",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_acciones_realizadas",
+      "label": "Acciones realizadas",
       "_origin": "ast",
       "community": 19,
-      "community_name": "Product",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "brand commitments",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L56"
-    },
-    {
-      "id": "docs_product_capabilities_and_constraints",
-      "label": "Capabilities and Constraints",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "capabilities and constraints",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L42"
-    },
-    {
-      "id": "docs_product_evidence_on_hand",
-      "label": "Evidence on Hand",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "evidence on hand",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L66"
-    },
-    {
-      "id": "docs_product_operating_context",
-      "label": "Operating Context",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "operating context",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L34"
-    },
-    {
-      "id": "docs_product_platform",
-      "label": "Platform",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "platform",
-      "source_file": "docs/PRODUCT.md",
+      "norm_label": "acciones realizadas",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L10"
     },
     {
-      "id": "docs_product_positioning",
-      "label": "Positioning",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_bit\u00e1cora_de_sesi\u00f3n_p_107_store_reactivo_global_jotai",
+      "label": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "_origin": "ast",
       "community": 19,
-      "community_name": "Product",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "positioning",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L28"
-    },
-    {
-      "id": "docs_product_product",
-      "label": "Product",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "product",
-      "source_file": "docs/PRODUCT.md",
+      "norm_label": "bitacora de sesion: p-107 store reactivo global (jotai)",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_product_product_principles",
-      "label": "Product Principles",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_objetivos",
+      "label": "Objetivos",
       "_origin": "ast",
       "community": 19,
-      "community_name": "Product",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "product principles",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L74"
+      "norm_label": "objetivos",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L6"
     },
     {
-      "id": "docs_product_product_purpose",
-      "label": "Product Purpose",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_siguiente_tarea",
+      "label": "Siguiente Tarea",
       "_origin": "ast",
       "community": 19,
-      "community_name": "Product",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "product purpose",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L22"
-    },
-    {
-      "id": "docs_product_users",
-      "label": "Users",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "users",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L14"
+      "norm_label": "siguiente tarea",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L17"
     },
     {
       "id": "package",
@@ -4585,17 +4643,6 @@
       "norm_label": "dependency-cruiser",
       "source_file": "package.json",
       "source_location": "L50"
-    },
-    {
-      "id": "ref_google_model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "@google/model-viewer",
-      "source_file": "package.json",
-      "source_location": "L33"
     },
     {
       "id": "ref_gsap",
@@ -5470,90 +5517,6 @@
       "source_location": "L1"
     },
     {
-      "id": "docs_plan_implementacion_3_1_capas_clean_architecture_ligera",
-      "label": "3.1 Capas (Clean Architecture ligera)",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.1 capas (clean architecture ligera)",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L62"
-    },
-    {
-      "id": "docs_plan_implementacion_3_2_estructura_de_carpetas_objetivo",
-      "label": "3.2 Estructura de carpetas objetivo",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.2 estructura de carpetas objetivo",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L86"
-    },
-    {
-      "id": "docs_plan_implementacion_3_3_principios_solid_aplicados_concreto_no_te\u00f3rico",
-      "label": "3.3 Principios SOLID aplicados (concreto, no te\u00f3rico)",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.3 principios solid aplicados (concreto, no teorico)",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L141"
-    },
-    {
-      "id": "docs_plan_implementacion_3_4_modelo_multi_restaurante_aislamiento",
-      "label": "3.4 Modelo multi-restaurante (aislamiento)",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.4 modelo multi-restaurante (aislamiento)",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L151"
-    },
-    {
-      "id": "docs_plan_implementacion_3_5_experiencia_m\u00f3vil_intuitiva_y_auto_explicativa",
-      "label": "3.5 Experiencia m\u00f3vil, intuitiva y auto-explicativa",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.5 experiencia movil, intuitiva y auto-explicativa",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L197"
-    },
-    {
-      "id": "docs_plan_implementacion_3_6_experiencia_ar_que_el_plato_aparezca_bien_en_su_tama\u00f1o_real",
-      "label": "3.6 Experiencia AR: que el plato aparezca bien, en su tama\u00f1o real",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.6 experiencia ar: que el plato aparezca bien, en su tamano real",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L215"
-    },
-    {
-      "id": "docs_plan_implementacion_3_arquitectura_objetivo_ascua_demo_pagina",
-      "label": "3. Arquitectura objetivo \u2014 ASCUA-DEMO-PAGINA",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "SoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. arquitectura objetivo \u2014 ascua-demo-pagina",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L60"
-    },
-    {
       "id": "dependency_cruiser_cjs_dependency_cruiser",
       "label": ".dependency-cruiser.cjs",
       "_origin": "ast",
@@ -5563,17 +5526,6 @@
       "norm_label": ".dependency-cruiser.cjs",
       "source_file": ".dependency-cruiser.cjs",
       "source_location": "L1"
-    },
-    {
-      "id": "dependency_cruiser_dependency_cruiser",
-      "label": "dependency-cruiser",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "dependency-cruiser",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "dependency-cruiser",
-      "source_file": "dependency-cruiser"
     },
     {
       "id": "scripts_carta",
@@ -5739,6 +5691,138 @@
       "norm_label": "published_assets",
       "source_file": "src/lib/arAssets.js",
       "source_location": "L19"
+    },
+    {
+      "id": "docs_product",
+      "label": "PRODUCT.md",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "product.md",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_product_brand_commitments",
+      "label": "Brand Commitments",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "brand commitments",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L56"
+    },
+    {
+      "id": "docs_product_capabilities_and_constraints",
+      "label": "Capabilities and Constraints",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "capabilities and constraints",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L42"
+    },
+    {
+      "id": "docs_product_evidence_on_hand",
+      "label": "Evidence on Hand",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "evidence on hand",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L66"
+    },
+    {
+      "id": "docs_product_operating_context",
+      "label": "Operating Context",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "operating context",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_product_platform",
+      "label": "Platform",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "platform",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_product_positioning",
+      "label": "Positioning",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "positioning",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "docs_product_product",
+      "label": "Product",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_product_product_principles",
+      "label": "Product Principles",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product principles",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "docs_product_product_purpose",
+      "label": "Product Purpose",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product purpose",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "docs_product_users",
+      "label": "Users",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "users",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L14"
     },
     {
       "id": "docs_proyecto",
@@ -6925,6 +7009,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_arguidemodal_arguidemodal",
+      "target": "src_i18n_uselanguage_uselanguage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_contacto_contacto",
       "target": "src_i18n_uselanguage_uselanguage",
       "relation": "calls",
@@ -7054,6 +7150,30 @@
       "context": "call",
       "source_file": "src/components/Escena.jsx",
       "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp_floatinghelp",
+      "target": "src_components_arguidemodal_arguidemodal",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp_floatinghelp",
+      "target": "src_i18n_uselanguage_uselanguage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -8786,6 +8906,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_arguidemodal",
+      "target": "src_i18n_uselanguage_uselanguage",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_contacto",
       "target": "src_hooks_usereveal_usereveal",
       "relation": "imports",
@@ -8903,6 +9035,30 @@
       "context": "import",
       "source_file": "src/components/Escena.jsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "src_i18n_uselanguage_uselanguage",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "src_components_arguidemodal_arguidemodal",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -9287,6 +9443,30 @@
       "context": "import",
       "source_file": "src/i18n/useLanguage.js",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_analytics_noopanalyticstracker",
+      "target": "src_application_ports_analyticstracker_analyticsevent",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_analytics_noopanalyticstracker",
+      "target": "src_application_ports_analyticstracker_analyticstracker",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -10928,6 +11108,42 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_arguidemodal",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_arguidemodal",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_arguidemodal",
+      "target": "src_i18n_uselanguage",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_arviewer",
       "target": "ref_react",
       "relation": "imports_from",
@@ -11021,6 +11237,54 @@
       "context": "import",
       "source_file": "src/components/Escena.jsx",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "ref_lucide_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "src_i18n_uselanguage",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "src_components_arguidemodal",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -11657,6 +11921,19 @@
       "context": "import",
       "source_file": "src/i18n/useLanguage.js",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_analytics_noopanalyticstracker",
+      "target": "src_application_ports_analyticstracker",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L1",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -12685,6 +12962,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker_track",
+      "target": "src_application_ports_analyticstracker_analyticsevent",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
       "source": "src_infrastructure_ar_modelviewerfallbacklauncher_modelviewerfallbacklauncher_launch",
       "target": "src_domain_ar_arlaunchmode",
       "relation": "references",
@@ -12862,6 +13151,18 @@
       "context": "return_type",
       "source_file": "tests/unit/application/doubles.ts",
       "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker",
+      "target": "src_application_ports_analyticstracker_analyticstracker",
+      "relation": "implements",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "type",
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -16241,6 +16542,28 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_arguidemodal",
+      "target": "src_components_arguidemodal_arguidemodal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_arguidemodal",
+      "target": "src_components_arguidemodal_arguidemodalprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ArGuideModal.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_arviewer",
       "target": "src_components_arviewer_viewer_attrs",
       "relation": "contains",
@@ -16293,6 +16616,17 @@
       "confidence_score": 1.0,
       "source_file": "src/components/Escena.jsx",
       "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_floatinghelp",
+      "target": "src_components_floatinghelp_floatinghelp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/FloatingHelp.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -16777,6 +17111,17 @@
       "confidence_score": 1.0,
       "source_file": "src/i18n/useLanguage.js",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_analytics_noopanalyticstracker",
+      "target": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -17501,6 +17846,17 @@
       "confidence_score": 1.0,
       "source_file": "src/application/ports/soldOutStore.ts",
       "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker",
+      "target": "src_infrastructure_analytics_noopanalyticstracker_noopanalyticstracker_track",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/infrastructure/analytics/NoopAnalyticsTracker.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -18671,5 +19027,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "437a9354ef371981dee5380ace1262297f08b836"
+  "built_at_commit": "57d8e5f1067a698357bd6d029edd48b476f10775"
 }

@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1791313881.8350124,
-    "seen": 1791313971.1424372,
-    "ast_hash": "f3151c4870edf815ce828dac4378bfa0",
+    "mtime": 1791316297.784723,
+    "seen": 1791316567.338288,
+    "ast_hash": "2f4112c7f867b95d512655049fbc9d4c",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1791308771.075496,
-    "seen": 1791309424.043013,
-    "ast_hash": "b1a483a7798cef16886149cce25a4068",
+    "mtime": 1791316228.3901372,
+    "seen": 1791316567.3382964,
+    "ast_hash": "1d86245c7b4e82ac0ba0f337bce2cf05",
     "semantic_hash": ""
   },
   "src/components/ArDishModal.jsx": {
@@ -48,15 +48,15 @@
     "semantic_hash": ""
   },
   "src/components/ArViewer.jsx": {
-    "mtime": 1791308771.2305045,
-    "seen": 1791309424.043017,
-    "ast_hash": "b84e36b06882e9daac1ae85b4a0c888e",
+    "mtime": 1791316228.4457784,
+    "seen": 1791316567.3383205,
+    "ast_hash": "d358fac1f454cbfcd6119e62a3c9dbc5",
     "semantic_hash": ""
   },
   "src/components/Contacto.jsx": {
-    "mtime": 1791308771.355962,
-    "seen": 1791309424.0430188,
-    "ast_hash": "69a045f998f02c888cd1caf6d0b4c1ca",
+    "mtime": 1791315860.8770475,
+    "seen": 1791316567.3383214,
+    "ast_hash": "9680bbb6741668c4a7140d9eb38582f0",
     "semantic_hash": ""
   },
   "src/components/Escena.jsx": {
@@ -84,9 +84,9 @@
     "semantic_hash": ""
   },
   "src/components/LoadingScreen.jsx": {
-    "mtime": 1791308771.9527571,
-    "seen": 1791309424.043028,
-    "ast_hash": "ee45677075582391b5ad86d62114bfeb",
+    "mtime": 1791314540.5529358,
+    "seen": 1791316567.3383296,
+    "ast_hash": "e67eb0ae606c2e0ce49c1548b5fd486c",
     "semantic_hash": ""
   },
   "src/components/Manifiesto.jsx": {
@@ -96,9 +96,9 @@
     "semantic_hash": ""
   },
   "src/components/Menu.jsx": {
-    "mtime": 1791308772.1346188,
-    "seen": 1791309424.0430317,
-    "ast_hash": "b42d34e6ff69b7eff47a35968f118f23",
+    "mtime": 1791316228.5140486,
+    "seen": 1791316567.3383317,
+    "ast_hash": "18d5ccd4c5f8d8381bc00e19e608107a",
     "semantic_hash": ""
   },
   "src/components/Nav.jsx": {
@@ -108,9 +108,9 @@
     "semantic_hash": ""
   },
   "src/components/Pie.jsx": {
-    "mtime": 1791308772.2155898,
-    "seen": 1791309424.043035,
-    "ast_hash": "0dce63cb5b3531de742bb6c6620975ec",
+    "mtime": 1791316059.7649467,
+    "seen": 1791316567.3383336,
+    "ast_hash": "be5a3ac363df2aca1c3e2f61e4d48caa",
     "semantic_hash": ""
   },
   "src/components/Reserva.jsx": {
@@ -132,9 +132,9 @@
     "semantic_hash": ""
   },
   "src/i18n/translations.js": {
-    "mtime": 1791308772.5555048,
-    "seen": 1791309424.0430577,
-    "ast_hash": "4bd11697900799fe74f003d20c31dc93",
+    "mtime": 1791316087.002284,
+    "seen": 1791316567.3383489,
+    "ast_hash": "374c5fd31fe2904aba13c5a1f9c55bc1",
     "semantic_hash": ""
   },
   "src/lib/arAssets.js": {
@@ -228,10 +228,10 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1791231690.6414425,
-    "seen": 1791305862.1017134,
-    "ast_hash": "3526bcee5fc50fba9394289f9f8b8c12",
-    "semantic_hash": "3526bcee5fc50fba9394289f9f8b8c12"
+    "mtime": 1791316335.1742575,
+    "seen": 1791316567.3384032,
+    "ast_hash": "bf3655cffef1b7fdd41382cff45dce63",
+    "semantic_hash": ""
   },
   "CLAUDE.md": {
     "mtime": 1791308573.6960819,
@@ -246,9 +246,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791313948.6428795,
-    "seen": 1791313971.142543,
-    "ast_hash": "889e1ae233e1b5f8c128cb440d29895e",
+    "mtime": 1791316250.2796106,
+    "seen": 1791316567.3384078,
+    "ast_hash": "548cf5efe134387d3b55175c3f921a6d",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -318,9 +318,9 @@
     "semantic_hash": ""
   },
   "vitest.config.js": {
-    "mtime": 1791308773.8174236,
-    "seen": 1791309424.043092,
-    "ast_hash": "bf3f5d0a64dcc290bcb3034870615996",
+    "mtime": 1791315027.0140035,
+    "seen": 1791316567.338395,
+    "ast_hash": "8d34719cf96342e5670dcefd6b756686",
     "semantic_hash": ""
   },
   "README.md": {
@@ -618,15 +618,15 @@
     "semantic_hash": ""
   },
   "src/application/ports/soldOutStore.ts": {
-    "mtime": 1791310015.9398334,
-    "seen": 1791310393.4493494,
-    "ast_hash": "d966936dd7a8033026c9e6a1d016e665",
+    "mtime": 1791315565.140434,
+    "seen": 1791316567.33831,
+    "ast_hash": "71b803b7ce41b20fb04a7d05218d9a44",
     "semantic_hash": ""
   },
   "src/application/use-cases/buildMenuView.ts": {
-    "mtime": 1791310497.125839,
-    "seen": 1791310910.1303656,
-    "ast_hash": "f83a60b508414b1574e04efccc095ef5",
+    "mtime": 1791315779.508319,
+    "seen": 1791316567.338311,
+    "ast_hash": "f77902ebddd15151c868e567bd9a5c04",
     "semantic_hash": ""
   },
   "src/application/use-cases/buildReservationLink.ts": {
@@ -654,15 +654,15 @@
     "semantic_hash": ""
   },
   "src/application/use-cases/toggleSoldOut.ts": {
-    "mtime": 1791310096.8334255,
-    "seen": 1791310393.44936,
-    "ast_hash": "8ece0c942f2424f454601f0f7e0212e9",
+    "mtime": 1791315860.8193257,
+    "seen": 1791316567.338317,
+    "ast_hash": "3cd9d724f0b7b46bb89b4f58cc3032df",
     "semantic_hash": ""
   },
   "tests/unit/application/buildMenuView.test.ts": {
-    "mtime": 1791310162.8034966,
-    "seen": 1791310393.4494455,
-    "ast_hash": "5091ddb4d7acf45e750b3daac011926f",
+    "mtime": 1791315817.50428,
+    "seen": 1791316567.3383749,
+    "ast_hash": "abf93244e36560b2f5416e14d3750c71",
     "semantic_hash": ""
   },
   "tests/unit/application/buildReservationLink.test.ts": {
@@ -672,9 +672,9 @@
     "semantic_hash": ""
   },
   "tests/unit/application/doubles.ts": {
-    "mtime": 1791310497.2747107,
-    "seen": 1791310910.1304755,
-    "ast_hash": "ce873a16a2b1996d1571f17022f56a8d",
+    "mtime": 1791315610.1040907,
+    "seen": 1791316567.3383775,
+    "ast_hash": "36ee6c2c4e6e3113e8bf82744f554787",
     "semantic_hash": ""
   },
   "tests/unit/application/getRestaurant.test.ts": {
@@ -690,9 +690,9 @@
     "semantic_hash": ""
   },
   "tests/unit/application/toggleSoldOut.test.ts": {
-    "mtime": 1791310497.3254354,
-    "seen": 1791310910.1304815,
-    "ast_hash": "c03147b5f578b839592421af3c621a6d",
+    "mtime": 1791315611.4283636,
+    "seen": 1791316567.3383806,
+    "ast_hash": "0f1bdaa5473324d30972bc49cb5999e1",
     "semantic_hash": ""
   },
   "src/infrastructure/ar/ModelViewerFallbackLauncher.ts": {
@@ -762,9 +762,9 @@
     "semantic_hash": ""
   },
   "src/app/compositionRoot.ts": {
-    "mtime": 1791312934.9731855,
-    "seen": 1791312942.0284975,
-    "ast_hash": "77912e4f3fcd91831baf698f28ec55ce",
+    "mtime": 1791316011.0295506,
+    "seen": 1791316567.3382986,
+    "ast_hash": "045b34c453ad8f426449e458a4c9013f",
     "semantic_hash": ""
   },
   "src/app/router.tsx": {
@@ -774,9 +774,9 @@
     "semantic_hash": ""
   },
   "src/main.tsx": {
-    "mtime": 1791312772.895176,
-    "seen": 1791312942.0285995,
-    "ast_hash": "19a7731cb5e52ccd3732730232ec87a7",
+    "mtime": 1791314602.2780104,
+    "seen": 1791316567.3383675,
+    "ast_hash": "3b163049ee1532358791ed1dfe1eeec2",
     "semantic_hash": ""
   },
   "docs/sesiones/2026-10-06-P106-Composition-Router.md": {
@@ -807,6 +807,144 @@
     "mtime": 1791313966.112991,
     "seen": 1791313971.142555,
     "ast_hash": "c2ca0bd24bdede1023b9c5f6c04e58d3",
+    "semantic_hash": ""
+  },
+  "content/restaurants/_plantilla/restaurant.json": {
+    "mtime": 1791313995.9208865,
+    "seen": 1791316567.3382857,
+    "ast_hash": "db693aef0929c4de6d267b1e85226c4f",
+    "semantic_hash": ""
+  },
+  "playwright.config.ts": {
+    "mtime": 1791315137.8465507,
+    "seen": 1791316567.3382888,
+    "ast_hash": "f9fa2423bff743dd5a8b0d8164b94efc",
+    "semantic_hash": ""
+  },
+  "scripts/build-content.ts": {
+    "mtime": 1791315137.9042234,
+    "seen": 1791316567.3382914,
+    "ast_hash": "66407e3df2416a756907d29445df1445",
+    "semantic_hash": ""
+  },
+  "scripts/validate-content.ts": {
+    "mtime": 1791315137.9487584,
+    "seen": 1791316567.338295,
+    "ast_hash": "3540633968648ce114bfd821b92ca5c9",
+    "semantic_hash": ""
+  },
+  "src/components/ArGuideModal.tsx": {
+    "mtime": 1791316383.6412435,
+    "seen": 1791316567.338319,
+    "ast_hash": "16460022494184d81164dd73e052aef8",
+    "semantic_hash": ""
+  },
+  "src/components/DemoPanel.tsx": {
+    "mtime": 1791315860.9054058,
+    "seen": 1791316567.3383224,
+    "ast_hash": "15a59ce719e9a7c213d645916b08e2a0",
+    "semantic_hash": ""
+  },
+  "src/components/FloatingHelp.tsx": {
+    "mtime": 1791316391.306258,
+    "seen": 1791316567.338325,
+    "ast_hash": "c6985a43d7a1187d52c3c6f135d2c745",
+    "semantic_hash": ""
+  },
+  "src/hooks/useRestaurant.ts": {
+    "mtime": 1791315138.017213,
+    "seen": 1791316567.3383439,
+    "ast_hash": "525845734a93069e1f4a998fc3be9758",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/analytics/CloudflareAnalyticsTracker.ts": {
+    "mtime": 1791316059.850495,
+    "seen": 1791316567.3383505,
+    "ast_hash": "eb2d1f491f9eb2f129ec45c07a9185be",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/analytics/NoopAnalyticsTracker.ts": {
+    "mtime": 1791316414.9402208,
+    "seen": 1791316567.338352,
+    "ast_hash": "cfac5e7ca15dc015cd155e923cec7610",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/storage/LocalStorageSoldOutStore.ts": {
+    "mtime": 1791315860.9837306,
+    "seen": 1791316567.3383589,
+    "ast_hash": "f966a6d69389293523cc2046fee7ed96",
+    "semantic_hash": ""
+  },
+  "test-results/.last-run.json": {
+    "mtime": 1791315137.8410146,
+    "seen": 1791316567.3383698,
+    "ast_hash": "abd263702df5ba47279e53ebba8c73a8",
+    "semantic_hash": ""
+  },
+  "tests/e2e/isolation.spec.ts": {
+    "mtime": 1791315138.0591924,
+    "seen": 1791316567.3383708,
+    "ast_hash": "db34e32ba54c8a1669deb4eefe2ae996",
+    "semantic_hash": ""
+  },
+  "tests/fixtures/restaurants/rest-a-1234/restaurant.json": {
+    "mtime": 1791314839.930827,
+    "seen": 1791316567.3383715,
+    "ast_hash": "8881dd9ca286f941df84ff16cea122ba",
+    "semantic_hash": ""
+  },
+  "tests/fixtures/restaurants/rest-b-5678/restaurant.json": {
+    "mtime": 1791314842.0385516,
+    "seen": 1791316567.3383727,
+    "ast_hash": "865a4ba13024e81178e727335206c0f0",
+    "semantic_hash": ""
+  },
+  "docs/runbooks/nuevo-restaurante.md": {
+    "mtime": 1791314050.4975913,
+    "seen": 1791316567.3384132,
+    "ast_hash": "ccd89ca5e2e13290d8ab52ecd968c511",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P201-Esquema-Contenido.md": {
+    "mtime": 1791314050.534572,
+    "seen": 1791316567.3384218,
+    "ast_hash": "874eccf08fcf03f20ff6bc2ead575b26",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P202-Validador-Contenido.md": {
+    "mtime": 1791314155.1831317,
+    "seen": 1791316567.3384228,
+    "ast_hash": "dee4aa3c3e3589bf63c3af6b37b0900d",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P203-Build-Contenido.md": {
+    "mtime": 1791314229.1222844,
+    "seen": 1791316567.3384237,
+    "ast_hash": "aa5c785c472f2cd1805b89c883a24426",
+    "semantic_hash": ""
+  },
+  "playwright-report/index.html": {
+    "mtime": 1791314950.080545,
+    "seen": 1791316567.3384285,
+    "ast_hash": "5e221874b1980693bc820310fb14215f",
+    "semantic_hash": ""
+  },
+  "content/restaurants/_plantilla/assets/logo.svg": {
+    "mtime": 1791314109.7875614,
+    "seen": 1791316567.33844,
+    "ast_hash": "7a7103b09d320af185fb4b436c9db12c",
+    "semantic_hash": ""
+  },
+  "content/restaurants/_plantilla/assets/platos/hamburguesa-casa/foto.webp": {
+    "mtime": 1791314109.7875614,
+    "seen": 1791316567.338441,
+    "ast_hash": "99b7c55de7d016e934be3b2370716d02",
+    "semantic_hash": ""
+  },
+  "content/restaurants/_plantilla/assets/platos/hamburguesa-casa/poster.webp": {
+    "mtime": 1791314109.8017297,
+    "seen": 1791316567.338442,
+    "ast_hash": "252aef4ab38de25c056a08c879f17a72",
     "semantic_hash": ""
   }
 }
