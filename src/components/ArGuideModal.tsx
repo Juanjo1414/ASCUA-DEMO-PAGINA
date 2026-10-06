@@ -16,11 +16,14 @@ export default function ArGuideModal({
   isReplay = false,
 }: ArGuideModalProps) {
   const { t } = useLanguage() as { t: any }
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(isOpen)
+
+  // Al abrir, marcamos el modal como montado durante el render (patrón de React para
+  // estado derivado de props). Hacerlo dentro del efecto provocaba un render extra.
+  if (isOpen && !mounted) setMounted(true)
 
   useEffect(() => {
     if (isOpen) {
-      setMounted(true)
       document.body.style.overflow = 'hidden'
     } else {
       setTimeout(() => setMounted(false), 300)

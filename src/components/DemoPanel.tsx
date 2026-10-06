@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/app/store'
 import { useDependencies } from '@/app/DependenciesContext'
@@ -8,24 +8,19 @@ export default function DemoPanel() {
   const restaurant = useAtomValue(restaurantAtom)
   const { soldOutStore } = useDependencies()
   const [isOpen, setIsOpen] = useState(false)
-  const [soldOutState, setSoldOutState] = useState<Record<string, boolean>>({})
-
-  useEffect(() => {
-    if (!restaurant) return
-    const state: Record<string, boolean> = {}
-    restaurant.categorias.forEach((cat) => {
-      cat.platos.forEach((plato) => {
-        state[plato.id] = soldOutStore.isSoldOut(restaurant.slug, plato.id)
-      })
-    })
-    setSoldOutState(state)
-  }, [restaurant, soldOutStore])
+  // Solo guardamos lo que el usuario cambia con los botones. El valor base de cada
+  // plato se lee del store al renderizar: así no hace falta un efecto que llame
+  // a setState (provoca renders en cascada) para copiar el store al estado.
+  const [cambios, setCambios] = useState<Record<string, boolean>>({})
 
   if (!restaurant) return null
 
+  const estaAgotado = (dishId: string): boolean =>
+    cambios[dishId] ?? soldOutStore.isSoldOut(restaurant.slug, dishId)
+
   const handleToggle = (dishId: string) => {
     const isNowSoldOut = toggleSoldOut(restaurant.slug, dishId, soldOutStore)
-    setSoldOutState((prev) => ({ ...prev, [dishId]: isNowSoldOut }))
+    setCambios((prev) => ({ ...prev, [dishId]: isNowSoldOut }))
     // Despachamos un evento para que el Menu u otros componentes se actualicen si es necesario.
     window.dispatchEvent(
       new CustomEvent('ascua:soldout-changed', {
@@ -58,12 +53,12 @@ export default function DemoPanel() {
                     <button
                       onClick={() => handleToggle(plato.id)}
                       className={`px-2 py-1 text-xs transition-colors ${
-                        soldOutState[plato.id]
+                        estaAgotado(plato.id)
                           ? 'bg-acento text-crema'
                           : 'bg-loza text-tinta'
                       }`}
                     >
-                      {soldOutState[plato.id] ? 'Agotado' : 'Disponible'}
+                      {estaAgotado(plato.id) ? 'Agotado' : 'Disponible'}
                     </button>
                   </li>
                 ))}

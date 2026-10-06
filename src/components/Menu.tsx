@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Box, Scan } from 'lucide-react'
+import { ArrowRight, Scan } from 'lucide-react'
 import { gsap } from '../lib/gsap'
 import { useLanguage } from '../i18n/useLanguage'
 import { useAtomValue } from 'jotai'
