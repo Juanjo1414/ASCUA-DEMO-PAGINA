@@ -4,7 +4,7 @@ import { useLanguage } from '../i18n/useLanguage'
 import ArGuideModal from './ArGuideModal'
 
 export default function FloatingHelp() {
-  const { t } = useLanguage()
+  const { t } = useLanguage() as { t: any }
   const [isOpen, setIsOpen] = useState(false)
 
   return (

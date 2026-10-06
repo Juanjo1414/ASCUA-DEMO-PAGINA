@@ -4,7 +4,7 @@ import type {
 } from '@/application/ports/analyticsTracker'
 
 export class NoopAnalyticsTracker implements AnalyticsTracker {
-  track(event: AnalyticsEvent): void {
+  track(_event: AnalyticsEvent): void {
     // No-op for tests
   }
 }
