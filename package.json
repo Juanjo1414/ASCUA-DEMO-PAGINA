@@ -17,7 +17,8 @@
     "format:check": "prettier --check .",
     "preview": "vite preview",
     "prepare": "husky",
-    "verify": "npm run lint && npm run typecheck && npm run test && npm run build"
+    "arch:check": "depcruise src",
+    "verify": "npm run lint && npm run typecheck && npm run test && npm run arch:check && npm run build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -46,6 +47,7 @@
     "@vitejs/plugin-react": "^6.0.4",
     "@vitest/coverage-v8": "^5.0.3",
     "autoprefixer": "^10.5.4",
+    "dependency-cruiser": "^18.5.0",
     "ffmpeg-static": "^5.3.0",
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
@@ -54,7 +56,7 @@
     "postcss": "^8.5.26",
     "prettier": "^3.9.9",
     "tailwindcss": "^3.4.17",
-    "typescript": "^7.0.2",
+    "typescript": "^5.6.2",
     "vite": "^8.2.0",
     "vitest": "^5.0.3"
   }

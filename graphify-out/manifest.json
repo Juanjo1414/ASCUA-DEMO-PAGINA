@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1791312699.889089,
-    "seen": 1791312942.028482,
-    "ast_hash": "04a7e10cdc09fed00858d6311a3ab313",
+    "mtime": 1791312956.672958,
+    "seen": 1791313099.5278847,
+    "ast_hash": "c8b90312db10d0f4357de8cdacb1c30e",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -246,9 +246,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791312803.9342847,
-    "seen": 1791312942.0286584,
-    "ast_hash": "5e609681711da3561e2a9868e35de719",
+    "mtime": 1791312996.1864076,
+    "seen": 1791313099.5280657,
+    "ast_hash": "d5f5bdd5c392e3a5b7ec321a0ee2cd5f",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -783,6 +783,18 @@
     "mtime": 1791312934.464913,
     "seen": 1791312942.0286736,
     "ast_hash": "1b5d8e6b8f0502f969fd07e36ac1bedc",
+    "semantic_hash": ""
+  },
+  "src/app/store.ts": {
+    "mtime": 1791312960.5121,
+    "seen": 1791313099.5279057,
+    "ast_hash": "3c3afbd8f1f2068d015e743ef52081ab",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P107-Jotai-Store.md": {
+    "mtime": 1791313094.36031,
+    "seen": 1791313099.5280828,
+    "ast_hash": "d2f1b814fb80db860229b57df208737f",
     "semantic_hash": ""
   }
 }

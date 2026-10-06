@@ -2,19 +2,19 @@
 
 ## Corpus Check
 
-- 101 files · ~573,972 words
+- 103 files · ~574,229 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 20 file(s) not represented in the graph (top: (none) 8, .woff2 8, .css 2)
 
 ## Summary
 
-- 551 nodes · 1013 edges · 29 communities (21 shown, 8 thin omitted)
-- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 80 edges (avg confidence: 0.94)
+- 560 nodes · 1026 edges · 36 communities (25 shown, 11 thin omitted)
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 83 edges (avg confidence: 0.95)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
 
-- Built from commit: `78d30ff1`
+- Built from commit: `2f865635`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,6 +37,7 @@
 - main.tsx
 - Configuraci?n de Dependabot
 - ADR-0001: Demo estática multi-restaurante en Cloudflare Pages
+- dependencies
 - pull_request_template.md
 - AGENTS.md — ASCUA-DEMO-PAGINA
 - React + Vite
@@ -44,13 +45,19 @@
 - workflows/graphify.md
 - PROCEDENCIA.md
 - Bitácora de Sesión: P-104 Adaptadores AR
+- Estado del proyecto — ASCUA-DEMO-PAGINA
+- Sesión 2026-10-06 — fundaciones
+- @vitejs/plugin-react
 - SoldOutStore
+- lint-staged
+- engines
+- @testing-library/jest-dom
 
 ## God Nodes (most connected - your core abstractions)
 
-1. `useLanguage()` - 23 edges
-2. `Fase P-1 — Re-arquitectura de PAGINA` - 22 edges
-3. `Restaurant` - 21 edges
+1. `Restaurant` - 23 edges
+2. `useLanguage()` - 23 edges
+3. `Fase P-1 — Re-arquitectura de PAGINA` - 22 edges
 4. `Dish` - 21 edges
 5. `react` - 20 edges
 6. `ArLauncher` - 20 edges
@@ -63,35 +70,35 @@
 
 - `5.1 PAGINA` --references--> `ArLauncher` [INFERRED]
   docs/PLAN-IMPLEMENTACION.md → src/application/ports/arLauncher.ts
-- `5. La función de IA / 3D / RA` --references--> `ArDishModal()` [INFERRED]
-  docs/PROYECTO.md → src/components/ArDishModal.jsx
 - `Último paso completado` --references--> `getRestaurant()` [INFERRED]
   docs/ESTADO.md → src/application/use-cases/getRestaurant.ts
+- `Último paso completado` --references--> `Restaurant` [INFERRED]
+  docs/ESTADO.md → src/domain/restaurant.ts
 - `Último paso completado` --references--> `StaticJsonRestaurantRepository` [INFERRED]
   docs/ESTADO.md → src/infrastructure/content/StaticJsonRestaurantRepository.ts
-- `Siguiente paso exacto` --references--> `Restaurant` [INFERRED]
-  docs/ESTADO.md → src/domain/restaurant.ts
+- `Siguiente paso exacto` --references--> `buildMenuView()` [INFERRED]
+  docs/ESTADO.md → src/application/use-cases/buildMenuView.ts
 
 ## Import Cycles
 
 - None detected.
 
-## Communities (29 total, 8 thin omitted)
+## Communities (36 total, 11 thin omitted)
 
 ### Community 0 - "App.jsx"
 
-Cohesion: 0.10
-Nodes (35): @google/model-viewer, lucide-react, react, App(), ArDishModal(), ArViewer(), VIEWER_ATTRS, Contacto() (+27 more)
+Cohesion: 0.09
+Nodes (36): 5. La función de IA / 3D / RA, @google/model-viewer, lucide-react, react, App(), ArDishModal(), ArViewer(), VIEWER_ATTRS (+28 more)
 
 ### Community 1 - "restaurant.ts"
 
-Cohesion: 0.07
-Nodes (31): Bloqueos, Comandos para verificar, Estado del proyecto — ASCUA-DEMO-PAGINA, Fase actual, Línea base verificada (2026-10-06), Pendientes detectados (fuera de alcance de la tarea actual), Siguiente paso exacto, Tarea actual (+23 more)
+Cohesion: 0.08
+Nodes (27): Siguiente paso exacto, Fase P-3 — Funciones de la demo, Acciones realizadas, Bitácora de Sesión: P-105 Repositorio Estático, Objetivos, Siguiente Tarea, Acciones realizadas, Bitácora de Sesión: P-107 Store Reactivo Global (Jotai) (+19 more)
 
 ### Community 2 - "package.json"
 
-Cohesion: 0.05
-Nodes (34): dependencies, @google/model-viewer, gsap, lucide-react, react, react-dom, react-router-dom, zod (+26 more)
+Cohesion: 0.11
+Nodes (18): name, private, type, version, autoprefixer, gsap, husky, jsdom (+10 more)
 
 ### Community 3 - "Escena.jsx"
 
@@ -106,7 +113,7 @@ Nodes (10): ffmpeg-static, destino, origen, PLATOS, raiz, bloques, css, destino 
 ### Community 5 - "Ascua — landing de "cocina de autor" (Histórico)"
 
 Cohesion: 0.05
-Nodes (43): Brand Commitments, Capabilities and Constraints, Evidence on Hand, Operating Context, Platform, Positioning, Product, Product Principles (+35 more)
+Nodes (42): Brand Commitments, Capabilities and Constraints, Evidence on Hand, Operating Context, Platform, Positioning, Product, Product Principles (+34 more)
 
 ### Community 6 - "scripts"
 
@@ -146,7 +153,7 @@ Nodes (18): compilerOptions, allowJs, checkJs, esModuleInterop, isolatedModules,
 ### Community 14 - "doubles.ts"
 
 Cohesion: 0.08
-Nodes (49): 0.2 Reglas específicas de este repo, Último paso completado, Fase P-1 — Re-arquitectura de PAGINA, Cambios, Decisiones tomadas, Notas para el grafo, Pendiente / siguiente paso exacto, Sesión 2026-10-06 — fundaciones (+41 more)
+Nodes (47): 0.2 Reglas específicas de este repo, Último paso completado, Fase P-1 — Re-arquitectura de PAGINA, Decisiones tomadas, Acciones realizadas, vitest, zod, AppDependencies (+39 more)
 
 ### Community 15 - "main.tsx"
 
@@ -157,6 +164,11 @@ Nodes (12): Acciones realizadas, Bitácora de Sesión: P-106 Composition Root y 
 
 Cohesion: 0.22
 Nodes (8): A. Estática + contenido versionado (elegida), ADR-0001: Demo estática multi-restaurante en Cloudflare Pages, B. ARFOODS completo (Next.js + Supabase) en planes gratuitos, C. Un repo/despliegue por restaurante, Consecuencias, Contexto, Decisión, Opciones consideradas
+
+### Community 19 - "dependencies"
+
+Cohesion: 0.22
+Nodes (9): dependencies, @google/model-viewer, gsap, jotai, lucide-react, react, react-dom, react-router-dom (+1 more)
 
 ### Community 20 - "pull_request_template.md"
 
@@ -178,32 +190,47 @@ Nodes (3): Expanding the Oxlint configuration, React Compiler, React + Vite
 Cohesion: 0.50
 Nodes (3): Bitácora de Sesión: P-104 Adaptadores AR, Objetivos, Siguiente Tarea
 
+### Community 29 - "Estado del proyecto — ASCUA-DEMO-PAGINA"
+
+Cohesion: 0.25
+Nodes (7): Bloqueos, Comandos para verificar, Estado del proyecto — ASCUA-DEMO-PAGINA, Fase actual, Línea base verificada (2026-10-06), Pendientes detectados (fuera de alcance de la tarea actual), Tarea actual
+
+### Community 30 - "Sesión 2026-10-06 — fundaciones"
+
+Cohesion: 0.33
+Nodes (5): Cambios, Notas para el grafo, Pendiente / siguiente paso exacto, Sesión 2026-10-06 — fundaciones, Verificación
+
 ### Community 32 - "SoldOutStore"
 
 Cohesion: 0.13
 Nodes (10): 3.1 Capas (Clean Architecture ligera), 3.2 Estructura de carpetas objetivo, 3.3 Principios SOLID aplicados (concreto, no teórico), 3.4 Modelo multi-restaurante (aislamiento), 3.5 Experiencia móvil, intuitiva y auto-explicativa, 3.6 Experiencia AR: que el plato aparezca bien, en su tamaño real, 3. Arquitectura objetivo — ASCUA-DEMO-PAGINA, SoldOutStore (+2 more)
 
+### Community 33 - "lint-staged"
+
+Cohesion: 0.67
+Nodes (3): lint-staged, *.{js,jsx,ts,tsx}, *.{json,md,css}
+
 ## Knowledge Gaps
 
-- **247 isolated node(s):** `Fase actual`, `Tarea actual`, `Línea base verificada (2026-10-06)`, `Bloqueos`, `Pendientes detectados (fuera de alcance de la tarea actual)` (+242 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 282 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **251 isolated node(s):** `Fase actual`, `Tarea actual`, `Línea base verificada (2026-10-06)`, `Bloqueos`, `Pendientes detectados (fuera de alcance de la tarea actual)` (+246 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 287 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `App.jsx` to `package.json`, `Escena.jsx`, `main.tsx`?**
-  _High betweenness centrality (0.199) - this node is a cross-community bridge._
-- **Why does `vitest` connect `doubles.ts` to `SoldOutStore`, `restaurant.ts`, `package.json`, `App.jsx`?**
+  _High betweenness centrality (0.197) - this node is a cross-community bridge._
+- **Why does `vitest` connect `doubles.ts` to `SoldOutStore`, `restaurant.ts`, `package.json`, `App.jsx`, `@vitejs/plugin-react`?**
   _High betweenness centrality (0.151) - this node is a cross-community bridge._
 - **Why does `Fase P-1 — Re-arquitectura de PAGINA` connect `doubles.ts` to `SoldOutStore`, `restaurant.ts`, `Plan de implementación — Ascua (PITS)`?**
   _High betweenness centrality (0.085) - this node is a cross-community bridge._
+- **Are the 4 inferred relationships involving `Restaurant` (e.g. with `Último paso completado` and `Fase P-1 — Re-arquitectura de PAGINA`) actually correct?**
+  _`Restaurant` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `Fase P-1 — Re-arquitectura de PAGINA` (e.g. with `AnalyticsTracker` and `ArLauncher`) actually correct?**
   _`Fase P-1 — Re-arquitectura de PAGINA` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 3 inferred relationships involving `Restaurant` (e.g. with `Siguiente paso exacto` and `Fase P-1 — Re-arquitectura de PAGINA`) actually correct?**
-  _`Restaurant` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 2 inferred relationships involving `Dish` (e.g. with `Fase P-1 — Re-arquitectura de PAGINA` and `Decisiones tomadas`) actually correct?**
   _`Dish` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Fase actual`, `Tarea actual`, `Línea base verificada (2026-10-06)` to the rest of the system?**
-  _247 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _251 weakly-connected nodes found - possible documentation gaps or missing edges._
