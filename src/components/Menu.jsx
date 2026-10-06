@@ -6,6 +6,7 @@ import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '../app/store'
 import { useDependencies } from '../app/DependenciesContext'
 import ArDishModal from './ArDishModal'
+import ArGuideModal from './ArGuideModal'
 import { launchAr } from '../lib/launchAr'
 
 /*
@@ -31,6 +32,11 @@ export default function Menu() {
   const restaurant = useAtomValue(restaurantAtom)
   const { soldOutStore } = useDependencies()
   const [soldOutDict, setSoldOutDict] = useState({})
+  const [guideState, setGuideState] = useState({
+    isOpen: false,
+    dish: null,
+    isReplay: false,
+  })
 
   // Listener para cuando DemoPanel cambie el estado de un plato
   useEffect(() => {
@@ -48,6 +54,16 @@ export default function Menu() {
     window.addEventListener('ascua:soldout-changed', updateDict)
     return () => window.removeEventListener('ascua:soldout-changed', updateDict)
   }, [restaurant, soldOutStore])
+
+  const handleArClick = (plato, isReplay = false) => {
+    if (!plato.modelo) return
+    const hasSeenGuide = localStorage.getItem('ascua:ar-guide-seen') === '1'
+    if (!hasSeenGuide || isReplay) {
+      setGuideState({ isOpen: true, dish: plato, isReplay })
+    } else {
+      abrirAr(plato)
+    }
+  }
 
   const abrirAr = (plato) => {
     if (!plato.modelo) return
@@ -260,7 +276,7 @@ export default function Menu() {
                         type="button"
                         data-boton-ar
                         disabled={isSoldOut}
-                        onClick={() => !isSoldOut && abrirAr(plato)}
+                        onClick={() => !isSoldOut && handleArClick(plato)}
                         aria-label={`${t.ar.viewOnTable}: ${plato.nombre[lang] || plato.nombre.es}`}
                         className="boton w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                       >
@@ -334,6 +350,17 @@ export default function Menu() {
           onClose={() => setActivo(null)}
         />
       )}
+
+      <ArGuideModal
+        isOpen={guideState.isOpen}
+        isReplay={guideState.isReplay}
+        onClose={() => setGuideState({ ...guideState, isOpen: false })}
+        onContinue={() => {
+          const dish = guideState.dish
+          setGuideState({ isOpen: false, dish: null, isReplay: false })
+          if (dish) abrirAr(dish)
+        }}
+      />
     </section>
   )
 }

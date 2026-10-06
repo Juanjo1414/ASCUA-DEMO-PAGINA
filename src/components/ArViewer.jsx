@@ -11,6 +11,7 @@ const VIEWER_ATTRS = {
   'camera-controls': '',
   'touch-action': 'pan-y',
   'shadow-intensity': '1',
+  scale: '1 1 1',
 }
 
 export default function ArViewer({ glb, poster, alt }) {

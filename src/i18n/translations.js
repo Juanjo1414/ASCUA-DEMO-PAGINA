@@ -161,6 +161,24 @@ export const translations = {
       copied: 'Enlace copiado',
       disclaimer: 'Modelo referencial. La presentación puede variar.',
     },
+    arGuide: {
+      title: '¿Cómo funciona?',
+      steps: [
+        {
+          title: 'Busca un espacio iluminado',
+          desc: 'Evita sombras muy oscuras para que la cámara vea bien tu mesa.',
+        },
+        {
+          title: 'Apunta a una superficie plana',
+          desc: 'Busca un lugar despejado en la mesa.',
+        },
+        {
+          title: 'Mueve el celular despacio',
+          desc: 'Haz círculos pequeños hasta que aparezca el plato.',
+        },
+      ],
+      gotIt: 'Entendido, abrir cámara',
+    },
     cta: {
       title: 'Tu mesa te espera.',
       body: 'Abrimos de martes a domingo, desde las 7 p.m. Reserva con un día de anticipación.',
@@ -357,6 +375,24 @@ export const translations = {
       copyLink: 'Copy link',
       copied: 'Link copied',
       disclaimer: 'Reference model. The real plating may vary.',
+    },
+    arGuide: {
+      title: 'How it works',
+      steps: [
+        {
+          title: 'Find a well-lit space',
+          desc: 'Avoid harsh shadows so the camera can see your table clearly.',
+        },
+        {
+          title: 'Point at a flat surface',
+          desc: 'Find an empty spot on the table.',
+        },
+        {
+          title: 'Move your phone slowly',
+          desc: 'Make small circles until the dish appears.',
+        },
+      ],
+      gotIt: 'Got it, open camera',
     },
     cta: {
       title: 'Your table is waiting.',

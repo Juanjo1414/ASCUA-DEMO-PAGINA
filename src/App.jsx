@@ -17,6 +17,7 @@ import Pie from './components/Pie'
 import LoadingScreen from './components/LoadingScreen'
 import { LanguageProvider } from './i18n/LanguageProvider'
 import DemoPanel from './components/DemoPanel'
+import FloatingHelp from './components/FloatingHelp'
 
 export default function App() {
   const { slug } = useParams()
@@ -33,8 +34,14 @@ export default function App() {
 
   if (error) {
     return (
-      <div className="flex h-screen w-full items-center justify-center bg-tinta text-crema">
-        <p>{error}</p>
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-fondo px-6 text-center text-crema">
+        <h1 className="font-display text-3xl font-medium text-llama">
+          Algo salió mal
+        </h1>
+        <p className="mt-4 max-w-[40ch] text-ceniza">{error}</p>
+        <button onClick={() => window.location.reload()} className="boton mt-8">
+          Volver a intentar
+        </button>
       </div>
     )
   }
@@ -60,6 +67,7 @@ export default function App() {
             <Pie />
           </div>
           <FranjaReserva />
+          <FloatingHelp />
           {isDemo && <DemoPanel />}
         </>
       )}
