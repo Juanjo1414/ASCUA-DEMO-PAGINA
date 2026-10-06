@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "slug": "rest-b-5678",
+  "estado": "activo",
+  "expira": "2020-01-01",
+  "autorizacion": {
+    "fecha": "2026-10-10",
+    "medio": "whatsapp",
+    "contacto": "Dueño B"
+  },
+  "nombre": "Restaurante B",
+  "idiomas": ["es"],
+  "tema": {
+    "primario": "#C2410C",
+    "parTipografico": "editorial",
+    "logo": "assets/logo.svg"
+  },
+  "contacto": {
+    "whatsapp": "573001234567"
+  },
+  "categorias": [
+    {
+      "id": "fuertes",
+      "nombre": { "es": "Fuertes" },
+      "platos": [
+        {
+          "id": "plato-b",
+          "nombre": { "es": "Plato B" },
+          "precio": 100,
+          "foto": "assets/foto.webp"
+        }
+      ]
+    }
+  ]
+}

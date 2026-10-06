@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-const CONTENT_DIR = path.join(process.cwd(), 'content', 'restaurants')
+const CONTENT_DIR =
+  process.env.CONTENT_DIR || path.join(process.cwd(), 'content', 'restaurants')
 const DIST_DIR = path.join(process.cwd(), 'dist')
 const DIST_DATA_DIR = path.join(DIST_DIR, 'data')
 const DIST_R_DIR = path.join(DIST_DIR, 'r')
@@ -34,7 +35,7 @@ async function buildContent() {
   let baseHtml = ''
   try {
     baseHtml = await fs.readFile(baseHtmlPath, 'utf-8')
-  } catch (e) {
+  } catch {
     console.error(
       '❌ No se encontró dist/index.html. Ejecuta vite build primero.'
     )

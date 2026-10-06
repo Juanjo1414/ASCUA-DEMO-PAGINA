@@ -10,11 +10,18 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-203 — Build de contenido y HTML por restaurante. **Estado:** completada ✅.
-Siguiente tarea: **P-204** — Pruebas E2E de aislamiento.
+P-204 — Pruebas E2E de aislamiento. **Estado:** completada ✅.
+Fase P-2 completada. Siguiente bloque: **Fase P-3** (Migración y Refactor de Componentes UI).
 
 ## Último paso completado
 
+- **P-204 (Pruebas E2E de aislamiento):**
+  - Configurado Playwright.
+  - Implementados tests para aislar peticiones (`/r/A/` no hace fetch a `/data/B/`).
+  - Implementada gestión dinámica del `<title>` mediante React `useEffect`.
+  - Solucionados errores de esquema (fixtures de test tenían `parTipografico: "moderna"` en lugar de `editorial`).
+  - Excluidos los tests E2E del scope de Vitest (`vitest.config.js`).
+  - Corregidos errores de linter en los scripts.
 - **P-203 (Build de contenido y HTML por restaurante):**
   - Desarrollado `scripts/build-content.ts` para inyectar metadata y pre-renderizar `index.html` por cada cliente.
   - Generación de `dist/data/<slug>/` para aislar los endpoints de JSON y assets estáticos.
@@ -57,11 +64,10 @@ Siguiente tarea: **P-204** — Pruebas E2E de aislamiento.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-204** — Pruebas E2E de aislamiento:
-   - Configurar Playwright.
-   - Crear tests para asegurar que `/r/A/` no haga fetch a `/data/B/`.
-   - Validar escenarios 404 (slug inexistente) y "demo expirada".
-2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
+1. Realizar revisión final por parte de Juan de todo el bloque P-2.
+2. Hacer push de los commits (`wip(P-2)`).
+3. Iniciar el bloque de tareas **P-3** (Migración de la UI).
+4. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
    - X-008: Habilitar CodeQL en GitHub (Security → Code scanning).
@@ -69,7 +75,7 @@ Siguiente tarea: **P-204** — Pruebas E2E de aislamiento.
 ## Línea base verificada (2026-10-06)
 
 - `node -v`: v22.13.0 ✅
-- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest 57/57 tests pass, vite build exitoso).
+- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest 77/77 tests pass, playwright 9/9 tests pass, vite build exitoso).
 - Cobertura: 100 % líneas en `domain/` y `application/use-cases/`.
 - Git hooks: `pre-commit` y `pre-push` activos.
 - Grafo de conocimiento: 500 nodos y 867 aristas en `graphify-out/`.

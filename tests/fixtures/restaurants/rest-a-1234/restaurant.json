@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "slug": "rest-a-1234",
+  "estado": "activo",
+  "expira": "2030-12-15",
+  "autorizacion": {
+    "fecha": "2026-10-10",
+    "medio": "whatsapp",
+    "contacto": "Dueño A"
+  },
+  "nombre": "Restaurante A",
+  "idiomas": ["es"],
+  "tema": {
+    "primario": "#C2410C",
+    "parTipografico": "editorial",
+    "logo": "assets/logo.svg"
+  },
+  "contacto": {
+    "whatsapp": "573001234567"
+  },
+  "categorias": [
+    {
+      "id": "fuertes",
+      "nombre": { "es": "Fuertes" },
+      "platos": [
+        {
+          "id": "plato-a",
+          "nombre": { "es": "Plato A" },
+          "precio": 100,
+          "foto": "assets/foto.webp"
+        }
+      ]
+    }
+  ]
+}

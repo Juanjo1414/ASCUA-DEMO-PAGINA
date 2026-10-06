@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
   horizonte del hero. Después la cortina sube y descubre el hero. Dura menos
   de un segundo y medio; con movimiento reducido no se ve.
 */
-export default function LoadingScreen() {
+export default function LoadingScreen({ isReady = true }) {
   // aparece | sube | fuera. Con movimiento reducido arranca ya fuera.
   const [reducido] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -14,14 +14,14 @@ export default function LoadingScreen() {
   const [fase, setFase] = useState(reducido ? 'fuera' : 'aparece')
 
   useEffect(() => {
-    if (reducido) return
+    if (reducido || !isReady) return
     const a = setTimeout(() => setFase('sube'), 900)
     const b = setTimeout(() => setFase('fuera'), 1650)
     return () => {
       clearTimeout(a)
       clearTimeout(b)
     }
-  }, [reducido])
+  }, [reducido, isReady])
 
   if (fase === 'fuera') return null
 

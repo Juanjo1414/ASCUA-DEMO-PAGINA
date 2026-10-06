@@ -1,13 +1,10 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import {
-  restaurantSchema,
-  isRestaurantExpired,
-  RESTAURANT_SLUG_REGEX,
-} from '../src/domain/restaurant'
+import { restaurantSchema, isRestaurantExpired } from '../src/domain/restaurant'
 
-const CONTENT_DIR = path.join(process.cwd(), 'content', 'restaurants')
+const CONTENT_DIR =
+  process.env.CONTENT_DIR || path.join(process.cwd(), 'content', 'restaurants')
 const MAX_SIZES = {
   glb: 5 * 1024 * 1024, // 5 MB
   usdz: 8 * 1024 * 1024, // 8 MB
@@ -81,7 +78,7 @@ export async function validateContent() {
       }
 
       // Validar paths de assets y evitar path traversal
-      const checkAsset = async (assetPath: string, expectedExt: string) => {
+      const checkAsset = async (assetPath: string, _expectedExt: string) => {
         if (path.isAbsolute(assetPath) || assetPath.includes('..')) {
           console.error(
             `❌ [${folderName}] Ruta inválida o path traversal: ${assetPath}`
