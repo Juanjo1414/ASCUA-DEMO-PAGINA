@@ -3,8 +3,8 @@ import { ArrowRight, Box, Scan } from 'lucide-react'
 import { gsap } from '../lib/gsap'
 import { useLanguage } from '../i18n/useLanguage'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '../app/store'
-import { useDependencies } from '../app/DependenciesContext'
+import { restaurantAtom } from '@/app/store'
+import { useDependencies } from '@/app/DependenciesContext'
 import ArDishModal from './ArDishModal'
 import ArGuideModal from './ArGuideModal'
 import { launchAr } from '../lib/launchAr'
@@ -268,7 +268,9 @@ export default function Menu() {
                       {plato.nombre[lang] || plato.nombre.es}
                     </h4>
                     <p className="mt-3 max-w-[40ch] leading-relaxed text-crema/80">
-                      {plato.descripcion[lang] || plato.descripcion.es}
+                      {plato.descripcion
+                        ? plato.descripcion[lang] || plato.descripcion.es
+                        : null}
                     </p>
 
                     <div className="mt-8 flex w-full flex-col items-center gap-5 sm:w-auto sm:flex-row">
@@ -334,7 +336,9 @@ export default function Menu() {
                   {plato.nombre[lang] || plato.nombre.es}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-crema/75">
-                  {plato.descripcion[lang] || plato.descripcion.es}
+                  {plato.descripcion
+                    ? plato.descripcion[lang] || plato.descripcion.es
+                    : null}
                 </p>
               </li>
             )

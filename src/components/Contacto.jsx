@@ -3,7 +3,7 @@ import { AlertCircle, ArrowRight } from 'lucide-react'
 import { useReveal } from '../hooks/useReveal'
 import { useLanguage } from '../i18n/useLanguage'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '../app/store'
+import { restaurantAtom } from '@/app/store'
 import { buildReservationLink } from '../application/use-cases/buildReservationLink'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/

@@ -1,7 +1,7 @@
 import { ArrowUp } from 'lucide-react'
 import { useLanguage } from '../i18n/useLanguage'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '../app/store'
+import { restaurantAtom } from '@/app/store'
 
 /*
   El pie cierra con el nombre a todo lo ancho, cortado por el borde de abajo
