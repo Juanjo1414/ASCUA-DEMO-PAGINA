@@ -45,21 +45,23 @@ export class InMemorySoldOutStore implements SoldOutStore {
     }
   }
 
-  isSoldOut(dishId: string): boolean {
-    return this.soldOutSet.has(dishId)
+  isSoldOut(slug: string, dishId: string): boolean {
+    const key = `${slug}:${dishId}`
+    return this.soldOutSet.has(key)
   }
 
-  setSoldOut(dishId: string, soldOut: boolean): void {
+  setSoldOut(slug: string, dishId: string, soldOut: boolean): void {
+    const key = `${slug}:${dishId}`
     if (soldOut) {
-      this.soldOutSet.add(dishId)
+      this.soldOutSet.add(key)
     } else {
-      this.soldOutSet.delete(dishId)
+      this.soldOutSet.delete(key)
     }
   }
 
-  toggleSoldOut(dishId: string): boolean {
-    const next = !this.isSoldOut(dishId)
-    this.setSoldOut(dishId, next)
+  toggleSoldOut(slug: string, dishId: string): boolean {
+    const next = !this.isSoldOut(slug, dishId)
+    this.setSoldOut(slug, dishId, next)
     return next
   }
 }

@@ -99,7 +99,7 @@ describe('Caso de Uso: buildMenuView', () => {
   })
 
   it('sincroniza el estado de agotado con el almacén SoldOutStore', () => {
-    const soldOutStore = new InMemorySoldOutStore(['picanha'])
+    const soldOutStore = new InMemorySoldOutStore(['fuego-7k2p:picanha'])
     const view = buildMenuView(restaurante, deviceMobile, soldOutStore, 'es')
 
     const p1 = view.categorias[0]!.platos[0]!
