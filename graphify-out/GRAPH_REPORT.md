@@ -2,26 +2,26 @@
 
 ## Corpus Check
 
-- 57 files · ~564,282 words
+- 68 files · ~567,675 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 17 file(s) not represented in the graph (top: .woff2 8, (none) 6, .css 2)
+- Unclassified: 18 file(s) not represented in the graph (top: .woff2 8, (none) 7, .css 2)
 
 ## Summary
 
-- 402 nodes · 554 edges · 28 communities (20 shown, 8 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.94)
+- 440 nodes · 633 edges · 29 communities (20 shown, 9 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
 
-- Built from commit: `83daf388`
+- Built from commit: `34b08022`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 
 - App.jsx
-- ArDishModal.jsx
+- launchAr
 - package.json
 - Escena.jsx
 - carta.mjs
@@ -33,7 +33,7 @@
 - sweetgreen — Style Reference
 - CLAUDE.md — ASCUA-DEMO-PAGINA
 - compilerOptions
-- Components
+- restaurant.ts
 - Estado del proyecto — ASCUA-DEMO-PAGINA
 - Configuraci?n de Dependabot
 - ADR-0001: Demo estática multi-restaurante en Cloudflare Pages
@@ -44,6 +44,7 @@
 - rules/graphify.md
 - workflows/graphify.md
 - PROCEDENCIA.md
+- carta.js
 
 ## God Nodes (most connected - your core abstractions)
 
@@ -62,35 +63,35 @@
 
 - `5. La función de IA / 3D / RA` --references--> `ArDishModal()` [INFERRED]
   docs/PROYECTO.md → src/components/ArDishModal.jsx
+- `Fase P-1 — Re-arquitectura de PAGINA` --references--> `ArLaunchMode` [INFERRED]
+  docs/PLAN-IMPLEMENTACION.md → src/domain/ar.ts
+- `Fase P-1 — Re-arquitectura de PAGINA` --references--> `Price` [INFERRED]
+  docs/PLAN-IMPLEMENTACION.md → src/domain/price.ts
+- `Fase P-1 — Re-arquitectura de PAGINA` --references--> `Theme` [INFERRED]
+  docs/PLAN-IMPLEMENTACION.md → src/domain/theme.ts
 - `11. Huecos conocidos / próximos pasos razonables` --references--> `fetchActiveAsset()` [INFERRED]
-  docs/PROYECTO.md → src/lib/arAssets.js
-- `Executive Summary` --references--> `fetchActiveAsset()` [INFERRED]
-  docs/seguridad/2026-08-28-cyber-neo.md → src/lib/arAssets.js
-- `Capabilities and Constraints` --references--> `launchAr()` [INFERRED]
-  docs/PRODUCT.md → src/lib/launchAr.js
-- `4. Base de datos / backend` --references--> `fetchActiveAsset()` [INFERRED]
   docs/PROYECTO.md → src/lib/arAssets.js
 
 ## Import Cycles
 
 - None detected.
 
-## Communities (28 total, 8 thin omitted)
+## Communities (29 total, 9 thin omitted)
 
 ### Community 0 - "App.jsx"
 
-Cohesion: 0.13
-Nodes (24): lucide-react, react, react-dom, App(), Contacto(), FranjaReserva(), HeroFuego(), LETRAS (+16 more)
+Cohesion: 0.11
+Nodes (28): lucide-react, react, react-dom, App(), ArDishModal(), ArViewer(), VIEWER_ATTRS, Contacto() (+20 more)
 
-### Community 1 - "ArDishModal.jsx"
+### Community 1 - "launchAr"
 
-Cohesion: 0.21
-Nodes (10): @google/model-viewer, ArDishModal(), ArViewer(), VIEWER_ATTRS, detectInAppBrowser(), IN_APP_MARKERS, isIOS(), launchAr() (+2 more)
+Cohesion: 0.48
+Nodes (5): IN_APP_MARKERS, isIOS(), launchAr(), launchQuickLook(), launchSceneViewer()
 
 ### Community 2 - "package.json"
 
-Cohesion: 0.05
-Nodes (35): dependencies, @google/model-viewer, gsap, lucide-react, react, react-dom, engines, node (+27 more)
+Cohesion: 0.06
+Nodes (34): dependencies, @google/model-viewer, gsap, lucide-react, react, react-dom, zod, engines (+26 more)
 
 ### Community 3 - "Escena.jsx"
 
@@ -125,12 +126,12 @@ Nodes (5): plugins, rules, react/only-export-components, react/rules-of-hooks, $
 ### Community 10 - "Plan de implementación — Ascua (PITS)"
 
 Cohesion: 0.05
-Nodes (41): 0. Cómo usar este documento, 10. Definición de terminado (DoD) — aplica a toda tarea, 11. Riesgos, 12. Registro de cambios del plan, 1. Resumen ejecutivo y decisiones, 2. Línea base verificada (5 oct 2026), 3.1 Capas (Clean Architecture ligera), 3.2 Estructura de carpetas objetivo (+33 more)
+Nodes (40): 0. Cómo usar este documento, 10. Definición de terminado (DoD) — aplica a toda tarea, 11. Riesgos, 12. Registro de cambios del plan, 1. Resumen ejecutivo y decisiones, 2. Línea base verificada (5 oct 2026), 3.1 Capas (Clean Architecture ligera), 3.2 Estructura de carpetas objetivo (+32 more)
 
 ### Community 11 - "sweetgreen — Style Reference"
 
-Cohesion: 0.07
-Nodes (27): Agent Prompt Guide, Border Radius, CSS Custom Properties, Do, Do's and Don'ts, Don't, Elevation, Example Component Prompts (+19 more)
+Cohesion: 0.05
+Nodes (39): Agent Prompt Guide, Border Radius, Components, CSS Custom Properties, Do, Do's and Don'ts, Don't, Elevation (+31 more)
 
 ### Community 12 - "CLAUDE.md — ASCUA-DEMO-PAGINA"
 
@@ -142,10 +143,10 @@ Nodes (20): 0.1 Arquitectura (regla de capas — se verifica con dependency-crui
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, checkJs, esModuleInterop, isolatedModules, jsx, lib, module (+10 more)
 
-### Community 14 - "Components"
+### Community 14 - "restaurant.ts"
 
-Cohesion: 0.17
-Nodes (12): Components, Eyebrow Label, Food Photograph (Standard), Full-Bleed Hero with Text Overlay, Ghost Text Link, Menu Category Tab, Navigation Bar, Online Only Badge (+4 more)
+Cohesion: 0.10
+Nodes (28): Fase P-1 — Re-arquitectura de PAGINA, vitest, zod, ArAsset, arAssetSchema, ArLaunchMode, DeviceCapabilities, deviceCapabilitiesSchema (+20 more)
 
 ### Community 15 - "Estado del proyecto — ASCUA-DEMO-PAGINA"
 
@@ -179,25 +180,25 @@ Nodes (3): Expanding the Oxlint configuration, React Compiler, React + Vite
 
 ## Knowledge Gaps
 
-- **234 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `name` (+229 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 260 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **240 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `name` (+235 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 266 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `App.jsx` to `ArDishModal.jsx`, `package.json`, `Escena.jsx`?**
-  _High betweenness centrality (0.100) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.047) - this node is a cross-community bridge._
-- **Why does `getAssetForDishIndex()` connect `Ascua — landing de "cocina de autor" (Histórico)` to `App.jsx`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `react` connect `App.jsx` to `package.json`, `Escena.jsx`?**
+  _High betweenness centrality (0.142) - this node is a cross-community bridge._
+- **Why does `9. Backlog por fases` connect `Plan de implementación — Ascua (PITS)` to `restaurant.ts`?**
+  _High betweenness centrality (0.111) - this node is a cross-community bridge._
+- **Why does `Fase P-1 — Re-arquitectura de PAGINA` connect `restaurant.ts` to `Plan de implementación — Ascua (PITS)`?**
+  _High betweenness centrality (0.110) - this node is a cross-community bridge._
 - **What connects `$schema`, `plugins`, `react/rules-of-hooks` to the rest of the system?**
-  _234 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _240 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `App.jsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.1323671497584541 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11248185776487664 - nodes in this community are weakly interconnected._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.05226480836236934 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
 - **Should `Ascua — landing de "cocina de autor" (Histórico)` be split into smaller, more focused modules?**
   _Cohesion score 0.04717853839037928 - nodes in this community are weakly interconnected._

@@ -4,6 +4,149 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_domain_ar_arasset",
+      "label": "ArAsset",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "arasset",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_domain_ar_arlaunchmode",
+      "label": "ArLaunchMode",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "arlaunchmode",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_domain_ar_devicecapabilities",
+      "label": "DeviceCapabilities",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "devicecapabilities",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L57"
+    },
+    {
+      "id": "src_domain_dish_category",
+      "label": "Category",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "category",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L65"
+    },
+    {
+      "id": "src_domain_dish_dish",
+      "label": "Dish",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "dish",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L48"
+    },
+    {
+      "id": "src_domain_dish_localizedstring",
+      "label": "LocalizedString",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "localizedstring",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_domain_price_price",
+      "label": "Price",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_domain_restaurant_restaurant",
+      "label": "Restaurant",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurant",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L86"
+    },
+    {
+      "id": "src_domain_restaurant_restaurantauthorization",
+      "label": "RestaurantAuthorization",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurantauthorization",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_domain_restaurant_restaurantcontact",
+      "label": "RestaurantContact",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurantcontact",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L51"
+    },
+    {
+      "id": "src_domain_theme_theme",
+      "label": "Theme",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "theme",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L27"
+    },
+    {
       "id": "src_app_app",
       "label": "App()",
       "_callable": true,
@@ -14,6 +157,30 @@
       "norm_label": "app()",
       "source_file": "src/App.jsx",
       "source_location": "L24"
+    },
+    {
+      "id": "src_components_ardishmodal_ardishmodal",
+      "label": "ArDishModal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "ardishmodal()",
+      "source_file": "src/components/ArDishModal.jsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_components_arviewer_arviewer",
+      "label": "ArViewer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "arviewer()",
+      "source_file": "src/components/ArViewer.jsx",
+      "source_location": "L16"
     },
     {
       "id": "src_components_contacto_contacto",
@@ -196,36 +363,12 @@
       "source_location": "L7"
     },
     {
-      "id": "src_components_ardishmodal_ardishmodal",
-      "label": "ArDishModal()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "file_type": "code",
-      "norm_label": "ardishmodal()",
-      "source_file": "src/components/ArDishModal.jsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_components_arviewer_arviewer",
-      "label": "ArViewer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "file_type": "code",
-      "norm_label": "arviewer()",
-      "source_file": "src/components/ArViewer.jsx",
-      "source_location": "L16"
-    },
-    {
       "id": "src_lib_browserenv_detectinappbrowser",
       "label": "detectInAppBrowser()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community": 0,
+      "community_name": "App.jsx",
       "file_type": "code",
       "norm_label": "detectinappbrowser()",
       "source_file": "src/lib/browserEnv.js",
@@ -237,7 +380,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "isios()",
       "source_file": "src/lib/browserEnv.js",
@@ -249,7 +392,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "launchar()",
       "source_file": "src/lib/launchAr.js",
@@ -261,7 +404,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "launchquicklook()",
       "source_file": "src/lib/launchAr.js",
@@ -273,11 +416,47 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "launchsceneviewer()",
       "source_file": "src/lib/launchAr.js",
       "source_location": "L29"
+    },
+    {
+      "id": "src_domain_ar_selectarlaunchmode",
+      "label": "selectArLaunchMode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "selectarlaunchmode()",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L85"
+    },
+    {
+      "id": "src_domain_price_formatcopprice",
+      "label": "formatCopPrice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "formatcopprice()",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_domain_restaurant_isrestaurantexpired",
+      "label": "isRestaurantExpired()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "isrestaurantexpired()",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L95"
     },
     {
       "id": "src_components_escena_escena",
@@ -472,6 +651,17 @@
       "source_location": "L49"
     },
     {
+      "id": "model_viewer",
+      "label": "@google/model-viewer",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "@google/model-viewer",
+      "source_file": "@google/model-viewer"
+    },
+    {
       "id": "src_app",
       "label": "App.jsx",
       "_origin": "ast",
@@ -481,6 +671,39 @@
       "norm_label": "app.jsx",
       "source_file": "src/App.jsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_ardishmodal",
+      "label": "ArDishModal.jsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "ardishmodal.jsx",
+      "source_file": "src/components/ArDishModal.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_arviewer",
+      "label": "ArViewer.jsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "arviewer.jsx",
+      "source_file": "src/components/ArViewer.jsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_arviewer_viewer_attrs",
+      "label": "VIEWER_ATTRS",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "code",
+      "norm_label": "viewer_attrs",
+      "source_file": "src/components/ArViewer.jsx",
+      "source_location": "L10"
     },
     {
       "id": "src_components_contacto",
@@ -769,55 +992,11 @@
       "source_location": "L36"
     },
     {
-      "id": "model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "@google/model-viewer",
-      "source_file": "@google/model-viewer"
-    },
-    {
-      "id": "src_components_ardishmodal",
-      "label": "ArDishModal.jsx",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "file_type": "code",
-      "norm_label": "ardishmodal.jsx",
-      "source_file": "src/components/ArDishModal.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_arviewer",
-      "label": "ArViewer.jsx",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "file_type": "code",
-      "norm_label": "arviewer.jsx",
-      "source_file": "src/components/ArViewer.jsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_arviewer_viewer_attrs",
-      "label": "VIEWER_ATTRS",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "file_type": "code",
-      "norm_label": "viewer_attrs",
-      "source_file": "src/components/ArViewer.jsx",
-      "source_location": "L10"
-    },
-    {
       "id": "src_lib_browserenv",
       "label": "browserEnv.js",
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "browserenv.js",
       "source_file": "src/lib/browserEnv.js",
@@ -828,7 +1007,7 @@
       "label": "IN_APP_MARKERS",
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "in_app_markers",
       "source_file": "src/lib/browserEnv.js",
@@ -839,22 +1018,11 @@
       "label": "launchAr.js",
       "_origin": "ast",
       "community": 1,
-      "community_name": "ArDishModal.jsx",
+      "community_name": "launchAr",
       "file_type": "code",
       "norm_label": "launchar.js",
       "source_file": "src/lib/launchAr.js",
       "source_location": "L1"
-    },
-    {
-      "id": "ref_google_model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "ArDishModal.jsx",
-      "file_type": "concept",
-      "norm_label": "@google/model-viewer",
-      "source_file": "package.json",
-      "source_location": "L32"
     },
     {
       "id": "docs_plan_implementacion",
@@ -1301,18 +1469,6 @@
       "source_location": "L496"
     },
     {
-      "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
-      "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L518"
-    },
-    {
       "id": "docs_plan_implementacion_fase_p_2_multi_restaurante",
       "label": "Fase P-2 \u2014 Multi-restaurante",
       "_origin": "ast",
@@ -1397,6 +1553,18 @@
       "source_location": "L96"
     },
     {
+      "id": "docs_design_components",
+      "label": "Components",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "components",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L120"
+    },
+    {
       "id": "docs_design_css_custom_properties",
       "label": "CSS Custom Properties",
       "_origin": "ast",
@@ -1469,6 +1637,54 @@
       "source_location": "L244"
     },
     {
+      "id": "docs_design_eyebrow_label",
+      "label": "Eyebrow Label",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "eyebrow label",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L176"
+    },
+    {
+      "id": "docs_design_food_photograph_standard",
+      "label": "Food Photograph (Standard)",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "food photograph (standard)",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L182"
+    },
+    {
+      "id": "docs_design_full_bleed_hero_with_text_overlay",
+      "label": "Full-Bleed Hero with Text Overlay",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "full-bleed hero with text overlay",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L164"
+    },
+    {
+      "id": "docs_design_ghost_text_link",
+      "label": "Ghost Text Link",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ghost text link",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L134"
+    },
+    {
       "id": "docs_design_grenette_secondary_display_accent_ultra_thin_weight_with_extreme_negative_tracking_creates_a_delicate_editorial_counterpoint_to_the_geometric_sweetsans_display_font_grenette",
       "label": "Grenette \u2014 Secondary display accent \u2014 ultra-thin weight with extreme negative tracking creates a delicate, editorial counterpoint to the geometric SweetSans display \u00b7 `--font-grenette`",
       "_origin": "ast",
@@ -1515,6 +1731,78 @@
       "norm_label": "layout",
       "source_file": "docs/DESIGN.md",
       "source_location": "L228"
+    },
+    {
+      "id": "docs_design_menu_category_tab",
+      "label": "Menu Category Tab",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "menu category tab",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L146"
+    },
+    {
+      "id": "docs_design_navigation_bar",
+      "label": "Navigation Bar",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "navigation bar",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L140"
+    },
+    {
+      "id": "docs_design_online_only_badge",
+      "label": "Online Only Badge",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "online only badge",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L158"
+    },
+    {
+      "id": "docs_design_pill_cta_button_lime_fill",
+      "label": "Pill CTA Button (Lime Fill)",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pill cta button (lime fill)",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L122"
+    },
+    {
+      "id": "docs_design_pill_outline_button_forest_border",
+      "label": "Pill Outline Button (Forest Border)",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pill outline button (forest border)",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L128"
+    },
+    {
+      "id": "docs_design_product_card",
+      "label": "Product Card",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product card",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L152"
     },
     {
       "id": "docs_design_quick_color_reference",
@@ -1575,6 +1863,18 @@
       "norm_label": "spacing scale",
       "source_file": "docs/DESIGN.md",
       "source_location": "L83"
+    },
+    {
+      "id": "docs_design_split_content_section",
+      "label": "Split Content Section",
+      "_origin": "ast",
+      "community": 11,
+      "community_name": "sweetgreen \u2014 Style Reference",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "split content section",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L170"
     },
     {
       "id": "docs_design_surfaces",
@@ -2158,148 +2458,291 @@
       "source_location": "L21"
     },
     {
-      "id": "docs_design_components",
-      "label": "Components",
+      "id": "src_domain_ar",
+      "label": "ar.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "components",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L120"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "ar.ts",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L1"
     },
     {
-      "id": "docs_design_eyebrow_label",
-      "label": "Eyebrow Label",
+      "id": "src_domain_ar_arassetschema",
+      "label": "arAssetSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "eyebrow label",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L176"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "arassetschema",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L15"
     },
     {
-      "id": "docs_design_food_photograph_standard",
-      "label": "Food Photograph (Standard)",
+      "id": "src_domain_ar_devicecapabilitiesschema",
+      "label": "deviceCapabilitiesSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "food photograph (standard)",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L182"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "devicecapabilitiesschema",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L43"
     },
     {
-      "id": "docs_design_full_bleed_hero_with_text_overlay",
-      "label": "Full-Bleed Hero with Text Overlay",
+      "id": "src_domain_dish",
+      "label": "dish.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "full-bleed hero with text overlay",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L164"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "dish.ts",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L1"
     },
     {
-      "id": "docs_design_ghost_text_link",
-      "label": "Ghost Text Link",
+      "id": "src_domain_dish_categoryschema",
+      "label": "categorySchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ghost text link",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L134"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "categoryschema",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L53"
     },
     {
-      "id": "docs_design_menu_category_tab",
-      "label": "Menu Category Tab",
+      "id": "src_domain_dish_dishschema",
+      "label": "dishSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "menu category tab",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L146"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "dishschema",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L26"
     },
     {
-      "id": "docs_design_navigation_bar",
-      "label": "Navigation Bar",
+      "id": "src_domain_dish_localizedstringschema",
+      "label": "localizedStringSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "navigation bar",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L140"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "localizedstringschema",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L16"
     },
     {
-      "id": "docs_design_online_only_badge",
-      "label": "Online Only Badge",
+      "id": "src_domain_index",
+      "label": "index.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "online only badge",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L158"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "index.ts",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L1"
     },
     {
-      "id": "docs_design_pill_cta_button_lime_fill",
-      "label": "Pill CTA Button (Lime Fill)",
+      "id": "src_domain_price",
+      "label": "price.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pill cta button (lime fill)",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L122"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price.ts",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L1"
     },
     {
-      "id": "docs_design_pill_outline_button_forest_border",
-      "label": "Pill Outline Button (Forest Border)",
+      "id": "src_domain_price_priceschema",
+      "label": "priceSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pill outline button (forest border)",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L128"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "priceschema",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L16"
     },
     {
-      "id": "docs_design_product_card",
-      "label": "Product Card",
+      "id": "src_domain_restaurant",
+      "label": "restaurant.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "product card",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L152"
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurant.ts",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L1"
     },
     {
-      "id": "docs_design_split_content_section",
-      "label": "Split Content Section",
+      "id": "src_domain_restaurant_restaurant_slug_regex",
+      "label": "RESTAURANT_SLUG_REGEX",
       "_origin": "ast",
       "community": 14,
-      "community_name": "Components",
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurant_slug_regex",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_domain_restaurant_restaurantauthorizationschema",
+      "label": "restaurantAuthorizationSchema",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurantauthorizationschema",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_domain_restaurant_restaurantcontactschema",
+      "label": "restaurantContactSchema",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurantcontactschema",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_domain_restaurant_restaurantschema",
+      "label": "restaurantSchema",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurantschema",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_domain_theme",
+      "label": "theme.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "theme.ts",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_theme_themeschema",
+      "label": "themeSchema",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "themeschema",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "tests_unit_domain_ar_test",
+      "label": "ar.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "ar.test.ts",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_dish_test",
+      "label": "dish.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "dish.test.ts",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_price_test",
+      "label": "price.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price.test.ts",
+      "source_file": "tests/unit/domain/price.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_restaurant_test",
+      "label": "restaurant.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurant.test.ts",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_theme_test",
+      "label": "theme.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "theme.test.ts",
+      "source_file": "tests/unit/domain/theme.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "vitest_config",
+      "label": "vitest.config.js",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "vitest.config.js",
+      "source_file": "vitest.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_vitest",
+      "label": "vitest",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "concept",
+      "norm_label": "vitest",
+      "source_file": "package.json",
+      "source_location": "L57"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "restaurant.ts",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "split content section",
-      "source_file": "docs/DESIGN.md",
-      "source_location": "L170"
+      "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L518"
     },
     {
       "id": "docs_estado",
@@ -2323,7 +2766,7 @@
       "node_kind": "heading",
       "norm_label": "bloqueos",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L43"
+      "source_location": "L47"
     },
     {
       "id": "docs_estado_comandos_para_verificar",
@@ -2335,7 +2778,7 @@
       "node_kind": "heading",
       "norm_label": "comandos para verificar",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L53"
+      "source_location": "L56"
     },
     {
       "id": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
@@ -2371,7 +2814,7 @@
       "node_kind": "heading",
       "norm_label": "linea base verificada (2026-10-06)",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L36"
+      "source_location": "L40"
     },
     {
       "id": "docs_estado_pendientes_detectados_fuera_de_alcance_de_la_tarea_actual",
@@ -2383,7 +2826,7 @@
       "node_kind": "heading",
       "norm_label": "pendientes detectados (fuera de alcance de la tarea actual)",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L47"
+      "source_location": "L51"
     },
     {
       "id": "docs_estado_siguiente_paso_exacto",
@@ -2395,7 +2838,7 @@
       "node_kind": "heading",
       "norm_label": "siguiente paso exacto",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L24"
+      "source_location": "L29"
     },
     {
       "id": "docs_estado_tarea_actual",
@@ -2419,7 +2862,7 @@
       "node_kind": "heading",
       "norm_label": "ultimo paso completado",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "github_dependabot",
@@ -2573,7 +3016,7 @@
       "node_kind": "heading",
       "norm_label": "cambios",
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
-      "source_location": "L15"
+      "source_location": "L18"
     },
     {
       "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
@@ -2633,7 +3076,7 @@
       "node_kind": "heading",
       "norm_label": "verificacion",
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
-      "source_location": "L27"
+      "source_location": "L31"
     },
     {
       "id": "package",
@@ -2711,6 +3154,17 @@
       "norm_label": "react-dom",
       "source_file": "package.json",
       "source_location": "L36"
+    },
+    {
+      "id": "package_dependencies_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L37"
     },
     {
       "id": "package_engines",
@@ -2812,39 +3266,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_lib_carta",
-      "label": "carta.js",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "carta.js",
-      "source_file": "src/lib/carta.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_carta_fotos",
-      "label": "FOTOS",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "fotos",
-      "source_file": "src/lib/carta.js",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_lib_carta_temperaturas",
-      "label": "TEMPERATURAS",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "temperaturas",
-      "source_file": "src/lib/carta.js",
-      "source_location": "L20"
-    },
-    {
       "id": "tests_setup",
       "label": "setup.ts",
       "_origin": "ast",
@@ -2853,17 +3274,6 @@
       "file_type": "code",
       "norm_label": "setup.ts",
       "source_file": "tests/setup.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_unit_carta_test",
-      "label": "carta.test.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "carta.test.ts",
-      "source_file": "tests/unit/carta.test.ts",
       "source_location": "L1"
     },
     {
@@ -2878,17 +3288,6 @@
       "source_location": "L1"
     },
     {
-      "id": "vitest_config",
-      "label": "vitest.config.js",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "vitest.config.js",
-      "source_file": "vitest.config.js",
-      "source_location": "L1"
-    },
-    {
       "id": "ref_autoprefixer",
       "label": "autoprefixer",
       "_origin": "ast",
@@ -2897,7 +3296,18 @@
       "file_type": "concept",
       "norm_label": "autoprefixer",
       "source_file": "package.json",
-      "source_location": "L45"
+      "source_location": "L46"
+    },
+    {
+      "id": "ref_google_model_viewer",
+      "label": "@google/model-viewer",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@google/model-viewer",
+      "source_file": "package.json",
+      "source_location": "L32"
     },
     {
       "id": "ref_gsap",
@@ -2919,7 +3329,7 @@
       "file_type": "concept",
       "norm_label": "husky",
       "source_file": "package.json",
-      "source_location": "L47"
+      "source_location": "L48"
     },
     {
       "id": "ref_jsdom",
@@ -2930,7 +3340,7 @@
       "file_type": "concept",
       "norm_label": "jsdom",
       "source_file": "package.json",
-      "source_location": "L48"
+      "source_location": "L49"
     },
     {
       "id": "ref_lint_staged",
@@ -2941,7 +3351,7 @@
       "file_type": "concept",
       "norm_label": "lint-staged",
       "source_file": "package.json",
-      "source_location": "L49"
+      "source_location": "L50"
     },
     {
       "id": "ref_oxlint",
@@ -2952,7 +3362,7 @@
       "file_type": "concept",
       "norm_label": "oxlint",
       "source_file": "package.json",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "ref_postcss",
@@ -2963,7 +3373,7 @@
       "file_type": "concept",
       "norm_label": "postcss",
       "source_file": "package.json",
-      "source_location": "L51"
+      "source_location": "L52"
     },
     {
       "id": "ref_prettier",
@@ -2974,7 +3384,7 @@
       "file_type": "concept",
       "norm_label": "prettier",
       "source_file": "package.json",
-      "source_location": "L52"
+      "source_location": "L53"
     },
     {
       "id": "ref_tailwindcss",
@@ -2985,7 +3395,7 @@
       "file_type": "concept",
       "norm_label": "tailwindcss",
       "source_file": "package.json",
-      "source_location": "L53"
+      "source_location": "L54"
     },
     {
       "id": "ref_testing_library_jest_dom",
@@ -2996,7 +3406,7 @@
       "file_type": "concept",
       "norm_label": "@testing-library/jest-dom",
       "source_file": "package.json",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "ref_testing_library_react",
@@ -3007,7 +3417,7 @@
       "file_type": "concept",
       "norm_label": "@testing-library/react",
       "source_file": "package.json",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "ref_types_react",
@@ -3018,7 +3428,7 @@
       "file_type": "concept",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L41"
+      "source_location": "L42"
     },
     {
       "id": "ref_types_react_dom",
@@ -3029,7 +3439,7 @@
       "file_type": "concept",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "ref_typescript",
@@ -3040,7 +3450,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L54"
+      "source_location": "L55"
     },
     {
       "id": "ref_vite",
@@ -3051,7 +3461,7 @@
       "file_type": "concept",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L55"
+      "source_location": "L56"
     },
     {
       "id": "ref_vitejs_plugin_react",
@@ -3062,18 +3472,7 @@
       "file_type": "concept",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
-      "source_location": "L43"
-    },
-    {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "vitest",
-      "source_file": "package.json",
-      "source_location": "L56"
+      "source_location": "L44"
     },
     {
       "id": "ref_vitest_coverage_v8",
@@ -3084,7 +3483,7 @@
       "file_type": "concept",
       "norm_label": "@vitest/coverage-v8",
       "source_file": "package.json",
-      "source_location": "L44"
+      "source_location": "L45"
     },
     {
       "id": "github_pull_request_template",
@@ -3407,6 +3806,50 @@
       "source_location": "L1"
     },
     {
+      "id": "src_lib_carta",
+      "label": "carta.js",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "carta.js",
+      "file_type": "code",
+      "norm_label": "carta.js",
+      "source_file": "src/lib/carta.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_carta_fotos",
+      "label": "FOTOS",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "carta.js",
+      "file_type": "code",
+      "norm_label": "fotos",
+      "source_file": "src/lib/carta.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_lib_carta_temperaturas",
+      "label": "TEMPERATURAS",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "carta.js",
+      "file_type": "code",
+      "norm_label": "temperaturas",
+      "source_file": "src/lib/carta.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "tests_unit_carta_test",
+      "label": "carta.test.ts",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "carta.js",
+      "file_type": "code",
+      "norm_label": "carta.test.ts",
+      "source_file": "tests/unit/carta.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_escena",
       "label": "Escena.jsx",
       "_origin": "ast",
@@ -3602,7 +4045,7 @@
       "file_type": "concept",
       "norm_label": "ffmpeg-static",
       "source_file": "package.json",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "src_lib_arassets",
@@ -4292,7 +4735,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "package_devdependencies_autoprefixer",
@@ -4303,7 +4746,7 @@
       "file_type": "code",
       "norm_label": "autoprefixer",
       "source_file": "package.json",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "package_devdependencies_ffmpeg_static",
@@ -4314,7 +4757,7 @@
       "file_type": "code",
       "norm_label": "ffmpeg-static",
       "source_file": "package.json",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "package_devdependencies_husky",
@@ -4325,7 +4768,7 @@
       "file_type": "code",
       "norm_label": "husky",
       "source_file": "package.json",
-      "source_location": "L47"
+      "source_location": "L48"
     },
     {
       "id": "package_devdependencies_jsdom",
@@ -4336,7 +4779,7 @@
       "file_type": "code",
       "norm_label": "jsdom",
       "source_file": "package.json",
-      "source_location": "L48"
+      "source_location": "L49"
     },
     {
       "id": "package_devdependencies_lint_staged",
@@ -4347,7 +4790,7 @@
       "file_type": "code",
       "norm_label": "lint-staged",
       "source_file": "package.json",
-      "source_location": "L49"
+      "source_location": "L50"
     },
     {
       "id": "package_devdependencies_oxlint",
@@ -4358,7 +4801,7 @@
       "file_type": "code",
       "norm_label": "oxlint",
       "source_file": "package.json",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "package_devdependencies_postcss",
@@ -4369,7 +4812,7 @@
       "file_type": "code",
       "norm_label": "postcss",
       "source_file": "package.json",
-      "source_location": "L51"
+      "source_location": "L52"
     },
     {
       "id": "package_devdependencies_prettier",
@@ -4380,7 +4823,7 @@
       "file_type": "code",
       "norm_label": "prettier",
       "source_file": "package.json",
-      "source_location": "L52"
+      "source_location": "L53"
     },
     {
       "id": "package_devdependencies_tailwindcss",
@@ -4391,7 +4834,7 @@
       "file_type": "code",
       "norm_label": "tailwindcss",
       "source_file": "package.json",
-      "source_location": "L53"
+      "source_location": "L54"
     },
     {
       "id": "package_devdependencies_testing_library_jest_dom",
@@ -4402,7 +4845,7 @@
       "file_type": "code",
       "norm_label": "@testing-library/jest-dom",
       "source_file": "package.json",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "package_devdependencies_testing_library_react",
@@ -4413,7 +4856,7 @@
       "file_type": "code",
       "norm_label": "@testing-library/react",
       "source_file": "package.json",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "package_devdependencies_types_react",
@@ -4424,7 +4867,7 @@
       "file_type": "code",
       "norm_label": "@types/react",
       "source_file": "package.json",
-      "source_location": "L41"
+      "source_location": "L42"
     },
     {
       "id": "package_devdependencies_types_react_dom",
@@ -4435,7 +4878,7 @@
       "file_type": "code",
       "norm_label": "@types/react-dom",
       "source_file": "package.json",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -4446,7 +4889,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L54"
+      "source_location": "L55"
     },
     {
       "id": "package_devdependencies_vite",
@@ -4457,7 +4900,7 @@
       "file_type": "code",
       "norm_label": "vite",
       "source_file": "package.json",
-      "source_location": "L55"
+      "source_location": "L56"
     },
     {
       "id": "package_devdependencies_vitejs_plugin_react",
@@ -4468,7 +4911,7 @@
       "file_type": "code",
       "norm_label": "@vitejs/plugin-react",
       "source_file": "package.json",
-      "source_location": "L43"
+      "source_location": "L44"
     },
     {
       "id": "package_devdependencies_vitest",
@@ -4479,7 +4922,7 @@
       "file_type": "code",
       "norm_label": "vitest",
       "source_file": "package.json",
-      "source_location": "L56"
+      "source_location": "L57"
     },
     {
       "id": "package_devdependencies_vitest_coverage_v8",
@@ -4490,7 +4933,7 @@
       "file_type": "code",
       "norm_label": "@vitest/coverage-v8",
       "source_file": "package.json",
-      "source_location": "L44"
+      "source_location": "L45"
     },
     {
       "id": "oxlintrc",
@@ -4617,6 +5060,18 @@
       "type": "external"
     },
     {
+      "id": "ref_path",
+      "label": "ref_path",
+      "_origin": "semantic",
+      "community": 14,
+      "community_name": "restaurant.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_path",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_lib_gsap_scrolltrigger",
       "label": "src_lib_gsap_scrolltrigger",
       "_origin": "semantic",
@@ -4673,17 +5128,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_path",
-      "label": "ref_path",
-      "community": 2,
-      "community_name": "package.json",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_path",
       "source_file": "",
       "type": "external"
     }
@@ -5326,6 +5770,66 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_index",
+      "target": "src_domain_price",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_index",
+      "target": "src_domain_ar",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_index",
+      "target": "src_domain_dish",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_index",
+      "target": "src_domain_theme",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_index",
+      "target": "src_domain_restaurant",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_arviewer_arviewer",
       "target": "ref_google_model_viewer",
       "relation": "imports_from",
@@ -5400,19 +5904,19 @@
     },
     {
       "source": "package",
-      "target": "ref_testing_library_jest_dom",
+      "target": "ref_zod",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
       "source": "package",
-      "target": "ref_testing_library_react",
+      "target": "ref_testing_library_jest_dom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5424,7 +5928,7 @@
     },
     {
       "source": "package",
-      "target": "ref_types_react",
+      "target": "ref_testing_library_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5436,7 +5940,7 @@
     },
     {
       "source": "package",
-      "target": "ref_types_react_dom",
+      "target": "ref_types_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5448,7 +5952,7 @@
     },
     {
       "source": "package",
-      "target": "ref_vitejs_plugin_react",
+      "target": "ref_types_react_dom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5460,7 +5964,7 @@
     },
     {
       "source": "package",
-      "target": "ref_vitest_coverage_v8",
+      "target": "ref_vitejs_plugin_react",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5472,7 +5976,7 @@
     },
     {
       "source": "package",
-      "target": "ref_autoprefixer",
+      "target": "ref_vitest_coverage_v8",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5484,7 +5988,7 @@
     },
     {
       "source": "package",
-      "target": "ref_ffmpeg_static",
+      "target": "ref_autoprefixer",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5496,7 +6000,7 @@
     },
     {
       "source": "package",
-      "target": "ref_husky",
+      "target": "ref_ffmpeg_static",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5508,7 +6012,7 @@
     },
     {
       "source": "package",
-      "target": "ref_jsdom",
+      "target": "ref_husky",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5520,7 +6024,7 @@
     },
     {
       "source": "package",
-      "target": "ref_lint_staged",
+      "target": "ref_jsdom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5532,7 +6036,7 @@
     },
     {
       "source": "package",
-      "target": "ref_oxlint",
+      "target": "ref_lint_staged",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5544,7 +6048,7 @@
     },
     {
       "source": "package",
-      "target": "ref_postcss",
+      "target": "ref_oxlint",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5556,7 +6060,7 @@
     },
     {
       "source": "package",
-      "target": "ref_prettier",
+      "target": "ref_postcss",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5568,7 +6072,7 @@
     },
     {
       "source": "package",
-      "target": "ref_tailwindcss",
+      "target": "ref_prettier",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5580,7 +6084,7 @@
     },
     {
       "source": "package",
-      "target": "ref_typescript",
+      "target": "ref_tailwindcss",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5592,7 +6096,7 @@
     },
     {
       "source": "package",
-      "target": "ref_vite",
+      "target": "ref_typescript",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5604,7 +6108,7 @@
     },
     {
       "source": "package",
-      "target": "ref_vitest",
+      "target": "ref_vite",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5612,6 +6116,18 @@
       "context": "import",
       "source_file": "package.json",
       "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "ref_vitest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "package.json",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -6215,6 +6731,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_dish",
+      "target": "src_domain_ar_arassetschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_price_priceschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_dish_categoryschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_theme_themeschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
       "source": "src_hooks_usereveal",
       "target": "src_lib_gsap_gsap",
       "relation": "imports",
@@ -6320,6 +6884,198 @@
       "context": "import",
       "source_file": "tests/unit/carta.test.ts",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "src_domain_ar_arasset",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "src_domain_ar_arassetschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "src_domain_ar_devicecapabilities",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "src_domain_ar_devicecapabilitiesschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "src_domain_ar_selectarlaunchmode",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_dish_test",
+      "target": "src_domain_dish_category",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_dish_test",
+      "target": "src_domain_dish_categoryschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_dish_test",
+      "target": "src_domain_dish_dish",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_dish_test",
+      "target": "src_domain_dish_dishschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_price_test",
+      "target": "src_domain_price_formatcopprice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/price.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_price_test",
+      "target": "src_domain_price_priceschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/price.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant_isrestaurantexpired",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant_restaurant",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant_restaurant_slug_regex",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant_restaurantschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_theme_test",
+      "target": "src_domain_theme_themeschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/theme.test.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -7175,6 +7931,114 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_ar",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_ar",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_price",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_price",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_dish",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_theme",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_hooks_usereveal",
       "target": "ref_react",
       "relation": "imports_from",
@@ -7400,6 +8264,126 @@
       "context": "import",
       "source_file": "tests/unit/carta.test.ts",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_ar_test",
+      "target": "src_domain_ar",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_dish_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_dish_test",
+      "target": "src_domain_dish",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_price_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/price.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_price_test",
+      "target": "src_domain_price",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/price.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_theme_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/theme.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_theme_test",
+      "target": "src_domain_theme",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/theme.test.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -8295,7 +9279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -8306,7 +9290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L24",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -8317,7 +9301,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L36",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -8328,7 +9312,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L43",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -8339,7 +9323,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -8350,7 +9334,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L53",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -9252,7 +10236,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
-      "source_location": "L15",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -9263,7 +10247,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -9494,7 +10478,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -9597,19 +10581,19 @@
       "weight": 1.0
     },
     {
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_testing_library_jest_dom",
+      "source": "package_dependencies",
+      "target": "package_dependencies_zod",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_testing_library_react",
+      "target": "package_devdependencies_testing_library_jest_dom",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9620,7 +10604,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
+      "target": "package_devdependencies_testing_library_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9631,7 +10615,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
+      "target": "package_devdependencies_types_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9642,7 +10626,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vitejs_plugin_react",
+      "target": "package_devdependencies_types_react_dom",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9653,7 +10637,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vitest_coverage_v8",
+      "target": "package_devdependencies_vitejs_plugin_react",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9664,7 +10648,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_autoprefixer",
+      "target": "package_devdependencies_vitest_coverage_v8",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9675,7 +10659,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_ffmpeg_static",
+      "target": "package_devdependencies_autoprefixer",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9686,7 +10670,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_husky",
+      "target": "package_devdependencies_ffmpeg_static",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9697,7 +10681,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_jsdom",
+      "target": "package_devdependencies_husky",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9708,7 +10692,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_lint_staged",
+      "target": "package_devdependencies_jsdom",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9719,7 +10703,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_oxlint",
+      "target": "package_devdependencies_lint_staged",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9730,7 +10714,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_postcss",
+      "target": "package_devdependencies_oxlint",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9741,7 +10725,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_prettier",
+      "target": "package_devdependencies_postcss",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9752,7 +10736,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss",
+      "target": "package_devdependencies_prettier",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9763,7 +10747,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
+      "target": "package_devdependencies_tailwindcss",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9774,7 +10758,7 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vite",
+      "target": "package_devdependencies_typescript",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -9785,13 +10769,24 @@
     },
     {
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vitest",
+      "target": "package_devdependencies_vite",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -10298,6 +11293,281 @@
       "confidence_score": 1.0,
       "source_file": "src/components/Voces.jsx",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_ar",
+      "target": "src_domain_ar_arassetschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_ar",
+      "target": "src_domain_ar_arasset",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_ar",
+      "target": "src_domain_ar_devicecapabilitiesschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_ar",
+      "target": "src_domain_ar_devicecapabilities",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_ar",
+      "target": "src_domain_ar_arlaunchmode",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_ar",
+      "target": "src_domain_ar_selectarlaunchmode",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_dish_localizedstringschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_dish_localizedstring",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_dish_dishschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_dish_dish",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_dish_categoryschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_dish_category",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_price",
+      "target": "src_domain_price_priceschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/price.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_price",
+      "target": "src_domain_price_price",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/price.ts",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_price",
+      "target": "src_domain_price_formatcopprice",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/price.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurant_slug_regex",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurantauthorizationschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurantauthorization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurantcontactschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurantcontact",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurantschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_restaurant",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_isrestaurantexpired",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_theme_themeschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_theme_theme",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -10892,6 +12162,18 @@
       "weight": 1.0
     },
     {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_ar_arasset",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "ArAsset",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
       "source": "docs_proyecto_5_la_funci\u00f3n_de_ia_3d_ra",
       "target": "src_components_ardishmodal_ardishmodal",
       "relation": "references",
@@ -10901,6 +12183,90 @@
       "context": "ArDishModal",
       "source_file": "docs/PROYECTO.md",
       "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_ar_arlaunchmode",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "ArLaunchMode",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_dish_category",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "Category",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_ar_devicecapabilities",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "DeviceCapabilities",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_dish_dish",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "Dish",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_price_price",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "Price",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_restaurant_restaurant",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "Restaurant",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "target": "src_domain_theme_theme",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "Theme",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L525",
       "weight": 1.0
     },
     {
@@ -11019,5 +12385,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "83daf3886efe71f549906aa66e680fea80a269ee"
+  "built_at_commit": "34b080228c63bc811a4b78fa63349638cb52388b"
 }

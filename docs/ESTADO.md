@@ -10,28 +10,31 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-101 — TypeScript + herramientas de prueba. **Estado:** completada ✅.
-Siguiente tarea: **P-102** — Zod y esquemas del borde.
+P-102 — Capa `domain`. **Estado:** completada ✅.
+Siguiente tarea: **P-103** — Puertos y casos de uso (`application`).
 
 ## Último paso completado
 
+- **P-102 (Capa `domain` pura y esquemas Zod):**
+  - Creados los módulos en `src/domain/`:
+    - `price.ts`: Value Object y validación de precios enteros en COP sin decimales, con formateador estándar `formatCopPrice`.
+    - `ar.ts`: Entidad `ArAsset`, `DeviceCapabilities`, `ArLaunchMode` y la política pura `selectArLaunchMode` (prioriza Quick Look en iOS, Scene Viewer en Android, y model-viewer interactivo en navegadores embebidos o escritorio).
+    - `dish.ts`: Entidad `Dish` (textos localizados es/en, precio, foto obligatoria, modelo 3D opcional) y `Category`.
+    - `theme.ts`: Entidad `Theme` (código hexadecimal de color primario, par tipográfico y logo).
+    - `restaurant.ts`: Entidad `Restaurant`, autorización comercial, contacto con WhatsApp internacional y función pura `isRestaurantExpired`. Regex estricto de slug con sufijo aleatorio de 4 caracteres obligatorio (`^[a-z0-9]+(-[a-z0-9]+)*-[a-z0-9]{4}$`).
+    - `index.ts`: Exportación unificada de la capa.
+  - Pruebas unitarias completas bajo `tests/unit/domain/` (39 pruebas en total en el proyecto).
+  - Cobertura de código en `domain/`: **100 %** de líneas, ramas, funciones y sentencias (supera el criterio de aceptación de ≥ 90 %).
+  - Cero dependencias de React, APIs del navegador (`window`/`document`) o capas externas.
 - **P-101 (TypeScript + Vitest + Pipeline de calidad):**
-  - `tsconfig.json` estricto configurado (`strict: true`, `noUncheckedIndexedAccess: true`, `allowJs: true`, `moduleResolution: "bundler"`, paths `@/*`).
-  - Vitest + Testing Library + jsdom configurados en `vitest.config.js` y `tests/setup.ts`.
-  - Prueba unitaria inicial implementada en `tests/unit/carta.test.ts` (100% pasando).
-  - Scripts creados en `package.json`: `typecheck` (`tsc --noEmit`), `test` (`vitest run`), `test:coverage`, `format` (`prettier --write .`), `format:check`.
-  - `npm run verify` ampliado para correr la suite completa en cadena: `lint && typecheck && test && build`.
-  - Warning de oxlint en `LanguageContext.jsx` resuelto limpiamente desacoplando `LanguageContext.js` (contexto), `useLanguage.js` (hook) y `LanguageProvider.jsx` (componente React). 0 advertencias, 0 errores.
-  - `.prettierrc` configurado respetando las convenciones del repositorio (`singleQuote: true`, `semi: false`).
-- **Fase 0 (X-000 a X-010):**
-  - Fundaciones completadas: Node 22 fijado, Husky + lint-staged activos, Graphify indexando el repositorio, desacople total de Supabase y reorganización limpia de la raíz.
+  - `tsconfig.json` estricto, Vitest con `jsdom`, `.prettierrc`, scripts ampliados y warning de oxlint resuelto. Sincronizado en remoto (`34b0802`).
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-102** — Zod y esquemas del borde:
-   - Instalar `zod`.
-   - Definir esquemas para datos de entrada externa (platos, carta, restaurante, configuración visual, idioma).
-   - Validar datos de la carta en el borde contra los esquemas Zod con pruebas unitarias.
+1. Iniciar la tarea **P-103** — Puertos y casos de uso (`application`):
+   - Definir puertos (interfaces TypeScript puras): `RestaurantRepository`, `ArLauncher`, `EnvironmentDetector`, `SoldOutStore`, `AnalyticsTracker`.
+   - Implementar casos de uso: `getRestaurant`, `buildMenuView`, `launchDishAr`, `buildReservationLink`, `toggleSoldOut`.
+   - Escribir pruebas unitarias con dobles en memoria (meta: ≥ 90 % cobertura).
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
@@ -40,9 +43,10 @@ Siguiente tarea: **P-102** — Zod y esquemas del borde.
 ## Línea base verificada (2026-10-06)
 
 - `node -v`: v22.13.0 ✅
-- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest 2/2 tests pass, vite build exitoso).
-- Git hooks: `pre-commit` (oxlint + prettier) y `pre-push` (`npm run verify`) activos.
-- Grafo de conocimiento: operativo y actualizado en `graphify-out/` (402 nodos, 554 aristas).
+- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest 39/39 tests pass, vite build exitoso).
+- Cobertura `domain/`: 100 % en todas las métricas.
+- Git hooks: `pre-commit` y `pre-push` activos.
+- Grafo de conocimiento: operativo y sincronizado en `graphify-out/` (440 nodos, 633 aristas).
 
 ## Bloqueos
 
@@ -57,5 +61,6 @@ Siguiente tarea: **P-102** — Zod y esquemas del borde.
 
 ```powershell
 npm run verify
+npm run test:coverage
 git status --short
 ```
