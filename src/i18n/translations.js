@@ -194,6 +194,10 @@ export const translations = {
     footer: {
       tagline: 'Cocina de autor, servida con fuego.',
       rights: 'Todos los derechos reservados.',
+      feedback: 'Danos tu opinión',
+      privacy:
+        'Aviso de privacidad: No usamos cookies de rastreo ni guardamos datos personales.',
+      madeBy: 'Hecho por PITS · Ascua',
     },
     backToTop: 'Volver arriba',
   },
@@ -386,6 +390,10 @@ export const translations = {
     footer: {
       tagline: 'Chef-driven cooking, served with fire.',
       rights: 'All rights reserved.',
+      feedback: 'Give us your feedback',
+      privacy:
+        'Privacy notice: We do not use tracking cookies or store personal data.',
+      madeBy: 'Made by PITS · Ascua',
     },
     backToTop: 'Back to top',
   },

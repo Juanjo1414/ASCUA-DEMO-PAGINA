@@ -1,5 +1,7 @@
 import { ArrowUp } from 'lucide-react'
 import { useLanguage } from '../i18n/useLanguage'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '../app/store'
 
 /*
   El pie cierra con el nombre a todo lo ancho, cortado por el borde de abajo
@@ -7,7 +9,12 @@ import { useLanguage } from '../i18n/useLanguage'
 */
 export default function Pie() {
   const { t } = useLanguage()
+  const restaurant = useAtomValue(restaurantAtom)
   const anio = new Date().getFullYear()
+
+  const feedbackLink = restaurant
+    ? `https://tally.so/r/n0q1L7?slug=${restaurant.slug}`
+    : 'https://tally.so/r/n0q1L7'
 
   return (
     <footer
@@ -29,16 +36,24 @@ export default function Pie() {
           </div>
           <div className="flex items-start justify-between gap-6 md:col-span-3 md:flex-col md:items-end">
             <a
-              href="https://instagram.com"
+              href={feedbackLink}
               target="_blank"
               rel="noreferrer"
               className="rotulo underline decoration-brasa decoration-2 underline-offset-[6px] transition-colors hover:text-acento"
+            >
+              {t.footer.feedback}
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noreferrer"
+              className="rotulo transition-colors hover:text-acento"
             >
               Instagram
             </a>
             <a
               href="#top"
-              className="rotulo inline-flex items-center gap-2 transition-colors hover:text-acento"
+              className="rotulo inline-flex items-center gap-2 transition-colors hover:text-acento mt-2"
             >
               {t.backToTop}
               <ArrowUp size={14} strokeWidth={2} />
@@ -46,9 +61,13 @@ export default function Pie() {
           </div>
         </div>
 
-        <p className="mt-14 text-xs text-ceniza">
-          © {anio} Ascua. {t.footer.rights}
-        </p>
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 md:flex-row text-xs text-ceniza">
+          <p>
+            © {anio} {restaurant?.nombre || 'Ascua'}. {t.footer.rights}{' '}
+            {t.footer.privacy}
+          </p>
+          <p>{t.footer.madeBy}</p>
+        </div>
       </div>
 
       <div aria-hidden="true" className="mt-10 h-[13vw] overflow-hidden">
