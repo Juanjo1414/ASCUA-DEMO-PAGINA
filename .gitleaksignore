@@ -1,0 +1,3 @@
+# Gitleaks ignore list
+# Fingerprints de falsos positivos en documentación de auditoría histórica
+34b080228c63bc811a4b78fa63349638cb52388b:docs/seguridad/2026-08-28-cyber-neo.md:generic-api-key:111
