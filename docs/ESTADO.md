@@ -10,45 +10,34 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-104 — Adaptadores AR. **Estado:** completada ✅.
-Siguiente tarea: **P-105** — Repositorio de contenido estático.
+P-105 — Repositorio de contenido estático. **Estado:** completada ✅.
+Siguiente tarea: **P-106** — Composition root y router.
 
 ## Último paso completado
 
+- **P-105 (Repositorio de contenido estático):**
+  - Creada la implementación `StaticJsonRestaurantRepository` en `infrastructure/content/`.
+  - Agregado el guardia de seguridad (`RESTAURANT_SLUG_REGEX`) para prevenir path traversal antes del `fetch`.
+  - Validación zod de la respuesta JSON para que la capa de UI siempre trabaje con datos íntegros.
+  - Implementadas pruebas unitarias del repositorio con cobertura sobre los escenarios de validación fallida y respuesta exitosa.
 - **P-104 (Adaptadores AR):**
   - Implementados los adaptadores nativos `QuickLookLauncher`, `SceneViewerLauncher` y `ModelViewerFallbackLauncher` en `src/infrastructure/ar/`.
   - Implementado `BrowserEnvironmentDetector` en `src/infrastructure/browser/` preservando las detecciones de in-app browsers y de SO del proyecto antiguo.
   - Creadas las pruebas de contrato en Vitest (`describe.each`) asegurando que los 3 lanzadores cumplen con `ArLauncher`.
 - **P-103 (Puertos y Casos de Uso - Capa `application`):**
-  - Creados los puertos (interfaces TypeScript puras) en `src/application/ports/`:
-    - `RestaurantRepository`: consulta por slug con tipado estricto.
-    - `ArLauncher`: contrato de ejecución y apertura AR con resultado tipado (`ArLauncherResult`).
-    - `EnvironmentDetector`: contrato para inspeccionar capacidades de dispositivo sin acoplamiento a `window`/`navigator`.
-    - `SoldOutStore`: contrato para consultar y alternar platos agotados en cocina.
-    - `AnalyticsTracker`: catálogo tipado de eventos analíticos sin cookies ni datos personales (Ley 1581 de 2012).
-  - Implementados los casos de uso en `src/application/use-cases/`:
-    - `getRestaurant`: guardia de seguridad para slugs no adivinables (`RESTAURANT_SLUG_REGEX`), evaluación de vigencia comercial (`isRestaurantExpired`) y control de estado pausado/activo.
-    - `buildMenuView`: transforma categorías y platos para la UI, formateando precios en pesos colombianos, resolviendo textos en español/inglés, sincronizando platos agotados y precalculando el modo de lanzamiento AR óptimo (`DishViewModel`, `MenuViewModel`).
-    - `launchDishAr`: orquesta la apertura de modelos 3D/AR, evaluando capacidades del dispositivo y emitiendo telemetría tipada (`launch_ar_attempt`, `launch_ar_success`, `launch_ar_error`).
-    - `buildReservationLink`: construye el enlace universal a WhatsApp (`wa.me`) con mensaje prellenado en lenguaje natural, comensales, fecha, hora y comentarios.
-    - `toggleSoldOut`: permite alternar la disponibilidad de un plato en el almacén de cocina.
-  - Pruebas unitarias completas bajo `tests/unit/application/` con dobles de prueba en memoria (`InMemoryRestaurantRepository`, `InMemorySoldOutStore`, `MockArLauncher`, `MockEnvironmentDetector`, `MockAnalyticsTracker`).
-  - Cobertura de código: **100 % de sentencias y líneas** en casos de uso de `application/`, y **100 %** en la capa `domain/` (57 pruebas unitarias pasando en verde).
-  - Regla de arquitectura validada: cero imports de `infrastructure`, `presentation`, `react`, `window` o `document`.
+  - Creados los puertos en `src/application/ports/` y los casos de uso en `src/application/use-cases/`.
 - **P-102 (Capa `domain` pura y esquemas Zod):**
   - Entidades `Price`, `ArAsset`, `DeviceCapabilities`, `Dish`, `Category`, `Theme`, `Restaurant`.
 - **P-101 (TypeScript + Vitest + Pipeline de calidad):**
-  - `tsconfig.json` estricto, Vitest con `jsdom`, `.prettierrc`, scripts ampliados y warning de oxlint resuelto. Sincronizado en remoto (`34b0802`).
-- **Fix CI (Gitleaks):**
-  - Ofuscación de claves de ejemplo en documentación histórica y configuración de `.gitleaks.toml` y `.gitleaksignore`. Sincronizado en remoto (`fdbb601`).
+  - Configuración estricta de entorno.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-105** — Repositorio de contenido estático:
-   - Crear `StaticJsonRestaurantRepository` en `infrastructure/content/`.
-   - Implementar un guardia para rechazar slugs inválidos (mayúsculas, rutas relativas `../`) antes del fetch.
-   - Usar el esquema zod para validar el JSON descargado.
-   - Pruebas unitarias y manejo de errores controlados.
+1. Iniciar la tarea **P-106** — Composition root y router:
+   - Crear `src/app/compositionRoot.ts`.
+   - Crear el contexto de dependencias para inyectar puertos a React (no se pueden importar de `infrastructure` dentro de los componentes).
+   - Crear el router con React Router y configurar las rutas `/`, `/r/:slug`, `/r/:slug/qr`, página de error 404, y página de expirado.
+   - Refactorizar `main.tsx` o similar para arrancar la aplicación pasando por el `compositionRoot`.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

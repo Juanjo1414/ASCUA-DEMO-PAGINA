@@ -720,15 +720,15 @@
     "semantic_hash": ""
   },
   "src/infrastructure/browser/BrowserEnvironmentDetector.ts": {
-    "mtime": 1791310999.9512043,
-    "seen": 1791311004.773537,
-    "ast_hash": "6a19ad049e0b5ccf070800d3a234ff4f",
+    "mtime": 1791311022.1147852,
+    "seen": 1791311041.8731716,
+    "ast_hash": "6f6f7e14d539a7a970b8620ab3475fd8",
     "semantic_hash": ""
   },
   "tests/unit/infrastructure/ar/arLaunchers.test.ts": {
-    "mtime": 1791310999.992078,
-    "seen": 1791311004.7735844,
-    "ast_hash": "28a7b1fcdd3ee6d353c6b6337dcc934e",
+    "mtime": 1791311024.3866944,
+    "seen": 1791311041.8732002,
+    "ast_hash": "470caae0cf207e664a47f78370bff47b",
     "semantic_hash": ""
   },
   "tests/unit/infrastructure/browser/BrowserEnvironmentDetector.test.ts": {
