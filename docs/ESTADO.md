@@ -10,10 +10,15 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-201 — Esquema de contenido v1. **Estado:** completada ✅.
-Siguiente tarea: **P-202** — Validador de contenido.
+P-202 — Validador de contenido. **Estado:** completada ✅.
+Siguiente tarea: **P-203** — Build de contenido y HTML por restaurante.
 
 ## Último paso completado
+
+- **P-202 (Validador de contenido):**
+  - Implementado `scripts/validate-content.ts` utilizando Node.js `fs` nativo y `zod`.
+  - Integrado al pipeline de validación (`npm run content:validate`).
+  - Verificado tamaños de assets, integridad de hashes y correctitud de slugs.
 
 - **P-201 (Esquema de contenido v1):**
   - Creada la carpeta `content/restaurants/_plantilla/` con el archivo `restaurant.json` base.
@@ -46,11 +51,11 @@ Siguiente tarea: **P-202** — Validador de contenido.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-202** — Validador de contenido:
-   - Crear `scripts/validate-content.ts`.
-   - Validar schema, slugs, aislamiento de assets y tamaños máximos (GLB, USDZ, WebP).
-   - Comprobar "aprobado: true" y "autorizacion".
-   - Añadir el script al pipeline local y remoto.
+1. Iniciar la tarea **P-203** — Build de contenido y HTML por restaurante:
+   - Crear `scripts/build-content.ts`.
+   - Copiar el contenido de `content/restaurants/` a `dist/data/`.
+   - Generar `dist/r/<slug>/index.html` estático con metaetiquetas (SEO) únicas por cliente.
+   - Generar el archivo `_redirects` en la raíz de Cloudflare para rutear SPA (`/* /index.html 200`).
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
