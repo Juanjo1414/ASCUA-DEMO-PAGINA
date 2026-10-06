@@ -1,0 +1,29 @@
+import { StaticJsonRestaurantRepository } from '@/infrastructure/content/StaticJsonRestaurantRepository'
+import { QuickLookLauncher } from '@/infrastructure/ar/QuickLookLauncher'
+import { SceneViewerLauncher } from '@/infrastructure/ar/SceneViewerLauncher'
+import { ModelViewerFallbackLauncher } from '@/infrastructure/ar/ModelViewerFallbackLauncher'
+import { BrowserEnvironmentDetector } from '@/infrastructure/browser/BrowserEnvironmentDetector'
+import type { ArLauncher } from '@/application/ports/arLauncher'
+
+export interface AppDependencies {
+  restaurantRepository: StaticJsonRestaurantRepository
+  environmentDetector: BrowserEnvironmentDetector
+  arLaunchers: ArLauncher[]
+}
+
+const environmentDetector = new BrowserEnvironmentDetector()
+
+/**
+ * Raíz de composición. Instancia las implementaciones concretas (infrastructure)
+ * para ser inyectadas en la aplicación (React) como dependencias.
+ * Ningún componente de React debe importar de infrastructure/ directamente.
+ */
+export const compositionRoot: AppDependencies = {
+  restaurantRepository: new StaticJsonRestaurantRepository(),
+  environmentDetector,
+  arLaunchers: [
+    new QuickLookLauncher(),
+    new SceneViewerLauncher(),
+    new ModelViewerFallbackLauncher(),
+  ],
+}

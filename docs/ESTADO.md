@@ -10,34 +10,33 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-105 — Repositorio de contenido estático. **Estado:** completada ✅.
-Siguiente tarea: **P-106** — Composition root y router.
+P-106 — Composition root y router. **Estado:** completada ✅.
+Siguiente tarea: **P-107** — Store reactivo global.
 
 ## Último paso completado
 
+- **P-106 (Composition root y router):**
+  - Implementado `src/app/compositionRoot.ts` inyectando instancias concretas (repositorio estático, adaptadores AR, detector de entorno).
+  - Configurado `DependenciesContext.tsx` para inyectar los puertos en React y asegurar Clean Architecture en los componentes.
+  - Creado `src/app/router.tsx` con React Router para las rutas principales (`/`, `/r/:slug`, `/r/:slug/qr`, etc.).
+  - Refactorizado `main.tsx` para inicializar el router y los proveedores del contexto global.
 - **P-105 (Repositorio de contenido estático):**
-  - Creada la implementación `StaticJsonRestaurantRepository` en `infrastructure/content/`.
-  - Agregado el guardia de seguridad (`RESTAURANT_SLUG_REGEX`) para prevenir path traversal antes del `fetch`.
-  - Validación zod de la respuesta JSON para que la capa de UI siempre trabaje con datos íntegros.
-  - Implementadas pruebas unitarias del repositorio con cobertura sobre los escenarios de validación fallida y respuesta exitosa.
+  - Implementado `StaticJsonRestaurantRepository` y sus validaciones (Zod, regex) previas al fetch de datos.
 - **P-104 (Adaptadores AR):**
-  - Implementados los adaptadores nativos `QuickLookLauncher`, `SceneViewerLauncher` y `ModelViewerFallbackLauncher` en `src/infrastructure/ar/`.
-  - Implementado `BrowserEnvironmentDetector` en `src/infrastructure/browser/` preservando las detecciones de in-app browsers y de SO del proyecto antiguo.
-  - Creadas las pruebas de contrato en Vitest (`describe.each`) asegurando que los 3 lanzadores cumplen con `ArLauncher`.
+  - Implementados los lanzadores nativos para iOS (`QuickLookLauncher`), Android (`SceneViewerLauncher`) y Web (`ModelViewerFallbackLauncher`).
 - **P-103 (Puertos y Casos de Uso - Capa `application`):**
-  - Creados los puertos en `src/application/ports/` y los casos de uso en `src/application/use-cases/`.
+  - Creados los puertos y los casos de uso (`getRestaurant`, `buildMenuView`, `launchDishAr`, etc.).
 - **P-102 (Capa `domain` pura y esquemas Zod):**
-  - Entidades `Price`, `ArAsset`, `DeviceCapabilities`, `Dish`, `Category`, `Theme`, `Restaurant`.
+  - Entidades de dominio base y esquemas.
 - **P-101 (TypeScript + Vitest + Pipeline de calidad):**
-  - Configuración estricta de entorno.
+  - Configuración estricta de entorno, lint, formateo, pre-push.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-106** — Composition root y router:
-   - Crear `src/app/compositionRoot.ts`.
-   - Crear el contexto de dependencias para inyectar puertos a React (no se pueden importar de `infrastructure` dentro de los componentes).
-   - Crear el router con React Router y configurar las rutas `/`, `/r/:slug`, `/r/:slug/qr`, página de error 404, y página de expirado.
-   - Refactorizar `main.tsx` o similar para arrancar la aplicación pasando por el `compositionRoot`.
+1. Iniciar la tarea **P-107** — Store reactivo global:
+   - Instalar Jotai.
+   - Crear `src/app/store.ts` para mantener la data del restaurante descargado.
+   - Asegurar un solo punto de verdad reactivo, tipado con la interfaz `Restaurant`.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

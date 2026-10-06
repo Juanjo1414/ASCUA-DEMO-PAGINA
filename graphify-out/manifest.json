@@ -252,9 +252,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791310889.8507288,
-    "seen": 1791310910.130532,
-    "ast_hash": "51fb3c3812ee647194dbef21ecda5635",
+    "mtime": 1791311255.1496208,
+    "seen": 1791312656.3109863,
+    "ast_hash": "f5dd4869770b275ece82ff6bd5e8d61e",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -741,6 +741,24 @@
     "mtime": 1791310999.7510915,
     "seen": 1791311004.7736251,
     "ast_hash": "3cbf3038065097271c938f4e6e8859ec",
+    "semantic_hash": ""
+  },
+  "src/infrastructure/content/StaticJsonRestaurantRepository.ts": {
+    "mtime": 1791312651.0315175,
+    "seen": 1791312656.3109097,
+    "ast_hash": "8c6fd9337e09949ed752baccbaf1cb01",
+    "semantic_hash": ""
+  },
+  "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts": {
+    "mtime": 1791312651.0817406,
+    "seen": 1791312656.3109586,
+    "ast_hash": "2b6658b5123fc4e94e0aafeb9ceef973",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P105-Static-Repo.md": {
+    "mtime": 1791312650.8369572,
+    "seen": 1791312656.3109996,
+    "ast_hash": "5089604534bce1a853c5b051262566da",
     "semantic_hash": ""
   }
 }

@@ -2,19 +2,19 @@
 
 ## Corpus Check
 
-- 94 files · ~573,126 words
+- 97 files · ~573,518 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 20 file(s) not represented in the graph (top: (none) 8, .woff2 8, .css 2)
 
 ## Summary
 
-- 520 nodes · 968 edges · 30 communities (21 shown, 9 thin omitted)
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 96 edges (avg confidence: 0.95)
+- 529 nodes · 971 edges · 30 communities (21 shown, 9 thin omitted)
+- Extraction: 92% EXTRACTED · 8% INFERRED · 0% AMBIGUOUS · INFERRED: 82 edges (avg confidence: 0.95)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
 
-- Built from commit: `8a8b584b`
+- Built from commit: `a65deadd`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -33,7 +33,7 @@
 - sweetgreen — Style Reference
 - CLAUDE.md — ASCUA-DEMO-PAGINA
 - compilerOptions
-- Último paso completado
+- doubles.ts
 - Estado del proyecto — ASCUA-DEMO-PAGINA
 - Configuraci?n de Dependabot
 - ADR-0001: Demo estática multi-restaurante en Cloudflare Pages
@@ -49,15 +49,15 @@
 
 ## God Nodes (most connected - your core abstractions)
 
-1. `Último paso completado` - 30 edges
-2. `useLanguage()` - 23 edges
-3. `Dish` - 22 edges
-4. `Fase P-1 — Re-arquitectura de PAGINA` - 22 edges
-5. `Restaurant` - 19 edges
-6. `ArLauncher` - 19 edges
-7. `react` - 19 edges
-8. `ArLaunchMode` - 18 edges
-9. `Decisiones tomadas` - 18 edges
+1. `useLanguage()` - 23 edges
+2. `Dish` - 22 edges
+3. `Fase P-1 — Re-arquitectura de PAGINA` - 22 edges
+4. `Restaurant` - 21 edges
+5. `ArLauncher` - 19 edges
+6. `react` - 19 edges
+7. `ArLaunchMode` - 18 edges
+8. `Decisiones tomadas` - 18 edges
+9. `vitest` - 16 edges
 10. `compilerOptions` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -66,12 +66,12 @@
   docs/PLAN-IMPLEMENTACION.md → src/application/ports/arLauncher.ts
 - `5. La función de IA / 3D / RA` --references--> `ArDishModal()` [INFERRED]
   docs/PROYECTO.md → src/components/ArDishModal.jsx
-- `Último paso completado` --references--> `MenuViewModel` [INFERRED]
-  docs/ESTADO.md → src/application/use-cases/buildMenuView.ts
-- `Último paso completado` --references--> `buildReservationLink()` [INFERRED]
-  docs/ESTADO.md → src/application/use-cases/buildReservationLink.ts
-- `Último paso completado` --references--> `getRestaurant()` [INFERRED]
-  docs/ESTADO.md → src/application/use-cases/getRestaurant.ts
+- `Último paso completado` --references--> `Restaurant` [INFERRED]
+  docs/ESTADO.md → src/domain/restaurant.ts
+- `Último paso completado` --references--> `StaticJsonRestaurantRepository` [INFERRED]
+  docs/ESTADO.md → src/infrastructure/content/StaticJsonRestaurantRepository.ts
+- `Fase P-1 — Re-arquitectura de PAGINA` --references--> `Restaurant` [INFERRED]
+  docs/PLAN-IMPLEMENTACION.md → src/domain/restaurant.ts
 
 ## Import Cycles
 
@@ -82,22 +82,22 @@
 ### Community 0 - "App.jsx"
 
 Cohesion: 0.09
-Nodes (36): lucide-react, react, react-dom, App(), ArDishModal(), ArViewer(), VIEWER_ATTRS, Contacto() (+28 more)
+Nodes (36): @google/model-viewer, lucide-react, react, react-dom, App(), ArDishModal(), ArViewer(), VIEWER_ATTRS (+28 more)
 
 ### Community 1 - "restaurant.ts"
 
-Cohesion: 0.11
-Nodes (18): vitest, zod, buildReservationLink(), ReservationParams, getRestaurant(), GetRestaurantResult, formatCopPrice(), priceSchema (+10 more)
+Cohesion: 0.08
+Nodes (25): Fase P-3 — Funciones de la demo, Acciones realizadas, Bitácora de Sesión: P-105 Repositorio Estático, Objetivos, Siguiente Tarea, vitest, zod, RestaurantRepository (+17 more)
 
 ### Community 2 - "package.json"
 
-Cohesion: 0.05
-Nodes (34): dependencies, @google/model-viewer, gsap, lucide-react, react, react-dom, zod, engines (+26 more)
+Cohesion: 0.06
+Nodes (33): dependencies, @google/model-viewer, gsap, lucide-react, react, react-dom, zod, engines (+25 more)
 
 ### Community 3 - "Escena.jsx"
 
-Cohesion: 0.25
-Nodes (15): Escena(), generarCama(), aUrl(), azar(), generarBrasa(), lienzo(), prepararBrasaTexto(), actualizarCalor() (+7 more)
+Cohesion: 0.24
+Nodes (16): Escena(), generarCama(), aUrl(), azar(), generarBrasa(), lienzo(), prepararBrasaTexto(), actualizarCalor() (+8 more)
 
 ### Community 4 - "carta.mjs"
 
@@ -144,10 +144,10 @@ Nodes (19): 0.1 Arquitectura (regla de capas — se verifica con dependency-crui
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, checkJs, esModuleInterop, isolatedModules, jsx, lib, module (+10 more)
 
-### Community 14 - "Último paso completado"
+### Community 14 - "doubles.ts"
 
 Cohesion: 0.09
-Nodes (43): 0.2 Reglas específicas de este repo, Último paso completado, 3.3 Principios SOLID aplicados (concreto, no teórico), Fase P-1 — Re-arquitectura de PAGINA, Decisiones tomadas, Acciones realizadas, AnalyticsEvent, AnalyticsTracker (+35 more)
+Nodes (41): 0.2 Reglas específicas de este repo, Último paso completado, Fase P-1 — Re-arquitectura de PAGINA, Decisiones tomadas, Acciones realizadas, AnalyticsEvent, AnalyticsTracker, ArLauncher (+33 more)
 
 ### Community 15 - "Estado del proyecto — ASCUA-DEMO-PAGINA"
 
@@ -186,25 +186,25 @@ Nodes (3): Bitácora de Sesión: P-104 Adaptadores AR, Objetivos, Siguiente Tare
 
 ## Knowledge Gaps
 
-- **240 isolated node(s):** `Fase actual`, `Tarea actual`, `Siguiente paso exacto`, `Línea base verificada (2026-10-06)`, `Bloqueos` (+235 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 269 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **243 isolated node(s):** `Fase actual`, `Tarea actual`, `Siguiente paso exacto`, `Línea base verificada (2026-10-06)`, `Bloqueos` (+238 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 273 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `vitest` connect `restaurant.ts` to `InMemorySoldOutStore`, `App.jsx`, `package.json`, `Último paso completado`?**
-  _High betweenness centrality (0.245) - this node is a cross-community bridge._
+- **Why does `vitest` connect `restaurant.ts` to `InMemorySoldOutStore`, `App.jsx`, `package.json`, `doubles.ts`?**
+  _High betweenness centrality (0.250) - this node is a cross-community bridge._
 - **Why does `react` connect `App.jsx` to `package.json`, `Escena.jsx`?**
-  _High betweenness centrality (0.156) - this node is a cross-community bridge._
-- **Why does `zod` connect `restaurant.ts` to `package.json`, `Último paso completado`?**
-  _High betweenness centrality (0.083) - this node is a cross-community bridge._
-- **Are the 29 inferred relationships involving `Último paso completado` (e.g. with `AnalyticsTracker` and `ArLauncher`) actually correct?**
-  _`Último paso completado` has 29 INFERRED edges - model-reasoned connections that need verification._
+  _High betweenness centrality (0.155) - this node is a cross-community bridge._
+- **Why does `Fase P-1 — Re-arquitectura de PAGINA` connect `doubles.ts` to `restaurant.ts`, `Plan de implementación — Ascua (PITS)`?**
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `Dish` (e.g. with `Último paso completado` and `Fase P-1 — Re-arquitectura de PAGINA`) actually correct?**
   _`Dish` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `Fase P-1 — Re-arquitectura de PAGINA` (e.g. with `AnalyticsTracker` and `ArLauncher`) actually correct?**
   _`Fase P-1 — Re-arquitectura de PAGINA` has 21 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 3 inferred relationships involving `Restaurant` (e.g. with `Último paso completado` and `Fase P-1 — Re-arquitectura de PAGINA`) actually correct?**
   _`Restaurant` has 3 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 6 inferred relationships involving `ArLauncher` (e.g. with `Último paso completado` and `3.3 Principios SOLID aplicados (concreto, no teórico)`) actually correct?**
+  _`ArLauncher` has 6 INFERRED edges - model-reasoned connections that need verification._

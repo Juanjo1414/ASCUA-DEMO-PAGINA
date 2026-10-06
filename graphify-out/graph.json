@@ -4,6 +4,19 @@
   "graph": {},
   "nodes": [
     {
+      "id": "src_application_ports_restaurantrepository_restaurantrepository",
+      "label": "RestaurantRepository",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "restaurantrepository",
+      "source_file": "src/application/ports/restaurantRepository.ts",
+      "source_location": "L14"
+    },
+    {
       "id": "src_application_use_cases_buildreservationlink_reservationparams",
       "label": "ReservationParams",
       "_callable": true,
@@ -69,6 +82,19 @@
       "source_location": "L64"
     },
     {
+      "id": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "label": "StaticJsonRestaurantRepository",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "staticjsonrestaurantrepository",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L8"
+    },
+    {
       "id": "tests_unit_application_doubles_inmemoryrestaurantrepository",
       "label": "InMemoryRestaurantRepository",
       "_callable": true,
@@ -88,7 +114,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "analyticsevent",
       "source_file": "src/application/ports/analyticsTracker.ts",
@@ -101,7 +127,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "analyticstracker",
       "source_file": "src/application/ports/analyticsTracker.ts",
@@ -114,7 +140,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arlauncher",
       "source_file": "src/application/ports/arLauncher.ts",
@@ -127,7 +153,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arlauncherresult",
       "source_file": "src/application/ports/arLauncher.ts",
@@ -140,24 +166,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "environmentdetector",
       "source_file": "src/application/ports/environmentDetector.ts",
       "source_location": "L13"
-    },
-    {
-      "id": "src_application_ports_restaurantrepository_restaurantrepository",
-      "label": "RestaurantRepository",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "\u00daltimo paso completado",
-      "file_type": "code",
-      "norm_label": "restaurantrepository",
-      "source_file": "src/application/ports/restaurantRepository.ts",
-      "source_location": "L14"
     },
     {
       "id": "src_application_ports_soldoutstore_soldoutstore",
@@ -166,7 +179,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "soldoutstore",
       "source_file": "src/application/ports/soldOutStore.ts",
@@ -179,7 +192,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "categoryviewmodel",
       "source_file": "src/application/use-cases/buildMenuView.ts",
@@ -192,7 +205,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "dishviewmodel",
       "source_file": "src/application/use-cases/buildMenuView.ts",
@@ -205,7 +218,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "menuviewmodel",
       "source_file": "src/application/use-cases/buildMenuView.ts",
@@ -218,7 +231,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "launchdisharparams",
       "source_file": "src/application/use-cases/launchDishAr.ts",
@@ -231,7 +244,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arasset",
       "source_file": "src/domain/ar.ts",
@@ -244,7 +257,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arlaunchmode",
       "source_file": "src/domain/ar.ts",
@@ -257,7 +270,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "devicecapabilities",
       "source_file": "src/domain/ar.ts",
@@ -270,7 +283,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "category",
       "source_file": "src/domain/dish.ts",
@@ -283,7 +296,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "dish",
       "source_file": "src/domain/dish.ts",
@@ -296,7 +309,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "localizedstring",
       "source_file": "src/domain/dish.ts",
@@ -309,7 +322,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "price",
       "source_file": "src/domain/price.ts",
@@ -322,7 +335,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "theme",
       "source_file": "src/domain/theme.ts",
@@ -335,7 +348,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "modelviewerfallbacklauncher",
       "source_file": "src/infrastructure/ar/ModelViewerFallbackLauncher.ts",
@@ -348,7 +361,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "quicklooklauncher",
       "source_file": "src/infrastructure/ar/QuickLookLauncher.ts",
@@ -361,7 +374,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "sceneviewerlauncher",
       "source_file": "src/infrastructure/ar/SceneViewerLauncher.ts",
@@ -374,7 +387,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "browserenvironmentdetector",
       "source_file": "src/infrastructure/browser/BrowserEnvironmentDetector.ts",
@@ -387,7 +400,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "mockanalyticstracker",
       "source_file": "tests/unit/application/doubles.ts",
@@ -400,7 +413,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "mockarlauncher",
       "source_file": "tests/unit/application/doubles.ts",
@@ -413,7 +426,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "mockenvironmentdetector",
       "source_file": "tests/unit/application/doubles.ts",
@@ -769,6 +782,18 @@
       "source_location": "L116"
     },
     {
+      "id": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository_getbyslug",
+      "label": ".getBySlug()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": ".getbyslug()",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L9"
+    },
+    {
       "id": "tests_unit_application_doubles_inmemoryrestaurantrepository_add",
       "label": ".add()",
       "_callable": true,
@@ -810,7 +835,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".track()",
       "source_file": "src/application/ports/analyticsTracker.ts",
@@ -822,7 +847,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".launch()",
       "source_file": "src/application/ports/arLauncher.ts",
@@ -834,7 +859,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".getcapabilities()",
       "source_file": "src/application/ports/environmentDetector.ts",
@@ -846,7 +871,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".issoldout()",
       "source_file": "src/application/ports/soldOutStore.ts",
@@ -858,7 +883,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".setsoldout()",
       "source_file": "src/application/ports/soldOutStore.ts",
@@ -870,7 +895,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".togglesoldout()",
       "source_file": "src/application/ports/soldOutStore.ts",
@@ -882,7 +907,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "buildmenuview()",
       "source_file": "src/application/use-cases/buildMenuView.ts",
@@ -894,7 +919,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "launchdishar()",
       "source_file": "src/application/use-cases/launchDishAr.ts",
@@ -906,7 +931,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "selectarlaunchmode()",
       "source_file": "src/domain/ar.ts",
@@ -918,7 +943,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".launch()",
       "source_file": "src/infrastructure/ar/ModelViewerFallbackLauncher.ts",
@@ -930,7 +955,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".launch()",
       "source_file": "src/infrastructure/ar/QuickLookLauncher.ts",
@@ -942,7 +967,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".launch()",
       "source_file": "src/infrastructure/ar/SceneViewerLauncher.ts",
@@ -954,7 +979,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".getcapabilities()",
       "source_file": "src/infrastructure/browser/BrowserEnvironmentDetector.ts",
@@ -966,7 +991,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".track()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -978,7 +1003,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".launch()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -990,7 +1015,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -1002,7 +1027,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": ".getcapabilities()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -1558,17 +1583,6 @@
       "source_location": "L5"
     },
     {
-      "id": "src_lib_calor_calor",
-      "label": "calor",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "App.jsx",
-      "file_type": "code",
-      "norm_label": "calor",
-      "source_file": "src/lib/calor.js",
-      "source_location": "L18"
-    },
-    {
       "id": "src_lib_carta",
       "label": "carta.js",
       "_origin": "ast",
@@ -1644,6 +1658,17 @@
       "norm_label": "carta.test.ts",
       "source_file": "tests/unit/carta.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_google_model_viewer",
+      "label": "@google/model-viewer",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "App.jsx",
+      "file_type": "concept",
+      "norm_label": "@google/model-viewer",
+      "source_file": "package.json",
+      "source_location": "L32"
     },
     {
       "id": "ref_lucide_react",
@@ -1844,6 +1869,17 @@
       "source_location": "L14"
     },
     {
+      "id": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "label": "StaticJsonRestaurantRepository.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "staticjsonrestaurantrepository.ts",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_unit_application_buildreservationlink_test",
       "label": "buildReservationLink.test.ts",
       "_origin": "ast",
@@ -1899,6 +1935,28 @@
       "source_location": "L1"
     },
     {
+      "id": "tests_unit_infrastructure_content_staticjsonrestaurantrepository_test",
+      "label": "StaticJsonRestaurantRepository.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "staticjsonrestaurantrepository.test.ts",
+      "source_file": "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "vitest_config",
+      "label": "vitest.config.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "vitest.config.js",
+      "source_file": "vitest.config.js",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_vitest",
       "label": "vitest",
       "_origin": "ast",
@@ -1919,6 +1977,78 @@
       "norm_label": "zod",
       "source_file": "package.json",
       "source_location": "L37"
+    },
+    {
+      "id": "docs_plan_implementacion_fase_p_3_funciones_de_la_demo",
+      "label": "Fase P-3 \u2014 Funciones de la demo",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fase p-3 \u2014 funciones de la demo",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L574"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p105_static_repo",
+      "label": "2026-10-06-P105-Static-Repo.md",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-10-06-p105-static-repo.md",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p105_static_repo_acciones_realizadas",
+      "label": "Acciones realizadas",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "acciones realizadas",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p105_static_repo_bit\u00e1cora_de_sesi\u00f3n_p_105_repositorio_est\u00e1tico",
+      "label": "Bit\u00e1cora de Sesi\u00f3n: P-105 Repositorio Est\u00e1tico",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "bitacora de sesion: p-105 repositorio estatico",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p105_static_repo_objetivos",
+      "label": "Objetivos",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "objetivos",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p105_static_repo_siguiente_tarea",
+      "label": "Siguiente Tarea",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "siguiente tarea",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L17"
     },
     {
       "id": "docs_plan_implementacion",
@@ -2027,6 +2157,18 @@
       "norm_label": "3.2 estructura de carpetas objetivo",
       "source_file": "docs/PLAN-IMPLEMENTACION.md",
       "source_location": "L86"
+    },
+    {
+      "id": "docs_plan_implementacion_3_3_principios_solid_aplicados_concreto_no_te\u00f3rico",
+      "label": "3.3 Principios SOLID aplicados (concreto, no te\u00f3rico)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "3.3 principios solid aplicados (concreto, no teorico)",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L141"
     },
     {
       "id": "docs_plan_implementacion_3_4_modelo_multi_restaurante_aislamiento",
@@ -2363,18 +2505,6 @@
       "norm_label": "fase p-2 \u2014 multi-restaurante",
       "source_file": "docs/PLAN-IMPLEMENTACION.md",
       "source_location": "L552"
-    },
-    {
-      "id": "docs_plan_implementacion_fase_p_3_funciones_de_la_demo",
-      "label": "Fase P-3 \u2014 Funciones de la demo",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "Plan de implementaci\u00f3n \u2014 Ascua (PITS)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fase p-3 \u2014 funciones de la demo",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L574"
     },
     {
       "id": "docs_plan_implementacion_fase_p_4_dise\u00f1o",
@@ -3334,7 +3464,7 @@
       "label": "analyticsTracker.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "analyticstracker.ts",
       "source_file": "src/application/ports/analyticsTracker.ts",
@@ -3345,7 +3475,7 @@
       "label": "arLauncher.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arlauncher.ts",
       "source_file": "src/application/ports/arLauncher.ts",
@@ -3356,7 +3486,7 @@
       "label": "environmentDetector.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "environmentdetector.ts",
       "source_file": "src/application/ports/environmentDetector.ts",
@@ -3367,7 +3497,7 @@
       "label": "ports/index.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "ports/index.ts",
       "source_file": "src/application/ports/index.ts",
@@ -3378,7 +3508,7 @@
       "label": "soldOutStore.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "soldoutstore.ts",
       "source_file": "src/application/ports/soldOutStore.ts",
@@ -3389,7 +3519,7 @@
       "label": "buildMenuView.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "buildmenuview.ts",
       "source_file": "src/application/use-cases/buildMenuView.ts",
@@ -3400,7 +3530,7 @@
       "label": "launchDishAr.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "launchdishar.ts",
       "source_file": "src/application/use-cases/launchDishAr.ts",
@@ -3411,7 +3541,7 @@
       "label": "ar.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "ar.ts",
       "source_file": "src/domain/ar.ts",
@@ -3422,7 +3552,7 @@
       "label": "arAssetSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arassetschema",
       "source_file": "src/domain/ar.ts",
@@ -3433,7 +3563,7 @@
       "label": "deviceCapabilitiesSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "devicecapabilitiesschema",
       "source_file": "src/domain/ar.ts",
@@ -3444,7 +3574,7 @@
       "label": "dish.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "dish.ts",
       "source_file": "src/domain/dish.ts",
@@ -3455,7 +3585,7 @@
       "label": "categorySchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "categoryschema",
       "source_file": "src/domain/dish.ts",
@@ -3466,7 +3596,7 @@
       "label": "dishSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "dishschema",
       "source_file": "src/domain/dish.ts",
@@ -3477,7 +3607,7 @@
       "label": "localizedStringSchema",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "localizedstringschema",
       "source_file": "src/domain/dish.ts",
@@ -3488,7 +3618,7 @@
       "label": "ModelViewerFallbackLauncher.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "modelviewerfallbacklauncher.ts",
       "source_file": "src/infrastructure/ar/ModelViewerFallbackLauncher.ts",
@@ -3499,7 +3629,7 @@
       "label": "QuickLookLauncher.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "quicklooklauncher.ts",
       "source_file": "src/infrastructure/ar/QuickLookLauncher.ts",
@@ -3510,7 +3640,7 @@
       "label": "SceneViewerLauncher.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "sceneviewerlauncher.ts",
       "source_file": "src/infrastructure/ar/SceneViewerLauncher.ts",
@@ -3521,7 +3651,7 @@
       "label": "BrowserEnvironmentDetector.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "browserenvironmentdetector.ts",
       "source_file": "src/infrastructure/browser/BrowserEnvironmentDetector.ts",
@@ -3532,7 +3662,7 @@
       "label": "IN_APP_MARKERS",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "in_app_markers",
       "source_file": "src/infrastructure/browser/BrowserEnvironmentDetector.ts",
@@ -3543,7 +3673,7 @@
       "label": "buildMenuView.test.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "buildmenuview.test.ts",
       "source_file": "tests/unit/application/buildMenuView.test.ts",
@@ -3554,7 +3684,7 @@
       "label": "doubles.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "doubles.ts",
       "source_file": "tests/unit/application/doubles.ts",
@@ -3565,7 +3695,7 @@
       "label": "launchDishAr.test.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "launchdishar.test.ts",
       "source_file": "tests/unit/application/launchDishAr.test.ts",
@@ -3576,7 +3706,7 @@
       "label": "ar.test.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "ar.test.ts",
       "source_file": "tests/unit/domain/ar.test.ts",
@@ -3587,7 +3717,7 @@
       "label": "dish.test.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "dish.test.ts",
       "source_file": "tests/unit/domain/dish.test.ts",
@@ -3598,7 +3728,7 @@
       "label": "arLaunchers.test.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "arlaunchers.test.ts",
       "source_file": "tests/unit/infrastructure/ar/arLaunchers.test.ts",
@@ -3609,7 +3739,7 @@
       "label": "mockDish",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "mockdish",
       "source_file": "tests/unit/infrastructure/ar/arLaunchers.test.ts",
@@ -3620,7 +3750,7 @@
       "label": "mockDishWithoutAssets",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "mockdishwithoutassets",
       "source_file": "tests/unit/infrastructure/ar/arLaunchers.test.ts",
@@ -3631,7 +3761,7 @@
       "label": "BrowserEnvironmentDetector.test.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "code",
       "norm_label": "browserenvironmentdetector.test.ts",
       "source_file": "tests/unit/infrastructure/browser/BrowserEnvironmentDetector.test.ts",
@@ -3642,7 +3772,7 @@
       "label": "0.2 Reglas espec\u00edficas de este repo",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "0.2 reglas especificas de este repo",
@@ -3654,7 +3784,7 @@
       "label": "\u00daltimo paso completado",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "ultimo paso completado",
@@ -3662,23 +3792,11 @@
       "source_location": "L16"
     },
     {
-      "id": "docs_plan_implementacion_3_3_principios_solid_aplicados_concreto_no_te\u00f3rico",
-      "label": "3.3 Principios SOLID aplicados (concreto, no te\u00f3rico)",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "\u00daltimo paso completado",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3.3 principios solid aplicados (concreto, no teorico)",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L141"
-    },
-    {
       "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
       "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
@@ -3690,7 +3808,7 @@
       "label": "Decisiones tomadas",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "decisiones tomadas",
@@ -3702,7 +3820,7 @@
       "label": "Acciones realizadas",
       "_origin": "ast",
       "community": 14,
-      "community_name": "\u00daltimo paso completado",
+      "community_name": "doubles.ts",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "acciones realizadas",
@@ -3731,7 +3849,7 @@
       "node_kind": "heading",
       "norm_label": "bloqueos",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L65"
+      "source_location": "L54"
     },
     {
       "id": "docs_estado_comandos_para_verificar",
@@ -3743,7 +3861,7 @@
       "node_kind": "heading",
       "norm_label": "comandos para verificar",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L74"
+      "source_location": "L63"
     },
     {
       "id": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
@@ -3779,7 +3897,7 @@
       "node_kind": "heading",
       "norm_label": "linea base verificada (2026-10-06)",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L57"
+      "source_location": "L46"
     },
     {
       "id": "docs_estado_pendientes_detectados_fuera_de_alcance_de_la_tarea_actual",
@@ -3791,7 +3909,7 @@
       "node_kind": "heading",
       "norm_label": "pendientes detectados (fuera de alcance de la tarea actual)",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L69"
+      "source_location": "L58"
     },
     {
       "id": "docs_estado_siguiente_paso_exacto",
@@ -3803,7 +3921,7 @@
       "node_kind": "heading",
       "norm_label": "siguiente paso exacto",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L45"
+      "source_location": "L34"
     },
     {
       "id": "docs_estado_tarea_actual",
@@ -4229,17 +4347,6 @@
       "source_location": "L1"
     },
     {
-      "id": "vitest_config",
-      "label": "vitest.config.js",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "vitest.config.js",
-      "source_file": "vitest.config.js",
-      "source_location": "L1"
-    },
-    {
       "id": "ref_autoprefixer",
       "label": "autoprefixer",
       "_origin": "ast",
@@ -4249,17 +4356,6 @@
       "norm_label": "autoprefixer",
       "source_file": "package.json",
       "source_location": "L46"
-    },
-    {
-      "id": "ref_google_model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "@google/model-viewer",
-      "source_file": "package.json",
-      "source_location": "L32"
     },
     {
       "id": "ref_gsap",
@@ -4837,6 +4933,17 @@
       "norm_label": "calor.js",
       "source_file": "src/lib/calor.js",
       "source_location": "L1"
+    },
+    {
+      "id": "src_lib_calor_calor",
+      "label": "calor",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "Escena.jsx",
+      "file_type": "code",
+      "norm_label": "calor",
+      "source_file": "src/lib/calor.js",
+      "source_location": "L18"
     },
     {
       "id": "src_lib_calor_rampa",
@@ -6019,8 +6126,8 @@
       "id": "ref_path",
       "label": "ref_path",
       "_origin": "semantic",
-      "community": 2,
-      "community_name": "package.json",
+      "community": 1,
+      "community_name": "restaurant.ts",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_path",
@@ -7202,6 +7309,18 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/infrastructure/ar/SceneViewerLauncher.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository_getbyslug",
+      "target": "src_domain_restaurant_restaurant",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
       "source_location": "L9",
       "weight": 1.0
     },
@@ -8683,6 +8802,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_application_ports_restaurantrepository_restaurantrepository",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_domain_restaurant_restaurant",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_domain_restaurant_restaurant_slug_regex",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_domain_restaurant_restaurantschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_calor",
       "target": "src_lib_gsap_scrolltrigger",
       "relation": "imports",
@@ -9351,6 +9518,18 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/unit/infrastructure/browser/BrowserEnvironmentDetector.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_infrastructure_content_staticjsonrestaurantrepository_test",
+      "target": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts",
       "source_location": "L2",
       "weight": 1.0
     },
@@ -10797,6 +10976,31 @@
       "weight": 1.0
     },
     {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_application_ports_restaurantrepository",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L1",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_domain_restaurant",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_calor",
       "target": "src_lib_gsap",
       "relation": "imports_from",
@@ -11510,6 +11714,30 @@
       "weight": 1.0
     },
     {
+      "source": "tests_unit_infrastructure_content_staticjsonrestaurantrepository_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_infrastructure_content_staticjsonrestaurantrepository_test",
+      "target": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
       "source": "vite_config",
       "target": "ref_vite",
       "relation": "imports_from",
@@ -11819,6 +12047,18 @@
       "context": "type",
       "source_file": "src/infrastructure/browser/BrowserEnvironmentDetector.ts",
       "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "target": "src_application_ports_restaurantrepository_restaurantrepository",
+      "relation": "implements",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "type",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -12725,7 +12965,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L45",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -12736,7 +12976,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L57",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -12747,7 +12987,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L65",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -12758,7 +12998,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L69",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
+      "target": "docs_estado_comandos_para_verificar",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -12770,17 +13021,6 @@
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
       "source_location": "L7",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
-      "target": "docs_estado_comandos_para_verificar",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -13759,6 +13999,50 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_06_p105_static_repo",
+      "target": "docs_sesiones_2026_10_06_p105_static_repo_bit\u00e1cora_de_sesi\u00f3n_p_105_repositorio_est\u00e1tico",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_06_p105_static_repo_bit\u00e1cora_de_sesi\u00f3n_p_105_repositorio_est\u00e1tico",
+      "target": "docs_sesiones_2026_10_06_p105_static_repo_acciones_realizadas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_06_p105_static_repo_bit\u00e1cora_de_sesi\u00f3n_p_105_repositorio_est\u00e1tico",
+      "target": "docs_sesiones_2026_10_06_p105_static_repo_siguiente_tarea",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_06_p105_static_repo_bit\u00e1cora_de_sesi\u00f3n_p_105_repositorio_est\u00e1tico",
+      "target": "docs_sesiones_2026_10_06_p105_static_repo_objetivos",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -15369,6 +15653,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_arassets",
       "target": "src_lib_arassets_published_assets",
       "relation": "contains",
@@ -16062,6 +16357,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "target": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository_getbyslug",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "tests_unit_application_doubles_inmemoryrestaurantrepository",
       "target": "tests_unit_application_doubles_inmemoryrestaurantrepository_constructor",
       "relation": "method",
@@ -16219,18 +16525,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_ports_analyticstracker_analyticstracker",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "AnalyticsTracker",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
       "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
       "target": "src_application_ports_analyticstracker_analyticstracker",
       "relation": "references",
@@ -16275,7 +16569,7 @@
       "confidence_score": 0.95,
       "context": "ArAsset",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16335,7 +16629,7 @@
       "confidence_score": 0.95,
       "context": "ArLauncher",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L21",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -16399,18 +16693,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_ports_arlauncher_arlauncherresult",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "ArLauncherResult",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
       "source": "claude_0_2_reglas_espec\u00edficas_de_este_repo",
       "target": "src_infrastructure_browser_browserenvironmentdetector_browserenvironmentdetector",
       "relation": "references",
@@ -16431,7 +16713,7 @@
       "confidence_score": 0.95,
       "context": "BrowserEnvironmentDetector",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L20",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -16467,7 +16749,7 @@
       "confidence_score": 0.95,
       "context": "Category",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16503,7 +16785,7 @@
       "confidence_score": 0.95,
       "context": "DeviceCapabilities",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16539,7 +16821,7 @@
       "confidence_score": 0.95,
       "context": "Dish",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16564,30 +16846,6 @@
       "context": "Dish",
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
       "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_use_cases_buildmenuview_dishviewmodel",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "DishViewModel",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L31",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_ports_environmentdetector_environmentdetector",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "EnvironmentDetector",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -16639,78 +16897,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "tests_unit_application_doubles_inmemoryrestaurantrepository",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "InMemoryRestaurantRepository",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "tests_unit_application_doubles_inmemorysoldoutstore",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "InMemorySoldOutStore",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_use_cases_buildmenuview_menuviewmodel",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "MenuViewModel",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L31",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "tests_unit_application_doubles_mockanalyticstracker",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "MockAnalyticsTracker",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "tests_unit_application_doubles_mockarlauncher",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "MockArLauncher",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "tests_unit_application_doubles_mockenvironmentdetector",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "MockEnvironmentDetector",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
       "source": "claude_0_2_reglas_espec\u00edficas_de_este_repo",
       "target": "src_infrastructure_ar_modelviewerfallbacklauncher_modelviewerfallbacklauncher",
       "relation": "references",
@@ -16731,7 +16917,7 @@
       "confidence_score": 0.95,
       "context": "ModelViewerFallbackLauncher",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L19",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -16767,7 +16953,7 @@
       "confidence_score": 0.95,
       "context": "Price",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16815,7 +17001,7 @@
       "confidence_score": 0.95,
       "context": "QuickLookLauncher",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L19",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -16851,7 +17037,7 @@
       "confidence_score": 0.95,
       "context": "Restaurant",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -16876,18 +17062,6 @@
       "context": "Restaurant",
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
       "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_ports_restaurantrepository_restaurantrepository",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "RestaurantRepository",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -16927,6 +17101,18 @@
       "weight": 1.0
     },
     {
+      "source": "docs_sesiones_2026_10_06_p105_static_repo_acciones_realizadas",
+      "target": "src_application_ports_restaurantrepository_restaurantrepository",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "RestaurantRepository",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
       "source": "claude_0_2_reglas_espec\u00edficas_de_este_repo",
       "target": "src_infrastructure_ar_sceneviewerlauncher_sceneviewerlauncher",
       "relation": "references",
@@ -16947,7 +17133,7 @@
       "confidence_score": 0.95,
       "context": "SceneViewerLauncher",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L19",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -16975,18 +17161,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_ports_soldoutstore_soldoutstore",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "SoldOutStore",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
       "source": "docs_plan_implementacion_3_3_principios_solid_aplicados_concreto_no_te\u00f3rico",
       "target": "src_application_ports_soldoutstore_soldoutstore",
       "relation": "references",
@@ -17024,6 +17198,30 @@
     },
     {
       "source": "docs_estado_\u00faltimo_paso_completado",
+      "target": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "StaticJsonRestaurantRepository",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_06_p105_static_repo_acciones_realizadas",
+      "target": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "StaticJsonRestaurantRepository",
+      "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_estado_\u00faltimo_paso_completado",
       "target": "src_domain_theme_theme",
       "relation": "references",
       "_origin": "ast",
@@ -17031,7 +17229,7 @@
       "confidence_score": 0.95,
       "context": "Theme",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -17059,18 +17257,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_use_cases_buildmenuview_buildmenuview",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "buildMenuView",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L31",
-      "weight": 1.0
-    },
-    {
       "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
       "target": "src_application_use_cases_buildmenuview_buildmenuview",
       "relation": "references",
@@ -17092,18 +17278,6 @@
       "context": "buildMenuView",
       "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
       "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_use_cases_buildreservationlink_buildreservationlink",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "buildReservationLink",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -17227,18 +17401,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_use_cases_getrestaurant_getrestaurant",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "getRestaurant",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L30",
-      "weight": 1.0
-    },
-    {
       "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
       "target": "src_application_use_cases_getrestaurant_getrestaurant",
       "relation": "references",
@@ -17263,18 +17425,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_domain_restaurant_isrestaurantexpired",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "isRestaurantExpired",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L30",
-      "weight": 1.0
-    },
-    {
       "source": "docs_product_capabilities_and_constraints",
       "target": "src_lib_launchar_launchar",
       "relation": "references",
@@ -17284,18 +17434,6 @@
       "context": "launchAr",
       "source_file": "docs/PRODUCT.md",
       "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_estado_\u00faltimo_paso_completado",
-      "target": "src_application_use_cases_launchdishar_launchdishar",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "launchDishAr",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -17354,5 +17492,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8a8b584bd0c59c86d4d8216a1b87060487ad50de"
+  "built_at_commit": "a65deadd5582603e7630c8ea44b3beb247d4f203"
 }
