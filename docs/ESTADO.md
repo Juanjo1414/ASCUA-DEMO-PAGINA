@@ -10,10 +10,16 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-202 — Validador de contenido. **Estado:** completada ✅.
-Siguiente tarea: **P-203** — Build de contenido y HTML por restaurante.
+P-203 — Build de contenido y HTML por restaurante. **Estado:** completada ✅.
+Siguiente tarea: **P-204** — Pruebas E2E de aislamiento.
 
 ## Último paso completado
+
+- **P-203 (Build de contenido y HTML por restaurante):**
+  - Desarrollado `scripts/build-content.ts` para inyectar metadata y pre-renderizar `index.html` por cada cliente.
+  - Generación de `dist/data/<slug>/` para aislar los endpoints de JSON y assets estáticos.
+  - Implementación de un `_redirects` compatible con Cloudflare Pages.
+  - Enlazado con el script principal `npm run build`.
 
 - **P-202 (Validador de contenido):**
   - Implementado `scripts/validate-content.ts` utilizando Node.js `fs` nativo y `zod`.
@@ -51,11 +57,10 @@ Siguiente tarea: **P-203** — Build de contenido y HTML por restaurante.
 
 ## Siguiente paso exacto
 
-1. Iniciar la tarea **P-203** — Build de contenido y HTML por restaurante:
-   - Crear `scripts/build-content.ts`.
-   - Copiar el contenido de `content/restaurants/` a `dist/data/`.
-   - Generar `dist/r/<slug>/index.html` estático con metaetiquetas (SEO) únicas por cliente.
-   - Generar el archivo `_redirects` en la raíz de Cloudflare para rutear SPA (`/* /index.html 200`).
+1. Iniciar la tarea **P-204** — Pruebas E2E de aislamiento:
+   - Configurar Playwright.
+   - Crear tests para asegurar que `/r/A/` no haga fetch a `/data/B/`.
+   - Validar escenarios 404 (slug inexistente) y "demo expirada".
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
