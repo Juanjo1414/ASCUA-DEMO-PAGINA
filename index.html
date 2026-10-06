@@ -2,44 +2,28 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- viewport-fit=cover deja que la página use toda la pantalla del celular;
+         el espacio de la zona segura (notch, barra de inicio) se maneja con
+         env(safe-area-inset-*) en los estilos. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <!-- Descripción genérica: el build inyecta la de cada restaurante en
+         dist/r/<slug>/index.html. -->
     <meta
       name="description"
-      content="Ascua — cocina de autor a la brasa en Medellín. Cocina abierta, menú de temporada y platos que se pueden ver en 3D y en realidad aumentada desde el navegador."
+      content="Menú en 3D y realidad aumentada para restaurantes, directo desde el navegador y sin instalar nada."
     />
-    <meta name="theme-color" content="#0F0C0B" />
+    <meta name="theme-color" content="#f4f3e7" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Las tipografías se alojan en el sitio (scripts/fuentes.mjs): la
-         política de seguridad de vercel.json no deja cargar fuentes de afuera. -->
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="/fonts/bodoni-moda-normal-latin.woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      as="font"
-      type="font/woff2"
-      href="/fonts/archivo-normal-latin.woff2"
-      crossorigin
-    />
+         política de seguridad no deja cargar fuentes de afuera. -->
 
-    <title>Ascua — cocina de autor a la brasa</title>
+    <title>Ascua — menú 3D y AR para restaurantes</title>
   </head>
   <body>
-    <!--
-      impeccable:direction
-      THESIS: Ascua es una brasa; la página es su vida de principio a fin, y el scroll es la temperatura: rescoldo, se aviva, la llama, al pase, brasa viva, rojo blanco en la reserva y la sobremesa que se enfría.
-      OWN-WORLD: fuego de noche dibujado en código — carbón agrietado cuyas grietas laten, llamas y chispas en un canvas fijo, Bodoni de filo fino en mayúsculas espaciadas contra rótulos anchos; los únicos rasters son las fotos cenitales de los platos, en círculo.
-      STORY: una línea fina de fuego se enciende como un horizonte bajo ASCUA (20 °C); al bajar desciende hasta el carbón y prende la fogata (420 °C) → el carbón prende y el manifiesto se enciende palabra a palabra (700) → lo que arde: las maderas y el carbón como etiquetas kraft que caen sobre la mesa (950) → la carta y la RA sobre tu mesa → las voces como comandas colgadas del riel → la reserva al rojo blanco (1100) → la sobremesa se enfría (180).
-      FIRST VIEWPORT: negro y mucho aire; A S C U A en Bodoni fina, quieto, y debajo una sola línea de fuego vivo de lado a lado, como un horizonte; la temperatura (20 °C), la frase y la reserva al alcance del pulgar.
-      FORM: la temperatura es el sistema: cada sección declara su tramo (data-calor) y la escena y los colores la siguen; bloques rectos sin píldora; el botón de RA dice lo que hace (Ponerlo en mi mesa); sin logo, sólo la palabra ASCUA.
-      SEED: 19600752 · dirección fijada por el titular (la brasa de principio a fin) · el avance se lee en el fuego mismo, sin indicador
-      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
-    -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
