@@ -10,10 +10,10 @@ export default function LoQueArde() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[24px] lg:gap-[80px]">
           {/* Left Column: Text Stack */}
           <div className="flex flex-col justify-center">
-            <h2 className="font-sweetsans text-display leading-display text-forest-shadow mb-[24px]">
+            <h2 className="font-display text-display leading-display text-forest-shadow mb-[24px]">
               {t.fuego.title}
             </h2>
-            <p className="font-sweetsanstext text-body text-forest-shadow mb-[40px]">
+            <p className="font-body text-body text-forest-shadow mb-[40px]">
               {t.fuego.body}
             </p>
 
@@ -23,7 +23,7 @@ export default function LoQueArde() {
                   key={m.nombre}
                   className="border-t border-deep-forest/20 pt-6"
                 >
-                  <h3 className="font-sweetsanstext font-bold text-subheading text-forest-shadow">
+                  <h3 className="font-body font-bold text-subheading text-forest-shadow">
                     {m.nombre}
                   </h3>
                   <div className="mt-2 grid grid-cols-2 gap-4">
@@ -31,7 +31,7 @@ export default function LoQueArde() {
                       <p className="eyebrow !mb-1 text-deep-forest">
                         {rotulos.origen}
                       </p>
-                      <p className="font-sweetsanstext text-body-sm text-forest-shadow">
+                      <p className="font-body text-body-sm text-forest-shadow">
                         {m.origen}
                       </p>
                     </div>
@@ -39,12 +39,12 @@ export default function LoQueArde() {
                       <p className="eyebrow !mb-1 text-deep-forest">
                         {rotulos.temperatura}
                       </p>
-                      <p className="font-sweetsanstext text-body-sm text-forest-shadow">
+                      <p className="font-body text-body-sm text-forest-shadow">
                         {m.t} °C
                       </p>
                     </div>
                   </div>
-                  <p className="mt-3 font-sweetsanstext text-body text-forest-shadow italic">
+                  <p className="mt-3 font-body text-body text-forest-shadow italic">
                     {m.uso}
                   </p>
                 </div>

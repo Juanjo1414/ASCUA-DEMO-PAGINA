@@ -22,6 +22,8 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
       exclude: ['node_modules/', 'dist/', 'tests/', '**/*.config.*'],
+      include: ['src/domain/**', 'src/application/**', 'src/infrastructure/**'],
+      thresholds: { lines: 90, branches: 85, functions: 90, statements: 90 },
     },
   },
 })

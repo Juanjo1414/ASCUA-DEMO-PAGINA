@@ -1,5 +1,6 @@
 # sweetgreen — Style Reference
 
+> **Nota:** Referencia de estilo inspirada en un tercero. Del diseño se toman principios y proporciones; no se copian marcas, textos ni tipografías propietarias.
 > farm-stand chalkboard at golden hour
 
 **Theme:** light

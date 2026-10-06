@@ -6,79 +6,30 @@
 
 ## Fase actual
 
-Fase P-4 — Diseño (en progreso).
+Fase C — Correcciones (revisión 2).
 
 ## Tarea actual
 
-Se completó P-403 (Rediseño de componentes).
+Implementando el Lote 1 de correcciones (C-01 a C-09).
 
 ## Último paso completado
 
-- **P-403 (Rediseño de componentes):**
-  - Refactorizados todos los componentes a `.tsx` (`Reserva`, `Contacto`, `Pie`, `LoadingScreen`, `FranjaReserva`, `ArViewer`, `ArDishModal`, etc.).
-  - Aplicado el sistema de diseño Sweetgreen (fondos de color crema, texto forest-shadow, botones corporativos).
-  - Corregidos errores de TypeScript en `useLanguage` y componentes React.
-  - Pasaron exitosamente todas las pruebas (`npm run verify`).
+- **C-06 (Marca de terceros fuera y tipografías propias):** Eliminada la marca de terceros y configuradas las fuentes DM Sans y Fraunces localmente.
+- **C-05 (index.html neutro y móvil):** `<title>`, descripción genérica, `theme-color` y `viewport-fit=cover` configurados en `index.html`.
+- **C-04 (Sin `any`):** Reemplazados tipos genéricos por los del dominio. Regla `no-explicit-any` en `.oxlintrc.json`.
+- **C-03 (Avisos de lint en cero):** Limpieza de avisos de `eslint`. Script lint modificado a `oxlint --deny-warnings`.
+- **C-02 (Borrar código muerto):** Eliminados scripts no usados y archivo de pruebas.
+- **C-01 (Archivos generados fuera del repositorio):** Añadidos `playwright-report` y `test-results` a `.gitignore`.
 
-- **P-402 (Tema por restaurante):**
-  - Implementada la validación de contraste AA en `scripts/validate-content.ts` (asegurando un ratio mínimo de 4.5:1 entre el color primario y el texto oscuro #0e150e).
-  - Actualizado el color de `_plantilla/restaurant.json` a `#e6ff55` para que pase la validación.
-- **P-401 (Tokens desde DESIGN.md):**
-  - Creado `src/presentation/theme/tokens.css` con todas las variables CSS de `docs/DESIGN.md`.
-  - Actualizado `tailwind.config.js` para usar estos tokens (manteniendo temporalmente compatibilidad hacia atrás).
-  - Verificado que no hay colores hexadecimales "quemados" en los componentes.
+### Completadas con observaciones de fases previas:
 
-- **P-308 (Ayuda contextual y estados):**
-  - Implementado `FloatingHelp.jsx` en `App.jsx`.
-  - Simplificados estados de error en `App.jsx` con botón de recarga.
-- **P-307 (Medida real):**
-  - Ajuste de escala `scale="1 1 1"` en `ArViewer.jsx`.
-- **P-306 (Guía antes de abrir la cámara):**
-  - Creado componente `ArGuideModal.jsx` y lógica en `Menu.jsx` usando `localStorage` ('ascua:ar-guide-seen').
-- **P-303, P-304, P-305 (Feedback, Analítica, Legal):**
-  - Enlace de Tally con slug en el pie (`Pie.jsx`).
-  - Puerto `AnalyticsTracker` y clases base implementadas.
-  - Textos legales y disclaimer añadidos a `Pie.jsx` y `translations.js`.
-- **P-301, P-302 (Reservas y Modo Presentación):**
-  - Componente de demo panel integrado, agotados integrados a store global, vistas adaptadas.
-
-- **P-202 (Validador de contenido):**
-  - Implementado `scripts/validate-content.ts` utilizando Node.js `fs` nativo y `zod`.
-  - Integrado al pipeline de validación (`npm run content:validate`).
-  - Verificado tamaños de assets, integridad de hashes y correctitud de slugs.
-
-- **P-201 (Esquema de contenido v1):**
-  - Creada la carpeta `content/restaurants/_plantilla/` con el archivo `restaurant.json` base.
-  - Verificado el esquema Zod `restaurantSchema` existente en `domain/restaurant.ts`.
-  - Creado el documento `docs/runbooks/nuevo-restaurante.md` con los pasos operativos para añadir un restaurante.
-
-- **P-108 (Reglas de arquitectura en CI):**
-  - Instalado `dependency-cruiser`.
-  - Configurado `.dependency-cruiser.cjs` con las reglas de dependencia entre capas.
-  - Añadido el script `arch:check` e integrado en `npm run verify`.
-
-- **P-107 (Store reactivo global):**
-  - Instalado `jotai` como gestor de estado.
-  - Creado `src/app/store.ts` con el átomo `restaurantAtom` tipado estrictamente con la interfaz `Restaurant`.
-- **P-106 (Composition root y router):**
-  - Implementado `src/app/compositionRoot.ts` inyectando instancias concretas (repositorio estático, adaptadores AR, detector de entorno).
-  - Configurado `DependenciesContext.tsx` para inyectar los puertos en React y asegurar Clean Architecture en los componentes.
-  - Creado `src/app/router.tsx` con React Router para las rutas principales (`/`, `/r/:slug`, `/r/:slug/qr`, etc.).
-  - Refactorizado `main.tsx` para inicializar el router y los proveedores del contexto global.
-- **P-105 (Repositorio de contenido estático):**
-  - Implementado `StaticJsonRestaurantRepository` y sus validaciones (Zod, regex) previas al fetch de datos.
-- **P-104 (Adaptadores AR):**
-  - Implementados los lanzadores nativos para iOS (`QuickLookLauncher`), Android (`SceneViewerLauncher`) y Web (`ModelViewerFallbackLauncher`).
-- **P-103 (Puertos y Casos de Uso - Capa `application`):**
-  - Creados los puertos y los casos de uso (`getRestaurant`, `buildMenuView`, `launchDishAr`, etc.).
-- **P-102 (Capa `domain` pura y esquemas Zod):**
-  - Entidades de dominio base y esquemas.
-- **P-101 (TypeScript + Vitest + Pipeline de calidad):**
-  - Configuración estricta de entorno, lint, formateo, pre-push.
+- **P-403 (Rediseño de componentes):** rediseño hecho; falta que los datos del restaurante gobiernen la página, ver C-12 a C-19.
+- **P-307 (Medida real):** solo escala fija; la medida real por plato depende de A-204 en el repo AR.
+- **P-107 (Store reactivo global):** store de jotai implementado y aprobado; falta la capa `presentation/`.
 
 ## Siguiente paso exacto
 
-1. Revisión de Juan de los cambios de P-403 y push de las tareas.
+1. **Siguiente después de las correcciones:** P-205 (QR imprimible), P-601 (demo genérica con modelos 3D aprobados), P-701 a P-705.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

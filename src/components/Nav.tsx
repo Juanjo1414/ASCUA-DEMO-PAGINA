@@ -36,7 +36,7 @@ export default function Nav() {
               <li key={enlace.href}>
                 <a
                   href={enlace.href}
-                  className="font-sweetsanstext text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors"
+                  className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors"
                 >
                   {enlace.label}
                 </a>
@@ -59,7 +59,7 @@ export default function Nav() {
           <a
             href="#top"
             aria-label="Ascua, inicio"
-            className="font-sweetsanstext text-[24px] sm:text-[28px] font-bold text-deep-forest tracking-tight"
+            className="font-body text-[24px] sm:text-[28px] font-bold text-deep-forest tracking-tight"
           >
             ascua
           </a>
@@ -71,7 +71,7 @@ export default function Nav() {
             type="button"
             onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
             aria-label="Switch language"
-            className="font-sweetsanstext text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors hidden sm:block"
+            className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors hidden sm:block"
           >
             {lang === 'es' ? 'EN' : 'ES'}
           </button>
@@ -97,7 +97,7 @@ export default function Nav() {
                 <a
                   href={enlace.href}
                   onClick={() => setAbierto(false)}
-                  className="flex items-center justify-between py-6 font-sweetsans text-[40px] leading-none text-forest-shadow"
+                  className="flex items-center justify-between py-6 font-display text-[40px] leading-none text-forest-shadow"
                 >
                   {enlace.label}
                   <ArrowRight size={32} />
@@ -112,7 +112,7 @@ export default function Nav() {
                 setLang(lang === 'es' ? 'en' : 'es')
                 setAbierto(false)
               }}
-              className="font-sweetsanstext text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow"
+              className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow"
             >
               {lang === 'es' ? 'SWITCH TO ENGLISH' : 'CAMBIAR A ESPAÑOL'}
             </button>

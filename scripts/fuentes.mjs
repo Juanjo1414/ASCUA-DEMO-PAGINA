@@ -1,5 +1,5 @@
 /*
-  Descarga las tipografías (Bodoni Moda y Archivo, variables) y las deja
+  Descarga las tipografías (DM Sans y Fraunces, variables) y las deja
   alojadas en el propio sitio: public/fonts/*.woff2 y src/fuentes.css.
 
   Por qué: la política de seguridad de Vercel (vercel.json) sólo permite
@@ -21,7 +21,7 @@ const destino = join(raiz, 'public/fonts')
 mkdirSync(destino, { recursive: true })
 
 const URL_CSS =
-  'https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap'
+  'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap'
 // Un navegador moderno, para que Google devuelva woff2 variables.
 const NAVEGADOR =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
@@ -55,5 +55,5 @@ for (const bloque of bloques) {
 
 writeFileSync(
   join(raiz, 'src/fuentes.css'),
-  `/* Generado por scripts/fuentes.mjs: Bodoni Moda y Archivo, alojadas en el sitio. */\n\n${salida.join('\n\n')}\n`
+  `/* Generado por scripts/fuentes.mjs: DM Sans y Fraunces, alojadas en el sitio. */\n\n${salida.join('\n\n')}\n`
 )

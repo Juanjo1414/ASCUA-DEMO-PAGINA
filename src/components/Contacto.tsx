@@ -63,7 +63,7 @@ export default function Contacto() {
   }
 
   const campo = (field: string) =>
-    `w-full border-0 border-b bg-transparent px-0 py-3 font-sweetsanstext text-[18px] text-forest-shadow placeholder:text-forest-shadow/50 transition-colors focus:outline-none focus:ring-0 ${
+    `w-full border-0 border-b bg-transparent px-0 py-3 font-body text-[18px] text-forest-shadow placeholder:text-forest-shadow/50 transition-colors focus:outline-none focus:ring-0 ${
       errors[field]
         ? 'border-red-500'
         : 'border-deep-forest/20 focus:border-deep-forest'
@@ -78,10 +78,10 @@ export default function Contacto() {
     <section id="contacto" className="bg-cream-canvas py-24 md:py-36">
       <div className="mx-auto grid max-w-page gap-16 px-5 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
         <div className="lg:col-span-5">
-          <h2 className="font-sweetsans text-display-sm md:text-display text-forest-shadow mb-6">
+          <h2 className="font-display text-display-sm md:text-display text-forest-shadow mb-6">
             {t.contact.title}
           </h2>
-          <p className="max-w-[40ch] font-sweetsanstext text-body text-forest-shadow/80 mb-12">
+          <p className="max-w-[40ch] font-body text-body text-forest-shadow/80 mb-12">
             {t.contact.body}
           </p>
 
@@ -90,10 +90,10 @@ export default function Contacto() {
               <dt className="eyebrow text-deep-forest mb-2">
                 {t.contact.addressTitle}
               </dt>
-              <dd className="font-sweetsanstext text-[18px] text-forest-shadow">
+              <dd className="font-body text-[18px] text-forest-shadow">
                 Calle 10 #45-20, local 3
               </dd>
-              <dd className="font-sweetsanstext text-body-sm text-forest-shadow/80">
+              <dd className="font-body text-body-sm text-forest-shadow/80">
                 Medellín
               </dd>
             </div>
@@ -101,7 +101,7 @@ export default function Contacto() {
               <dt className="eyebrow text-deep-forest mb-2">
                 {t.contact.hoursTitle}
               </dt>
-              <dd className="font-sweetsanstext text-[18px] text-forest-shadow">
+              <dd className="font-body text-[18px] text-forest-shadow">
                 {t.contact.hours}
               </dd>
             </div>

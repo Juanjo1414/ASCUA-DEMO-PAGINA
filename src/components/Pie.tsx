@@ -17,12 +17,12 @@ export default function Pie() {
       <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <p className="max-w-[28ch] font-sweetsans text-display-sm">
+            <p className="max-w-[28ch] font-display text-display-sm">
               {t.footer.tagline}
             </p>
           </div>
 
-          <div className="md:col-span-4 font-sweetsanstext text-body-sm opacity-80">
+          <div className="md:col-span-4 font-body text-body-sm opacity-80">
             <p>Calle 10 #45-20, local 3, Medellín</p>
             <p className="mt-1">{t.contact.hours}</p>
           </div>
@@ -32,7 +32,7 @@ export default function Pie() {
               href={feedbackLink}
               target="_blank"
               rel="noreferrer"
-              className="font-sweetsanstext font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors underline underline-offset-4"
+              className="font-body font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors underline underline-offset-4"
             >
               {t.footer.feedback}
             </a>
@@ -40,13 +40,13 @@ export default function Pie() {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="font-sweetsanstext font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors"
+              className="font-body font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors"
             >
               Instagram
             </a>
             <a
               href="#top"
-              className="font-sweetsanstext font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors flex items-center gap-2 mt-2"
+              className="font-body font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors flex items-center gap-2 mt-2"
             >
               {t.backToTop}
               <ArrowUp size={14} strokeWidth={2} />
@@ -54,7 +54,7 @@ export default function Pie() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 md:flex-row font-sweetsanstext text-body-sm opacity-60">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 md:flex-row font-body text-body-sm opacity-60">
           <p>
             © {anio} {restaurant?.nombre || 'Ascua'}. {t.footer.rights}{' '}
             {t.footer.privacy}

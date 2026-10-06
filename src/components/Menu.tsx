@@ -103,7 +103,7 @@ export default function Menu() {
       <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
         <div data-sube className="max-w-2xl mb-20">
           <p className="eyebrow">{t.menuSection.title}</p>
-          <h2 className="font-sweetsans text-display leading-display text-forest-shadow mb-6">
+          <h2 className="font-display text-display leading-display text-forest-shadow mb-6">
             Our Menu
           </h2>
           <p className="text-body text-forest-shadow max-w-[48ch]">
@@ -114,7 +114,7 @@ export default function Menu() {
         {/* Destacados (Con AR) */}
         {destacados.length > 0 && (
           <div className="mb-24">
-            <h3 className="font-sweetsans text-heading text-forest-shadow mb-12">
+            <h3 className="font-display text-heading text-forest-shadow mb-12">
               {t.menuSection.destacado}
             </h3>
 
@@ -142,10 +142,10 @@ export default function Menu() {
                     </div>
 
                     <div className="pt-6 flex flex-col flex-grow">
-                      <h4 className="font-sweetsanstext font-bold text-subheading text-forest-shadow tracking-subheading">
+                      <h4 className="font-body font-bold text-subheading text-forest-shadow tracking-subheading">
                         {plato.nombre[lang] || plato.nombre.es}
                       </h4>
-                      <p className="mt-2 font-sweetsanstext text-body text-forest-shadow leading-body flex-grow">
+                      <p className="mt-2 font-body text-body text-forest-shadow leading-body flex-grow">
                         {plato.descripcion
                           ? plato.descripcion[lang] || plato.descripcion.es
                           : null}
@@ -204,10 +204,10 @@ export default function Menu() {
                   />
                 </div>
                 <div className="pt-6 flex flex-col flex-grow">
-                  <h3 className="font-sweetsanstext font-bold text-[20px] text-forest-shadow leading-tight">
+                  <h3 className="font-body font-bold text-[20px] text-forest-shadow leading-tight">
                     {plato.nombre[lang] || plato.nombre.es}
                   </h3>
-                  <p className="mt-2 font-sweetsanstext text-[16px] text-forest-shadow leading-body">
+                  <p className="mt-2 font-body text-[16px] text-forest-shadow leading-body">
                     {plato.descripcion
                       ? plato.descripcion[lang] || plato.descripcion.es
                       : null}

@@ -4,14 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sweetsans: ['var(--font-sweetsans)'],
-        grenette: ['var(--font-grenette)'],
-        sweetsanstext: ['var(--font-sweetsanstext)'],
-        'sweetsanstext-regular': ['var(--font-sweetsanstext-regular)'],
-
-        // TODO: Eliminar después de P-403
-        display: ['"Bodoni Moda"', 'Didot', 'Georgia', 'serif'],
-        sans: ['Archivo', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)'],
+        'serif-accent': ['var(--font-serif-accent)'],
+        body: ['var(--font-body)'],
+        'body-regular': ['var(--font-body-regular)'],
       },
       colors: {
         'deep-forest': 'var(--color-deep-forest)',

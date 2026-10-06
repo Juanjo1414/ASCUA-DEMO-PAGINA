@@ -6,7 +6,7 @@ export default function Voces() {
   return (
     <section id="voces" className="bg-cream-canvas py-24 md:py-36">
       <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
-        <h2 className="font-sweetsans text-display-sm md:text-display text-forest-shadow mb-16 text-center">
+        <h2 className="font-display text-display-sm md:text-display text-forest-shadow mb-16 text-center">
           {t.testimonials.heading}
         </h2>
 
@@ -17,12 +17,12 @@ export default function Voces() {
               className="flex flex-col items-center text-center"
             >
               <blockquote className="flex-1">
-                <p className="font-sweetsanstext text-body text-forest-shadow italic mb-6">
+                <p className="font-body text-body text-forest-shadow italic mb-6">
                   "{item.quote}"
                 </p>
               </blockquote>
               <footer>
-                <cite className="font-sweetsanstext font-bold uppercase tracking-[0.05em] text-[14px] text-deep-forest not-italic block">
+                <cite className="font-body font-bold uppercase tracking-[0.05em] text-[14px] text-deep-forest not-italic block">
                   {item.name}
                 </cite>
                 <p className="mt-1 text-sm text-forest-shadow/70">

@@ -34,7 +34,7 @@ export default function App() {
   if (error) {
     return (
       <div className="flex h-screen w-full flex-col items-center justify-center bg-cream-canvas px-6 text-center text-forest-shadow">
-        <h1 className="font-sweetsans text-3xl font-medium text-deep-forest">
+        <h1 className="font-display text-3xl font-medium text-deep-forest">
           Algo salió mal
         </h1>
         <p className="mt-4 max-w-[40ch] text-forest-shadow/80">{error}</p>

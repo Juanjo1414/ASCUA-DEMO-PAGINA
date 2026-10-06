@@ -35,106 +35,16 @@
     "ast_hash": "37a97b4ab4e8b4eff6b4d7479d837267",
     "semantic_hash": ""
   },
-  "src/App.jsx": {
-    "mtime": 1791316228.3901372,
-    "seen": 1791316567.3382964,
-    "ast_hash": "1d86245c7b4e82ac0ba0f337bce2cf05",
-    "semantic_hash": ""
-  },
-  "src/components/ArDishModal.jsx": {
-    "mtime": 1791308771.181181,
-    "seen": 1791309424.0430152,
-    "ast_hash": "e655844f9d3dd1088fd1c5c9b5f071c0",
-    "semantic_hash": ""
-  },
-  "src/components/ArViewer.jsx": {
-    "mtime": 1791316228.4457784,
-    "seen": 1791316567.3383205,
-    "ast_hash": "d358fac1f454cbfcd6119e62a3c9dbc5",
-    "semantic_hash": ""
-  },
-  "src/components/Contacto.jsx": {
-    "mtime": 1791315860.8770475,
-    "seen": 1791316567.3383214,
-    "ast_hash": "9680bbb6741668c4a7140d9eb38582f0",
-    "semantic_hash": ""
-  },
   "src/components/Escena.jsx": {
     "mtime": 1791308771.7530224,
     "seen": 1791309424.0430205,
     "ast_hash": "b7b434efbfbb754a9fec2f8a80de4b41",
     "semantic_hash": ""
   },
-  "src/components/FranjaReserva.jsx": {
-    "mtime": 1791308771.8159146,
-    "seen": 1791309424.0430226,
-    "ast_hash": "6bedd8528b950eef7343c05a03bdd15a",
-    "semantic_hash": ""
-  },
-  "src/components/HeroFuego.jsx": {
-    "mtime": 1791308771.910187,
-    "seen": 1791309424.0430245,
-    "ast_hash": "86f060b5e8c80f3b988fd5924ee48069",
-    "semantic_hash": ""
-  },
-  "src/components/LoQueArde.jsx": {
-    "mtime": 1791308772.0320058,
-    "seen": 1791309424.0430264,
-    "ast_hash": "9315495914a94914627f80e5d85fd140",
-    "semantic_hash": ""
-  },
-  "src/components/LoadingScreen.jsx": {
-    "mtime": 1791314540.5529358,
-    "seen": 1791316567.3383296,
-    "ast_hash": "e67eb0ae606c2e0ce49c1548b5fd486c",
-    "semantic_hash": ""
-  },
-  "src/components/Manifiesto.jsx": {
-    "mtime": 1791308772.0781157,
-    "seen": 1791309424.04303,
-    "ast_hash": "b192efeaf306921d72deec0ca777f9eb",
-    "semantic_hash": ""
-  },
-  "src/components/Menu.jsx": {
-    "mtime": 1791316228.5140486,
-    "seen": 1791316567.3383317,
-    "ast_hash": "18d5ccd4c5f8d8381bc00e19e608107a",
-    "semantic_hash": ""
-  },
-  "src/components/Nav.jsx": {
-    "mtime": 1791308772.189355,
-    "seen": 1791309424.0430334,
-    "ast_hash": "eefd0d4b5a76a4253cd9abe67deb4347",
-    "semantic_hash": ""
-  },
-  "src/components/Pie.jsx": {
-    "mtime": 1791316059.7649467,
-    "seen": 1791316567.3383336,
-    "ast_hash": "be5a3ac363df2aca1c3e2f61e4d48caa",
-    "semantic_hash": ""
-  },
-  "src/components/Reserva.jsx": {
-    "mtime": 1791308772.246887,
-    "seen": 1791309424.043037,
-    "ast_hash": "fd3c6ca890300784b6f1174a5cf82586",
-    "semantic_hash": ""
-  },
-  "src/components/Voces.jsx": {
-    "mtime": 1791308772.3013713,
-    "seen": 1791309424.0430386,
-    "ast_hash": "3853b5cff23d436d9cad8dfab9eda87b",
-    "semantic_hash": ""
-  },
   "src/hooks/useReveal.js": {
     "mtime": 1791308772.3906455,
     "seen": 1791309424.0430522,
     "ast_hash": "b3a5b8985c7d20d8f4768ff91912630d",
-    "semantic_hash": ""
-  },
-  "src/i18n/translations.js": {
-    "mtime": 1791316087.002284,
-    "seen": 1791316567.3383489,
-    "ast_hash": "374c5fd31fe2904aba13c5a1f9c55bc1",
     "semantic_hash": ""
   },
   "src/lib/arAssets.js": {
@@ -246,9 +156,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791316250.2796106,
-    "seen": 1791316567.3384078,
-    "ast_hash": "548cf5efe134387d3b55175c3f921a6d",
+    "mtime": 1791327799.5748925,
+    "seen": 1791327896.5250018,
+    "ast_hash": "647b4c482aca9188a2f95f5a49e56d20",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -281,24 +191,6 @@
     "ast_hash": "b10d10507903d6100b9d2d09985c3484",
     "semantic_hash": ""
   },
-  "src/i18n/LanguageContext.js": {
-    "mtime": 1791308772.4284286,
-    "seen": 1791309424.0430543,
-    "ast_hash": "64a24c0e5f6bbea6df096168e26a03fc",
-    "semantic_hash": ""
-  },
-  "src/i18n/LanguageProvider.jsx": {
-    "mtime": 1791308772.4716034,
-    "seen": 1791309424.0430558,
-    "ast_hash": "2593a4ce4cb1769622ecb9763806d52c",
-    "semantic_hash": ""
-  },
-  "src/i18n/useLanguage.js": {
-    "mtime": 1791308772.616902,
-    "seen": 1791309424.043059,
-    "ast_hash": "5b0ac4a24ccb3c4534c202a35dd95cc5",
-    "semantic_hash": ""
-  },
   "tests/setup.ts": {
     "mtime": 1791308773.6438994,
     "seen": 1791309424.043076,
@@ -324,9 +216,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1791308576.3076334,
-    "seen": 1791308660.340061,
-    "ast_hash": "75eb386f17caf77fd6fe3ce1d90968ee",
+    "mtime": 1791327806.751804,
+    "seen": 1791327896.524998,
+    "ast_hash": "142a2fc9a427aa2f183c6718a4be49ed",
     "semantic_hash": ""
   },
   "docs/PRODUCT.md": {
@@ -756,8 +648,8 @@
     "semantic_hash": ""
   },
   "src/app/DependenciesContext.tsx": {
-    "mtime": 1791312934.7523923,
-    "seen": 1791312942.0284953,
+    "mtime": 1791327014.1308167,
+    "seen": 1791327896.524773,
     "ast_hash": "6b07ce7548cae26dba5dca57f2e43a41",
     "semantic_hash": ""
   },
@@ -828,9 +720,9 @@
     "semantic_hash": ""
   },
   "scripts/validate-content.ts": {
-    "mtime": 1791326290.3003805,
-    "seen": 1791326419.46052,
-    "ast_hash": "e02256c23f27ffc1b5bed2959533b168",
+    "mtime": 1791326420.786591,
+    "seen": 1791327896.524764,
+    "ast_hash": "689bcd5429a1a7979678e2f77a3afd79",
     "semantic_hash": ""
   },
   "src/components/ArGuideModal.tsx": {
@@ -876,14 +768,14 @@
     "semantic_hash": ""
   },
   "test-results/.last-run.json": {
-    "mtime": 1791315137.8410146,
-    "seen": 1791316567.3383698,
+    "mtime": 1791327807.5074298,
+    "seen": 1791327896.5249214,
     "ast_hash": "abd263702df5ba47279e53ebba8c73a8",
     "semantic_hash": ""
   },
   "tests/e2e/isolation.spec.ts": {
-    "mtime": 1791315138.0591924,
-    "seen": 1791316567.3383708,
+    "mtime": 1791327011.7668154,
+    "seen": 1791327896.5249238,
     "ast_hash": "db34e32ba54c8a1669deb4eefe2ae996",
     "semantic_hash": ""
   },
@@ -924,9 +816,9 @@
     "semantic_hash": ""
   },
   "playwright-report/index.html": {
-    "mtime": 1791314950.080545,
-    "seen": 1791316567.3384285,
-    "ast_hash": "5e221874b1980693bc820310fb14215f",
+    "mtime": 1791326999.4605289,
+    "seen": 1791327896.5250564,
+    "ast_hash": "90826785d0ab6578c89b69d5efb45cf9",
     "semantic_hash": ""
   },
   "content/restaurants/_plantilla/assets/logo.svg": {
@@ -945,6 +837,144 @@
     "mtime": 1791314109.8017297,
     "seen": 1791316567.338442,
     "ast_hash": "252aef4ab38de25c056a08c879f17a72",
+    "semantic_hash": ""
+  },
+  "src/App.tsx": {
+    "mtime": 1791327806.747654,
+    "seen": 1791327896.5247688,
+    "ast_hash": "32bba98f59a05db9c0dfb80844385d1c",
+    "semantic_hash": ""
+  },
+  "src/components/ArDishModal.tsx": {
+    "mtime": 1791327806.8163025,
+    "seen": 1791327896.5248191,
+    "ast_hash": "03e5a76d6d65162d834e74fd848a0006",
+    "semantic_hash": ""
+  },
+  "src/components/ArViewer.tsx": {
+    "mtime": 1791327680.9566495,
+    "seen": 1791327896.5248246,
+    "ast_hash": "d67d9ea384f57a29f04769af434756fb",
+    "semantic_hash": ""
+  },
+  "src/components/Contacto.tsx": {
+    "mtime": 1791327806.9495158,
+    "seen": 1791327896.5248268,
+    "ast_hash": "4f560e9744ecf7b864d5fa0a94e3539f",
+    "semantic_hash": ""
+  },
+  "src/components/FranjaReserva.tsx": {
+    "mtime": 1791327806.983213,
+    "seen": 1791327896.5248365,
+    "ast_hash": "55f3fc2adeeace6dd9f6316c412285dd",
+    "semantic_hash": ""
+  },
+  "src/components/HeroFuego.tsx": {
+    "mtime": 1791327807.007066,
+    "seen": 1791327896.5248382,
+    "ast_hash": "448b535ec1afd8b6f9c23b097325ba8f",
+    "semantic_hash": ""
+  },
+  "src/components/LoQueArde.tsx": {
+    "mtime": 1791327807.0320566,
+    "seen": 1791327896.5248396,
+    "ast_hash": "95eeaf182bbbca16ddc48eb40fe1a99b",
+    "semantic_hash": ""
+  },
+  "src/components/LoadingScreen.tsx": {
+    "mtime": 1791327509.2408817,
+    "seen": 1791327896.5248415,
+    "ast_hash": "629b5e1884bfb878a44a316763b152cf",
+    "semantic_hash": ""
+  },
+  "src/components/Manifiesto.tsx": {
+    "mtime": 1791327807.0683148,
+    "seen": 1791327896.524843,
+    "ast_hash": "04e90be5cd190e1e812a96b15e714719",
+    "semantic_hash": ""
+  },
+  "src/components/Menu.tsx": {
+    "mtime": 1791327807.1391802,
+    "seen": 1791327896.5248451,
+    "ast_hash": "d47e3579808d7e0320482cd66932804f",
+    "semantic_hash": ""
+  },
+  "src/components/Nav.tsx": {
+    "mtime": 1791327807.1754444,
+    "seen": 1791327896.5248468,
+    "ast_hash": "52d0a3e5a5de5ee75237b29266bccc37",
+    "semantic_hash": ""
+  },
+  "src/components/Pie.tsx": {
+    "mtime": 1791327807.1945586,
+    "seen": 1791327896.5248485,
+    "ast_hash": "994591ff4b7f297f24940f85dd732a54",
+    "semantic_hash": ""
+  },
+  "src/components/Reserva.tsx": {
+    "mtime": 1791327807.2246847,
+    "seen": 1791327896.5248501,
+    "ast_hash": "94daf950e1c4c1e1d99ce741ec25755a",
+    "semantic_hash": ""
+  },
+  "src/components/Voces.tsx": {
+    "mtime": 1791327807.2434766,
+    "seen": 1791327896.5248518,
+    "ast_hash": "018d28ce5b3ac3ca12755c0f6137b41b",
+    "semantic_hash": ""
+  },
+  "src/i18n/LanguageContext.ts": {
+    "mtime": 1791327807.2604866,
+    "seen": 1791327896.5248728,
+    "ast_hash": "29ef315f6feaec618e9f92118d601cef",
+    "semantic_hash": ""
+  },
+  "src/i18n/LanguageProvider.tsx": {
+    "mtime": 1791327562.943468,
+    "seen": 1791327896.5248744,
+    "ast_hash": "ea01dbb0ccf2cd2722240be2f229f716",
+    "semantic_hash": ""
+  },
+  "src/i18n/translations.ts": {
+    "mtime": 1791316087.002284,
+    "seen": 1791327896.5248764,
+    "ast_hash": "374c5fd31fe2904aba13c5a1f9c55bc1",
+    "semantic_hash": ""
+  },
+  "src/i18n/useLanguage.ts": {
+    "mtime": 1791308772.616902,
+    "seen": 1791327896.524878,
+    "ast_hash": "5b0ac4a24ccb3c4534c202a35dd95cc5",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P-403-rediseno-componentes.md": {
+    "mtime": 1791327891.2066896,
+    "seen": 1791327896.5250163,
+    "ast_hash": "553ca0a854ed3e1aa248dc9b503e8af6",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P301-P302-Reservas-Presentacion.md": {
+    "mtime": 1791327891.2225428,
+    "seen": 1791327896.5250401,
+    "ast_hash": "8aa83030da258703f60dcf9d3d13a17b",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md": {
+    "mtime": 1791327891.2374177,
+    "seen": 1791327896.525042,
+    "ast_hash": "84a66924ecde794170c20821e6027a96",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P306-P308-Experiencia-AR-Estados.md": {
+    "mtime": 1791327891.2506297,
+    "seen": 1791327896.525044,
+    "ast_hash": "25048df85e1751a3258c435391a67916",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-06-P401-P402-Tokens-Tema.md": {
+    "mtime": 1791327891.2684557,
+    "seen": 1791327896.525046,
+    "ast_hash": "c07bc8bb46d6633686ea9f69b673566c",
     "semantic_hash": ""
   }
 }

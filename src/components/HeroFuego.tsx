@@ -18,9 +18,9 @@ export default function HeroFuego() {
 
       {/* Text Overlay Panel */}
       <div className="absolute bottom-0 left-0 sm:left-10 sm:bottom-10 w-full sm:w-auto sm:max-w-xl bg-cream-canvas/95 p-[40px]">
-        <p className="eyebrow">{t.hero.headline[0] || 'SUNSHINE IN A SALAD'}</p>
-        <h1 className="font-sweetsans text-display-lg leading-display-lg text-forest-shadow mb-[24px]">
-          {t.hero.headline[1] || 'Fresh Food'}
+        <p className="eyebrow">{t.hero.headline[0] || ''}</p>
+        <h1 className="font-display text-display-lg leading-display-lg text-forest-shadow mb-[24px]">
+          {t.hero.headline[1] || ''}
         </h1>
 
         <a href="#menu" className="btn-primary w-full sm:w-auto">

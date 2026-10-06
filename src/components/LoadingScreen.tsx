@@ -28,7 +28,7 @@ export default function LoadingScreen({ isReady = true }) {
       }}
     >
       <div className="flex flex-col items-center">
-        <p className="font-sweetsanstext font-bold text-xl uppercase tracking-[0.5em] text-cream-canvas">
+        <p className="font-body font-bold text-xl uppercase tracking-[0.5em] text-cream-canvas">
           ascua
         </p>
       </div>

@@ -1,5 +1,5 @@
 /*
-  Sweetgreen-inspired design system.
+  Design system tokens.
   Warm, farm-stand-meets-modern-typography aesthetic.
 */
 
@@ -26,14 +26,14 @@
   }
 
   body {
-    @apply bg-cream-canvas font-sweetsanstext text-forest-shadow antialiased;
+    @apply bg-cream-canvas font-body text-forest-shadow antialiased;
     font-feature-settings: 'kern', 'liga';
   }
 
   h1,
   h2,
   h3 {
-    @apply font-sweetsans;
+    @apply font-display;
     text-wrap: balance;
   }
 
@@ -66,22 +66,22 @@
 @layer components {
   /* Pill CTA Button (Lime Fill) */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-lime-glow text-forest-shadow font-sweetsanstext font-bold text-[16px] px-[24px] py-[16px] rounded-buttons tracking-[0.017em] transition-transform hover:scale-[1.02] active:scale-[0.98];
+    @apply inline-flex items-center justify-center bg-lime-glow text-forest-shadow font-body font-bold text-[16px] px-[24px] py-[16px] rounded-buttons tracking-[0.017em] transition-transform hover:scale-[1.02] active:scale-[0.98];
   }
 
   /* Pill Outline Button (Forest Border) */
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-transparent border-[2px] border-deep-forest text-deep-forest font-sweetsanstext font-bold text-[16px] px-[20px] py-[12px] rounded-buttons transition-colors hover:bg-deep-forest hover:text-cream-canvas;
+    @apply inline-flex items-center justify-center bg-transparent border-[2px] border-deep-forest text-deep-forest font-body font-bold text-[16px] px-[20px] py-[12px] rounded-buttons transition-colors hover:bg-deep-forest hover:text-cream-canvas;
   }
 
   /* Ghost Text Link */
   .ghost-link {
-    @apply inline-flex items-center gap-1 bg-transparent text-forest-shadow font-sweetsanstext font-bold text-[16px] hover:underline;
+    @apply inline-flex items-center gap-1 bg-transparent text-forest-shadow font-body font-bold text-[16px] hover:underline;
   }
 
   /* Online Only Badge */
   .badge-online {
-    @apply absolute top-4 left-4 bg-lime-glow text-forest-shadow font-sweetsanstext font-bold text-[12px] uppercase tracking-[0.05em] px-[12px] py-[4px] rounded-badges;
+    @apply absolute top-4 left-4 bg-lime-glow text-forest-shadow font-body font-bold text-[12px] uppercase tracking-[0.05em] px-[12px] py-[4px] rounded-badges;
   }
 
   /* Split Content Section */
@@ -94,7 +94,7 @@
 
   /* Eyebrow Label */
   .eyebrow {
-    @apply font-sweetsanstext font-bold text-[14px] uppercase tracking-[0.05em] text-forest-shadow mb-[16px];
+    @apply font-body font-bold text-[14px] uppercase tracking-[0.05em] text-forest-shadow mb-[16px];
   }
 }
 
