@@ -50,3 +50,7 @@ graphify-out/cache/
 graphify-out/.graphify_*
 graphify-out/graph.html
 graphify-out/20*/
+
+# Resultados de pruebas E2E (se generan solos)
+playwright-report/
+test-results/
