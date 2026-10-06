@@ -10,23 +10,24 @@ Fase P-1 — Re-arquitectura de PAGINA (en progreso).
 
 ## Tarea actual
 
-P-204 — Pruebas E2E de aislamiento. **Estado:** completada ✅.
-Fase P-2 completada. Siguiente bloque: **Fase P-3** (Migración y Refactor de Componentes UI).
+Fase P-3 completada. Se completaron P-301 a P-308.
+Siguiente paso: Revisión y push de todos los commits, luego continuar con Fase P-4 (Optimización de Assets 3D).
 
 ## Último paso completado
 
-- **P-204 (Pruebas E2E de aislamiento):**
-  - Configurado Playwright.
-  - Implementados tests para aislar peticiones (`/r/A/` no hace fetch a `/data/B/`).
-  - Implementada gestión dinámica del `<title>` mediante React `useEffect`.
-  - Solucionados errores de esquema (fixtures de test tenían `parTipografico: "moderna"` en lugar de `editorial`).
-  - Excluidos los tests E2E del scope de Vitest (`vitest.config.js`).
-  - Corregidos errores de linter en los scripts.
-- **P-203 (Build de contenido y HTML por restaurante):**
-  - Desarrollado `scripts/build-content.ts` para inyectar metadata y pre-renderizar `index.html` por cada cliente.
-  - Generación de `dist/data/<slug>/` para aislar los endpoints de JSON y assets estáticos.
-  - Implementación de un `_redirects` compatible con Cloudflare Pages.
-  - Enlazado con el script principal `npm run build`.
+- **P-308 (Ayuda contextual y estados):**
+  - Implementado `FloatingHelp.jsx` en `App.jsx`.
+  - Simplificados estados de error en `App.jsx` con botón de recarga.
+- **P-307 (Medida real):**
+  - Ajuste de escala `scale="1 1 1"` en `ArViewer.jsx`.
+- **P-306 (Guía antes de abrir la cámara):**
+  - Creado componente `ArGuideModal.jsx` y lógica en `Menu.jsx` usando `localStorage` ('ascua:ar-guide-seen').
+- **P-303, P-304, P-305 (Feedback, Analítica, Legal):**
+  - Enlace de Tally con slug en el pie (`Pie.jsx`).
+  - Puerto `AnalyticsTracker` y clases base implementadas.
+  - Textos legales y disclaimer añadidos a `Pie.jsx` y `translations.js`.
+- **P-301, P-302 (Reservas y Modo Presentación):**
+  - Componente de demo panel integrado, agotados integrados a store global, vistas adaptadas.
 
 - **P-202 (Validador de contenido):**
   - Implementado `scripts/validate-content.ts` utilizando Node.js `fs` nativo y `zod`.
@@ -64,9 +65,9 @@ Fase P-2 completada. Siguiente bloque: **Fase P-3** (Migración y Refactor de Co
 
 ## Siguiente paso exacto
 
-1. Realizar revisión final por parte de Juan de todo el bloque P-2.
-2. Hacer push de los commits (`wip(P-2)`).
-3. Iniciar el bloque de tareas **P-3** (Migración de la UI).
+1. Revisión final por parte de Juan de todo el bloque P-3.
+2. Hacer el push pendiente de todos los commits de la Fase P-3 al remoto.
+3. Iniciar la Fase P-4 (Optimización de Assets 3D) o la que indique Juan.
 4. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
