@@ -10,11 +10,11 @@ Fase C — Correcciones (revisión 2).
 
 ## Tarea actual
 
-En progreso: Lote 6 (Móvil, accesibilidad y pruebas de interfaz).
+En progreso: Fase P-2 / P-3 (Implementación de funcionalidades).
 
 ## Último paso completado
 
-- **Lote 5:** Reubicación de componentes, estado, hooks, i18n y utilidades (UI) a `src/presentation/`. Validación de `arch:check` (C-27 a C-29) completada con éxito.
+- **P-205:** Creación de la página de código QR imprimible en `/r/<slug>/qr` usando `react-qr-code`, con un diseño adaptado para impresión y acceso a los datos del restaurante vía el store global de Jotai. Pruebas unitarias añadidas.
 - **Lote 4 (C-22 a C-26):** Creado el `CompositeArLauncher` para mantener la llamada de AR de forma síncrona dentro del gesto del usuario, eliminando esperas y asincronía antes del lanzamiento. Se removió el evento manual `open-model-viewer` en favor del retorno del resultado. El aviso del navegador embebido ahora nombra la app usando el nuevo atributo `embeddedBrowserName`. Todo el código antiguo y variables de entorno de Supabase fue eliminado por completo. Tests actualizados, `npm run verify` pasando limpio.
 - **C-11 (Scene Viewer con URL absoluta):** Convertido a URL absoluta el intent del GLB en `SceneViewerLauncher.ts`. Agregadas pruebas para verificar este comportamiento.
 - **C-10 (Rutas seguras y resueltas):** Creado `assetPathSchema` en un archivo separado para prevenir dependencias circulares y validado en dominios. Creado `resolveAssetUrls` para transformar las rutas de assets locales a rutas relativas `/data/<slug>/`. Validado que ningún componente arma las rutas de assets.
@@ -28,7 +28,7 @@ En progreso: Lote 6 (Móvil, accesibilidad y pruebas de interfaz).
 
 ## Siguiente paso exacto
 
-1. **Siguiente después de las correcciones:** P-205 (QR imprimible).
+1. **Siguiente paso:** P-601 (Demo genérica `ascua-demo` con modelos 3D aprobados) y P-701 a P-705.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

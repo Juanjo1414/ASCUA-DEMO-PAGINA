@@ -71,7 +71,7 @@ Como la ven usuarios reales, casi siempre desde el celular y muchas veces person
 | Página gobernada por los datos del restaurante (nombre, logo, tema, contacto, portada)                       |                              ✅                               |
 | Diseño nuevo, mobile-first y accesibilidad básica                                                            | ✅ _(Lighthouse y prueba de usabilidad siguen pendientes 🗓️)_ |
 | Demo genérica `ascua-demo` con fotos (modelos 3D aprobados pendientes)                                       |                              🚧                               |
-| Página de QR imprimible                                                                                      |                              🗓️                               |
+| Página de QR imprimible                                                                                      |                              ✅                               |
 | Cabeceras de seguridad y CSP                                                                                 |                              🗓️                               |
 | Cloudflare Pages, protección de `main` y CodeQL (pasos manuales)                                             |                              🗓️                               |
 
@@ -479,7 +479,7 @@ Las reservas son un enlace de WhatsApp con el mensaje ya escrito (`https://wa.me
 **Deuda técnica de la reestructuración en curso**
 
 - **La medida real por plato** se aplica solo como escala fija en el visor; falta que cada modelo salga normalizado a su medida del Estudio 3D y que el validador la compare con el `manifest.json`.
-- **Faltan** la página de QR imprimible y la página genérica de inicio (hoy son marcadores de posición), las cabeceras de seguridad (`public/_headers`) y la demo genérica con modelos 3D aprobados.
+- **Faltan** la página genérica de inicio (hoy es un marcador de posición), las cabeceras de seguridad (`public/_headers`) y la demo genérica con modelos 3D aprobados.
 - **Pasos manuales pendientes en GitHub y Cloudflare:** proteger la rama `main`, activar CodeQL y crear el proyecto de Cloudflare Pages con sus secretos.
 
 ## Mejoras futuras
