@@ -21,7 +21,8 @@
     "prepare": "husky",
     "arch:check": "depcruise src",
     "content:validate": "tsx scripts/validate-content.ts",
-    "verify": "npm run lint && npm run typecheck && npm run test && npm run arch:check && npm run content:validate && npm run build"
+    "licenses:check": "npx license-checker --production --failOn 'GPL;AGPL'",
+    "verify": "npm run lint && npm run typecheck && npm run test && npm run arch:check && npm run content:validate && npm run licenses:check && npm run build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
