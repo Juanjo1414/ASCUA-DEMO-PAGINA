@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { useLanguage } from '../i18n/useLanguage'
+import { useLanguage } from '@/i18n/useLanguage'
 
 export default function Reserva() {
   const { t } = useLanguage()

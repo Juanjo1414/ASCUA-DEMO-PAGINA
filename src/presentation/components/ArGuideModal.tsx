@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { X, ArrowRight, Lightbulb, Grid3x3, Move } from 'lucide-react'
-import { useLanguage } from '../i18n/useLanguage'
+import { useLanguage } from '@/i18n/useLanguage'
 
 interface ArGuideModalProps {
   isOpen: boolean
