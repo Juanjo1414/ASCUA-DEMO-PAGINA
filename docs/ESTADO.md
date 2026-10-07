@@ -28,7 +28,7 @@ En progreso: Lote 6 (Móvil, accesibilidad y pruebas de interfaz).
 
 ## Siguiente paso exacto
 
-1. **Siguiente después de las correcciones:** P-205 (QR imprimible), P-601 (demo genérica con modelos 3D aprobados), P-701 a P-705.
+1. **Siguiente después de las correcciones:** P-205 (QR imprimible).
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare (cuando disponga):
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

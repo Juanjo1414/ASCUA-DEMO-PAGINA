@@ -59,20 +59,21 @@ Como la ven usuarios reales, casi siempre desde el celular y muchas veces person
 
 > 🚧 **Estado (verificado el 6 de octubre de 2026):** la re-arquitectura, el soporte multi-restaurante y gran parte de la experiencia del comensal ya están implementados en `dev/Juanjo`, y `npm run verify` pasa completo (lint, tipos, 77 pruebas, reglas de capas, validación de contenido y build). Todavía **faltan** el diseño nuevo, la migración de la interfaz a la capa `presentation`, el QR imprimible, la demo genérica con modelos 3D y el despliegue en Cloudflare. Avance al detalle en [`docs/ESTADO.md`](./docs/ESTADO.md) y hoja de ruta en [`docs/PLAN-IMPLEMENTACION.md`](./docs/PLAN-IMPLEMENTACION.md).
 
-| Área                                                                                                         |                             Estado                             |
-| :----------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------: |
-| Fundaciones: Node 22, hooks locales, reglas para agentes, graphify, CI/CD, sin dependencia de terceros       |                               ✅                               |
-| TypeScript, Vitest y capas `domain` / `application` / `infrastructure` con reglas verificadas                |                               ✅                               |
-| Adaptadores de AR (iPhone, Android y visor de respaldo) con pruebas de contrato                              | ✅ _(la interfaz aún usa el código antiguo, ver Limitaciones)_ |
-| Contenido por restaurante: esquema, plantilla, validador y HTML por restaurante                              |                               ✅                               |
-| Prueba E2E de aislamiento entre restaurantes (Playwright)                                                    |                               ✅                               |
-| Guía previa al AR, ayuda flotante, estados de error, modo presentación, feedback, analítica y avisos legales |                               ✅                               |
-| Migrar la interfaz a `src/presentation/` (hoy está en `src/components`)                                      |                               🚧                               |
-| Página de QR imprimible (`/r/<restaurante>/qr`)                                                              |                               🗓️                               |
-| Diseño nuevo (`docs/DESIGN.md`), mobile-first y accesibilidad                                                |                               🗓️                               |
-| Demo genérica `ascua-demo` y primeros restaurantes con modelos 3D aprobados                                  |                               🗓️                               |
-| Cabeceras de seguridad, Lighthouse y prueba de usabilidad                                                    |                               🗓️                               |
-| Cloudflare Pages, protección de `main` y CodeQL (pasos manuales de GitHub/Cloudflare)                        |                               🗓️                               |
+| Área                                                                                                         |                            Estado                             |
+| :----------------------------------------------------------------------------------------------------------- | :-----------------------------------------------------------: |
+| Fundaciones: Node 22, hooks locales, reglas para agentes, graphify, CI/CD, sin dependencia de terceros       |                              ✅                               |
+| TypeScript, Vitest y capas `domain` / `application` / `infrastructure` con reglas verificadas                |                              ✅                               |
+| Adaptadores de AR conectados a la interfaz, con lanzador compuesto                                           |                              ✅                               |
+| Contenido por restaurante: esquema, plantilla, validador y HTML por restaurante                              |                              ✅                               |
+| Prueba E2E de aislamiento entre restaurantes (Playwright)                                                    |                              ✅                               |
+| Guía previa al AR, ayuda flotante, estados de error, modo presentación, feedback, analítica y avisos legales |                              ✅                               |
+| Interfaz en `src/presentation/` con la regla de capas activa                                                 |                              ✅                               |
+| Página gobernada por los datos del restaurante (nombre, logo, tema, contacto, portada)                       |                              ✅                               |
+| Diseño nuevo, mobile-first y accesibilidad básica                                                            | ✅ _(Lighthouse y prueba de usabilidad siguen pendientes 🗓️)_ |
+| Demo genérica `ascua-demo` con fotos (modelos 3D aprobados pendientes)                                       |                              🚧                               |
+| Página de QR imprimible                                                                                      |                              🗓️                               |
+| Cabeceras de seguridad y CSP                                                                                 |                              🗓️                               |
+| Cloudflare Pages, protección de `main` y CodeQL (pasos manuales)                                             |                              🗓️                               |
 
 ## Equipo
 
@@ -376,20 +377,20 @@ _Estado de las rutas:_ `/r/<slug>` ✅ (carta del restaurante) · `/r/<slug>/qr`
 
 Estado verificado el 6 de octubre de 2026:
 
-| Nivel         | Herramienta                                     | Qué cubre                                                                                                                                                                              | Estado |
-| :------------ | :---------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
-| Unitarias     | Vitest                                          | **77 pruebas** en 14 archivos: dominio (restaurante, plato, precio, tema, AR), casos de uso con dobles en memoria, adaptadores de AR, detector de navegador y repositorio de contenido |   ✅   |
-| Cobertura     | `@vitest/coverage-v8`                           | 98 % de líneas y 92 % de ramas en conjunto; `src/domain` al 100 %                                                                                                                      |   ✅   |
-| Contrato      | Vitest                                          | Los tres lanzadores de AR cumplen el mismo contrato                                                                                                                                    |   ✅   |
-| Arquitectura  | dependency-cruiser                              | Regla de dependencias entre capas (65 módulos, 0 violaciones)                                                                                                                          |   ✅   |
-| Contenido     | `validate-content.ts`                           | Esquema, aislamiento, pesos, aprobación (ver tabla de reglas arriba)                                                                                                                   |   ✅   |
-| E2E           | Playwright (Desktop Chrome, Pixel 5, iPhone 12) | **Aislamiento entre restaurantes**: al abrir uno nunca se pide nada de otro; 9 pruebas en verde según [`docs/ESTADO.md`](./docs/ESTADO.md)                                             |   ✅   |
-| Componentes   | Testing Library                                 | Tarjeta de plato, botón "Ver en mi mesa", aviso de navegador embebido                                                                                                                  |   🗓️   |
-| Responsive    | Playwright (360, 390, 430, 768, 1280 px)        | Sin scroll horizontal; botones táctiles ≥ 48 px                                                                                                                                        |   🗓️   |
-| Accesibilidad | axe                                             | Violaciones serias o críticas                                                                                                                                                          |   🗓️   |
-| Rendimiento   | Lighthouse CI (móvil)                           | Performance ≥ 85, Accesibilidad ≥ 95                                                                                                                                                   |   🗓️   |
-| Usabilidad    | Prueba con 5 personas no técnicas               | "Encuentra un plato y míralo sobre tu mesa" sin ayuda (meta: ≥ 4 de 5)                                                                                                                 |   🗓️   |
-| Manual        | Checklist en iPhone y Android reales            | AR con datos móviles, dentro y fuera de Instagram/WhatsApp, antes de cada versión que toque AR                                                                                         |   🗓️   |
+| Nivel         | Herramienta                                     | Qué cubre                                                                                                                                                                               | Estado |
+| :------------ | :---------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
+| Unitarias     | Vitest                                          | **101 pruebas** en 19 archivos: dominio (restaurante, plato, precio, tema, AR), casos de uso con dobles en memoria, adaptadores de AR, detector de navegador y repositorio de contenido |   ✅   |
+| Cobertura     | `@vitest/coverage-v8`                           | 97 % de líneas y 91 % de ramas en conjunto; `src/domain` al 97 %                                                                                                                        |   ✅   |
+| Contrato      | Vitest                                          | Los tres lanzadores de AR cumplen el mismo contrato                                                                                                                                     |   ✅   |
+| Arquitectura  | dependency-cruiser                              | Regla de dependencias entre capas (65 módulos, 0 violaciones)                                                                                                                           |   ✅   |
+| Contenido     | `validate-content.ts`                           | Esquema, aislamiento, pesos, aprobación (ver tabla de reglas arriba)                                                                                                                    |   ✅   |
+| E2E           | Playwright (Desktop Chrome, Pixel 5, iPhone 12) | **Aislamiento entre restaurantes**: al abrir uno nunca se pide nada de otro; 9 pruebas en verde según [`docs/ESTADO.md`](./docs/ESTADO.md)                                              |   ✅   |
+| Componentes   | Testing Library                                 | Tarjeta de plato, botón "Ver en mi mesa", aviso de navegador embebido                                                                                                                   |   🗓️   |
+| Responsive    | Playwright (360, 390, 430, 768, 1280 px)        | Sin scroll horizontal; botones táctiles ≥ 48 px                                                                                                                                         |   🗓️   |
+| Accesibilidad | axe                                             | Violaciones serias o críticas                                                                                                                                                           |   🗓️   |
+| Rendimiento   | Lighthouse CI (móvil)                           | Performance ≥ 85, Accesibilidad ≥ 95                                                                                                                                                    |   🗓️   |
+| Usabilidad    | Prueba con 5 personas no técnicas               | "Encuentra un plato y míralo sobre tu mesa" sin ayuda (meta: ≥ 4 de 5)                                                                                                                  |   🗓️   |
+| Manual        | Checklist en iPhone y Android reales            | AR con datos móviles, dentro y fuera de Instagram/WhatsApp, antes de cada versión que toque AR                                                                                          |   🗓️   |
 
 Además, en cada cambio corren el escaneo de secretos, `npm audit`, Dependabot y, cuando se active, CodeQL.
 
@@ -477,11 +478,8 @@ Las reservas son un enlace de WhatsApp con el mensaje ya escrito (`https://wa.me
 
 **Deuda técnica de la reestructuración en curso**
 
-- **La interfaz todavía no usa los adaptadores de AR nuevos:** `Menu.jsx` y `ArDishModal.jsx` siguen llamando a `src/lib/launchAr.js` y `src/lib/browserEnv.js`. Los adaptadores y el caso de uso `launchDishAr` existen y están probados, pero falta conectarlos y retirar el código antiguo.
-- **La capa `presentation` no existe todavía:** los componentes siguen en `src/components` (varios aún en `.jsx`), por lo que la regla de capas de la interfaz todavía no vigila nada.
 - **La medida real por plato** se aplica solo como escala fija en el visor; falta que cada modelo salga normalizado a su medida del Estudio 3D y que el validador la compare con el `manifest.json`.
 - **Faltan** la página de QR imprimible y la página genérica de inicio (hoy son marcadores de posición), las cabeceras de seguridad (`public/_headers`) y la demo genérica con modelos 3D aprobados.
-- **Archivos generados en el repositorio:** `playwright-report/` está versionado y conviene agregarlo al `.gitignore`.
 - **Pasos manuales pendientes en GitHub y Cloudflare:** proteger la rama `main`, activar CodeQL y crear el proyecto de Cloudflare Pages con sus secretos.
 
 ## Mejoras futuras
