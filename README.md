@@ -72,7 +72,8 @@ Como la ven usuarios reales, casi siempre desde el celular y muchas veces person
 | Diseño nuevo, mobile-first y accesibilidad básica                                                            | ✅ _(Lighthouse y prueba de usabilidad siguen pendientes 🗓️)_ |
 | Demo genérica `ascua-demo` con fotos (modelos 3D aprobados pendientes)                                       |                              🚧                               |
 | Página de QR imprimible                                                                                      |                              ✅                               |
-| Cabeceras de seguridad y CSP                                                                                 |                              🗓️                               |
+| Cabeceras de seguridad y CSP                                                                                 |                              ✅                               |
+| Presupuesto de rendimiento (Lighthouse CI) y licencias                                                       |                              ✅                               |
 | Cloudflare Pages, protección de `main` y CodeQL (pasos manuales)                                             |                              🗓️                               |
 
 ## Equipo
