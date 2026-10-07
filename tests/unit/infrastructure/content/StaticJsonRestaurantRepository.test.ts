@@ -99,7 +99,12 @@ describe('StaticJsonRestaurantRepository', () => {
 
     const result = await repo.getBySlug('valido-1234')
 
-    expect(result).toEqual(mockData)
+    expect(result).not.toBeNull()
+    expect(result?.slug).toBe('valido-1234')
+    expect(result?.tema.logo).toBe('/data/valido-1234/logo.svg')
+    expect(result?.categorias[0].platos[0].foto).toBe(
+      '/data/valido-1234/foto.webp'
+    )
   })
 
   it('retorna null si fetch lanza un error', async () => {

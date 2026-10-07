@@ -21,8 +21,10 @@ export class SceneViewerLauncher implements ArLauncher {
     }
 
     try {
+      const glbAbsoluteUrl = new URL(asset.glb, window.location.origin).href
+
       const params = new URLSearchParams({
-        file: asset.glb,
+        file: glbAbsoluteUrl,
         mode: 'ar_preferred',
         resizable: 'false',
         title: dish.nombre['es'] || 'Plato',

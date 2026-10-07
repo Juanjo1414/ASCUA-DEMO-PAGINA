@@ -56,7 +56,7 @@ describe('ArLauncher Contract Tests', () => {
 
   beforeEach(() => {
     vi.stubGlobal('window', {
-      location: { href: 'http://localhost' },
+      location: { href: 'http://localhost', origin: 'http://localhost' },
       dispatchEvent: vi.fn(),
     })
     vi.stubGlobal('document', {
@@ -105,6 +105,27 @@ describe('ArLauncher Contract Tests', () => {
       expect(result.success).toBe(true)
       expect(result.mode).toBe(validMode)
       expect(result.error).toBeUndefined()
+    })
+  })
+
+  describe('SceneViewerLauncher specific behavior', () => {
+    it('converts glb path to absolute URL before passing it to intent', async () => {
+      const launcher = new SceneViewerLauncher()
+      vi.stubGlobal('window', {
+        location: { href: 'http://localhost', origin: 'https://example.com' },
+      })
+
+      const testDish = {
+        ...mockDish,
+        modelo: { ...mockDish.modelo, glb: '/data/slug/assets/modelo.glb' },
+      } as Dish
+
+      await launcher.launch(testDish, 'scene-viewer')
+
+      const intentHref = window.location.href
+      expect(intentHref).toContain(
+        encodeURIComponent('https://example.com/data/slug/assets/modelo.glb')
+      )
     })
   })
 })

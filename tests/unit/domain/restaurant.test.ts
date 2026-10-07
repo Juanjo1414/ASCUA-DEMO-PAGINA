@@ -8,6 +8,8 @@ import {
   restaurantSchema,
   isRestaurantExpired,
   RESTAURANT_SLUG_REGEX,
+  assetPathSchema,
+  resolveAssetUrls,
   type Restaurant,
 } from '@/domain/restaurant'
 
@@ -92,6 +94,71 @@ describe('Dominio: Restaurant', () => {
           },
         })
       ).toThrow('Número de WhatsApp inválido')
+    })
+  })
+
+  describe('assetPathSchema y resolveAssetUrls', () => {
+    it('el esquema rechaza rutas de asset con path traversal, backslashes, absolutas o con esquemas', () => {
+      expect(() => assetPathSchema.parse('../assets/foto.webp')).toThrow()
+      expect(() => assetPathSchema.parse('assets\\foto.webp')).toThrow()
+      expect(() => assetPathSchema.parse('/assets/foto.webp')).toThrow()
+      expect(() => assetPathSchema.parse('//assets/foto.webp')).toThrow()
+      expect(() =>
+        assetPathSchema.parse('http://ejemplo.com/foto.webp')
+      ).toThrow()
+      expect(() => assetPathSchema.parse('javascript:alert(1)')).toThrow()
+      expect(() => assetPathSchema.parse('data:image/png;base64,...')).toThrow()
+
+      // Debe aceptar:
+      expect(assetPathSchema.parse('assets/logo.svg')).toBe('assets/logo.svg')
+      expect(assetPathSchema.parse('assets/platos/p/foto.webp')).toBe(
+        'assets/platos/p/foto.webp'
+      )
+    })
+
+    it('resolveAssetUrls devuelve una copia del restaurante con las rutas de assets ajustadas', () => {
+      const restauranteConAr = {
+        ...restauranteValido,
+        categorias: [
+          {
+            ...restauranteValido.categorias[0],
+            platos: [
+              {
+                ...restauranteValido.categorias[0].platos[0],
+                modelo: {
+                  glb: 'assets/platos/ojo-bife/modelo.glb',
+                  usdz: 'assets/platos/ojo-bife/modelo.usdz',
+                  poster: 'assets/platos/ojo-bife/poster.webp',
+                  escalaRealCm: 30,
+                  aprobado: true,
+                },
+              },
+            ],
+          },
+        ],
+      } as Restaurant
+
+      const resuelto = resolveAssetUrls(restauranteConAr)
+
+      // Debe ser una copia, no mutar el original
+      expect(resuelto).not.toBe(restauranteConAr)
+      expect(restauranteConAr.tema.logo).toBe('assets/logo.svg')
+
+      // Rutas resueltas
+      expect(resuelto.tema.logo).toBe('/data/la-brasa-7k2p/assets/logo.svg')
+      const plato = resuelto.categorias[0].platos[0]
+      expect(plato.foto).toBe(
+        '/data/la-brasa-7k2p/assets/platos/ojo-bife/foto.webp'
+      )
+      expect(plato.modelo?.glb).toBe(
+        '/data/la-brasa-7k2p/assets/platos/ojo-bife/modelo.glb'
+      )
+      expect(plato.modelo?.usdz).toBe(
+        '/data/la-brasa-7k2p/assets/platos/ojo-bife/modelo.usdz'
+      )
+      expect(plato.modelo?.poster).toBe(
+        '/data/la-brasa-7k2p/assets/platos/ojo-bife/poster.webp'
+      )
     })
   })
 

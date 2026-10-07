@@ -2,7 +2,7 @@
 
 > Documento vivo. Se actualiza al **cerrar cada sesión**, con Claude Code o Antigravity.
 
-**Última actualización:** 2026-10-06 · **Por:** Antigravity · **Rama:** `dev/Juanjo`
+**Última actualización:** 2026-10-07 · **Por:** Antigravity · **Rama:** `dev/Juanjo`
 
 ## Fase actual
 
@@ -10,16 +10,13 @@ Fase C — Correcciones (revisión 2).
 
 ## Tarea actual
 
-Implementando el Lote 1 de correcciones (C-01 a C-09).
+Implementando el Lote 3 de correcciones.
 
 ## Último paso completado
 
-- **C-06 (Marca de terceros fuera y tipografías propias):** Eliminada la marca de terceros y configuradas las fuentes DM Sans y Fraunces localmente.
-- **C-05 (index.html neutro y móvil):** `<title>`, descripción genérica, `theme-color` y `viewport-fit=cover` configurados en `index.html`.
-- **C-04 (Sin `any`):** Reemplazados tipos genéricos por los del dominio. Regla `no-explicit-any` en `.oxlintrc.json`.
-- **C-03 (Avisos de lint en cero):** Limpieza de avisos de `eslint`. Script lint modificado a `oxlint --deny-warnings`.
-- **C-02 (Borrar código muerto):** Eliminados scripts no usados y archivo de pruebas.
-- **C-01 (Archivos generados fuera del repositorio):** Añadidos `playwright-report` y `test-results` a `.gitignore`.
+- **C-11 (Scene Viewer con URL absoluta):** Convertido a URL absoluta el intent del GLB en `SceneViewerLauncher.ts`. Agregadas pruebas para verificar este comportamiento.
+- **C-10 (Rutas seguras y resueltas):** Creado `assetPathSchema` en un archivo separado para prevenir dependencias circulares y validado en dominios. Creado `resolveAssetUrls` para transformar las rutas de assets locales a rutas relativas `/data/<slug>/`. Validado que ningún componente arma las rutas de assets.
+- **Lote 1 (C-01 a C-09):** Limpieza de archivos de testing generados, código muerto borrado, warnings de lint arreglados, eliminación del tipo `any`, metadatos en HTML mejorados, marca de terceros quitada y tipografías locales añadidas.
 
 ### Completadas con observaciones de fases previas:
 
@@ -35,10 +32,10 @@ Implementando el Lote 1 de correcciones (C-01 a C-09).
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
    - X-008: Habilitar CodeQL en GitHub (Security → Code scanning).
 
-## Línea base verificada (2026-10-06)
+## Línea base verificada (2026-10-07)
 
 - `node -v`: v22.13.0 ✅
-- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest 77/77 tests pass, playwright 9/9 tests pass, vite build exitoso).
+- `npm run verify`: ✅ en verde (oxlint 0 warn/err, tsc 0 err, vitest tests pass, playwright tests pass, vite build exitoso).
 - Cobertura: 100 % líneas en `domain/` y `application/use-cases/`.
 - Git hooks: `pre-commit` y `pre-push` activos.
 - Grafo de conocimiento: 500 nodos y 867 aristas en `graphify-out/`.

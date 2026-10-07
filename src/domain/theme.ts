@@ -7,6 +7,7 @@
  */
 
 import { z } from 'zod'
+import { assetPathSchema } from './assetPath'
 
 /**
  * Esquema Zod para el tema visual.
@@ -24,7 +25,7 @@ export const themeSchema = z.object({
     .enum(['editorial', 'sans', 'brasa', 'mono'])
     .default('editorial'),
   /** Ruta opcional al logo del restaurante (SVG o WebP) */
-  logo: z.string().optional(),
+  logo: assetPathSchema.optional(),
 })
 
 export type Theme = z.infer<typeof themeSchema>

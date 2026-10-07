@@ -9,6 +9,7 @@
 import { z } from 'zod'
 import { arAssetSchema } from './ar'
 import { priceSchema } from './price'
+import { assetPathSchema } from './assetPath'
 
 /**
  * Esquema para cadenas de texto localizadas (español obligatorio, inglés opcional).
@@ -36,7 +37,7 @@ export const dishSchema = z.object({
   /** Precio en pesos colombianos (sin decimales) */
   precio: priceSchema,
   /** Ruta a la fotografía del plato servido (WebP o JPG) */
-  foto: z.string().min(1, 'La foto del plato es obligatoria'),
+  foto: assetPathSchema,
   /** Modelo 3D para realidad aumentada y visor interactivo (opcional) */
   modelo: arAssetSchema.nullable().optional(),
   /** Temperatura de servicio o cocción en grados Celsius (concepto estético del fuego de Ascua) */

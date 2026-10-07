@@ -8,17 +8,18 @@
  */
 
 import { z } from 'zod'
+import { assetPathSchema } from './assetPath'
 
 /**
  * Esquema Zod para los assets 3D de un plato.
  */
 export const arAssetSchema = z.object({
   /** Ruta relativa al archivo binario GLTF/GLB optimizado para web y Android */
-  glb: z.string().min(1, 'La ruta al modelo GLB es obligatoria'),
+  glb: assetPathSchema,
   /** Ruta relativa al archivo USDZ optimizado para Apple Quick Look (iOS) */
-  usdz: z.string().min(1, 'La ruta al modelo USDZ es obligatoria'),
+  usdz: assetPathSchema,
   /** Imagen previa (póster) liviana en WebP */
-  poster: z.string().min(1, 'La ruta al póster es obligatoria'),
+  poster: assetPathSchema,
   /** Lado más largo del plato servido en centímetros, para escala 1:1 en la mesa */
   escalaRealCm: z
     .number()

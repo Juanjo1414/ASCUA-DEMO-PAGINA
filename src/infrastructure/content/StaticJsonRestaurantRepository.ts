@@ -3,6 +3,7 @@ import {
   type Restaurant,
   RESTAURANT_SLUG_REGEX,
   restaurantSchema,
+  resolveAssetUrls,
 } from '@/domain/restaurant'
 
 export class StaticJsonRestaurantRepository implements RestaurantRepository {
@@ -32,7 +33,7 @@ export class StaticJsonRestaurantRepository implements RestaurantRepository {
         return null
       }
 
-      return parsed.data
+      return resolveAssetUrls(parsed.data)
     } catch (e) {
       console.error(`Error al recuperar el restaurante ${slug}:`, e)
       return null

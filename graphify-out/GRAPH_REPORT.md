@@ -2,45 +2,43 @@
 
 ## Corpus Check
 
-- 129 files · ~587,593 words
+- 126 files · ~581,021 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 22 file(s) not represented in the graph (top: (none) 8, .woff2 8, .css 2)
 
 ## Summary
 
-- 558 nodes · 899 edges · 48 communities (34 shown, 14 thin omitted)
-- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 80 edges (avg confidence: 0.95)
+- 731 nodes · 1257 edges · 57 communities (39 shown, 18 thin omitted)
+- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 108 edges (avg confidence: 0.95)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
 
-- Built from commit: `1f60754c`
+- Built from commit: `4908d669`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 
-- launchAr.js
+- 🔥 Ascua – Demo Multi-restaurante
 - restaurant.ts
 - package.json
-- Escena.jsx
-- carta.mjs
+- validate-content.ts
 - Ascua — landing de "cocina de autor" (Histórico)
 - scripts
 - devDependencies
-- .oxlintrc.json
+- rules
 - Plan de implementación — Ascua (PITS)
 - sweetgreen — Style Reference
 - CLAUDE.md — ASCUA-DEMO-PAGINA
 - compilerOptions
 - doubles.ts
-- main.tsx
+- Product
 - Configuraci?n de Dependabot
 - ADR-0001: Demo estática multi-restaurante en Cloudflare Pages
-- dependencies
+- Correcciones antes de continuar — ASCUA-DEMO-PAGINA
 - pull_request_template.md
 - AGENTS.md — ASCUA-DEMO-PAGINA
-- React + Vite
 - rules/graphify.md
 - workflows/graphify.md
 - PROCEDENCIA.md
@@ -48,103 +46,106 @@
 - Estado del proyecto — ASCUA-DEMO-PAGINA
 - Sesión 2026-10-06 — fundaciones
 - Bitácora de Sesión: P-108 Reglas de Arquitectura en CI
-- SoldOutStore
-- react
-- Bitácora de Sesión: P-107 Store Reactivo Global (Jotai)
-- useReveal.js
-- @vitejs/plugin-react
-- Bitácora de Sesión: P-105 Repositorio Estático
-- Bitácora de Sesión: P-301 y P-302 (Reservas y Modo Presentación)
+- InMemorySoldOutStore
+- App.tsx
+- ADR 0003: Sistema de diseño adaptable
+- LocalStorageSoldOutStore
+- ArViewer.tsx
+- dependencies
+- Pasos
 - Bitácora de Sesión: P-303, P-304, P-305 (Feedback, Analítica, Legal)
 - Bitácora de Sesión: P-306, P-307, P-308 (Experiencia AR y Estados)
 - Bitácora de Sesión: P-401, P-402 (Tokens y Tema por Restaurante)
 - Bitácora de Sesión: P-403 Rediseño de componentes
-- carta.test.ts
+- ADR 0002: Estado global con Jotai
+- Acciones realizadas
+- Bitácora de Sesión: P-107 Store Reactivo Global (Jotai)
+- Bitácora de Sesión: P-201 Esquema de Contenido v1
+- Bitácora de Sesión: P-202 Validador de Contenido
+- Bitácora de Sesión: P-203 Build de Contenido y HTML por Restaurante
+- @vitejs/plugin-react
 - lint-staged
+- @playwright/test
 - engines
+- gsap
 - @testing-library/jest-dom
 
 ## God Nodes (most connected - your core abstractions)
 
-1. `Restaurant` - 23 edges
-2. `Fase P-1 — Re-arquitectura de PAGINA` - 22 edges
-3. `Dish` - 21 edges
-4. `ArLauncher` - 20 edges
-5. `ArLaunchMode` - 18 edges
-6. `Decisiones tomadas` - 18 edges
-7. `compilerOptions` - 16 edges
-8. `vitest` - 16 edges
-9. `sweetgreen — Style Reference` - 15 edges
-10. `CLAUDE.md — ASCUA-DEMO-PAGINA` - 15 edges
+1. `useLanguage()` - 27 edges
+2. `Restaurant` - 24 edges
+3. `🔥 Ascua – Demo Multi-restaurante` - 22 edges
+4. `Fase P-1 — Re-arquitectura de PAGINA` - 22 edges
+5. `ArLauncher` - 20 edges
+6. `Dish` - 20 edges
+7. `react` - 18 edges
+8. `App()` - 18 edges
+9. `ArLaunchMode` - 18 edges
+10. `Decisiones tomadas` - 17 edges
 
 ## Surprising Connections (you probably didn't know these)
 
+- `C-21 · Pruebas multi-restaurante` --references--> `App()` [INFERRED]
+  docs/Correcciones antes de continuar.md → src/App.tsx
+- `C-27 · Quitar el ciclo antes de mover` --references--> `AppDependencies` [INFERRED]
+  docs/Correcciones antes de continuar.md → src/app/compositionRoot.ts
 - `Qué se hizo` --references--> `AnalyticsTracker` [INFERRED]
   docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md → src/application/ports/analyticsTracker.ts
-- `Acciones realizadas` --references--> `Restaurant` [INFERRED]
-  docs/sesiones/2026-10-06-P107-Jotai-Store.md → src/domain/restaurant.ts
 - `5.1 PAGINA` --references--> `ArLauncher` [INFERRED]
   docs/PLAN-IMPLEMENTACION.md → src/application/ports/arLauncher.ts
-- `3.3 Principios SOLID aplicados (concreto, no teórico)` --references--> `RestaurantRepository` [INFERRED]
-  docs/PLAN-IMPLEMENTACION.md → src/application/ports/restaurantRepository.ts
-- `Fase P-1 — Re-arquitectura de PAGINA` --references--> `RestaurantRepository` [INFERRED]
-  docs/PLAN-IMPLEMENTACION.md → src/application/ports/restaurantRepository.ts
+- `Ejemplo de un restaurante` --references--> `buildReservationLink()` [INFERRED]
+  README.md → src/application/use-cases/buildReservationLink.ts
 
 ## Import Cycles
 
 - None detected.
 
-## Communities (48 total, 14 thin omitted)
+## Communities (57 total, 18 thin omitted)
 
-### Community 0 - "launchAr.js"
+### Community 0 - "🔥 Ascua – Demo Multi-restaurante"
 
-Cohesion: 0.39
-Nodes (5): IN_APP_MARKERS, isIOS(), launchAr(), launchQuickLook(), launchSceneViewer()
+Cohesion: 0.10
+Nodes (21): 🔥 Ascua – Demo Multi-restaurante, Contribuir, Cómo la vive el comensal, Descripción del proyecto, Despliegue, Documentación, Ejemplo de un restaurante, Equipo (+13 more)
 
 ### Community 1 - "restaurant.ts"
 
-Cohesion: 0.08
-Nodes (37): Último paso completado, Decisiones tomadas, Acciones realizadas, jotai, vitest, zod, restaurantAtom, RestaurantRepository (+29 more)
+Cohesion: 0.07
+Nodes (39): C-04 · Sin `any`, C-10 · Rutas seguras y resueltas _(primero las pruebas)_, C-11 · Scene Viewer con URL absoluta, Lote 2 — Rutas de assets _(hoy las fotos y los modelos no cargan)_, Fase P-1 — Re-arquitectura de PAGINA, Decisiones tomadas, Acciones realizadas, Bitácora de Sesión: P-105 Repositorio Estático (+31 more)
 
 ### Community 2 - "package.json"
 
 Cohesion: 0.10
-Nodes (19): name, private, type, version, autoprefixer, dependency-cruiser, @google/model-viewer, husky (+11 more)
+Nodes (19): name, private, type, version, autoprefixer, dependency-cruiser, husky, jsdom (+11 more)
 
-### Community 3 - "Escena.jsx"
+### Community 4 - "validate-content.ts"
 
-Cohesion: 0.24
-Nodes (16): Escena(), generarCama(), aUrl(), azar(), generarBrasa(), lienzo(), prepararBrasaTexto(), actualizarCalor() (+8 more)
-
-### Community 4 - "carta.mjs"
-
-Cohesion: 0.15
-Nodes (10): ffmpeg-static, destino, origen, PLATOS, raiz, bloques, css, destino (+2 more)
+Cohesion: 0.09
+Nodes (19): ffmpeg-static, buildContent(), copyDir(), DIST_DATA_DIR, DIST_DIR, DIST_R_DIR, destino, origen (+11 more)
 
 ### Community 5 - "Ascua — landing de "cocina de autor" (Histórico)"
 
-Cohesion: 0.05
-Nodes (43): Brand Commitments, Capabilities and Constraints, Evidence on Hand, Operating Context, Platform, Positioning, Product, Product Principles (+35 more)
+Cohesion: 0.06
+Nodes (39): Capabilities and Constraints, 10. Cómo correr esto, 11. Huecos conocidos / próximos pasos razonables, 1. Qué es (y qué no es), 2. Stack tecnológico, 3. Arquitectura, 4. Base de datos / backend, 5. La función de IA / 3D / RA (+31 more)
 
 ### Community 6 - "scripts"
 
-Cohesion: 0.13
-Nodes (15): Workflow CI (verify), Workflow Deploy Cloudflare Pages, scripts, arch:check, build, dev, format, format:check (+7 more)
+Cohesion: 0.12
+Nodes (17): Workflow CI (verify), Workflow Deploy Cloudflare Pages, scripts, arch:check, build, content:validate, dev, format (+9 more)
 
 ### Community 7 - "devDependencies"
 
-Cohesion: 0.10
-Nodes (20): devDependencies, autoprefixer, dependency-cruiser, ffmpeg-static, husky, jsdom, lint-staged, oxlint (+12 more)
+Cohesion: 0.09
+Nodes (22): devDependencies, autoprefixer, dependency-cruiser, ffmpeg-static, husky, jsdom, lint-staged, oxlint (+14 more)
 
-### Community 8 - ".oxlintrc.json"
+### Community 8 - "rules"
 
-Cohesion: 0.33
-Nodes (5): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema
+Cohesion: 0.29
+Nodes (6): plugins, rules, react/only-export-components, react/rules-of-hooks, typescript/no-explicit-any, $schema
 
 ### Community 10 - "Plan de implementación — Ascua (PITS)"
 
-Cohesion: 0.06
-Nodes (33): 0. Cómo usar este documento, 10. Definición de terminado (DoD) — aplica a toda tarea, 11. Riesgos, 12. Registro de cambios del plan, 1. Resumen ejecutivo y decisiones, 2. Línea base verificada (5 oct 2026), 4.1 Rol inmediato: Estudio 3D (CLI local), 4.2 Rol futuro: plataforma SaaS (fase 8, después de validar) (+25 more)
+Cohesion: 0.05
+Nodes (39): 0. Cómo usar este documento, 10. Definición de terminado (DoD) — aplica a toda tarea, 11. Riesgos, 12. Registro de cambios del plan, 1. Resumen ejecutivo y decisiones, 2. Línea base verificada (5 oct 2026), 3.1 Capas (Clean Architecture ligera), 3.2 Estructura de carpetas objetivo (+31 more)
 
 ### Community 11 - "sweetgreen — Style Reference"
 
@@ -153,7 +154,7 @@ Nodes (39): Agent Prompt Guide, Border Radius, Components, CSS Custom Properties
 
 ### Community 12 - "CLAUDE.md — ASCUA-DEMO-PAGINA"
 
-Cohesion: 0.10
+Cohesion: 0.11
 Nodes (19): 0.1 Arquitectura (regla de capas — se verifica con dependency-cruiser), 0. Contexto del proyecto, 10. Prohibiciones rápidas, 1. Protocolo de sesión (obligatorio), 2. Git y flujo de entrega, 3. Calidad: Definición de terminado (DoD), 4.1 Comentarios y documentación: el código se explica solo, 4. Principios de código (+11 more)
 
 ### Community 13 - "compilerOptions"
@@ -163,23 +164,23 @@ Nodes (18): compilerOptions, allowJs, checkJs, esModuleInterop, isolatedModules,
 
 ### Community 14 - "doubles.ts"
 
-Cohesion: 0.11
-Nodes (28): 0.2 Reglas específicas de este repo, Fase P-1 — Re-arquitectura de PAGINA, Acciones realizadas, environmentDetector, AnalyticsEvent, AnalyticsTracker, ArLauncher, ArLauncherResult (+20 more)
+Cohesion: 0.08
+Nodes (38): 0.2 Reglas específicas de este repo, C-25 · El aviso de navegador embebido, con el nombre de la app, 3.3 Principios SOLID aplicados (concreto, no teórico), Acciones realizadas, AppDependencies, environmentDetector, AnalyticsEvent, AnalyticsTracker (+30 more)
 
-### Community 15 - "main.tsx"
+### Community 15 - "Product"
 
-Cohesion: 0.10
-Nodes (13): Acciones realizadas, Bitácora de Sesión: P-106 Composition Root y Router, Objetivos, Siguiente Tarea, react-dom, react-router-dom, AppDependencies, compositionRoot (+5 more)
+Cohesion: 0.22
+Nodes (9): Brand Commitments, Evidence on Hand, Operating Context, Platform, Positioning, Product, Product Principles, Product Purpose (+1 more)
 
 ### Community 18 - "ADR-0001: Demo estática multi-restaurante en Cloudflare Pages"
 
 Cohesion: 0.22
 Nodes (8): A. Estática + contenido versionado (elegida), ADR-0001: Demo estática multi-restaurante en Cloudflare Pages, B. ARFOODS completo (Next.js + Supabase) en planes gratuitos, C. Un repo/despliegue por restaurante, Consecuencias, Contexto, Decisión, Opciones consideradas
 
-### Community 19 - "dependencies"
+### Community 19 - "Correcciones antes de continuar — ASCUA-DEMO-PAGINA"
 
-Cohesion: 0.22
-Nodes (9): dependencies, @google/model-viewer, gsap, jotai, lucide-react, react, react-dom, react-router-dom (+1 more)
+Cohesion: 0.06
+Nodes (30): 0. Reglas para el agente (léelas siempre), 1. Qué encontró la revisión, C-12 · Campos opcionales nuevos en el esquema, C-13 · El tema del restaurante se aplica, C-14 · Par tipográfico real, C-16 · Portada con los datos del restaurante, C-17 · Contacto con los datos del restaurante, C-19 · Textos genéricos (i18n) (+22 more)
 
 ### Community 20 - "pull_request_template.md"
 
@@ -191,11 +192,6 @@ Nodes (5): Cómo se probó, Qué cambia y por qué, Revisión, Riesgos y rollbac
 Cohesion: 0.40
 Nodes (4): AGENTS.md — ASCUA-DEMO-PAGINA, Cierre de sesión (obligatorio), Diferencias para Antigravity, Regla principal
 
-### Community 22 - "React + Vite"
-
-Cohesion: 0.50
-Nodes (3): Expanding the Oxlint configuration, React Compiler, React + Vite
-
 ### Community 28 - "Bitácora de Sesión: P-104 Adaptadores AR"
 
 Cohesion: 0.50
@@ -203,8 +199,8 @@ Nodes (3): Bitácora de Sesión: P-104 Adaptadores AR, Objetivos, Siguiente Tare
 
 ### Community 29 - "Estado del proyecto — ASCUA-DEMO-PAGINA"
 
-Cohesion: 0.22
-Nodes (8): Bloqueos, Comandos para verificar, Estado del proyecto — ASCUA-DEMO-PAGINA, Fase actual, Línea base verificada (2026-10-06), Pendientes detectados (fuera de alcance de la tarea actual), Siguiente paso exacto, Tarea actual
+Cohesion: 0.20
+Nodes (10): Bloqueos, Comandos para verificar, Completadas con observaciones de fases previas:, Estado del proyecto — ASCUA-DEMO-PAGINA, Fase actual, Línea base verificada (2026-10-06), Pendientes detectados (fuera de alcance de la tarea actual), Siguiente paso exacto (+2 more)
 
 ### Community 30 - "Sesión 2026-10-06 — fundaciones"
 
@@ -216,30 +212,35 @@ Nodes (5): Cambios, Notas para el grafo, Pendiente / siguiente paso exacto, Sesi
 Cohesion: 0.40
 Nodes (4): Acciones realizadas, Bitácora de Sesión: P-108 Reglas de Arquitectura en CI, Objetivos, Siguiente Tarea
 
-### Community 32 - "SoldOutStore"
+### Community 34 - "App.tsx"
 
-Cohesion: 0.13
-Nodes (10): 3.1 Capas (Clean Architecture ligera), 3.2 Estructura de carpetas objetivo, 3.3 Principios SOLID aplicados (concreto, no teórico), 3.4 Modelo multi-restaurante (aislamiento), 3.5 Experiencia móvil, intuitiva y auto-explicativa, 3.6 Experiencia AR: que el plato aparezca bien, en su tamaño real, 3. Arquitectura objetivo — ASCUA-DEMO-PAGINA, SoldOutStore (+2 more)
+Cohesion: 0.07
+Nodes (49): C-15 · Logo y nombre, C-18 · Secciones sin datos (decisión D-1), C-30 · Dividir `Menu` y probar componentes, C-31 · Móvil, C-32 · Accesibilidad básica, C-33 · E2E del recorrido del comensal, Lote 6 — Móvil, accesibilidad y pruebas de interfaz, jotai (+41 more)
 
-### Community 34 - "react"
-
-Cohesion: 0.48
-Nodes (5): lucide-react, react, ArGuideModal(), ArGuideModalProps, FloatingHelp()
-
-### Community 35 - "Bitácora de Sesión: P-107 Store Reactivo Global (Jotai)"
+### Community 35 - "ADR 0003: Sistema de diseño adaptable"
 
 Cohesion: 0.40
-Nodes (4): Acciones realizadas, Bitácora de Sesión: P-107 Store Reactivo Global (Jotai), Objetivos, Siguiente Tarea
+Nodes (4): ADR 0003: Sistema de diseño adaptable, Consecuencias, Contexto, Decisión
 
-### Community 38 - "Bitácora de Sesión: P-105 Repositorio Estático"
+### Community 36 - "LocalStorageSoldOutStore"
 
-Cohesion: 0.50
-Nodes (3): Bitácora de Sesión: P-105 Repositorio Estático, Objetivos, Siguiente Tarea
+Cohesion: 0.11
+Nodes (16): C-01 · Archivos generados fuera del repositorio, C-02 · Borrar el código muerto, C-03 · Avisos de lint en cero, C-05 · `index.html` neutro y móvil, C-06 · Marca de terceros fuera y tipografías propias, C-07 · `docs/ESTADO.md` corregido, C-08 · ADR 0002 y 0003, C-09 · Cobertura que mide lo que dice (+8 more)
 
-### Community 39 - "Bitácora de Sesión: P-301 y P-302 (Reservas y Modo Presentación)"
+### Community 37 - "ArViewer.tsx"
 
-Cohesion: 0.50
-Nodes (3): Bitácora de Sesión: P-301 y P-302 (Reservas y Modo Presentación), Estado, Qué se hizo
+Cohesion: 0.22
+Nodes (7): @google/model-viewer, ArViewer(), ArViewerProps, IntrinsicElements, JSX, react, VIEWER_ATTRS
+
+### Community 38 - "dependencies"
+
+Cohesion: 0.22
+Nodes (9): dependencies, @google/model-viewer, gsap, jotai, lucide-react, react, react-dom, react-router-dom (+1 more)
+
+### Community 39 - "Pasos"
+
+Cohesion: 0.25
+Nodes (7): 1. Preparar la carpeta del restaurante, 2. Configurar `restaurant.json`, 3. Configurar Categorías y Platos, 4. Validar Localmente, 5. Pruebas y Despliegue, Pasos, Runbook: Creación de un Nuevo Restaurante para la Demo
 
 ### Community 40 - "Bitácora de Sesión: P-303, P-304, P-305 (Feedback, Analítica, Legal)"
 
@@ -261,32 +262,62 @@ Nodes (3): Bitácora de Sesión: P-401, P-402 (Tokens y Tema por Restaurante), E
 Cohesion: 0.50
 Nodes (3): Bitácora de Sesión: P-403 Rediseño de componentes, Qué se hizo, Siguiente paso exacto
 
-### Community 45 - "lint-staged"
+### Community 44 - "ADR 0002: Estado global con Jotai"
+
+Cohesion: 0.33
+Nodes (5): ADR 0002: Estado global con Jotai, Consecuencias, Contexto, Decisión, Opciones consideradas
+
+### Community 45 - "Acciones realizadas"
+
+Cohesion: 0.40
+Nodes (4): Acciones realizadas, Bitácora de Sesión: P-106 Composition Root y Router, Objetivos, Siguiente Tarea
+
+### Community 46 - "Bitácora de Sesión: P-107 Store Reactivo Global (Jotai)"
+
+Cohesion: 0.40
+Nodes (4): Acciones realizadas, Bitácora de Sesión: P-107 Store Reactivo Global (Jotai), Objetivos, Siguiente Tarea
+
+### Community 47 - "Bitácora de Sesión: P-201 Esquema de Contenido v1"
+
+Cohesion: 0.40
+Nodes (4): Acciones realizadas, Bitácora de Sesión: P-201 Esquema de Contenido v1, Objetivos, Siguiente Tarea
+
+### Community 48 - "Bitácora de Sesión: P-202 Validador de Contenido"
+
+Cohesion: 0.40
+Nodes (4): Acciones realizadas, Bitácora de Sesión: P-202 Validador de Contenido, Objetivos, Siguiente Tarea
+
+### Community 49 - "Bitácora de Sesión: P-203 Build de Contenido y HTML por Restaurante"
+
+Cohesion: 0.40
+Nodes (4): Acciones realizadas, Bitácora de Sesión: P-203 Build de Contenido y HTML por Restaurante, Objetivos, Siguiente Tarea
+
+### Community 51 - "lint-staged"
 
 Cohesion: 0.67
 Nodes (3): lint-staged, *.{js,jsx,ts,tsx}, *.{json,md,css}
 
 ## Knowledge Gaps
 
-- **266 isolated node(s):** `Qué se hizo`, `Siguiente paso exacto`, `Qué se hizo`, `Estado`, `Estado` (+261 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 313 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **346 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `typescript/no-explicit-any` (+341 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 394 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `vitest` connect `restaurant.ts` to `SoldOutStore`, `package.json`, `@vitejs/plugin-react`, `carta.test.ts`, `doubles.ts`?**
-  _High betweenness centrality (0.124) - this node is a cross-community bridge._
-- **Why does `Fase P-1 — Re-arquitectura de PAGINA` connect `doubles.ts` to `SoldOutStore`, `restaurant.ts`, `Plan de implementación — Ascua (PITS)`?**
-  _High betweenness centrality (0.076) - this node is a cross-community bridge._
-- **Why does `react` connect `react` to `package.json`, `Escena.jsx`, `useReveal.js`, `main.tsx`?**
-  _High betweenness centrality (0.064) - this node is a cross-community bridge._
-- **Are the 4 inferred relationships involving `Restaurant` (e.g. with `Último paso completado` and `Fase P-1 — Re-arquitectura de PAGINA`) actually correct?**
-  _`Restaurant` has 4 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `🔥 Ascua – Demo Multi-restaurante` connect `🔥 Ascua – Demo Multi-restaurante` to `restaurant.ts`, `README.md`?**
+  _High betweenness centrality (0.158) - this node is a cross-community bridge._
+- **Why does `Arquitectura` connect `restaurant.ts` to `🔥 Ascua – Demo Multi-restaurante`?**
+  _High betweenness centrality (0.104) - this node is a cross-community bridge._
+- **Why does `sweetgreen — Style Reference` connect `sweetgreen — Style Reference` to `README.md`?**
+  _High betweenness centrality (0.087) - this node is a cross-community bridge._
+- **Are the 5 inferred relationships involving `Restaurant` (e.g. with `Contexto` and `C-04 · Sin `any``) actually correct?**
+  _`Restaurant` has 5 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 21 inferred relationships involving `Fase P-1 — Re-arquitectura de PAGINA` (e.g. with `AnalyticsTracker` and `ArLauncher`) actually correct?**
   _`Fase P-1 — Re-arquitectura de PAGINA` has 21 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 2 inferred relationships involving `Dish` (e.g. with `Fase P-1 — Re-arquitectura de PAGINA` and `Decisiones tomadas`) actually correct?**
-  _`Dish` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 5 inferred relationships involving `ArLauncher` (e.g. with `3.3 Principios SOLID aplicados (concreto, no teórico)` and `5.1 PAGINA`) actually correct?**
-  _`ArLauncher` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `$schema`, `plugins`, `react/rules-of-hooks` to the rest of the system?**
+  _346 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `🔥 Ascua – Demo Multi-restaurante` be split into smaller, more focused modules?**
+  _Cohesion score 0.09523809523809523 - nodes in this community are weakly interconnected._

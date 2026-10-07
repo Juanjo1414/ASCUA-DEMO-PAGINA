@@ -8,7 +8,7 @@
  */
 
 import { z } from 'zod'
-import { categorySchema } from './dish'
+import { categorySchema, localizedStringSchema } from './dish'
 import { themeSchema } from './theme'
 
 /**
@@ -17,6 +17,8 @@ import { themeSchema } from './theme'
  * Inválido: 'la-brasa', 'La-Brasa-7k2p', '../hack-1234'
  */
 export const RESTAURANT_SLUG_REGEX = /^[a-z0-9]+(-[a-z0-9]+)*-[a-z0-9]{4}$/
+
+export { assetPathSchema } from './assetPath'
 
 /**
  * Esquema Zod para la autorización comercial de la demo.
@@ -32,6 +34,7 @@ export const restaurantAuthorizationSchema = z.object({
     'reunion_presencial',
     'llamada',
     'contrato',
+    'propio',
   ]),
   contacto: z
     .string()
@@ -94,6 +97,10 @@ export const restaurantSchema = z.object({
     .array(z.enum(['es', 'en']))
     .min(1)
     .default(['es']),
+  /** Eslogan o frase breve que acompaña al nombre */
+  eslogan: localizedStringSchema.optional(),
+  /** Ruta a la imagen principal de la portada (opcional, usa la foto del primer plato si falta) */
+  heroImagen: assetPathSchema.optional(),
   /** Configuración cromática y visual */
   tema: themeSchema,
   /** Canales de reserva y ubicación */
@@ -127,4 +134,37 @@ export function isRestaurantExpired(
 
   const fechaLimite = new Date(Date.UTC(year, month - 1, day, 23, 59, 59, 999))
   return now.getTime() > fechaLimite.getTime()
+}
+
+/**
+ * Función pura que devuelve una copia del restaurante con todas las rutas
+ * de assets resueltas a absolutas relativas al root web (ej. /data/<slug>/assets/x.webp)
+ */
+export function resolveAssetUrls(restaurant: Restaurant): Restaurant {
+  const prefix = `/data/${restaurant.slug}/`
+
+  const resolvePath = (p?: string | null) => (p ? prefix + p : p)
+
+  return {
+    ...restaurant,
+    tema: {
+      ...restaurant.tema,
+      logo: resolvePath(restaurant.tema.logo) as string | undefined,
+    },
+    categorias: restaurant.categorias.map((cat) => ({
+      ...cat,
+      platos: cat.platos.map((plato) => ({
+        ...plato,
+        foto: resolvePath(plato.foto) as string,
+        modelo: plato.modelo
+          ? {
+              ...plato.modelo,
+              glb: resolvePath(plato.modelo.glb) as string,
+              usdz: resolvePath(plato.modelo.usdz) as string,
+              poster: resolvePath(plato.modelo.poster) as string,
+            }
+          : null,
+      })),
+    })),
+  }
 }
