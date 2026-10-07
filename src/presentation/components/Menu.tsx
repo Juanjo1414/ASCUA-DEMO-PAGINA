@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Scan } from 'lucide-react'
-import { gsap } from '@/lib/gsap'
+import { gsap } from '@/presentation/effects/gsap'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
