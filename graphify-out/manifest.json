@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791393074.565782,
-    "seen": 1791393084.1628788,
-    "ast_hash": "69ce5b86c197abe44e4e34d4ab7a7360",
+    "mtime": 1791400195.7991424,
+    "seen": 1791400215.013361,
+    "ast_hash": "1561897624dd79e46a8e2eac6daa00e6",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -317,54 +317,6 @@
     "ast_hash": "ae1d5d5c7f9f7927cdea1e805aa14013",
     "semantic_hash": ""
   },
-  "public/images/carta/cerdo.jpg": {
-    "mtime": 1791169517.0329063,
-    "seen": 1791308660.3401058,
-    "ast_hash": "c2fa87c4845f043c2857e2e1eb25d70e",
-    "semantic_hash": ""
-  },
-  "public/images/carta/filete.jpg": {
-    "mtime": 1791169517.0329063,
-    "seen": 1791308660.3401067,
-    "ast_hash": "ccd9a191ee56201e0b07c13af365ebb6",
-    "semantic_hash": ""
-  },
-  "public/images/carta/gnocchi.jpg": {
-    "mtime": 1791169517.0329063,
-    "seen": 1791308660.3401074,
-    "ast_hash": "b00d4a1ac2816606a9d3e51ad9e6baf8",
-    "semantic_hash": ""
-  },
-  "public/images/carta/langosta.jpg": {
-    "mtime": 1791169517.0329063,
-    "seen": 1791308660.3401086,
-    "ast_hash": "37d3f30b505555b5aed6f64d35e3e523",
-    "semantic_hash": ""
-  },
-  "public/images/carta/pato.jpg": {
-    "mtime": 1791169517.0329063,
-    "seen": 1791308660.3401096,
-    "ast_hash": "d933f821938bdadf281bb9c62728423d",
-    "semantic_hash": ""
-  },
-  "public/images/carta/pescado.jpg": {
-    "mtime": 1791169517.0397363,
-    "seen": 1791308660.3401103,
-    "ast_hash": "089180b0b7edcd9dbd68def16f81166d",
-    "semantic_hash": ""
-  },
-  "public/images/carta/tagliatelle.jpg": {
-    "mtime": 1791169517.0409694,
-    "seen": 1791308660.340111,
-    "ast_hash": "43b8a255382cee01b17dc48ca8d85166",
-    "semantic_hash": ""
-  },
-  "public/images/carta/vieiras.jpg": {
-    "mtime": 1791169517.0409694,
-    "seen": 1791308660.3401124,
-    "ast_hash": "71712bc912783095ce4608ee1dcdb931",
-    "semantic_hash": ""
-  },
   "content/raw/ANIMACION RESTAURANTE.mp4": {
     "mtime": 1791169516.9439163,
     "seen": 1791308660.3401144,
@@ -396,15 +348,15 @@
     "semantic_hash": ""
   },
   "src/domain/restaurant.ts": {
-    "mtime": 1791393075.0181072,
-    "seen": 1791393084.1627748,
-    "ast_hash": "f57f1aa5acd589d26fc2a102a7d70c0a",
+    "mtime": 1791393119.2874758,
+    "seen": 1791400079.0003765,
+    "ast_hash": "aed4a00d488e01cbbaec8c4011519476",
     "semantic_hash": ""
   },
   "src/domain/theme.ts": {
-    "mtime": 1791393075.0509663,
-    "seen": 1791393084.1627765,
-    "ast_hash": "51c29588f08a2a951397f4fdfa27e09c",
+    "mtime": 1791400069.6185358,
+    "seen": 1791400079.0003786,
+    "ast_hash": "35436e37f90e5b782893ad04379b0ac2",
     "semantic_hash": ""
   },
   "tests/unit/domain/ar.test.ts": {
@@ -426,15 +378,15 @@
     "semantic_hash": ""
   },
   "tests/unit/domain/restaurant.test.ts": {
-    "mtime": 1791393075.3557396,
-    "seen": 1791393084.1628404,
-    "ast_hash": "66a0e345e8970b51a592af72c544ff97",
+    "mtime": 1791393139.1085546,
+    "seen": 1791400079.0004466,
+    "ast_hash": "311adb434907436a3296b884b14e2dba",
     "semantic_hash": ""
   },
   "tests/unit/domain/theme.test.ts": {
-    "mtime": 1791330248.8928382,
-    "seen": 1791331193.4431174,
-    "ast_hash": "b7c56a65cc319ff472e97081e8ca65ab",
+    "mtime": 1791400069.788468,
+    "seen": 1791400079.0004482,
+    "ast_hash": "8f3b04216dbaad34d8694df31e99e026",
     "semantic_hash": ""
   },
   "src/application/index.ts": {
@@ -600,9 +552,9 @@
     "semantic_hash": ""
   },
   "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts": {
-    "mtime": 1791393075.4886067,
-    "seen": 1791393084.162848,
-    "ast_hash": "254f401cfa0b99def40ac77bdb97f845",
+    "mtime": 1791393140.6986177,
+    "seen": 1791400079.0004544,
+    "ast_hash": "610c3105e52ef6e46f4ffeadf9d6c680",
     "semantic_hash": ""
   },
   "docs/sesiones/2026-10-06-P105-Static-Repo.md": {
@@ -624,9 +576,9 @@
     "semantic_hash": ""
   },
   "src/app/router.tsx": {
-    "mtime": 1791312935.167353,
-    "seen": 1791312942.0284994,
-    "ast_hash": "edfea8392ee662d7abb54a4d942d6bff",
+    "mtime": 1791393517.1552136,
+    "seen": 1791400079.0003097,
+    "ast_hash": "e4788780d4580ea34a4e87440ab0afa6",
     "semantic_hash": ""
   },
   "src/main.tsx": {
@@ -666,9 +618,9 @@
     "semantic_hash": ""
   },
   "content/restaurants/_plantilla/restaurant.json": {
-    "mtime": 1791326350.0063114,
-    "seen": 1791326419.4604833,
-    "ast_hash": "573631fe6cd9d51f5e24dab46af5c2a7",
+    "mtime": 1791393097.158873,
+    "seen": 1791400079.000278,
+    "ast_hash": "6dfb0f8b44a562e51535962224d53a81",
     "semantic_hash": ""
   },
   "playwright.config.ts": {
@@ -678,15 +630,15 @@
     "semantic_hash": ""
   },
   "scripts/build-content.ts": {
-    "mtime": 1791315137.9042234,
-    "seen": 1791316567.3382914,
-    "ast_hash": "66407e3df2416a756907d29445df1445",
+    "mtime": 1791400069.258715,
+    "seen": 1791400079.0002942,
+    "ast_hash": "6c5b6cd6a83fa657d32db8f2bce0e6e2",
     "semantic_hash": ""
   },
   "scripts/validate-content.ts": {
-    "mtime": 1791326420.786591,
-    "seen": 1791327896.524764,
-    "ast_hash": "689bcd5429a1a7979678e2f77a3afd79",
+    "mtime": 1791393204.944091,
+    "seen": 1791400079.0003011,
+    "ast_hash": "d68d898001b5d6f61ce25c178d14251d",
     "semantic_hash": ""
   },
   "src/components/ArGuideModal.tsx": {
@@ -732,9 +684,9 @@
     "semantic_hash": ""
   },
   "tests/e2e/isolation.spec.ts": {
-    "mtime": 1791327011.7668154,
-    "seen": 1791327896.5249238,
-    "ast_hash": "db34e32ba54c8a1669deb4eefe2ae996",
+    "mtime": 1791400069.725077,
+    "seen": 1791400079.0004203,
+    "ast_hash": "555d45f6c4d28c24b2c49102822d4837",
     "semantic_hash": ""
   },
   "tests/fixtures/restaurants/rest-a-1234/restaurant.json": {
@@ -750,9 +702,9 @@
     "semantic_hash": ""
   },
   "docs/runbooks/nuevo-restaurante.md": {
-    "mtime": 1791314050.4975913,
-    "seen": 1791316567.3384132,
-    "ast_hash": "ccd89ca5e2e13290d8ab52ecd968c511",
+    "mtime": 1791393163.1005552,
+    "seen": 1791400079.0005,
+    "ast_hash": "38008cf580734b511f48e7c8f805d299",
     "semantic_hash": ""
   },
   "docs/sesiones/2026-10-06-P201-Esquema-Contenido.md": {
@@ -792,9 +744,9 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1791330836.6771703,
-    "seen": 1791331193.4429786,
-    "ast_hash": "86442f8f6585af3baec123ba75de5e87",
+    "mtime": 1791400069.251886,
+    "seen": 1791400079.0003035,
+    "ast_hash": "746d998b631a83612608b7127e1a9a9e",
     "semantic_hash": ""
   },
   "src/components/ArDishModal.tsx": {
@@ -810,9 +762,9 @@
     "semantic_hash": ""
   },
   "src/components/Contacto.tsx": {
-    "mtime": 1791330836.687648,
-    "seen": 1791331193.4430208,
-    "ast_hash": "17cf677fe8b851ab4710d23f8b3d75fb",
+    "mtime": 1791400069.3946,
+    "seen": 1791400079.0003467,
+    "ast_hash": "e2c55b9f4d3d5fa288642482edec78bc",
     "semantic_hash": ""
   },
   "src/components/FranjaReserva.tsx": {
@@ -821,28 +773,10 @@
     "ast_hash": "55f3fc2adeeace6dd9f6316c412285dd",
     "semantic_hash": ""
   },
-  "src/components/HeroFuego.tsx": {
-    "mtime": 1791330813.4188075,
-    "seen": 1791331193.443028,
-    "ast_hash": "1ad65160626c14a397ec2b4ad392c237",
-    "semantic_hash": ""
-  },
-  "src/components/LoQueArde.tsx": {
-    "mtime": 1791330836.6908884,
-    "seen": 1791331193.4430292,
-    "ast_hash": "9d5f0bbfe5ca7f98414d363b9174b394",
-    "semantic_hash": ""
-  },
   "src/components/LoadingScreen.tsx": {
-    "mtime": 1791330836.6896298,
-    "seen": 1791331193.4430308,
-    "ast_hash": "9550f8553b69b300e67a7f3166903d9c",
-    "semantic_hash": ""
-  },
-  "src/components/Manifiesto.tsx": {
-    "mtime": 1791330836.6921031,
-    "seen": 1791331193.4430323,
-    "ast_hash": "6332c491c3dae013dd0609439a62fc10",
+    "mtime": 1791400069.461895,
+    "seen": 1791400079.0003574,
+    "ast_hash": "fa47ddd9d7ba81e2e7e3b45806bba04c",
     "semantic_hash": ""
   },
   "src/components/Menu.tsx": {
@@ -852,27 +786,21 @@
     "semantic_hash": ""
   },
   "src/components/Nav.tsx": {
-    "mtime": 1791330836.694453,
-    "seen": 1791331193.4430354,
-    "ast_hash": "86c5096b226857609526b00783df482d",
+    "mtime": 1791400069.5069132,
+    "seen": 1791400079.0003612,
+    "ast_hash": "65590179a79d899406a9f018b25028b4",
     "semantic_hash": ""
   },
   "src/components/Pie.tsx": {
-    "mtime": 1791330836.6962469,
-    "seen": 1791331193.4430373,
-    "ast_hash": "587545bf43311cf43f6fa9f2a306b3e1",
+    "mtime": 1791400069.5292554,
+    "seen": 1791400079.0003626,
+    "ast_hash": "260f385b2db0d14ced4cf91da12e1d75",
     "semantic_hash": ""
   },
   "src/components/Reserva.tsx": {
     "mtime": 1791330836.6971684,
     "seen": 1791331193.4430387,
     "ast_hash": "5ee0406e67b802ee02e61d49a3449d79",
-    "semantic_hash": ""
-  },
-  "src/components/Voces.tsx": {
-    "mtime": 1791330836.6989431,
-    "seen": 1791331193.4430406,
-    "ast_hash": "90d9f1f74ad8d8a024ebb2ce435daf94",
     "semantic_hash": ""
   },
   "src/i18n/LanguageContext.ts": {
@@ -882,15 +810,15 @@
     "semantic_hash": ""
   },
   "src/i18n/LanguageProvider.tsx": {
-    "mtime": 1791327562.943468,
-    "seen": 1791327896.5248744,
-    "ast_hash": "ea01dbb0ccf2cd2722240be2f229f716",
+    "mtime": 1791400069.6539192,
+    "seen": 1791400079.000385,
+    "ast_hash": "577d816b32edd0d7e6dbf167d1649d06",
     "semantic_hash": ""
   },
   "src/i18n/translations.ts": {
-    "mtime": 1791316087.002284,
-    "seen": 1791327896.5248764,
-    "ast_hash": "374c5fd31fe2904aba13c5a1f9c55bc1",
+    "mtime": 1791400069.6828556,
+    "seen": 1791400079.0003867,
+    "ast_hash": "5f869681a34d82331765dd083397b51a",
     "semantic_hash": ""
   },
   "src/i18n/useLanguage.ts": {
@@ -957,6 +885,90 @@
     "mtime": 1791393074.9019785,
     "seen": 1791393084.1627634,
     "ast_hash": "f37472d4aac5617df97a90bd9277b765",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/restaurant.json": {
+    "mtime": 1791400069.2122114,
+    "seen": 1791400079.0002835,
+    "ast_hash": "d5db4934fe432e906287082ad5afbfa0",
+    "semantic_hash": ""
+  },
+  "src/components/Hero.tsx": {
+    "mtime": 1791400069.4307761,
+    "seen": 1791400079.000355,
+    "ast_hash": "7512b1f24062a18c785f4e1fe37e39a9",
+    "semantic_hash": ""
+  },
+  "src/shared/config.ts": {
+    "mtime": 1791393488.7776182,
+    "seen": 1791400079.0004165,
+    "ast_hash": "49d202fc504e15f42cbb1453e31ef536",
+    "semantic_hash": ""
+  },
+  "docs/historico/landing-ascua-original.md": {
+    "mtime": 1791400069.3366594,
+    "seen": 1791400079.0004978,
+    "ast_hash": "31c8ce474a425481a8da228da2909ce0",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/cerdo.webp": {
+    "mtime": 1791393601.3365996,
+    "seen": 1791400079.0005665,
+    "ast_hash": "043ed8951327e21f58dd2f85d84b2eba",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/filete.webp": {
+    "mtime": 1791393601.5005956,
+    "seen": 1791400079.0005686,
+    "ast_hash": "063a988c59189e8be25081ad2bf65d86",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/gnocchi.webp": {
+    "mtime": 1791393601.6526268,
+    "seen": 1791400079.0005703,
+    "ast_hash": "14120438e57f6619d78e4c49f2ffbc3a",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/langosta.webp": {
+    "mtime": 1791393601.799469,
+    "seen": 1791400079.000572,
+    "ast_hash": "528e78b427d1bfc7d77d93607ebfdda4",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/logo.svg": {
+    "mtime": 1791393627.9178805,
+    "seen": 1791400079.0005739,
+    "ast_hash": "16b8dd22310b077dfb2202bb509deaf7",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/pato.webp": {
+    "mtime": 1791393601.974051,
+    "seen": 1791400079.0005755,
+    "ast_hash": "3da56792081807398d89356ee82b73d9",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/pescado.webp": {
+    "mtime": 1791393602.1299057,
+    "seen": 1791400079.000577,
+    "ast_hash": "2f8cb14fc77ed0c5ea9b4ee5d1216278",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/tagliatelle.webp": {
+    "mtime": 1791393602.3214312,
+    "seen": 1791400079.0005786,
+    "ast_hash": "a487d23b60b282cba8063e7dfb114c93",
+    "semantic_hash": ""
+  },
+  "content/restaurants/ascua-demo-abcd/assets/vieiras.webp": {
+    "mtime": 1791393602.488127,
+    "seen": 1791400079.00058,
+    "ast_hash": "9a634eb504d0a285a34e77f7245b5f5e",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-07-lote-3.md": {
+    "mtime": 1791400198.166747,
+    "seen": 1791400215.013414,
+    "ast_hash": "8bdbfe6cb8f0dccc3207b6bf47ed045f",
     "semantic_hash": ""
   }
 }

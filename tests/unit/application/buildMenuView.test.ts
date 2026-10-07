@@ -17,6 +17,7 @@ describe('Caso de Uso: buildMenuView', () => {
     isSafari: false,
     isChrome: true,
     isEmbeddedBrowser: false,
+    embeddedBrowserName: null,
     canQuickLook: false,
     canSceneViewer: true,
   }

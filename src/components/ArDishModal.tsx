@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Check, Copy, X } from 'lucide-react'
 import ArViewer from './ArViewer'
 import { useLanguage } from '../i18n/useLanguage'
-import { detectInAppBrowser } from '../lib/browserEnv'
+import { useDependencies } from '@/app/DependenciesContext'
 
 interface Dish {
   name: string
@@ -30,7 +30,8 @@ export default function ArDishModal({
   const { t } = useLanguage()
   const arUnavailable = mode === 'ar'
   const [copied, setCopied] = useState(false)
-  const [inAppName] = useState(() => detectInAppBrowser())
+  const { environmentDetector } = useDependencies()
+  const inAppName = environmentDetector.getCapabilities().embeddedBrowserName
 
   const copyLink = async () => {
     try {

@@ -7,7 +7,7 @@ import { restaurantAtom } from '@/app/store'
 import { useDependencies } from '@/app/DependenciesContext'
 import ArDishModal from './ArDishModal'
 import ArGuideModal from './ArGuideModal'
-import { launchAr } from '../lib/launchAr'
+import { launchDishAr } from '@/application/use-cases/launchDishAr'
 import type { Dish } from '@/domain/dish'
 
 export default function Menu() {
@@ -17,7 +17,8 @@ export default function Menu() {
     null
   )
   const restaurant = useAtomValue(restaurantAtom)
-  const { soldOutStore } = useDependencies()
+  const { soldOutStore, environmentDetector, arLauncher, analyticsTracker } =
+    useDependencies()
   const [soldOutDict, setSoldOutDict] = useState<Record<string, boolean>>({})
   const [guideState, setGuideState] = useState<{
     isOpen: boolean
@@ -57,13 +58,19 @@ export default function Menu() {
 
   const abrirAr = (plato: Dish) => {
     if (!plato.modelo) return
-    const abierto = launchAr({
-      glbUrl: plato.modelo.glb,
-      usdzUrl: plato.modelo.usdz,
-      posterUrl: plato.modelo.poster,
-      title: plato.nombre[lang] || plato.nombre.es,
+    // Se llama directo desde el toque: sin await ni setTimeout antes.
+    void launchDishAr({
+      dish: plato,
+      restaurantSlug: restaurant!.slug,
+      detector: environmentDetector,
+      launcher: arLauncher,
+      analytics: analyticsTracker,
+    }).then((resultado) => {
+      // En computador, o dentro de Instagram/WhatsApp, se muestra el visor 3D.
+      if (resultado.success && resultado.mode === 'model-viewer-modal') {
+        setActivo({ dish: plato, mode: 'ar' })
+      }
     })
-    if (!abierto) setActivo({ dish: plato, mode: 'ar' })
   }
 
   const platos = restaurant

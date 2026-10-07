@@ -48,6 +48,7 @@ describe('BrowserEnvironmentDetector', () => {
     const caps = detector.getCapabilities()
 
     expect(caps.isEmbeddedBrowser).toBe(true)
+    expect(caps.embeddedBrowserName).toBe('Instagram')
   })
 
   it('detects embedded browsers (WhatsApp)', () => {
@@ -57,6 +58,27 @@ describe('BrowserEnvironmentDetector', () => {
     const caps = detector.getCapabilities()
 
     expect(caps.isEmbeddedBrowser).toBe(true)
+    expect(caps.embeddedBrowserName).toBe('WhatsApp')
+  })
+
+  it('detects embedded browsers (Facebook)', () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Linux; Android 10) FBAN/2.21.19.21',
+    })
+    const caps = detector.getCapabilities()
+
+    expect(caps.isEmbeddedBrowser).toBe(true)
+    expect(caps.embeddedBrowserName).toBe('Facebook')
+  })
+
+  it('returns null embeddedBrowserName for normal browsers', () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X)',
+    })
+    const caps = detector.getCapabilities()
+
+    expect(caps.isEmbeddedBrowser).toBe(false)
+    expect(caps.embeddedBrowserName).toBeNull()
   })
 
   it('returns default capabilities if window is undefined', () => {
@@ -68,5 +90,6 @@ describe('BrowserEnvironmentDetector', () => {
     expect(caps.isIos).toBe(false)
     expect(caps.isAndroid).toBe(false)
     expect(caps.isEmbeddedBrowser).toBe(false)
+    expect(caps.embeddedBrowserName).toBeNull()
   })
 })

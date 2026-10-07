@@ -25,6 +25,7 @@ export class BrowserEnvironmentDetector implements EnvironmentDetector {
         isSafari: false,
         isChrome: false,
         isEmbeddedBrowser: false,
+        embeddedBrowserName: null,
         canQuickLook: false,
         canSceneViewer: false,
       }
@@ -44,9 +45,11 @@ export class BrowserEnvironmentDetector implements EnvironmentDetector {
     const isSafari = /^((?!chrome|android).)*safari/i.test(ua)
     const isChrome = /Chrome/.test(ua) && /Google Inc/.test(navigator.vendor)
 
-    const isEmbeddedBrowser = IN_APP_MARKERS.some(([marker]) =>
+    const embeddedMarker = IN_APP_MARKERS.find(([marker]) =>
       ua.includes(marker)
     )
+    const embeddedBrowserName = embeddedMarker ? embeddedMarker[1] : null
+    const isEmbeddedBrowser = embeddedBrowserName !== null
 
     const canQuickLook = isIos
     const canSceneViewer = isAndroid
@@ -58,6 +61,7 @@ export class BrowserEnvironmentDetector implements EnvironmentDetector {
       isSafari,
       isChrome,
       isEmbeddedBrowser,
+      embeddedBrowserName,
       canQuickLook,
       canSceneViewer,
     }

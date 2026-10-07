@@ -3,7 +3,7 @@
  * @description Pruebas unitarias para el caso de uso launchDishAr.
  */
 
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { launchDishAr } from '@/application/use-cases/launchDishAr'
 import {
   MockArLauncher,
@@ -36,6 +36,7 @@ describe('Caso de Uso: launchDishAr', () => {
     isSafari: true,
     isChrome: false,
     isEmbeddedBrowser: false,
+    embeddedBrowserName: null,
     canQuickLook: true,
     canSceneViewer: false,
   }
@@ -127,5 +128,22 @@ describe('Caso de Uso: launchDishAr', () => {
 
     expect(analytics.events).toHaveLength(2)
     expect(analytics.events[1]?.type).toBe('launch_ar_error')
+  })
+
+  it('invoca al lanzador sin esperar (conserva el gesto del usuario)', () => {
+    const detector = new MockEnvironmentDetector(deviceIos)
+    const launcher = new MockArLauncher()
+    const launchSpy = vi.spyOn(launcher, 'launch')
+    const analytics = new MockAnalyticsTracker()
+
+    void launchDishAr({
+      dish: dishConModelo,
+      restaurantSlug: 'la-brasa-7k2p',
+      detector,
+      launcher,
+      analytics,
+    })
+
+    expect(launchSpy).toHaveBeenCalledTimes(1)
   })
 })

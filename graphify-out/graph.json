@@ -17,6 +17,32 @@
       "source_location": "L14"
     },
     {
+      "id": "src_application_use_cases_buildmenuview_categoryviewmodel",
+      "label": "CategoryViewModel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "categoryviewmodel",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_application_use_cases_buildmenuview_menuviewmodel",
+      "label": "MenuViewModel",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "menuviewmodel",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L39"
+    },
+    {
       "id": "src_application_use_cases_buildreservationlink_reservationparams",
       "label": "ReservationParams",
       "_callable": true,
@@ -43,6 +69,58 @@
       "source_location": "L17"
     },
     {
+      "id": "src_domain_ar_arasset",
+      "label": "ArAsset",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "arasset",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_domain_ar_devicecapabilities",
+      "label": "DeviceCapabilities",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "devicecapabilities",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "src_domain_dish_category",
+      "label": "Category",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "category",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L68"
+    },
+    {
+      "id": "src_domain_price_price",
+      "label": "Price",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L23"
+    },
+    {
       "id": "src_domain_restaurant_restaurant",
       "label": "Restaurant",
       "_callable": true,
@@ -53,7 +131,7 @@
       "file_type": "code",
       "norm_label": "restaurant",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L114"
+      "source_location": "L115"
     },
     {
       "id": "src_domain_restaurant_restaurantauthorization",
@@ -66,7 +144,7 @@
       "file_type": "code",
       "norm_label": "restaurantauthorization",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L44"
+      "source_location": "L45"
     },
     {
       "id": "src_domain_restaurant_restaurantcontact",
@@ -79,7 +157,20 @@
       "file_type": "code",
       "norm_label": "restaurantcontact",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L67"
+      "source_location": "L68"
+    },
+    {
+      "id": "src_domain_theme_theme",
+      "label": "Theme",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "theme",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L29"
     },
     {
       "id": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
@@ -106,32 +197,6 @@
       "norm_label": "inmemoryrestaurantrepository",
       "source_file": "tests/unit/application/doubles.ts",
       "source_location": "L21"
-    },
-    {
-      "id": "src_app_compositionroot_appdependencies",
-      "label": "AppDependencies",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "appdependencies",
-      "source_file": "src/app/compositionRoot.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_app_dependenciescontext_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/app/DependenciesContext.tsx",
-      "source_location": "L7"
     },
     {
       "id": "src_application_ports_analyticstracker_analyticsevent",
@@ -199,32 +264,6 @@
       "source_location": "L13"
     },
     {
-      "id": "src_application_ports_soldoutstore_soldoutstore",
-      "label": "SoldOutStore",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "soldoutstore",
-      "source_file": "src/application/ports/soldOutStore.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_application_use_cases_buildmenuview_categoryviewmodel",
-      "label": "CategoryViewModel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "categoryviewmodel",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L33"
-    },
-    {
       "id": "src_application_use_cases_buildmenuview_dishviewmodel",
       "label": "DishViewModel",
       "_callable": true,
@@ -236,19 +275,6 @@
       "norm_label": "dishviewmodel",
       "source_file": "src/application/use-cases/buildMenuView.ts",
       "source_location": "L19"
-    },
-    {
-      "id": "src_application_use_cases_buildmenuview_menuviewmodel",
-      "label": "MenuViewModel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "menuviewmodel",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L39"
     },
     {
       "id": "src_application_use_cases_launchdishar_launchdisharparams",
@@ -264,19 +290,6 @@
       "source_location": "L15"
     },
     {
-      "id": "src_domain_ar_arasset",
-      "label": "ArAsset",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "arasset",
-      "source_file": "src/domain/ar.ts",
-      "source_location": "L38"
-    },
-    {
       "id": "src_domain_ar_arlaunchmode",
       "label": "ArLaunchMode",
       "_callable": true,
@@ -288,32 +301,6 @@
       "norm_label": "arlaunchmode",
       "source_file": "src/domain/ar.ts",
       "source_location": "L63"
-    },
-    {
-      "id": "src_domain_ar_devicecapabilities",
-      "label": "DeviceCapabilities",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "devicecapabilities",
-      "source_file": "src/domain/ar.ts",
-      "source_location": "L58"
-    },
-    {
-      "id": "src_domain_dish_category",
-      "label": "Category",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "category",
-      "source_file": "src/domain/dish.ts",
-      "source_location": "L68"
     },
     {
       "id": "src_domain_dish_dish",
@@ -340,32 +327,6 @@
       "norm_label": "localizedstring",
       "source_file": "src/domain/dish.ts",
       "source_location": "L22"
-    },
-    {
-      "id": "src_domain_price_price",
-      "label": "Price",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "price",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L23"
-    },
-    {
-      "id": "src_domain_theme_theme",
-      "label": "Theme",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "theme",
-      "source_file": "src/domain/theme.ts",
-      "source_location": "L31"
     },
     {
       "id": "src_infrastructure_analytics_cloudflareanalyticstracker_cloudflareanalyticstracker",
@@ -485,17 +446,56 @@
       "source_location": "L69"
     },
     {
+      "id": "src_application_ports_soldoutstore_soldoutstore",
+      "label": "SoldOutStore",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "SoldOutStore",
+      "file_type": "code",
+      "norm_label": "soldoutstore",
+      "source_file": "src/application/ports/soldOutStore.ts",
+      "source_location": "L12"
+    },
+    {
       "id": "tests_unit_application_doubles_inmemorysoldoutstore",
       "label": "InMemorySoldOutStore",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": "inmemorysoldoutstore",
       "source_file": "tests/unit/application/doubles.ts",
       "source_location": "L39"
+    },
+    {
+      "id": "src_app_compositionroot_appdependencies",
+      "label": "AppDependencies",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "appdependencies",
+      "source_file": "src/app/compositionRoot.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_app_dependenciescontext_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/app/DependenciesContext.tsx",
+      "source_location": "L7"
     },
     {
       "id": "src_components_ardishmodal_ardishmodalprops",
@@ -624,7 +624,7 @@
       "file_type": "code",
       "norm_label": "fileexists()",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "scripts_validate_content_hashfile",
@@ -636,7 +636,7 @@
       "file_type": "code",
       "norm_label": "hashfile()",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "scripts_validate_content_validatecontent",
@@ -648,7 +648,19 @@
       "file_type": "code",
       "norm_label": "validatecontent()",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L29"
+      "source_location": "L30"
+    },
+    {
+      "id": "src_application_ports_environmentdetector_environmentdetector_getcapabilities",
+      "label": ".getCapabilities()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": ".getcapabilities()",
+      "source_file": "src/application/ports/environmentDetector.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_application_ports_restaurantrepository_restaurantrepository_getbyslug",
@@ -661,6 +673,18 @@
       "norm_label": ".getbyslug()",
       "source_file": "src/application/ports/restaurantRepository.ts",
       "source_location": "L21"
+    },
+    {
+      "id": "src_application_use_cases_buildmenuview_buildmenuview",
+      "label": "buildMenuView()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview()",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L55"
     },
     {
       "id": "src_application_use_cases_buildreservationlink_buildreservationlink",
@@ -687,6 +711,42 @@
       "source_location": "L33"
     },
     {
+      "id": "src_application_use_cases_launchdishar_launchdishar",
+      "label": "launchDishAr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "launchdishar()",
+      "source_file": "src/application/use-cases/launchDishAr.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_domain_ar_selectarlaunchmode",
+      "label": "selectArLaunchMode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "selectarlaunchmode()",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L86"
+    },
+    {
+      "id": "src_domain_price_formatcopprice",
+      "label": "formatCopPrice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "formatcopprice()",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L35"
+    },
+    {
       "id": "src_domain_restaurant_isrestaurantexpired",
       "label": "isRestaurantExpired()",
       "_callable": true,
@@ -696,7 +756,7 @@
       "file_type": "code",
       "norm_label": "isrestaurantexpired()",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L123"
+      "source_location": "L124"
     },
     {
       "id": "src_domain_restaurant_resolveasseturls",
@@ -708,19 +768,43 @@
       "file_type": "code",
       "norm_label": "resolveasseturls()",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L143"
+      "source_location": "L144"
     },
     {
-      "id": "src_hooks_userestaurant_userestaurant_fetchrestaurant",
-      "label": "fetchRestaurant()",
+      "id": "src_domain_theme_contrastratio",
+      "label": "contrastRatio()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "restaurant.ts",
       "file_type": "code",
-      "norm_label": "fetchrestaurant()",
-      "source_file": "src/hooks/useRestaurant.ts",
-      "source_location": "L24"
+      "norm_label": "contrastratio()",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_domain_theme_pickreadabletextcolor",
+      "label": "pickReadableTextColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "pickreadabletextcolor()",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L65"
+    },
+    {
+      "id": "src_domain_theme_relativeluminance",
+      "label": "relativeLuminance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "relativeluminance()",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L32"
     },
     {
       "id": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository_getbyslug",
@@ -771,6 +855,30 @@
       "source_location": "L34"
     },
     {
+      "id": "tests_unit_application_doubles_mockenvironmentdetector_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "tests/unit/application/doubles.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "tests_unit_application_doubles_mockenvironmentdetector_getcapabilities",
+      "label": ".getCapabilities()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": ".getcapabilities()",
+      "source_file": "tests/unit/application/doubles.ts",
+      "source_location": "L72"
+    },
+    {
       "id": "src_application_ports_analyticstracker_analyticstracker_track",
       "label": ".track()",
       "_callable": true,
@@ -793,102 +901,6 @@
       "norm_label": ".launch()",
       "source_file": "src/application/ports/arLauncher.ts",
       "source_location": "L34"
-    },
-    {
-      "id": "src_application_ports_environmentdetector_environmentdetector_getcapabilities",
-      "label": ".getCapabilities()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": ".getcapabilities()",
-      "source_file": "src/application/ports/environmentDetector.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_application_ports_soldoutstore_soldoutstore_issoldout",
-      "label": ".isSoldOut()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": ".issoldout()",
-      "source_file": "src/application/ports/soldOutStore.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_application_ports_soldoutstore_soldoutstore_setsoldout",
-      "label": ".setSoldOut()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": ".setsoldout()",
-      "source_file": "src/application/ports/soldOutStore.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_application_ports_soldoutstore_soldoutstore_togglesoldout",
-      "label": ".toggleSoldOut()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": ".togglesoldout()",
-      "source_file": "src/application/ports/soldOutStore.ts",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_application_use_cases_buildmenuview_buildmenuview",
-      "label": "buildMenuView()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview()",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_application_use_cases_launchdishar_launchdishar",
-      "label": "launchDishAr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "launchdishar()",
-      "source_file": "src/application/use-cases/launchDishAr.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_domain_ar_selectarlaunchmode",
-      "label": "selectArLaunchMode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "selectarlaunchmode()",
-      "source_file": "src/domain/ar.ts",
-      "source_location": "L86"
-    },
-    {
-      "id": "src_domain_price_formatcopprice",
-      "label": "formatCopPrice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "formatcopprice()",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L35"
     },
     {
       "id": "src_infrastructure_analytics_cloudflareanalyticstracker_cloudflareanalyticstracker_track",
@@ -987,28 +999,100 @@
       "source_location": "L82"
     },
     {
-      "id": "tests_unit_application_doubles_mockenvironmentdetector_constructor",
-      "label": ".constructor()",
+      "id": "src_lib_browserenv_detectinappbrowser",
+      "label": "detectInAppBrowser()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "tests/unit/application/doubles.ts",
-      "source_location": "L70"
+      "norm_label": "detectinappbrowser()",
+      "source_file": "src/lib/browserEnv.js",
+      "source_location": "L20"
     },
     {
-      "id": "tests_unit_application_doubles_mockenvironmentdetector_getcapabilities",
-      "label": ".getCapabilities()",
+      "id": "src_lib_browserenv_isios",
+      "label": "isIOS()",
       "_callable": true,
       "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "code",
-      "norm_label": ".getcapabilities()",
-      "source_file": "tests/unit/application/doubles.ts",
-      "source_location": "L72"
+      "norm_label": "isios()",
+      "source_file": "src/lib/browserEnv.js",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_lib_launchar_launchar",
+      "label": "launchAr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "code",
+      "norm_label": "launchar()",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_lib_launchar_launchquicklook",
+      "label": "launchQuickLook()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "code",
+      "norm_label": "launchquicklook()",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_lib_launchar_launchsceneviewer",
+      "label": "launchSceneViewer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "code",
+      "norm_label": "launchsceneviewer()",
+      "source_file": "src/lib/launchAr.js",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_application_ports_soldoutstore_soldoutstore_issoldout",
+      "label": ".isSoldOut()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "SoldOutStore",
+      "file_type": "code",
+      "norm_label": ".issoldout()",
+      "source_file": "src/application/ports/soldOutStore.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_application_ports_soldoutstore_soldoutstore_setsoldout",
+      "label": ".setSoldOut()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "SoldOutStore",
+      "file_type": "code",
+      "norm_label": ".setsoldout()",
+      "source_file": "src/application/ports/soldOutStore.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_application_ports_soldoutstore_soldoutstore_togglesoldout",
+      "label": ".toggleSoldOut()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 32,
+      "community_name": "SoldOutStore",
+      "file_type": "code",
+      "norm_label": ".togglesoldout()",
+      "source_file": "src/application/ports/soldOutStore.ts",
+      "source_location": "L37"
     },
     {
       "id": "src_application_use_cases_togglesoldout_togglesoldout",
@@ -1016,7 +1100,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": "togglesoldout()",
       "source_file": "src/application/use-cases/toggleSoldOut.ts",
@@ -1028,7 +1112,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -1040,7 +1124,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": ".issoldout()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -1052,7 +1136,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": ".setsoldout()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -1064,7 +1148,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": ".togglesoldout()",
       "source_file": "tests/unit/application/doubles.ts",
@@ -1080,7 +1164,7 @@
       "file_type": "code",
       "norm_label": "app()",
       "source_file": "src/App.tsx",
-      "source_location": "L21"
+      "source_location": "L19"
     },
     {
       "id": "src_app_dependenciescontext_dependenciesprovider",
@@ -1116,7 +1200,7 @@
       "file_type": "code",
       "norm_label": "expiredpage()",
       "source_file": "src/app/router.tsx",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "src_app_router_landingpage",
@@ -1128,7 +1212,7 @@
       "file_type": "code",
       "norm_label": "landingpage()",
       "source_file": "src/app/router.tsx",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "src_app_router_notfoundpage",
@@ -1140,7 +1224,7 @@
       "file_type": "code",
       "norm_label": "notfoundpage()",
       "source_file": "src/app/router.tsx",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "src_app_router_qrpage",
@@ -1152,7 +1236,7 @@
       "file_type": "code",
       "norm_label": "qrpage()",
       "source_file": "src/app/router.tsx",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "src_components_ardishmodal_ardishmodal",
@@ -1200,7 +1284,7 @@
       "file_type": "code",
       "norm_label": "contacto()",
       "source_file": "src/components/Contacto.tsx",
-      "source_location": "L10"
+      "source_location": "L8"
     },
     {
       "id": "src_components_demopanel_demopanel",
@@ -1239,16 +1323,16 @@
       "source_location": "L4"
     },
     {
-      "id": "src_components_herofuego_herofuego",
-      "label": "HeroFuego()",
+      "id": "src_components_hero_hero",
+      "label": "Hero()",
       "_callable": true,
       "_origin": "ast",
       "community": 34,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "herofuego()",
-      "source_file": "src/components/HeroFuego.tsx",
-      "source_location": "L4"
+      "norm_label": "hero()",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L6"
     },
     {
       "id": "src_components_loadingscreen_loadingscreen",
@@ -1260,31 +1344,7 @@
       "file_type": "code",
       "norm_label": "loadingscreen()",
       "source_file": "src/components/LoadingScreen.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_components_loquearde_loquearde",
-      "label": "LoQueArde()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "loquearde()",
-      "source_file": "src/components/LoQueArde.tsx",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_components_manifiesto_manifiesto",
-      "label": "Manifiesto()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "manifiesto()",
-      "source_file": "src/components/Manifiesto.tsx",
-      "source_location": "L3"
+      "source_location": "L5"
     },
     {
       "id": "src_components_menu_menu",
@@ -1308,7 +1368,7 @@
       "file_type": "code",
       "norm_label": "nav()",
       "source_file": "src/components/Nav.tsx",
-      "source_location": "L7"
+      "source_location": "L9"
     },
     {
       "id": "src_components_pie_pie",
@@ -1320,7 +1380,7 @@
       "file_type": "code",
       "norm_label": "pie()",
       "source_file": "src/components/Pie.tsx",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "src_components_reserva_reserva",
@@ -1335,18 +1395,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_components_voces_voces",
-      "label": "Voces()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "voces()",
-      "source_file": "src/components/Voces.tsx",
-      "source_location": "L3"
-    },
-    {
       "id": "src_hooks_userestaurant_userestaurant",
       "label": "useRestaurant()",
       "_callable": true,
@@ -1359,6 +1407,18 @@
       "source_location": "L8"
     },
     {
+      "id": "src_hooks_userestaurant_userestaurant_fetchrestaurant",
+      "label": "fetchRestaurant()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "fetchrestaurant()",
+      "source_file": "src/hooks/useRestaurant.ts",
+      "source_location": "L24"
+    },
+    {
       "id": "src_i18n_languageprovider_detectinitiallang",
       "label": "detectInitialLang()",
       "_callable": true,
@@ -1368,7 +1428,7 @@
       "file_type": "code",
       "norm_label": "detectinitiallang()",
       "source_file": "src/i18n/LanguageProvider.tsx",
-      "source_location": "L5"
+      "source_location": "L7"
     },
     {
       "id": "src_i18n_languageprovider_languageprovider",
@@ -1380,7 +1440,7 @@
       "file_type": "code",
       "norm_label": "languageprovider()",
       "source_file": "src/i18n/LanguageProvider.tsx",
-      "source_location": "L12"
+      "source_location": "L14"
     },
     {
       "id": "src_i18n_uselanguage_uselanguage",
@@ -1393,18 +1453,6 @@
       "norm_label": "uselanguage()",
       "source_file": "src/i18n/useLanguage.ts",
       "source_location": "L7"
-    },
-    {
-      "id": "src_lib_browserenv_detectinappbrowser",
-      "label": "detectInAppBrowser()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "detectinappbrowser()",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L20"
     },
     {
       "id": "src_infrastructure_storage_localstoragesoldoutstore_localstoragesoldoutstore_getkey",
@@ -1537,54 +1585,6 @@
       "norm_label": "istrustedasseturl()",
       "source_file": "src/lib/arAssets.js",
       "source_location": "L49"
-    },
-    {
-      "id": "src_lib_browserenv_isios",
-      "label": "isIOS()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "isios()",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_lib_launchar_launchar",
-      "label": "launchAr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "launchar()",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_lib_launchar_launchquicklook",
-      "label": "launchQuickLook()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "launchquicklook()",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_launchar_launchsceneviewer",
-      "label": "launchSceneViewer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "launchsceneviewer()",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L29"
     },
     {
       "id": "readme_ascua_demo_multi_restaurante",
@@ -1858,7 +1858,18 @@
       "file_type": "code",
       "norm_label": "max_sizes",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L8"
+      "source_location": "L9"
+    },
+    {
+      "id": "src_application_index",
+      "label": "application/index.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "application/index.ts",
+      "source_file": "src/application/index.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_application_ports_restaurantrepository",
@@ -1869,6 +1880,17 @@
       "file_type": "code",
       "norm_label": "restaurantrepository.ts",
       "source_file": "src/application/ports/restaurantRepository.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_application_use_cases_buildmenuview",
+      "label": "buildMenuView.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview.ts",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
       "source_location": "L1"
     },
     {
@@ -1892,6 +1914,83 @@
       "norm_label": "getrestaurant.ts",
       "source_file": "src/application/use-cases/getRestaurant.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "src_application_use_cases_index",
+      "label": "use-cases/index.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "use-cases/index.ts",
+      "source_file": "src/application/use-cases/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_ar_devicecapabilitiesschema",
+      "label": "deviceCapabilitiesSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "devicecapabilitiesschema",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L44"
+    },
+    {
+      "id": "src_domain_assetpath",
+      "label": "assetPath.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "assetpath.ts",
+      "source_file": "src/domain/assetPath.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_assetpath_assetpathschema",
+      "label": "assetPathSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "assetpathschema",
+      "source_file": "src/domain/assetPath.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_domain_dish_localizedstringschema",
+      "label": "localizedStringSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "localizedstringschema",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_domain_price",
+      "label": "price.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price.ts",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_price_priceschema",
+      "label": "priceSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "priceschema",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L16"
     },
     {
       "id": "src_domain_restaurant",
@@ -1924,7 +2023,7 @@
       "file_type": "code",
       "norm_label": "restaurantauthorizationschema",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "src_domain_restaurant_restaurantcontactschema",
@@ -1935,7 +2034,7 @@
       "file_type": "code",
       "norm_label": "restaurantcontactschema",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L51"
+      "source_location": "L52"
     },
     {
       "id": "src_domain_restaurant_restaurantschema",
@@ -1946,7 +2045,18 @@
       "file_type": "code",
       "norm_label": "restaurantschema",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L72"
+      "source_location": "L73"
+    },
+    {
+      "id": "src_domain_theme",
+      "label": "theme.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "theme.ts",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_domain_theme_themeschema",
@@ -1971,6 +2081,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tests_unit_application_buildmenuview_test",
+      "label": "buildMenuView.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview.test.ts",
+      "source_file": "tests/unit/application/buildMenuView.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_unit_application_buildreservationlink_test",
       "label": "buildReservationLink.test.ts",
       "_origin": "ast",
@@ -1990,6 +2111,28 @@
       "file_type": "code",
       "norm_label": "getrestaurant.test.ts",
       "source_file": "tests/unit/application/getRestaurant.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_ar_test",
+      "label": "ar.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "ar.test.ts",
+      "source_file": "tests/unit/domain/ar.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_price_test",
+      "label": "price.test.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "price.test.ts",
+      "source_file": "tests/unit/domain/price.test.ts",
       "source_location": "L1"
     },
     {
@@ -2037,6 +2180,29 @@
       "source_location": "L65"
     },
     {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "docs_correcciones_antes_de_continuar_c_04_sin_any",
+      "label": "C-04 \u00b7 Sin `any`",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "c-04 \u00b7 sin `any`",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L107"
+    },
+    {
       "id": "docs_correcciones_antes_de_continuar_c_10_rutas_seguras_y_resueltas_primero_las_pruebas",
       "label": "C-10 \u00b7 Rutas seguras y resueltas _(primero las pruebas)_",
       "_origin": "ast",
@@ -2071,6 +2237,30 @@
       "norm_label": "lote 2 \u2014 rutas de assets _(hoy las fotos y los modelos no cargan)_",
       "source_file": "docs/Correcciones antes de continuar.md",
       "source_location": "L172"
+    },
+    {
+      "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L518"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
+      "label": "Decisiones tomadas",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisiones tomadas",
+      "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
+      "source_location": "L6"
     },
     {
       "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar",
@@ -2178,66 +2368,6 @@
       "node_kind": "heading",
       "norm_label": "siguiente tarea",
       "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
-      "source_location": "L17"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store",
-      "label": "2026-10-06-P107-Jotai-Store.md",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "2026-10-06-p107-jotai-store.md",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_acciones_realizadas",
-      "label": "Acciones realizadas",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "acciones realizadas",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_bit\u00e1cora_de_sesi\u00f3n_p_107_store_reactivo_global_jotai",
-      "label": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "bitacora de sesion: p-107 store reactivo global (jotai)",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_objetivos",
-      "label": "Objetivos",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "objetivos",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L6"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_siguiente_tarea",
-      "label": "Siguiente Tarea",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "siguiente tarea",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L17"
     },
     {
@@ -3660,17 +3790,6 @@
       "source_location": "L20"
     },
     {
-      "id": "src_application_index",
-      "label": "application/index.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "application/index.ts",
-      "source_file": "src/application/index.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_application_ports_analyticstracker",
       "label": "analyticsTracker.ts",
       "_origin": "ast",
@@ -3726,28 +3845,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_application_use_cases_buildmenuview",
-      "label": "buildMenuView.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview.ts",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_application_use_cases_index",
-      "label": "use-cases/index.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "use-cases/index.ts",
-      "source_file": "src/application/use-cases/index.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "src_application_use_cases_launchdishar",
       "label": "launchDishAr.ts",
       "_origin": "ast",
@@ -3779,39 +3876,6 @@
       "norm_label": "arassetschema",
       "source_file": "src/domain/ar.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "src_domain_ar_devicecapabilitiesschema",
-      "label": "deviceCapabilitiesSchema",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "devicecapabilitiesschema",
-      "source_file": "src/domain/ar.ts",
-      "source_location": "L44"
-    },
-    {
-      "id": "src_domain_assetpath",
-      "label": "assetPath.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "assetpath.ts",
-      "source_file": "src/domain/assetPath.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_domain_assetpath_assetpathschema",
-      "label": "assetPathSchema",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "assetpathschema",
-      "source_file": "src/domain/assetPath.ts",
-      "source_location": "L6"
     },
     {
       "id": "src_domain_dish",
@@ -3847,17 +3911,6 @@
       "source_location": "L27"
     },
     {
-      "id": "src_domain_dish_localizedstringschema",
-      "label": "localizedStringSchema",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "localizedstringschema",
-      "source_file": "src/domain/dish.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "src_domain_index",
       "label": "domain/index.ts",
       "_origin": "ast",
@@ -3866,39 +3919,6 @@
       "file_type": "code",
       "norm_label": "domain/index.ts",
       "source_file": "src/domain/index.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_domain_price",
-      "label": "price.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "price.ts",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_domain_price_priceschema",
-      "label": "priceSchema",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "priceschema",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_domain_theme",
-      "label": "theme.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "theme.ts",
-      "source_file": "src/domain/theme.ts",
       "source_location": "L1"
     },
     {
@@ -3990,17 +4010,6 @@
       "source_location": "L1"
     },
     {
-      "id": "tests_unit_application_buildmenuview_test",
-      "label": "buildMenuView.test.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview.test.ts",
-      "source_file": "tests/unit/application/buildMenuView.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "tests_unit_application_doubles",
       "label": "doubles.ts",
       "_origin": "ast",
@@ -4023,17 +4032,6 @@
       "source_location": "L1"
     },
     {
-      "id": "tests_unit_domain_ar_test",
-      "label": "ar.test.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "ar.test.ts",
-      "source_file": "tests/unit/domain/ar.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "tests_unit_domain_dish_test",
       "label": "dish.test.ts",
       "_origin": "ast",
@@ -4042,17 +4040,6 @@
       "file_type": "code",
       "norm_label": "dish.test.ts",
       "source_file": "tests/unit/domain/dish.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_unit_domain_price_test",
-      "label": "price.test.ts",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "code",
-      "norm_label": "price.test.ts",
-      "source_file": "tests/unit/domain/price.test.ts",
       "source_location": "L1"
     },
     {
@@ -4100,17 +4087,6 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L42"
-    },
-    {
       "id": "claude_0_2_reglas_espec\u00edficas_de_este_repo",
       "label": "0.2 Reglas espec\u00edficas de este repo",
       "_origin": "ast",
@@ -4121,18 +4097,6 @@
       "norm_label": "0.2 reglas especificas de este repo",
       "source_file": "CLAUDE.md",
       "source_location": "L27"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_25_el_aviso_de_navegador_embebido_con_el_nombre_de_la_app",
-      "label": "C-25 \u00b7 El aviso de navegador embebido, con el nombre de la app",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-25 \u00b7 el aviso de navegador embebido, con el nombre de la app",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L365"
     },
     {
       "id": "docs_plan_implementacion_3_3_principios_solid_aplicados_concreto_no_te\u00f3rico",
@@ -4147,30 +4111,6 @@
       "source_location": "L141"
     },
     {
-      "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
-      "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L518"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
-      "label": "Decisiones tomadas",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "doubles.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decisiones tomadas",
-      "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
-      "source_location": "L6"
-    },
-    {
       "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_acciones_realizadas",
       "label": "Acciones realizadas",
       "_origin": "ast",
@@ -4183,112 +4123,124 @@
       "source_location": "L10"
     },
     {
-      "id": "docs_product_brand_commitments",
-      "label": "Brand Commitments",
+      "id": "docs_estado_bloqueos",
+      "label": "Bloqueos",
       "_origin": "ast",
       "community": 15,
-      "community_name": "Product",
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "brand commitments",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L56"
+      "norm_label": "bloqueos",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L44"
     },
     {
-      "id": "docs_product_evidence_on_hand",
-      "label": "Evidence on Hand",
+      "id": "docs_estado_comandos_para_verificar",
+      "label": "Comandos para verificar",
       "_origin": "ast",
       "community": 15,
-      "community_name": "Product",
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "evidence on hand",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L66"
+      "norm_label": "comandos para verificar",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L53"
     },
     {
-      "id": "docs_product_operating_context",
-      "label": "Operating Context",
+      "id": "docs_estado_completadas_con_observaciones_de_fases_previas",
+      "label": "Completadas con observaciones de fases previas:",
       "_origin": "ast",
       "community": 15,
-      "community_name": "Product",
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "operating context",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L34"
-    },
-    {
-      "id": "docs_product_platform",
-      "label": "Platform",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "platform",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "docs_product_positioning",
-      "label": "Positioning",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "positioning",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L28"
-    },
-    {
-      "id": "docs_product_product",
-      "label": "Product",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "product",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_product_product_principles",
-      "label": "Product Principles",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "product principles",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L74"
-    },
-    {
-      "id": "docs_product_product_purpose",
-      "label": "Product Purpose",
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "Product",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "product purpose",
-      "source_file": "docs/PRODUCT.md",
+      "norm_label": "completadas con observaciones de fases previas:",
+      "source_file": "docs/ESTADO.md",
       "source_location": "L22"
     },
     {
-      "id": "docs_product_users",
-      "label": "Users",
+      "id": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
+      "label": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
       "_origin": "ast",
       "community": 15,
-      "community_name": "Product",
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "users",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L14"
+      "norm_label": "estado del proyecto \u2014 ascua-demo-pagina",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_estado_fase_actual",
+      "label": "Fase actual",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fase actual",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "docs_estado_l\u00ednea_base_verificada_2026_10_07",
+      "label": "L\u00ednea base verificada (2026-10-07)",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "linea base verificada (2026-10-07)",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "docs_estado_pendientes_detectados_fuera_de_alcance_de_la_tarea_actual",
+      "label": "Pendientes detectados (fuera de alcance de la tarea actual)",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pendientes detectados (fuera de alcance de la tarea actual)",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L48"
+    },
+    {
+      "id": "docs_estado_siguiente_paso_exacto",
+      "label": "Siguiente paso exacto",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "siguiente paso exacto",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "docs_estado_tarea_actual",
+      "label": "Tarea actual",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "tarea actual",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "docs_estado_\u00faltimo_paso_completado",
+      "label": "\u00daltimo paso completado",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "ultimo paso completado",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L15"
     },
     {
       "id": "github_dependabot",
@@ -4517,6 +4469,18 @@
       "source_location": "L247"
     },
     {
+      "id": "docs_correcciones_antes_de_continuar_c_18_secciones_sin_datos_decisi\u00f3n_d_1",
+      "label": "C-18 \u00b7 Secciones sin datos (decisi\u00f3n D-1)",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "c-18 \u00b7 secciones sin datos (decision d-1)",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L257"
+    },
+    {
       "id": "docs_correcciones_antes_de_continuar_c_19_textos_gen\u00e9ricos_i18n",
       "label": "C-19 \u00b7 Textos gen\u00e9ricos (i18n)",
       "_origin": "ast",
@@ -4551,54 +4515,6 @@
       "norm_label": "c-21 \u00b7 pruebas multi-restaurante",
       "source_file": "docs/Correcciones antes de continuar.md",
       "source_location": "L277"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_22_un_lanzador_compuesto",
-      "label": "C-22 \u00b7 Un lanzador compuesto",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-22 \u00b7 un lanzador compuesto",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L294"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_23_el_visor_de_respaldo_sin_eventos_fantasma",
-      "label": "C-23 \u00b7 El visor de respaldo, sin eventos fantasma",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-23 \u00b7 el visor de respaldo, sin eventos fantasma",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L338"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_24_menu_tsx_usa_el_caso_de_uso",
-      "label": "C-24 \u00b7 `Menu.tsx` usa el caso de uso",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-24 \u00b7 `menu.tsx` usa el caso de uso",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L342"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_26_retirar_el_c\u00f3digo_antiguo",
-      "label": "C-26 \u00b7 Retirar el c\u00f3digo antiguo",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-26 \u00b7 retirar el codigo antiguo",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L372"
     },
     {
       "id": "docs_correcciones_antes_de_continuar_c_27_quitar_el_ciclo_antes_de_mover",
@@ -4721,18 +4637,6 @@
       "source_location": "L193"
     },
     {
-      "id": "docs_correcciones_antes_de_continuar_lote_4_conectar_el_ar_a_la_interfaz_es_la_pieza_m\u00e1s_delicada_del_producto",
-      "label": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "lote 4 \u2014 conectar el ar a la interfaz \ud83d\udfe0 _(es la pieza mas delicada del producto)_",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L290"
-    },
-    {
       "id": "docs_correcciones_antes_de_continuar_lote_5_mover_la_interfaz_a_src_presentation",
       "label": "Lote 5 \u2014 Mover la interfaz a `src/presentation/`",
       "_origin": "ast",
@@ -4767,18 +4671,6 @@
       "norm_label": "\ud83d\udd34 problemas que impiden mostrarle esto a un restaurante real",
       "source_file": "docs/Correcciones antes de continuar.md",
       "source_location": "L19"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_qa_manual_obligatorio_de_juan_el_agente_no_puede_hacerlo",
-      "label": "\u270b QA manual obligatorio de Juan (el agente **no puede** hacerlo)",
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "Correcciones antes de continuar \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "\u270b qa manual obligatorio de juan (el agente **no puede** hacerlo)",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L380"
     },
     {
       "id": "docs_correcciones_antes_de_continuar_qu\u00e9_no_hacer_ahora",
@@ -5360,148 +5252,241 @@
       "source_location": "L1"
     },
     {
-      "id": "agents",
-      "label": "AGENTS.md",
+      "id": "docs_historico_landing_ascua_original",
+      "label": "landing-ascua-original.md",
       "_origin": "ast",
       "community": 21,
-      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "English",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "agents.md",
-      "source_file": "AGENTS.md",
+      "norm_label": "landing-ascua-original.md",
+      "source_file": "docs/historico/landing-ascua-original.md",
       "source_location": "L1"
     },
     {
-      "id": "agents_agents_md_ascua_demo_pagina",
-      "label": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "id": "docs_historico_landing_ascua_original_english",
+      "label": "English",
       "_origin": "ast",
       "community": 21,
-      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "English",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "agents.md \u2014 ascua-demo-pagina",
-      "source_file": "AGENTS.md",
+      "norm_label": "english",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "docs_historico_landing_ascua_original_espa\u00f1ol",
+      "label": "Espa\u00f1ol",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "English",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "espanol",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "docs_historico_landing_ascua_original_landing_ascua_original",
+      "label": "Landing Ascua Original",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "English",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "landing ascua original",
+      "source_file": "docs/historico/landing-ascua-original.md",
       "source_location": "L1"
     },
     {
-      "id": "agents_cierre_de_sesi\u00f3n_obligatorio",
-      "label": "Cierre de sesi\u00f3n (obligatorio)",
+      "id": "docs_historico_landing_ascua_original_lo_que_arde_fuego",
+      "label": "Lo que arde (Fuego)",
       "_origin": "ast",
       "community": 21,
-      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "English",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "cierre de sesion (obligatorio)",
-      "source_file": "AGENTS.md",
-      "source_location": "L22"
+      "norm_label": "lo que arde (fuego)",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L10"
     },
     {
-      "id": "agents_diferencias_para_antigravity",
-      "label": "Diferencias para Antigravity",
+      "id": "docs_historico_landing_ascua_original_manifesto",
+      "label": "Manifesto",
       "_origin": "ast",
       "community": 21,
-      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "English",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "diferencias para antigravity",
-      "source_file": "AGENTS.md",
-      "source_location": "L13"
+      "norm_label": "manifesto",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L31"
     },
     {
-      "id": "agents_regla_principal",
-      "label": "Regla principal",
+      "id": "docs_historico_landing_ascua_original_manifiesto",
+      "label": "Manifiesto",
       "_origin": "ast",
       "community": 21,
-      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "English",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "regla principal",
-      "source_file": "AGENTS.md",
+      "norm_label": "manifiesto",
+      "source_file": "docs/historico/landing-ascua-original.md",
       "source_location": "L5"
     },
     {
-      "id": "claude",
-      "label": "CLAUDE.md",
+      "id": "docs_historico_landing_ascua_original_voces_testimonios",
+      "label": "Voces (Testimonios)",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "English",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "voces (testimonios)",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L21"
+    },
+    {
+      "id": "docs_historico_landing_ascua_original_voices_testimonials",
+      "label": "Voices (Testimonials)",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "English",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "voices (testimonials)",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L47"
+    },
+    {
+      "id": "docs_historico_landing_ascua_original_what_burns_fuego",
+      "label": "What burns (Fuego)",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "English",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "what burns (fuego)",
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_lib_browserenv",
+      "label": "browserEnv.js",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "claude.md",
-      "source_file": "CLAUDE.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "code",
+      "norm_label": "browserenv.js",
+      "source_file": "src/lib/browserEnv.js",
       "source_location": "L1"
     },
     {
-      "id": "docs_design",
-      "label": "DESIGN.md",
+      "id": "src_lib_browserenv_in_app_markers",
+      "label": "IN_APP_MARKERS",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "design.md",
-      "source_file": "docs/DESIGN.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "code",
+      "norm_label": "in_app_markers",
+      "source_file": "src/lib/browserEnv.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_lib_launchar",
+      "label": "launchAr.js",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "code",
+      "norm_label": "launchar.js",
+      "source_file": "src/lib/launchAr.js",
       "source_location": "L1"
     },
     {
-      "id": "docs_estado",
-      "label": "ESTADO.md",
+      "id": "docs_correcciones_antes_de_continuar_c_22_un_lanzador_compuesto",
+      "label": "C-22 \u00b7 Un lanzador compuesto",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "estado.md",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L1"
+      "node_kind": "heading",
+      "norm_label": "c-22 \u00b7 un lanzador compuesto",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L294"
     },
     {
-      "id": "docs_plan_implementacion",
-      "label": "PLAN-IMPLEMENTACION.md",
+      "id": "docs_correcciones_antes_de_continuar_c_23_el_visor_de_respaldo_sin_eventos_fantasma",
+      "label": "C-23 \u00b7 El visor de respaldo, sin eventos fantasma",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "plan-implementacion.md",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L1"
+      "node_kind": "heading",
+      "norm_label": "c-23 \u00b7 el visor de respaldo, sin eventos fantasma",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L338"
     },
     {
-      "id": "docs_product",
-      "label": "PRODUCT.md",
+      "id": "docs_correcciones_antes_de_continuar_c_24_menu_tsx_usa_el_caso_de_uso",
+      "label": "C-24 \u00b7 `Menu.tsx` usa el caso de uso",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "product.md",
-      "source_file": "docs/PRODUCT.md",
-      "source_location": "L1"
+      "node_kind": "heading",
+      "norm_label": "c-24 \u00b7 `menu.tsx` usa el caso de uso",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L342"
     },
     {
-      "id": "docs_proyecto",
-      "label": "PROYECTO.md",
+      "id": "docs_correcciones_antes_de_continuar_c_25_el_aviso_de_navegador_embebido_con_el_nombre_de_la_app",
+      "label": "C-25 \u00b7 El aviso de navegador embebido, con el nombre de la app",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "proyecto.md",
-      "source_file": "docs/PROYECTO.md",
-      "source_location": "L1"
+      "node_kind": "heading",
+      "norm_label": "c-25 \u00b7 el aviso de navegador embebido, con el nombre de la app",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L365"
     },
     {
-      "id": "readme",
-      "label": "README.md",
+      "id": "docs_correcciones_antes_de_continuar_c_26_retirar_el_c\u00f3digo_antiguo",
+      "label": "C-26 \u00b7 Retirar el c\u00f3digo antiguo",
       "_origin": "ast",
       "community": 22,
-      "community_name": "README.md",
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
       "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "readme.md",
-      "source_file": "README.md",
-      "source_location": "L1"
+      "node_kind": "heading",
+      "norm_label": "c-26 \u00b7 retirar el codigo antiguo",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L372"
+    },
+    {
+      "id": "docs_correcciones_antes_de_continuar_lote_4_conectar_el_ar_a_la_interfaz_es_la_pieza_m\u00e1s_delicada_del_producto",
+      "label": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "lote 4 \u2014 conectar el ar a la interfaz \ud83d\udfe0 _(es la pieza mas delicada del producto)_",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L290"
+    },
+    {
+      "id": "docs_correcciones_antes_de_continuar_qa_manual_obligatorio_de_juan_el_agente_no_puede_hacerlo",
+      "label": "\u270b QA manual obligatorio de Juan (el agente **no puede** hacerlo)",
+      "_origin": "ast",
+      "community": 22,
+      "community_name": "Lote 4 \u2014 Conectar el AR a la interfaz \ud83d\udfe0 _(es la pieza m\u00e1s delicada del producto)_",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "\u270b qa manual obligatorio de juan (el agente **no puede** hacerlo)",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L380"
     },
     {
       "id": "agents_rules_graphify",
@@ -5644,124 +5629,184 @@
       "source_location": "L1"
     },
     {
-      "id": "docs_estado_bloqueos",
-      "label": "Bloqueos",
+      "id": "docs_runbooks_nuevo_restaurante",
+      "label": "nuevo-restaurante.md",
       "_origin": "ast",
-      "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community": 28,
+      "community_name": "Pasos",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "bloqueos",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L43"
+      "node_kind": "page",
+      "norm_label": "nuevo-restaurante.md",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L1"
     },
     {
-      "id": "docs_estado_comandos_para_verificar",
-      "label": "Comandos para verificar",
+      "id": "docs_runbooks_nuevo_restaurante_1_preparar_la_carpeta_del_restaurante",
+      "label": "1. Preparar la carpeta del restaurante",
       "_origin": "ast",
-      "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community": 28,
+      "community_name": "Pasos",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "comandos para verificar",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L52"
+      "norm_label": "1. preparar la carpeta del restaurante",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L8"
     },
     {
-      "id": "docs_estado_completadas_con_observaciones_de_fases_previas",
-      "label": "Completadas con observaciones de fases previas:",
+      "id": "docs_runbooks_nuevo_restaurante_2_configurar_restaurant_json",
+      "label": "2. Configurar `restaurant.json`",
       "_origin": "ast",
-      "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community": 28,
+      "community_name": "Pasos",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "completadas con observaciones de fases previas:",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L21"
+      "norm_label": "2. configurar `restaurant.json`",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L14"
     },
     {
-      "id": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
-      "label": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "id": "docs_runbooks_nuevo_restaurante_3_configurar_categor\u00edas_y_platos",
+      "label": "3. Configurar Categor\u00edas y Platos",
       "_origin": "ast",
-      "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community": 28,
+      "community_name": "Pasos",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "estado del proyecto \u2014 ascua-demo-pagina",
+      "norm_label": "3. configurar categorias y platos",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "docs_runbooks_nuevo_restaurante_4_validar_localmente",
+      "label": "4. Validar Localmente",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Pasos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "4. validar localmente",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "docs_runbooks_nuevo_restaurante_5_pruebas_y_despliegue",
+      "label": "5. Pruebas y Despliegue",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Pasos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "5. pruebas y despliegue",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L44"
+    },
+    {
+      "id": "docs_runbooks_nuevo_restaurante_pasos",
+      "label": "Pasos",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Pasos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pasos",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "docs_runbooks_nuevo_restaurante_runbook_creaci\u00f3n_de_un_nuevo_restaurante_para_la_demo",
+      "label": "Runbook: Creaci\u00f3n de un Nuevo Restaurante para la Demo",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "Pasos",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "runbook: creacion de un nuevo restaurante para la demo",
+      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "claude",
+      "label": "CLAUDE.md",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "claude.md",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_design",
+      "label": "DESIGN.md",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "design.md",
+      "source_file": "docs/DESIGN.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_estado",
+      "label": "ESTADO.md",
+      "_origin": "ast",
+      "community": 29,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "estado.md",
       "source_file": "docs/ESTADO.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_estado_fase_actual",
-      "label": "Fase actual",
+      "id": "docs_plan_implementacion",
+      "label": "PLAN-IMPLEMENTACION.md",
       "_origin": "ast",
       "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "README.md",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fase actual",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L7"
+      "node_kind": "page",
+      "norm_label": "plan-implementacion.md",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L1"
     },
     {
-      "id": "docs_estado_l\u00ednea_base_verificada_2026_10_07",
-      "label": "L\u00ednea base verificada (2026-10-07)",
+      "id": "docs_product",
+      "label": "PRODUCT.md",
       "_origin": "ast",
       "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "README.md",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "linea base verificada (2026-10-07)",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L35"
+      "node_kind": "page",
+      "norm_label": "product.md",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L1"
     },
     {
-      "id": "docs_estado_pendientes_detectados_fuera_de_alcance_de_la_tarea_actual",
-      "label": "Pendientes detectados (fuera de alcance de la tarea actual)",
+      "id": "docs_proyecto",
+      "label": "PROYECTO.md",
       "_origin": "ast",
       "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "README.md",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pendientes detectados (fuera de alcance de la tarea actual)",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L47"
+      "node_kind": "page",
+      "norm_label": "proyecto.md",
+      "source_file": "docs/PROYECTO.md",
+      "source_location": "L1"
     },
     {
-      "id": "docs_estado_siguiente_paso_exacto",
-      "label": "Siguiente paso exacto",
+      "id": "readme",
+      "label": "README.md",
       "_origin": "ast",
       "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
+      "community_name": "README.md",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "siguiente paso exacto",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L27"
-    },
-    {
-      "id": "docs_estado_tarea_actual",
-      "label": "Tarea actual",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "tarea actual",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L11"
-    },
-    {
-      "id": "docs_estado_\u00faltimo_paso_completado",
-      "label": "\u00daltimo paso completado",
-      "_origin": "ast",
-      "community": 29,
-      "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "ultimo paso completado",
-      "source_file": "docs/ESTADO.md",
-      "source_location": "L15"
+      "node_kind": "page",
+      "norm_label": "readme.md",
+      "source_file": "README.md",
+      "source_location": "L1"
     },
     {
       "id": "docs_sesiones_2026_10_06_fundaciones",
@@ -5900,7 +5945,7 @@
       "label": "toggleSoldOut.ts",
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": "togglesoldout.ts",
       "source_file": "src/application/use-cases/toggleSoldOut.ts",
@@ -5911,7 +5956,7 @@
       "label": "toggleSoldOut.test.ts",
       "_origin": "ast",
       "community": 32,
-      "community_name": "InMemorySoldOutStore",
+      "community_name": "SoldOutStore",
       "file_type": "code",
       "norm_label": "togglesoldout.test.ts",
       "source_file": "tests/unit/application/toggleSoldOut.test.ts",
@@ -5992,7 +6037,7 @@
       "file_type": "code",
       "norm_label": "router",
       "source_file": "src/app/router.tsx",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "src_app_store",
@@ -6127,14 +6172,14 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_herofuego",
-      "label": "HeroFuego.tsx",
+      "id": "src_components_hero",
+      "label": "Hero.tsx",
       "_origin": "ast",
       "community": 34,
       "community_name": "App.tsx",
       "file_type": "code",
-      "norm_label": "herofuego.tsx",
-      "source_file": "src/components/HeroFuego.tsx",
+      "norm_label": "hero.tsx",
+      "source_file": "src/components/Hero.tsx",
       "source_location": "L1"
     },
     {
@@ -6146,28 +6191,6 @@
       "file_type": "code",
       "norm_label": "loadingscreen.tsx",
       "source_file": "src/components/LoadingScreen.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_loquearde",
-      "label": "LoQueArde.tsx",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "loquearde.tsx",
-      "source_file": "src/components/LoQueArde.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_manifiesto",
-      "label": "Manifiesto.tsx",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "manifiesto.tsx",
-      "source_file": "src/components/Manifiesto.tsx",
       "source_location": "L1"
     },
     {
@@ -6201,7 +6224,7 @@
       "file_type": "code",
       "norm_label": "link_ids",
       "source_file": "src/components/Nav.tsx",
-      "source_location": "L5"
+      "source_location": "L7"
     },
     {
       "id": "src_components_pie",
@@ -6223,17 +6246,6 @@
       "file_type": "code",
       "norm_label": "reserva.tsx",
       "source_file": "src/components/Reserva.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_voces",
-      "label": "Voces.tsx",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "voces.tsx",
-      "source_file": "src/components/Voces.tsx",
       "source_location": "L1"
     },
     {
@@ -6325,6 +6337,28 @@
       "source_location": "L1"
     },
     {
+      "id": "src_shared_config",
+      "label": "config.ts",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "config.ts",
+      "source_file": "src/shared/config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_shared_config_feedback_url",
+      "label": "FEEDBACK_URL",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "feedback_url",
+      "source_file": "src/shared/config.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_google_model_viewer",
       "label": "@google/model-viewer",
       "_origin": "ast",
@@ -6401,18 +6435,6 @@
       "norm_label": "c-15 \u00b7 logo y nombre",
       "source_file": "docs/Correcciones antes de continuar.md",
       "source_location": "L233"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_18_secciones_sin_datos_decisi\u00f3n_d_1",
-      "label": "C-18 \u00b7 Secciones sin datos (decisi\u00f3n D-1)",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-18 \u00b7 secciones sin datos (decision d-1)",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L257"
     },
     {
       "id": "docs_correcciones_antes_de_continuar_c_30_dividir_menu_y_probar_componentes",
@@ -6569,18 +6591,6 @@
       "norm_label": "c-03 \u00b7 avisos de lint en cero",
       "source_file": "docs/Correcciones antes de continuar.md",
       "source_location": "L99"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_04_sin_any",
-      "label": "C-04 \u00b7 Sin `any`",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "LocalStorageSoldOutStore",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-04 \u00b7 sin `any`",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L107"
     },
     {
       "id": "docs_correcciones_antes_de_continuar_c_05_index_html_neutro_y_m\u00f3vil",
@@ -6751,100 +6761,220 @@
       "source_location": "L6"
     },
     {
-      "id": "docs_runbooks_nuevo_restaurante",
-      "label": "nuevo-restaurante.md",
+      "id": "docs_sesiones_2026_10_07_lote_3",
+      "label": "2026-10-07-lote-3.md",
       "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "nuevo-restaurante.md",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "norm_label": "2026-10-07-lote-3.md",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_runbooks_nuevo_restaurante_1_preparar_la_carpeta_del_restaurante",
-      "label": "1. Preparar la carpeta del restaurante",
+      "id": "docs_sesiones_2026_10_07_lote_3_cambios",
+      "label": "Cambios",
       "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "1. preparar la carpeta del restaurante",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L8"
+      "norm_label": "cambios",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L12"
     },
     {
-      "id": "docs_runbooks_nuevo_restaurante_2_configurar_restaurant_json",
-      "label": "2. Configurar `restaurant.json`",
+      "id": "docs_sesiones_2026_10_07_lote_3_decisiones_tomadas",
+      "label": "Decisiones tomadas",
       "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "2. configurar `restaurant.json`",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L14"
-    },
-    {
-      "id": "docs_runbooks_nuevo_restaurante_3_configurar_categor\u00edas_y_platos",
-      "label": "3. Configurar Categor\u00edas y Platos",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. configurar categorias y platos",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L24"
-    },
-    {
-      "id": "docs_runbooks_nuevo_restaurante_4_validar_localmente",
-      "label": "4. Validar Localmente",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. validar localmente",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L34"
-    },
-    {
-      "id": "docs_runbooks_nuevo_restaurante_5_pruebas_y_despliegue",
-      "label": "5. Pruebas y Despliegue",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. pruebas y despliegue",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L42"
-    },
-    {
-      "id": "docs_runbooks_nuevo_restaurante_pasos",
-      "label": "Pasos",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "pasos",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "norm_label": "decisiones tomadas",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
       "source_location": "L6"
     },
     {
-      "id": "docs_runbooks_nuevo_restaurante_runbook_creaci\u00f3n_de_un_nuevo_restaurante_para_la_demo",
-      "label": "Runbook: Creaci\u00f3n de un Nuevo Restaurante para la Demo",
+      "id": "docs_sesiones_2026_10_07_lote_3_notas_para_el_grafo",
+      "label": "Notas para el grafo",
       "_origin": "ast",
-      "community": 39,
-      "community_name": "Pasos",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "runbook: creacion de un nuevo restaurante para la demo",
-      "source_file": "docs/runbooks/nuevo-restaurante.md",
+      "norm_label": "notas para el grafo",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "docs_sesiones_2026_10_07_lote_3_pendiente_siguiente_paso_exacto",
+      "label": "Pendiente / siguiente paso exacto",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pendiente / siguiente paso exacto",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "label": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sesion 2026-10-07 \u2014 lote-3",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
       "source_location": "L1"
+    },
+    {
+      "id": "docs_sesiones_2026_10_07_lote_3_verificaci\u00f3n",
+      "label": "Verificaci\u00f3n",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Sesi\u00f3n 2026-10-07 \u2014 lote-3",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "verificacion",
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "docs_adr_0002_estado_global_con_jotai",
+      "label": "0002-estado-global-con-jotai.md",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "ADR 0002: Estado global con Jotai",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "0002-estado-global-con-jotai.md",
+      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_adr_0002_estado_global_con_jotai_adr_0002_estado_global_con_jotai",
+      "label": "ADR 0002: Estado global con Jotai",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "ADR 0002: Estado global con Jotai",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "adr 0002: estado global con jotai",
+      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_adr_0002_estado_global_con_jotai_consecuencias",
+      "label": "Consecuencias",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "ADR 0002: Estado global con Jotai",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "consecuencias",
+      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "docs_adr_0002_estado_global_con_jotai_contexto",
+      "label": "Contexto",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "ADR 0002: Estado global con Jotai",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "contexto",
+      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "docs_adr_0002_estado_global_con_jotai_decisi\u00f3n",
+      "label": "Decisi\u00f3n",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "ADR 0002: Estado global con Jotai",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decision",
+      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "docs_adr_0002_estado_global_con_jotai_opciones_consideradas",
+      "label": "Opciones consideradas",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "ADR 0002: Estado global con Jotai",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "opciones consideradas",
+      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "source_location": "L12"
+    },
+    {
+      "id": "agents",
+      "label": "AGENTS.md",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "agents.md",
+      "source_file": "AGENTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "agents_agents_md_ascua_demo_pagina",
+      "label": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agents.md \u2014 ascua-demo-pagina",
+      "source_file": "AGENTS.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "agents_cierre_de_sesi\u00f3n_obligatorio",
+      "label": "Cierre de sesi\u00f3n (obligatorio)",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "cierre de sesion (obligatorio)",
+      "source_file": "AGENTS.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "agents_diferencias_para_antigravity",
+      "label": "Diferencias para Antigravity",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "diferencias para antigravity",
+      "source_file": "AGENTS.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "agents_regla_principal",
+      "label": "Regla principal",
+      "_origin": "ast",
+      "community": 39,
+      "community_name": "AGENTS.md \u2014 ASCUA-DEMO-PAGINA",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "regla principal",
+      "source_file": "AGENTS.md",
+      "source_location": "L5"
     },
     {
       "id": "scripts_build_content",
@@ -7023,52 +7153,64 @@
       "source_location": "L54"
     },
     {
-      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal",
-      "label": "2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store",
+      "label": "2026-10-06-P107-Jotai-Store.md",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "2026-10-06-p303-p305-feedback-analitica-legal.md",
-      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
+      "norm_label": "2026-10-06-p107-jotai-store.md",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal_bit\u00e1cora_de_sesi\u00f3n_p_303_p_304_p_305_feedback_anal\u00edtica_legal",
-      "label": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_acciones_realizadas",
+      "label": "Acciones realizadas",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "bitacora de sesion: p-303, p-304, p-305 (feedback, analitica, legal)",
-      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
+      "norm_label": "acciones realizadas",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_bit\u00e1cora_de_sesi\u00f3n_p_107_store_reactivo_global_jotai",
+      "label": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "bitacora de sesion: p-107 store reactivo global (jotai)",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal_estado",
-      "label": "Estado",
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_objetivos",
+      "label": "Objetivos",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "estado",
-      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
-      "source_location": "L12"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal_qu\u00e9_se_hizo",
-      "label": "Qu\u00e9 se hizo",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "que se hizo",
-      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
+      "norm_label": "objetivos",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L6"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_siguiente_tarea",
+      "label": "Siguiente Tarea",
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "siguiente tarea",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L17"
     },
     {
       "id": "docs_sesiones_2026_10_06_p306_p308_experiencia_ar_estados",
@@ -7215,76 +7357,52 @@
       "source_location": "L13"
     },
     {
-      "id": "docs_adr_0002_estado_global_con_jotai",
-      "label": "0002-estado-global-con-jotai.md",
+      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal",
+      "label": "2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
       "_origin": "ast",
       "community": 44,
-      "community_name": "ADR 0002: Estado global con Jotai",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
       "file_type": "document",
       "node_kind": "page",
-      "norm_label": "0002-estado-global-con-jotai.md",
-      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "norm_label": "2026-10-06-p303-p305-feedback-analitica-legal.md",
+      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_adr_0002_estado_global_con_jotai_adr_0002_estado_global_con_jotai",
-      "label": "ADR 0002: Estado global con Jotai",
+      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal_bit\u00e1cora_de_sesi\u00f3n_p_303_p_304_p_305_feedback_anal\u00edtica_legal",
+      "label": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
       "_origin": "ast",
       "community": 44,
-      "community_name": "ADR 0002: Estado global con Jotai",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "adr 0002: estado global con jotai",
-      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "norm_label": "bitacora de sesion: p-303, p-304, p-305 (feedback, analitica, legal)",
+      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_adr_0002_estado_global_con_jotai_consecuencias",
-      "label": "Consecuencias",
+      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal_estado",
+      "label": "Estado",
       "_origin": "ast",
       "community": 44,
-      "community_name": "ADR 0002: Estado global con Jotai",
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "consecuencias",
-      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
-      "source_location": "L24"
-    },
-    {
-      "id": "docs_adr_0002_estado_global_con_jotai_contexto",
-      "label": "Contexto",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "ADR 0002: Estado global con Jotai",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "contexto",
-      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "docs_adr_0002_estado_global_con_jotai_decisi\u00f3n",
-      "label": "Decisi\u00f3n",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "ADR 0002: Estado global con Jotai",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "decision",
-      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "docs_adr_0002_estado_global_con_jotai_opciones_consideradas",
-      "label": "Opciones consideradas",
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "ADR 0002: Estado global con Jotai",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "opciones consideradas",
-      "source_file": "docs/adr/0002-estado-global-con-jotai.md",
+      "norm_label": "estado",
+      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
       "source_location": "L12"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p303_p305_feedback_analitica_legal_qu\u00e9_se_hizo",
+      "label": "Qu\u00e9 se hizo",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-303, P-304, P-305 (Feedback, Anal\u00edtica, Legal)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "que se hizo",
+      "source_file": "docs/sesiones/2026-10-06-P303-P305-Feedback-Analitica-Legal.md",
+      "source_location": "L6"
     },
     {
       "id": "docs_sesiones_2026_10_06_p106_composition_router",
@@ -7560,37 +7678,16 @@
       "source_location": "L19"
     },
     {
-      "id": "src_lib_browserenv",
-      "label": "browserEnv.js",
+      "id": "docs_product_brand_commitments",
+      "label": "Brand Commitments",
       "_origin": "ast",
       "community": 5,
       "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "browserenv.js",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_browserenv_in_app_markers",
-      "label": "IN_APP_MARKERS",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "in_app_markers",
-      "source_file": "src/lib/browserEnv.js",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_lib_launchar",
-      "label": "launchAr.js",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
-      "file_type": "code",
-      "norm_label": "launchar.js",
-      "source_file": "src/lib/launchAr.js",
-      "source_location": "L1"
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "brand commitments",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L56"
     },
     {
       "id": "docs_product_capabilities_and_constraints",
@@ -7603,6 +7700,102 @@
       "norm_label": "capabilities and constraints",
       "source_file": "docs/PRODUCT.md",
       "source_location": "L42"
+    },
+    {
+      "id": "docs_product_evidence_on_hand",
+      "label": "Evidence on Hand",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "evidence on hand",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L66"
+    },
+    {
+      "id": "docs_product_operating_context",
+      "label": "Operating Context",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "operating context",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_product_platform",
+      "label": "Platform",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "platform",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_product_positioning",
+      "label": "Positioning",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "positioning",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L28"
+    },
+    {
+      "id": "docs_product_product",
+      "label": "Product",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_product_product_principles",
+      "label": "Product Principles",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product principles",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L74"
+    },
+    {
+      "id": "docs_product_product_purpose",
+      "label": "Product Purpose",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "product purpose",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "docs_product_users",
+      "label": "Users",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Ascua \u2014 landing de \"cocina de autor\" (Hist\u00f3rico)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "users",
+      "source_file": "docs/PRODUCT.md",
+      "source_location": "L14"
     },
     {
       "id": "docs_proyecto_10_c\u00f3mo_correr_esto",
@@ -8493,6 +8686,18 @@
       "type": "external"
     },
     {
+      "id": "src_domain_restaurant_assetpathschema",
+      "label": "src_domain_restaurant_assetpathschema",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_domain_restaurant_assetpathschema",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_path",
       "label": "ref_path",
       "_origin": "semantic",
@@ -8611,7 +8816,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/build-content.ts",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -8635,7 +8840,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L143",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -8647,7 +8852,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L43",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_validate_content_validatecontent",
+      "target": "src_domain_theme_pickreadabletextcolor",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -8659,7 +8876,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L96",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_i18n_uselanguage_uselanguage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -8671,24 +8900,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
       "source": "src_app_app",
-      "target": "src_i18n_languageprovider_languageprovider",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_loadingscreen_loadingscreen",
+      "target": "src_domain_theme_pickreadabletextcolor",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8700,103 +8917,19 @@
     },
     {
       "source": "src_app_app",
+      "target": "src_components_loadingscreen_loadingscreen",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
       "target": "src_components_nav_nav",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_herofuego_herofuego",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_manifiesto_manifiesto",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L61",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_loquearde_loquearde",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L62",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_menu_menu",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_voces_voces",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L64",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_reserva_reserva",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L65",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_contacto_contacto",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/App.tsx",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app_app",
-      "target": "src_components_pie_pie",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8808,7 +8941,7 @@
     },
     {
       "source": "src_app_app",
-      "target": "src_components_franjareserva_franjareserva",
+      "target": "src_components_hero_hero",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8820,6 +8953,66 @@
     },
     {
       "source": "src_app_app",
+      "target": "src_components_menu_menu",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_components_reserva_reserva",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_components_contacto_contacto",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_components_pie_pie",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_components_franjareserva_franjareserva",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/App.tsx",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
       "target": "src_components_floatinghelp_floatinghelp",
       "relation": "calls",
       "_origin": "ast",
@@ -8827,7 +9020,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L71",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -8839,7 +9032,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/App.tsx",
-      "source_location": "L72",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -8952,18 +9145,6 @@
     },
     {
       "source": "src_components_contacto_contacto",
-      "target": "src_i18n_uselanguage_uselanguage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/Contacto.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_contacto_contacto",
       "target": "src_application_use_cases_buildreservationlink_buildreservationlink",
       "relation": "calls",
       "_origin": "ast",
@@ -8971,7 +9152,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/Contacto.tsx",
-      "source_location": "L55",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contacto_contacto",
+      "target": "src_i18n_uselanguage_uselanguage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/Contacto.tsx",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -9035,39 +9228,15 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_herofuego_herofuego",
+      "source": "src_components_hero_hero",
       "target": "src_i18n_uselanguage_uselanguage",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/components/HeroFuego.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_loquearde_loquearde",
-      "target": "src_i18n_uselanguage_uselanguage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/LoQueArde.tsx",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_manifiesto_manifiesto",
-      "target": "src_i18n_uselanguage_uselanguage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/Manifiesto.tsx",
-      "source_location": "L4",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -9139,7 +9308,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/Nav.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -9151,7 +9320,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/components/Pie.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -9167,15 +9336,27 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_voces_voces",
-      "target": "src_i18n_uselanguage_uselanguage",
+      "source": "src_domain_theme_contrastratio",
+      "target": "src_domain_theme_relativeluminance",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/components/Voces.tsx",
-      "source_location": "L4",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme_pickreadabletextcolor",
+      "target": "src_domain_theme_contrastratio",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -9619,7 +9800,7 @@
       "confidence_score": 1.0,
       "context": "export",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -9945,6 +10126,19 @@
       "deferred": true,
       "source_file": "src/components/ArViewer.tsx",
       "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nav_nav",
+      "target": "src_i18n_languagecontext",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "deferred": true,
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -10320,51 +10514,15 @@
       "weight": 1.0
     },
     {
-      "source": "src_app",
-      "target": "src_components_loquearde_loquearde",
+      "source": "scripts_validate_content",
+      "target": "src_domain_theme_pickreadabletextcolor",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_menu_menu",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_voces_voces",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_reserva_reserva",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L13",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -10376,7 +10534,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L14",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -10388,7 +10546,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L15",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10400,12 +10558,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.tsx",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
       "source": "src_app",
-      "target": "src_i18n_languageprovider_languageprovider",
+      "target": "src_i18n_uselanguage_uselanguage",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10413,30 +10571,6 @@
       "context": "import",
       "source_file": "src/App.tsx",
       "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_demopanel_demopanel",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_floatinghelp_floatinghelp",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -10453,7 +10587,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_userestaurant_userestaurant",
+      "target": "src_domain_theme_pickreadabletextcolor",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10465,7 +10599,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_nav_nav",
+      "target": "src_hooks_userestaurant_userestaurant",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10477,7 +10611,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_franjareserva_franjareserva",
+      "target": "src_components_nav_nav",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10489,19 +10623,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_herofuego_herofuego",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_manifiesto_manifiesto",
+      "target": "src_components_hero_hero",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -10653,6 +10775,18 @@
       "context": "import",
       "source_file": "src/app/router.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_router",
+      "target": "src_i18n_languageprovider_languageprovider",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/router.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -11112,39 +11246,39 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_herofuego",
+      "source": "src_components_hero",
       "target": "src_i18n_uselanguage_uselanguage",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/HeroFuego.tsx",
+      "source_file": "src/components/Hero.tsx",
       "source_location": "L2",
       "weight": 1.0
     },
     {
-      "source": "src_components_loquearde",
-      "target": "src_i18n_uselanguage_uselanguage",
+      "source": "src_components_hero",
+      "target": "src_app_store_restaurantatom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/LoQueArde.tsx",
-      "source_location": "L1",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
-      "source": "src_components_manifiesto",
-      "target": "src_i18n_uselanguage_uselanguage",
+      "source": "src_components_loadingscreen",
+      "target": "src_app_store_restaurantatom",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/Manifiesto.tsx",
-      "source_location": "L1",
+      "source_file": "src/components/LoadingScreen.tsx",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -11256,6 +11390,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_nav",
+      "target": "src_app_store_restaurantatom",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_pie",
       "target": "src_i18n_uselanguage_uselanguage",
       "relation": "imports",
@@ -11280,6 +11426,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_pie",
+      "target": "src_shared_config_feedback_url",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Pie.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_reserva",
       "target": "src_i18n_uselanguage_uselanguage",
       "relation": "imports",
@@ -11289,18 +11447,6 @@
       "context": "import",
       "source_file": "src/components/Reserva.tsx",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_voces",
-      "target": "src_i18n_uselanguage_uselanguage",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/Voces.tsx",
-      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -11385,6 +11531,18 @@
       "context": "import",
       "source_file": "src/domain/restaurant.ts",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -11481,6 +11639,18 @@
       "context": "import",
       "source_file": "src/i18n/LanguageProvider.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_i18n_languageprovider",
+      "target": "src_app_store_restaurantatom",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/i18n/LanguageProvider.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -12313,6 +12483,18 @@
     },
     {
       "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant_assetpathschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
       "target": "src_domain_restaurant_isrestaurantexpired",
       "relation": "imports",
       "_origin": "ast",
@@ -12368,6 +12550,42 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_theme_test",
+      "target": "src_domain_theme_contrastratio",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/theme.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_theme_test",
+      "target": "src_domain_theme_pickreadabletextcolor",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/theme.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_theme_test",
+      "target": "src_domain_theme_relativeluminance",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/theme.test.ts",
       "source_location": "L7",
       "weight": 1.0
     },
@@ -12672,6 +12890,18 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_validate_content",
+      "target": "src_domain_theme",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_app",
       "target": "ref_react_router_dom",
       "relation": "imports_from",
@@ -12685,7 +12915,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_loquearde",
+      "target": "src_components_menu",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12697,7 +12927,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_menu",
+      "target": "src_components_reserva",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12709,7 +12939,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_voces",
+      "target": "src_components_contacto",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12721,7 +12951,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_reserva",
+      "target": "src_components_pie",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12733,7 +12963,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_contacto",
+      "target": "src_components_loadingscreen",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12745,7 +12975,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_pie",
+      "target": "src_components_demopanel",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12757,7 +12987,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_loadingscreen",
+      "target": "src_components_floatinghelp",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12769,7 +12999,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_i18n_languageprovider",
+      "target": "src_i18n_uselanguage",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12777,30 +13007,6 @@
       "context": "import",
       "source_file": "src/App.tsx",
       "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_demopanel",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_app",
-      "target": "src_components_floatinghelp",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/App.tsx",
-      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -12841,7 +13047,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_hooks_userestaurant",
+      "target": "src_domain_theme",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12853,7 +13059,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_nav",
+      "target": "src_hooks_userestaurant",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12865,7 +13071,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_franjareserva",
+      "target": "src_components_nav",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12877,7 +13083,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_herofuego",
+      "target": "src_components_franjareserva",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -12889,7 +13095,7 @@
     },
     {
       "source": "src_app",
-      "target": "src_components_manifiesto",
+      "target": "src_components_hero",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13069,6 +13275,18 @@
       "context": "import",
       "source_file": "src/app/router.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_router",
+      "target": "src_i18n_languageprovider",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/app/router.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -13652,27 +13870,51 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_herofuego",
+      "source": "src_components_hero",
       "target": "ref_lucide_react",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/HeroFuego.tsx",
+      "source_file": "src/components/Hero.tsx",
       "source_location": "L1",
       "weight": 1.0
     },
     {
-      "source": "src_components_herofuego",
+      "source": "src_components_hero",
       "target": "src_i18n_uselanguage",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/HeroFuego.tsx",
+      "source_file": "src/components/Hero.tsx",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_hero",
+      "target": "ref_jotai",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_hero",
+      "target": "src_app_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -13688,27 +13930,27 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_loquearde",
-      "target": "src_i18n_uselanguage",
+      "source": "src_components_loadingscreen",
+      "target": "ref_jotai",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/LoQueArde.tsx",
-      "source_location": "L1",
+      "source_file": "src/components/LoadingScreen.tsx",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
-      "source": "src_components_manifiesto",
-      "target": "src_i18n_uselanguage",
+      "source": "src_components_loadingscreen",
+      "target": "src_app_store",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/Manifiesto.tsx",
-      "source_location": "L1",
+      "source_file": "src/components/LoadingScreen.tsx",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -13881,6 +14123,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_nav",
+      "target": "ref_jotai",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nav",
+      "target": "src_app_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_pie",
       "target": "ref_lucide_react",
       "relation": "imports_from",
@@ -13929,6 +14195,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_pie",
+      "target": "src_shared_config",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/Pie.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_reserva",
       "target": "ref_lucide_react",
       "relation": "imports_from",
@@ -13950,18 +14228,6 @@
       "context": "import",
       "source_file": "src/components/Reserva.tsx",
       "source_location": "L2",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_voces",
-      "target": "src_i18n_uselanguage",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/Voces.tsx",
-      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -14250,6 +14516,30 @@
       "context": "import",
       "source_file": "src/i18n/LanguageProvider.tsx",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_i18n_languageprovider",
+      "target": "ref_jotai",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/i18n/LanguageProvider.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_i18n_languageprovider",
+      "target": "src_app_store",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/i18n/LanguageProvider.tsx",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -15482,18 +15772,6 @@
       "context": "parameter_type",
       "source_file": "tests/unit/application/doubles.ts",
       "source_location": "L70",
-      "weight": 1.0
-    },
-    {
-      "source": "src_domain_restaurant",
-      "target": "src_domain_assetpath_assetpathschema",
-      "relation": "re_exports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "re-export",
-      "source_file": "src/domain/restaurant.ts",
-      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -17192,7 +17470,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -17203,7 +17481,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -17214,7 +17492,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -17225,7 +17503,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -17236,7 +17514,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -17258,7 +17536,106 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original",
+      "target": "docs_historico_landing_ascua_original_landing_ascua_original",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_english",
+      "target": "docs_historico_landing_ascua_original_manifesto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_english",
+      "target": "docs_historico_landing_ascua_original_what_burns_fuego",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_english",
+      "target": "docs_historico_landing_ascua_original_voices_testimonials",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_espa\u00f1ol",
+      "target": "docs_historico_landing_ascua_original_lo_que_arde_fuego",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_espa\u00f1ol",
+      "target": "docs_historico_landing_ascua_original_voces_testimonios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
       "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_espa\u00f1ol",
+      "target": "docs_historico_landing_ascua_original_manifiesto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_landing_ascua_original",
+      "target": "docs_historico_landing_ascua_original_english",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_historico_landing_ascua_original_landing_ascua_original",
+      "target": "docs_historico_landing_ascua_original_espa\u00f1ol",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/historico/landing-ascua-original.md",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -17995,7 +18372,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -18006,7 +18383,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -18017,7 +18394,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/runbooks/nuevo-restaurante.md",
-      "source_location": "L42",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -18820,6 +19197,72 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/sesiones/2026-10-06-P-403-rediseno-componentes.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_07_lote_3",
+      "target": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "target": "docs_sesiones_2026_10_07_lote_3_cambios",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "target": "docs_sesiones_2026_10_07_lote_3_verificaci\u00f3n",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "target": "docs_sesiones_2026_10_07_lote_3_pendiente_siguiente_paso_exacto",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "target": "docs_sesiones_2026_10_07_lote_3_notas_para_el_grafo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_sesiones_2026_10_07_lote_3_sesi\u00f3n_2026_10_07_lote_3",
+      "target": "docs_sesiones_2026_10_07_lote_3_decisiones_tomadas",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/sesiones/2026-10-07-lote-3.md",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -19997,7 +20440,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -20008,7 +20451,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -20019,7 +20462,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -20030,7 +20473,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/validate-content.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -20041,7 +20484,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/App.tsx",
-      "source_location": "L21",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -20129,7 +20572,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/router.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -20140,7 +20583,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/router.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -20151,7 +20594,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/router.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -20162,7 +20605,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/router.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -20173,7 +20616,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/router.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -20525,7 +20968,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Contacto.tsx",
-      "source_location": "L10",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -20562,14 +21005,14 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_herofuego",
-      "target": "src_components_herofuego_herofuego",
+      "source": "src_components_hero",
+      "target": "src_components_hero_hero",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/components/HeroFuego.tsx",
-      "source_location": "L4",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -20580,29 +21023,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/LoadingScreen.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_loquearde",
-      "target": "src_components_loquearde_loquearde",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/LoQueArde.tsx",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_manifiesto",
-      "target": "src_components_manifiesto_manifiesto",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/Manifiesto.tsx",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -20624,7 +21045,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Nav.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -20635,7 +21056,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Nav.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -20646,7 +21067,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Pie.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -20658,17 +21079,6 @@
       "confidence_score": 1.0,
       "source_file": "src/components/Reserva.tsx",
       "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_voces",
-      "target": "src_components_voces_voces",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/Voces.tsx",
-      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -20855,7 +21265,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L114",
+      "source_location": "L115",
       "weight": 1.0
     },
     {
@@ -20866,7 +21276,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -20877,7 +21287,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -20899,7 +21309,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -20910,7 +21320,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -20921,7 +21331,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L51",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -20932,7 +21342,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -20943,7 +21353,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -20965,7 +21375,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/theme.ts",
-      "source_location": "L31",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_theme_relativeluminance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_theme_contrastratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_theme_pickreadabletextcolor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -21020,7 +21463,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/i18n/LanguageProvider.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -21031,7 +21474,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/i18n/LanguageProvider.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -21274,6 +21717,17 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/launchAr.js",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_shared_config",
+      "target": "src_shared_config_feedback_url",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/shared/config.ts",
+      "source_location": "L1",
       "weight": 1.0
     },
     {
@@ -21559,6 +22013,15 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": ".dependency-cruiser.cjs"
+    },
+    {
+      "source": "src_components_nav",
+      "target": "src_i18n_languagecontext",
+      "relation": "dynamic_import",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/Nav.tsx"
     },
     {
       "source": "src_application_ports_analyticstracker_analyticstracker",
@@ -22044,7 +22507,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/i18n/LanguageProvider.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -22480,30 +22943,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_correcciones_antes_de_continuar_c_16_portada_con_los_datos_del_restaurante",
-      "target": "src_components_herofuego_herofuego",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "HeroFuego",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L240",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_correcciones_antes_de_continuar_c_18_secciones_sin_datos_decisi\u00f3n_d_1",
-      "target": "src_components_loquearde_loquearde",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "LoQueArde",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L259",
-      "weight": 1.0
-    },
-    {
       "source": "docs_correcciones_antes_de_continuar_c_15_logo_y_nombre",
       "target": "src_components_loadingscreen_loadingscreen",
       "relation": "references",
@@ -22549,18 +22988,6 @@
       "context": "LocalStorageSoldOutStore",
       "source_file": "docs/sesiones/2026-10-06-P301-P302-Reservas-Presentacion.md",
       "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_correcciones_antes_de_continuar_c_18_secciones_sin_datos_decisi\u00f3n_d_1",
-      "target": "src_components_manifiesto_manifiesto",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "Manifiesto",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L259",
       "weight": 1.0
     },
     {
@@ -22996,18 +23423,6 @@
       "weight": 1.0
     },
     {
-      "source": "docs_correcciones_antes_de_continuar_c_18_secciones_sin_datos_decisi\u00f3n_d_1",
-      "target": "src_components_voces_voces",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "context": "Voces",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L259",
-      "weight": 1.0
-    },
-    {
       "source": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
       "target": "src_application_use_cases_buildmenuview_buildmenuview",
       "relation": "references",
@@ -23292,7 +23707,7 @@
       "confidence_score": 0.95,
       "context": "resolveAssetUrls",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -23339,5 +23754,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "200ae4de6ad3c8ffe20da21bae51b0da6120a89c"
+  "built_at_commit": "7cae62cd4f475431f30cf6162c155d84c231913b"
 }

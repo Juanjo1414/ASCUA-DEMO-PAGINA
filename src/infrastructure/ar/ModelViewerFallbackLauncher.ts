@@ -21,16 +21,6 @@ export class ModelViewerFallbackLauncher implements ArLauncher {
       return { success: false, mode, error: 'El plato no tiene modelo GLB' }
     }
 
-    try {
-      const event = new CustomEvent('open-model-viewer', { detail: { dish } })
-      window.dispatchEvent(event)
-      return { success: true, mode }
-    } catch (e) {
-      return {
-        success: false,
-        mode,
-        error: e instanceof Error ? e.message : 'Error al abrir Model Viewer',
-      }
-    }
+    return { success: true, mode }
   }
 }

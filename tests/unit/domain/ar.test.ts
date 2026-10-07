@@ -30,6 +30,7 @@ describe('Dominio: AR y 3D', () => {
     isSafari: false,
     isChrome: true,
     isEmbeddedBrowser: false,
+    embeddedBrowserName: null,
     canQuickLook: false,
     canSceneViewer: false,
   }
@@ -84,6 +85,7 @@ describe('Dominio: AR y 3D', () => {
         isIos: true,
         canQuickLook: true,
         isEmbeddedBrowser: true,
+        embeddedBrowserName: 'Instagram',
       }
       expect(selectArLaunchMode(deviceInApp, assetValido)).toBe(
         'model-viewer-modal'
@@ -94,6 +96,7 @@ describe('Dominio: AR y 3D', () => {
       const deviceInApp: DeviceCapabilities = {
         ...deviceBase,
         isEmbeddedBrowser: true,
+        embeddedBrowserName: 'WhatsApp',
       }
       const assetSinGlb = { ...assetValido, glb: '' }
       expect(selectArLaunchMode(deviceInApp, assetSinGlb)).toBe('unsupported')

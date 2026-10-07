@@ -5,6 +5,7 @@ import { ModelViewerFallbackLauncher } from '@/infrastructure/ar/ModelViewerFall
 import { BrowserEnvironmentDetector } from '@/infrastructure/browser/BrowserEnvironmentDetector'
 import { LocalStorageSoldOutStore } from '@/infrastructure/storage/LocalStorageSoldOutStore'
 import { CloudflareAnalyticsTracker } from '@/infrastructure/analytics/CloudflareAnalyticsTracker'
+import { CompositeArLauncher } from '@/infrastructure/ar/CompositeArLauncher'
 import type { ArLauncher } from '@/application/ports/arLauncher'
 import type { SoldOutStore } from '@/application/ports/soldOutStore'
 import type { AnalyticsTracker } from '@/application/ports/analyticsTracker'
@@ -12,7 +13,7 @@ import type { AnalyticsTracker } from '@/application/ports/analyticsTracker'
 export interface AppDependencies {
   restaurantRepository: StaticJsonRestaurantRepository
   environmentDetector: BrowserEnvironmentDetector
-  arLaunchers: ArLauncher[]
+  arLauncher: ArLauncher
   soldOutStore: SoldOutStore
   analyticsTracker: AnalyticsTracker
 }
@@ -27,11 +28,11 @@ const environmentDetector = new BrowserEnvironmentDetector()
 export const compositionRoot: AppDependencies = {
   restaurantRepository: new StaticJsonRestaurantRepository(),
   environmentDetector,
-  arLaunchers: [
-    new QuickLookLauncher(),
-    new SceneViewerLauncher(),
-    new ModelViewerFallbackLauncher(),
-  ],
+  arLauncher: new CompositeArLauncher({
+    'quick-look': new QuickLookLauncher(),
+    'scene-viewer': new SceneViewerLauncher(),
+    'model-viewer-modal': new ModelViewerFallbackLauncher(),
+  }),
   soldOutStore: new LocalStorageSoldOutStore(),
   analyticsTracker: new CloudflareAnalyticsTracker(),
 }

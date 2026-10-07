@@ -49,6 +49,8 @@ export const deviceCapabilitiesSchema = z.object({
   isChrome: z.boolean(),
   /** Indica si se ejecuta dentro de un navegador embebido (Instagram, WhatsApp, TikTok, etc.) */
   isEmbeddedBrowser: z.boolean(),
+  /** Nombre del navegador embebido (ej. Instagram) o null si es navegador normal */
+  embeddedBrowserName: z.string().nullable(),
   /** Soporta Apple Quick Look nativo */
   canQuickLook: z.boolean(),
   /** Soporta Google Scene Viewer nativo vía intent:// */
