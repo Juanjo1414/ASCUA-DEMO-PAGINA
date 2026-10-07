@@ -10,19 +10,20 @@ Fase C — Correcciones (revisión 2).
 
 ## Tarea actual
 
-Implementando el Lote 3 de correcciones.
+Finalizada la implementación del Lote 3 de correcciones (multi-restaurante).
 
 ## Último paso completado
 
+- **Lote 3 (C-12 a C-21):** Implementación completa del aislamiento multi-restaurante. Eliminación de datos quemados de Ascua (Manifiesto, Lo que arde, Voces), adición de campos opcionales al esquema, tematización dinámica (color primario, par tipográfico), carga de logo dinámico en Nav y Footer, limpieza de Contacto y traducciones genéricas en interfaz. Creación de demo genérica `ascua-demo-abcd` y paso de pruebas unitarias y E2E de aislamiento.
 - **C-11 (Scene Viewer con URL absoluta):** Convertido a URL absoluta el intent del GLB en `SceneViewerLauncher.ts`. Agregadas pruebas para verificar este comportamiento.
 - **C-10 (Rutas seguras y resueltas):** Creado `assetPathSchema` en un archivo separado para prevenir dependencias circulares y validado en dominios. Creado `resolveAssetUrls` para transformar las rutas de assets locales a rutas relativas `/data/<slug>/`. Validado que ningún componente arma las rutas de assets.
 - **Lote 1 (C-01 a C-09):** Limpieza de archivos de testing generados, código muerto borrado, warnings de lint arreglados, eliminación del tipo `any`, metadatos en HTML mejorados, marca de terceros quitada y tipografías locales añadidas.
 
 ### Completadas con observaciones de fases previas:
 
-- **P-403 (Rediseño de componentes):** rediseño hecho; falta que los datos del restaurante gobiernen la página, ver C-12 a C-19.
+- **P-403 (Rediseño de componentes):** rediseño hecho; validado en Lote 3 que los datos del restaurante gobiernan la página.
 - **P-307 (Medida real):** solo escala fija; la medida real por plato depende de A-204 en el repo AR.
-- **P-107 (Store reactivo global):** store de jotai implementado y aprobado; falta la capa `presentation/`.
+- **P-107 (Store reactivo global):** store de jotai implementado y aprobado; capa `presentation/` actualizada.
 
 ## Siguiente paso exacto
 
