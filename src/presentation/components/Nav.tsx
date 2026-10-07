@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
-import { useLanguage } from '@/i18n/useLanguage'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
 
@@ -84,7 +84,9 @@ export default function Nav() {
               onClick={() => {
                 const nextLang =
                   restaurant.idiomas.find((l) => l !== lang) || 'es'
-                setLang(nextLang as import('@/i18n/LanguageContext').Lang)
+                setLang(
+                  nextLang as import('@/presentation/i18n/LanguageContext').Lang
+                )
               }}
               aria-label="Switch language"
               className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors hidden sm:block"
@@ -129,7 +131,9 @@ export default function Nav() {
                 onClick={() => {
                   const nextLang =
                     restaurant.idiomas.find((l) => l !== lang) || 'es'
-                  setLang(nextLang as import('@/i18n/LanguageContext').Lang)
+                  setLang(
+                    nextLang as import('@/presentation/i18n/LanguageContext').Lang
+                  )
                   setAbierto(false)
                 }}
                 className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow"

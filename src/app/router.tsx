@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from 'react-router-dom'
 import App from '@/App.jsx'
-import { LanguageProvider } from '@/i18n/LanguageProvider'
+import { LanguageProvider } from '@/presentation/i18n/LanguageProvider'
 
 // Componentes placeholder para las rutas auxiliares
 const LandingPage = () => (

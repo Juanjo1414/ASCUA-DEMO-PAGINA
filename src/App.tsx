@@ -14,7 +14,7 @@ import Pie from '@/presentation/components/Pie'
 import LoadingScreen from '@/presentation/components/LoadingScreen'
 import DemoPanel from '@/presentation/components/DemoPanel'
 import FloatingHelp from '@/presentation/components/FloatingHelp'
-import { useLanguage } from './i18n/useLanguage'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
 
 export default function App() {
   const { slug } = useParams()

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLanguage } from '@/i18n/useLanguage'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
 
 export default function FranjaReserva() {
   const { t } = useLanguage()

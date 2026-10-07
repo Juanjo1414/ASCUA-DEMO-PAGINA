@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { HelpCircle } from 'lucide-react'
-import { useLanguage } from '@/i18n/useLanguage'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
 import ArGuideModal from './ArGuideModal'
 
 export default function FloatingHelp() {

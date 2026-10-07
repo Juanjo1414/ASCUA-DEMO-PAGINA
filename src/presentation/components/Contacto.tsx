@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AlertCircle, ArrowRight } from 'lucide-react'
-import { useLanguage } from '@/i18n/useLanguage'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { buildReservationLink } from '@/application/use-cases/buildReservationLink'
