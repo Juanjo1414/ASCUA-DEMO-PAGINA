@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '@/app/store'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
 
 export default function LoadingScreen({ isReady = true }) {
   const [reducido] = useState(

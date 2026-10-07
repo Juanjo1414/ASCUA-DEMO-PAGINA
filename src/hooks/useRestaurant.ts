@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetAtom } from 'jotai'
-import { restaurantAtom } from '@/app/store'
-import { useDependencies } from '@/app/DependenciesContext'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
+import { useDependencies } from '@/presentation/state/DependenciesContext'
 import { getRestaurant } from '@/application/use-cases/getRestaurant'
 
 export function useRestaurant(slug: string | undefined) {

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { LanguageContext, Lang } from './LanguageContext'
 import { translations } from './translations'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '@/app/store'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
 
 function detectInitialLang(): Lang {
   if (typeof window === 'undefined') return 'es'

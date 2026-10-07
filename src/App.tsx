@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useAtomValue } from 'jotai'
 import { useEffect } from 'react'
-import { restaurantAtom } from '@/app/store'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { pickReadableTextColor } from '@/domain/theme'
 import { useRestaurant } from '@/hooks/useRestaurant'
 import Nav from './components/Nav'

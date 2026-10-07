@@ -6,18 +6,8 @@ import { BrowserEnvironmentDetector } from '@/infrastructure/browser/BrowserEnvi
 import { LocalStorageSoldOutStore } from '@/infrastructure/storage/LocalStorageSoldOutStore'
 import { CloudflareAnalyticsTracker } from '@/infrastructure/analytics/CloudflareAnalyticsTracker'
 import { CompositeArLauncher } from '@/infrastructure/ar/CompositeArLauncher'
-import type { ArLauncher } from '@/application/ports/arLauncher'
-import type { SoldOutStore } from '@/application/ports/soldOutStore'
-import type { AnalyticsTracker } from '@/application/ports/analyticsTracker'
 
-export interface AppDependencies {
-  restaurantRepository: StaticJsonRestaurantRepository
-  environmentDetector: BrowserEnvironmentDetector
-  arLauncher: ArLauncher
-  soldOutStore: SoldOutStore
-  analyticsTracker: AnalyticsTracker
-}
-
+import type { AppDependencies } from '@/application/dependencies'
 const environmentDetector = new BrowserEnvironmentDetector()
 
 /**

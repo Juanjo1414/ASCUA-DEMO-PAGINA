@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, type ReactNode } from 'react'
-import type { AppDependencies } from './compositionRoot'
+import type { AppDependencies } from '@/application/dependencies'
 
 const DependenciesContext = createContext<AppDependencies | null>(null)
 

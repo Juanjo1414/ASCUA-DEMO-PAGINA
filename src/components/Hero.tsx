@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { useLanguage } from '../i18n/useLanguage'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '@/app/store'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
 
 export default function Hero() {
   const { t, lang } = useLanguage()

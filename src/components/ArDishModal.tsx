@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Check, Copy, X } from 'lucide-react'
 import ArViewer from './ArViewer'
 import { useLanguage } from '../i18n/useLanguage'
-import { useDependencies } from '@/app/DependenciesContext'
+import { useDependencies } from '@/presentation/state/DependenciesContext'
 
 interface Dish {
   name: string

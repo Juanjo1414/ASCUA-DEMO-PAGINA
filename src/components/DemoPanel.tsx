@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useAtomValue } from 'jotai'
-import { restaurantAtom } from '@/app/store'
-import { useDependencies } from '@/app/DependenciesContext'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
+import { useDependencies } from '@/presentation/state/DependenciesContext'
 import { toggleSoldOut } from '@/application/use-cases/toggleSoldOut'
 
 export default function DemoPanel() {

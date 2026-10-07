@@ -3,7 +3,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { router } from '@/app/router'
-import { DependenciesProvider } from '@/app/DependenciesContext'
+import { DependenciesProvider } from '@/presentation/state/DependenciesContext'
 import { compositionRoot } from '@/app/compositionRoot'
 
 import './fuentes.css'
