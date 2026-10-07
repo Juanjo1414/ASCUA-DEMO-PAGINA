@@ -10,10 +10,11 @@ Fase C — Correcciones (revisión 2).
 
 ## Tarea actual
 
-Esperando QA manual de Juan para el Lote 4 (Conectar el AR a la interfaz).
+En progreso: Lote 6 (Móvil, accesibilidad y pruebas de interfaz).
 
 ## Último paso completado
 
+- **Lote 5:** Reubicación de componentes, estado, hooks, i18n y utilidades (UI) a `src/presentation/`. Validación de `arch:check` (C-27 a C-29) completada con éxito.
 - **Lote 4 (C-22 a C-26):** Creado el `CompositeArLauncher` para mantener la llamada de AR de forma síncrona dentro del gesto del usuario, eliminando esperas y asincronía antes del lanzamiento. Se removió el evento manual `open-model-viewer` en favor del retorno del resultado. El aviso del navegador embebido ahora nombra la app usando el nuevo atributo `embeddedBrowserName`. Todo el código antiguo y variables de entorno de Supabase fue eliminado por completo. Tests actualizados, `npm run verify` pasando limpio.
 - **C-11 (Scene Viewer con URL absoluta):** Convertido a URL absoluta el intent del GLB en `SceneViewerLauncher.ts`. Agregadas pruebas para verificar este comportamiento.
 - **C-10 (Rutas seguras y resueltas):** Creado `assetPathSchema` en un archivo separado para prevenir dependencias circulares y validado en dominios. Creado `resolveAssetUrls` para transformar las rutas de assets locales a rutas relativas `/data/<slug>/`. Validado que ningún componente arma las rutas de assets.
@@ -49,6 +50,10 @@ Esperando QA manual de Juan para el Lote 4 (Conectar el AR a la interfaz).
 
 - 8 vulnerabilidades detectadas por npm audit asociadas a herramientas de desarrollo (se auditarán con cyber-neo / P-703).
 - Advertencia de chunk de `@google/model-viewer` > 500 kB en build (presupuesto de rendimiento en P-702).
+
+## Notas y decisiones de diseño
+
+- **Textos de botones AR:** El plan indica que se deben evitar siglas y usar un texto como "Ver en mi mesa" en lugar de "Ver en RA" o "Ponerlo en mi mesa" que están actualmente. Se resolverá en diseño (Lote 6).
 
 ## Comandos para verificar
 

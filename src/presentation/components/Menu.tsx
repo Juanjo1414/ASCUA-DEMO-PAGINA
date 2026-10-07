@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Scan } from 'lucide-react'
 import { gsap } from '@/presentation/effects/gsap'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
@@ -7,6 +6,7 @@ import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { useDependencies } from '@/presentation/state/DependenciesContext'
 import ArDishModal from './ArDishModal'
 import ArGuideModal from './ArGuideModal'
+import { DishCard } from './menu/DishCard'
 import { launchDishAr } from '@/application/use-cases/launchDishAr'
 import type { Dish } from '@/domain/dish'
 
@@ -126,103 +126,32 @@ export default function Menu() {
             </h3>
 
             <ul className="grid gap-x-6 gap-y-16 md:grid-cols-3">
-              {destacados.map((plato) => {
-                const isSoldOut = soldOutDict[plato.id]
-                return (
-                  <li
-                    key={plato.id}
-                    data-sube
-                    className={`flex flex-col relative ${isSoldOut ? 'opacity-60 grayscale' : ''}`}
-                  >
-                    {isSoldOut && (
-                      <span className="badge-online z-10 bg-warm-gray text-cream-canvas">
-                        Agotado
-                      </span>
-                    )}
-                    <div className="relative w-full aspect-square overflow-hidden rounded-images bg-cream-canvas">
-                      <img
-                        src={plato.foto}
-                        alt={plato.nombre[lang] || plato.nombre.es}
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-
-                    <div className="pt-6 flex flex-col flex-grow">
-                      <h4 className="font-body font-bold text-subheading text-forest-shadow tracking-subheading">
-                        {plato.nombre[lang] || plato.nombre.es}
-                      </h4>
-                      <p className="mt-2 font-body text-body text-forest-shadow leading-body flex-grow">
-                        {plato.descripcion
-                          ? plato.descripcion[lang] || plato.descripcion.es
-                          : null}
-                      </p>
-
-                      <div className="mt-4 flex flex-col gap-3">
-                        <button
-                          type="button"
-                          disabled={isSoldOut}
-                          onClick={() => !isSoldOut && handleArClick(plato)}
-                          className="btn-primary w-full sm:w-auto"
-                        >
-                          <Scan size={18} className="mr-2" />
-                          {t.ar.viewOnTable}
-                        </button>
-                        <button
-                          type="button"
-                          disabled={isSoldOut}
-                          onClick={() =>
-                            !isSoldOut && setActivo({ dish: plato, mode: '3d' })
-                          }
-                          className="ghost-link"
-                        >
-                          {t.ar.view3d} <ArrowRight size={16} />
-                        </button>
-                      </div>
-                    </div>
-                  </li>
-                )
-              })}
+              {destacados.map((plato) => (
+                <DishCard
+                  key={plato.id}
+                  dish={plato}
+                  lang={lang}
+                  t={t}
+                  isSoldOut={!!soldOutDict[plato.id]}
+                  onArClick={handleArClick}
+                  on3dClick={(d) => setActivo({ dish: d, mode: '3d' })}
+                />
+              ))}
             </ul>
           </div>
         )}
 
         {/* El resto de la carta */}
         <ul className="grid gap-x-6 gap-y-16 md:grid-cols-3 lg:grid-cols-4 pt-16 border-t border-deep-forest/20">
-          {resto.map((plato) => {
-            const isSoldOut = soldOutDict[plato.id]
-            return (
-              <li
-                key={plato.id}
-                data-sube
-                className={`flex flex-col relative ${isSoldOut ? 'opacity-60 grayscale' : ''}`}
-              >
-                {isSoldOut && (
-                  <span className="badge-online z-10 bg-warm-gray text-cream-canvas">
-                    Agotado
-                  </span>
-                )}
-                <div className="relative w-full aspect-square overflow-hidden rounded-images bg-cream-canvas">
-                  <img
-                    src={plato.foto}
-                    alt={plato.nombre[lang] || plato.nombre.es}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="pt-6 flex flex-col flex-grow">
-                  <h3 className="font-body font-bold text-[20px] text-forest-shadow leading-tight">
-                    {plato.nombre[lang] || plato.nombre.es}
-                  </h3>
-                  <p className="mt-2 font-body text-[16px] text-forest-shadow leading-body">
-                    {plato.descripcion
-                      ? plato.descripcion[lang] || plato.descripcion.es
-                      : null}
-                  </p>
-                </div>
-              </li>
-            )
-          })}
+          {resto.map((plato) => (
+            <DishCard
+              key={plato.id}
+              dish={plato}
+              lang={lang}
+              t={t}
+              isSoldOut={!!soldOutDict[plato.id]}
+            />
+          ))}
         </ul>
       </div>
 

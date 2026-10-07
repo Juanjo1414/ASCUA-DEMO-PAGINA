@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
-import { Check, Copy, X } from 'lucide-react'
+import { useEffect } from 'react'
+import { X } from 'lucide-react'
+import { InAppBrowserNotice } from './ar/InAppBrowserNotice'
 import ArViewer from './ArViewer'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useDependencies } from '@/presentation/state/DependenciesContext'
@@ -29,19 +30,8 @@ export default function ArDishModal({
 }: ArDishModalProps) {
   const { t } = useLanguage()
   const arUnavailable = mode === 'ar'
-  const [copied, setCopied] = useState(false)
   const { environmentDetector } = useDependencies()
   const inAppName = environmentDetector.getCapabilities().embeddedBrowserName
-
-  const copyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // Ignored
-    }
-  }
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -84,36 +74,7 @@ export default function ArDishModal({
             {dish.name}
           </p>
           <p className="mt-1 text-sm text-ceniza">{dish.description}</p>
-          {arUnavailable && (
-            <div className="mt-3 rounded-xl border border-rescoldo/50 bg-carbon-800 px-4 py-3">
-              {inAppName ? (
-                <>
-                  <p className="text-xs font-medium text-loza">
-                    {t.ar.inAppTitle}
-                  </p>
-                  <p className="mt-1.5 text-xs leading-relaxed text-ceniza">
-                    {t.ar.inAppBody.replaceAll('{app}', inAppName)}
-                  </p>
-                  <button
-                    type="button"
-                    onClick={copyLink}
-                    className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-rescoldo/60 px-3 py-1.5 text-xs text-loza transition-colors hover:bg-brasa hover:text-carbon"
-                  >
-                    {copied ? (
-                      <Check size={13} strokeWidth={2} />
-                    ) : (
-                      <Copy size={13} strokeWidth={2} />
-                    )}
-                    {copied ? t.ar.copied : t.ar.copyLink}
-                  </button>
-                </>
-              ) : (
-                <p className="text-xs leading-relaxed text-ceniza">
-                  {t.ar.arUnavailable}
-                </p>
-              )}
-            </div>
-          )}
+          {arUnavailable && <InAppBrowserNotice inAppName={inAppName} t={t} />}
           <p className="mt-3 text-xs text-ceniza/70">{t.ar.disclaimer}</p>
         </div>
       </div>
