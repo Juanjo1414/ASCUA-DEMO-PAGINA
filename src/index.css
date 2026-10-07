@@ -42,8 +42,8 @@
   }
 
   ::selection {
-    background: var(--color-lime-glow);
-    color: var(--color-forest-shadow);
+    background: var(--color-primary, var(--color-lime-glow));
+    color: var(--color-on-primary, var(--color-forest-shadow));
   }
 
   :focus-visible {
@@ -66,7 +66,9 @@
 @layer components {
   /* Pill CTA Button (Lime Fill) */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-lime-glow text-forest-shadow font-body font-bold text-[16px] px-[24px] py-[16px] rounded-buttons tracking-[0.017em] transition-transform hover:scale-[1.02] active:scale-[0.98];
+    @apply inline-flex items-center justify-center font-body font-bold text-[16px] px-[24px] py-[16px] rounded-buttons tracking-[0.017em] transition-transform hover:scale-[1.02] active:scale-[0.98];
+    background: var(--color-primary, var(--color-lime-glow));
+    color: var(--color-on-primary, var(--color-forest-shadow));
   }
 
   /* Pill Outline Button (Forest Border) */
@@ -81,7 +83,9 @@
 
   /* Online Only Badge */
   .badge-online {
-    @apply absolute top-4 left-4 bg-lime-glow text-forest-shadow font-body font-bold text-[12px] uppercase tracking-[0.05em] px-[12px] py-[4px] rounded-badges;
+    @apply absolute top-4 left-4 font-body font-bold text-[12px] uppercase tracking-[0.05em] px-[12px] py-[4px] rounded-badges;
+    background: var(--color-primary, var(--color-lime-glow));
+    color: var(--color-on-primary, var(--color-forest-shadow));
   }
 
   /* Split Content Section */

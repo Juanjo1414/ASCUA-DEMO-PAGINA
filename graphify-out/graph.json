@@ -43,45 +43,6 @@
       "source_location": "L17"
     },
     {
-      "id": "src_domain_ar_arasset",
-      "label": "ArAsset",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "arasset",
-      "source_file": "src/domain/ar.ts",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_domain_dish_category",
-      "label": "Category",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "category",
-      "source_file": "src/domain/dish.ts",
-      "source_location": "L67"
-    },
-    {
-      "id": "src_domain_price_price",
-      "label": "Price",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "price",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L23"
-    },
-    {
       "id": "src_domain_restaurant_restaurant",
       "label": "Restaurant",
       "_callable": true,
@@ -92,7 +53,7 @@
       "file_type": "code",
       "norm_label": "restaurant",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L107"
+      "source_location": "L114"
     },
     {
       "id": "src_domain_restaurant_restaurantauthorization",
@@ -105,7 +66,7 @@
       "file_type": "code",
       "norm_label": "restaurantauthorization",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L41"
+      "source_location": "L44"
     },
     {
       "id": "src_domain_restaurant_restaurantcontact",
@@ -118,20 +79,7 @@
       "file_type": "code",
       "norm_label": "restaurantcontact",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_domain_theme_theme",
-      "label": "Theme",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "theme",
-      "source_file": "src/domain/theme.ts",
-      "source_location": "L30"
+      "source_location": "L67"
     },
     {
       "id": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
@@ -144,7 +92,7 @@
       "file_type": "code",
       "norm_label": "staticjsonrestaurantrepository",
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L8"
+      "source_location": "L9"
     },
     {
       "id": "tests_unit_application_doubles_inmemoryrestaurantrepository",
@@ -171,6 +119,19 @@
       "norm_label": "appdependencies",
       "source_file": "src/app/compositionRoot.ts",
       "source_location": "L12"
+    },
+    {
+      "id": "src_app_dependenciescontext_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/app/DependenciesContext.tsx",
+      "source_location": "L7"
     },
     {
       "id": "src_application_ports_analyticstracker_analyticsevent",
@@ -303,6 +264,19 @@
       "source_location": "L15"
     },
     {
+      "id": "src_domain_ar_arasset",
+      "label": "ArAsset",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "arasset",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L38"
+    },
+    {
       "id": "src_domain_ar_arlaunchmode",
       "label": "ArLaunchMode",
       "_callable": true,
@@ -313,7 +287,7 @@
       "file_type": "code",
       "norm_label": "arlaunchmode",
       "source_file": "src/domain/ar.ts",
-      "source_location": "L62"
+      "source_location": "L63"
     },
     {
       "id": "src_domain_ar_devicecapabilities",
@@ -326,7 +300,20 @@
       "file_type": "code",
       "norm_label": "devicecapabilities",
       "source_file": "src/domain/ar.ts",
-      "source_location": "L57"
+      "source_location": "L58"
+    },
+    {
+      "id": "src_domain_dish_category",
+      "label": "Category",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "category",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L68"
     },
     {
       "id": "src_domain_dish_dish",
@@ -339,7 +326,7 @@
       "file_type": "code",
       "norm_label": "dish",
       "source_file": "src/domain/dish.ts",
-      "source_location": "L48"
+      "source_location": "L49"
     },
     {
       "id": "src_domain_dish_localizedstring",
@@ -352,7 +339,33 @@
       "file_type": "code",
       "norm_label": "localizedstring",
       "source_file": "src/domain/dish.ts",
-      "source_location": "L21"
+      "source_location": "L22"
+    },
+    {
+      "id": "src_domain_price_price",
+      "label": "Price",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "price",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_domain_theme_theme",
+      "label": "Theme",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "theme",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L31"
     },
     {
       "id": "src_infrastructure_analytics_cloudflareanalyticstracker_cloudflareanalyticstracker",
@@ -485,19 +498,6 @@
       "source_location": "L39"
     },
     {
-      "id": "src_app_dependenciescontext_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "App.tsx",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/app/DependenciesContext.tsx",
-      "source_location": "L7"
-    },
-    {
       "id": "src_components_ardishmodal_ardishmodalprops",
       "label": "ArDishModalProps",
       "_callable": true,
@@ -550,6 +550,32 @@
       "source_location": "L5"
     },
     {
+      "id": "src_components_arviewer_arviewerprops",
+      "label": "ArViewerProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "arviewerprops",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_components_arviewer_intrinsicelements",
+      "label": "IntrinsicElements",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "intrinsicelements",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L6"
+    },
+    {
       "id": "src_i18n_languagecontext_lang",
       "label": "Lang",
       "_callable": true,
@@ -589,30 +615,40 @@
       "source_location": "L7"
     },
     {
-      "id": "src_components_arviewer_arviewerprops",
-      "label": "ArViewerProps",
+      "id": "scripts_validate_content_fileexists",
+      "label": "fileExists()",
       "_callable": true,
-      "_callable_class": true,
       "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
+      "community": 1,
+      "community_name": "restaurant.ts",
       "file_type": "code",
-      "norm_label": "arviewerprops",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L23"
+      "norm_label": "fileexists()",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L15"
     },
     {
-      "id": "src_components_arviewer_intrinsicelements",
-      "label": "IntrinsicElements",
+      "id": "scripts_validate_content_hashfile",
+      "label": "hashFile()",
       "_callable": true,
-      "_callable_class": true,
       "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
+      "community": 1,
+      "community_name": "restaurant.ts",
       "file_type": "code",
-      "norm_label": "intrinsicelements",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L6"
+      "norm_label": "hashfile()",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_validate_content_validatecontent",
+      "label": "validateContent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "validatecontent()",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L29"
     },
     {
       "id": "src_application_ports_restaurantrepository_restaurantrepository_getbyslug",
@@ -625,30 +661,6 @@
       "norm_label": ".getbyslug()",
       "source_file": "src/application/ports/restaurantRepository.ts",
       "source_location": "L21"
-    },
-    {
-      "id": "src_application_ports_soldoutstore_soldoutstore_issoldout",
-      "label": ".isSoldOut()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": ".issoldout()",
-      "source_file": "src/application/ports/soldOutStore.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_application_use_cases_buildmenuview_buildmenuview",
-      "label": "buildMenuView()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview()",
-      "source_file": "src/application/use-cases/buildMenuView.ts",
-      "source_location": "L55"
     },
     {
       "id": "src_application_use_cases_buildreservationlink_buildreservationlink",
@@ -675,30 +687,6 @@
       "source_location": "L33"
     },
     {
-      "id": "src_application_use_cases_launchdishar_launchdishar",
-      "label": "launchDishAr()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "launchdishar()",
-      "source_file": "src/application/use-cases/launchDishAr.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_domain_price_formatcopprice",
-      "label": "formatCopPrice()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "formatcopprice()",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L35"
-    },
-    {
       "id": "src_domain_restaurant_isrestaurantexpired",
       "label": "isRestaurantExpired()",
       "_callable": true,
@@ -708,7 +696,19 @@
       "file_type": "code",
       "norm_label": "isrestaurantexpired()",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L116"
+      "source_location": "L123"
+    },
+    {
+      "id": "src_domain_restaurant_resolveasseturls",
+      "label": "resolveAssetUrls()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "resolveasseturls()",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L143"
     },
     {
       "id": "src_hooks_userestaurant_userestaurant_fetchrestaurant",
@@ -732,7 +732,7 @@
       "file_type": "code",
       "norm_label": ".getbyslug()",
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L9"
+      "source_location": "L10"
     },
     {
       "id": "tests_unit_application_doubles_inmemoryrestaurantrepository_add",
@@ -807,6 +807,18 @@
       "source_location": "L17"
     },
     {
+      "id": "src_application_ports_soldoutstore_soldoutstore_issoldout",
+      "label": ".isSoldOut()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": ".issoldout()",
+      "source_file": "src/application/ports/soldOutStore.ts",
+      "source_location": "L19"
+    },
+    {
       "id": "src_application_ports_soldoutstore_soldoutstore_setsoldout",
       "label": ".setSoldOut()",
       "_callable": true,
@@ -831,6 +843,30 @@
       "source_location": "L37"
     },
     {
+      "id": "src_application_use_cases_buildmenuview_buildmenuview",
+      "label": "buildMenuView()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview()",
+      "source_file": "src/application/use-cases/buildMenuView.ts",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_application_use_cases_launchdishar_launchdishar",
+      "label": "launchDishAr()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "launchdishar()",
+      "source_file": "src/application/use-cases/launchDishAr.ts",
+      "source_location": "L28"
+    },
+    {
       "id": "src_domain_ar_selectarlaunchmode",
       "label": "selectArLaunchMode()",
       "_callable": true,
@@ -840,7 +876,19 @@
       "file_type": "code",
       "norm_label": "selectarlaunchmode()",
       "source_file": "src/domain/ar.ts",
-      "source_location": "L85"
+      "source_location": "L86"
+    },
+    {
+      "id": "src_domain_price_formatcopprice",
+      "label": "formatCopPrice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "formatcopprice()",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L35"
     },
     {
       "id": "src_infrastructure_analytics_cloudflareanalyticstracker_cloudflareanalyticstracker_track",
@@ -1131,6 +1179,18 @@
       "source_location": "L12"
     },
     {
+      "id": "src_components_arviewer_arviewer",
+      "label": "ArViewer()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "arviewer()",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L29"
+    },
+    {
       "id": "src_components_contacto_contacto",
       "label": "Contacto()",
       "_callable": true,
@@ -1419,24 +1479,12 @@
       "source_location": "L52"
     },
     {
-      "id": "src_components_arviewer_arviewer",
-      "label": "ArViewer()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "file_type": "code",
-      "norm_label": "arviewer()",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L29"
-    },
-    {
       "id": "scripts_build_content_buildcontent",
       "label": "buildContent()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "buildcontent()",
       "source_file": "scripts/build-content.ts",
@@ -1448,47 +1496,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "copydir()",
       "source_file": "scripts/build-content.ts",
       "source_location": "L10"
-    },
-    {
-      "id": "scripts_validate_content_fileexists",
-      "label": "fileExists()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "validate-content.ts",
-      "file_type": "code",
-      "norm_label": "fileexists()",
-      "source_file": "scripts/validate-content.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "scripts_validate_content_hashfile",
-      "label": "hashFile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "validate-content.ts",
-      "file_type": "code",
-      "norm_label": "hashfile()",
-      "source_file": "scripts/validate-content.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "scripts_validate_content_validatecontent",
-      "label": "validateContent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "validate-content.ts",
-      "file_type": "code",
-      "norm_label": "validatecontent()",
-      "source_file": "scripts/validate-content.ts",
-      "source_location": "L29"
     },
     {
       "id": "src_lib_arassets_fetchactiveasset",
@@ -1827,15 +1839,26 @@
       "source_location": "L354"
     },
     {
-      "id": "src_application_index",
-      "label": "application/index.ts",
+      "id": "scripts_validate_content",
+      "label": "validate-content.ts",
       "_origin": "ast",
       "community": 1,
       "community_name": "restaurant.ts",
       "file_type": "code",
-      "norm_label": "application/index.ts",
-      "source_file": "src/application/index.ts",
+      "norm_label": "validate-content.ts",
+      "source_file": "scripts/validate-content.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "scripts_validate_content_max_sizes",
+      "label": "MAX_SIZES",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "code",
+      "norm_label": "max_sizes",
+      "source_file": "scripts/validate-content.ts",
+      "source_location": "L8"
     },
     {
       "id": "src_application_ports_restaurantrepository",
@@ -1871,50 +1894,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_application_use_cases_index",
-      "label": "use-cases/index.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "use-cases/index.ts",
-      "source_file": "src/application/use-cases/index.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_domain_index",
-      "label": "domain/index.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "domain/index.ts",
-      "source_file": "src/domain/index.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_domain_price",
-      "label": "price.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "price.ts",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_domain_price_priceschema",
-      "label": "priceSchema",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "priceschema",
-      "source_file": "src/domain/price.ts",
-      "source_location": "L16"
-    },
-    {
       "id": "src_domain_restaurant",
       "label": "restaurant.ts",
       "_origin": "ast",
@@ -1945,7 +1924,7 @@
       "file_type": "code",
       "norm_label": "restaurantauthorizationschema",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L25"
+      "source_location": "L27"
     },
     {
       "id": "src_domain_restaurant_restaurantcontactschema",
@@ -1956,7 +1935,7 @@
       "file_type": "code",
       "norm_label": "restaurantcontactschema",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L48"
+      "source_location": "L51"
     },
     {
       "id": "src_domain_restaurant_restaurantschema",
@@ -1967,18 +1946,7 @@
       "file_type": "code",
       "norm_label": "restaurantschema",
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L69"
-    },
-    {
-      "id": "src_domain_theme",
-      "label": "theme.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "theme.ts",
-      "source_file": "src/domain/theme.ts",
-      "source_location": "L1"
+      "source_location": "L72"
     },
     {
       "id": "src_domain_theme_themeschema",
@@ -1989,7 +1957,7 @@
       "file_type": "code",
       "norm_label": "themeschema",
       "source_file": "src/domain/theme.ts",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "src_infrastructure_content_staticjsonrestaurantrepository",
@@ -2000,17 +1968,6 @@
       "file_type": "code",
       "norm_label": "staticjsonrestaurantrepository.ts",
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_unit_application_buildmenuview_test",
-      "label": "buildMenuView.test.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "buildmenuview.test.ts",
-      "source_file": "tests/unit/application/buildMenuView.test.ts",
       "source_location": "L1"
     },
     {
@@ -2033,17 +1990,6 @@
       "file_type": "code",
       "norm_label": "getrestaurant.test.ts",
       "source_file": "tests/unit/application/getRestaurant.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_unit_domain_price_test",
-      "label": "price.test.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "code",
-      "norm_label": "price.test.ts",
-      "source_file": "tests/unit/domain/price.test.ts",
       "source_location": "L1"
     },
     {
@@ -2091,29 +2037,6 @@
       "source_location": "L65"
     },
     {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L42"
-    },
-    {
-      "id": "docs_correcciones_antes_de_continuar_c_04_sin_any",
-      "label": "C-04 \u00b7 Sin `any`",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "restaurant.ts",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "c-04 \u00b7 sin `any`",
-      "source_file": "docs/Correcciones antes de continuar.md",
-      "source_location": "L107"
-    },
-    {
       "id": "docs_correcciones_antes_de_continuar_c_10_rutas_seguras_y_resueltas_primero_las_pruebas",
       "label": "C-10 \u00b7 Rutas seguras y resueltas _(primero las pruebas)_",
       "_origin": "ast",
@@ -2150,28 +2073,52 @@
       "source_location": "L172"
     },
     {
-      "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
-      "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
+      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar",
+      "label": "2026-10-06-P104-Adaptadores-AR.md",
       "_origin": "ast",
       "community": 1,
       "community_name": "restaurant.ts",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
-      "source_file": "docs/PLAN-IMPLEMENTACION.md",
-      "source_location": "L518"
+      "node_kind": "page",
+      "norm_label": "2026-10-06-p104-adaptadores-ar.md",
+      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
+      "source_location": "L1"
     },
     {
-      "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
-      "label": "Decisiones tomadas",
+      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_bit\u00e1cora_de_sesi\u00f3n_p_104_adaptadores_ar",
+      "label": "Bit\u00e1cora de Sesi\u00f3n: P-104 Adaptadores AR",
       "_origin": "ast",
       "community": 1,
       "community_name": "restaurant.ts",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "decisiones tomadas",
-      "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
+      "norm_label": "bitacora de sesion: p-104 adaptadores ar",
+      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_objetivos",
+      "label": "Objetivos",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "objetivos",
+      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
       "source_location": "L6"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_siguiente_tarea",
+      "label": "Siguiente Tarea",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "siguiente tarea",
+      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
+      "source_location": "L21"
     },
     {
       "id": "docs_sesiones_2026_10_06_p105_static_repo",
@@ -2231,6 +2178,66 @@
       "node_kind": "heading",
       "norm_label": "siguiente tarea",
       "source_file": "docs/sesiones/2026-10-06-P105-Static-Repo.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store",
+      "label": "2026-10-06-P107-Jotai-Store.md",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "2026-10-06-p107-jotai-store.md",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_acciones_realizadas",
+      "label": "Acciones realizadas",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "acciones realizadas",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_bit\u00e1cora_de_sesi\u00f3n_p_107_store_reactivo_global_jotai",
+      "label": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "bitacora de sesion: p-107 store reactivo global (jotai)",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_objetivos",
+      "label": "Objetivos",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "objetivos",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_p107_jotai_store_siguiente_tarea",
+      "label": "Siguiente Tarea",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "siguiente tarea",
+      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
       "source_location": "L17"
     },
     {
@@ -3653,6 +3660,17 @@
       "source_location": "L20"
     },
     {
+      "id": "src_application_index",
+      "label": "application/index.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "application/index.ts",
+      "source_file": "src/application/index.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_application_ports_analyticstracker",
       "label": "analyticsTracker.ts",
       "_origin": "ast",
@@ -3719,6 +3737,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_application_use_cases_index",
+      "label": "use-cases/index.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "use-cases/index.ts",
+      "source_file": "src/application/use-cases/index.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_application_use_cases_launchdishar",
       "label": "launchDishAr.ts",
       "_origin": "ast",
@@ -3749,7 +3778,7 @@
       "file_type": "code",
       "norm_label": "arassetschema",
       "source_file": "src/domain/ar.ts",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "src_domain_ar_devicecapabilitiesschema",
@@ -3760,7 +3789,29 @@
       "file_type": "code",
       "norm_label": "devicecapabilitiesschema",
       "source_file": "src/domain/ar.ts",
-      "source_location": "L43"
+      "source_location": "L44"
+    },
+    {
+      "id": "src_domain_assetpath",
+      "label": "assetPath.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "assetpath.ts",
+      "source_file": "src/domain/assetPath.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_assetpath_assetpathschema",
+      "label": "assetPathSchema",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "assetpathschema",
+      "source_file": "src/domain/assetPath.ts",
+      "source_location": "L6"
     },
     {
       "id": "src_domain_dish",
@@ -3782,7 +3833,7 @@
       "file_type": "code",
       "norm_label": "categoryschema",
       "source_file": "src/domain/dish.ts",
-      "source_location": "L53"
+      "source_location": "L54"
     },
     {
       "id": "src_domain_dish_dishschema",
@@ -3793,7 +3844,7 @@
       "file_type": "code",
       "norm_label": "dishschema",
       "source_file": "src/domain/dish.ts",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "src_domain_dish_localizedstringschema",
@@ -3804,7 +3855,51 @@
       "file_type": "code",
       "norm_label": "localizedstringschema",
       "source_file": "src/domain/dish.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_domain_index",
+      "label": "domain/index.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "domain/index.ts",
+      "source_file": "src/domain/index.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_price",
+      "label": "price.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "price.ts",
+      "source_file": "src/domain/price.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_domain_price_priceschema",
+      "label": "priceSchema",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "priceschema",
+      "source_file": "src/domain/price.ts",
       "source_location": "L16"
+    },
+    {
+      "id": "src_domain_theme",
+      "label": "theme.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "theme.ts",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_infrastructure_analytics_cloudflareanalyticstracker",
@@ -3895,6 +3990,17 @@
       "source_location": "L1"
     },
     {
+      "id": "tests_unit_application_buildmenuview_test",
+      "label": "buildMenuView.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "buildmenuview.test.ts",
+      "source_file": "tests/unit/application/buildMenuView.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "tests_unit_application_doubles",
       "label": "doubles.ts",
       "_origin": "ast",
@@ -3936,6 +4042,17 @@
       "file_type": "code",
       "norm_label": "dish.test.ts",
       "source_file": "tests/unit/domain/dish.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_unit_domain_price_test",
+      "label": "price.test.ts",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "code",
+      "norm_label": "price.test.ts",
+      "source_file": "tests/unit/domain/price.test.ts",
       "source_location": "L1"
     },
     {
@@ -3983,6 +4100,17 @@
       "source_location": "L1"
     },
     {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L42"
+    },
+    {
       "id": "claude_0_2_reglas_espec\u00edficas_de_este_repo",
       "label": "0.2 Reglas espec\u00edficas de este repo",
       "_origin": "ast",
@@ -4017,6 +4145,30 @@
       "norm_label": "3.3 principios solid aplicados (concreto, no teorico)",
       "source_file": "docs/PLAN-IMPLEMENTACION.md",
       "source_location": "L141"
+    },
+    {
+      "id": "docs_plan_implementacion_fase_p_1_re_arquitectura_de_pagina",
+      "label": "Fase P-1 \u2014 Re-arquitectura de PAGINA",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fase p-1 \u2014 re-arquitectura de pagina",
+      "source_file": "docs/PLAN-IMPLEMENTACION.md",
+      "source_location": "L518"
+    },
+    {
+      "id": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
+      "label": "Decisiones tomadas",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "doubles.ts",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "decisiones tomadas",
+      "source_file": "docs/sesiones/2026-10-06-fundaciones.md",
+      "source_location": "L6"
     },
     {
       "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_acciones_realizadas",
@@ -4652,6 +4804,160 @@
       "source_location": "L1"
     },
     {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "package.json",
+      "source_location": "L34"
+    },
+    {
+      "id": "package_dependencies_google_model_viewer",
+      "label": "@google/model-viewer",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@google/model-viewer",
+      "source_file": "package.json",
+      "source_location": "L35"
+    },
+    {
+      "id": "package_dependencies_gsap",
+      "label": "gsap",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "gsap",
+      "source_file": "package.json",
+      "source_location": "L36"
+    },
+    {
+      "id": "package_dependencies_jotai",
+      "label": "jotai",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "jotai",
+      "source_file": "package.json",
+      "source_location": "L37"
+    },
+    {
+      "id": "package_dependencies_lucide_react",
+      "label": "lucide-react",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "lucide-react",
+      "source_file": "package.json",
+      "source_location": "L38"
+    },
+    {
+      "id": "package_dependencies_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "react",
+      "source_file": "package.json",
+      "source_location": "L39"
+    },
+    {
+      "id": "package_dependencies_react_dom",
+      "label": "react-dom",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "react-dom",
+      "source_file": "package.json",
+      "source_location": "L40"
+    },
+    {
+      "id": "package_dependencies_react_router_dom",
+      "label": "react-router-dom",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "react-router-dom",
+      "source_file": "package.json",
+      "source_location": "L41"
+    },
+    {
+      "id": "package_dependencies_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L42"
+    },
+    {
+      "id": "package_engines",
+      "label": "engines",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "engines",
+      "source_file": "package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "package_engines_node",
+      "label": "node",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "node",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "package_lint_staged",
+      "label": "lint-staged",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "lint-staged",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_lint_staged_js_jsx_ts_tsx",
+      "label": "*.{js,jsx,ts,tsx}",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "*.{js,jsx,ts,tsx}",
+      "source_file": "package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "package_lint_staged_json_md_css",
+      "label": "*.{json,md,css}",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "*.{json,md,css}",
+      "source_file": "package.json",
+      "source_location": "L30"
+    },
+    {
       "id": "package_name",
       "label": "name",
       "_origin": "ast",
@@ -4696,6 +5002,72 @@
       "source_location": "L4"
     },
     {
+      "id": "playwright_config",
+      "label": "playwright.config.ts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "playwright.config.ts",
+      "source_file": "playwright.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_gsap",
+      "label": "gsap.js",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "gsap.js",
+      "source_file": "src/lib/gsap.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_e2e_isolation_spec",
+      "label": "isolation.spec.ts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "isolation.spec.ts",
+      "source_file": "tests/e2e/isolation.spec.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_setup",
+      "label": "setup.ts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "setup.ts",
+      "source_file": "tests/setup.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "vite_config",
+      "label": "vite.config.js",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "vite.config.js",
+      "source_file": "vite.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "vitest_config",
+      "label": "vitest.config.js",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "vitest.config.js",
+      "source_file": "vitest.config.js",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_autoprefixer",
       "label": "autoprefixer",
       "_origin": "ast",
@@ -4716,6 +5088,17 @@
       "norm_label": "dependency-cruiser",
       "source_file": "package.json",
       "source_location": "L53"
+    },
+    {
+      "id": "ref_gsap",
+      "label": "gsap",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "gsap",
+      "source_file": "package.json",
+      "source_location": "L36"
     },
     {
       "id": "ref_husky",
@@ -4762,6 +5145,17 @@
       "source_location": "L58"
     },
     {
+      "id": "ref_playwright_test",
+      "label": "@playwright/test",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@playwright/test",
+      "source_file": "package.json",
+      "source_location": "L45"
+    },
+    {
       "id": "ref_postcss",
       "label": "postcss",
       "_origin": "ast",
@@ -4793,6 +5187,17 @@
       "norm_label": "tailwindcss",
       "source_file": "package.json",
       "source_location": "L61"
+    },
+    {
+      "id": "ref_testing_library_jest_dom",
+      "label": "@testing-library/jest-dom",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@testing-library/jest-dom",
+      "source_file": "package.json",
+      "source_location": "L46"
     },
     {
       "id": "ref_testing_library_react",
@@ -4848,6 +5253,28 @@
       "norm_label": "typescript",
       "source_file": "package.json",
       "source_location": "L63"
+    },
+    {
+      "id": "ref_vite",
+      "label": "vite",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "vite",
+      "source_file": "package.json",
+      "source_location": "L64"
+    },
+    {
+      "id": "ref_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "@vitejs/plugin-react",
+      "source_file": "package.json",
+      "source_location": "L50"
     },
     {
       "id": "ref_vitest_coverage_v8",
@@ -5217,54 +5644,6 @@
       "source_location": "L1"
     },
     {
-      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar",
-      "label": "2026-10-06-P104-Adaptadores-AR.md",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-104 Adaptadores AR",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "2026-10-06-p104-adaptadores-ar.md",
-      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_bit\u00e1cora_de_sesi\u00f3n_p_104_adaptadores_ar",
-      "label": "Bit\u00e1cora de Sesi\u00f3n: P-104 Adaptadores AR",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-104 Adaptadores AR",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "bitacora de sesion: p-104 adaptadores ar",
-      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_objetivos",
-      "label": "Objetivos",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-104 Adaptadores AR",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "objetivos",
-      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
-      "source_location": "L6"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p104_adaptadores_ar_siguiente_tarea",
-      "label": "Siguiente Tarea",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-104 Adaptadores AR",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "siguiente tarea",
-      "source_file": "docs/sesiones/2026-10-06-P104-Adaptadores-AR.md",
-      "source_location": "L21"
-    },
-    {
       "id": "docs_estado_bloqueos",
       "label": "Bloqueos",
       "_origin": "ast",
@@ -5274,7 +5653,7 @@
       "node_kind": "heading",
       "norm_label": "bloqueos",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L46"
+      "source_location": "L43"
     },
     {
       "id": "docs_estado_comandos_para_verificar",
@@ -5286,7 +5665,7 @@
       "node_kind": "heading",
       "norm_label": "comandos para verificar",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L55"
+      "source_location": "L52"
     },
     {
       "id": "docs_estado_completadas_con_observaciones_de_fases_previas",
@@ -5298,7 +5677,7 @@
       "node_kind": "heading",
       "norm_label": "completadas con observaciones de fases previas:",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L24"
+      "source_location": "L21"
     },
     {
       "id": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
@@ -5325,16 +5704,16 @@
       "source_location": "L7"
     },
     {
-      "id": "docs_estado_l\u00ednea_base_verificada_2026_10_06",
-      "label": "L\u00ednea base verificada (2026-10-06)",
+      "id": "docs_estado_l\u00ednea_base_verificada_2026_10_07",
+      "label": "L\u00ednea base verificada (2026-10-07)",
       "_origin": "ast",
       "community": 29,
       "community_name": "Estado del proyecto \u2014 ASCUA-DEMO-PAGINA",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "linea base verificada (2026-10-06)",
+      "norm_label": "linea base verificada (2026-10-07)",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L38"
+      "source_location": "L35"
     },
     {
       "id": "docs_estado_pendientes_detectados_fuera_de_alcance_de_la_tarea_actual",
@@ -5346,7 +5725,7 @@
       "node_kind": "heading",
       "norm_label": "pendientes detectados (fuera de alcance de la tarea actual)",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L50"
+      "source_location": "L47"
     },
     {
       "id": "docs_estado_siguiente_paso_exacto",
@@ -5358,7 +5737,7 @@
       "node_kind": "heading",
       "norm_label": "siguiente paso exacto",
       "source_file": "docs/ESTADO.md",
-      "source_location": "L30"
+      "source_location": "L27"
     },
     {
       "id": "docs_estado_tarea_actual",
@@ -5660,6 +6039,50 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_arviewer",
+      "label": "ArViewer.tsx",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "arviewer.tsx",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_arviewer_jsx",
+      "label": "JSX",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "jsx",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_arviewer_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "react",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_components_arviewer_viewer_attrs",
+      "label": "VIEWER_ATTRS",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "code",
+      "norm_label": "viewer_attrs",
+      "source_file": "src/components/ArViewer.tsx",
+      "source_location": "L16"
+    },
+    {
       "id": "src_components_contacto",
       "label": "Contacto.tsx",
       "_origin": "ast",
@@ -5902,6 +6325,17 @@
       "source_location": "L1"
     },
     {
+      "id": "ref_google_model_viewer",
+      "label": "@google/model-viewer",
+      "_origin": "ast",
+      "community": 34,
+      "community_name": "App.tsx",
+      "file_type": "concept",
+      "norm_label": "@google/model-viewer",
+      "source_file": "package.json",
+      "source_location": "L35"
+    },
+    {
       "id": "ref_jotai",
       "label": "jotai",
       "_origin": "ast",
@@ -6137,6 +6571,18 @@
       "source_location": "L99"
     },
     {
+      "id": "docs_correcciones_antes_de_continuar_c_04_sin_any",
+      "label": "C-04 \u00b7 Sin `any`",
+      "_origin": "ast",
+      "community": 36,
+      "community_name": "LocalStorageSoldOutStore",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "c-04 \u00b7 sin `any`",
+      "source_file": "docs/Correcciones antes de continuar.md",
+      "source_location": "L107"
+    },
+    {
       "id": "docs_correcciones_antes_de_continuar_c_05_index_html_neutro_y_m\u00f3vil",
       "label": "C-05 \u00b7 `index.html` neutro y m\u00f3vil",
       "_origin": "ast",
@@ -6305,171 +6751,6 @@
       "source_location": "L6"
     },
     {
-      "id": "model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "@google/model-viewer",
-      "source_file": "@google/model-viewer"
-    },
-    {
-      "id": "src_components_arviewer",
-      "label": "ArViewer.tsx",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "file_type": "code",
-      "norm_label": "arviewer.tsx",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_arviewer_jsx",
-      "label": "JSX",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "file_type": "code",
-      "norm_label": "jsx",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_arviewer_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "file_type": "code",
-      "norm_label": "react",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_components_arviewer_viewer_attrs",
-      "label": "VIEWER_ATTRS",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "file_type": "code",
-      "norm_label": "viewer_attrs",
-      "source_file": "src/components/ArViewer.tsx",
-      "source_location": "L16"
-    },
-    {
-      "id": "ref_google_model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 37,
-      "community_name": "ArViewer.tsx",
-      "file_type": "concept",
-      "norm_label": "@google/model-viewer",
-      "source_file": "package.json",
-      "source_location": "L35"
-    },
-    {
-      "id": "package_dependencies",
-      "label": "dependencies",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "package.json",
-      "source_location": "L34"
-    },
-    {
-      "id": "package_dependencies_google_model_viewer",
-      "label": "@google/model-viewer",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@google/model-viewer",
-      "source_file": "package.json",
-      "source_location": "L35"
-    },
-    {
-      "id": "package_dependencies_gsap",
-      "label": "gsap",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "gsap",
-      "source_file": "package.json",
-      "source_location": "L36"
-    },
-    {
-      "id": "package_dependencies_jotai",
-      "label": "jotai",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "jotai",
-      "source_file": "package.json",
-      "source_location": "L37"
-    },
-    {
-      "id": "package_dependencies_lucide_react",
-      "label": "lucide-react",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "lucide-react",
-      "source_file": "package.json",
-      "source_location": "L38"
-    },
-    {
-      "id": "package_dependencies_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "react",
-      "source_file": "package.json",
-      "source_location": "L39"
-    },
-    {
-      "id": "package_dependencies_react_dom",
-      "label": "react-dom",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "react-dom",
-      "source_file": "package.json",
-      "source_location": "L40"
-    },
-    {
-      "id": "package_dependencies_react_router_dom",
-      "label": "react-router-dom",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "react-router-dom",
-      "source_file": "package.json",
-      "source_location": "L41"
-    },
-    {
-      "id": "package_dependencies_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L42"
-    },
-    {
       "id": "docs_runbooks_nuevo_restaurante",
       "label": "nuevo-restaurante.md",
       "_origin": "ast",
@@ -6570,7 +6851,7 @@
       "label": "build-content.ts",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "build-content.ts",
       "source_file": "scripts/build-content.ts",
@@ -6581,7 +6862,7 @@
       "label": "DIST_DATA_DIR",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "dist_data_dir",
       "source_file": "scripts/build-content.ts",
@@ -6592,7 +6873,7 @@
       "label": "DIST_DIR",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "dist_dir",
       "source_file": "scripts/build-content.ts",
@@ -6603,7 +6884,7 @@
       "label": "DIST_R_DIR",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "dist_r_dir",
       "source_file": "scripts/build-content.ts",
@@ -6614,7 +6895,7 @@
       "label": "carta.mjs",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "carta.mjs",
       "source_file": "scripts/carta.mjs",
@@ -6625,7 +6906,7 @@
       "label": "destino",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "destino",
       "source_file": "scripts/carta.mjs",
@@ -6636,7 +6917,7 @@
       "label": "origen",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "origen",
       "source_file": "scripts/carta.mjs",
@@ -6647,7 +6928,7 @@
       "label": "PLATOS",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "platos",
       "source_file": "scripts/carta.mjs",
@@ -6658,7 +6939,7 @@
       "label": "raiz",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "raiz",
       "source_file": "scripts/carta.mjs",
@@ -6669,7 +6950,7 @@
       "label": "fuentes.mjs",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "fuentes.mjs",
       "source_file": "scripts/fuentes.mjs",
@@ -6680,7 +6961,7 @@
       "label": "bloques",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "bloques",
       "source_file": "scripts/fuentes.mjs",
@@ -6691,7 +6972,7 @@
       "label": "css",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "css",
       "source_file": "scripts/fuentes.mjs",
@@ -6702,7 +6983,7 @@
       "label": "destino",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "destino",
       "source_file": "scripts/fuentes.mjs",
@@ -6713,7 +6994,7 @@
       "label": "raiz",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "raiz",
       "source_file": "scripts/fuentes.mjs",
@@ -6724,40 +7005,18 @@
       "label": "salida",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "code",
       "norm_label": "salida",
       "source_file": "scripts/fuentes.mjs",
       "source_location": "L36"
     },
     {
-      "id": "scripts_validate_content",
-      "label": "validate-content.ts",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "validate-content.ts",
-      "file_type": "code",
-      "norm_label": "validate-content.ts",
-      "source_file": "scripts/validate-content.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_validate_content_max_sizes",
-      "label": "MAX_SIZES",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "validate-content.ts",
-      "file_type": "code",
-      "norm_label": "max_sizes",
-      "source_file": "scripts/validate-content.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "ref_ffmpeg_static",
       "label": "ffmpeg-static",
       "_origin": "ast",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "file_type": "concept",
       "norm_label": "ffmpeg-static",
       "source_file": "package.json",
@@ -7086,66 +7345,6 @@
       "norm_label": "siguiente tarea",
       "source_file": "docs/sesiones/2026-10-06-P106-Composition-Router.md",
       "source_location": "L18"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store",
-      "label": "2026-10-06-P107-Jotai-Store.md",
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "2026-10-06-p107-jotai-store.md",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_acciones_realizadas",
-      "label": "Acciones realizadas",
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "acciones realizadas",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_bit\u00e1cora_de_sesi\u00f3n_p_107_store_reactivo_global_jotai",
-      "label": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "bitacora de sesion: p-107 store reactivo global (jotai)",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_objetivos",
-      "label": "Objetivos",
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "objetivos",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L6"
-    },
-    {
-      "id": "docs_sesiones_2026_10_06_p107_jotai_store_siguiente_tarea",
-      "label": "Siguiente Tarea",
-      "_origin": "ast",
-      "community": 46,
-      "community_name": "Bit\u00e1cora de Sesi\u00f3n: P-107 Store Reactivo Global (Jotai)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "siguiente tarea",
-      "source_file": "docs/sesiones/2026-10-06-P107-Jotai-Store.md",
-      "source_location": "L17"
     },
     {
       "id": "docs_sesiones_2026_10_06_p201_esquema_contenido",
@@ -7754,193 +7953,6 @@
       "source_location": "L179"
     },
     {
-      "id": "vite_config",
-      "label": "vite.config.js",
-      "_origin": "ast",
-      "community": 50,
-      "community_name": "@vitejs/plugin-react",
-      "file_type": "code",
-      "norm_label": "vite.config.js",
-      "source_file": "vite.config.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "vitest_config",
-      "label": "vitest.config.js",
-      "_origin": "ast",
-      "community": 50,
-      "community_name": "@vitejs/plugin-react",
-      "file_type": "code",
-      "norm_label": "vitest.config.js",
-      "source_file": "vitest.config.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_vite",
-      "label": "vite",
-      "_origin": "ast",
-      "community": 50,
-      "community_name": "@vitejs/plugin-react",
-      "file_type": "concept",
-      "norm_label": "vite",
-      "source_file": "package.json",
-      "source_location": "L64"
-    },
-    {
-      "id": "ref_vitejs_plugin_react",
-      "label": "@vitejs/plugin-react",
-      "_origin": "ast",
-      "community": 50,
-      "community_name": "@vitejs/plugin-react",
-      "file_type": "concept",
-      "norm_label": "@vitejs/plugin-react",
-      "source_file": "package.json",
-      "source_location": "L50"
-    },
-    {
-      "id": "package_lint_staged",
-      "label": "lint-staged",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "lint-staged",
-      "file_type": "code",
-      "norm_label": "lint-staged",
-      "source_file": "package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "package_lint_staged_js_jsx_ts_tsx",
-      "label": "*.{js,jsx,ts,tsx}",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "lint-staged",
-      "file_type": "code",
-      "norm_label": "*.{js,jsx,ts,tsx}",
-      "source_file": "package.json",
-      "source_location": "L26"
-    },
-    {
-      "id": "package_lint_staged_json_md_css",
-      "label": "*.{json,md,css}",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "lint-staged",
-      "file_type": "code",
-      "norm_label": "*.{json,md,css}",
-      "source_file": "package.json",
-      "source_location": "L30"
-    },
-    {
-      "id": "playwright_config",
-      "label": "playwright.config.ts",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "@playwright/test",
-      "file_type": "code",
-      "norm_label": "playwright.config.ts",
-      "source_file": "playwright.config.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_e2e_isolation_spec",
-      "label": "isolation.spec.ts",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "@playwright/test",
-      "file_type": "code",
-      "norm_label": "isolation.spec.ts",
-      "source_file": "tests/e2e/isolation.spec.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_playwright_test",
-      "label": "@playwright/test",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "@playwright/test",
-      "file_type": "concept",
-      "norm_label": "@playwright/test",
-      "source_file": "package.json",
-      "source_location": "L45"
-    },
-    {
-      "id": "package_engines",
-      "label": "engines",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "engines",
-      "file_type": "code",
-      "norm_label": "engines",
-      "source_file": "package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "package_engines_node",
-      "label": "node",
-      "_origin": "ast",
-      "community": 53,
-      "community_name": "engines",
-      "file_type": "code",
-      "norm_label": "node",
-      "source_file": "package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_lib_gsap",
-      "label": "gsap.js",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "gsap",
-      "file_type": "code",
-      "norm_label": "gsap.js",
-      "source_file": "src/lib/gsap.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_gsap",
-      "label": "gsap",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "gsap",
-      "file_type": "concept",
-      "norm_label": "gsap",
-      "source_file": "package.json",
-      "source_location": "L36"
-    },
-    {
-      "id": "tests_setup",
-      "label": "setup.ts",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "@testing-library/jest-dom",
-      "file_type": "code",
-      "norm_label": "setup.ts",
-      "source_file": "tests/setup.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_testing_library_jest_dom",
-      "label": "@testing-library/jest-dom",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "@testing-library/jest-dom",
-      "file_type": "concept",
-      "norm_label": "@testing-library/jest-dom",
-      "source_file": "package.json",
-      "source_location": "L46"
-    },
-    {
-      "id": "dependency_cruiser_dependency_cruiser",
-      "label": "dependency-cruiser",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "dependency-cruiser",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "dependency-cruiser",
-      "source_file": "dependency-cruiser"
-    },
-    {
       "id": "package_scripts",
       "label": "scripts",
       "_origin": "ast",
@@ -8447,17 +8459,6 @@
       "source_location": "L2"
     },
     {
-      "id": "tailwindcss",
-      "label": "tailwindcss",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "tailwind.config.js",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "tailwindcss",
-      "source_file": "tailwindcss"
-    },
-    {
       "id": "tailwind_config",
       "label": "tailwind.config.js",
       "_origin": "ast",
@@ -8478,6 +8479,30 @@
       "norm_label": "todo: eliminar despues de p-403 (compatibilidad hacia atras)",
       "source_file": "tailwind.config.js",
       "source_location": "L23"
+    },
+    {
+      "id": "ref_node_crypto",
+      "label": "ref_node_crypto",
+      "_origin": "semantic",
+      "community": 1,
+      "community_name": "restaurant.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_crypto",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_path",
+      "label": "ref_path",
+      "_origin": "semantic",
+      "community": 2,
+      "community_name": "package.json",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_path",
+      "source_file": "",
+      "type": "external"
     },
     {
       "id": "src_lib_gsap_scrolltrigger",
@@ -8532,7 +8557,7 @@
       "label": "ref_node_child_process",
       "_origin": "semantic",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_child_process",
@@ -8544,7 +8569,7 @@
       "label": "ref_node_fs",
       "_origin": "semantic",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_fs",
@@ -8556,7 +8581,7 @@
       "label": "ref_node_path",
       "_origin": "semantic",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_path",
@@ -8568,33 +8593,10 @@
       "label": "ref_node_url",
       "_origin": "semantic",
       "community": 4,
-      "community_name": "validate-content.ts",
+      "community_name": "carta.mjs",
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_path",
-      "label": "ref_path",
-      "_origin": "semantic",
-      "community": 50,
-      "community_name": "@vitejs/plugin-react",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_path",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_node_crypto",
-      "label": "ref_node_crypto",
-      "community": 4,
-      "community_name": "validate-content.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_crypto",
       "source_file": "",
       "type": "external"
     }
@@ -9225,6 +9227,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository_getbyslug",
+      "target": "src_domain_restaurant_resolveasseturls",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
       "source": "src_infrastructure_storage_localstoragesoldoutstore_localstoragesoldoutstore_getsoldoutset",
       "target": "src_infrastructure_storage_localstoragesoldoutstore_localstoragesoldoutstore_getkey",
       "relation": "calls",
@@ -9597,6 +9611,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_assetpath",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "export",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
       "source": "src_app_compositionroot_appdependencies",
       "target": "src_infrastructure_content_staticjsonrestaurantrepository_staticjsonrestaurantrepository",
       "relation": "references",
@@ -9881,7 +9907,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -11278,6 +11304,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_ar",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "src_domain_dish",
       "target": "src_domain_ar_arassetschema",
       "relation": "imports",
@@ -11302,8 +11340,32 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_dish",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
       "source": "src_domain_restaurant",
       "target": "src_domain_dish_categoryschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_dish_localizedstringschema",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -11323,6 +11385,18 @@
       "context": "import",
       "source_file": "src/domain/restaurant.ts",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -11647,6 +11721,18 @@
       "context": "import",
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_infrastructure_content_staticjsonrestaurantrepository",
+      "target": "src_domain_restaurant_resolveasseturls",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -12215,7 +12301,31 @@
     },
     {
       "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
       "target": "src_domain_restaurant_isrestaurantexpired",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/unit/domain/restaurant.test.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_unit_domain_restaurant_test",
+      "target": "src_domain_restaurant_resolveasseturls",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13867,6 +13977,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_ar",
+      "target": "src_domain_assetpath",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/ar.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_assetpath",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/assetPath.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "src_domain_dish",
       "target": "src_domain_ar",
       "relation": "imports_from",
@@ -13888,6 +14022,18 @@
       "context": "import",
       "source_file": "src/domain/dish.ts",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_dish",
+      "target": "src_domain_assetpath",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/dish.ts",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -13948,6 +14094,18 @@
       "context": "import",
       "source_file": "src/domain/restaurant.ts",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_theme",
+      "target": "src_domain_assetpath",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/domain/theme.ts",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -15327,6 +15485,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "re_exports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "re-export",
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
       "source": "src_application_ports_environmentdetector_environmentdetector_getcapabilities",
       "target": "src_domain_ar_devicecapabilities",
       "relation": "references",
@@ -15443,7 +15613,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -17022,18 +17192,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L30",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
       "source": "docs_estado_estado_del_proyecto_ascua_demo_pagina",
-      "target": "docs_estado_l\u00ednea_base_verificada_2026_10_06",
+      "target": "docs_estado_l\u00ednea_base_verificada_2026_10_07",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L38",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -17044,7 +17214,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L46",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -17055,7 +17225,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L50",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -17066,7 +17236,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L55",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -17088,7 +17258,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/ESTADO.md",
-      "source_location": "L24",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -20509,7 +20679,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/ar.ts",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -20520,7 +20690,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/ar.ts",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -20531,7 +20701,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/ar.ts",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -20542,7 +20712,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/ar.ts",
-      "source_location": "L57",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -20553,7 +20723,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/ar.ts",
-      "source_location": "L62",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -20564,7 +20734,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/ar.ts",
-      "source_location": "L85",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_assetpath",
+      "target": "src_domain_assetpath_assetpathschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/assetPath.ts",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -20575,7 +20756,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/dish.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -20586,7 +20767,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/dish.ts",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -20597,7 +20778,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/dish.ts",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -20608,7 +20789,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/dish.ts",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -20619,7 +20800,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/dish.ts",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -20630,7 +20811,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/dish.ts",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -20674,7 +20855,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L107",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -20685,7 +20866,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L116",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "src_domain_restaurant",
+      "target": "src_domain_restaurant_resolveasseturls",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/domain/restaurant.ts",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -20707,7 +20899,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L25",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -20718,7 +20910,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L41",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -20729,7 +20921,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L48",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -20740,7 +20932,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L64",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -20751,7 +20943,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/restaurant.ts",
-      "source_location": "L69",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -20762,7 +20954,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/theme.ts",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -20773,7 +20965,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/domain/theme.ts",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -20949,7 +21141,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -21369,24 +21561,6 @@
       "source_file": ".dependency-cruiser.cjs"
     },
     {
-      "source": "src_components_arviewer",
-      "target": "model_viewer",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/ArViewer.tsx"
-    },
-    {
-      "source": "tailwind_config",
-      "target": "tailwindcss",
-      "relation": "dynamic_import",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tailwind.config.js"
-    },
-    {
       "source": "src_application_ports_analyticstracker_analyticstracker",
       "target": "src_application_ports_analyticstracker_analyticstracker_track",
       "relation": "method",
@@ -21537,7 +21711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/infrastructure/content/StaticJsonRestaurantRepository.ts",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -23110,6 +23284,18 @@
       "weight": 1.0
     },
     {
+      "source": "docs_estado_\u00faltimo_paso_completado",
+      "target": "src_domain_restaurant_resolveasseturls",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "context": "resolveAssetUrls",
+      "source_file": "docs/ESTADO.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
       "source": "docs_sesiones_2026_10_06_fundaciones_decisiones_tomadas",
       "target": "src_domain_ar_selectarlaunchmode",
       "relation": "references",
@@ -23153,5 +23339,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4908d6692dfe5cff904a2c11c4579c368cf661fc"
+  "built_at_commit": "200ae4de6ad3c8ffe20da21bae51b0da6120a89c"
 }

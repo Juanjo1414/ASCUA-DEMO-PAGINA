@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { useLanguage } from '../i18n/useLanguage'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '@/app/store'
 
-const LINK_IDS = ['menu', 'voces', 'contacto']
+const LINK_IDS = ['menu', 'contacto']
 
 export default function Nav() {
   const { lang, setLang, t } = useLanguage()
   const [abierto, setAbierto] = useState(false)
+  const restaurant = useAtomValue(restaurantAtom)
 
   const enlaces = LINK_IDS.map((id) => ({
     id,
@@ -58,23 +61,37 @@ export default function Nav() {
         <div className="flex-1 flex justify-center">
           <a
             href="#top"
-            aria-label="Ascua, inicio"
+            aria-label={`${restaurant?.nombre || 'Ascua'}, inicio`}
             className="font-body text-[24px] sm:text-[28px] font-bold text-deep-forest tracking-tight"
           >
-            ascua
+            {restaurant?.tema?.logo ? (
+              <img
+                src={restaurant.tema.logo}
+                alt={restaurant.nombre}
+                className="h-8 w-auto object-contain"
+              />
+            ) : (
+              restaurant?.nombre || 'ascua'
+            )}
           </a>
         </div>
 
         {/* Right Nav */}
         <div className="flex-1 flex items-center justify-end gap-6">
-          <button
-            type="button"
-            onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-            aria-label="Switch language"
-            className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors hidden sm:block"
-          >
-            {lang === 'es' ? 'EN' : 'ES'}
-          </button>
+          {restaurant?.idiomas && restaurant.idiomas.length > 1 && (
+            <button
+              type="button"
+              onClick={() => {
+                const nextLang =
+                  restaurant.idiomas.find((l) => l !== lang) || 'es'
+                setLang(nextLang as import('../i18n/LanguageContext').Lang)
+              }}
+              aria-label="Switch language"
+              className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow hover:text-deep-forest transition-colors hidden sm:block"
+            >
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+          )}
 
           <a
             href="#reservar"
@@ -106,16 +123,20 @@ export default function Nav() {
             ))}
           </ul>
           <div className="mt-10 space-y-6">
-            <button
-              type="button"
-              onClick={() => {
-                setLang(lang === 'es' ? 'en' : 'es')
-                setAbierto(false)
-              }}
-              className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow"
-            >
-              {lang === 'es' ? 'SWITCH TO ENGLISH' : 'CAMBIAR A ESPAÑOL'}
-            </button>
+            {restaurant?.idiomas && restaurant.idiomas.length > 1 && (
+              <button
+                type="button"
+                onClick={() => {
+                  const nextLang =
+                    restaurant.idiomas.find((l) => l !== lang) || 'es'
+                  setLang(nextLang as import('../i18n/LanguageContext').Lang)
+                  setAbierto(false)
+                }}
+                className="font-body text-[14px] font-bold uppercase tracking-[0.05em] text-forest-shadow"
+              >
+                {lang === 'es' ? 'SWITCH TO ENGLISH' : 'CAMBIAR A ESPAÑOL'}
+              </button>
+            )}
             <a
               href="#reservar"
               onClick={() => setAbierto(false)}

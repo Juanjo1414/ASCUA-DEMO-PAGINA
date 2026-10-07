@@ -2,6 +2,7 @@ import { ArrowUp } from 'lucide-react'
 import { useLanguage } from '../i18n/useLanguage'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/app/store'
+import { FEEDBACK_URL } from '@/shared/config'
 
 export default function Pie() {
   const { t } = useLanguage()
@@ -9,14 +10,27 @@ export default function Pie() {
   const anio = new Date().getFullYear()
 
   const feedbackLink = restaurant
-    ? `https://tally.so/r/n0q1L7?slug=${restaurant.slug}`
-    : 'https://tally.so/r/n0q1L7'
+    ? `${FEEDBACK_URL}?slug=${restaurant.slug}`
+    : FEEDBACK_URL
 
   return (
     <footer className="bg-deep-forest text-cream-canvas py-16">
       <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
+            <div className="mb-6">
+              {restaurant?.tema?.logo ? (
+                <img
+                  src={restaurant.tema.logo}
+                  alt={restaurant.nombre}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              ) : (
+                <span className="font-body text-[24px] font-bold tracking-tight text-cream-canvas">
+                  {restaurant?.nombre || 'ascua'}
+                </span>
+              )}
+            </div>
             <p className="max-w-[28ch] font-display text-display-sm">
               {t.footer.tagline}
             </p>

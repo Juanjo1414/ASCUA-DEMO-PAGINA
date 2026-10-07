@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { restaurantSchema, isRestaurantExpired } from '../src/domain/restaurant'
+import { pickReadableTextColor } from '../src/domain/theme'
 
 const CONTENT_DIR =
   process.env.CONTENT_DIR || path.join(process.cwd(), 'content', 'restaurants')
@@ -62,24 +63,11 @@ export async function validateContent() {
       const data = parsed.data
 
       // Validación de contraste AA (4.5:1)
-      const getLuminance = (hex: string) => {
-        const rgb = parseInt(hex.replace('#', ''), 16)
-        const r = (rgb >> 16) & 0xff
-        const g = (rgb >> 8) & 0xff
-        const b = (rgb >> 0) & 0xff
-        const [Rs, Gs, Bs] = [r, g, b].map((c) => {
-          c /= 255
-          return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
-        })
-        return 0.2126 * Rs + 0.7152 * Gs + 0.0722 * Bs
-      }
-      const l1 = getLuminance(data.tema.primario)
-      const l2 = getLuminance('#0e150e')
-      const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05)
+      const { ratio } = pickReadableTextColor(data.tema.primario)
 
       if (ratio < 4.5) {
         console.error(
-          `❌ [${folderName}] El color primario (${data.tema.primario}) no tiene contraste AA suficiente con el texto oscuro (#0e150e). Ratio: ${ratio.toFixed(2)}:1 (mínimo 4.5:1)`
+          `❌ [${folderName}] El color primario (${data.tema.primario}) no tiene contraste AA suficiente con texto claro/oscuro. Ratio máximo posible: ${ratio.toFixed(2)}:1 (mínimo 4.5:1)`
         )
         hasErrors = true
       }
@@ -153,8 +141,9 @@ export async function validateContent() {
         }
       }
 
-      // Revisar logo
-      await checkAsset(data.tema.logo, 'svg')
+      // Revisar logo y heroImagen
+      if (data.tema.logo) await checkAsset(data.tema.logo, 'svg')
+      if (data.heroImagen) await checkAsset(data.heroImagen, 'webp')
 
       // Revisar modelos de platos
       for (const cat of data.categorias) {

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "slug": "ascua-demo-abcd",
+  "estado": "activo",
+  "expira": "2099-12-31",
+  "autorizacion": {
+    "fecha": "2026-10-10",
+    "medio": "propio",
+    "contacto": "Juan"
+  },
+  "nombre": "Ascua",
+  "idiomas": ["es", "en"],
+  "eslogan": {
+    "es": "Cocina de autor.",
+    "en": "Chef-driven cooking."
+  },
+  "heroImagen": "assets/filete.webp",
+  "tema": {
+    "primario": "#00473c",
+    "parTipografico": "editorial",
+    "logo": "assets/logo.svg"
+  },
+  "contacto": {
+    "whatsapp": "573000000000",
+    "direccion": "Calle Ficticia 123",
+    "horario": ["Lun - Dom: 18:00 - 23:00"]
+  },
+  "categorias": [
+    {
+      "id": "fuertes",
+      "nombre": {
+        "es": "Platos fuertes",
+        "en": "Mains"
+      },
+      "platos": [
+        {
+          "id": "lubina",
+          "nombre": {
+            "es": "Lubina a la plancha",
+            "en": "Pan-seared sea bass"
+          },
+          "descripcion": {
+            "es": "Puré de arveja, espárragos blancos y ensalada de hinojo con naranja.",
+            "en": "Pea purée, white asparagus and fennel-orange salad."
+          },
+          "precio": 35000,
+          "foto": "assets/pescado.webp"
+        },
+        {
+          "id": "filete",
+          "nombre": { "es": "Filete a la parrilla", "en": "Grilled steak" },
+          "descripcion": {
+            "es": "Puré de papa, espárragos y zanahorias baby asadas.",
+            "en": "Potato purée, roasted asparagus and baby carrots."
+          },
+          "precio": 42000,
+          "foto": "assets/filete.webp"
+        },
+        {
+          "id": "tagliatelle",
+          "nombre": {
+            "es": "Tagliatelle con hongos",
+            "en": "Mushroom tagliatelle"
+          },
+          "descripcion": {
+            "es": "Hongos salteados, parmesano curado y hierbas frescas.",
+            "en": "Sautéed mushrooms, aged parmesan and fresh herbs."
+          },
+          "precio": 28000,
+          "foto": "assets/tagliatelle.webp"
+        },
+        {
+          "id": "vieiras",
+          "nombre": {
+            "es": "Vieiras sobre risotto",
+            "en": "Scallops over risotto"
+          },
+          "descripcion": {
+            "es": "Risotto cremoso, hierbas de temporada y una copa de vino blanco.",
+            "en": "Creamy risotto, seasonal herbs and a glass of white wine."
+          },
+          "precio": 38000,
+          "foto": "assets/vieiras.webp"
+        },
+        {
+          "id": "pato",
+          "nombre": { "es": "Pechuga de pato", "en": "Duck breast" },
+          "descripcion": {
+            "es": "Puré de nabo, col morada braseada y salsa de frutos rojos.",
+            "en": "Turnip purée, braised red cabbage and red berry sauce."
+          },
+          "precio": 45000,
+          "foto": "assets/pato.webp"
+        },
+        {
+          "id": "gnocchi",
+          "nombre": { "es": "Gnocchi con trufa", "en": "Truffle gnocchi" },
+          "descripcion": {
+            "es": "Salvia crujiente, parmesano y láminas de trufa negra.",
+            "en": "Crispy sage, parmesan and shaved black truffle."
+          },
+          "precio": 32000,
+          "foto": "assets/gnocchi.webp"
+        },
+        {
+          "id": "langosta",
+          "nombre": {
+            "es": "Langosta con cabello de ángel",
+            "en": "Lobster with angel hair"
+          },
+          "descripcion": {
+            "es": "Salsa de coco y lima, maní tostado y cilantro fresco.",
+            "en": "Coconut-lime sauce, toasted peanuts and fresh cilantro."
+          },
+          "precio": 55000,
+          "foto": "assets/langosta.webp"
+        },
+        {
+          "id": "cerdo",
+          "nombre": { "es": "Lomo de cerdo", "en": "Pork loin" },
+          "descripcion": {
+            "es": "Gnocchi dorado, ejotes salteados y almendras tostadas.",
+            "en": "Golden gnocchi, sautéed green beans and toasted almonds."
+          },
+          "precio": 30000,
+          "foto": "assets/cerdo.webp"
+        }
+      ]
+    }
+  ]
+}

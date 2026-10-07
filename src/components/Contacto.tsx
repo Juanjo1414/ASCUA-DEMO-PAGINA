@@ -5,12 +5,10 @@ import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/app/store'
 import { buildReservationLink } from '../application/use-cases/buildReservationLink'
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
 export default function Contacto() {
   const { t, lang } = useLanguage()
   const restaurant = useAtomValue(restaurantAtom)
-  const [values, setValues] = useState({ name: '', email: '', message: '' })
+  const [values, setValues] = useState({ name: '', message: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const primerCampo = useRef<HTMLInputElement>(null)
 
@@ -31,7 +29,6 @@ export default function Contacto() {
   const validate = (v: typeof values) => {
     const next: Record<string, string> = {}
     if (!v.name.trim()) next.name = t.contact.errors.name
-    if (!EMAIL_RE.test(v.email.trim())) next.email = t.contact.errors.email
     if (v.message.trim().length < 10) next.message = t.contact.errors.message
     return next
   }
@@ -51,14 +48,14 @@ export default function Contacto() {
     }
 
     if (restaurant) {
-      const comentarios = `Nombre: ${values.name}\nEmail: ${values.email}\n${values.message}`
+      const comentarios = `Nombre: ${values.name}\n${values.message}`
       const link = buildReservationLink({
         restaurant,
         comentarios,
         lang,
       })
       window.open(link, '_blank', 'noopener,noreferrer')
-      setValues({ name: '', email: '', message: '' })
+      setValues({ name: '', message: '' })
     }
   }
 
@@ -69,10 +66,7 @@ export default function Contacto() {
         : 'border-deep-forest/20 focus:border-deep-forest'
     }`
 
-  const FILAS = [
-    { id: 'name', type: 'text', autoComplete: 'name' },
-    { id: 'email', type: 'email', autoComplete: 'email' },
-  ]
+  const FILAS = [{ id: 'name', type: 'text', autoComplete: 'name' }]
 
   return (
     <section id="contacto" className="bg-cream-canvas py-24 md:py-36">
@@ -86,25 +80,32 @@ export default function Contacto() {
           </p>
 
           <dl className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1 border-t border-deep-forest/20 pt-8">
-            <div>
-              <dt className="eyebrow text-deep-forest mb-2">
-                {t.contact.addressTitle}
-              </dt>
-              <dd className="font-body text-[18px] text-forest-shadow">
-                Calle 10 #45-20, local 3
-              </dd>
-              <dd className="font-body text-body-sm text-forest-shadow/80">
-                Medellín
-              </dd>
-            </div>
-            <div>
-              <dt className="eyebrow text-deep-forest mb-2">
-                {t.contact.hoursTitle}
-              </dt>
-              <dd className="font-body text-[18px] text-forest-shadow">
-                {t.contact.hours}
-              </dd>
-            </div>
+            {restaurant?.contacto?.direccion && (
+              <div>
+                <dt className="eyebrow text-deep-forest mb-2">
+                  {t.contact.addressTitle}
+                </dt>
+                <dd className="font-body text-[18px] text-forest-shadow">
+                  {restaurant.contacto.direccion}
+                </dd>
+              </div>
+            )}
+            {restaurant?.contacto?.horario &&
+              restaurant.contacto.horario.length > 0 && (
+                <div>
+                  <dt className="eyebrow text-deep-forest mb-2">
+                    {t.contact.hoursTitle}
+                  </dt>
+                  {restaurant.contacto.horario.map((linea, index) => (
+                    <dd
+                      key={index}
+                      className="font-body text-[18px] text-forest-shadow"
+                    >
+                      {linea}
+                    </dd>
+                  ))}
+                </div>
+              )}
           </dl>
         </div>
 
@@ -115,7 +116,7 @@ export default function Contacto() {
         >
           <div className="space-y-9">
             {FILAS.map(({ id, type, autoComplete }) => {
-              const typedId = id as 'name' | 'email'
+              const typedId = id as 'name'
               return (
                 <div key={id}>
                   <label
@@ -191,18 +192,18 @@ export default function Contacto() {
           </div>
         </form>
 
-        <div className="lg:col-span-12 mt-8">
-          <div className="aspect-[4/3] overflow-hidden sm:aspect-[21/8] rounded-images">
-            <iframe
-              title="Ubicación de Ascua"
-              src="https://www.google.com/maps?q=Calle%2010%20%2345-20%2C%20Medell%C3%ADn&output=embed"
-              className="mapa h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer"
-              sandbox="allow-scripts allow-same-origin"
-            />
+        {restaurant?.contacto?.mapsUrl && (
+          <div className="lg:col-span-12 mt-8 flex justify-center lg:justify-start">
+            <a
+              href={restaurant.contacto.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary w-full sm:w-auto text-center"
+            >
+              Cómo llegar
+            </a>
           </div>
-        </div>
+        )}
       </div>
     </section>
   )

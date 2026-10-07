@@ -121,10 +121,10 @@ describe('Dominio: Restaurant', () => {
         ...restauranteValido,
         categorias: [
           {
-            ...restauranteValido.categorias[0],
+            ...restauranteValido.categorias[0]!,
             platos: [
               {
-                ...restauranteValido.categorias[0].platos[0],
+                ...restauranteValido.categorias[0]!.platos[0]!,
                 modelo: {
                   glb: 'assets/platos/ojo-bife/modelo.glb',
                   usdz: 'assets/platos/ojo-bife/modelo.usdz',
@@ -146,7 +146,7 @@ describe('Dominio: Restaurant', () => {
 
       // Rutas resueltas
       expect(resuelto.tema.logo).toBe('/data/la-brasa-7k2p/assets/logo.svg')
-      const plato = resuelto.categorias[0].platos[0]
+      const plato = resuelto.categorias[0]!.platos[0]!
       expect(plato.foto).toBe(
         '/data/la-brasa-7k2p/assets/platos/ojo-bife/foto.webp'
       )

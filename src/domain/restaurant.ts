@@ -18,7 +18,8 @@ import { themeSchema } from './theme'
  */
 export const RESTAURANT_SLUG_REGEX = /^[a-z0-9]+(-[a-z0-9]+)*-[a-z0-9]{4}$/
 
-export { assetPathSchema } from './assetPath'
+import { assetPathSchema } from './assetPath'
+export { assetPathSchema }
 
 /**
  * Esquema Zod para la autorización comercial de la demo.

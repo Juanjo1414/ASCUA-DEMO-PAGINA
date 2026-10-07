@@ -5,10 +5,12 @@
 */
 export const translations = {
   es: {
+    error: {
+      title: 'Algo salió mal',
+      retry: 'Volver a intentar',
+    },
     nav: {
-      fuego: 'El fuego',
       menu: 'Carta',
-      voces: 'Voces',
       contacto: 'Contacto',
       reservar: 'Reservar mesa',
     },
@@ -17,56 +19,7 @@ export const translations = {
       cta: 'Reservar mesa',
       ar: 'Mira la carta sobre tu mesa, en RA',
     },
-    manifiesto: {
-      title: 'El fuego no es un efecto. Es',
-      titleEm: 'la técnica',
-      body: 'Cada salteado se termina a la llama abierta, justo antes de salir a la mesa. El plato llega con el aroma del fuego todavía encima.',
-    },
-    fuego: {
-      title: 'Lo que arde.',
-      body: 'En Ascua no hay gas ni hornillas. El fuego sale de tres maderas y un carbón, y cada uno le deja al plato algo distinto.',
-      etiquetas: {
-        origen: 'Origen',
-        humo: 'Humo',
-        temperatura: 'Arde a',
-        lote: 'Lote',
-        sello: 'Leña seca · Ascua',
-      },
-      maderas: [
-        {
-          nombre: 'Guayabo',
-          origen: 'Santa Fe de Antioquia',
-          humo: 'Dulce, casi frutal',
-          uso: 'Para el pescado y los mariscos: perfuma sin tapar.',
-          t: 600,
-          lote: '07',
-        },
-        {
-          nombre: 'Cafeto',
-          origen: 'Suroeste antioqueño',
-          humo: 'Tostado, seco',
-          uso: 'Arde parejo y lento. Para las carnes de cocción larga.',
-          t: 700,
-          lote: '12',
-        },
-        {
-          nombre: 'Naranjo',
-          origen: 'Valle de Aburrá',
-          humo: 'Cítrico, corto',
-          uso: 'Brasa breve y aromática. Para terminar y flambear.',
-          t: 800,
-          lote: '03',
-        },
-        {
-          nombre: 'Carbón',
-          origen: 'Quebracho del Chaco',
-          humo: 'Casi ninguno',
-          uso: 'La base de todo: brasa densa que aguanta la noche entera.',
-          t: 900,
-          lote: '21',
-        },
-      ],
-    },
+
     menuSection: {
       title: 'Ocho platos, una temporada.',
       body: 'El menú cambia con lo que llega fresco al mercado. Estos son los platos que salen del fuego ahora mismo.',
@@ -111,40 +64,7 @@ export const translations = {
         },
       ],
     },
-    testimonials: {
-      heading: 'Lo que dicen quienes ya se sentaron a la mesa.',
-      comanda: 'Comanda',
-      mesa: 'Mesa',
-      nota: 'Nota del cliente',
-      items: [
-        {
-          title: 'Una experiencia que se siente antes de probarla',
-          quote: 'Se siente el fuego antes de que el plato llegue a la mesa.',
-          name: 'Andrés Molina',
-          mesa: '07',
-          hora: '21:14',
-          role: 'Comensal habitual',
-        },
-        {
-          title: 'La cocina abierta lo cambia todo',
-          quote:
-            'Ver al equipo trabajar es parte del plato. Volvería solo por eso.',
-          name: 'Camila Restrepo',
-          mesa: '12',
-          hora: '20:03',
-          role: 'Crítica gastronómica',
-        },
-        {
-          title: 'Un menú que siempre da motivos para volver',
-          quote:
-            'El servicio es cercano y el menú cambia lo suficiente para siempre volver.',
-          name: 'Julián Vélez',
-          mesa: '03',
-          hora: '22:41',
-          role: 'Cliente frecuente',
-        },
-      ],
-    },
+
     ar: {
       view3d: 'Girar en 3D',
       viewAr: 'Ver en RA',
@@ -220,10 +140,12 @@ export const translations = {
     backToTop: 'Volver arriba',
   },
   en: {
+    error: {
+      title: 'Something went wrong',
+      retry: 'Try again',
+    },
     nav: {
-      fuego: 'The fire',
       menu: 'Menu',
-      voces: 'Voices',
       contacto: 'Contact',
       reservar: 'Book a table',
     },
@@ -232,56 +154,7 @@ export const translations = {
       cta: 'Book a table',
       ar: 'See the menu on your table, in AR',
     },
-    manifiesto: {
-      title: 'Fire isn’t an effect. It’s',
-      titleEm: 'the technique',
-      body: 'Every sauté is finished over open flame, just before it reaches the table. The dish arrives still carrying the smell of fire.',
-    },
-    fuego: {
-      title: 'What burns.',
-      body: 'There is no gas and no burners at Ascua. The fire comes from three woods and one charcoal, and each leaves something different on the plate.',
-      etiquetas: {
-        origen: 'Origin',
-        humo: 'Smoke',
-        temperatura: 'Burns at',
-        lote: 'Lot',
-        sello: 'Dry wood · Ascua',
-      },
-      maderas: [
-        {
-          nombre: 'Guava',
-          origen: 'Santa Fe de Antioquia',
-          humo: 'Sweet, almost fruity',
-          uso: 'For fish and seafood: it scents without covering.',
-          t: 600,
-          lote: '07',
-        },
-        {
-          nombre: 'Coffee',
-          origen: 'Southwest Antioquia',
-          humo: 'Toasted, dry',
-          uso: 'Burns even and slow. For long-cooked meats.',
-          t: 700,
-          lote: '12',
-        },
-        {
-          nombre: 'Orange',
-          origen: 'Aburrá Valley',
-          humo: 'Citrus, short',
-          uso: 'A brief, aromatic ember. For finishing and flambé.',
-          t: 800,
-          lote: '03',
-        },
-        {
-          nombre: 'Charcoal',
-          origen: 'Chaco quebracho',
-          humo: 'Almost none',
-          uso: 'The base of everything: dense coals that last the whole night.',
-          t: 900,
-          lote: '21',
-        },
-      ],
-    },
+
     menuSection: {
       title: 'Eight dishes, one season.',
       body: 'The menu changes with what comes fresh from the market. These are the dishes leaving the fire right now.',
@@ -326,40 +199,7 @@ export const translations = {
         },
       ],
     },
-    testimonials: {
-      heading: 'What people say after sitting at the table.',
-      comanda: 'Order',
-      mesa: 'Table',
-      nota: 'Guest note',
-      items: [
-        {
-          title: 'An experience you feel before you taste it',
-          quote: 'You feel the fire before the plate reaches the table.',
-          name: 'Andrés Molina',
-          mesa: '07',
-          hora: '21:14',
-          role: 'Regular guest',
-        },
-        {
-          title: 'The open kitchen changes everything',
-          quote:
-            'Watching the team work is part of the dish. I’d come back just for that.',
-          name: 'Camila Restrepo',
-          mesa: '12',
-          hora: '20:03',
-          role: 'Food critic',
-        },
-        {
-          title: 'A menu that always gives you a reason to return',
-          quote:
-            'The service feels personal and the menu changes just enough to keep coming back.',
-          name: 'Julián Vélez',
-          mesa: '03',
-          hora: '22:41',
-          role: 'Frequent guest',
-        },
-      ],
-    },
+
     ar: {
       view3d: 'Turn in 3D',
       viewAr: 'View in AR',

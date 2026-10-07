@@ -10,6 +10,11 @@
   },
   "nombre": "La Brasa",
   "idiomas": ["es", "en"],
+  "eslogan": {
+    "es": "Eslogan opcional aquí",
+    "en": "Optional slogan here"
+  },
+  "heroImagen": "assets/hero.webp",
   "tema": {
     "primario": "#e6ff55",
     "parTipografico": "editorial",

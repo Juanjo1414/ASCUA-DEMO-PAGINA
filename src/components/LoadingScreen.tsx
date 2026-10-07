@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '@/app/store'
 
 export default function LoadingScreen({ isReady = true }) {
   const [reducido] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
   const [fase, setFase] = useState(reducido ? 'fuera' : 'aparece')
+  const restaurant = useAtomValue(restaurantAtom)
 
   useEffect(() => {
     if (reducido || !isReady) return
@@ -28,9 +31,17 @@ export default function LoadingScreen({ isReady = true }) {
       }}
     >
       <div className="flex flex-col items-center">
-        <p className="font-body font-bold text-xl uppercase tracking-[0.5em] text-cream-canvas">
-          ascua
-        </p>
+        {restaurant?.tema?.logo ? (
+          <img
+            src={restaurant.tema.logo}
+            alt={restaurant.nombre}
+            className="h-16 w-auto object-contain"
+          />
+        ) : (
+          <p className="font-body font-bold text-xl uppercase tracking-[0.5em] text-cream-canvas">
+            {restaurant?.nombre || 'ascua'}
+          </p>
+        )}
       </div>
     </div>
   )

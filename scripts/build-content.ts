@@ -54,7 +54,8 @@ async function buildContent() {
     try {
       const data = JSON.parse(await fs.readFile(jsonPath, 'utf8'))
       const restaurantName = data.nombre || 'Restaurante'
-      const description = `Menú en realidad aumentada de ${restaurantName}.`
+      const description =
+        data.eslogan?.es || `Menú en realidad aumentada de ${restaurantName}.`
 
       // A. Copiar assets a dist/data/<slug>/
       const restaurantDestDataDir = path.join(DIST_DATA_DIR, slug)

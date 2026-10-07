@@ -104,4 +104,8 @@
     --surface-lime-glow-highlight: #e6ff55;
     --surface-deep-forest-surface: #00473c;
   }
+
+  [data-font-pair='editorial'] {
+    --font-display: var(--font-serif-accent);
+  }
 }

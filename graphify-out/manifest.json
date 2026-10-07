@@ -126,9 +126,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791331186.8479078,
-    "seen": 1791331193.4431536,
-    "ast_hash": "db9d166e39bbc64560e6a68be3b9f8b3",
+    "mtime": 1791393074.565782,
+    "seen": 1791393084.1628788,
+    "ast_hash": "69ce5b86c197abe44e4e34d4ab7a7360",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -372,15 +372,15 @@
     "semantic_hash": ""
   },
   "src/domain/ar.ts": {
-    "mtime": 1791309577.341673,
-    "seen": 1791310393.4493964,
-    "ast_hash": "4e4cdf5aaec03aedcfdaa6c9f9fc6018",
+    "mtime": 1791393074.8829827,
+    "seen": 1791393084.1627595,
+    "ast_hash": "9be32c9f0201fbbd97c3bdd739f692e1",
     "semantic_hash": ""
   },
   "src/domain/dish.ts": {
-    "mtime": 1791309577.3785615,
-    "seen": 1791310393.4493988,
-    "ast_hash": "2c02f93556efe35439988f11488cf9a2",
+    "mtime": 1791393074.935551,
+    "seen": 1791393084.1627657,
+    "ast_hash": "063c41b3f692ecd1b9ef4f8aead20b05",
     "semantic_hash": ""
   },
   "src/domain/index.ts": {
@@ -396,15 +396,15 @@
     "semantic_hash": ""
   },
   "src/domain/restaurant.ts": {
-    "mtime": 1791313914.1682029,
-    "seen": 1791313971.1424856,
-    "ast_hash": "43d1e7f6246580fbe147addbd688c7c2",
+    "mtime": 1791393075.0181072,
+    "seen": 1791393084.1627748,
+    "ast_hash": "f57f1aa5acd589d26fc2a102a7d70c0a",
     "semantic_hash": ""
   },
   "src/domain/theme.ts": {
-    "mtime": 1791309577.4602344,
-    "seen": 1791310393.449408,
-    "ast_hash": "b57e36ae2436a95b1f52785a517fbca8",
+    "mtime": 1791393075.0509663,
+    "seen": 1791393084.1627765,
+    "ast_hash": "51c29588f08a2a951397f4fdfa27e09c",
     "semantic_hash": ""
   },
   "tests/unit/domain/ar.test.ts": {
@@ -426,9 +426,9 @@
     "semantic_hash": ""
   },
   "tests/unit/domain/restaurant.test.ts": {
-    "mtime": 1791309266.2512672,
-    "seen": 1791309424.0430837,
-    "ast_hash": "21f5263555f616b22f0106806049b8ab",
+    "mtime": 1791393075.3557396,
+    "seen": 1791393084.1628404,
+    "ast_hash": "66a0e345e8970b51a592af72c544ff97",
     "semantic_hash": ""
   },
   "tests/unit/domain/theme.test.ts": {
@@ -564,9 +564,9 @@
     "semantic_hash": ""
   },
   "src/infrastructure/ar/SceneViewerLauncher.ts": {
-    "mtime": 1791310999.9232059,
-    "seen": 1791311004.773535,
-    "ast_hash": "ca833796dc05029267e5c0b3d77481bd",
+    "mtime": 1791393075.1251369,
+    "seen": 1791393084.1627963,
+    "ast_hash": "f3ec57c514a117ac22c777fd2b3fea25",
     "semantic_hash": ""
   },
   "src/infrastructure/browser/BrowserEnvironmentDetector.ts": {
@@ -576,9 +576,9 @@
     "semantic_hash": ""
   },
   "tests/unit/infrastructure/ar/arLaunchers.test.ts": {
-    "mtime": 1791311024.3866944,
-    "seen": 1791311041.8732002,
-    "ast_hash": "470caae0cf207e664a47f78370bff47b",
+    "mtime": 1791393075.417681,
+    "seen": 1791393084.1628442,
+    "ast_hash": "78ea4cfedab01dc4015bca6b96b5bc5a",
     "semantic_hash": ""
   },
   "tests/unit/infrastructure/browser/BrowserEnvironmentDetector.test.ts": {
@@ -594,15 +594,15 @@
     "semantic_hash": ""
   },
   "src/infrastructure/content/StaticJsonRestaurantRepository.ts": {
-    "mtime": 1791312651.0315175,
-    "seen": 1791312656.3109097,
-    "ast_hash": "8c6fd9337e09949ed752baccbaf1cb01",
+    "mtime": 1791393075.1574664,
+    "seen": 1791393084.1627998,
+    "ast_hash": "0d175efe3528d7fde9dfd19b9a2c339b",
     "semantic_hash": ""
   },
   "tests/unit/infrastructure/content/StaticJsonRestaurantRepository.test.ts": {
-    "mtime": 1791312651.0817406,
-    "seen": 1791312656.3109586,
-    "ast_hash": "2b6658b5123fc4e94e0aafeb9ceef973",
+    "mtime": 1791393075.4886067,
+    "seen": 1791393084.162848,
+    "ast_hash": "254f401cfa0b99def40ac77bdb97f845",
     "semantic_hash": ""
   },
   "docs/sesiones/2026-10-06-P105-Static-Repo.md": {
@@ -951,6 +951,12 @@
     "mtime": 1791331186.9134371,
     "seen": 1791331193.4431982,
     "ast_hash": "dc9e55297375a16606e9f17a5d81b96b",
+    "semantic_hash": ""
+  },
+  "src/domain/assetPath.ts": {
+    "mtime": 1791393074.9019785,
+    "seen": 1791393084.1627634,
+    "ast_hash": "f37472d4aac5617df97a90bd9277b765",
     "semantic_hash": ""
   }
 }

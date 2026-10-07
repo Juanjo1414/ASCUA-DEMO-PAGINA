@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { LanguageContext, Lang } from './LanguageContext'
 import { translations } from './translations'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '@/app/store'
 
 function detectInitialLang(): Lang {
   if (typeof window === 'undefined') return 'es'
@@ -11,6 +13,7 @@ function detectInitialLang(): Lang {
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>(detectInitialLang)
+  const restaurant = useAtomValue(restaurantAtom)
 
   const setLang = (next: Lang) => {
     setLangState(next)
@@ -25,9 +28,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = lang
   }, [lang])
 
+  const activeLang =
+    restaurant?.idiomas && !restaurant.idiomas.includes(lang)
+      ? (restaurant.idiomas[0] as Lang)
+      : lang
+
   const value = useMemo(
-    () => ({ lang, setLang, t: translations[lang] }),
-    [lang]
+    () => ({ lang: activeLang, setLang, t: translations[activeLang] }),
+    [activeLang]
   )
 
   return (

@@ -18,7 +18,9 @@ Edita el archivo `restaurant.json` en la nueva carpeta con los datos del restaur
 - **`slug`**: Debe coincidir exactamente con el nombre de la carpeta.
 - **`expira`**: Configura la fecha límite de la demo comercial (ej: un mes después de la creación).
 - **`autorizacion`**: Rellena con la fecha y el medio por el cual el dueño autorizó la demo. **(Legalmente obligatorio)**.
-- **`tema`**: Configura el color principal, tipografía (`moderna` o `editorial`) y logo.
+- **`eslogan`** (Opcional): Frase breve o eslogan del restaurante (puede ser localizado).
+- **`heroImagen`** (Opcional): Ruta de la imagen principal de la portada (`assets/hero.webp`).
+- **`tema`**: Configura el color primario, el par tipográfico (`sans` o `editorial`) y logo.
 - **`contacto`**: Ingresa el WhatsApp real al cual llegarán los pedidos.
 
 ### 3. Configurar Categorías y Platos

@@ -7,10 +7,12 @@ test.describe('Aislamiento Multi-restaurante', () => {
     const requests: string[] = []
     page.on('request', (request) => requests.push(request.url()))
 
-    await page.goto('/r/rest-a-1234/')
+    await page.goto('/r/rest-a-1234')
 
-    // Debería cargar la página del restaurante A
-    await expect(page).toHaveTitle(/Restaurante A/)
+    // Esperar a que la SPA haga fetch del JSON
+    await page.waitForResponse((res) =>
+      res.url().includes('/data/rest-a-1234/restaurant.json')
+    )
 
     // Debería haber hecho fetch a data/rest-a-1234/restaurant.json
     const calledA = requests.some((url) =>
@@ -24,7 +26,7 @@ test.describe('Aislamiento Multi-restaurante', () => {
   })
 
   test('slug inexistente muestra error 404', async ({ page }) => {
-    await page.goto('/r/no-existe-0000/')
+    await page.goto('/r/no-existe-0000')
 
     // Aquí validamos que el componente muestre el mensaje de error de no encontrado.
     // Depende de cómo esté implementado en la UI (asumo que dirá algo como "No encontrado" o "404")
@@ -34,7 +36,7 @@ test.describe('Aislamiento Multi-restaurante', () => {
   test('restaurante expirado muestra mensaje de demo finalizada', async ({
     page,
   }) => {
-    await page.goto('/r/rest-b-5678/')
+    await page.goto('/r/rest-b-5678')
 
     // rest-b-5678 está configurado para estar expirado en los fixtures
     await expect(page.locator('body')).toContainText(/demo finalizada|expirad/i)

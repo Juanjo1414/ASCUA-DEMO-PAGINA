@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createBrowserRouter } from 'react-router-dom'
 import App from '@/App.jsx'
+import { LanguageProvider } from '@/i18n/LanguageProvider'
 
 // Componentes placeholder para las rutas auxiliares
 const LandingPage = () => (
@@ -32,7 +33,11 @@ export const router = createBrowserRouter([
   },
   {
     path: '/r/:slug',
-    element: <App />,
+    element: (
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    ),
   },
   {
     path: '/r/:slug/qr',
