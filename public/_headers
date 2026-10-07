@@ -1,0 +1,19 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(self), xr-spatial-tracking=(self)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' static.cloudflareinsights.com blob:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' cloudflareinsights.com; font-src 'self' data:; frame-src 'none'; object-src 'none';
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/data/*/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.glb
+  Content-Type: model/gltf-binary
+
+/*.usdz
+  Content-Type: model/vnd.usdz+zip
