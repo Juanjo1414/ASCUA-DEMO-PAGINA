@@ -2,7 +2,7 @@
 
 > Documento vivo. Se actualiza al **cerrar cada sesión**, con Claude Code o Antigravity.
 
-**Última actualización:** 2026-10-09 · **Por:** Claude Code (revisión) · **Rama:** `dev/Juanjo`
+**Última actualización:** 2026-10-09 (tarde) · **Por:** Claude Code (revisión) · **Rama:** `dev/Juanjo`
 
 ## Fase actual
 
@@ -48,14 +48,47 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 - **Bitácoras reconstruidas** (no existían): Lote 5, P-205, P-701–P-704, y los dos
   commits sueltos de `vite.config.js` — ver `docs/sesiones/`.
 
+### R-2 (arquitectura y calidad de código) y R-3 (contenido) — 2026-10-09 tarde
+
+- `arch:check` confirmado sin violaciones (67 módulos, 157 dependencias).
+- `CloudflareAnalyticsTracker.ts` tenía dos `@ts-ignore` (prohibidos por
+  CLAUDE.md) y un `console.log` comentado; se tipó `window.zaraz` y se quitó
+  el código muerto, con prueba de regresión nueva.
+- **Datos inventados presentados como reales** (viola CLAUDE.md "no
+  inventes datos de restaurantes reales"): `Pie.tsx` mostraba una dirección
+  y horario fijos ("Calle 10 #45-20, local 3, Medellín") sin relación con
+  el restaurante; `FranjaReserva.tsx` mostraba un horario inventado. Ambos
+  ahora usan `restaurant.contacto.direccion/horario` y no muestran nada si
+  el restaurante no los tiene. Las claves de traducción muertas `hours` y
+  `hoursCorto` se eliminaron.
+- `Menu.tsx` tenía el título de la sección fijo en inglés ("Our Menu") sin
+  importar el idioma activo; ahora usa `menuSection.heading` (es/en).
+- `build-content.ts` interpolaba el nombre/eslogan del restaurante directo
+  en el HTML generado por restaurante sin escapar: un nombre con comillas o
+  `<` rompía la página o inyectaba markup. Se agregó `escapeHtml()`. De
+  paso, `buildContent()` ahora acepta `contentDir`/`distDir` como
+  parámetros (igual que `validateContent`) para poder probarlo con
+  carpetas temporales.
+- ~39 archivos de `src/` no tenían el encabezado de archivo obligatorio de
+  CLAUDE.md §4.1 (qué es, para qué existe, quién lo usa, qué no hace). Se
+  agregó a las 4 capas, incluido TSDoc en los lanzadores de AR y el
+  detector de entorno.
+- Pruebas: 118 pruebas unitarias (antes 113) + 2 nuevas para
+  `build-content.ts`, todas en verde. Confirmado en GitHub Actions (run
+  `37983571857`): `verify` ✅ `security` ✅ `e2e` ✅.
+- Pendiente de R-3 (no bloqueante hoy): la validación `escalaRealCm` vs.
+  `manifest.json` (±5 %) sigue diferida a R-8, porque todavía no existe
+  ningún modelo 3D real que validar contra esa tolerancia.
+
 ## Siguiente paso exacto
 
-1. Continuar `docs/PLAN-REVISION.md`: R-2/R-3 (arquitectura y contenido), terminar R-6
-   (C-33, el E2E del recorrido del comensal, ya quedó en
-   `tests/e2e/recorrido-comensal.spec.ts`; faltan C-31 móvil con capturas y C-32
-   accesibilidad automatizada, que necesita aprobar una dependencia nueva), R-8
-   (P-601: generar modelos 3D reales con el pipeline del repo AR, re-escalados a la
-   medida real de cada plato).
+1. Continuar `docs/PLAN-REVISION.md`: terminar R-6 (C-33 ya está en
+   `tests/e2e/recorrido-comensal.spec.ts`; faltan C-31 móvil con capturas —
+   necesita herramienta de navegador— y C-32 accesibilidad automatizada, que
+   necesita aprobar una dependencia nueva como `@axe-core/playwright`), R-7
+   (seguridad/rendimiento más allá de la ADR 0004 y robots.txt), R-8 (P-601:
+   generar modelos 3D reales con el pipeline del repo AR, re-escalados a la
+   medida real de cada plato — necesita que Juan provea sus llaves y Docker).
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare:
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
