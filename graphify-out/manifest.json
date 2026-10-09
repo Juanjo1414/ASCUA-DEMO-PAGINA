@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791568627.9550405,
-    "seen": 1791568678.789891,
-    "ast_hash": "195105a3cd42ea3f64647efefe9d4a36",
+    "mtime": 1791569385.094989,
+    "seen": 1791569412.5260434,
+    "ast_hash": "711087806fe339a35487ecc4a2b5f879",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -1068,9 +1068,9 @@
     "semantic_hash": ""
   },
   "docs/revision/inventario.md": {
-    "mtime": 1791568669.654364,
-    "seen": 1791568678.7899148,
-    "ast_hash": "4293b14c69f35a61cfcf391d5051b73e",
+    "mtime": 1791569404.492218,
+    "seen": 1791569412.526066,
+    "ast_hash": "b292e066543b7e5edda708d199cadb52",
     "semantic_hash": ""
   },
   "playwright.smoke.config.ts": {
@@ -1155,6 +1155,24 @@
     "mtime": 1791568570.531686,
     "seen": 1791568678.7900078,
     "ast_hash": "b6b18c8a5ad5cfd600634234562fcd68",
+    "semantic_hash": ""
+  },
+  "tests/e2e/recorrido-comensal.spec.ts": {
+    "mtime": 1791569200.3974671,
+    "seen": 1791569412.5259385,
+    "ast_hash": "1f5167701e5bcf0d48dd311ecb850464",
+    "semantic_hash": ""
+  },
+  "tests/fixtures/restaurants/rest-c-9012/restaurant.json": {
+    "mtime": 1791568812.2575507,
+    "seen": 1791569412.5259476,
+    "ast_hash": "c47c4b01142bca98f381cbba66406a89",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-09-lote-6-parcial.md": {
+    "mtime": 1791569372.5851028,
+    "seen": 1791569412.526125,
+    "ast_hash": "593a9fe9701618a2ae83cae58dc5d1ec",
     "semantic_hash": ""
   }
 }
