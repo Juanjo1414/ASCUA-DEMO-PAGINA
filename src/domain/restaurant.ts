@@ -148,6 +148,7 @@ export function resolveAssetUrls(restaurant: Restaurant): Restaurant {
 
   return {
     ...restaurant,
+    heroImagen: resolvePath(restaurant.heroImagen) as string | undefined,
     tema: {
       ...restaurant.tema,
       logo: resolvePath(restaurant.tema.logo) as string | undefined,

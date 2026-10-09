@@ -119,6 +119,7 @@ describe('Dominio: Restaurant', () => {
     it('resolveAssetUrls devuelve una copia del restaurante con las rutas de assets ajustadas', () => {
       const restauranteConAr = {
         ...restauranteValido,
+        heroImagen: 'assets/hero.webp',
         categorias: [
           {
             ...restauranteValido.categorias[0]!,
@@ -146,6 +147,10 @@ describe('Dominio: Restaurant', () => {
 
       // Rutas resueltas
       expect(resuelto.tema.logo).toBe('/data/la-brasa-7k2p/assets/logo.svg')
+      // Regresión: heroImagen no se resolvía (bug visto en producción: el
+      // <img> del hero quedaba con una ruta relativa rota, "assets/hero.webp"
+      // en vez de "/data/<slug>/assets/hero.webp").
+      expect(resuelto.heroImagen).toBe('/data/la-brasa-7k2p/assets/hero.webp')
       const plato = resuelto.categorias[0]!.platos[0]!
       expect(plato.foto).toBe(
         '/data/la-brasa-7k2p/assets/platos/ojo-bife/foto.webp'

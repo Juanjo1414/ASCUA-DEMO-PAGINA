@@ -16,7 +16,6 @@ import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { pickReadableTextColor } from '@/domain/theme'
 import { useRestaurant } from '@/presentation/hooks/useRestaurant'
 import Nav from '@/presentation/components/Nav'
-import FranjaReserva from '@/presentation/components/FranjaReserva'
 import Hero from '@/presentation/components/Hero'
 import Menu from '@/presentation/components/Menu'
 import Reserva from '@/presentation/components/Reserva'
@@ -72,7 +71,7 @@ export default function App() {
       {isReady && (
         <>
           <div
-            className="relative z-10 min-h-[100dvh] pb-14 lg:pb-0 bg-cream-canvas"
+            className="relative z-10 min-h-[100dvh] bg-cream-canvas"
             style={themeVars}
             data-font-pair={restaurant?.tema.parTipografico}
           >
@@ -86,7 +85,6 @@ export default function App() {
             </main>
             <Pie />
           </div>
-          <FranjaReserva />
           <FloatingHelp />
           {isDemo && <DemoPanel />}
         </>

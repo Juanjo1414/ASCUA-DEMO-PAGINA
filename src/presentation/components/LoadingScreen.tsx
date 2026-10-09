@@ -44,7 +44,7 @@ export default function LoadingScreen({ isReady = true }) {
           <img
             src={restaurant.tema.logo}
             alt={restaurant.nombre}
-            className="h-16 w-auto object-contain"
+            className="h-16 w-auto object-contain brightness-0 invert"
           />
         ) : (
           <p className="font-body font-bold text-xl uppercase tracking-[0.5em] text-cream-canvas">

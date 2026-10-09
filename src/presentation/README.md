@@ -12,7 +12,7 @@ llegan vía `useDependencies()`, inyectadas desde
   `LandingPage` (`/`, nunca lista restaurantes), `QrPage`, `NotFoundPage`,
   `ExpiredPage`.
 - `components/` — secciones de la carta (`Hero`, `Nav`, `Menu`, `Reserva`,
-  `Contacto`, `Pie`, `FranjaReserva`, `DemoPanel`, `FloatingHelp`,
+  `Contacto`, `Pie`, `DemoPanel`, `FloatingHelp`,
   `LoadingScreen`) y el flujo de AR (`ArGuideModal`, `ArDishModal`,
   `ArViewer`, `components/ar/InAppBrowserNotice`,
   `components/menu/DishCard`).

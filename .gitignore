@@ -58,3 +58,7 @@ test-results/
 
 # Resultados locales de `npx lhci autorun` (se generan solos)
 .lighthouseci/
+
+# Capturas de referencia que Juan carga para que el agente las vea;
+# nunca se suben al repositorio (puede contener fotos de su celular).
+diseño-ejemplo/
