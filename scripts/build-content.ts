@@ -1,3 +1,13 @@
+/**
+ * Script de build que convierte `content/restaurants/<slug>/` en el `dist/`
+ * estático que se publica: copia los assets de cada restaurante y genera un
+ * `index.html` con metaetiquetas SEO propias por restaurante.
+ *
+ * Lo corre `npm run build` (real, sobre `dist/`) y `npm run build:e2e`
+ * (sobre `dist-e2e/`, con restaurantes de prueba) después de `vite build`,
+ * que es quien genera el `index.html` base que este script personaliza.
+ * No valida el contenido: eso ya lo hizo `validate-content.ts` antes.
+ */
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
@@ -10,8 +20,21 @@ const CONTENT_DIR =
 const DIST_DIR = process.env.DIST_DIR
   ? path.resolve(process.env.DIST_DIR)
   : path.join(process.cwd(), 'dist')
-const DIST_DATA_DIR = path.join(DIST_DIR, 'data')
-const DIST_R_DIR = path.join(DIST_DIR, 'r')
+
+/**
+ * Escapa texto para insertarlo dentro de HTML o de un atributo (`content="..."`).
+ *
+ * `restaurant.json` lo llena el restaurante al darse de alta (P-602); si su
+ * nombre o eslogan trae comillas o `<`, sin este escape rompería el HTML
+ * generado o inyectaría markup en la página de todos los visitantes.
+ */
+function escapeHtml(text: string): string {
+  return text
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+}
 
 async function copyDir(src: string, dest: string) {
   await fs.mkdir(dest, { recursive: true })
@@ -29,15 +52,31 @@ async function copyDir(src: string, dest: string) {
   }
 }
 
-async function buildContent() {
+/**
+ * Copia el contenido de cada restaurante a `dist/data/<slug>/` y genera un
+ * `index.html` con metaetiquetas SEO propias en `dist/r/<slug>/`.
+ *
+ * @param contentDir - Carpeta raíz de restaurantes. Por defecto, `CONTENT_DIR`.
+ * @param distDir - Carpeta de salida del build. Por defecto, `DIST_DIR`.
+ * Recibirlos como parámetros (en vez de leer solo las variables de entorno)
+ * permite que las pruebas unitarias usen carpetas temporales sin depender
+ * de variables globales, igual que `validateContent`.
+ */
+export async function buildContent(
+  contentDir: string = CONTENT_DIR,
+  distDir: string = DIST_DIR
+) {
+  const distDataDir = path.join(distDir, 'data')
+  const distRDir = path.join(distDir, 'r')
+
   console.log('Construyendo contenido estático para restaurantes...')
 
   // 1. Preparar directorios base
-  await fs.mkdir(DIST_DATA_DIR, { recursive: true })
-  await fs.mkdir(DIST_R_DIR, { recursive: true })
+  await fs.mkdir(distDataDir, { recursive: true })
+  await fs.mkdir(distRDir, { recursive: true })
 
   // 2. Leer la plantilla index.html generada por Vite
-  const baseHtmlPath = path.join(DIST_DIR, 'index.html')
+  const baseHtmlPath = path.join(distDir, 'index.html')
   let baseHtml = ''
   try {
     baseHtml = await fs.readFile(baseHtmlPath, 'utf-8')
@@ -49,26 +88,27 @@ async function buildContent() {
   }
 
   // 3. Procesar cada restaurante
-  const dirs = await fs.readdir(CONTENT_DIR, { withFileTypes: true })
+  const dirs = await fs.readdir(contentDir, { withFileTypes: true })
   for (const dirent of dirs) {
     if (!dirent.isDirectory() || dirent.name === '_plantilla') continue
 
     const slug = dirent.name
-    const restaurantSrcDir = path.join(CONTENT_DIR, slug)
+    const restaurantSrcDir = path.join(contentDir, slug)
     const jsonPath = path.join(restaurantSrcDir, 'restaurant.json')
 
     try {
       const data = JSON.parse(await fs.readFile(jsonPath, 'utf8'))
-      const restaurantName = data.nombre || 'Restaurante'
-      const description =
+      const restaurantName = escapeHtml(data.nombre || 'Restaurante')
+      const description = escapeHtml(
         data.eslogan?.es || `Menú en realidad aumentada de ${restaurantName}.`
+      )
 
       // A. Copiar assets a dist/data/<slug>/
-      const restaurantDestDataDir = path.join(DIST_DATA_DIR, slug)
+      const restaurantDestDataDir = path.join(distDataDir, slug)
       await copyDir(restaurantSrcDir, restaurantDestDataDir)
 
       // B. Generar index.html para SEO en dist/r/<slug>/index.html
-      const restaurantDestRDir = path.join(DIST_R_DIR, slug)
+      const restaurantDestRDir = path.join(distRDir, slug)
       await fs.mkdir(restaurantDestRDir, { recursive: true })
 
       // Inyectar tags SEO básicos y prevenir indexación (noindex) como indica la decisión
@@ -92,10 +132,13 @@ async function buildContent() {
 
   // 4. Escribir _redirects para Cloudflare Pages
   const redirectsContent = '/* /index.html 200\n'
-  await fs.writeFile(path.join(DIST_DIR, '_redirects'), redirectsContent)
+  await fs.writeFile(path.join(distDir, '_redirects'), redirectsContent)
   console.log('✅ Generado archivo _redirects')
 
   console.log('Build de contenido finalizado.')
 }
 
-buildContent().catch(console.error)
+// Permitir correr directo desde npm scripts, igual que validate-content.ts
+if (process.argv[1] && process.argv[1].endsWith('build-content.ts')) {
+  buildContent().catch(console.error)
+}
