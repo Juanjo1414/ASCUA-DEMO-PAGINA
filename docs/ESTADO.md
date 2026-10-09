@@ -142,6 +142,26 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   `application/` sin cambios (sigue sin incluir `presentation/`, ver
   "Pendientes detectados").
 
+### X-006, X-007, X-008 — completados (2026-10-09 noche)
+
+- **X-006:** protección de `main` activa (confirmado con `gh api`): PR
+  obligatorio, exige `ci / verify`, `ci / e2e`, `ci / security` en verde,
+  rama actualizada antes de mergear, sin force-push ni borrado. Juan la
+  dejó con `required_approving_review_count: 1`, lo que habría bloqueado
+  el merge de su propio PR (GitHub no permite autoaprobación); corregido a
+  `0` vía `gh api` con su confirmación.
+- **X-007:** proyecto `ascua-demo-pagina` creado en Cloudflare Pages
+  (Direct Upload). Secrets `CLOUDFLARE_API_TOKEN`/`CLOUDFLARE_ACCOUNT_ID` y
+  variables `CF_PAGES_PROJECT=ascua-demo-pagina`/
+  `PROD_URL=ascua-demo-pagina.pages.dev` confirmados en GitHub. A partir
+  del próximo push, `deploy`/`smoke` deberían dejar de quedar en espera.
+- **X-008:** CodeQL confirmado activo (`javascript`/`typescript`, corrida
+  semanal) y Dependabot alerts ya estaban habilitadas. La parte de código
+  que faltaba (fijar por SHA `upload-artifact@v4.6.2`,
+  `download-artifact@v4.3.0`, `gitleaks-action@v2.3.9`,
+  `wrangler-action@v3.15.0`) quedó resuelta en `.github/workflows/`;
+  `dependabot.yml` ya existía y estaba bien configurado.
+
 ## Siguiente paso exacto
 
 1. Continuar `docs/PLAN-REVISION.md` en este orden (acordado con Juan):
@@ -150,13 +170,9 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
    `nuevo-restaurante.md` de punta a punta con fixtures) → R-10
    (`docs/ARQUITECTURA.md`, README por capa, `engineering:tech-debt`).
    R-5 (capturas visuales) queda para cuando haya herramienta de navegador
-   cargada en la sesión; R-8 (P-601) espera que Juan termine X-007/HF_TOKEN/Docker.
-2. Tareas manuales pendientes de Juan en GitHub / Cloudflare:
-   - X-006: Activar reglas de protección de rama `main` en GitHub.
-   - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
-     Sin esto, `deploy`/`smoke` quedan en espera (no fallan, se omiten).
-   - X-008: Fijar por SHA las acciones que faltan (`upload/download-artifact`,
-     `gitleaks-action`, `wrangler-action`) y habilitar CodeQL.
+   cargada en la sesión; R-8 (P-601) espera que Juan termine HF_TOKEN/Docker.
+2. Confirmar en el próximo push que `deploy` y `smoke` ya corren de verdad
+   contra el preview de Cloudflare (X-007 recién configurado).
 
 ## Línea base verificada (2026-10-09)
 

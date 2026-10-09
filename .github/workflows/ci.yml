@@ -44,7 +44,7 @@ jobs:
         run: npm run build
       - name: Licencias de dependencias
         run: npm run licenses:check
-      - uses: actions/upload-artifact@v4 # TODO(X-008): fijar por SHA
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: dist
           path: dist
@@ -63,7 +63,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - uses: actions/download-artifact@v4 # TODO(X-008): fijar por SHA
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: dist
           path: dist
@@ -76,7 +76,7 @@ jobs:
       - name: Lighthouse CI
         if: hashFiles('lighthouserc.json') != ''
         run: npm run test:lighthouse
-      - uses: actions/upload-artifact@v4 # TODO(X-008): fijar por SHA
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: failure()
         with:
           name: playwright-report
@@ -92,7 +92,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Escaneo de secretos (gitleaks)
-        uses: gitleaks/gitleaks-action@v2 # TODO(X-008): fijar por SHA
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0

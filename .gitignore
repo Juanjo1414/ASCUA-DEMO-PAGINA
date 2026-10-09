@@ -55,3 +55,6 @@ graphify-out/20*/
 # Resultados de pruebas E2E (se generan solos)
 playwright-report/
 test-results/
+
+# Resultados locales de `npx lhci autorun` (se generan solos)
+.lighthouseci/

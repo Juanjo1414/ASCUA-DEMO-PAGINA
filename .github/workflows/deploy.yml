@@ -33,13 +33,13 @@ jobs:
     outputs:
       url: ${{ steps.publish.outputs.deployment-url }}
     steps:
-      - uses: actions/download-artifact@v4 # TODO(X-008): fijar por SHA
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: dist
           path: dist
       - name: Publicar en Cloudflare Pages
         id: publish
-        uses: cloudflare/wrangler-action@v3 # TODO(X-008): fijar por SHA
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
