@@ -30,22 +30,22 @@ export default function DemoPanel() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2 text-tinta">
+    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2 text-forest-shadow">
       {isOpen && (
-        <div className="bg-crema p-4 shadow-xl max-h-[60vh] overflow-y-auto w-80 text-sm">
+        <div className="bg-cream-canvas p-4 shadow-xl max-h-[60vh] overflow-y-auto w-80 text-sm">
           <h3 className="font-bold mb-4 uppercase tracking-wider text-xs">
             Modo Presentación: Agotados
           </h3>
           {restaurant.categorias.map((cat) => (
             <div key={cat.id} className="mb-4">
-              <h4 className="font-medium text-ceniza mb-2">
+              <h4 className="font-medium text-slate-gray mb-2">
                 {cat.nombre.es || cat.nombre.en}
               </h4>
               <ul className="space-y-2">
                 {cat.platos.map((plato) => (
                   <li
                     key={plato.id}
-                    className="flex justify-between items-center border-b border-loza/20 pb-1"
+                    className="flex justify-between items-center border-b border-warm-gray/20 pb-1"
                   >
                     <span className="truncate pr-2">
                       {plato.nombre.es || plato.nombre.en}
@@ -54,8 +54,8 @@ export default function DemoPanel() {
                       onClick={() => handleToggle(plato.id)}
                       className={`px-2 py-1 text-xs transition-colors ${
                         estaAgotado(plato.id)
-                          ? 'bg-acento text-crema'
-                          : 'bg-loza text-tinta'
+                          ? 'bg-deep-forest text-cream-canvas'
+                          : 'bg-warm-sand text-forest-shadow'
                       }`}
                     >
                       {estaAgotado(plato.id) ? 'Agotado' : 'Disponible'}
@@ -69,7 +69,7 @@ export default function DemoPanel() {
       )}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-brasa text-crema px-4 py-2 font-medium shadow-lg hover:bg-llama transition-colors"
+        className="bg-deep-forest text-cream-canvas px-4 py-2 font-medium shadow-lg hover:bg-lime-glow hover:text-forest-shadow transition-colors"
       >
         {isOpen ? 'Cerrar Panel' : 'Panel Demo'}
       </button>

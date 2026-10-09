@@ -7,7 +7,7 @@ export default function Reserva() {
   return (
     <section
       id="reservar"
-      className="bg-[#EFE8DD] text-forest-shadow py-24 md:py-48"
+      className="bg-warm-sand text-forest-shadow py-24 md:py-48"
     >
       <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10 flex flex-col items-center text-center">
         <h2 className="font-display text-[clamp(3.6rem,12vw,10rem)] leading-[0.86] tracking-[-0.03em] mb-12">

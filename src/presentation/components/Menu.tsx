@@ -17,8 +17,13 @@ export default function Menu() {
     null
   )
   const restaurant = useAtomValue(restaurantAtom)
-  const { soldOutStore, environmentDetector, arLauncher, analyticsTracker } =
-    useDependencies()
+  const {
+    soldOutStore,
+    environmentDetector,
+    arLauncher,
+    analyticsTracker,
+    uiPreferencesStore,
+  } = useDependencies()
   const [soldOutDict, setSoldOutDict] = useState<Record<string, boolean>>({})
   const [guideState, setGuideState] = useState<{
     isOpen: boolean
@@ -48,7 +53,7 @@ export default function Menu() {
 
   const handleArClick = (plato: Dish, isReplay = false) => {
     if (!plato.modelo) return
-    const hasSeenGuide = localStorage.getItem('ascua:ar-guide-seen') === '1'
+    const hasSeenGuide = uiPreferencesStore.get('ascua:ar-guide-seen') === '1'
     if (!hasSeenGuide || isReplay) {
       setGuideState({ isOpen: true, dish: plato, isReplay })
     } else {

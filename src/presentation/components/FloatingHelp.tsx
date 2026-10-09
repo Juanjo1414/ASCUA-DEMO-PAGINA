@@ -12,7 +12,7 @@ export default function FloatingHelp() {
       <button
         onClick={() => setIsOpen(true)}
         aria-label={t.arGuide?.title || '¿Cómo funciona?'}
-        className="fixed bottom-6 right-6 z-40 flex h-12 items-center gap-2 rounded-full bg-fondo/80 px-4 py-2 font-display text-sm font-medium text-crema shadow-lg backdrop-blur border border-loza/10 transition-colors hover:bg-tinta hover:text-llama lg:bottom-10 lg:right-10"
+        className="fixed bottom-6 right-6 z-40 flex h-12 items-center gap-2 rounded-full bg-cream-canvas/80 px-4 py-2 font-display text-sm font-medium text-forest-shadow shadow-lg backdrop-blur border border-warm-gray/10 transition-colors hover:bg-forest-shadow hover:text-lime-glow lg:bottom-10 lg:right-10"
       >
         <HelpCircle size={18} strokeWidth={2} />
         <span className="hidden sm:inline">

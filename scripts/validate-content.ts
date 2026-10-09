@@ -27,8 +27,17 @@ async function hashFile(filePath: string) {
   return crypto.createHash('sha256').update(content).digest('hex')
 }
 
-export async function validateContent() {
-  const dirs = await fs.readdir(CONTENT_DIR, { withFileTypes: true })
+/**
+ * Valida el contenido de todos los restaurantes.
+ *
+ * @param contentDir - Carpeta raíz de restaurantes a validar. Por defecto,
+ * `CONTENT_DIR` (controlado por la variable de entorno del mismo nombre,
+ * usada por el build real). Recibirlo como parámetro permite que las
+ * pruebas unitarias apunten a carpetas de prueba sin depender de variables
+ * de entorno globales.
+ */
+export async function validateContent(contentDir: string = CONTENT_DIR) {
+  const dirs = await fs.readdir(contentDir, { withFileTypes: true })
   let hasErrors = false
   let hasWarnings = false
   const globalHashes = new Map<string, string>() // hash -> path
@@ -38,7 +47,7 @@ export async function validateContent() {
 
     const folderName = dirent.name
     const isTemplate = folderName === '_plantilla'
-    const restaurantDir = path.join(CONTENT_DIR, folderName)
+    const restaurantDir = path.join(contentDir, folderName)
     const jsonPath = path.join(restaurantDir, 'restaurant.json')
 
     if (!(await fileExists(jsonPath))) {
@@ -54,7 +63,7 @@ export async function validateContent() {
       if (!parsed.success) {
         console.error(
           `❌ [${folderName}] Esquema inválido:\n`,
-          parsed.error.errors
+          parsed.error.issues
         )
         hasErrors = true
         continue
@@ -156,6 +165,25 @@ export async function validateContent() {
                 `❌ [${folderName}] Plato '${plato.id}' tiene un modelo no aprobado.`
               )
               hasErrors = true
+            }
+
+            // Un modelo aprobado sin quién lo aprobó ni cuándo no cumple la
+            // regla de CLAUDE.md §0.2: la aprobación la marca Juan después de
+            // probar en sus celulares, y debe quedar trazada, no solo el
+            // booleano. Sin esto sería imposible auditar quién publicó qué.
+            if (plato.modelo.aprobado && !isTemplate) {
+              if (!plato.modelo.aprobadoPor) {
+                console.error(
+                  `❌ [${folderName}] Plato '${plato.id}' está aprobado pero no tiene 'aprobadoPor'.`
+                )
+                hasErrors = true
+              }
+              if (!plato.modelo.fechaAprobacion) {
+                console.error(
+                  `❌ [${folderName}] Plato '${plato.id}' está aprobado pero no tiene 'fechaAprobacion'.`
+                )
+                hasErrors = true
+              }
             }
 
             await checkAsset(plato.modelo.glb, 'glb')

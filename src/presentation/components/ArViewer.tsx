@@ -55,7 +55,7 @@ export default function ArViewer({ glb, poster, alt }: ArViewerProps) {
 
   if (!ready) {
     return (
-      <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-carbon-800">
+      <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-deep-forest">
         <img
           src={poster}
           alt={alt}
@@ -66,7 +66,7 @@ export default function ArViewer({ glb, poster, alt }: ArViewerProps) {
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
-                className="h-1.5 w-1.5 animate-pulse rounded-full bg-brasa"
+                className="h-1.5 w-1.5 animate-pulse rounded-full bg-lime-glow"
                 style={{ animationDelay: `${i * 150}ms` }}
               />
             ))}
@@ -79,7 +79,7 @@ export default function ArViewer({ glb, poster, alt }: ArViewerProps) {
   return (
     <model-viewer
       ref={viewerRef}
-      class="aspect-square w-full rounded-2xl bg-carbon-800"
+      class="aspect-square w-full rounded-2xl bg-deep-forest"
     />
   )
 }

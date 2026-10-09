@@ -3,6 +3,7 @@ import type { EnvironmentDetector } from '@/application/ports/environmentDetecto
 import type { ArLauncher } from '@/application/ports/arLauncher'
 import type { SoldOutStore } from '@/application/ports/soldOutStore'
 import type { AnalyticsTracker } from '@/application/ports/analyticsTracker'
+import type { UiPreferencesStore } from '@/application/ports/uiPreferencesStore'
 
 export interface AppDependencies {
   restaurantRepository: RestaurantRepository
@@ -10,4 +11,5 @@ export interface AppDependencies {
   arLauncher: ArLauncher
   soldOutStore: SoldOutStore
   analyticsTracker: AnalyticsTracker
+  uiPreferencesStore: UiPreferencesStore
 }

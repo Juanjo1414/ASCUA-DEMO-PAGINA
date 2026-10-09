@@ -1,0 +1,12 @@
+# ASCUA-DEMO-PAGINA es una demo privada para validar el producto con
+# restaurantes reales, no un sitio para indexar en buscadores. Cada página
+# de restaurante ya trae <meta name="robots" content="noindex, nofollow">
+# (scripts/build-content.ts); este archivo es la señal a nivel de sitio para
+# los rastreadores que ni siquiera llegan a leer ese <head>.
+#
+# Antes de que existiera este archivo, la regla catch-all de Cloudflare
+# Pages (dist/_redirects) servía index.html en /robots.txt, y Lighthouse
+# reportaba "robots.txt no es válido" al recibir HTML donde esperaba texto
+# plano (hallazgo R-1-H7 de docs/revision/inventario.md).
+User-agent: *
+Disallow: /

@@ -4,6 +4,7 @@ import { SceneViewerLauncher } from '@/infrastructure/ar/SceneViewerLauncher'
 import { ModelViewerFallbackLauncher } from '@/infrastructure/ar/ModelViewerFallbackLauncher'
 import { BrowserEnvironmentDetector } from '@/infrastructure/browser/BrowserEnvironmentDetector'
 import { LocalStorageSoldOutStore } from '@/infrastructure/storage/LocalStorageSoldOutStore'
+import { LocalStorageUiPreferencesStore } from '@/infrastructure/storage/LocalStorageUiPreferencesStore'
 import { CloudflareAnalyticsTracker } from '@/infrastructure/analytics/CloudflareAnalyticsTracker'
 import { CompositeArLauncher } from '@/infrastructure/ar/CompositeArLauncher'
 
@@ -25,4 +26,5 @@ export const compositionRoot: AppDependencies = {
   }),
   soldOutStore: new LocalStorageSoldOutStore(),
   analyticsTracker: new CloudflareAnalyticsTracker(),
+  uiPreferencesStore: new LocalStorageUiPreferencesStore(),
 }

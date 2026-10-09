@@ -67,8 +67,7 @@ export const translations = {
 
     ar: {
       view3d: 'Girar en 3D',
-      viewAr: 'Ver en RA',
-      viewOnTable: 'Ponerlo en mi mesa',
+      viewOnTable: 'Ver en mi mesa',
       close: 'Cerrar',
       arUnavailable:
         'Tu dispositivo o navegador no permite abrir la realidad aumentada. Ábrelo desde el celular (Chrome en Android o Safari en iPhone) para verlo sobre tu mesa.',
@@ -79,22 +78,26 @@ export const translations = {
         'Estás viendo la carta dentro de otra aplicación, y esos navegadores no pueden abrir la realidad aumentada. Ábrela en Safari o Chrome.',
       copyLink: 'Copiar enlace',
       copied: 'Enlace copiado',
-      disclaimer: 'Modelo referencial. La presentación puede variar.',
+      // El plato se abre siempre a su tamaño real (escala fija, Ley 1480);
+      // lo único que puede cambiar un poco de un día a otro es cómo se
+      // sirve (la salsa, la decoración del plato), no su tamaño.
+      disclaimer:
+        'El plato se ve a su tamaño real. Lo que puede variar un poco es cómo se sirve (salsas, decoración).',
     },
     arGuide: {
       title: '¿Cómo funciona?',
       steps: [
         {
-          title: 'Busca un espacio iluminado',
-          desc: 'Evita sombras muy oscuras para que la cámara vea bien tu mesa.',
-        },
-        {
-          title: 'Apunta a una superficie plana',
-          desc: 'Busca un lugar despejado en la mesa.',
+          title: 'Apunta a tu mesa',
+          desc: 'Busca un lugar con buena luz y encuadra la mesa donde quieres ver el plato.',
         },
         {
           title: 'Mueve el celular despacio',
-          desc: 'Haz círculos pequeños hasta que aparezca el plato.',
+          desc: 'Haz círculos pequeños hasta que aparezca el plato, en su tamaño real.',
+        },
+        {
+          title: 'Acércate o camina alrededor',
+          desc: 'Camina alrededor de la mesa para verlo desde todos los ángulos.',
         },
       ],
       gotIt: 'Entendido, abrir cámara',
@@ -202,8 +205,7 @@ export const translations = {
 
     ar: {
       view3d: 'Turn in 3D',
-      viewAr: 'View in AR',
-      viewOnTable: 'Place it on my table',
+      viewOnTable: 'See it on my table',
       close: 'Close',
       arUnavailable:
         'Your device or browser can’t open augmented reality. Open this page on your phone (Chrome on Android or Safari on iPhone) to place it on your table.',
@@ -214,22 +216,23 @@ export const translations = {
         'You are viewing the menu inside another app, and those browsers cannot open augmented reality. Open it in Safari or Chrome.',
       copyLink: 'Copy link',
       copied: 'Link copied',
-      disclaimer: 'Reference model. The real plating may vary.',
+      disclaimer:
+        'The dish shows at its real size. What can vary a little is how it’s plated (sauces, garnish).',
     },
     arGuide: {
       title: 'How it works',
       steps: [
         {
-          title: 'Find a well-lit space',
-          desc: 'Avoid harsh shadows so the camera can see your table clearly.',
-        },
-        {
-          title: 'Point at a flat surface',
-          desc: 'Find an empty spot on the table.',
+          title: 'Point at your table',
+          desc: 'Find good light and frame the table where you want to see the dish.',
         },
         {
           title: 'Move your phone slowly',
-          desc: 'Make small circles until the dish appears.',
+          desc: 'Make small circles until the dish appears, at its real size.',
+        },
+        {
+          title: 'Move closer or walk around',
+          desc: 'Walk around the table to see it from every angle.',
         },
       ],
       gotIt: 'Got it, open camera',

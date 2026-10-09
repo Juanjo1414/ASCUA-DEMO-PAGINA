@@ -19,29 +19,6 @@ export default {
         'pure-ink': 'var(--color-pure-ink)',
         'warm-gray': 'var(--color-warm-gray)',
         'slate-gray': 'var(--color-slate-gray)',
-
-        // TODO: Eliminar después de P-403 (compatibilidad hacia atrás)
-        carbon: {
-          DEFAULT: 'rgb(var(--c-carbon) / <alpha-value>)',
-          950: 'rgb(var(--c-carbon) / <alpha-value>)',
-          900: 'rgb(var(--c-carbon-900) / <alpha-value>)',
-          800: 'rgb(var(--c-carbon-800) / <alpha-value>)',
-          700: 'rgb(var(--c-carbon-700) / <alpha-value>)',
-        },
-        brasa: {
-          DEFAULT: 'rgb(var(--c-brasa) / <alpha-value>)',
-          500: 'rgb(var(--c-brasa) / <alpha-value>)',
-          600: 'rgb(var(--c-brasa) / <alpha-value>)',
-        },
-        llama: 'rgb(var(--c-llama) / <alpha-value>)',
-        rescoldo: 'rgb(var(--c-rescoldo) / <alpha-value>)',
-        ceniza: 'rgb(var(--c-ceniza) / <alpha-value>)',
-        loza: 'rgb(var(--c-loza) / <alpha-value>)',
-        blanco: 'rgb(var(--c-blanco) / <alpha-value>)',
-        kraft: 'rgb(var(--c-kraft) / <alpha-value>)',
-        acento: 'rgb(var(--c-acento) / <alpha-value>)',
-        tinta: 'rgb(var(--c-tinta) / <alpha-value>)',
-        crema: 'rgb(var(--c-crema) / <alpha-value>)',
       },
       fontSize: {
         caption: [
