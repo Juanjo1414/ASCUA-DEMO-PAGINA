@@ -162,17 +162,32 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   `wrangler-action@v3.15.0`) quedó resuelta en `.github/workflows/`;
   `dependabot.yml` ya existía y estaba bien configurado.
 
+### R-7 (seguridad y rendimiento) — 2026-10-09 noche
+
+- Reporte nuevo en `docs/seguridad/2026-10-09.md`: `npm audit` de
+  producción en 0 vulnerabilidades (las 25 del árbol completo son todas
+  transitivas de `@lhci/cli@0.15.1`, ya en su última versión, sin
+  exposición en producción); revisión manual de secretos quemados,
+  cookies y `localStorage` directo fuera de `infrastructure/` — 0
+  hallazgos; `public/_headers` reverificado (CSP, HSTS,
+  `Permissions-Policy` coherente con cámara/AR, caché inmutable de
+  assets 3D) — ya estaba bien desde P-701.
+- Confirma por escrito el hallazgo de XSS que ya se había corregido en
+  R-2 (HTML sin escapar en `build-content.ts`), para que quede trazado
+  como parte de la auditoría formal y no solo en un mensaje de commit.
+- **X-007 confirmado funcionando de punta a punta:** el push que fijó las
+  acciones de X-008 disparó el primer `deploy`/`smoke` real contra
+  Cloudflare Pages (`https://ascua-demo-pagina.pages.dev`) — ambos en
+  verde.
+
 ## Siguiente paso exacto
 
-1. Continuar `docs/PLAN-REVISION.md` en este orden (acordado con Juan):
-   R-7 (seguridad/rendimiento: `/security-review`, `npm audit` documentado,
-   revisar `Permissions-Policy` y caché de assets 3D) → R-9 (probar
-   `nuevo-restaurante.md` de punta a punta con fixtures) → R-10
-   (`docs/ARQUITECTURA.md`, README por capa, `engineering:tech-debt`).
-   R-5 (capturas visuales) queda para cuando haya herramienta de navegador
-   cargada en la sesión; R-8 (P-601) espera que Juan termine HF_TOKEN/Docker.
-2. Confirmar en el próximo push que `deploy` y `smoke` ya corren de verdad
-   contra el preview de Cloudflare (X-007 recién configurado).
+1. Continuar `docs/PLAN-REVISION.md`: R-9 (probar `nuevo-restaurante.md`
+   de punta a punta con fixtures) → R-10 (`docs/ARQUITECTURA.md`, README
+   por capa, `engineering:tech-debt`). R-5 (capturas visuales) queda para
+   cuando haya herramienta de navegador cargada en la sesión; R-8 (P-601)
+   ya tiene HF_TOKEN y Docker listos de parte de Juan — queda pendiente
+   escribir el script de orquestación cuando le toque su turno en el plan.
 
 ## Línea base verificada (2026-10-09)
 
