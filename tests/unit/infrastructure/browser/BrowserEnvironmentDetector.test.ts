@@ -71,6 +71,26 @@ describe('BrowserEnvironmentDetector', () => {
     expect(caps.embeddedBrowserName).toBe('Facebook')
   })
 
+  it('detects embedded browsers (TikTok)', () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Linux; Android 10) TikTok 26.1.0',
+    })
+    const caps = detector.getCapabilities()
+
+    expect(caps.isEmbeddedBrowser).toBe(true)
+    expect(caps.embeddedBrowserName).toBe('TikTok')
+  })
+
+  it('detects embedded browsers (LINE)', () => {
+    vi.stubGlobal('navigator', {
+      userAgent: 'Mozilla/5.0 (Linux; Android 10) Line/12.5.0',
+    })
+    const caps = detector.getCapabilities()
+
+    expect(caps.isEmbeddedBrowser).toBe(true)
+    expect(caps.embeddedBrowserName).toBe('LINE')
+  })
+
   it('returns null embeddedBrowserName for normal browsers', () => {
     vi.stubGlobal('navigator', {
       userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X)',

@@ -96,13 +96,37 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   visual con capturas en 5 anchos), que necesita una herramienta de
   navegador no disponible en esta sesión.
 
+### R-4 (pruebas de contrato AR) y runbooks manuales — 2026-10-09 noche
+
+- `arLaunchers.test.ts` solo probaba éxito/error genérico; se agregaron
+  pruebas que verifican los atributos exactos exigidos por CLAUDE.md
+  §0.2: `QuickLookLauncher` crea `<a rel="ar">` con una `<img>` hija y
+  `#allowsContentScaling=0` en el href; `SceneViewerLauncher` fija
+  `resizable=false`, `mode=ar_preferred` y `S.browser_fallback_url` en el
+  `intent://`. `BrowserEnvironmentDetector.test.ts` ganó casos para TikTok
+  y LINE (ya estaban en el código, no probados).
+- Creados dos runbooks que faltaban por completo:
+  `docs/runbooks/qa-dispositivos.md` (checklist de QA manual en iPhone/
+  Android, incluye dónde Juan marca `aprobado`/`aprobadoPor`/
+  `fechaAprobacion`) y, para las tareas manuales de infraestructura,
+  `docs/runbooks/configuracion-github-cloudflare.md` (X-006/X-007/X-008) y
+  `docs/runbooks/configuracion-pipeline-3d.md` (de dónde sale el `HF_TOKEN`
+  gratuito para R-8, sin usar Meshy de pago ni las credenciales de
+  Supabase que Juan tuvo que eliminar).
+- Juan está resolviendo en paralelo X-007 (Cloudflare Pages) y el token de
+  Hugging Face para R-8.
+
 ## Siguiente paso exacto
 
-1. Continuar `docs/PLAN-REVISION.md`: C-31 de R-6 (capturas en 360×640/390/
-   430/768/1280 — necesita herramienta de navegador), R-7 (seguridad/
-   rendimiento más allá de la ADR 0004 y robots.txt), R-8 (P-601: generar
-   modelos 3D reales con el pipeline del repo AR, re-escalados a la medida
-   real de cada plato — necesita que Juan provea sus llaves y Docker).
+1. Continuar `docs/PLAN-REVISION.md` en este orden (acordado con Juan):
+   R-6 (C-30: pruebas de componente faltantes para `Menu`, `ArGuideModal`,
+   `ArDishModal`, `Hero`, `Contacto`, `Reserva`) → R-7 (seguridad/
+   rendimiento: `/security-review`, `npm audit` documentado, revisar
+   `Permissions-Policy` y caché de assets 3D) → R-9 (probar
+   `nuevo-restaurante.md` de punta a punta con fixtures) → R-10
+   (`docs/ARQUITECTURA.md`, README por capa, `engineering:tech-debt`).
+   R-5 (capturas visuales) queda para cuando haya herramienta de navegador
+   cargada en la sesión; R-8 (P-601) espera que Juan termine X-007/HF_TOKEN/Docker.
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare:
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

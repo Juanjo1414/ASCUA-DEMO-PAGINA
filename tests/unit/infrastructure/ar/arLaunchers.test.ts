@@ -127,5 +127,63 @@ describe('ArLauncher Contract Tests', () => {
         encodeURIComponent('https://example.com/data/slug/assets/modelo.glb')
       )
     })
+
+    it('fija resizable=false, mode=ar_preferred y un browser_fallback_url en el intent (R-4)', async () => {
+      const launcher = new SceneViewerLauncher()
+      vi.stubGlobal('window', {
+        location: {
+          href: 'https://example.com/r/demo-abcd',
+          origin: 'https://example.com',
+        },
+      })
+
+      await launcher.launch(mockDish, 'scene-viewer')
+
+      const intentHref = window.location.href
+      // resizable=false (no agrandable, Ley 1480) va en la query string del intent.
+      expect(intentHref).toContain('resizable=false')
+      expect(intentHref).toContain('mode=ar_preferred')
+      // Si el dispositivo no tiene la app de Google, debe volver a la página actual.
+      expect(intentHref).toContain(
+        `S.browser_fallback_url=${encodeURIComponent('https://example.com/r/demo-abcd')}`
+      )
+      expect(intentHref).toMatch(/^intent:\/\//)
+    })
+  })
+
+  describe('QuickLookLauncher specific behavior (R-4)', () => {
+    it('crea un <a rel="ar"> con una <img> hija y la escala fijada en el href', async () => {
+      const launcher = new QuickLookLauncher()
+      let anchor: Record<string, unknown> | undefined
+      let img: Record<string, unknown> | undefined
+
+      vi.stubGlobal('document', {
+        createElement: vi.fn((tag: string) => {
+          const el: Record<string, unknown> = {
+            setAttribute: vi.fn(),
+            appendChild: vi.fn(),
+            click: vi.fn(),
+            remove: vi.fn(),
+            style: {},
+          }
+          if (tag === 'a') anchor = el
+          if (tag === 'img') img = el
+          return el
+        }),
+        body: { appendChild: vi.fn() },
+      })
+
+      const result = await launcher.launch(mockDish, 'quick-look')
+
+      expect(result.success).toBe(true)
+      // Safari solo abre Quick Look si el <a> tiene rel="ar" Y una <img> hija;
+      // sin la <img>, el iPhone descarga el .usdz en vez de mostrarlo.
+      expect(anchor?.setAttribute).toHaveBeenCalledWith('rel', 'ar')
+      expect(anchor?.href).toBe(
+        `${mockDish.modelo!.usdz}#allowsContentScaling=0`
+      )
+      expect(anchor?.appendChild).toHaveBeenCalledWith(img)
+      expect(img?.src).toBe(mockDish.modelo!.poster)
+    })
   })
 })
