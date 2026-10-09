@@ -112,13 +112,13 @@ Leyenda: ✅ hecho y verificado · ⚠️ parcial o con hallazgo · ❌ no hecho
 
 ### Fase P-2 — Multi-restaurante
 
-| ID                           | Declarado         | Real | Evidencia                                                                                                               |
-| ---------------------------- | ----------------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
-| P-201 Esquema de contenido   | ✅                | ✅   | `_plantilla/restaurant.json`, `src/domain/restaurant.ts`                                                                |
-| P-202 Validador de contenido | ✅                | ⚠️   | Valida slug, rutas, pesos, `aprobado`; **no** valida `aprobadoPor`/`fechaAprobacion`/`escalaRealCm` (R-3-H11)           |
-| P-203 Build + HTML SEO       | ✅                | ✅   | `scripts/build-content.ts`, genera `dist/r/<slug>/index.html` con OG tags y `noindex`                                   |
-| P-204 E2E de aislamiento     | ✅                | ⚠️   | Existe y pasa (9 pruebas), pero es la única suite E2E del proyecto                                                      |
-| P-205 QR imprimible          | ✅ (sin bitácora) | ✅   | `QrPage.tsx`, `react-qr-code`, prueba en `tests/unit/presentation/pages/QrPage.test.tsx` — falta la bitácora (R-10-H18) |
+| ID                           | Declarado                  | Real | Evidencia                                                                                                                                 |
+| ---------------------------- | -------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| P-201 Esquema de contenido   | ✅                         | ✅   | `_plantilla/restaurant.json`, `src/domain/restaurant.ts`                                                                                  |
+| P-202 Validador de contenido | ✅                         | ⚠️   | Valida slug, rutas, pesos, `aprobado`; **no** valida `aprobadoPor`/`fechaAprobacion`/`escalaRealCm` (R-3-H11)                             |
+| P-203 Build + HTML SEO       | ✅                         | ✅   | `scripts/build-content.ts`, genera `dist/r/<slug>/index.html` con OG tags y `noindex`                                                     |
+| P-204 E2E de aislamiento     | ✅                         | ⚠️   | Existe y pasa (9 pruebas), pero es la única suite E2E del proyecto                                                                        |
+| P-205 QR imprimible          | ✅ (bitácora reconstruida) | ✅   | `QrPage.tsx`, `react-qr-code`, prueba en `tests/unit/presentation/pages/QrPage.test.tsx`; bitácora en `docs/sesiones/2026-10-07-P-205.md` |
 
 ### Fase P-3 — Funciones de la demo
 
@@ -145,7 +145,7 @@ Leyenda: ✅ hecho y verificado · ⚠️ parcial o con hallazgo · ❌ no hecho
 | Lote 2 (C-10, C-11) | ✅                                                                         | ✅ — `assetPathSchema` bloquea path traversal y URLs absolutas; Scene Viewer usa URL de GLB absoluta                                                               |
 | Lote 3 (C-12–C-21)  | ✅                                                                         | ✅ — demo `ascua-demo-abcd` con 8 platos, tema/logo/par tipográfico dinámicos, `LanguageProvider` envolviendo la página del restaurante                            |
 | Lote 4 (C-22–C-26)  | ✅                                                                         | ✅ — `CompositeArLauncher` sin `await` antes de delegar, llamada desde el gesto confirmada en `Menu.tsx`, sin eventos fantasma de `window` en el visor de respaldo |
-| Lote 5 (C-27–C-29)  | Sin bitácora                                                               | ✅ (código) / ⚠️ (documentación) — la capa `presentation/` existe y `arch:check` no reporta violaciones, pero falta la bitácora (R-10-H18)                         |
+| Lote 5 (C-27–C-29)  | Bitácora reconstruida (`docs/sesiones/2026-10-07-lote-5.md`)               | ✅ — la capa `presentation/` existe y `arch:check` no reporta violaciones                                                                                          |
 | Lote 6 (C-30–C-33)  | Sin bitácora, sin mención en ESTADO.md                                     | ❌                                                                                                                                                                 | `Menu.tsx` ya está razonablemente dividido (`DishCard` extraído), pero **no hay** pruebas de accesibilidad automatizadas ni E2E del recorrido del comensal |
 | Lote 7 (C-34, C-35) | "README actualizado (101 tests, 97%)" según commit, sin bitácora de cierre | ⚠️                                                                                                                                                                 | README existe y está casi al día (números con pequeño desajuste, R-10-H21); falta la bitácora de cierre del lote                                           |
 
@@ -173,6 +173,6 @@ Leyenda: ✅ hecho y verificado · ⚠️ parcial o con hallazgo · ❌ no hecho
 3. **Texto de la guía de AR (R-4-H15):** ¿apruebas que reescriba los 3 pasos para que coincidan exactamente con el texto de CLAUDE.md ("apunta a tu mesa → mueve el teléfono despacio hasta que aparezca el plato → acércate o camina alrededor", con "aparece en su tamaño real" y "funciona mejor con buena luz"), o prefieres mantener el tono actual y yo solo agrego el paso y la frase que faltan?
 4. **Disclaimer "Modelo referencial. La presentación puede variar." (R-5-H17):** ¿lo dejamos así, o lo aclaro para que no se confunda con el tamaño (p. ej. "El modelo representa el plato a su tamaño real; el emplatado puede variar ligeramente")?
 5. **CSP de Cloudflare Analytics (R-7-H8):** ¿apruebo con un ADR corto el dominio que ya está en `_headers`, o prefieres quitarlo y usar otro mecanismo de analítica?
-6. **Bitácoras faltantes (R-10-H18):** ¿las reconstruyo retroactivamente ahora (marcadas "reconstruida en revisión") o lo dejo para el cierre de toda la revisión (R-10), como dice el plan?
+6. ~~**Bitácoras faltantes (R-10-H18)**~~ — resuelto: reconstruidas el 2026-10-09 (Juan pidió hacerlo de una vez en vez de esperar al cierre).
 
 Con tu visto bueno en estos puntos, sigo con la **sesión 2 (R-1): dejar GitHub Actions en verde.**
