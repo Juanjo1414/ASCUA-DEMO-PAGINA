@@ -1,3 +1,10 @@
+/**
+ * Punto único de configuración de GSAP/ScrollTrigger para toda la app.
+ *
+ * Cualquier componente que anime algo al hacer scroll debe importar `gsap`
+ * y `ScrollTrigger` desde aquí (no directo de `gsap`), para que el plugin
+ * quede registrado una sola vez con la configuración correcta para móvil.
+ */
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 

@@ -1,3 +1,13 @@
+/**
+ * Sección de la carta: lista de platos (destacados con AR primero) y el
+ * flujo completo de "Ver en mi mesa" (guía de 3 pasos → lanzamiento → visor
+ * en pantalla si no hay AR nativo).
+ *
+ * Lo usa `RestaurantPage`. Decide si mostrar la guía de AR (primera vez por
+ * dispositivo, vía `UiPreferencesStore`) o lanzar directo si el comensal ya
+ * la vio. No decide qué lanzador de AR usar: eso es trabajo del caso de uso
+ * `launchDishAr` y del dominio (`selectArLaunchMode`).
+ */
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from '@/presentation/effects/gsap'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
@@ -116,7 +126,7 @@ export default function Menu() {
         <div data-sube className="max-w-2xl mb-20">
           <p className="eyebrow">{t.menuSection.title}</p>
           <h2 className="font-display text-display leading-display text-forest-shadow mb-6">
-            Our Menu
+            {t.menuSection.heading}
           </h2>
           <p className="text-body text-forest-shadow max-w-[48ch]">
             {t.menuSection.body}

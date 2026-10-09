@@ -1,3 +1,12 @@
+/**
+ * Lanzador de realidad aumentada para Android (Scene Viewer de Google).
+ *
+ * Abre el plato en la cámara de Android sobre la mesa del comensal, en su
+ * tamaño real. Lo usa `CompositeArLauncher` cuando `selectArLaunchMode`
+ * elige el modo `scene-viewer`.
+ * No decide si el dispositivo es compatible: eso es trabajo de
+ * `BrowserEnvironmentDetector`/`selectArLaunchMode`, no de este lanzador.
+ */
 import type {
   ArLauncher,
   ArLauncherResult,
@@ -6,6 +15,18 @@ import type { Dish } from '@/domain/dish'
 import type { ArLaunchMode } from '@/domain/ar'
 
 export class SceneViewerLauncher implements ArLauncher {
+  /**
+   * Abre Scene Viewer con el modelo .glb del plato vía un `intent://`.
+   *
+   * `resizable=false` evita que el comensal pueda agrandar el plato más
+   * allá de su tamaño real (lo exige la Ley 1480). `S.browser_fallback_url`
+   * hace que, si el dispositivo no tiene la app de Google, el navegador
+   * regrese a la página en vez de quedar en blanco.
+   *
+   * @param dish - Plato a mostrar. Debe tener `modelo.glb`.
+   * @param mode - Modo de lanzamiento solicitado; si no es `scene-viewer`, falla.
+   * @returns `{ success: true }` si se pudo abrir; `{ success: false, error }` si falta el archivo o el modo no corresponde.
+   */
   async launch(dish: Dish, mode: ArLaunchMode): Promise<ArLauncherResult> {
     if (mode !== 'scene-viewer') {
       return {

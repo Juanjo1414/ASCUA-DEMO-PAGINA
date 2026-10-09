@@ -1,7 +1,17 @@
+/**
+ * Regla de dominio que define qué forma puede tener la ruta de un asset
+ * (imagen, modelo 3D) dentro de `restaurant.json`.
+ *
+ * La usa `domain/restaurant.ts` al validar el contenido de cada restaurante,
+ * para que ninguna ruta pueda escapar de su propia carpeta
+ * (`content/restaurants/<slug>/`) ni apuntar a otro dominio. No resuelve la
+ * URL final: solo dice si el texto de la ruta es aceptable.
+ */
 import { z } from 'zod'
 
 /**
- * Esquema para validar rutas de assets seguras.
+ * Esquema zod para rutas de assets seguras: relativas, sin `..`, sin
+ * backslash, sin empezar por `/` y sin esquema de URL (`http:`, `data:`…).
  */
 export const assetPathSchema = z
   .string()

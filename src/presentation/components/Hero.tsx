@@ -1,3 +1,10 @@
+/**
+ * Primera sección de la carta: foto del restaurante, nombre y botón al menú.
+ *
+ * Lo usa `RestaurantPage`. Lee el restaurante activo de `restaurantAtom`
+ * (lo llena `useRestaurant`) y no se muestra nada hasta que ese dato exista,
+ * para nunca renderizar una carta a medio cargar.
+ */
 import { ArrowRight } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'

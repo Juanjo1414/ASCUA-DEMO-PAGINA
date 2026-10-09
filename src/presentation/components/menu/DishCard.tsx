@@ -1,3 +1,10 @@
+/**
+ * Tarjeta de un plato en la carta: foto, nombre, descripción, precio y,
+ * si tiene modelo 3D aprobado, los botones "Ver en mi mesa" (AR) y
+ * "Ver en 3D". Lo usa `Menu.tsx` para cada plato.
+ * No decide si el plato tiene AR: solo muestra los botones si
+ * `dish.modelo.aprobado` ya es `true` (lo marca Juan tras su QA).
+ */
 import type { Dish } from '@/domain/dish'
 import { formatCopPrice } from '@/domain/price'
 import { ArrowRight, Scan } from 'lucide-react'

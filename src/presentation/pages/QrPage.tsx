@@ -1,3 +1,11 @@
+/**
+ * Página pública con el QR imprimible del restaurante (`/r/:slug/qr`), para
+ * que Juan o el restaurante lo pongan en la mesa física.
+ *
+ * No usa `useLanguage` (sus textos están en español fijo a propósito: es
+ * material impreso para el restaurante, no la carta que ve el comensal),
+ * así que no necesita estar envuelta en `LanguageProvider`.
+ */
 import { useParams } from 'react-router-dom'
 import { useAtomValue } from 'jotai'
 import QRCode from 'react-qr-code'

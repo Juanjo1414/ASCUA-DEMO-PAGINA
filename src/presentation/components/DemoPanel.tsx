@@ -1,3 +1,12 @@
+/**
+ * Panel flotante para que Juan marque platos como agotados en vivo mientras
+ * le muestra la demo a un restaurante (no es una función para el comensal
+ * final, sino una herramienta de presentación).
+ *
+ * Lo usa `RestaurantPage`. Guarda el estado con `SoldOutStore` (localStorage
+ * por restaurante) y avisa a `Menu`/`DishCard` del cambio con el evento
+ * `ascua:soldout-changed`, en vez de forzar un recargo de toda la página.
+ */
 import { useState } from 'react'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'

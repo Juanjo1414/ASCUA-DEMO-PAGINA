@@ -1,3 +1,12 @@
+/**
+ * Sección de contacto y "reserva" de la carta: datos reales del restaurante
+ * (dirección, horario) y un formulario que no envía nada a ningún backend,
+ * sino que arma un enlace de WhatsApp prellenado (`buildReservationLink`).
+ *
+ * Lo usa `RestaurantPage`. Al tocar "Reservar" en `Reserva.tsx` se dispara
+ * el evento `ascua:reservar`, que este componente escucha para precargar el
+ * mensaje y enfocar el primer campo.
+ */
 import { useEffect, useRef, useState } from 'react'
 import { AlertCircle, ArrowRight } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'

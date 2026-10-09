@@ -1,3 +1,10 @@
+/**
+ * Sección "llamado a la acción" que invita a reservar. Su botón no reserva
+ * nada por sí mismo: dispara el evento `ascua:reservar` que escucha
+ * `Contacto.tsx` para precargar y enfocar el formulario real.
+ *
+ * Lo usa `RestaurantPage`.
+ */
 import { ArrowRight } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 

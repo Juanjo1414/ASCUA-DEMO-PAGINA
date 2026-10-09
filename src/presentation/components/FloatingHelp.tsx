@@ -1,3 +1,10 @@
+/**
+ * Botón flotante "¿Cómo funciona?" siempre visible en la carta.
+ *
+ * Lo usa `RestaurantPage`. Permite reabrir la guía de 3 pasos de AR
+ * (`ArGuideModal`) en cualquier momento, no solo en la primera visita —
+ * CLAUDE.md exige que la ayuda esté siempre a la mano.
+ */
 import { useState } from 'react'
 import { HelpCircle } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'

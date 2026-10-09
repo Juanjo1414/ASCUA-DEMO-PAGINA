@@ -1,3 +1,12 @@
+/**
+ * Repositorio de restaurantes que lee el JSON estático publicado por
+ * `scripts/build-content.ts` en `/data/<slug>/restaurant.json`.
+ *
+ * Lo usa `getRestaurant` (caso de uso) a través del puerto
+ * `RestaurantRepository`. No lee nunca la carpeta de otro restaurante: el
+ * slug se valida contra `RESTAURANT_SLUG_REGEX` antes de construir la ruta,
+ * así que un slug con `../` o fuera de forma simplemente no encuentra nada.
+ */
 import type { RestaurantRepository } from '@/application/ports/restaurantRepository'
 import {
   type Restaurant,
@@ -7,6 +16,13 @@ import {
 } from '@/domain/restaurant'
 
 export class StaticJsonRestaurantRepository implements RestaurantRepository {
+  /**
+   * Busca y valida el `restaurant.json` de un restaurante por su slug.
+   *
+   * @param slug - Identificador del restaurante (debe cumplir `RESTAURANT_SLUG_REGEX`).
+   * @returns El restaurante ya validado con zod, o `null` si el slug es
+   * inválido, el archivo no existe, no cumple el esquema o falla la red.
+   */
   async getBySlug(slug: string): Promise<Restaurant | null> {
     // 1. Guardia de seguridad: previene path traversal y slugs inválidos
     if (!RESTAURANT_SLUG_REGEX.test(slug)) {

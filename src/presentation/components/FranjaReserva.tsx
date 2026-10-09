@@ -1,8 +1,19 @@
+/**
+ * Barra fija inferior en móvil con el horario del restaurante y un botón
+ * directo a "Reservar". Aparece al hacer scroll y se oculta de nuevo cerca
+ * del pie de página (para no tapar el pie con una barra redundante).
+ *
+ * Lo usa `RestaurantPage`. El horario mostrado es el real de
+ * `restaurant.contacto.horario`, nunca un texto inventado.
+ */
 import { useEffect, useState } from 'react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
+import { useAtomValue } from 'jotai'
+import { restaurantAtom } from '@/presentation/state/restaurantStore'
 
 export default function FranjaReserva() {
   const { t } = useLanguage()
+  const restaurant = useAtomValue(restaurantAtom)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -25,9 +36,11 @@ export default function FranjaReserva() {
           : 'translate-y-full opacity-0 pointer-events-none'
       }`}
     >
-      <p className="eyebrow text-deep-forest hidden min-[440px]:block">
-        {t.contact.hoursCorto}
-      </p>
+      {restaurant?.contacto?.horario?.[0] && (
+        <p className="eyebrow text-deep-forest hidden min-[440px]:block">
+          {restaurant.contacto.horario[0]}
+        </p>
+      )}
       <a
         href="#reservar"
         className="btn-primary flex-1 min-[440px]:flex-none text-center"

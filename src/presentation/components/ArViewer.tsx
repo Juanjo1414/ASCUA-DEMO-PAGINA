@@ -1,3 +1,11 @@
+/**
+ * Visor 3D en pantalla sobre `<model-viewer>` de Google, usado como
+ * respaldo cuando el dispositivo no puede abrir Quick Look ni Scene Viewer.
+ *
+ * Lo usa `ArDishModal`. Carga `@google/model-viewer` con `import()` dinámico
+ * (es un chunk pesado) y solo crea el elemento `<model-viewer>` una vez que
+ * ya cargó, para no mostrar un visor roto mientras se descarga.
+ */
 import { useEffect, useRef, useState } from 'react'
 import * as React from 'react'
 

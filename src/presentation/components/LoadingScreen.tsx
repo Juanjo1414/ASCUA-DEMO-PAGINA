@@ -1,7 +1,16 @@
+/**
+ * Pantalla de carga inicial con el logo del restaurante, que se desliza
+ * hacia arriba cuando el contenido ya está listo.
+ *
+ * Lo usa `RestaurantPage` mientras `useRestaurant` resuelve el fetch.
+ * Respeta `prefers-reduced-motion`: si el comensal lo activó, desaparece de
+ * inmediato en vez de animarse.
+ */
 import { useEffect, useState } from 'react'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
 
+/** @param isReady - Si ya hay datos del restaurante para mostrar la carta. */
 export default function LoadingScreen({ isReady = true }) {
   const [reducido] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches

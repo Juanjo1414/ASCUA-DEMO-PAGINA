@@ -1,3 +1,12 @@
+/**
+ * Proveedor del idioma activo de la carta (español/inglés).
+ *
+ * Envuelve `RestaurantPage` en el router. Recuerda la preferencia del
+ * comensal entre visitas con `UiPreferencesStore` (nunca con
+ * `localStorage` directo, para no romper en Safari modo privado), pero si
+ * el restaurante no ofrece ese idioma (`restaurant.idiomas`), usa el primero
+ * que sí tenga en vez del guardado.
+ */
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { LanguageContext, Lang } from './LanguageContext'
 import { translations } from './translations'
@@ -6,6 +15,7 @@ import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { useDependencies } from '@/presentation/state/DependenciesContext'
 import type { UiPreferencesStore } from '@/application/ports/uiPreferencesStore'
 
+/** Primer idioma a usar: el guardado si es válido, o el del navegador. */
 function detectInitialLang(store: UiPreferencesStore): Lang {
   if (typeof window === 'undefined') return 'es'
   const stored = store.get('ascua-lang')

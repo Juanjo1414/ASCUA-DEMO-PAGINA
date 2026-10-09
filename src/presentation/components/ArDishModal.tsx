@@ -1,3 +1,12 @@
+/**
+ * Visor 3D del plato en pantalla, usado cuando no hay AR nativo disponible
+ * (desktop o navegador embebido sin soporte) o cuando el comensal pidió
+ * explícitamente "Ver en 3D" en vez de "Ver en mi mesa".
+ *
+ * Lo abre `Menu.tsx`. `mode === 'ar'` significa que se intentó AR y se cayó
+ * a este visor de respaldo (por eso muestra el aviso de navegador embebido
+ * si aplica); `mode === '3d'` es que el comensal pidió el visor a propósito.
+ */
 import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { InAppBrowserNotice } from './ar/InAppBrowserNotice'

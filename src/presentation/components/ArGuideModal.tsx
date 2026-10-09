@@ -1,3 +1,13 @@
+/**
+ * Guía de 3 pasos que se muestra antes de abrir la cámara de AR (apunta a
+ * tu mesa → mueve el celular despacio → acércate o camina alrededor),
+ * exigida por CLAUDE.md para que el comensal entienda el gesto sin que
+ * nadie se lo explique.
+ *
+ * Lo usa `Menu.tsx` (primera vez por dispositivo) y `FloatingHelp.tsx`
+ * (reabrible en cualquier momento desde "¿Cómo funciona?"). Solo marca la
+ * guía como "ya vista" en `UiPreferencesStore` cuando no es un replay.
+ */
 import { useEffect, useState } from 'react'
 import { X, ArrowRight, Lightbulb, Grid3x3, Move } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'

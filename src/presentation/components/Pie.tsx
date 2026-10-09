@@ -1,3 +1,11 @@
+/**
+ * Pie de página de la carta: dirección, horario, enlace de feedback y
+ * crédito discreto de Ascua/PITS (regla de marca de CLAUDE.md).
+ *
+ * Lo usa `RestaurantPage`. El enlace de feedback lleva el slug del
+ * restaurante como parámetro para que las respuestas de Tally queden
+ * asociadas a quién lo probó.
+ */
 import { ArrowUp } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
@@ -36,10 +44,19 @@ export default function Pie() {
             </p>
           </div>
 
-          <div className="md:col-span-4 font-body text-body-sm opacity-80">
-            <p>Calle 10 #45-20, local 3, Medellín</p>
-            <p className="mt-1">{t.contact.hours}</p>
-          </div>
+          {(restaurant?.contacto?.direccion ||
+            restaurant?.contacto?.horario?.length) && (
+            <div className="md:col-span-4 font-body text-body-sm opacity-80">
+              {restaurant.contacto?.direccion && (
+                <p>{restaurant.contacto.direccion}</p>
+              )}
+              {restaurant.contacto?.horario?.map((linea, index) => (
+                <p key={index} className="mt-1">
+                  {linea}
+                </p>
+              ))}
+            </div>
+          )}
 
           <div className="flex items-start justify-between gap-6 md:col-span-3 md:flex-col md:items-end">
             <a

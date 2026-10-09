@@ -21,6 +21,7 @@ export const translations = {
     },
 
     menuSection: {
+      heading: 'Nuestro Menú',
       title: 'Ocho platos, una temporada.',
       body: 'El menú cambia con lo que llega fresco al mercado. Estos son los platos que salen del fuego ahora mismo.',
       destacado: 'Míralo sobre tu mesa antes de pedirlo.',
@@ -129,8 +130,6 @@ export const translations = {
       },
       addressTitle: 'Dirección',
       hoursTitle: 'Horario',
-      hours: 'Martes a domingo, 7 p.m. – 11 p.m.',
-      hoursCorto: 'Mar a dom · 7 p.m.',
     },
     footer: {
       tagline: 'Cocina de autor, servida con fuego.',
@@ -159,6 +158,7 @@ export const translations = {
     },
 
     menuSection: {
+      heading: 'Our Menu',
       title: 'Eight dishes, one season.',
       body: 'The menu changes with what comes fresh from the market. These are the dishes leaving the fire right now.',
       destacado: 'See it on your table before you order.',
@@ -263,8 +263,6 @@ export const translations = {
       },
       addressTitle: 'Address',
       hoursTitle: 'Hours',
-      hours: 'Tuesday to Sunday, 7 p.m. – 11 p.m.',
-      hoursCorto: 'Tue–Sun · 7 p.m.',
     },
     footer: {
       tagline: 'Chef-driven cooking, served with fire.',

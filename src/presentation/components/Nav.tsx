@@ -1,3 +1,12 @@
+/**
+ * Barra de navegación fija de la carta: logo, enlaces, cambio de idioma y
+ * menú móvil a pantalla completa.
+ *
+ * Lo usa `RestaurantPage`. El cambio de idioma solo aparece si el
+ * restaurante ofrece más de uno (`restaurant.idiomas`); si solo tiene uno,
+ * no se muestra el botón para no confundir al comensal con una opción que
+ * no hace nada.
+ */
 import { useEffect, useState } from 'react'
 import { ArrowRight, Menu, X } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'

@@ -1,3 +1,11 @@
+/**
+ * Aviso para cuando el comensal abre la demo dentro de un navegador
+ * embebido (Instagram, WhatsApp, TikTok…) que no deja usar AR real.
+ *
+ * Lo usa `ArDishModal`. Si detecta la app (`inAppName`), ofrece copiar el
+ * enlace para abrirlo en el navegador normal; si no la reconoce, solo avisa
+ * que el AR no está disponible ahí.
+ */
 import { useState } from 'react'
 import { Check, Copy } from 'lucide-react'
 
