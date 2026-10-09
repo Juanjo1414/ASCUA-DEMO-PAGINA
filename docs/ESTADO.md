@@ -80,15 +80,29 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   `manifest.json` (±5 %) sigue diferida a R-8, porque todavía no existe
   ningún modelo 3D real que validar contra esa tolerancia.
 
+### R-6 (C-32, accesibilidad automatizada) — 2026-10-09 tarde
+
+- Juan aprobó `@axe-core/playwright` (MPL-2.0, permisiva, la mantiene el
+  propio equipo de Deque/Playwright) como devDependency.
+- `tests/e2e/accesibilidad.spec.ts` corre las reglas WCAG 2.1 A/AA de
+  axe-core sobre la carta (`rest-a-1234`) y sobre la guía de 3 pasos de AR
+  abierta (`rest-c-9012`), en los 3 proyectos de Playwright. Falla si hay
+  alguna violación `serious` o `critical`.
+- **Hallazgo real de la primera corrida:** el texto de copyright/privacidad
+  del pie de página (`Pie.tsx`) tenía contraste 4.47:1 contra el fondo
+  (`opacity-60` sobre `bg-deep-forest`), por debajo del mínimo AA de 4.5:1.
+  Se subió a `opacity-80`; las 6 corridas (2 pruebas × 3 proyectos) pasan.
+- Con esto, C-32 queda completo. Pendiente real de R-6: C-31 (revisión
+  visual con capturas en 5 anchos), que necesita una herramienta de
+  navegador no disponible en esta sesión.
+
 ## Siguiente paso exacto
 
-1. Continuar `docs/PLAN-REVISION.md`: terminar R-6 (C-33 ya está en
-   `tests/e2e/recorrido-comensal.spec.ts`; faltan C-31 móvil con capturas —
-   necesita herramienta de navegador— y C-32 accesibilidad automatizada, que
-   necesita aprobar una dependencia nueva como `@axe-core/playwright`), R-7
-   (seguridad/rendimiento más allá de la ADR 0004 y robots.txt), R-8 (P-601:
-   generar modelos 3D reales con el pipeline del repo AR, re-escalados a la
-   medida real de cada plato — necesita que Juan provea sus llaves y Docker).
+1. Continuar `docs/PLAN-REVISION.md`: C-31 de R-6 (capturas en 360×640/390/
+   430/768/1280 — necesita herramienta de navegador), R-7 (seguridad/
+   rendimiento más allá de la ADR 0004 y robots.txt), R-8 (P-601: generar
+   modelos 3D reales con el pipeline del repo AR, re-escalados a la medida
+   real de cada plato — necesita que Juan provea sus llaves y Docker).
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare:
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.

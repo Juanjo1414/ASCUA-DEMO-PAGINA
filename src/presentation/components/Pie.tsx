@@ -85,7 +85,7 @@ export default function Pie() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 md:flex-row font-body text-body-sm opacity-60">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 md:flex-row font-body text-body-sm opacity-80">
           <p>
             © {anio} {restaurant?.nombre || 'Ascua'}. {t.footer.rights}{' '}
             {t.footer.privacy}
