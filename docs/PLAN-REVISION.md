@@ -1,4 +1,4 @@
-# Plan de revisión integral — ASCUA-DEMO-PAGINA (para ejecutar con Sonnet 5.5)
+# Plan de revisión integral — ASCUA-DEMO-PAGINA (para ejecutar con Sonnet 5)
 
 ## Context
 

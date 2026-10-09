@@ -3,7 +3,13 @@ import path from 'node:path'
 
 const CONTENT_DIR =
   process.env.CONTENT_DIR || path.join(process.cwd(), 'content', 'restaurants')
-const DIST_DIR = path.join(process.cwd(), 'dist')
+// DIST_DIR es configurable para que las pruebas E2E (que usan restaurantes de
+// prueba vía CONTENT_DIR) construyan en una carpeta aparte (`dist-e2e/`) y
+// nunca pisen el `dist/` real que ya pasó por `npm run verify` y que mide
+// Lighthouse CI. Ver docs/PLAN-REVISION.md, hallazgo R-1-H1.
+const DIST_DIR = process.env.DIST_DIR
+  ? path.resolve(process.env.DIST_DIR)
+  : path.join(process.cwd(), 'dist')
 const DIST_DATA_DIR = path.join(DIST_DIR, 'data')
 const DIST_R_DIR = path.join(DIST_DIR, 'r')
 

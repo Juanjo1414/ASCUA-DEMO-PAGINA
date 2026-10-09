@@ -1,8 +1,9 @@
 # CI de ASCUA-DEMO-PAGINA
 # - Corre en cada Pull Request hacia main y es reutilizado por deploy.yml en cada push.
-# - Adopción gradual: los pasos con `--if-present` se activan solos cuando la tarea
-#   correspondiente crea el script (P-101 typecheck/test, P-202 content:validate,
-#   P-108 arch:check). En P-705 se quita `--if-present` para volverlos obligatorios.
+# - P-705: todos los scripts (typecheck, test:coverage, content:validate, arch:check,
+#   licenses:check) ya existen, así que corren siempre y una falla real detiene el job.
+# - `ubuntu-24.04` fijo (no `ubuntu-latest`): la imagen por defecto migra a Ubuntu 26
+#   el 2026-10-19 y no queremos que ese cambio nos tome por sorpresa sin probarlo antes.
 name: CI
 
 on:
@@ -20,7 +21,7 @@ concurrency:
 jobs:
   verify:
     name: verify
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -32,17 +33,17 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Tipos
-        run: npm run typecheck --if-present
+        run: npm run typecheck
       - name: Pruebas unitarias con cobertura
-        run: npm run test:coverage --if-present
+        run: npm run test:coverage
       - name: Validación de contenido (esquema + aislamiento + pesos + aprobado)
-        run: npm run content:validate --if-present
+        run: npm run content:validate
       - name: Reglas de arquitectura (capas)
-        run: npm run arch:check --if-present
+        run: npm run arch:check
       - name: Build
         run: npm run build
       - name: Licencias de dependencias
-        run: npm run licenses:check --if-present
+        run: npm run licenses:check
       - uses: actions/upload-artifact@v4 # TODO(X-008): fijar por SHA
         with:
           name: dist
@@ -53,7 +54,7 @@ jobs:
   e2e:
     name: e2e
     needs: verify
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -84,7 +85,7 @@ jobs:
 
   security:
     name: security
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2

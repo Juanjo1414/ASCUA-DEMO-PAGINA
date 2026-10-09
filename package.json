@@ -9,20 +9,23 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsx scripts/build-content.ts",
+    "build:e2e": "vite build --outDir dist-e2e && tsx scripts/build-content.ts",
     "lint": "oxlint --deny-warnings",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
+    "test:smoke": "playwright test --config=playwright.smoke.config.ts",
     "test:lighthouse": "lhci autorun",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview",
+    "preview:e2e": "vite preview --outDir dist-e2e --port 4173",
     "prepare": "husky",
     "arch:check": "depcruise src",
     "content:validate": "tsx scripts/validate-content.ts",
-    "licenses:check": "npx license-checker --production --failOn 'GPL;AGPL'",
-    "verify": "npm run lint && npm run typecheck && npm run test && npm run arch:check && npm run content:validate && npm run licenses:check && npm run build"
+    "licenses:check": "license-checker --production --failOn \"GPL;AGPL\"",
+    "verify": "npm run lint && npm run typecheck && npm run test:coverage && npm run content:validate && npm run arch:check && npm run licenses:check && npm run build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -58,6 +61,7 @@
     "ffmpeg-static": "^5.3.0",
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
+    "license-checker": "^25.0.1",
     "lint-staged": "^16.4.0",
     "oxlint": "^1.75.0",
     "postcss": "^8.5.26",

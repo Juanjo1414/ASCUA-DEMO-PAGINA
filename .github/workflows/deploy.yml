@@ -25,7 +25,7 @@ jobs:
     name: deploy
     needs: ci
     if: vars.CF_PAGES_PROJECT != ''
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     environment:
       name: ${{ github.ref_name == 'main' && 'production' || 'preview' }}
@@ -48,7 +48,7 @@ jobs:
   smoke:
     name: smoke
     needs: deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2

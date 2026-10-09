@@ -26,11 +26,15 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run build && npm run preview',
+    // Construye en dist-e2e/ (no en dist/) con los restaurantes de prueba:
+    // así el E2E nunca pisa el dist/ real que el job `verify` ya probó y que
+    // Lighthouse CI mide a continuación en el mismo job de CI (R-1-H1).
+    command: 'npm run build:e2e && npm run preview:e2e',
     url: 'http://localhost:4173',
     reuseExistingServer: !process.env.CI,
     env: {
       CONTENT_DIR: './tests/fixtures/restaurants',
+      DIST_DIR: './dist-e2e',
     },
   },
 })

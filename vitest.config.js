@@ -17,7 +17,7 @@ export default defineConfig({
       'tests/**/*.{test,spec}.{js,jsx,ts,tsx}',
       'src/**/*.{test,spec}.{js,jsx,ts,tsx}',
     ],
-    exclude: ['tests/e2e/**', 'node_modules', 'dist'],
+    exclude: ['tests/e2e/**', 'tests/smoke/**', 'node_modules', 'dist'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
