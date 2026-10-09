@@ -1,20 +1,35 @@
+/**
+ * Adaptador de analítica para Cloudflare Web Analytics / Zaraz.
+ *
+ * Envía eventos personalizados a Zaraz cuando está disponible en la página
+ * (lo inyecta Cloudflare vía el script del CSP aprobado en el ADR 0004).
+ * Si Zaraz todavía no cargó (o estamos en desarrollo local, donde no existe),
+ * simplemente no hace nada: no hay backend propio que reciba estos eventos.
+ */
 import type {
   AnalyticsEvent,
   AnalyticsTracker,
 } from '@/application/ports/analyticsTracker'
 
+declare global {
+  interface Window {
+    /** Presente solo cuando Cloudflare Zaraz ya se cargó en la página. */
+    zaraz?: {
+      track: (eventName: string, payload: unknown) => void
+    }
+  }
+}
+
 export class CloudflareAnalyticsTracker implements AnalyticsTracker {
+  /**
+   * Reenvía un evento de analítica a Zaraz.
+   *
+   * @param event - Evento de dominio a registrar.
+   * No hace nada si Zaraz no está disponible en `window` todavía.
+   */
   track(event: AnalyticsEvent): void {
-    // We only push custom events if __cf_beacon or zaraz is available.
-    // Web Analytics automatically tracks route changes if the script is in the HTML.
-    // For custom events, you would normally use Zaraz or a custom beacon here.
-    // @ts-ignore
-    if (window.zaraz && typeof window.zaraz.track === 'function') {
-      // @ts-ignore
+    if (typeof window.zaraz?.track === 'function') {
       window.zaraz.track(event.type, event)
-    } else {
-      // If we are in dev or the script hasn't loaded yet.
-      // console.log('[Analytics]', event)
     }
   }
 }
