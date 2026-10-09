@@ -102,9 +102,9 @@
     "semantic_hash": ""
   },
   "docs/ESTADO.md": {
-    "mtime": 1791406752.7553418,
-    "seen": 1791406769.810811,
-    "ast_hash": "6d004b2833d4dea18efaef7d9f19b7cf",
+    "mtime": 1791568627.9550405,
+    "seen": 1791568678.789891,
+    "ast_hash": "195105a3cd42ea3f64647efefe9d4a36",
     "semantic_hash": ""
   },
   "docs/PLAN-IMPLEMENTACION.md": {
@@ -1068,9 +1068,9 @@
     "semantic_hash": ""
   },
   "docs/revision/inventario.md": {
-    "mtime": 1791564342.8636334,
-    "seen": 1791564348.0648034,
-    "ast_hash": "6076959f3ca11f69d3eef3e59b857a0c",
+    "mtime": 1791568669.654364,
+    "seen": 1791568678.7899148,
+    "ast_hash": "4293b14c69f35a61cfcf391d5051b73e",
     "semantic_hash": ""
   },
   "playwright.smoke.config.ts": {
@@ -1131,6 +1131,30 @@
     "mtime": 1791567632.67258,
     "seen": 1791568401.495502,
     "ast_hash": "0959ff8f5e12b0040ed86ebd26fabb25",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-07-P-205.md": {
+    "mtime": 1791568541.0996194,
+    "seen": 1791568678.7899806,
+    "ast_hash": "615cdaafaafc2b8b35b239d17a6c9626",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-07-P701-P704.md": {
+    "mtime": 1791568553.7900877,
+    "seen": 1791568678.7899833,
+    "ast_hash": "b8f15a83802553366920b7a6b678c642",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-07-lote-5.md": {
+    "mtime": 1791568532.048334,
+    "seen": 1791568678.7899964,
+    "ast_hash": "0dcbbd261481eceaea6b2dfec87e9bd8",
+    "semantic_hash": ""
+  },
+  "docs/sesiones/2026-10-07-vite-config-y-lote-7.md": {
+    "mtime": 1791568570.531686,
+    "seen": 1791568678.7900078,
+    "ast_hash": "b6b18c8a5ad5cfd600634234562fcd68",
     "semantic_hash": ""
   }
 }

@@ -50,10 +50,12 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 
 ## Siguiente paso exacto
 
-1. Continuar `docs/PLAN-REVISION.md`: R-2/R-3 (arquitectura y contenido), R-6 (completar
-   Lote 6: accesibilidad automatizada y E2E del recorrido del comensal — **no existen
-   hoy**, pese a que el paso de CI dice tenerlas), R-8 (P-601: generar modelos 3D reales
-   con el pipeline del repo AR, re-escalados a la medida real de cada plato).
+1. Continuar `docs/PLAN-REVISION.md`: R-2/R-3 (arquitectura y contenido), terminar R-6
+   (C-33, el E2E del recorrido del comensal, ya quedó en
+   `tests/e2e/recorrido-comensal.spec.ts`; faltan C-31 móvil con capturas y C-32
+   accesibilidad automatizada, que necesita aprobar una dependencia nueva), R-8
+   (P-601: generar modelos 3D reales con el pipeline del repo AR, re-escalados a la
+   medida real de cada plato).
 2. Tareas manuales pendientes de Juan en GitHub / Cloudflare:
    - X-006: Activar reglas de protección de rama `main` en GitHub.
    - X-007: Crear proyecto en Cloudflare Pages (modo Direct Upload) y configurar secrets.
