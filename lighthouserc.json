@@ -3,7 +3,7 @@
     "collect": {
       "url": ["http://localhost:4173/r/ascua-demo-abcd"],
       "startServerCommand": "npm run preview",
-      "numberOfRuns": 3
+      "numberOfRuns": 5
     },
     "assert": {
       "assertions": {
