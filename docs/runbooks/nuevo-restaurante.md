@@ -19,7 +19,7 @@ Edita el archivo `restaurant.json` en la nueva carpeta con los datos del restaur
 - **`expira`**: Configura la fecha límite de la demo comercial (ej: un mes después de la creación).
 - **`autorizacion`**: Rellena con la fecha y el medio por el cual el dueño autorizó la demo. **(Legalmente obligatorio)**.
 - **`eslogan`** (Opcional): Frase breve o eslogan del restaurante (puede ser localizado).
-- **`heroImagen`** (Opcional): Ruta de la imagen principal de la portada (`assets/hero.webp`).
+- **`heroImagen`** (Opcional): Ruta de la imagen principal de la portada (`assets/hero.webp`). La plantilla no trae una por defecto a propósito: si no la agregas, la portada usa automáticamente la foto del primer plato destacado. Solo agrega esta clave si vas a subir una foto de portada distinta.
 - **`tema`**: Configura el color primario, el par tipográfico (`sans` o `editorial`) y logo.
 - **`contacto`**: Ingresa el WhatsApp real al cual llegarán los pedidos.
 
@@ -31,7 +31,17 @@ Edita el archivo `restaurant.json` en la nueva carpeta con los datos del restaur
   - Genera el modelo siguiendo el [Runbook de Producción de Modelos 3D](../AR/produccion-modelo-3d.md).
   - Copia los archivos `.glb`, `.usdz` y `poster.webp` a la subcarpeta `assets/platos/<id-plato>/`.
   - Asegúrate de indicar `escalaRealCm` (el tamaño real del plato físico para que AR lo muestre exacto).
-  - Marca `aprobado: true`.
+  - Deja `aprobado: false` (así viene en la plantilla) y **no copies ningún valor de ejemplo** de `aprobadoPor`/`fechaAprobacion`. El validador exige que el plato con modelo esté aprobado para publicarse; eso es correcto — significa que todavía falta el paso siguiente.
+- Si el plato **no** tiene modelo AR todavía, simplemente no incluyas la clave `modelo` en ese plato (se muestra solo con su foto, sin botón de AR). No es un error dejarlo así mientras se genera el modelo.
+
+### 3.1 Aprobar un modelo 3D (obligatorio antes de publicarlo)
+
+- `aprobado: true`, `aprobadoPor` y `fechaAprobacion` **solo los marca Juan**,
+  nunca un agente de IA, y solo después de correr el checklist completo de
+  [`qa-dispositivos.md`](./qa-dispositivos.md) en su iPhone y su Android
+  reales. Copiar estos valores de otro plato o de la plantilla sin haber
+  hecho ese QA es publicar algo que nunca se probó — exactamente lo que la
+  regla busca evitar.
 
 ### 4. Validar Localmente
 
