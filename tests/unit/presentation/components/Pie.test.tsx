@@ -1,38 +1,16 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { Provider as JotaiProvider, createStore } from 'jotai'
 import Pie from '@/presentation/components/Pie'
-import { restaurantAtom } from '@/presentation/state/restaurantStore'
-import { LanguageContext } from '@/presentation/i18n/LanguageContext'
-import { translations } from '@/presentation/i18n/translations'
 import type { Restaurant } from '@/domain/restaurant'
-
-const languageValue = {
-  lang: 'es' as const,
-  setLang: () => {},
-  t: translations.es,
-}
-
-function renderPie(restaurant: Restaurant | null) {
-  const store = createStore()
-  store.set(restaurantAtom, restaurant)
-  return render(
-    <JotaiProvider store={store}>
-      <LanguageContext.Provider value={languageValue}>
-        <Pie />
-      </LanguageContext.Provider>
-    </JotaiProvider>
-  )
-}
-
-const baseRestaurant = {
-  nombre: 'Restaurante de Prueba',
-} as Restaurant
+import {
+  renderWithProviders,
+  baseRestaurantFixture,
+} from '../renderWithProviders'
 
 describe('Pie', () => {
   it('muestra la dirección y el horario reales del restaurante, nunca datos inventados', () => {
     const restaurant = {
-      ...baseRestaurant,
+      ...baseRestaurantFixture,
       contacto: {
         whatsapp: '573001234567',
         direccion: 'Calle Ficticia 1-23, Pruebalandia',
@@ -40,7 +18,7 @@ describe('Pie', () => {
       },
     } as Restaurant
 
-    renderPie(restaurant)
+    renderWithProviders(<Pie />, { restaurant })
 
     expect(
       screen.getByText('Calle Ficticia 1-23, Pruebalandia')
@@ -57,7 +35,7 @@ describe('Pie', () => {
   })
 
   it('no muestra el bloque de contacto si el restaurante no tiene dirección ni horario', () => {
-    renderPie(baseRestaurant)
+    renderWithProviders(<Pie />, { restaurant: baseRestaurantFixture })
 
     expect(screen.queryByText(/Medellín/)).not.toBeInTheDocument()
   })

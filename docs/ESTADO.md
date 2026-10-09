@@ -116,13 +116,37 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 - Juan está resolviendo en paralelo X-007 (Cloudflare Pages) y el token de
   Hugging Face para R-8.
 
+### R-6 (C-30, pruebas de componente) — 2026-10-09 noche
+
+- Faltaban pruebas para `Menu`, `ArGuideModal`, `ArDishModal`, `Hero`,
+  `Contacto` y `Reserva` (solo existían para `DishCard`, `Pie` y
+  `FranjaReserva`). Se agregaron las 6, con un helper nuevo
+  `tests/unit/presentation/renderWithProviders.tsx` que monta cualquier
+  componente con jotai + idioma + dependencias inyectadas usando los dobles
+  en memoria de `tests/unit/application/doubles.ts` (se le agregó
+  `InMemoryUiPreferencesStore`, que faltaba ahí). `Pie.test.tsx` y
+  `FranjaReserva.test.tsx` se migraron al mismo helper para no tener 3
+  copias del mismo montaje.
+- Dos hallazgos de infraestructura de pruebas, no de producto: jsdom no
+  implementa `window.matchMedia` (lo necesitan `Menu` y `LoadingScreen`
+  para `prefers-reduced-motion`) — se agregó un polyfill mínimo en
+  `tests/setup.ts`; y el `<model-viewer>` real de Google lanza errores
+  internos de cámara al montarse en jsdom — las pruebas que abren el visor
+  (`Menu`, `ArDishModal`) ahora lo simulan con `vi.mock('@google/model-viewer')`,
+  porque no están verificando cómo se ve el modelo (eso es trabajo del QA
+  manual de `qa-dispositivos.md`), solo que el flujo de UI abra el modal.
+- `Menu.test.tsx` incluye la prueba de regresión del bug de "Our Menu" fijo
+  en inglés (R-2) y cubre el flujo completo: primera vez muestra la guía,
+  segunda vez (con `ascua:ar-guide-seen` ya puesto) lanza directo.
+- 145 pruebas unitarias en verde (antes 118). Cobertura de `domain/` y
+  `application/` sin cambios (sigue sin incluir `presentation/`, ver
+  "Pendientes detectados").
+
 ## Siguiente paso exacto
 
 1. Continuar `docs/PLAN-REVISION.md` en este orden (acordado con Juan):
-   R-6 (C-30: pruebas de componente faltantes para `Menu`, `ArGuideModal`,
-   `ArDishModal`, `Hero`, `Contacto`, `Reserva`) → R-7 (seguridad/
-   rendimiento: `/security-review`, `npm audit` documentado, revisar
-   `Permissions-Policy` y caché de assets 3D) → R-9 (probar
+   R-7 (seguridad/rendimiento: `/security-review`, `npm audit` documentado,
+   revisar `Permissions-Policy` y caché de assets 3D) → R-9 (probar
    `nuevo-restaurante.md` de punta a punta con fixtures) → R-10
    (`docs/ARQUITECTURA.md`, README por capa, `engineering:tech-debt`).
    R-5 (capturas visuales) queda para cuando haya herramienta de navegador
