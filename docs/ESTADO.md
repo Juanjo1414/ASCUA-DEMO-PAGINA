@@ -221,14 +221,46 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   detectados" de este documento y en "Limitaciones conocidas" del
   `README.md` raíz, sin duplicar la lista en un tercer lugar.
 
+### R-5 (diseño roto en producción) — 2026-10-09 noche
+
+- Juan reportó con capturas reales de su celular que el sitio desplegado
+  "no se ve bien ni en móvil ni en web" y cargó `diseño-ejemplo/` (4
+  capturas del sitio real, no mockups — carpeta local, en `.gitignore`,
+  nunca se sube). Se usó el navegador para reproducir y comparar contra
+  `docs/DESIGN.md`. 4 bugs reales encontrados y corregidos:
+  - `resolveAssetUrls()` no resolvía `heroImagen` (solo `tema.logo` y
+    fotos de platos) → hero roto en cualquier restaurante con portada
+    propia. Prueba de regresión agregada.
+  - Los dos `logo.svg` (demo y `_plantilla`) eran placeholders rotos o
+    ilegibles (uno con el texto perdido en un viewBox gigante, el otro ni
+    siquiera un SVG válido). Reemplazados por wordmarks legibles.
+  - `LoadingScreen.tsx` mostraba el logo sin el filtro `invert` que sí usa
+    `Pie.tsx` para fondo oscuro → invisible durante la carga.
+  - `FranjaReserva.tsx` (barra fija inferior en móvil) contradecía
+    `DESIGN.md` ("no sticky behavior beyond the nav itself") y tapaba
+    contenido real (formulario de contacto, precios) en las capturas de
+    Juan. Eliminada; el acceso a "Reservar mesa" en móvil sigue
+    disponible en el menú hamburguesa de `Nav.tsx`.
+- Verificado visualmente en navegador (antes/después) para cada fix, no
+  solo por código. `npm run verify` y `test:e2e` (25/25) en verde.
+- **Decisión de Juan:** el umbral de `categories:performance` de
+  Lighthouse CI se bajó de 0.9 a 0.8 solo para CI. Con 5 corridas, el
+  runner compartido de GitHub Actions dio valores 0.5/0.89/0.82/0.87/0.89
+  (mediana 0.89, por debajo del umbral) mientras que localmente el mismo
+  build mide siempre ≥0.9 — es varianza del runner, no una regresión real
+  (los cambios de esta sesión deberían mejorar el rendimiento, no
+  empeorarlo: se quitó un componente). Accesibilidad, buenas prácticas y
+  SEO se quedan en 0.9.
+- Pendiente real de R-5: C-31 (capturas en los 5 anchos de
+  360/390/430/768/1280 con el navegador, para revisión sistemática más
+  allá de los bugs ya encontrados).
+
 ## Siguiente paso exacto
 
-1. Pendientes reales de `docs/PLAN-REVISION.md`: R-5 (capturas visuales en
-   5 anchos — necesita herramienta de navegador cargada en la sesión) y
-   R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
-   Docker listos; queda escribir el script de orquestación cuando le
-   toque su turno). Con esto, R-0 a R-4, R-6, R-7, R-9 y R-10 quedan
-   completos.
+1. Pendientes reales de `docs/PLAN-REVISION.md`: terminar C-31 de R-5
+   (capturas en 5 anchos) y R-8 (P-601: generar modelos 3D reales — Juan
+   ya tiene `HF_TOKEN` y Docker listos; queda escribir el script de
+   orquestación cuando le toque su turno).
 2. Preparar (sin abrir) el PR `dev/Juanjo → main` con la plantilla del
    repositorio y `engineering:deploy-checklist`, cuando Juan lo pida.
 
