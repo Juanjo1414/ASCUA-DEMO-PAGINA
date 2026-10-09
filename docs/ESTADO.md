@@ -2,7 +2,7 @@
 
 > Documento vivo. Se actualiza al **cerrar cada sesión**, con Claude Code o Antigravity.
 
-**Última actualización:** 2026-10-09 (tarde) · **Por:** Claude Code (revisión) · **Rama:** `dev/Juanjo`
+**Última actualización:** 2026-10-09 (noche) · **Por:** Claude Code (revisión) · **Rama:** `dev/Juanjo`
 
 ## Fase actual
 
@@ -180,14 +180,57 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   Cloudflare Pages (`https://ascua-demo-pagina.pages.dev`) — ambos en
   verde.
 
+### R-9 (alta de restaurantes, probado de punta a punta) — 2026-10-09 noche
+
+- Se siguió el runbook `nuevo-restaurante.md` literalmente (copiar
+  `_plantilla`, renombrar al slug, editar `restaurant.json`, validar,
+  construir) con un restaurante ficticio en una carpeta temporal fuera del
+  repo — nunca se publicó nada real. Dos hallazgos reales:
+  - `_plantilla/restaurant.json` referenciaba `heroImagen: assets/hero.webp`,
+    un archivo que no existe ahí; el validador lo dejaba pasar solo por
+    ser la plantilla, así que copiarla rompía la validación de inmediato
+    para cualquier restaurante nuevo. Se quitó la clave (es opcional;
+    `Hero.tsx` ya cae de vuelta a la foto del primer plato destacado).
+  - La plantilla traía `aprobado: true, aprobadoPor: "Juan"` de ejemplo en
+    su plato con modelo 3D — copiarla tal cual publicaría un modelo
+    "aprobado" que Juan nunca probó en sus celulares. Cambiado a
+    `aprobado: false`; el runbook ahora explica que esos campos solo los
+    marca Juan después de `qa-dispositivos.md`.
+- Confirmado que el camino feliz (plato sin modelo, solo foto) valida
+  limpio, y que `build-content.ts` genera el HTML SEO correcto con los
+  datos del restaurante de prueba.
+
+### R-10 (documentación y cierre) — 2026-10-09 noche
+
+- Eliminadas 4 carpetas vacías y huérfanas (`src/components`, `src/hooks`,
+  `src/i18n`, `src/lib`) que quedaban de antes de la migración a
+  `presentation/` — nunca estuvieron en git (vacías), solo ensuciaban el
+  árbol local.
+- Creado `docs/ARQUITECTURA.md`: recorrido completo, archivo por archivo,
+  de qué pasa cuando el comensal toca "Ver en mi mesa", cruzando las 4
+  capas.
+- Creado un `README.md` corto en cada capa: `src/domain/`,
+  `src/application/`, `src/infrastructure/`, `src/presentation/`,
+  `src/app/`, `src/shared/`.
+- `README.md` raíz actualizado a fondo: estaba desactualizado desde el
+  6 de octubre (decía que la migración a `presentation/` seguía
+  pendiente, que faltaba crear el proyecto de Cloudflare, que
+  `public/_headers` no existía, conteo de pruebas en 77/101 en vez de 145) — corregido todo contra el estado real verificado hoy.
+- Deuda técnica (`engineering:tech-debt`, procedimiento manual porque la
+  skill no está instalada): queda consolidada en la sección "Pendientes
+  detectados" de este documento y en "Limitaciones conocidas" del
+  `README.md` raíz, sin duplicar la lista en un tercer lugar.
+
 ## Siguiente paso exacto
 
-1. Continuar `docs/PLAN-REVISION.md`: R-9 (probar `nuevo-restaurante.md`
-   de punta a punta con fixtures) → R-10 (`docs/ARQUITECTURA.md`, README
-   por capa, `engineering:tech-debt`). R-5 (capturas visuales) queda para
-   cuando haya herramienta de navegador cargada en la sesión; R-8 (P-601)
-   ya tiene HF_TOKEN y Docker listos de parte de Juan — queda pendiente
-   escribir el script de orquestación cuando le toque su turno en el plan.
+1. Pendientes reales de `docs/PLAN-REVISION.md`: R-5 (capturas visuales en
+   5 anchos — necesita herramienta de navegador cargada en la sesión) y
+   R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
+   Docker listos; queda escribir el script de orquestación cuando le
+   toque su turno). Con esto, R-0 a R-4, R-6, R-7, R-9 y R-10 quedan
+   completos.
+2. Preparar (sin abrir) el PR `dev/Juanjo → main` con la plantilla del
+   repositorio y `engineering:deploy-checklist`, cuando Juan lo pida.
 
 ## Línea base verificada (2026-10-09)
 

@@ -12,8 +12,8 @@ Demo estática multi-restaurante de **PITS**: una sola plantilla, un paquete de 
 ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white)
 ![model-viewer](https://img.shields.io/badge/3D%2FAR-model--viewer-4285F4?logo=google&logoColor=white)
 ![Cloudflare Pages](https://img.shields.io/badge/Hosting-Cloudflare%20Pages-F38020?logo=cloudflare&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-77%20passing-brightgreen)
-![Cobertura](https://img.shields.io/badge/cobertura-98%25-brightgreen)
+![Tests](https://img.shields.io/badge/tests-145%20passing-brightgreen)
+![Cobertura](https://img.shields.io/badge/cobertura-97%25-brightgreen)
 ![Estado](https://img.shields.io/badge/estado-en%20desarrollo-orange)
 
 <!-- Activar cuando el CI esté en verde en main:
@@ -57,24 +57,25 @@ Este repositorio es la **demo estática multi-restaurante** con la que **PITS** 
 
 Como la ven usuarios reales, casi siempre desde el celular y muchas veces personas poco familiarizadas con la tecnología, el proyecto se construye con tres prioridades: **que se entienda solo**, **que funcione bien en móvil** y **que nada se publique sin pasar todas las pruebas**.
 
-> 🚧 **Estado (verificado el 6 de octubre de 2026):** la re-arquitectura, el soporte multi-restaurante y gran parte de la experiencia del comensal ya están implementados en `dev/Juanjo`, y `npm run verify` pasa completo (lint, tipos, 77 pruebas, reglas de capas, validación de contenido y build). Todavía **faltan** el diseño nuevo, la migración de la interfaz a la capa `presentation`, el QR imprimible, la demo genérica con modelos 3D y el despliegue en Cloudflare. Avance al detalle en [`docs/ESTADO.md`](./docs/ESTADO.md) y hoja de ruta en [`docs/PLAN-IMPLEMENTACION.md`](./docs/PLAN-IMPLEMENTACION.md).
+> 🚧 **Estado (verificado el 9 de octubre de 2026):** la re-arquitectura, el soporte multi-restaurante, la experiencia del comensal, el QR imprimible y el despliegue en Cloudflare Pages ya están completos y en producción de preview (`npm run verify` pasa completo: lint, tipos, 145 pruebas, reglas de capas, validación de contenido, accesibilidad con axe, Lighthouse y build; CI de GitHub Actions en verde de punta a punta, incluido `deploy`/`smoke`). Todavía **falta** generar los modelos 3D reales de la demo genérica (P-601) y el diseño visual definitivo cuando se cargue `docs/DESIGN.md` actualizado. Avance al detalle en [`docs/ESTADO.md`](./docs/ESTADO.md) y hoja de ruta en [`docs/PLAN-IMPLEMENTACION.md`](./docs/PLAN-IMPLEMENTACION.md).
 
-| Área                                                                                                         |                            Estado                             |
-| :----------------------------------------------------------------------------------------------------------- | :-----------------------------------------------------------: |
-| Fundaciones: Node 22, hooks locales, reglas para agentes, graphify, CI/CD, sin dependencia de terceros       |                              ✅                               |
-| TypeScript, Vitest y capas `domain` / `application` / `infrastructure` con reglas verificadas                |                              ✅                               |
-| Adaptadores de AR conectados a la interfaz, con lanzador compuesto                                           |                              ✅                               |
-| Contenido por restaurante: esquema, plantilla, validador y HTML por restaurante                              |                              ✅                               |
-| Prueba E2E de aislamiento entre restaurantes (Playwright)                                                    |                              ✅                               |
-| Guía previa al AR, ayuda flotante, estados de error, modo presentación, feedback, analítica y avisos legales |                              ✅                               |
-| Interfaz en `src/presentation/` con la regla de capas activa                                                 |                              ✅                               |
-| Página gobernada por los datos del restaurante (nombre, logo, tema, contacto, portada)                       |                              ✅                               |
-| Diseño nuevo, mobile-first y accesibilidad básica                                                            | ✅ _(Lighthouse y prueba de usabilidad siguen pendientes 🗓️)_ |
-| Demo genérica `ascua-demo` con fotos (modelos 3D aprobados pendientes)                                       |                              🚧                               |
-| Página de QR imprimible                                                                                      |                              ✅                               |
-| Cabeceras de seguridad y CSP                                                                                 |                              ✅                               |
-| Presupuesto de rendimiento (Lighthouse CI) y licencias                                                       |                              ✅                               |
-| Cloudflare Pages, protección de `main` y CodeQL (pasos manuales)                                             |                              🗓️                               |
+| Área                                                                                                         | Estado |
+| :----------------------------------------------------------------------------------------------------------- | :----: |
+| Fundaciones: Node 22, hooks locales, reglas para agentes, graphify, CI/CD, sin dependencia de terceros       |   ✅   |
+| TypeScript, Vitest y capas `domain` / `application` / `infrastructure` con reglas verificadas                |   ✅   |
+| Adaptadores de AR conectados a la interfaz, con lanzador compuesto                                           |   ✅   |
+| Contenido por restaurante: esquema, plantilla, validador y HTML por restaurante                              |   ✅   |
+| Prueba E2E de aislamiento entre restaurantes (Playwright)                                                    |   ✅   |
+| Guía previa al AR, ayuda flotante, estados de error, modo presentación, feedback, analítica y avisos legales |   ✅   |
+| Interfaz en `src/presentation/` con la regla de capas activa                                                 |   ✅   |
+| Página gobernada por los datos del restaurante (nombre, logo, tema, contacto, portada)                       |   ✅   |
+| Diseño mobile-first, accesibilidad (axe) y Lighthouse CI en verde                                            |   ✅   |
+| Demo genérica `ascua-demo-abcd` con fotos (modelos 3D aprobados pendientes, P-601)                           |   🚧   |
+| Página de QR imprimible                                                                                      |   ✅   |
+| Cabeceras de seguridad y CSP                                                                                 |   ✅   |
+| Presupuesto de rendimiento (Lighthouse CI) y licencias                                                       |   ✅   |
+| Cloudflare Pages, protección de `main` y CodeQL                                                              |   ✅   |
+| Prueba de usabilidad con 5 personas no técnicas (P-406)                                                      |   🗓️   |
 
 ## Equipo
 
@@ -130,17 +131,17 @@ flowchart TB
     I -- "lee /data/slug/..." --> CDN
 ```
 
-**Flujo de una visita:** el comensal abre `/r/<restaurante>/` → el `compositionRoot` arma los adaptadores → el caso de uso `getRestaurant` pide los datos al puerto `RestaurantRepository` → su implementación (`StaticJsonRestaurantRepository`) valida el nombre, hace `fetch` del `restaurant.json` de **ese** restaurante y lo valida con esquema → la interfaz pinta la carta con los datos de ese restaurante → al tocar "Ver en mi mesa" debe intervenir el caso de uso `launchDishAr`, que pregunta al detector de dispositivo qué modo corresponde y delega en el lanzador adecuado (Quick Look, Scene Viewer o visor de respaldo). _Hoy ese último tramo todavía lo resuelve el código antiguo de `src/lib/`; conectar los adaptadores ya probados es parte de la migración de la interfaz._
+**Flujo de una visita:** el comensal abre `/r/<restaurante>/` → el `compositionRoot` arma los adaptadores → el caso de uso `getRestaurant` pide los datos al puerto `RestaurantRepository` → su implementación (`StaticJsonRestaurantRepository`) valida el slug, hace `fetch` del `restaurant.json` de **ese** restaurante y lo valida con esquema → la interfaz pinta la carta con los datos de ese restaurante → al tocar "Ver en mi mesa", el caso de uso `launchDishAr` pregunta al detector de dispositivo qué modo corresponde (dominio puro, `selectArLaunchMode`) y delega en el lanzador adecuado (Quick Look, Scene Viewer o el visor de respaldo en pantalla). El recorrido completo, archivo por archivo, está en [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md).
 
-| Capa                             | Responsabilidad                                                                                                                                        | Puede importar          |
-| :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- |
-| `src/domain/`                    | Entidades, esquemas y reglas puras: qué es un plato, un restaurante, cómo se decide el modo de AR                                                      | Nada                    |
-| `src/application/`               | Casos de uso y puertos (interfaces)                                                                                                                    | `domain`                |
-| `src/infrastructure/`            | Adaptadores concretos: Quick Look, Scene Viewer, lectura de contenido, detección de navegador, almacenamiento local                                    | `application`, `domain` |
-| `src/presentation/` _(objetivo)_ | Pantallas, componentes, tema visual y textos. **Hoy esta capa vive en `src/components`, `src/hooks`, `src/i18n` y `src/lib`**, en proceso de migración | `application`, `domain` |
-| `src/app/`                       | Punto de arranque: `compositionRoot` (instancia los adaptadores), contexto de dependencias, estado global (jotai) y router                             | Todas                   |
+| Capa                  | Responsabilidad                                                                                                     | Puede importar          |
+| :-------------------- | :------------------------------------------------------------------------------------------------------------------ | :---------------------- |
+| `src/domain/`         | Entidades, esquemas y reglas puras: qué es un plato, un restaurante, cómo se decide el modo de AR                   | Nada                    |
+| `src/application/`    | Casos de uso y puertos (interfaces)                                                                                 | `domain`                |
+| `src/infrastructure/` | Adaptadores concretos: Quick Look, Scene Viewer, lectura de contenido, detección de navegador, almacenamiento local | `application`, `domain` |
+| `src/presentation/`   | Pantallas, componentes, tema visual, i18n y hooks de React                                                          | `application`, `domain` |
+| `src/app/`            | Punto de arranque: `compositionRoot` (instancia los adaptadores), contexto de dependencias y router                 | Todas                   |
 
-La regla de dependencias se verifica con `npm run arch:check` (dependency-cruiser) dentro de `npm run verify`. Hoy comprueba `domain`, `application`, `infrastructure` y `app`; la regla de `presentation` empezará a vigilar la interfaz cuando se mueva a `src/presentation/`. Los principios **SOLID** se aplican de forma concreta (por ejemplo, cada modo de AR es un adaptador intercambiable con el mismo contrato); están explicados en la sección 3.3 del [plan](./docs/PLAN-IMPLEMENTACION.md).
+La regla de dependencias se verifica con `npm run arch:check` (dependency-cruiser) dentro de `npm run verify`, sobre las 4 capas, sin excepciones. Los principios **SOLID** se aplican de forma concreta (por ejemplo, cada modo de AR es un adaptador intercambiable con el mismo contrato); están explicados en la sección 3.3 del [plan](./docs/PLAN-IMPLEMENTACION.md). Cada capa tiene su propio `README.md` corto con el detalle de qué vive ahí.
 
 ### Estructura del repositorio
 
@@ -149,29 +150,33 @@ ASCUA-DEMO-PAGINA/
 ├── CLAUDE.md · AGENTS.md          # Reglas para agentes de IA (Claude Code, Antigravity)
 ├── docs/
 │   ├── PLAN-IMPLEMENTACION.md     # Plan con tareas, criterios y riesgos
+│   ├── PLAN-REVISION.md           # Plan de la revisión integral post-Antigravity
 │   ├── ESTADO.md                  # Dónde vamos y siguiente paso exacto
+│   ├── ARQUITECTURA.md            # Recorrido de "Ver en mi mesa", archivo por archivo
 │   ├── DESIGN.md · PRODUCT.md · PROYECTO.md
 │   ├── adr/                       # Decisiones de arquitectura
-│   ├── runbooks/                  # nuevo-restaurante.md
+│   ├── runbooks/                  # nuevo-restaurante.md, qa-dispositivos.md, configuración manual
 │   ├── seguridad/                 # Reportes de auditoría
+│   ├── revision/                  # Inventario y matriz de cumplimiento de la revisión
 │   └── sesiones/                  # Bitácora de cada sesión de trabajo
 ├── content/
 │   ├── restaurants/_plantilla/    # Restaurante de ejemplo para copiar (nunca se publica)
-│   └── raw/                       # Material original (fotos de platos, video)
+│   └── raw/                       # Material original (fotos de platos, video) — ya no usado en la UI
 ├── scripts/
 │   ├── validate-content.ts        # Valida el contenido de cada restaurante
 │   └── build-content.ts           # Copia el contenido y genera el HTML de cada restaurante
 ├── src/
 │   ├── domain/                    # Reglas puras y esquemas zod
-│   ├── application/               # Puertos y casos de uso
-│   ├── infrastructure/            # Adaptadores: AR, contenido, navegador, almacenamiento, analítica
-│   ├── app/                       # compositionRoot, contexto de dependencias, store, router
-│   ├── components/ hooks/ i18n/ lib/   # Interfaz (en migración a src/presentation/)
+│   ├── application/                # Puertos y casos de uso
+│   ├── infrastructure/             # Adaptadores: AR, contenido, navegador, almacenamiento, analítica
+│   ├── presentation/                # Pantallas, componentes, i18n, tema, hooks
+│   ├── app/                         # compositionRoot, router
+│   ├── shared/                      # Constantes compartidas sin capa propia
 │   └── main.tsx
 ├── tests/
-│   ├── unit/                      # Vitest: domain, application, infrastructure
-│   ├── e2e/                       # Playwright: aislamiento entre restaurantes
-│   └── fixtures/restaurants/      # Dos restaurantes de prueba
+│   ├── unit/                      # Vitest: domain, application, infrastructure, presentation, scripts
+│   ├── e2e/                       # Playwright: aislamiento, recorrido del comensal, accesibilidad
+│   └── fixtures/restaurants/      # Restaurantes de prueba
 ├── .github/workflows/             # ci.yml y deploy.yml
 ├── .dependency-cruiser.cjs        # Reglas de capas
 └── graphify-out/                  # Grafo de conocimiento del repo
@@ -179,18 +184,18 @@ ASCUA-DEMO-PAGINA/
 
 ## Stack tecnológico
 
-| Capa       | Tecnología                                                                                             |
-| :--------- | :----------------------------------------------------------------------------------------------------- |
-| Interfaz   | React 19, Tailwind CSS 3.4, lucide-react, React Router 7                                               |
-| Estado     | jotai                                                                                                  |
-| Build      | Vite 8                                                                                                 |
-| Lenguaje   | TypeScript 5.6 estricto (los componentes de la interfaz se migran de `.jsx` a `.tsx` de forma gradual) |
-| Validación | zod 4 (esquemas de dominio y de contenido)                                                             |
-| 3D y AR    | `@google/model-viewer`, AR Quick Look (iOS), Google Scene Viewer (Android)                             |
-| Animación  | GSAP                                                                                                   |
-| Pruebas    | Vitest, Testing Library, Playwright                                                                    |
-| Calidad    | oxlint, Prettier, dependency-cruiser, husky + lint-staged, gitleaks                                    |
-| Hosting    | Cloudflare Pages, desplegado solo desde GitHub Actions _(pendiente de configurar)_                     |
+| Capa       | Tecnología                                                                              |
+| :--------- | :-------------------------------------------------------------------------------------- |
+| Interfaz   | React 19, Tailwind CSS 3.4, lucide-react, React Router 7                                |
+| Estado     | jotai                                                                                   |
+| Build      | Vite 8                                                                                  |
+| Lenguaje   | TypeScript 5.6 estricto, 100 % de `src/` ya migrado a `.tsx`/`.ts`                      |
+| Validación | zod 4 (esquemas de dominio y de contenido)                                              |
+| 3D y AR    | `@google/model-viewer`, AR Quick Look (iOS), Google Scene Viewer (Android)              |
+| Animación  | GSAP                                                                                    |
+| Pruebas    | Vitest, Testing Library, Playwright, `@axe-core/playwright`, Lighthouse CI              |
+| Calidad    | oxlint, Prettier, dependency-cruiser, husky + lint-staged, gitleaks, CodeQL, Dependabot |
+| Hosting    | Cloudflare Pages (Direct Upload), desplegado solo desde GitHub Actions                  |
 
 ## Modelo de contenido
 
@@ -281,12 +286,12 @@ Después, `build-content.ts` copia el contenido a `dist/data/<slug>/` y genera `
 - **Aislamiento entre restaurantes por diseño:** cada archivo debe vivir dentro de su carpeta; una prueba E2E confirma que, al abrir un restaurante, **nunca se pide nada de otro**; los slugs llevan un sufijo aleatorio, no existe una página que liste los restaurantes y se pide a los buscadores no indexarlos.
 - **Validación de toda entrada externa:** el JSON de cada restaurante y los parámetros de la URL se validan con esquema antes de usarse; un slug inválido se rechaza sin hacer ninguna petición.
 - **Sin cookies, sin cuentas y sin datos personales del comensal** (Ley 1581 de 2012). La analítica planeada es agregada y sin cookies.
-- **Cabeceras de seguridad y CSP propias**, sin dominios de terceros, en `public/_headers` _(pendiente: todavía no existe el archivo)_.
+- **Cabeceras de seguridad y CSP propias**, sin dominios de terceros salvo Cloudflare Analytics (documentado en el ADR 0004), en `public/_headers`: CSP, HSTS, `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy` coherente con cámara/AR.
 - **Contenido con autorización:** un restaurante solo se publica con su autorización registrada, y cada demo tiene fecha de vencimiento, tras la cual se borra su carta y sus fotos.
-- **Modelos 3D honestos:** se muestran como imagen referencial y a escala fija y real.
-- **Calidad de la cadena de suministro:** escaneo de secretos con gitleaks (configurado en `.gitleaks.toml`), `npm audit` que bloquea vulnerabilidades altas de producción, Dependabot y CodeQL _(este último se activa a mano en GitHub)_. Se prohíben las dependencias con licencia GPL/AGPL.
-- **Despliegue controlado:** producción solo se publica desde GitHub Actions con todos los controles en verde.
-- Auditoría de referencia: [`docs/seguridad/2026-08-28-cyber-neo.md`](./docs/seguridad/2026-08-28-cyber-neo.md).
+- **Modelos 3D honestos:** se muestran a escala fija y real, con el disclaimer de la Ley 1480 de 2011 visible.
+- **Calidad de la cadena de suministro:** escaneo de secretos con gitleaks (configurado en `.gitleaks.toml`, corre en cada push), `npm audit` que bloquea vulnerabilidades altas de producción, Dependabot (npm + GitHub Actions, semanal) y CodeQL (semanal, activo desde X-008). Se prohíben las dependencias con licencia GPL/AGPL.
+- **Despliegue controlado:** producción solo se publica desde GitHub Actions con todos los controles en verde; rama `main` protegida contra push directo y force-push.
+- Auditorías de referencia: [`docs/seguridad/2026-08-28-cyber-neo.md`](./docs/seguridad/2026-08-28-cyber-neo.md) y [`docs/seguridad/2026-10-09.md`](./docs/seguridad/2026-10-09.md) (la más reciente).
 
 > ⚠️ El aislamiento por diseño **no es control de acceso**: es suficiente porque lo publicado es una carta pública. El aislamiento fuerte, con autenticación y políticas por fila, vive en la plataforma [ARFOODS](https://github.com/Juanjo1414/ASCUA-DEMO-AR).
 
@@ -349,9 +354,9 @@ dev/Juanjo ──► pruebas locales (pre-push) ──► CI en GitHub ──►
 - Si la prueba de humo en producción falla, se revierte al despliegue anterior desde _Cloudflare Pages → Deployments → Rollback_.
 - Cada rama tiene una URL de _preview_ para revisar antes de fusionar.
 
-> ℹ️ Los flujos `ci.yml` y `deploy.yml` ya están en el repositorio; falta crear el proyecto en Cloudflare Pages y cargar estos secretos.
+> ✅ El proyecto `ascua-demo-pagina` ya existe en Cloudflare Pages (Direct Upload) y los secretos están cargados. Preview de `dev/Juanjo`: `https://ascua-demo-pagina.pages.dev`. Producción se activa con el primer merge a `main`.
 
-Secretos y variables de GitHub Actions necesarios: `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` (secretos); `CF_PAGES_PROJECT` y `PROD_URL` (variables).
+Secretos y variables de GitHub Actions: `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` (secretos); `CF_PAGES_PROJECT` y `PROD_URL` (variables) — ver [`docs/runbooks/configuracion-github-cloudflare.md`](./docs/runbooks/configuracion-github-cloudflare.md) si necesitas recrearlos.
 
 ## Variables de entorno
 
@@ -372,28 +377,28 @@ Las variables de GitHub Actions para el despliegue se describen en la sección a
 | QR imprimible            | http://localhost:5173/r/`<slug>`/qr | `https://<proyecto>.pages.dev/r/<slug>/qr` |
 | Datos del restaurante    | `/data/<slug>/restaurant.json`      | `/data/<slug>/restaurant.json`             |
 
-_Estado de las rutas:_ `/r/<slug>` ✅ (carta del restaurante) · `/r/<slug>/qr` 🗓️ (hoy es un marcador de posición) · `/` 🗓️ (hoy es un marcador de posición, la página genérica de Ascua) · `/expirado` ✅ · cualquier otra ruta muestra un 404.
+_Estado de las rutas:_ `/r/<slug>` ✅ (carta del restaurante) · `/r/<slug>/qr` ✅ (QR imprimible real, con logo y color del restaurante) · `/` ✅ (a propósito minimalista: nunca lista restaurantes, por regla de seguridad) · `/expirado` ✅ · cualquier otra ruta muestra un 404.
 
 ## Pruebas automatizadas y CI/CD
 
-Estado verificado el 6 de octubre de 2026:
+Estado verificado el 9 de octubre de 2026:
 
-| Nivel         | Herramienta                                     | Qué cubre                                                                                                                                                                               | Estado |
-| :------------ | :---------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
-| Unitarias     | Vitest                                          | **101 pruebas** en 19 archivos: dominio (restaurante, plato, precio, tema, AR), casos de uso con dobles en memoria, adaptadores de AR, detector de navegador y repositorio de contenido |   ✅   |
-| Cobertura     | `@vitest/coverage-v8`                           | 97 % de líneas y 91 % de ramas en conjunto; `src/domain` al 97 %                                                                                                                        |   ✅   |
-| Contrato      | Vitest                                          | Los tres lanzadores de AR cumplen el mismo contrato                                                                                                                                     |   ✅   |
-| Arquitectura  | dependency-cruiser                              | Regla de dependencias entre capas (65 módulos, 0 violaciones)                                                                                                                           |   ✅   |
-| Contenido     | `validate-content.ts`                           | Esquema, aislamiento, pesos, aprobación (ver tabla de reglas arriba)                                                                                                                    |   ✅   |
-| E2E           | Playwright (Desktop Chrome, Pixel 5, iPhone 12) | **Aislamiento entre restaurantes**: al abrir uno nunca se pide nada de otro; 9 pruebas en verde según [`docs/ESTADO.md`](./docs/ESTADO.md)                                              |   ✅   |
-| Componentes   | Testing Library                                 | Tarjeta de plato, botón "Ver en mi mesa", aviso de navegador embebido                                                                                                                   |   🗓️   |
-| Responsive    | Playwright (360, 390, 430, 768, 1280 px)        | Sin scroll horizontal; botones táctiles ≥ 48 px                                                                                                                                         |   🗓️   |
-| Accesibilidad | axe                                             | Violaciones serias o críticas                                                                                                                                                           |   🗓️   |
-| Rendimiento   | Lighthouse CI (móvil)                           | Performance ≥ 85, Accesibilidad ≥ 95                                                                                                                                                    |   🗓️   |
-| Usabilidad    | Prueba con 5 personas no técnicas               | "Encuentra un plato y míralo sobre tu mesa" sin ayuda (meta: ≥ 4 de 5)                                                                                                                  |   🗓️   |
-| Manual        | Checklist en iPhone y Android reales            | AR con datos móviles, dentro y fuera de Instagram/WhatsApp, antes de cada versión que toque AR                                                                                          |   🗓️   |
+| Nivel         | Herramienta                                                              | Qué cubre                                                                                                                                                  | Estado |
+| :------------ | :----------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: |
+| Unitarias     | Vitest                                                                   | **145 pruebas**: dominio, casos de uso, adaptadores de AR, detector de navegador, repositorio/validador/build de contenido, componentes de `presentation/` |   ✅   |
+| Cobertura     | `@vitest/coverage-v8`                                                    | 97 % de líneas y 92 % de ramas en `domain/`+`application/`; `presentation/` todavía no entra en el umbral obligatorio                                      |   ✅   |
+| Contrato      | Vitest                                                                   | Los tres lanzadores de AR, con los atributos exactos verificados (`rel="ar"`, `resizable=false`, `S.browser_fallback_url`...)                              |   ✅   |
+| Arquitectura  | dependency-cruiser                                                       | Regla de dependencias entre capas (67 módulos, 0 violaciones)                                                                                              |   ✅   |
+| Contenido     | `validate-content.ts`                                                    | Esquema, aislamiento, pesos, aprobación (ver tabla de reglas arriba)                                                                                       |   ✅   |
+| E2E           | Playwright (Desktop Chrome, Pixel 5, iPhone 12)                          | Aislamiento entre restaurantes, recorrido completo del comensal y accesibilidad con axe — 25 pruebas en verde                                              |   ✅   |
+| Componentes   | Testing Library                                                          | `Menu`, `ArGuideModal`, `ArDishModal`, `DishCard`, `Hero`, `Contacto`, `Reserva`, `Pie`, `FranjaReserva`                                                   |   ✅   |
+| Accesibilidad | `@axe-core/playwright`                                                   | 0 violaciones serias/críticas (WCAG 2.1 A/AA) en la carta y en la guía de AR                                                                               |   ✅   |
+| Rendimiento   | Lighthouse CI (móvil, mediana de 5 corridas)                             | Performance, accesibilidad, buenas prácticas y SEO ≥ 0.9                                                                                                   |   ✅   |
+| Responsive    | Playwright (360, 390, 430, 768, 1280 px)                                 | Revisión visual con capturas en los 5 anchos                                                                                                               |   🗓️   |
+| Usabilidad    | Prueba con 5 personas no técnicas                                        | "Encuentra un plato y míralo sobre tu mesa" sin ayuda (meta: ≥ 4 de 5)                                                                                     |   🗓️   |
+| Manual        | [`docs/runbooks/qa-dispositivos.md`](./docs/runbooks/qa-dispositivos.md) | Checklist listo; falta correrlo en dispositivos reales antes de aprobar el primer modelo 3D (P-601)                                                        |   🗓️   |
 
-Además, en cada cambio corren el escaneo de secretos, `npm audit`, Dependabot y, cuando se active, CodeQL.
+Además, en cada push corren el escaneo de secretos (gitleaks), `npm audit` y CodeQL (semanal); Dependabot revisa dependencias de npm y de GitHub Actions cada semana.
 
 ```powershell
 npm run verify         # lo mismo que corre el CI
@@ -403,14 +408,14 @@ npm run test:e2e       # extremo a extremo
 
 ## Restaurantes de ejemplo
 
-| Carpeta                                                  | Descripción                                                                                                                 | Estado |
-| :------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :----: |
-| `content/restaurants/_plantilla/`                        | Restaurante completo y válido para copiar al crear uno nuevo (La Brasa, con una hamburguesa y su modelo). Nunca se publica. |   ✅   |
-| `tests/fixtures/restaurants/rest-a-1234` y `rest-b-5678` | Dos restaurantes de prueba que usan las pruebas de aislamiento                                                              |   ✅   |
-| `ascua-demo/`                                            | Demo genérica de Ascua (4 a 5 platos con volumen y acabado mate, todos aprobados) para el primer contacto                   |   🗓️   |
-| `<restaurante>-xxxx/`                                    | Demos personalizadas, con autorización del restaurante y fecha de vencimiento                                               |   🗓️   |
+| Carpeta                                                                | Descripción                                                                                                                         | Estado |
+| :--------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- | :----: |
+| `content/restaurants/_plantilla/`                                      | Restaurante completo y válido para copiar al crear uno nuevo (La Brasa, con una hamburguesa sin modelo aprobado). Nunca se publica. |   ✅   |
+| `tests/fixtures/restaurants/rest-a-1234`, `rest-b-5678`, `rest-c-9012` | Restaurantes de prueba para las pruebas de aislamiento y del recorrido de AR                                                        |   ✅   |
+| `content/restaurants/ascua-demo-abcd/`                                 | Demo genérica de Ascua para el primer contacto con un restaurante                                                                   |   ⚠️   |
+| `<restaurante>-xxxx/`                                                  | Demos personalizadas, con autorización del restaurante y fecha de vencimiento                                                       |   🗓️   |
 
-La interfaz actual todavía conserva la landing original ("Ascua – cocina de autor a la brasa", con sus textos y animaciones), alimentada con la carta del restaurante cargado. El material original de esa versión (fotos de 8 platos y un video) está en `content/raw/`.
+`ascua-demo-abcd` ya tiene la estructura completa de contenido, pero todavía sin modelos 3D reales aprobados: generarlos es la tarea P-601, pendiente de que Juan provea sus credenciales del pipeline del repo `MENU AR - AR` (ver `docs/runbooks/configuracion-pipeline-3d.md`). El material original de la primera versión de la landing (fotos de 8 platos y un video, ya no usado en la interfaz actual) quedó archivado en `content/raw/`.
 
 ## Ejemplo de un restaurante
 
@@ -477,11 +482,12 @@ Las reservas son un enlace de WhatsApp con el mensaje ya escrito (`https://wa.me
 - **No hay reservas en línea ni pagos:** las reservas se resuelven por WhatsApp.
 - La analítica es agregada y sin cookies: sirve para ver visitas por restaurante, no por persona.
 
-**Deuda técnica de la reestructuración en curso**
+**Deuda técnica conocida**
 
-- **La medida real por plato** se aplica solo como escala fija en el visor; falta que cada modelo salga normalizado a su medida del Estudio 3D y que el validador la compare con el `manifest.json`.
-- **Faltan** la página genérica de inicio (hoy es un marcador de posición), las cabeceras de seguridad (`public/_headers`) y la demo genérica con modelos 3D aprobados.
-- **Pasos manuales pendientes en GitHub y Cloudflare:** proteger la rama `main`, activar CodeQL y crear el proyecto de Cloudflare Pages con sus secretos.
+- **La medida real por plato** se aplica solo como escala fija en el visor; falta que cada modelo salga normalizado a su medida real desde el Estudio 3D y que el validador la compare con el `manifest.json` (±5 %) — bloqueado hasta que exista al menos un modelo real (R-8/P-601).
+- **Demo genérica sin modelos 3D aprobados todavía:** `ascua-demo-abcd` ya existe con su estructura completa; generar y aprobar sus modelos es P-601, en curso.
+- **CSP con `'unsafe-inline' 'unsafe-eval'`** en `script-src`, por cómo cargan hoy Vite/React y `@google/model-viewer` (documentado en el ADR 0004, no resuelto).
+- **Chunk de `@google/model-viewer` > 1 MB** sin dividir con `import()` dinámico (Lighthouse ya pasa 0.9 en rendimiento sin esto, pero sigue siendo una mejora pendiente).
 
 ## Mejoras futuras
 
@@ -494,18 +500,24 @@ Las reservas son un enlace de WhatsApp con el mensaje ya escrito (`https://wa.me
 
 ## Documentación
 
-| Documento                                                                    | Para qué sirve                                                 |
-| :--------------------------------------------------------------------------- | :------------------------------------------------------------- |
-| [`docs/PLAN-IMPLEMENTACION.md`](./docs/PLAN-IMPLEMENTACION.md)               | Plan completo, con tareas, criterios de aceptación y riesgos   |
-| [`docs/ESTADO.md`](./docs/ESTADO.md)                                         | Dónde vamos y cuál es el siguiente paso exacto                 |
-| [`docs/adr/`](./docs/adr)                                                    | Decisiones de arquitectura y por qué se tomaron                |
-| [`CLAUDE.md`](./CLAUDE.md) / [`AGENTS.md`](./AGENTS.md)                      | Reglas del repositorio para agentes de IA                      |
-| [`docs/runbooks/nuevo-restaurante.md`](./docs/runbooks/nuevo-restaurante.md) | Paso a paso para agregar un restaurante                        |
-| [`docs/DESIGN.md`](./docs/DESIGN.md)                                         | Dirección visual _(se reemplazará por el diseño nuevo)_        |
-| [`docs/PRODUCT.md`](./docs/PRODUCT.md)                                       | Posicionamiento del producto                                   |
-| [`docs/PROYECTO.md`](./docs/PROYECTO.md)                                     | Descripción de la versión original de la landing _(histórico)_ |
-| [`docs/seguridad/`](./docs/seguridad)                                        | Reportes de auditoría de seguridad                             |
-| [`docs/sesiones/`](./docs/sesiones)                                          | Bitácora de cada sesión de trabajo                             |
+| Documento                                                                                                | Para qué sirve                                                 |
+| :------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------- |
+| [`docs/PLAN-IMPLEMENTACION.md`](./docs/PLAN-IMPLEMENTACION.md)                                           | Plan completo, con tareas, criterios de aceptación y riesgos   |
+| [`docs/PLAN-REVISION.md`](./docs/PLAN-REVISION.md)                                                       | Plan de la revisión integral post-Antigravity (R-0 a R-10)     |
+| [`docs/ESTADO.md`](./docs/ESTADO.md)                                                                     | Dónde vamos y cuál es el siguiente paso exacto                 |
+| [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md)                                                         | Recorrido completo, archivo por archivo, de "Ver en mi mesa"   |
+| [`docs/revision/inventario.md`](./docs/revision/inventario.md)                                           | Matriz de cumplimiento contra el plan original                 |
+| [`docs/adr/`](./docs/adr)                                                                                | Decisiones de arquitectura y por qué se tomaron                |
+| [`CLAUDE.md`](./CLAUDE.md) / [`AGENTS.md`](./AGENTS.md)                                                  | Reglas del repositorio para agentes de IA                      |
+| [`docs/runbooks/nuevo-restaurante.md`](./docs/runbooks/nuevo-restaurante.md)                             | Paso a paso para agregar un restaurante                        |
+| [`docs/runbooks/qa-dispositivos.md`](./docs/runbooks/qa-dispositivos.md)                                 | Checklist de QA manual en iPhone/Android antes de aprobar AR   |
+| [`docs/runbooks/configuracion-github-cloudflare.md`](./docs/runbooks/configuracion-github-cloudflare.md) | Protección de `main`, Cloudflare Pages, CodeQL                 |
+| [`docs/runbooks/configuracion-pipeline-3d.md`](./docs/runbooks/configuracion-pipeline-3d.md)             | De dónde sale el `HF_TOKEN` para generar modelos 3D            |
+| [`docs/DESIGN.md`](./docs/DESIGN.md)                                                                     | Dirección visual                                               |
+| [`docs/PRODUCT.md`](./docs/PRODUCT.md)                                                                   | Posicionamiento del producto                                   |
+| [`docs/PROYECTO.md`](./docs/PROYECTO.md)                                                                 | Descripción de la versión original de la landing _(histórico)_ |
+| [`docs/seguridad/`](./docs/seguridad)                                                                    | Reportes de auditoría de seguridad                             |
+| [`docs/sesiones/`](./docs/sesiones)                                                                      | Bitácora de cada sesión de trabajo                             |
 
 ## Contribuir
 
