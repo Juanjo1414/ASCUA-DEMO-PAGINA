@@ -354,7 +354,7 @@ dev/Juanjo ──► pruebas locales (pre-push) ──► CI en GitHub ──►
 - Si la prueba de humo en producción falla, se revierte al despliegue anterior desde _Cloudflare Pages → Deployments → Rollback_.
 - Cada rama tiene una URL de _preview_ para revisar antes de fusionar.
 
-> ✅ El proyecto `ascua-demo-pagina` ya existe en Cloudflare Pages (Direct Upload) y los secretos están cargados. Preview de `dev/Juanjo`: `https://ascua-demo-pagina.pages.dev`. Producción se activa con el primer merge a `main`.
+> ✅ El proyecto `ascua-demo-pagina` ya existe en Cloudflare Pages (Direct Upload) y los secretos están cargados. **Preview de `dev/Juanjo`: `https://dev-juanjo.ascua-demo-pagina.pages.dev`** (no la URL sin rama — esa es el dominio de producción, solo se actualiza con un merge a `main`; hasta el primer merge, sigue sirviendo el primer deploy que se hizo).
 
 Secretos y variables de GitHub Actions: `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` (secretos); `CF_PAGES_PROJECT` y `PROD_URL` (variables) — ver [`docs/runbooks/configuracion-github-cloudflare.md`](./docs/runbooks/configuracion-github-cloudflare.md) si necesitas recrearlos.
 

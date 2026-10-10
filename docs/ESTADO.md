@@ -177,8 +177,19 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   como parte de la auditoría formal y no solo en un mensaje de commit.
 - **X-007 confirmado funcionando de punta a punta:** el push que fijó las
   acciones de X-008 disparó el primer `deploy`/`smoke` real contra
-  Cloudflare Pages (`https://ascua-demo-pagina.pages.dev`) — ambos en
-  verde.
+  Cloudflare Pages — ambos en verde.
+- **Corrección importante (2026-10-10):** Juan reportó que el sitio
+  "se veía igual" después de los fixes de R-5. La causa: `deploy`/`smoke`
+  del commit `ab695dc` (los fixes de diseño) habían quedado en `skipped`
+  porque Lighthouse falló en ese mismo run, y `deploy` depende de que
+  todo el job `ci` pase. El primer deploy que sí corrió completo fue
+  recién con `b3c9d53` (el ajuste del umbral de Lighthouse). Además,
+  `https://ascua-demo-pagina.pages.dev` (sin rama) es el dominio de
+  **producción** de Cloudflare — solo se actualiza con un merge a `main`,
+  que todavía no ha pasado. La URL real y vigente de `dev/Juanjo` es
+  **`https://dev-juanjo.ascua-demo-pagina.pages.dev`** (confirmado con
+  `gh api` sobre el log del job `deploy`, y verificado que el bundle JS
+  servido ahí sí incluye el fix de `heroImagen`). Corregido en el README.
 
 ### R-9 (alta de restaurantes, probado de punta a punta) — 2026-10-09 noche
 

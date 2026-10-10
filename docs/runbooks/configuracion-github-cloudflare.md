@@ -123,6 +123,21 @@ CI primero.
 3. Si `deploy` falla, lee el error — casi siempre es un nombre de secret/
    variable mal escrito o el token sin el permiso correcto.
 
+> ⚠️ **Muy importante — qué URL revisar en el celular:**
+> `https://<CF_PAGES_PROJECT>.pages.dev` (sin nada más al final) es el
+> **dominio de producción**: solo se actualiza cuando algo se despliega
+> desde `main`. Mientras trabajes en `dev/Juanjo` sin haber hecho merge a
+> `main` todavía, esa URL sigue mostrando el primer deploy que se hizo
+> alguna vez — **no** el último push.
+>
+> Para ver los cambios de `dev/Juanjo` en tiempo real, usa la URL con el
+> nombre de la rama: **`https://dev-juanjo.<CF_PAGES_PROJECT>.pages.dev`**
+> (Cloudflare la arma automáticamente a partir del nombre de la rama,
+> cambiando `/` por `-`). Esa es la que debes abrir en tu celular para
+> probar el preview de cada push. Puedes confirmar la URL exacta del
+> último deploy en el log del job `deploy` de GitHub Actions: busca la
+> línea `Deployment alias URL:`.
+
 ### Paso 6 (opcional, recomendado) — Dominio propio
 
 Si más adelante quieres un dominio propio (ej. `demo.ascua.co`) en vez del
