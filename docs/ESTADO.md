@@ -291,9 +291,26 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   para leer los comentarios — esto sí cambia la arquitectura ("sin
   backend") y necesita una decisión explícita de Juan, documentada en un
   ADR, antes de empezar.
-- **Siguiente paso exacto:** antes de escribir código, preguntarle a Juan
-  qué tan simple lo quiere (opción a, rápida y gratis, vs. opción b, con
-  panel propio) y documentar la decisión en `docs/adr/000N-feedback-comensal.md`.
+- **Decisión de Juan (2026-10-11): opción (a).** Un **Google Form por
+  restaurante**, con su Google Sheet de respuestas compartido en modo
+  "puede ver" con el correo del dueño del restaurante — así el dueño lo ve
+  sin necesitar login especial, y Juan ve todos los Sheets porque es quien
+  los crea. Sin backend nuevo, sin dependencias nuevas, coherente con que
+  el sitio siga siendo estático mientras el producto no esté validado
+  comercialmente (Decisión D8 de `PLAN-IMPLEMENTACION.md`).
+- **Siguiente paso exacto (no iniciado todavía):**
+  1. Agregar un campo opcional `feedbackFormUrl` a `restaurant.json`
+     (esquema zod en `domain/restaurant.ts` + `_plantilla`).
+  2. `Pie.tsx` usa ese enlace si el restaurante lo trae; si no, cae al
+     `FEEDBACK_URL` genérico actual (para no romper restaurantes ya
+     dados de alta sin este campo).
+  3. Documentar en `docs/runbooks/nuevo-restaurante.md` el paso de crear
+     el Google Form y compartir el Sheet con el dueño durante el alta.
+  4. Prueba de regresión para el fallback cuando `feedbackFormUrl` no
+     está presente.
+  5. Un ADR corto (`docs/adr/0005-feedback-por-restaurante.md`) dejando
+     la decisión y la alternativa descartada (panel propio con backend)
+     por si se revisita cuando el producto esté validado (fase 8).
 
 ### R-5-bis — Rediseño con `frontend-design` y `ui-ux-pro-max`
 
@@ -331,11 +348,20 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 
 ## Siguiente paso exacto
 
-1. Decidir con Juan el enfoque del feedback visible (P-701-bis) antes de
-   tocar código.
+> **Pausa acordada con Juan (2026-10-11):** la sesión actual está cerca de
+> su límite semanal. Ninguna de las tareas de abajo se empieza todavía —
+> se retoman cuando Juan lo indique en una próxima sesión, en el orden que
+> él prefiera (el sugerido abajo, o por complejidad). Recordatorio
+> explícito de Juan para esa próxima sesión: commitear, verificar que todo
+> funcione (`npm run verify` + E2E) y hacer push después de cada cambio
+> significativo o fase terminada — no acumular trabajo sin probar ni
+> subir, y cuidar no extender demasiado la sesión semanal.
+
+1. **Feedback (P-701-bis) — decisión ya tomada, falta implementar:**
+   Google Form por restaurante. Pasos exactos arriba, en la sección
+   P-701-bis. Es la tarea más chica de las nuevas — buen punto de partida.
 2. Rediseño con las skills de frontend de la landing genérica `/` (R-5-ter)
-   y de toda la página del restaurante — no solo la carta (R-5-bis),
-   cuando Juan confirme el alcance y el orden.
+   y de toda la página del restaurante — no solo la carta (R-5-bis).
 3. C-31 de R-5 (capturas en 5 anchos, revisión sistemática).
 4. R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
    Docker listos; falta escribir el script de orquestación).
