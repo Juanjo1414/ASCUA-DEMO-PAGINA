@@ -301,14 +301,19 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   4 bugs puntuales ya corregidos (hero roto, logo, barra fija, Lighthouse).
   Pide usar las skills `frontend-design:frontend-design` y `ui-ux-pro-max`
   para que la página se vea profesional y bien diseñada.
+- **Alcance aclarado por Juan (2026-10-11): no es solo la sección de la
+  carta (`Menu.tsx`) — es toda la página del restaurante**
+  (`RestaurantPage.tsx` completa: `Nav`, `Hero`, `Menu`, `Reserva`,
+  `Contacto`, `Pie`, y los componentes de AR que se ven desde ahí), usando
+  las mismas skills.
 - Esto es un trabajo de diseño más grande que un fix puntual: toca pasar
   por dirección visual (tipografía, paleta, espaciado, jerarquía) antes de
   tocar componentes, y mostrarle a Juan capturas antes/después de cambios
   grandes (regla de CLAUDE.md: "cambios visuales grandes: proponer a Juan
   con capturas antes/después").
 - **Siguiente paso exacto:** correr `frontend-design:frontend-design`
-  y/o `ui-ux-pro-max` sobre la carta del restaurante cuando Juan confirme
-  por dónde empezar (toda la carta de una vez, o sección por sección).
+  y/o `ui-ux-pro-max` sobre toda `RestaurantPage.tsx` cuando Juan confirme
+  por dónde empezar (toda la página de una vez, o sección por sección).
 
 ### R-5-ter — Rediseñar la landing genérica (`/`)
 
@@ -329,8 +334,8 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 1. Decidir con Juan el enfoque del feedback visible (P-701-bis) antes de
    tocar código.
 2. Rediseño con las skills de frontend de la landing genérica `/` (R-5-ter)
-   y de la carta del restaurante (R-5-bis), cuando Juan confirme el
-   alcance y el orden.
+   y de toda la página del restaurante — no solo la carta (R-5-bis),
+   cuando Juan confirme el alcance y el orden.
 3. C-31 de R-5 (capturas en 5 anchos, revisión sistemática).
 4. R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
    Docker listos; falta escribir el script de orquestación).
