@@ -266,13 +266,75 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   360/390/430/768/1280 con el navegador, para revisión sistemática más
   allá de los bugs ya encontrados).
 
+## Tareas grandes nuevas (pedidas por Juan, 2026-10-10)
+
+### P-701-bis — Feedback del comensal visible para el restaurante y para Juan
+
+- **Estado actual (confirmado en código):** ya existe un enlace "Danos tu
+  opinión" en el pie de página (`Pie.tsx` → `FEEDBACK_URL` en
+  `src/shared/config.ts`) que abre un **único** formulario externo de
+  Tally compartido por todos los restaurantes, con el slug como parámetro
+  de query. Los comensales sí pueden opinar, pero **nadie del restaurante
+  tiene acceso** a esas respuestas — solo llegan a la cuenta de Tally de
+  Juan, sin separar por restaurante de forma visible.
+- **Lo que pide Juan:** que el comensal deje su opinión sobre la demo, y
+  que tanto el **administrador de cada restaurante** como **Juan** puedan
+  verla.
+- **Por qué no es trivial:** el proyecto es un sitio **100% estático, sin
+  backend ni base de datos** (decisión D1 de `PLAN-IMPLEMENTACION.md`,
+  "costo $0"). Guardar y mostrar feedback filtrado por restaurante implica
+  elegir entre: (a) seguir con un formulario externo pero uno **por
+  restaurante** con su propia vista de resultados compartible (Tally,
+  Google Forms + Sheet), sin tocar la arquitectura; o (b) agregar
+  almacenamiento real (Cloudflare D1/KV + un endpoint con Workers, o un
+  servicio de terceros tipo Supabase) con una pantalla de panel simple
+  para leer los comentarios — esto sí cambia la arquitectura ("sin
+  backend") y necesita una decisión explícita de Juan, documentada en un
+  ADR, antes de empezar.
+- **Siguiente paso exacto:** antes de escribir código, preguntarle a Juan
+  qué tan simple lo quiere (opción a, rápida y gratis, vs. opción b, con
+  panel propio) y documentar la decisión en `docs/adr/000N-feedback-comensal.md`.
+
+### R-5-bis — Rediseño con `frontend-design` y `ui-ux-pro-max`
+
+- Juan no está conforme con cómo se ve el diseño actual, más allá de los
+  4 bugs puntuales ya corregidos (hero roto, logo, barra fija, Lighthouse).
+  Pide usar las skills `frontend-design:frontend-design` y `ui-ux-pro-max`
+  para que la página se vea profesional y bien diseñada.
+- Esto es un trabajo de diseño más grande que un fix puntual: toca pasar
+  por dirección visual (tipografía, paleta, espaciado, jerarquía) antes de
+  tocar componentes, y mostrarle a Juan capturas antes/después de cambios
+  grandes (regla de CLAUDE.md: "cambios visuales grandes: proponer a Juan
+  con capturas antes/después").
+- **Siguiente paso exacto:** correr `frontend-design:frontend-design`
+  y/o `ui-ux-pro-max` sobre la carta del restaurante cuando Juan confirme
+  por dónde empezar (toda la carta de una vez, o sección por sección).
+
+### R-5-ter — Rediseñar la landing genérica (`/`)
+
+- Hoy `LandingPage.tsx` es un placeholder de puro texto ("Ascua Menu AR /
+  Selecciona un restaurante.") — intencional en cuanto a que **nunca**
+  debe listar restaurantes (regla de seguridad de CLAUDE.md), pero sin
+  ningún diseño: no representa la marca Ascua/PITS ni sirve como landing
+  de presentación del producto.
+- Juan pide rediseñarla con las mismas skills (`frontend-design:frontend-design`,
+  `ui-ux-pro-max`), manteniendo la regla de no listar restaurantes.
+- **Siguiente paso exacto:** incluir `/` en el mismo rediseño de R-5-bis
+  (incluso podría ir primero, ya que no depende de datos de ningún
+  restaurante — es la pieza más simple y aislada para validar la nueva
+  dirección visual antes de aplicarla a toda la carta).
+
 ## Siguiente paso exacto
 
-1. Pendientes reales de `docs/PLAN-REVISION.md`: terminar C-31 de R-5
-   (capturas en 5 anchos) y R-8 (P-601: generar modelos 3D reales — Juan
-   ya tiene `HF_TOKEN` y Docker listos; queda escribir el script de
-   orquestación cuando le toque su turno).
-2. Preparar (sin abrir) el PR `dev/Juanjo → main` con la plantilla del
+1. Decidir con Juan el enfoque del feedback visible (P-701-bis) antes de
+   tocar código.
+2. Rediseño con las skills de frontend de la landing genérica `/` (R-5-ter)
+   y de la carta del restaurante (R-5-bis), cuando Juan confirme el
+   alcance y el orden.
+3. C-31 de R-5 (capturas en 5 anchos, revisión sistemática).
+4. R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
+   Docker listos; falta escribir el script de orquestación).
+5. Preparar (sin abrir) el PR `dev/Juanjo → main` con la plantilla del
    repositorio y `engineering:deploy-checklist`, cuando Juan lo pida.
 
 ## Línea base verificada (2026-10-09)
