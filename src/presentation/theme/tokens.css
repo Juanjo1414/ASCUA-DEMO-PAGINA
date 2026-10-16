@@ -49,10 +49,15 @@
     --text-heading-lg: 48px;
     --leading-heading-lg: 1;
     --tracking-heading-lg: -2.26px;
-    --text-display: 70px;
+    /* Los titulares grandes son fluidos: 70-80 px en escritorio (DESIGN.md),
+       pero se encogen en celular para que nombres largos no se desborden. */
+    --text-display-sm: clamp(1.875rem, 7vw, 2.75rem);
+    --leading-display-sm: 1.1;
+    --tracking-display-sm: 0px;
+    --text-display: clamp(2.75rem, 11vw, 4.375rem);
     --leading-display: 0.85;
     --tracking-display: 0px;
-    --text-display-lg: 80px;
+    --text-display-lg: clamp(3.25rem, 13vw, 5rem);
     --leading-display-lg: 1;
     --tracking-display-lg: 0px;
 

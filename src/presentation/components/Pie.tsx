@@ -59,7 +59,7 @@ export default function Pie() {
             </div>
           )}
 
-          <div className="flex items-start justify-between gap-6 md:col-span-3 md:flex-col md:items-end">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 md:col-span-3 md:flex-col md:items-end">
             <a
               href={feedbackLink}
               target="_blank"
@@ -86,7 +86,7 @@ export default function Pie() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 md:flex-row font-body text-body-sm opacity-80">
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center font-body text-body-sm opacity-80">
           <p>
             © {anio} {restaurant?.nombre || 'Ascua'}. {t.footer.rights}{' '}
             {t.footer.privacy}

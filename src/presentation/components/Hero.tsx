@@ -36,13 +36,13 @@ export default function Hero() {
       )}
 
       {/* Text Overlay Panel */}
-      <div className="absolute bottom-0 left-0 sm:left-10 sm:bottom-10 w-full sm:w-auto sm:max-w-xl bg-cream-canvas/95 p-[40px]">
+      <div className="absolute bottom-0 left-0 sm:left-10 sm:bottom-10 w-full sm:w-auto sm:max-w-xl bg-cream-canvas/95 p-6 sm:p-10">
         {eslogan && <p className="eyebrow">{eslogan}</p>}
-        <h1 className="font-display text-display-lg leading-display-lg text-forest-shadow mb-[24px]">
+        <h1 className="font-display text-display-lg text-forest-shadow mb-[24px]">
           {restaurant.nombre}
         </h1>
 
-        <a href="#menu" className="btn-primary w-full sm:w-auto">
+        <a href="#menu" className="btn-primary w-[calc(100%-4rem)] sm:w-auto">
           {t.hero?.cta || 'Ver Menú'}
           <ArrowRight size={16} strokeWidth={2} />
         </a>

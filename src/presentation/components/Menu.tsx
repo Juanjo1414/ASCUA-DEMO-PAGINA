@@ -125,7 +125,7 @@ export default function Menu() {
       <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
         <div data-sube className="max-w-2xl mb-20">
           <p className="eyebrow">{t.menuSection.title}</p>
-          <h2 className="font-display text-display leading-display text-forest-shadow mb-6">
+          <h2 className="font-display text-display text-forest-shadow mb-6">
             {t.menuSection.heading}
           </h2>
           <p className="text-body text-forest-shadow max-w-[48ch]">

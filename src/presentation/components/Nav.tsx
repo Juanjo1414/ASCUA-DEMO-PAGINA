@@ -117,7 +117,7 @@ export default function Nav() {
       {abierto && (
         <div
           id="menu-movil"
-          className="fixed inset-x-0 bottom-0 top-[72px] flex flex-col justify-between overflow-y-auto bg-sage-mist-band px-5 pb-8 pt-6 lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-[72px] flex flex-col justify-between overflow-y-auto bg-sage-mist px-5 pb-8 pt-6 lg:hidden"
         >
           <ul className="flex flex-col">
             {enlaces.map((enlace) => (

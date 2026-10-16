@@ -1,3 +1,24 @@
+/**
+ * Color de Tailwind respaldado por una variable CSS que SÍ admite
+ * transparencia (`bg-cream-canvas/95`, `border-deep-forest/10`…).
+ *
+ * Con `'var(--color-x)'` a secas, Tailwind no sabe cómo mezclar un alfa y
+ * descarta en silencio toda clase con `/NN` (se perdían el panel del hero,
+ * el oscurecido detrás de los modales y las líneas finas). `color-mix`
+ * resuelve el alfa en el navegador sin tener que duplicar los tokens en RGB.
+ */
+const token =
+  (nombre) =>
+  ({ opacityValue }) => {
+    // Para los colores lisos (`bg-cream-canvas`) Tailwind pasa `undefined` o la
+    // variable `var(--tw-bg-opacity)`: no es un número, así que se deja el
+    // color tal cual. Solo se mezcla cuando la clase trae un alfa real (/95).
+    const alfa = Number(opacityValue)
+    return opacityValue === undefined || Number.isNaN(alfa) || alfa === 1
+      ? `var(--color-${nombre})`
+      : `color-mix(in srgb, var(--color-${nombre}) ${alfa * 100}%, transparent)`
+  }
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
@@ -10,15 +31,15 @@ export default {
         'body-regular': ['var(--font-body-regular)'],
       },
       colors: {
-        'deep-forest': 'var(--color-deep-forest)',
-        'lime-glow': 'var(--color-lime-glow)',
-        'sage-mist': 'var(--color-sage-mist)',
-        'warm-sand': 'var(--color-warm-sand)',
-        'cream-canvas': 'var(--color-cream-canvas)',
-        'forest-shadow': 'var(--color-forest-shadow)',
-        'pure-ink': 'var(--color-pure-ink)',
-        'warm-gray': 'var(--color-warm-gray)',
-        'slate-gray': 'var(--color-slate-gray)',
+        'deep-forest': token('deep-forest'),
+        'lime-glow': token('lime-glow'),
+        'sage-mist': token('sage-mist'),
+        'warm-sand': token('warm-sand'),
+        'cream-canvas': token('cream-canvas'),
+        'forest-shadow': token('forest-shadow'),
+        'pure-ink': token('pure-ink'),
+        'warm-gray': token('warm-gray'),
+        'slate-gray': token('slate-gray'),
       },
       fontSize: {
         caption: [
@@ -77,6 +98,13 @@ export default {
             letterSpacing: 'var(--tracking-heading-lg)',
           },
         ],
+        'display-sm': [
+          'var(--text-display-sm)',
+          {
+            lineHeight: 'var(--leading-display-sm)',
+            letterSpacing: 'var(--tracking-display-sm)',
+          },
+        ],
         display: [
           'var(--text-display)',
           {
@@ -91,16 +119,6 @@ export default {
             letterSpacing: 'var(--tracking-display-lg)',
           },
         ],
-      },
-      spacing: {
-        4: 'var(--spacing-4)',
-        8: 'var(--spacing-8)',
-        12: 'var(--spacing-12)',
-        16: 'var(--spacing-16)',
-        20: 'var(--spacing-20)',
-        24: 'var(--spacing-24)',
-        40: 'var(--spacing-40)',
-        60: 'var(--spacing-60)',
       },
       borderRadius: {
         cards: 'var(--radius-cards)',
