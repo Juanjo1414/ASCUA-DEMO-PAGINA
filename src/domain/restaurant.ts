@@ -102,6 +102,21 @@ export const restaurantSchema = z.object({
   eslogan: localizedStringSchema.optional(),
   /** Ruta a la imagen principal de la portada (opcional, usa la foto del primer plato si falta) */
   heroImagen: assetPathSchema.optional(),
+  /**
+   * Enlace al Google Form propio de este restaurante, donde los comensales
+   * dejan su opinión sobre la demo. Debe ser https (se abre desde un
+   * `<a href>`, así que se rechaza `javascript:` y similares). Si falta, el
+   * pie usa el formulario genérico de PITS. El dueño del restaurante ve las
+   * respuestas porque Juan comparte con él el Sheet asociado al Form.
+   */
+  feedbackFormUrl: z
+    .string()
+    .url('URL del formulario de feedback inválida')
+    .refine(
+      (url) => url.startsWith('https://'),
+      'El formulario de feedback debe usar https'
+    )
+    .optional(),
   /** Configuración cromática y visual */
   tema: themeSchema,
   /** Canales de reserva y ubicación */

@@ -97,6 +97,16 @@ export async function validateContent(contentDir: string = CONTENT_DIR) {
         hasWarnings = true
       }
 
+      // Sin Google Form propio, las opiniones caen al formulario genérico de
+      // PITS y el dueño del restaurante no puede verlas. Es solo un aviso:
+      // el restaurante sigue siendo publicable.
+      if (!isTemplate && !data.feedbackFormUrl) {
+        console.warn(
+          `⚠️ [${folderName}] Sin feedbackFormUrl: las opiniones irán al formulario genérico y el restaurante no las verá.`
+        )
+        hasWarnings = true
+      }
+
       // Validar paths de assets y evitar path traversal
       const checkAsset = async (assetPath: string, _expectedExt: string) => {
         if (path.isAbsolute(assetPath) || assetPath.includes('..')) {

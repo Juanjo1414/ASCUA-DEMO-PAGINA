@@ -75,6 +75,18 @@ describe('Dominio: Restaurant', () => {
       expect(RESTAURANT_SLUG_REGEX.test('../la-brasa-7k2p')).toBe(false) // path traversal
     })
 
+    it('acepta un feedbackFormUrl https y rechaza http o esquemas peligrosos', () => {
+      const conUrl = (feedbackFormUrl: string) =>
+        restaurantSchema.safeParse({ ...restauranteValido, feedbackFormUrl })
+
+      expect(conUrl('https://forms.gle/abc123').success).toBe(true)
+      expect(conUrl('http://forms.gle/abc123').success).toBe(false)
+      expect(conUrl('javascript:alert(1)').success).toBe(false)
+      expect(conUrl('no-es-una-url').success).toBe(false)
+      // Es opcional: un restaurante sin formulario propio sigue siendo válido.
+      expect(restaurantSchema.safeParse(restauranteValido).success).toBe(true)
+    })
+
     it('rechaza slugs que no cumplan el formato en el esquema', () => {
       expect(() =>
         restaurantSchema.parse({

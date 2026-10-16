@@ -137,3 +137,31 @@ describe('validateContent — aprobación trazable de modelos (R-3-H11)', () => 
     await fs.rm(root, { recursive: true, force: true })
   })
 })
+
+describe('validateContent — formulario de feedback propio (P-701-bis)', () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('avisa (sin fallar) si un restaurante real no tiene feedbackFormUrl', async () => {
+    const root = await crearRestauranteDePrueba({
+      aprobadoPor: 'Juan',
+      fechaAprobacion: '2026-10-12',
+    })
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => {
+      throw new Error('process.exit no debía llamarse')
+    })
+
+    await expect(validateContent(root)).resolves.toBeUndefined()
+
+    expect(exitSpy).not.toHaveBeenCalled()
+    expect(
+      warnSpy.mock.calls.some((call) =>
+        String(call[0]).includes('Sin feedbackFormUrl')
+      )
+    ).toBe(true)
+
+    await fs.rm(root, { recursive: true, force: true })
+  })
+})

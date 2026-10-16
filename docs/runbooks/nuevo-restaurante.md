@@ -22,6 +22,22 @@ Edita el archivo `restaurant.json` en la nueva carpeta con los datos del restaur
 - **`heroImagen`** (Opcional): Ruta de la imagen principal de la portada (`assets/hero.webp`). La plantilla no trae una por defecto a propósito: si no la agregas, la portada usa automáticamente la foto del primer plato destacado. Solo agrega esta clave si vas a subir una foto de portada distinta.
 - **`tema`**: Configura el color primario, el par tipográfico (`sans` o `editorial`) y logo.
 - **`contacto`**: Ingresa el WhatsApp real al cual llegarán los pedidos.
+- **`feedbackFormUrl`** (recomendado): enlace `https` al Google Form propio del restaurante, donde los comensales dejan su opinión (ver 2.1). Si falta, las opiniones van al formulario genérico de PITS y el dueño no las ve; `npm run content:validate` te avisa con una advertencia.
+
+### 2.1 Crear el Google Form de feedback del restaurante
+
+1. En tu cuenta de Google, crea un Form nuevo con el nombre del restaurante
+   (ej. "Opinión sobre la demo — El Cielo"). Preguntas sugeridas: qué tal
+   te pareció ver el plato en 3D/AR (escala 1-5), si fue fácil de usar
+   (sí/no), y un comentario abierto. Que no pida correo ni datos personales
+   (Ley 1581).
+2. En la pestaña **Respuestas**, toca **Vincular con Hojas de cálculo** para
+   crear el Sheet de respuestas.
+3. Abre ese Sheet → **Compartir** → agrega el correo del dueño del
+   restaurante como **Lector**. Así ve las opiniones en tiempo real sin
+   poder editarlas; tú las ves todas porque eres el propietario.
+4. En el Form, **Enviar** → ícono de enlace → copia la URL corta
+   (`https://forms.gle/...`) y pégala en `feedbackFormUrl`.
 
 ### 3. Configurar Categorías y Platos
 

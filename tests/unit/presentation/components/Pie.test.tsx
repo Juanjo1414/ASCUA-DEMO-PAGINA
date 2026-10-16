@@ -34,6 +34,34 @@ describe('Pie', () => {
     ).not.toBeInTheDocument()
   })
 
+  it('el enlace de opinión usa el Google Form propio del restaurante si lo tiene', () => {
+    const restaurant = {
+      ...baseRestaurantFixture,
+      slug: 'prueba-abcd',
+      feedbackFormUrl: 'https://forms.gle/formulario-propio',
+    } as Restaurant
+
+    renderWithProviders(<Pie />, { restaurant })
+
+    expect(
+      screen.getByRole('link', { name: /danos tu opinión/i })
+    ).toHaveAttribute('href', 'https://forms.gle/formulario-propio')
+  })
+
+  it('sin formulario propio, cae al formulario genérico con el slug', () => {
+    const restaurant = {
+      ...baseRestaurantFixture,
+      slug: 'prueba-abcd',
+    } as Restaurant
+
+    renderWithProviders(<Pie />, { restaurant })
+
+    const href = screen
+      .getByRole('link', { name: /danos tu opinión/i })
+      .getAttribute('href')
+    expect(href).toContain('slug=prueba-abcd')
+  })
+
   it('no muestra el bloque de contacto si el restaurante no tiene dirección ni horario', () => {
     renderWithProviders(<Pie />, { restaurant: baseRestaurantFixture })
 

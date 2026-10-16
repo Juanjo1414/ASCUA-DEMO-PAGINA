@@ -2,9 +2,10 @@
  * Pie de página de la carta: dirección, horario, enlace de feedback y
  * crédito discreto de Ascua/PITS (regla de marca de CLAUDE.md).
  *
- * Lo usa `RestaurantPage`. El enlace de feedback lleva el slug del
- * restaurante como parámetro para que las respuestas de Tally queden
- * asociadas a quién lo probó.
+ * Lo usa `RestaurantPage`. El enlace de feedback es el Google Form propio
+ * del restaurante (`feedbackFormUrl`), cuyas respuestas ve su dueño; si el
+ * restaurante todavía no tiene uno, cae al formulario genérico de PITS con
+ * el slug como parámetro para saber quién lo probó.
  */
 import { ArrowUp } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
@@ -17,9 +18,9 @@ export default function Pie() {
   const restaurant = useAtomValue(restaurantAtom)
   const anio = new Date().getFullYear()
 
-  const feedbackLink = restaurant
-    ? `${FEEDBACK_URL}?slug=${restaurant.slug}`
-    : FEEDBACK_URL
+  const feedbackLink =
+    restaurant?.feedbackFormUrl ??
+    (restaurant ? `${FEEDBACK_URL}?slug=${restaurant.slug}` : FEEDBACK_URL)
 
   return (
     <footer className="bg-deep-forest text-cream-canvas py-16">

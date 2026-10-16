@@ -298,19 +298,19 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   los crea. Sin backend nuevo, sin dependencias nuevas, coherente con que
   el sitio siga siendo estático mientras el producto no esté validado
   comercialmente (Decisión D8 de `PLAN-IMPLEMENTACION.md`).
-- **Siguiente paso exacto (no iniciado todavía):**
-  1. Agregar un campo opcional `feedbackFormUrl` a `restaurant.json`
-     (esquema zod en `domain/restaurant.ts` + `_plantilla`).
-  2. `Pie.tsx` usa ese enlace si el restaurante lo trae; si no, cae al
-     `FEEDBACK_URL` genérico actual (para no romper restaurantes ya
-     dados de alta sin este campo).
-  3. Documentar en `docs/runbooks/nuevo-restaurante.md` el paso de crear
-     el Google Form y compartir el Sheet con el dueño durante el alta.
-  4. Prueba de regresión para el fallback cuando `feedbackFormUrl` no
-     está presente.
-  5. Un ADR corto (`docs/adr/0005-feedback-por-restaurante.md`) dejando
-     la decisión y la alternativa descartada (panel propio con backend)
-     por si se revisita cuando el producto esté validado (fase 8).
+- **Implementado (2026-10-16):** campo opcional `feedbackFormUrl` en el
+  esquema (solo `https`, con prueba de que rechaza `http`/`javascript:`);
+  `Pie.tsx` usa el Form propio del restaurante y, si falta, cae al
+  formulario genérico con el slug (con pruebas de ambos casos);
+  `validate-content.ts` avisa (sin fallar) si un restaurante real no lo
+  tiene; runbook `nuevo-restaurante.md` con el paso 2.1 (crear Form,
+  vincular Sheet, compartir con el dueño); ADR `0005-feedback-por-restaurante.md`.
+  De paso, la cobertura de vitest dejó de intentar parsear los `README.md`
+  de `src/` (ruido en el log).
+- **Pendiente de Juan:** crear el Google Form de `ascua-demo-abcd` y pegar
+  su URL en `content/restaurants/ascua-demo-abcd/restaurant.json`
+  (`feedbackFormUrl`). Hasta entonces el validador muestra la advertencia
+  y el pie usa el formulario genérico.
 
 ### R-5-bis — Rediseño con `frontend-design` y `ui-ux-pro-max`
 
@@ -357,9 +357,8 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 > significativo o fase terminada — no acumular trabajo sin probar ni
 > subir, y cuidar no extender demasiado la sesión semanal.
 
-1. **Feedback (P-701-bis) — decisión ya tomada, falta implementar:**
-   Google Form por restaurante. Pasos exactos arriba, en la sección
-   P-701-bis. Es la tarea más chica de las nuevas — buen punto de partida.
+1. ~~Feedback (P-701-bis)~~ — **hecho** (falta solo que Juan cree el
+   Google Form de la demo y pegue su URL).
 2. Rediseño con las skills de frontend de la landing genérica `/` (R-5-ter)
    y de toda la página del restaurante — no solo la carta (R-5-bis).
 3. C-31 de R-5 (capturas en 5 anchos, revisión sistemática).
