@@ -2,7 +2,7 @@
 
 > Documento vivo. Se actualiza al **cerrar cada sesión**, con Claude Code o Antigravity.
 
-**Última actualización:** 2026-10-09 (noche) · **Por:** Claude Code (revisión) · **Rama:** `dev/Juanjo`
+**Última actualización:** 2026-10-17 · **Por:** Claude Code (revisión) · **Rama:** `dev/Juanjo`
 
 ## Fase actual
 
@@ -347,31 +347,53 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 - **Avance:** `LandingPage.tsx` (`/`) fue escrita por otra sesión el 2026-10-16
   (con prueba propia) y solo se reestilizó con los tokens nuevos, sin cambiar
   su contenido. Revisar con Juan si se rediseña a fondo.
-- **Siguiente paso exacto (original):** incluir `/` en el mismo rediseño de R-5-bis
-  (incluso podría ir primero, ya que no depende de datos de ningún
-  restaurante — es la pieza más simple y aislada para validar la nueva
-  dirección visual antes de aplicarla a toda la carta).
+- **Hecho (2026-10-17):** `LandingPage.tsx` quedó reescrita (hero con foto
+  de plato, un único botón "Ver la demo" hacia `DEMO_RESTAURANT_SLUG`, 3
+  pasos de uso), reestilizada por la sesión de impeccable con los tokens
+  "La mesa" (`mantel`, `porcelana`). Sigue sin listar restaurantes
+  (verificado con prueba). Subida en el mismo commit que R-5-bis.
+
+### Subida a GitHub de ambos rediseños — 2026-10-17
+
+- Se encontró que el rediseño de la sesión de `/impeccable` (R-5-bis,
+  "La mesa") y mi landing (R-5-ter) **nunca se habían subido**: Juan creía
+  que impeccable ya había hecho commit, pero su propia bitácora
+  (`docs/sesiones/2026-10-16-rediseno-la-mesa.md`) decía lo contrario y
+  `dev/Juanjo` en GitHub seguía en el commit anterior. Todo vivía solo en
+  el disco local (48 archivos modificados + 16 nuevos), sin respaldo.
+- Verificado antes de subir: `npm run verify` (167 pruebas), `test:e2e`
+  (28/30, 2 omitidas a propósito) y Lighthouse CI, todo en verde. Se
+  confirmó que mis 3 arreglos de raíz de la sesión anterior (transparencia,
+  espaciado, titulares fluidos) seguían intactos debajo del rediseño nuevo
+  — no hubo ningún choque entre ambos trabajos.
+- De paso se corrigió un falso positivo del validador: avisaba "asset
+  duplicado" cuando un restaurante reutiliza su propia foto (la demo usa
+  la misma foto como `heroImagen` y como foto de un plato); ahora solo
+  avisa si el archivo se repite entre restaurantes **distintos**.
+- 3 commits subidos a `dev/Juanjo`, CI verde de punta a punta incluido
+  `deploy`/`smoke`. Confirmado con el bundle real servido en
+  `https://dev-juanjo.ascua-demo-pagina.pages.dev` (trae `.bg-mantel` y
+  `.bg-porcelana`, las clases de la paleta nueva).
 
 ## Siguiente paso exacto
 
-> **Pausa acordada con Juan (2026-10-11):** la sesión actual está cerca de
-> su límite semanal. Ninguna de las tareas de abajo se empieza todavía —
-> se retoman cuando Juan lo indique en una próxima sesión, en el orden que
-> él prefiera (el sugerido abajo, o por complejidad). Recordatorio
-> explícito de Juan para esa próxima sesión: commitear, verificar que todo
-> funcione (`npm run verify` + E2E) y hacer push después de cada cambio
-> significativo o fase terminada — no acumular trabajo sin probar ni
-> subir, y cuidar no extender demasiado la sesión semanal.
-
 1. ~~Feedback (P-701-bis)~~ — **hecho** (falta solo que Juan cree el
-   Google Form de la demo y pegue su URL).
-2. Rediseño con las skills de frontend de la landing genérica `/` (R-5-ter)
-   y de toda la página del restaurante — no solo la carta (R-5-bis).
-3. C-31 de R-5 (capturas en 5 anchos, revisión sistemática).
+   Google Form de la demo y pegue su URL en `feedbackFormUrl`).
+2. ~~Rediseño R-5-bis/R-5-ter~~ — **hecho y en el preview de `dev/Juanjo`**.
+   Falta: **QA de Juan en iPhone y Android** sobre
+   `https://dev-juanjo.ascua-demo-pagina.pages.dev`
+   (`docs/runbooks/qa-dispositivos.md`).
+3. Limpieza menor pendiente: `Menu.tsx` y `Contacto.tsx` pasan de ~200
+   líneas (213); revisar si vale la pena dividirlos.
 4. R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
-   Docker listos; falta escribir el script de orquestación).
+   Docker listos; falta escribir el script de orquestación). **Hoy la
+   demo no tiene ningún plato con modelo aprobado**, así que el botón
+   "Ver en mi mesa" no aparece en ningún plato — es el hueco más visible
+   que queda antes de mostrarle la demo a un restaurante real.
 5. Preparar (sin abrir) el PR `dev/Juanjo → main` con la plantilla del
-   repositorio y `engineering:deploy-checklist`, cuando Juan lo pida.
+   repositorio y `engineering:deploy-checklist`, cuando Juan lo pida. Al
+   mergear, `https://ascua-demo-pagina.pages.dev` (producción, sin rama)
+   por fin mostrará el rediseño.
 
 ## Línea base verificada (2026-10-09)
 
