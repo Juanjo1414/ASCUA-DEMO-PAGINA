@@ -16,10 +16,15 @@ import { useAtomValue } from 'jotai'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import type { Lang } from '@/presentation/i18n/LanguageContext'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
+import { hasArDishes } from '@/domain/dish'
 
 const ENLACES = [
   { id: 'menu', clave: 'menu' },
-  { id: 'como-funciona', clave: 'comoFunciona' },
+  // Solo se muestra si el restaurante tiene algún plato con modelo AR
+  // aprobado: la sección que señala (ComoFunciona.tsx) usa esta misma
+  // condición para ocultarse, y sin ella el enlace apunta a un ancla que
+  // no existe en la página (no hace nada al tocarlo).
+  { id: 'como-funciona', clave: 'comoFunciona', requiereAr: true },
   { id: 'contacto', clave: 'contacto' },
 ] as const
 
@@ -39,6 +44,11 @@ export default function Nav() {
     restaurant && restaurant.idiomas.length > 1
       ? (restaurant.idiomas.find((l) => l !== lang) ?? null)
       : null
+
+  const tieneAr = restaurant ? hasArDishes(restaurant.categorias) : false
+  const enlaces = ENLACES.filter(
+    (enlace) => !('requiereAr' in enlace) || tieneAr
+  )
 
   return (
     <header
@@ -73,7 +83,7 @@ export default function Nav() {
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
-          {ENLACES.map(({ id, clave }) => (
+          {enlaces.map(({ id, clave }) => (
             <li key={id}>
               <a
                 href={`#${id}`}
