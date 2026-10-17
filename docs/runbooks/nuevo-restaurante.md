@@ -1,0 +1,76 @@
+# Runbook: Creación de un Nuevo Restaurante para la Demo
+
+Este runbook detalla los pasos para agregar un nuevo restaurante a la demo comercial de ASCUA.
+La demo utiliza una base de datos estática aislada por carpetas para asegurar portabilidad y costo cero.
+
+## Pasos
+
+### 1. Preparar la carpeta del restaurante
+
+1. Copia la carpeta `content/restaurants/_plantilla/` y renómbrala al slug del nuevo restaurante.
+2. El slug **debe** cumplir la regla: `nombre-kebab-case-XXXX` (donde XXXX son 4 caracteres alfanuméricos aleatorios).
+   - Ejemplo: `el-cielo-9m1x`
+
+### 2. Configurar `restaurant.json`
+
+Edita el archivo `restaurant.json` en la nueva carpeta con los datos del restaurante:
+
+- **`slug`**: Debe coincidir exactamente con el nombre de la carpeta.
+- **`expira`**: Configura la fecha límite de la demo comercial (ej: un mes después de la creación).
+- **`autorizacion`**: Rellena con la fecha y el medio por el cual el dueño autorizó la demo. **(Legalmente obligatorio)**.
+- **`eslogan`** (Opcional): Frase breve o eslogan del restaurante (puede ser localizado).
+- **`heroImagen`** (Opcional): Ruta de la imagen principal de la portada (`assets/hero.webp`). La plantilla no trae una por defecto a propósito: si no la agregas, la portada usa automáticamente la foto del primer plato destacado. Solo agrega esta clave si vas a subir una foto de portada distinta.
+- **`tema`**: Configura el color primario, el par tipográfico (`sans` o `editorial`) y logo.
+- **`contacto`**: Ingresa el WhatsApp real al cual llegarán los pedidos.
+- **`destacado: true`** (en cada plato que quieras en "Lo más pedido", máximo 5): la landing los muestra primero, grandes. Si ninguno lo lleva, esa sección no aparece.
+- **`feedbackFormUrl`** (recomendado): enlace `https` al Google Form propio del restaurante, donde los comensales dejan su opinión (ver 2.1). Si falta, las opiniones van al formulario genérico de PITS y el dueño no las ve; `npm run content:validate` te avisa con una advertencia.
+
+### 2.1 Crear el Google Form de feedback del restaurante
+
+1. En tu cuenta de Google, crea un Form nuevo con el nombre del restaurante
+   (ej. "Opinión sobre la demo — El Cielo"). Preguntas sugeridas: qué tal
+   te pareció ver el plato en 3D/AR (escala 1-5), si fue fácil de usar
+   (sí/no), y un comentario abierto. Que no pida correo ni datos personales
+   (Ley 1581).
+2. En la pestaña **Respuestas**, toca **Vincular con Hojas de cálculo** para
+   crear el Sheet de respuestas.
+3. Abre ese Sheet → **Compartir** → agrega el correo del dueño del
+   restaurante como **Lector**. Así ve las opiniones en tiempo real sin
+   poder editarlas; tú las ves todas porque eres el propietario.
+4. En el Form, **Enviar** → ícono de enlace → copia la URL corta
+   (`https://forms.gle/...`) y pégala en `feedbackFormUrl`.
+
+### 3. Configurar Categorías y Platos
+
+- Define las categorías y platos de la carta.
+- **Importante**: Para cada plato, la foto debe estar en formato WebP optimizado (≤ 300 KB).
+- Si el plato tiene modelo AR:
+  - Genera el modelo siguiendo el [Runbook de Producción de Modelos 3D](../AR/produccion-modelo-3d.md).
+  - Copia los archivos `.glb`, `.usdz` y `poster.webp` a la subcarpeta `assets/platos/<id-plato>/`.
+  - Asegúrate de indicar `escalaRealCm` (el tamaño real del plato físico para que AR lo muestre exacto).
+  - Deja `aprobado: false` (así viene en la plantilla) y **no copies ningún valor de ejemplo** de `aprobadoPor`/`fechaAprobacion`. El validador exige que el plato con modelo esté aprobado para publicarse; eso es correcto — significa que todavía falta el paso siguiente.
+- Si el plato **no** tiene modelo AR todavía, simplemente no incluyas la clave `modelo` en ese plato (se muestra solo con su foto, sin botón de AR). No es un error dejarlo así mientras se genera el modelo.
+
+### 3.1 Aprobar un modelo 3D (obligatorio antes de publicarlo)
+
+- `aprobado: true`, `aprobadoPor` y `fechaAprobacion` **solo los marca Juan**,
+  nunca un agente de IA, y solo después de correr el checklist completo de
+  [`qa-dispositivos.md`](./qa-dispositivos.md) en su iPhone y su Android
+  reales. Copiar estos valores de otro plato o de la plantilla sin haber
+  hecho ese QA es publicar algo que nunca se probó — exactamente lo que la
+  regla busca evitar.
+
+### 4. Validar Localmente
+
+Ejecuta el pipeline de validación para asegurarte de que el contenido cumple todas las reglas (esquema, aislamiento, pesos, etc.):
+
+```bash
+npm run verify
+```
+
+### 5. Pruebas y Despliegue
+
+- Inicia el servidor de desarrollo (`npm run dev`) y navega a `/r/<slug>`.
+- Prueba el botón de WhatsApp y los modelos AR.
+- Una vez verificado, crea un commit (ej: `feat(P-XXX): agregar restaurante el-cielo-9m1x`) y súbelo a la rama `dev/Juanjo`.
+- Cuando pases el CI y se apruebe el PR, el restaurante estará disponible automáticamente en producción.

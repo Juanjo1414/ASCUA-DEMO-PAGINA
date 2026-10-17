@@ -9,7 +9,9 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-e2e
 dist-ssr
+coverage
 *.local
 
 # Editor directories and files
@@ -43,3 +45,20 @@ service-account*.json
 
 # Capturas de revisión de diseño (pesadas, sólo locales)
 .impeccable/review/
+
+# graphify cache y archivos temporales de ejecución
+graphify-out/cache/
+graphify-out/.graphify_*
+graphify-out/graph.html
+graphify-out/20*/
+
+# Resultados de pruebas E2E (se generan solos)
+playwright-report/
+test-results/
+
+# Resultados locales de `npx lhci autorun` (se generan solos)
+.lighthouseci/
+
+# Capturas de referencia que Juan carga para que el agente las vea;
+# nunca se suben al repositorio (puede contener fotos de su celular).
+diseño-ejemplo/

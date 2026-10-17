@@ -1,0 +1,8 @@
+# Configuración de Gitleaks para ASCUA-DEMO-PAGINA
+# Permite reportes de seguridad históricos y documentación estática
+
+[allowlist]
+description = "Documentación de auditorías de seguridad históricas y ejemplos educativos"
+paths = [
+  '''docs/seguridad/.*''',
+]

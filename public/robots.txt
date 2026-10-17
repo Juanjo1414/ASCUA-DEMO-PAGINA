@@ -1,0 +1,18 @@
+# ASCUA-DEMO-PAGINA es una demo privada para validar el producto con
+# restaurantes reales, no un sitio para indexar en buscadores. Pero ese
+# "no indexar" se hace por página, no bloqueando todo el sitio aquí:
+# cada página de restaurante ya trae
+# <meta name="robots" content="noindex, nofollow"> (scripts/build-content.ts),
+# y la portada (/) no lista restaurantes (regla de CLAUDE.md), así que no
+# hay nada que proteger con un robots.txt restrictivo.
+#
+# `Disallow: /` se probó primero, pero Lighthouse penaliza el SEO por "no
+# rastreable" (el audit `is-crawlable`) cuando robots.txt bloquea todo el
+# sitio — aunque la intención sea correcta, ese audit no sabe que cada
+# página ya se protege con su propio <meta noindex>. Por eso este archivo
+# es permisivo: solo existe para que la ruta /robots.txt devuelva texto
+# plano válido en vez de que la regla catch-all de Cloudflare Pages
+# (dist/_redirects) le sirviera el index.html de la SPA, que es el bug
+# original que esto corrige (hallazgo R-1-H7 de docs/revision/inventario.md).
+User-agent: *
+Allow: /

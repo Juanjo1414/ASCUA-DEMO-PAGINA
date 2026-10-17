@@ -1,8 +1,8 @@
 /*
-  Descarga las tipografías (Bodoni Moda y Archivo, variables) y las deja
+  Descarga las tipografías (Bricolage Grotesque, Hanken Grotesk y Young Serif) y las deja
   alojadas en el propio sitio: public/fonts/*.woff2 y src/fuentes.css.
 
-  Por qué: la política de seguridad de Vercel (vercel.json) sólo permite
+  Por qué: la política de seguridad (public/_headers) sólo permite
   fuentes del mismo sitio; servidas desde Google se bloquearían en producción.
   Además cargan más rápido desde el mismo dominio.
 
@@ -21,12 +21,16 @@ const destino = join(raiz, 'public/fonts')
 mkdirSync(destino, { recursive: true })
 
 const URL_CSS =
-  'https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap'
+  'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap'
 // Un navegador moderno, para que Google devuelva woff2 variables.
 const NAVEGADOR =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 
-const css = execFileSync('curl', ['-s', '--max-time', '30', '-A', NAVEGADOR, URL_CSS], { encoding: 'utf8' })
+const css = execFileSync(
+  'curl',
+  ['-s', '--max-time', '30', '-A', NAVEGADOR, URL_CSS],
+  { encoding: 'utf8' }
+)
 
 const bloques = css.split('/* ').slice(1)
 const salida = []
@@ -35,14 +39,23 @@ for (const bloque of bloques) {
   if (subconjunto !== 'latin' && subconjunto !== 'latin-ext') continue
   const familia = bloque.match(/font-family: '([^']+)'/)[1]
   const estilo = bloque.match(/font-style: (\w+)/)[1]
+  // La interfaz no usa cursivas: se omiten para no cargar peso de más.
+  if (estilo === 'italic') continue
   const url = bloque.match(/url\((https:[^)]+)\)/)[1]
   const nombre = `${familia.toLowerCase().replace(/\s+/g, '-')}-${estilo}-${subconjunto}.woff2`
-  execFileSync('curl', ['-s', '--max-time', '60', '-o', join(destino, nombre), url])
+  execFileSync('curl', [
+    '-s',
+    '--max-time',
+    '60',
+    '-o',
+    join(destino, nombre),
+    url,
+  ])
   salida.push('/* ' + bloque.replace(url, `/fonts/${nombre}`).trim())
   console.log(`${familia} ${estilo} ${subconjunto} -> public/fonts/${nombre}`)
 }
 
 writeFileSync(
   join(raiz, 'src/fuentes.css'),
-  `/* Generado por scripts/fuentes.mjs: Bodoni Moda y Archivo, alojadas en el sitio. */\n\n${salida.join('\n\n')}\n`,
+  `/* Generado por scripts/fuentes.mjs: Bricolage Grotesque, Hanken Grotesk y Young Serif, alojadas en el sitio. */\n\n${salida.join('\n\n')}\n`
 )

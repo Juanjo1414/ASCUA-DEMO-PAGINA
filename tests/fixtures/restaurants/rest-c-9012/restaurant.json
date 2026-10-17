@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "slug": "rest-c-9012",
+  "estado": "activo",
+  "expira": "2030-12-15",
+  "autorizacion": {
+    "fecha": "2026-10-10",
+    "medio": "whatsapp",
+    "contacto": "Dueño C"
+  },
+  "nombre": "Restaurante C",
+  "idiomas": ["es"],
+  "tema": {
+    "primario": "#00473c",
+    "parTipografico": "editorial",
+    "logo": "assets/logo.svg"
+  },
+  "contacto": {
+    "whatsapp": "573001234567"
+  },
+  "categorias": [
+    {
+      "id": "fuertes",
+      "nombre": { "es": "Fuertes" },
+      "platos": [
+        {
+          "id": "plato-con-ar",
+          "nombre": { "es": "Plato con AR" },
+          "precio": 45000,
+          "foto": "assets/foto.webp",
+          "modelo": {
+            "glb": "assets/modelo.glb",
+            "usdz": "assets/modelo.usdz",
+            "poster": "assets/poster.webp",
+            "escalaRealCm": 18,
+            "aprobado": true,
+            "aprobadoPor": "Juan",
+            "fechaAprobacion": "2026-10-09"
+          }
+        },
+        {
+          "id": "plato-sin-ar",
+          "nombre": { "es": "Plato sin AR" },
+          "precio": 20000,
+          "foto": "assets/foto.webp"
+        }
+      ]
+    }
+  ]
+}

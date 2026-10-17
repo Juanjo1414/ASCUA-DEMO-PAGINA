@@ -21,7 +21,16 @@ const destino = join(raiz, 'public/images/carta')
 mkdirSync(destino, { recursive: true })
 
 // En el mismo orden que la carta (translations.menuSection.dishes).
-const PLATOS = ['pescado', 'filete', 'tagliatelle', 'vieiras', 'pato', 'gnocchi', 'langosta', 'cerdo']
+const PLATOS = [
+  'pescado',
+  'filete',
+  'tagliatelle',
+  'vieiras',
+  'pato',
+  'gnocchi',
+  'langosta',
+  'cerdo',
+]
 
 for (const plato of PLATOS) {
   const entrada = join(origen, `gemini-${plato}.jpg`)
@@ -30,10 +39,15 @@ for (const plato of PLATOS) {
     continue
   }
   execFileSync(ffmpeg, [
-    '-y', '-loglevel', 'error',
-    '-i', entrada,
-    '-vf', 'crop=760:760:(iw-760)/2:(ih-760)/2,scale=720:720:flags=lanczos',
-    '-q:v', '4',
+    '-y',
+    '-loglevel',
+    'error',
+    '-i',
+    entrada,
+    '-vf',
+    'crop=760:760:(iw-760)/2:(ih-760)/2,scale=720:720:flags=lanczos',
+    '-q:v',
+    '4',
     join(destino, `${plato}.jpg`),
   ])
   console.log(`gemini-${plato}.jpg -> carta/${plato}.jpg`)

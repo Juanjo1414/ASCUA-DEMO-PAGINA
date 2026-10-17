@@ -1,0 +1,109 @@
+/*
+  Tokens de diseño — mundo "La mesa" (ver docs/DESIGN.md).
+
+  La página es una mesa vista desde arriba: el color del restaurante es el
+  mantel, los platos son círculos de porcelana, la tinta es el texto. Todo el
+  color se DERIVA de `--color-primary`, que cada restaurante define en su
+  `restaurant.json` (RestaurantPage lo escribe en línea). Así un restaurante
+  solo elige un color y el resto de la paleta queda coherente.
+
+  Por qué los colores derivados se declaran también en `.tema`: una variable
+  que usa `var()` se resuelve en el elemento donde se declara. Si `:root`
+  calculara `--color-mantel` con el primario por defecto, el primario del
+  restaurante (puesto en un elemento hijo) nunca llegaría a esas derivaciones.
+  Por eso el contenedor con `.tema` las recalcula con su propio primario.
+
+  Regla del repo: colores, tipografías y espaciados solo viven aquí; los
+  componentes los consumen por clases de Tailwind, nunca con valores sueltos.
+*/
+@layer base {
+  :root,
+  .tema {
+    /* Entrada por restaurante (la sobreescribe RestaurantPage en línea). */
+    --color-primary: #3a1c11;
+    --color-on-primary: #ffffff;
+
+    /* Mantel: superficie principal, el color del restaurante. */
+    --color-mantel: var(--color-primary);
+    --color-on-mantel: var(--color-on-primary);
+    /* Mismo color que el texto principal: una mezcla lo baja del contraste AA
+       en colores de marca de tono medio. La jerarquía la dan tamaño y peso. */
+    --color-on-mantel-soft: var(--color-on-primary);
+    --color-mantel-deep: color-mix(in srgb, var(--color-primary) 70%, #000);
+
+    /* Porcelana: la loza y las hojas de papel sobre el mantel, con un
+       susurro del primario para que no desentone con él. */
+    --color-porcelana: color-mix(in srgb, var(--color-primary) 4%, #fcfbf9);
+    --color-porcelana-dim: color-mix(
+      in srgb,
+      var(--color-primary) 10%,
+      #f3f1ed
+    );
+
+    /* Tinta: texto sobre porcelana. Casi negro, teñido del primario. */
+    --color-tinta: color-mix(in srgb, var(--color-primary) 14%, #0b0b0a);
+    --color-tinta-soft: color-mix(in srgb, var(--color-primary) 28%, #3f3d3a);
+    --color-linea: color-mix(in srgb, var(--color-tinta) 18%, transparent);
+
+    /* Brasa: el único color fijo de Ascua. Siempre marca "Ver en mi mesa",
+       para que el comensal lo reconozca en cualquier restaurante. */
+    --color-brasa: #ff6b2c;
+    --color-brasa-deep: #e5531a;
+    --color-on-brasa: #1a0d06;
+    --color-focus: #c2410c;
+    --color-error: #b42318;
+  }
+
+  :root {
+    /* Tipografía */
+    --font-display:
+      'Bricolage Grotesque', ui-sans-serif, system-ui, -apple-system,
+      'Segoe UI', Roboto, sans-serif;
+    --font-accent: 'Young Serif', ui-serif, Georgia, 'Times New Roman', serif;
+    --font-body:
+      'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI',
+      Roboto, sans-serif;
+
+    /* Escala (los titulares son fluidos: nombres largos no se desbordan en
+       360 px y llegan a 6 rem en escritorio). */
+    --text-display: clamp(3rem, 13.5vw, 6rem);
+    --leading-display: 0.92;
+    --tracking-display: -0.035em;
+    --text-h2: clamp(2.125rem, 7vw, 3.75rem);
+    --leading-h2: 1;
+    --tracking-h2: -0.03em;
+    --text-h3: clamp(1.3125rem, 3.4vw, 1.75rem);
+    --leading-h3: 1.1;
+    --tracking-h3: -0.015em;
+    --text-lead: clamp(1.125rem, 2.2vw, 1.3125rem);
+    --leading-lead: 1.5;
+    --text-body: 1rem;
+    --leading-body: 1.55;
+    --text-small: 0.875rem;
+    --leading-small: 1.45;
+
+    /* Espaciado de sección: respira más en pantallas grandes. */
+    --section-y: clamp(4rem, 10vw, 8rem);
+    --page-max-width: 1280px;
+    --page-gutter: clamp(1.25rem, 5vw, 3rem);
+
+    /* Formas */
+    --radius-card: 1.25rem;
+    --radius-chip: 999px;
+
+    /* Profundidad: la sombra de un plato sobre la mesa (offset + difuminado). */
+    --shadow-plato:
+      0 22px 30px -14px rgb(0 0 0 / 0.5), 0 3px 6px rgb(0 0 0 / 0.22);
+    --shadow-hoja: 0 18px 40px -22px rgb(0 0 0 / 0.45);
+
+    /* Movimiento */
+    --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Par tipográfico "editorial": titulares con serifa (lista cerrada). */
+  [data-font-pair='editorial'] {
+    --font-display: var(--font-accent);
+    --tracking-display: -0.02em;
+    --tracking-h2: -0.02em;
+  }
+}

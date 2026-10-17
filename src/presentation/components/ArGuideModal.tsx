@@ -1,0 +1,148 @@
+/**
+ * Guía de 3 pasos que se muestra antes de abrir la cámara de AR (apunta a
+ * tu mesa → mueve el celular despacio → acércate o camina alrededor),
+ * exigida por CLAUDE.md para que el comensal entienda el gesto sin que
+ * nadie se lo explique.
+ *
+ * Lo usa `Menu.tsx` (primera vez por dispositivo) y `FloatingHelp.tsx`
+ * (reabrible en cualquier momento desde "¿Cómo funciona?"). Solo marca la
+ * guía como "ya vista" en `UiPreferencesStore` cuando no es un replay.
+ */
+import { useEffect, useState } from 'react'
+import { X, ArrowRight, Lightbulb, Grid3x3, Move } from 'lucide-react'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
+import { useDependencies } from '@/presentation/state/DependenciesContext'
+
+interface ArGuideModalProps {
+  isOpen: boolean
+  onClose: () => void
+  onContinue: () => void
+  isReplay?: boolean
+}
+
+export default function ArGuideModal({
+  isOpen,
+  onClose,
+  onContinue,
+  isReplay = false,
+}: ArGuideModalProps) {
+  const { t } = useLanguage()
+  const { uiPreferencesStore } = useDependencies()
+  const [mounted, setMounted] = useState(isOpen)
+
+  // Al abrir, marcamos el modal como montado durante el render (patrón de React para
+  // estado derivado de props). Hacerlo dentro del efecto provocaba un render extra.
+  if (isOpen && !mounted) setMounted(true)
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      setTimeout(() => setMounted(false), 300)
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
+  if (!isOpen && !mounted) return null
+
+  // Alternativa por si la traducción no está disponible (nunca debería pasar,
+  // porque translations.ts siempre define arGuide para es/en, pero evita que
+  // la guía se quede sin texto si algún día se agrega un idioma incompleto).
+  // El texto coincide exactamente con el de `t.arGuide` para que nunca queden
+  // dos versiones distintas de la guía de AR dando vueltas por el código.
+  const texts = t.arGuide || {
+    title: '¿Cómo funciona?',
+    steps: [
+      {
+        title: 'Apunta a tu mesa',
+        desc: 'Busca un lugar con buena luz y encuadra la mesa donde quieres ver el plato.',
+      },
+      {
+        title: 'Mueve el celular despacio',
+        desc: 'Haz círculos pequeños hasta que aparezca el plato, en su tamaño real.',
+      },
+      {
+        title: 'Acércate o camina alrededor',
+        desc: 'Camina alrededor de la mesa para verlo desde todos los ángulos.',
+      },
+    ],
+    gotIt: 'Entendido, abrir cámara',
+  }
+
+  const icons = [Lightbulb, Grid3x3, Move]
+
+  return (
+    <div
+      className={`fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center sm:p-6 transition-opacity duration-300 ${
+        isOpen ? 'opacity-100' : 'opacity-0'
+      }`}
+    >
+      <div
+        className="absolute inset-0 bg-tinta/80 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="guide-title"
+        className={`relative w-full max-w-md overflow-hidden rounded-card bg-porcelana p-6 text-tinta shadow-plato transition-transform duration-300 ${
+          isOpen ? 'translate-y-0 scale-100' : 'translate-y-8 scale-95'
+        }`}
+      >
+        <div className="flex items-center justify-between border-b border-linea pb-4">
+          <h2 id="guide-title" className="font-display text-h3 font-bold">
+            {texts.title}
+          </h2>
+          <button
+            onClick={onClose}
+            aria-label={t.ar?.close || 'Cerrar'}
+            className="grid h-12 w-12 place-items-center rounded-full transition-colors hover:bg-tinta/5"
+          >
+            <X size={24} strokeWidth={1.5} />
+          </button>
+        </div>
+
+        <ul className="mt-8 space-y-8">
+          {texts.steps.map((step, i) => {
+            const Icon = icons[i]
+            if (!Icon) return null
+            return (
+              <li key={i} className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-porcelana-dim text-tinta">
+                  <Icon size={20} strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-bold">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-body text-tinta-soft">{step.desc}</p>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+
+        <div className="mt-10">
+          <button
+            onClick={() => {
+              // Si no es un "replay" (el botón fijo), marcamos que ya lo vio
+              if (!isReplay) {
+                uiPreferencesStore.set('ascua:ar-guide-seen', '1')
+              }
+              onContinue()
+            }}
+            className="btn-primary w-full"
+          >
+            {texts.gotIt}
+            <ArrowRight size={18} strokeWidth={2} />
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
