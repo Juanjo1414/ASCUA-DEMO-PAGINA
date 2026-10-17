@@ -22,19 +22,17 @@ export const QrPage = () => {
     return <div className="p-8 text-center font-sans">Cargando...</div>
   if (error || !restaurant)
     return (
-      <div className="p-8 text-center font-sans text-red-600">
-        Error: {error}
-      </div>
+      <div className="p-8 text-center font-sans text-brasa">Error: {error}</div>
     )
 
   const url = `${window.location.origin}/r/${slug}`
 
   return (
     <div
-      className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-8 print:p-0 print:bg-white"
+      className="flex min-h-screen flex-col items-center justify-center bg-porcelana-dim p-8 print:p-0 print:bg-white"
       data-font-pair={restaurant.tema.parTipografico}
     >
-      <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-10 text-center shadow-xl print:border-none print:shadow-none print:max-w-none">
+      <div className="w-full max-w-md rounded-2xl border border-linea bg-porcelana p-10 text-center shadow-xl print:border-none print:shadow-none print:max-w-none">
         {restaurant.tema.logo && (
           <img
             src={restaurant.tema.logo}
@@ -48,11 +46,11 @@ export const QrPage = () => {
         >
           {restaurant.nombre}
         </h1>
-        <p className="mb-8 font-sans text-lg text-gray-600">
+        <p className="mb-8 font-sans text-lg text-tinta-soft">
           Escanea para ver nuestro menú en 3D
         </p>
 
-        <div className="mx-auto flex aspect-square w-64 items-center justify-center rounded-xl bg-white p-4">
+        <div className="mx-auto flex aspect-square w-64 items-center justify-center rounded-xl bg-porcelana p-4">
           <QRCode
             value={url}
             size={256}
@@ -62,7 +60,7 @@ export const QrPage = () => {
           />
         </div>
 
-        <div className="mt-8 font-sans text-sm text-gray-500 print:hidden">
+        <div className="mt-8 font-sans text-sm text-tinta-soft print:hidden">
           <p>Esta es la página pública para descargar e imprimir tu QR.</p>
           <button
             onClick={() => window.print()}

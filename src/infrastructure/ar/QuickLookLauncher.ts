@@ -29,6 +29,7 @@ export class QuickLookLauncher implements ArLauncher {
    * @returns `{ success: true }` si se pudo abrir; `{ success: false, error }` si falta el archivo o el modo no corresponde.
    */
   async launch(dish: Dish, mode: ArLaunchMode): Promise<ArLauncherResult> {
+    // No usa `lang`: Quick Look no muestra ningún título localizado.
     if (mode !== 'quick-look') {
       return {
         success: false,

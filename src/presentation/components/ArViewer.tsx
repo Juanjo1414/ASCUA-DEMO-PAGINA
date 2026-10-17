@@ -26,6 +26,10 @@ const VIEWER_ATTRS = {
   'touch-action': 'pan-y',
   'shadow-intensity': '1',
   scale: '1 1 1',
+  // Este visor no activa el modo AR nativo de model-viewer (no tiene el
+  // atributo `ar`), pero si algún día se habilita, que ya venga con la
+  // escala clavada: la Ley 1480 exige que el plato nunca se pueda agrandar.
+  'ar-scale': 'fixed',
 }
 
 interface ArViewerProps {

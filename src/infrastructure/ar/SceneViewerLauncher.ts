@@ -25,9 +25,15 @@ export class SceneViewerLauncher implements ArLauncher {
    *
    * @param dish - Plato a mostrar. Debe tener `modelo.glb`.
    * @param mode - Modo de lanzamiento solicitado; si no es `scene-viewer`, falla.
+   * @param lang - Idioma activo del comensal; decide en qué idioma se ve el
+   * título dentro de Scene Viewer.
    * @returns `{ success: true }` si se pudo abrir; `{ success: false, error }` si falta el archivo o el modo no corresponde.
    */
-  async launch(dish: Dish, mode: ArLaunchMode): Promise<ArLauncherResult> {
+  async launch(
+    dish: Dish,
+    mode: ArLaunchMode,
+    lang: 'es' | 'en' = 'es'
+  ): Promise<ArLauncherResult> {
     if (mode !== 'scene-viewer') {
       return {
         success: false,
@@ -48,7 +54,7 @@ export class SceneViewerLauncher implements ArLauncher {
         file: glbAbsoluteUrl,
         mode: 'ar_preferred',
         resizable: 'false',
-        title: dish.nombre['es'] || 'Plato',
+        title: dish.nombre[lang] || dish.nombre.es || 'Plato',
       })
       const fallback = encodeURIComponent(window.location.href)
       const intent =

@@ -1,4 +1,5 @@
 import type { SoldOutStore } from '@/application/ports/soldOutStore'
+import { safeLocalStorageGet, safeLocalStorageSet } from './safeLocalStorage'
 
 /**
  * Implementación de SoldOutStore basada en localStorage.
@@ -10,28 +11,18 @@ export class LocalStorageSoldOutStore implements SoldOutStore {
   }
 
   private getSoldOutSet(slug: string): Set<string> {
+    const stored = safeLocalStorageGet(this.getKey(slug))
+    if (!stored) return new Set()
     try {
-      const stored = window.localStorage.getItem(this.getKey(slug))
-      if (!stored) return new Set()
       const array = JSON.parse(stored)
-      if (Array.isArray(array)) {
-        return new Set(array)
-      }
-      return new Set()
+      return Array.isArray(array) ? new Set(array) : new Set()
     } catch {
       return new Set()
     }
   }
 
   private saveSoldOutSet(slug: string, set: Set<string>): void {
-    try {
-      window.localStorage.setItem(
-        this.getKey(slug),
-        JSON.stringify(Array.from(set))
-      )
-    } catch {
-      // Ignorar errores de cuota o localStorage desactivado
-    }
+    safeLocalStorageSet(this.getKey(slug), JSON.stringify(Array.from(set)))
   }
 
   isSoldOut(slug: string, dishId: string): boolean {

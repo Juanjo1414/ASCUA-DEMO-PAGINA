@@ -112,7 +112,13 @@ export async function validateContent(contentDir: string = CONTENT_DIR) {
       }
 
       // Validar paths de assets y evitar path traversal
-      const checkAsset = async (assetPath: string, _expectedExt: string) => {
+      const checkAsset = async (
+        assetPath: string,
+        expectedExts: string | string[]
+      ) => {
+        const expected = (
+          Array.isArray(expectedExts) ? expectedExts : [expectedExts]
+        ).map((e) => e.toLowerCase())
         if (path.isAbsolute(assetPath) || assetPath.includes('..')) {
           console.error(
             `❌ [${folderName}] Ruta inválida o path traversal: ${assetPath}`
@@ -131,9 +137,20 @@ export async function validateContent(contentDir: string = CONTENT_DIR) {
         }
 
         const stat = await fs.stat(fullPath)
+        // En minúsculas: un archivo "Poster.WEBP" debe pesar el presupuesto de
+        // WebP igual que uno en minúsculas; sin esto, MAX_SIZES['WEBP'] no
+        // existe y el presupuesto de 300 KB se saltaba en silencio.
         const ext = path
           .extname(assetPath)
-          .substring(1) as keyof typeof MAX_SIZES
+          .substring(1)
+          .toLowerCase() as keyof typeof MAX_SIZES
+
+        if (!expected.includes(ext)) {
+          console.error(
+            `❌ [${folderName}] Asset con extensión inesperada (${assetPath}): se esperaba .${expected.join(' o .')}`
+          )
+          hasErrors = true
+        }
 
         if (ext && MAX_SIZES[ext]) {
           if (stat.size > MAX_SIZES[ext]) {
@@ -168,12 +185,14 @@ export async function validateContent(contentDir: string = CONTENT_DIR) {
 
       // Revisar logo y heroImagen
       if (data.tema.logo) await checkAsset(data.tema.logo, 'svg')
-      if (data.heroImagen) await checkAsset(data.heroImagen, 'webp')
+      if (data.heroImagen)
+        await checkAsset(data.heroImagen, ['webp', 'jpg', 'jpeg'])
 
       // Revisar modelos de platos
       for (const cat of data.categorias) {
         for (const plato of cat.platos) {
-          await checkAsset(plato.foto, 'webp')
+          // La foto servida acepta WebP o JPG (ver src/domain/dish.ts).
+          await checkAsset(plato.foto, ['webp', 'jpg', 'jpeg'])
 
           if (plato.modelo) {
             if (!plato.modelo.aprobado && !isTemplate) {

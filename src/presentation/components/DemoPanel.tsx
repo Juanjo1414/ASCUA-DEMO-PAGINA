@@ -61,7 +61,7 @@ export default function DemoPanel() {
                     </span>
                     <button
                       onClick={() => handleToggle(plato.id)}
-                      className={`px-2 py-1 text-xs transition-colors ${
+                      className={`min-h-12 rounded-chip px-3 text-xs transition-colors ${
                         estaAgotado(plato.id)
                           ? 'bg-mantel text-on-mantel'
                           : 'bg-porcelana-dim text-tinta'

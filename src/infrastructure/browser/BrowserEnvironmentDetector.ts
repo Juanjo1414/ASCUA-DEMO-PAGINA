@@ -67,8 +67,13 @@ export class BrowserEnvironmentDetector implements EnvironmentDetector {
     const embeddedBrowserName = embeddedMarker ? embeddedMarker[1] : null
     const isEmbeddedBrowser = embeddedBrowserName !== null
 
-    const canQuickLook = isIos
-    const canSceneViewer = isAndroid
+    // Dentro de un navegador embebido (WhatsApp, Instagram…) no hay Quick
+    // Look ni Scene Viewer reales, aunque el sistema operativo sea iOS o
+    // Android: por eso `selectArLaunchMode` ya revisa `isEmbeddedBrowser`
+    // antes que estos dos campos. Se refleja aquí también para que nadie que
+    // lea `canQuickLook`/`canSceneViewer` directamente concluya lo contrario.
+    const canQuickLook = isIos && !isEmbeddedBrowser
+    const canSceneViewer = isAndroid && !isEmbeddedBrowser
 
     return {
       isIos,

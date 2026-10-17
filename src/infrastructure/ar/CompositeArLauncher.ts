@@ -16,7 +16,11 @@ export class CompositeArLauncher implements ArLauncher {
     private readonly launchers: Partial<Record<ArLaunchMode, ArLauncher>>
   ) {}
 
-  launch(dish: Dish, mode: ArLaunchMode): Promise<ArLauncherResult> {
+  launch(
+    dish: Dish,
+    mode: ArLaunchMode,
+    lang?: 'es' | 'en'
+  ): Promise<ArLauncherResult> {
     const launcher = this.launchers[mode]
     if (!launcher) {
       return Promise.resolve({
@@ -25,6 +29,6 @@ export class CompositeArLauncher implements ArLauncher {
         error: `No hay lanzador para el modo ${mode}`,
       })
     }
-    return launcher.launch(dish, mode) // sin await: se conserva el gesto del usuario
+    return launcher.launch(dish, mode, lang) // sin await: se conserva el gesto del usuario
   }
 }

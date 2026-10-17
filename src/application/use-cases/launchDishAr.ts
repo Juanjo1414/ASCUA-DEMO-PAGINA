@@ -18,6 +18,8 @@ export interface LaunchDishArParams {
   detector: EnvironmentDetector
   launcher: ArLauncher
   analytics?: AnalyticsTracker
+  /** Idioma activo del comensal; algunos lanzadores lo usan para un título localizado. */
+  lang?: 'es' | 'en'
 }
 
 /**
@@ -31,6 +33,7 @@ export async function launchDishAr({
   detector,
   launcher,
   analytics,
+  lang,
 }: LaunchDishArParams): Promise<ArLauncherResult> {
   const capabilities = detector.getCapabilities()
   const mode = selectArLaunchMode(capabilities, dish.modelo)
@@ -64,7 +67,7 @@ export async function launchDishAr({
 
   try {
     // 3. Invocación del adaptador correspondiente
-    const result = await launcher.launch(dish, mode)
+    const result = await launcher.launch(dish, mode, lang)
 
     if (result.success) {
       analytics?.track({

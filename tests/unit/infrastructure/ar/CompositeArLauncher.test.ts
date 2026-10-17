@@ -28,7 +28,11 @@ describe('CompositeArLauncher', () => {
       'quick-look': { launch: quickLookLaunch },
     })
     const result = await composite.launch(dishConModelo, 'quick-look')
-    expect(quickLookLaunch).toHaveBeenCalledWith(dishConModelo, 'quick-look')
+    expect(quickLookLaunch).toHaveBeenCalledWith(
+      dishConModelo,
+      'quick-look',
+      undefined
+    )
     expect(result.success).toBe(true)
   })
 

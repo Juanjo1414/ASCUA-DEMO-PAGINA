@@ -50,6 +50,7 @@ export default function Menu({ children }: { children?: ReactNode }) {
     dish: null,
     isReplay: false,
   })
+  const [arError, setArError] = useState(false)
 
   useEffect(() => {
     if (!restaurant) return
@@ -57,7 +58,12 @@ export default function Menu({ children }: { children?: ReactNode }) {
       const dict: Record<string, boolean> = {}
       restaurant.categorias.forEach((cat) => {
         cat.platos.forEach((p) => {
-          dict[p.id] = soldOutStore.isSoldOut(restaurant.slug, p.id)
+          // El JSON ("agotado") es la fuente de verdad del restaurante; el
+          // store solo registra lo que Juan cambia en vivo con DemoPanel. Sin
+          // este "o", un plato marcado agotado en restaurant.json se vería
+          // disponible para cualquier comensal que no haya tocado el panel.
+          dict[p.id] =
+            soldOutStore.isSoldOut(restaurant.slug, p.id) || p.agotado
         })
       })
       setSoldOutDict(dict)
@@ -79,6 +85,7 @@ export default function Menu({ children }: { children?: ReactNode }) {
 
   const abrirAr = (plato: Dish) => {
     if (!plato.modelo) return
+    setArError(false)
     // Se llama directo desde el toque: sin await ni setTimeout antes.
     void launchDishAr({
       dish: plato,
@@ -86,10 +93,15 @@ export default function Menu({ children }: { children?: ReactNode }) {
       detector: environmentDetector,
       launcher: arLauncher,
       analytics: analyticsTracker,
+      lang,
     }).then((resultado) => {
       // En computador, o dentro de Instagram/WhatsApp, se muestra el visor 3D.
       if (resultado.success && resultado.mode === 'model-viewer-modal') {
         setActivo({ dish: plato, mode: 'ar' })
+      } else if (!resultado.success) {
+        // Antes esto no mostraba nada: el comensal tocaba "Ver en mi mesa" y
+        // no pasaba nada visible. Todo estado necesita diseño (CLAUDE.md).
+        setArError(true)
       }
     })
   }
@@ -208,6 +220,22 @@ export default function Menu({ children }: { children?: ReactNode }) {
           if (dish) abrirAr(dish)
         }}
       />
+
+      {arError && (
+        <div
+          role="alert"
+          className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-sm rounded-xl bg-porcelana px-4 py-3 text-tinta shadow-plato"
+        >
+          <p className="text-body text-tinta-soft">{t.ar.arUnavailable}</p>
+          <button
+            type="button"
+            onClick={() => setArError(false)}
+            className="mt-3 inline-flex min-h-12 items-center rounded-chip border-2 border-tinta px-4 text-body font-bold text-tinta transition-colors hover:bg-brasa hover:border-brasa"
+          >
+            {t.ar.close}
+          </button>
+        </div>
+      )}
     </div>
   )
 }

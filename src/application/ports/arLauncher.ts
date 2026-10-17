@@ -30,6 +30,13 @@ export interface ArLauncher {
    *
    * @param dish - Entidad del plato seleccionado.
    * @param mode - Modo de lanzamiento seleccionado por la política de dominio.
+   * @param lang - Idioma activo del comensal ('es' por defecto). Lo usan los
+   * lanzadores que muestran un título localizado (ej. Scene Viewer); los que
+   * no lo necesitan simplemente lo ignoran.
    */
-  launch(dish: Dish, mode: ArLaunchMode): Promise<ArLauncherResult>
+  launch(
+    dish: Dish,
+    mode: ArLaunchMode,
+    lang?: 'es' | 'en'
+  ): Promise<ArLauncherResult>
 }
