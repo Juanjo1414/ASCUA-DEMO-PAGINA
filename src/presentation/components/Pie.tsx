@@ -1,13 +1,14 @@
 /**
- * Pie de página de la carta: dirección, horario, enlace de feedback y
- * crédito discreto de Ascua/PITS (regla de marca de CLAUDE.md).
+ * Pie de la landing, sobre el mantel: invitación a la encuesta de opinión,
+ * dirección y horario, y un crédito discreto de Ascua/PITS (regla de marca de
+ * CLAUDE.md: el protagonista es el restaurante, no el producto).
  *
- * Lo usa `RestaurantPage`. El enlace de feedback es el Google Form propio
- * del restaurante (`feedbackFormUrl`), cuyas respuestas ve su dueño; si el
- * restaurante todavía no tiene uno, cae al formulario genérico de PITS con
- * el slug como parámetro para saber quién lo probó.
+ * Lo usa `RestaurantPage`. El enlace de opinión es el Google Form propio del
+ * restaurante (`feedbackFormUrl`), cuyas respuestas ve su dueño; si todavía no
+ * tiene uno, cae al formulario genérico de PITS con el slug como parámetro
+ * para saber quién lo probó.
  */
-import { ArrowUp } from 'lucide-react'
+import { ArrowUp, ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
@@ -23,72 +24,60 @@ export default function Pie() {
     (restaurant ? `${FEEDBACK_URL}?slug=${restaurant.slug}` : FEEDBACK_URL)
 
   return (
-    <footer className="bg-deep-forest text-cream-canvas py-16">
-      <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
-        <div className="grid gap-10 md:grid-cols-12">
+    <footer
+      data-superficie="mantel"
+      className="bg-mantel pb-24 pt-14 text-on-mantel md:pb-14"
+    >
+      <div className="pagina flex flex-col gap-12">
+        <div className="flex flex-col gap-5 rounded-card bg-porcelana p-6 text-tinta sm:p-8 md:flex-row md:items-center md:justify-between md:gap-10">
+          <div className="max-w-xl">
+            <p className="font-display text-h3 font-bold">{t.survey.heading}</p>
+            <p className="mt-1 text-tinta-soft">{t.survey.body}</p>
+          </div>
+          <a
+            href={feedbackLink}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary shrink-0"
+          >
+            {t.footer.feedback}
+            <ArrowUpRight size={18} strokeWidth={2.25} aria-hidden="true" />
+          </a>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="mb-6">
-              {restaurant?.tema?.logo ? (
-                <img
-                  src={restaurant.tema.logo}
-                  alt={restaurant.nombre}
-                  className="h-10 w-auto object-contain brightness-0 invert"
-                />
-              ) : (
-                <span className="font-body text-[24px] font-bold tracking-tight text-cream-canvas">
-                  {restaurant?.nombre || 'ascua'}
-                </span>
-              )}
-            </div>
-            <p className="max-w-[28ch] font-display text-display-sm">
-              {t.footer.tagline}
+            <p className="font-display text-h3 font-bold">
+              {restaurant?.nombre ?? 'Ascua'}
             </p>
           </div>
 
           {(restaurant?.contacto?.direccion ||
             restaurant?.contacto?.horario?.length) && (
-            <div className="md:col-span-4 font-body text-body-sm opacity-80">
+            <div className="text-on-mantel-soft md:col-span-4">
               {restaurant.contacto?.direccion && (
                 <p>{restaurant.contacto.direccion}</p>
               )}
               {restaurant.contacto?.horario?.map((linea, index) => (
-                <p key={index} className="mt-1">
+                <p key={index} className="cifras mt-1">
                   {linea}
                 </p>
               ))}
             </div>
           )}
 
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-4 md:col-span-3 md:flex-col md:items-end">
-            <a
-              href={feedbackLink}
-              target="_blank"
-              rel="noreferrer"
-              className="font-body font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors underline underline-offset-4"
-            >
-              {t.footer.feedback}
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-body font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors"
-            >
-              Instagram
-            </a>
-            <a
-              href="#top"
-              className="font-body font-bold uppercase tracking-[0.05em] text-[14px] hover:text-sage-mist transition-colors flex items-center gap-2 mt-2"
-            >
-              {t.backToTop}
-              <ArrowUp size={14} strokeWidth={2} />
-            </a>
-          </div>
+          <a
+            href="#top"
+            className="inline-flex min-h-12 items-center gap-2 font-bold underline decoration-2 underline-offset-4 md:col-span-3 md:justify-self-end"
+          >
+            {t.backToTop}
+            <ArrowUp size={16} strokeWidth={2.25} aria-hidden="true" />
+          </a>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center font-body text-body-sm opacity-80">
+        <div className="flex flex-col gap-2 border-t border-on-mantel/20 pt-6 text-small text-on-mantel-soft md:flex-row md:justify-between">
           <p>
-            © {anio} {restaurant?.nombre || 'Ascua'}. {t.footer.rights}{' '}
+            © {anio} {restaurant?.nombre ?? 'Ascua'}. {t.footer.rights}{' '}
             {t.footer.privacy}
           </p>
           <p>{t.footer.madeBy}</p>

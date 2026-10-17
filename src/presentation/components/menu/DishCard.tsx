@@ -1,18 +1,25 @@
 /**
- * Tarjeta de un plato en la carta: foto, nombre, descripción, precio y,
- * si tiene modelo 3D aprobado, los botones "Ver en mi mesa" (AR) y
- * "Ver en 3D". Lo usa `Menu.tsx` para cada plato.
+ * Fila de un plato en la carta: foto redonda, nombre, descripción, precio y,
+ * si tiene modelo 3D aprobado, su medida real y los botones "Ver en mi mesa"
+ * (AR) y "Girar en 3D". Lo usa `Menu.tsx` para cada plato de la carta.
+ *
  * No decide si el plato tiene AR: solo muestra los botones si
- * `dish.modelo.aprobado` ya es `true` (lo marca Juan tras su QA).
+ * `dish.modelo.aprobado` ya es `true` (lo marca Juan tras su QA). Es una
+ * fila (no una tarjeta) para que en celular se lean muchos platos seguidos
+ * sin perder la foto.
  */
+import { ArrowRight, Scan } from 'lucide-react'
 import type { Dish } from '@/domain/dish'
 import { formatCopPrice } from '@/domain/price'
-import { ArrowRight, Scan } from 'lucide-react'
 
 interface DishCardProps {
   dish: Dish
   lang: 'es' | 'en'
-  t: { ar: { viewOnTable: string; view3d: string } }
+  t: {
+    ar: { viewOnTable: string; view3d: string }
+    hero?: { sizeReal: string }
+    menuSection?: { soldOut: string }
+  }
   isSoldOut: boolean
   onArClick?: (dish: Dish) => void
   on3dClick?: (dish: Dish) => void
@@ -34,53 +41,64 @@ export function DishCard({
 
   return (
     <li
-      data-sube
-      className={`flex flex-col relative ${isSoldOut ? 'opacity-60 grayscale' : ''}`}
+      data-reveal
+      className={`flex gap-4 border-b border-linea py-6 sm:gap-6 ${
+        isSoldOut ? 'opacity-60' : ''
+      }`}
     >
-      {isSoldOut && (
-        <span className="badge-online z-10 bg-warm-gray text-cream-canvas">
-          Agotado
-        </span>
-      )}
-      <div className="relative w-full aspect-square overflow-hidden rounded-images bg-cream-canvas">
-        <img
-          src={dish.foto}
-          alt={nombre}
-          loading="lazy"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <img
+        src={dish.foto}
+        alt={nombre}
+        loading="lazy"
+        className="h-24 w-24 shrink-0 rounded-full bg-porcelana-dim object-cover shadow-hoja sm:h-32 sm:w-32"
+      />
 
-      <div className="pt-6 flex flex-col flex-grow">
-        <h4 className="font-body font-bold text-[20px] text-forest-shadow leading-tight">
-          {nombre}
-        </h4>
-        <p className="mt-2 font-body text-[16px] text-forest-shadow leading-body flex-grow">
-          {descripcion}
-        </p>
-        <p className="mt-3 font-body font-bold text-forest-shadow">
-          {formatCopPrice(dish.precio)}
-        </p>
+      <div className="flex min-w-0 flex-1 flex-col gap-2">
+        <div className="flex items-start justify-between gap-3">
+          <h4 className="font-display text-xl font-bold leading-tight">
+            {nombre}
+          </h4>
+          <p className="cifras shrink-0 font-bold">
+            {formatCopPrice(dish.precio)}
+          </p>
+        </div>
 
-        {showArButtons && (
-          <div className="mt-4 flex flex-col gap-3">
+        {descripcion && <p className="text-tinta-soft">{descripcion}</p>}
+
+        {isSoldOut && (
+          <span className="sello self-start">
+            {t.menuSection?.soldOut ?? 'Agotado'}
+          </span>
+        )}
+
+        {showArButtons && dish.modelo && (
+          <div className="mt-2 flex flex-wrap items-center gap-x-5 gap-y-1">
             <button
               type="button"
               disabled={isSoldOut}
               onClick={() => !isSoldOut && onArClick && onArClick(dish)}
-              className="btn-primary w-full sm:w-auto"
+              className="btn-ar disabled:opacity-50"
             >
-              <Scan size={18} className="mr-2" />
+              <Scan size={18} strokeWidth={2.25} aria-hidden="true" />
               {t.ar.viewOnTable}
             </button>
             <button
               type="button"
               disabled={isSoldOut}
               onClick={() => !isSoldOut && on3dClick && on3dClick(dish)}
-              className="ghost-link"
+              className="enlace disabled:opacity-50"
             >
-              {t.ar.view3d} <ArrowRight size={16} />
+              {t.ar.view3d}
+              <ArrowRight size={16} strokeWidth={2.25} aria-hidden="true" />
             </button>
+            {t.hero && (
+              <span className="cota cifras text-tinta-soft">
+                {t.hero.sizeReal.replace(
+                  '{cm}',
+                  String(dish.modelo.escalaRealCm)
+                )}
+              </span>
+            )}
           </div>
         )}
       </div>

@@ -14,10 +14,12 @@ import { useAtomValue } from 'jotai'
 import { useEffect } from 'react'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { pickReadableTextColor } from '@/domain/theme'
+import { hasArDishes } from '@/domain/dish'
 import { useRestaurant } from '@/presentation/hooks/useRestaurant'
 import Nav from '@/presentation/components/Nav'
 import Hero from '@/presentation/components/Hero'
 import Menu from '@/presentation/components/Menu'
+import ComoFunciona from '@/presentation/components/ComoFunciona'
 import Reserva from '@/presentation/components/Reserva'
 import Contacto from '@/presentation/components/Contacto'
 import Pie from '@/presentation/components/Pie'
@@ -40,23 +42,20 @@ export default function App() {
     }
   }, [restaurant])
 
-  if (error) {
-    return (
-      <div className="flex h-screen w-full flex-col items-center justify-center bg-cream-canvas px-6 text-center text-forest-shadow">
-        <h1 className="font-display text-3xl font-medium text-deep-forest">
-          {t.error.title}
-        </h1>
-        <p className="mt-4 max-w-[40ch] text-forest-shadow/80">{error}</p>
-        <button
-          onClick={() => window.location.reload()}
-          className="btn-primary mt-8"
-        >
-          {t.error.retry}
-        </button>
-      </div>
-    )
-  }
+  // La barra del navegador del celular toma el color del mantel del restaurante.
+  useEffect(() => {
+    const primario = restaurant?.tema.primario
+    if (!primario) return
+    const meta = document.querySelector('meta[name="theme-color"]')
+    const previo = meta?.getAttribute('content') ?? null
+    meta?.setAttribute('content', primario)
+    return () => {
+      if (previo !== null) meta?.setAttribute('content', previo)
+    }
+  }, [restaurant?.tema.primario])
 
+  // Color del restaurante: el contenedor `.tema` recalcula toda la paleta
+  // derivada (mantel, porcelana, tinta…) a partir de este primario.
   const themeVars = restaurant
     ? ({
         '--color-primary': restaurant.tema.primario,
@@ -65,30 +64,49 @@ export default function App() {
       } as React.CSSProperties)
     : {}
 
+  if (error) {
+    return (
+      <div
+        data-superficie="mantel"
+        className="tema flex min-h-[100dvh] w-full flex-col items-center justify-center bg-mantel px-6 text-center text-on-mantel"
+      >
+        <h1 className="text-h2">{t.error.title}</h1>
+        <p className="mt-4 max-w-[40ch] text-lead text-on-mantel-soft">
+          {t.error.body}
+        </p>
+        <button
+          onClick={() => window.location.reload()}
+          className="btn-porcelana mt-8"
+        >
+          {t.error.retry}
+        </button>
+      </div>
+    )
+  }
+
   return (
-    <>
+    <div
+      className="tema relative min-h-[100dvh] bg-mantel"
+      style={themeVars}
+      data-font-pair={restaurant?.tema.parTipografico}
+    >
       <LoadingScreen isReady={isReady} />
       {isReady && (
         <>
-          <div
-            className="relative z-10 min-h-[100dvh] bg-cream-canvas"
-            style={themeVars}
-            data-font-pair={restaurant?.tema.parTipografico}
-          >
-            <Nav />
-            <main>
-              <Hero />
-              <div id="hero-end" aria-hidden="true" className="h-px w-full" />
-              <Menu />
-              <Reserva />
-              <Contacto />
-            </main>
-            <Pie />
-          </div>
-          <FloatingHelp />
+          <Nav />
+          <main>
+            <Hero />
+            <Menu>
+              <ComoFunciona />
+            </Menu>
+            <Reserva />
+            <Contacto />
+          </main>
+          <Pie />
+          {restaurant && hasArDishes(restaurant.categorias) && <FloatingHelp />}
           {isDemo && <DemoPanel />}
         </>
       )}
-    </>
+    </div>
   )
 }

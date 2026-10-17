@@ -2,10 +2,11 @@
 
 <!-- impeccable:product-schema 1 -->
 
-> Escrito sin ronda de entrevista, a partir de lo que el titular pidió por
-> escrito. Ascua es una marca inventada (lo confirmó el titular): la historia,
-> las zonas del fuego y las temperaturas de cada plato son parte del concepto,
-> no datos de un local real.
+> Reescrito el 2026-10-16 con una ronda de entrevista. Sustituye la versión
+> anterior, que describía una landing única de Ascua (Vercel, GSAP, ocho platos
+> fijos). El producto hoy es la demo multi-restaurante descrita abajo. Los
+> puntos marcados _(inferido)_ vienen del repo y de `CLAUDE.md`, no de una
+> respuesta directa.
 
 ## Platform
 
@@ -13,68 +14,93 @@ web
 
 ## Users
 
-- Comensales de Medellín buscando dónde cenar una noche especial, casi siempre
-  desde el celular y muchas veces dentro del navegador de Instagram o WhatsApp
-  _(inferido: el sitio ya detecta navegadores embebidos para la RA)_.
-- El titular del proyecto usa la página como pieza de portafolio de "webs
-  premium": tiene que verse al nivel de un estudio, no de una plantilla.
+Dos audiencias primarias, con el mismo peso:
+
+- **Comensal en celular.** Llega desde Instagram, WhatsApp o un QR, a menudo con
+  poca familiaridad con la tecnología, casi siempre en un celular de gama media
+  y a veces dentro de un navegador embebido. Quiere ver qué hay en la carta y
+  decidir qué pedir. Debe entender el producto solo, sin que nadie se lo explique.
+- **Dueño o gerente del restaurante.** Evalúa la demo con su propio local y decide
+  si paga la suscripción. Juzga la credibilidad del conjunto: cualquier fallo
+  visual o técnico le resta confianza.
 
 ## Product Purpose
 
-Landing de una sola página del restaurante **Ascua**: cocina de autor a la brasa,
-cocina abierta. Tiene que dar ganas de reservar y mostrar la carta. Éxito: el
-visitante entiende qué es Ascua en segundos, mira la carta y toca "Reservar".
+Demo estática y multi-restaurante de **Ascua**, producto de la startup **PITS**
+(Medellín). Cada restaurante tiene su propia landing y su carta con platos en 3D
+y realidad aumentada, desde el navegador y sin instalar apps. Éxito: el dueño ve
+su restaurante bien representado y quiere contratar; el comensal recorre carta →
+plato → "Ver en mi mesa" → cámara sin ayuda.
 
 ## Positioning
 
-La carta se puede ver en 3D y en realidad aumentada desde el navegador, sin
-instalar nada: el plato aparece sobre la mesa del comensal. Ningún restaurante
-vecino lo ofrece.
+El plato aparece en su tamaño real sobre la mesa del comensal, desde el
+navegador, sin app. Una carta de PDF o de fotos no puede enseñar el tamaño ni el
+volumen del plato.
 
 ## Operating Context
 
-- Sitio estático (React 19 + Vite + Tailwind + GSAP), desplegado en Vercel.
-- Bilingüe es/en (persistido en localStorage). Sin tema claro: la experiencia es
-  fuego de noche, decidido en el rediseño "termómetro + brasa".
-- Abre martes a domingo, 7 p.m. – 11 p.m. Reserva con un día de anticipación.
-- Dirección: Calle 10 #45-20, local 3, Medellín.
+- Cada restaurante es una carpeta `content/restaurants/<slug>/` con
+  `restaurant.json` y `assets/`. Nada de un restaurante vive en `src/`. La raíz
+  `/` nunca lista restaurantes.
+- Sitio estático (React 19 + Vite + TypeScript + Tailwind + `@google/model-viewer`),
+  sin backend, en Cloudflare Pages. Producción es `main`; preview es la rama
+  `dev/Juanjo`.
+- Los modelos 3D los produce el repo hermano `ASCUA-DEMO-AR` (ARFOODS).
+- Feedback por restaurante mediante un Google Form propio (ADR 0005). Reservas
+  por enlace de WhatsApp prellenado.
+- Idioma de la interfaz: español.
 
 ## Capabilities and Constraints
 
-- **Intocable:** la lógica de RA/3D (`lib/launchAr.js`, `lib/arAssets.js`,
-  `lib/browserEnv.js`, `ArDishModal.jsx`, `ArViewer.jsx`) y los ocho platos de la
-  carta con sus fotos. `Menu.jsx` se puede rediseñar (lo autorizó el titular)
-  siempre que llame igual a `getAssetForDishIndex`, `launchAr` y el modal. Sólo
-  los platos 0 (lubina) y 1 (filete) tienen modelo publicado.
-- Sin fotos fuera de la carta: el titular pidió despedirse de todas las
-  imágenes del sitio anterior. El fuego se dibuja en código.
-- Sin logo: sólo la palabra ASCUA.
-- El formulario de contacto no envía nada: la respuesta es simulada.
-- Sin video controlado por scroll: se trababa en Android de gama media.
-- Tiene que correr fluido en Android de gama media.
+- **Mobile-first:** diseñar y probar primero a 360 × 640 px; nunca scroll
+  horizontal; áreas táctiles ≥ 48 px; texto base ≥ 16 px; contraste AA; nada que
+  dependa de hover; zonas seguras y `prefers-reduced-motion` respetados.
+- **Lenguaje sin tecnicismos:** el botón dice "Ver en mi mesa", no "AR". Íconos
+  siempre con texto. Errores en palabras simples y con una acción.
+- **Todo estado tiene diseño:** cargando, error, sin conexión, agotado, sin AR.
+- **AR intocable sin QA en dispositivos:** `QuickLookLauncher`,
+  `SceneViewerLauncher`, `ModelViewerFallbackLauncher` y
+  `BrowserEnvironmentDetector`. Escala real fija (`#allowsContentScaling=0`,
+  `resizable=false`). Antes de abrir la cámara se muestra la guía de 3 pasos.
+- Un plato 3D solo se publica con `aprobado: true`. Un restaurante solo se
+  publica con `autorizacion` vigente; vencida, se muestra "demo finalizada".
+- Presupuestos: GLB ≤ 5 MB, USDZ ≤ 8 MB, imágenes WebP ≤ 300 KB.
+- Colores, tipografías y espaciados solo como tokens en `src/presentation/theme/`.
+  Cada restaurante solo sobreescribe color primario (con contraste AA), un par
+  tipográfico de lista cerrada y su logo. La marca PITS/Ascua va solo en un pie
+  discreto.
+- Sin datos personales de comensales: sin cookies, sin login, sin rastreo
+  (Ley 1581 de 2012). Modelos con el disclaimer de la Ley 1480 de 2011.
+- Fluido en un Android de gama media.
 
 ## Brand Commitments
 
-- Nombre: **Ascua** (se mantiene). Sin logo: la marca es la palabra en Bodoni
-  espaciada.
-- Dirección visual aprobada por el titular: una experiencia completa de scroll,
-  como COTA, contada como la vida de una brasa con un termómetro (de 420 °C en
-  el hero a 1100 °C en la reserva, y la sobremesa que se enfría). El hero (disco
-  que se abre, A S C U A enorme) se mantiene; sin platos flotantes.
-- Voz de la copia actual: frases cortas, concretas, sobre fuego y oficio.
+- Marca del producto: **Ascua / PITS**, en un pie discreto; el protagonista es
+  cada restaurante, no la marca del producto.
+- La dirección visual vigente está en `docs/DESIGN.md`; no se redefine aquí.
 
 ## Evidence on Hand
 
-- Ocho fotos cenitales de platos (generadas), en círculo. Nada más en raster.
-- Dos modelos 3D publicados (lubina, filete).
-- Tres testimonios en `translations.js`. No hay prensa, premios ni precios: no
-  se inventan.
-- Horario, dirección y los tres testimonios vienen del sitio original.
+- Demo `ascua-demo`: restaurante de ejemplo con logo y `heroImagen` propios
+  _(inferido)_. Existe una plantilla de restaurante para onboarding
+  (`docs/runbooks/nuevo-restaurante.md`).
+- Modelos 3D publicados solo cuando Juan los aprueba tras probar en un iPhone y un
+  Android reales.
+- No hay precios, premios ni reseñas reales. Lo que no esté en `restaurant.json`
+  no se muestra y no se inventa.
 
 ## Product Principles
 
-1. La RA es la prueba, no un adorno: todo el recorrido empuja hacia la carta.
-2. Reservar tiene que estar siempre a un toque.
-3. Fluido en un Android de gama media o no sale.
-4. Lo inventado es concepto (la historia del fuego, las temperaturas), nunca
-   premios ni precios.
+1. El producto se entiende solo: una acción principal por pantalla, ayuda siempre
+   visible.
+2. El plato se ve lindo y en su tamaño real, o no se muestra.
+3. Cada restaurante se siente propio; ninguno depende de otro ni se lista junto.
+4. La honestidad pesa más que el efecto: nada de datos inventados ni formularios
+   simulados.
+5. Credibilidad ante todo: un fallo visible cuesta más que una función ausente.
+
+## Accessibility & Inclusion
+
+Contraste AA, texto base ≥ 16 px, áreas táctiles ≥ 48 px, `prefers-reduced-motion`
+respetado y lenguaje simple para personas poco familiarizadas con la tecnología.

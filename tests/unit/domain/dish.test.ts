@@ -7,6 +7,9 @@ import { describe, it, expect } from 'vitest'
 import {
   dishSchema,
   categorySchema,
+  selectFeaturedDishes,
+  selectStarDish,
+  MAX_FEATURED_DISHES,
   type Dish,
   type Category,
 } from '@/domain/dish'
@@ -106,6 +109,77 @@ describe('Dominio: Dish y Category', () => {
       expect(() => categorySchema.parse(categoriaInvalida)).toThrow(
         'El ID debe ser kebab-case'
       )
+    })
+  })
+  describe('selectFeaturedDishes', () => {
+    const plato = (id: string, destacado?: boolean) =>
+      dishSchema.parse({ ...platoBase, id, destacado })
+
+    it('devuelve solo los platos marcados, en el orden de la carta', () => {
+      const categorias = [
+        {
+          id: 'a',
+          nombre: { es: 'A' },
+          platos: [plato('uno'), plato('dos', true)],
+        },
+        { id: 'b', nombre: { es: 'B' }, platos: [plato('tres', true)] },
+      ]
+      expect(selectFeaturedDishes(categorias).map((p) => p.id)).toEqual([
+        'dos',
+        'tres',
+      ])
+    })
+
+    it('no inventa destacados: sin marcas devuelve una lista vacía', () => {
+      const categorias = [
+        { id: 'a', nombre: { es: 'A' }, platos: [plato('uno'), plato('dos')] },
+      ]
+      expect(selectFeaturedDishes(categorias)).toEqual([])
+    })
+
+    it('limita la lista para que quepa con aire', () => {
+      const muchos = Array.from({ length: 9 }, (_, i) => plato(`p${i}`, true))
+      const categorias = [{ id: 'a', nombre: { es: 'A' }, platos: muchos }]
+      expect(selectFeaturedDishes(categorias)).toHaveLength(MAX_FEATURED_DISHES)
+    })
+  })
+  describe('selectStarDish', () => {
+    const modelo = (aprobado: boolean) => ({
+      glb: 'a.glb',
+      usdz: 'a.usdz',
+      poster: 'a.webp',
+      escalaRealCm: 24,
+      aprobado,
+    })
+    const plato = (id: string, extra: Record<string, unknown> = {}) =>
+      dishSchema.parse({ ...platoBase, id, ...extra })
+
+    it('prefiere un destacado con modelo aprobado', () => {
+      const categorias = [
+        {
+          id: 'a',
+          nombre: { es: 'A' },
+          platos: [
+            plato('uno', { modelo: modelo(true) }),
+            plato('dos', { modelo: modelo(true), destacado: true }),
+          ],
+        },
+      ]
+      expect(selectStarDish(categorias)?.id).toBe('dos')
+    })
+
+    it('ignora modelos sin aprobar y platos agotados', () => {
+      const categorias = [
+        {
+          id: 'a',
+          nombre: { es: 'A' },
+          platos: [
+            plato('uno', { modelo: modelo(false) }),
+            plato('dos', { modelo: modelo(true), agotado: true }),
+          ],
+        },
+      ]
+      expect(selectStarDish(categorias)).toBeUndefined()
     })
   })
 })

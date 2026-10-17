@@ -25,7 +25,14 @@ const ANCHOS = [
   { ancho: 1280, alto: 800 },
 ]
 
-const SECCIONES = ['#top', '#menu', '#reservar', '#contacto', 'footer']
+const SECCIONES = [
+  '#top',
+  '#destacados',
+  '#menu',
+  '#reservar',
+  '#contacto',
+  'footer',
+]
 
 /** Recorre la página para que las imágenes con carga diferida se descarguen. */
 async function cargarTodo(page: Page) {

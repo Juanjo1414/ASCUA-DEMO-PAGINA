@@ -36,19 +36,17 @@ export function InAppBrowserNotice({ inAppName, t }: InAppBrowserNoticeProps) {
   }
 
   return (
-    <div className="mt-3 rounded-xl border border-warm-gray/30 bg-deep-forest px-4 py-3">
+    <div className="mt-3 rounded-xl bg-porcelana px-4 py-3 text-tinta">
       {inAppName ? (
         <>
-          <p className="text-xs font-medium text-cream-canvas">
-            {t.ar.inAppTitle}
-          </p>
-          <p className="mt-1.5 text-xs leading-relaxed text-warm-gray">
+          <p className="text-body font-bold text-tinta">{t.ar.inAppTitle}</p>
+          <p className="mt-1.5 text-body text-tinta-soft">
             {t.ar.inAppBody.replaceAll('{app}', inAppName)}
           </p>
           <button
             type="button"
             onClick={copyLink}
-            className="mt-3 inline-flex items-center gap-1.5 rounded-lg border border-warm-gray/40 px-3 py-1.5 text-xs text-cream-canvas transition-colors hover:bg-lime-glow hover:text-forest-shadow"
+            className="mt-3 inline-flex min-h-12 items-center gap-1.5 rounded-chip border-2 border-tinta px-4 text-body font-bold text-tinta transition-colors hover:bg-brasa hover:border-brasa"
           >
             {copied ? (
               <Check size={13} strokeWidth={2} />
@@ -59,9 +57,7 @@ export function InAppBrowserNotice({ inAppName, t }: InAppBrowserNoticeProps) {
           </button>
         </>
       ) : (
-        <p className="text-xs leading-relaxed text-warm-gray">
-          {t.ar.arUnavailable}
-        </p>
+        <p className="text-body text-tinta-soft">{t.ar.arUnavailable}</p>
       )}
     </div>
   )

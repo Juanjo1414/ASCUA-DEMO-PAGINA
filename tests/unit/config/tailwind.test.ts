@@ -12,28 +12,28 @@ const colores = config.theme?.extend?.colors as unknown as Record<
 
 describe('tailwind.config: colores de marca con transparencia', () => {
   it('sin transparencia devuelve la variable CSS tal cual', () => {
-    expect(colores['cream-canvas']!({ opacityValue: undefined })).toBe(
-      'var(--color-cream-canvas)'
+    expect(colores['porcelana']!({ opacityValue: undefined })).toBe(
+      'var(--color-porcelana)'
     )
   })
 
   it('con la variable de opacidad de Tailwind (colores lisos) no genera NaN', () => {
-    // Regresión: bg-cream-canvas llega con opacityValue = 'var(--tw-bg-opacity)'
+    // Regresión: bg-porcelana llega con opacityValue = 'var(--tw-bg-opacity)'
     // y un Number() ingenuo producía "NaN%", rompiendo todos los fondos lisos.
     expect(
-      colores['cream-canvas']!({ opacityValue: 'var(--tw-bg-opacity)' })
-    ).toBe('var(--color-cream-canvas)')
+      colores['porcelana']!({ opacityValue: 'var(--tw-bg-opacity)' })
+    ).toBe('var(--color-porcelana)')
   })
 
   it('con transparencia mezcla la variable con color-mix (antes la clase /NN se descartaba)', () => {
     // Regresión: con 'var(--color-x)' a secas, Tailwind no generaba
-    // bg-cream-canvas/95 y el hero, los modales y las líneas finas perdían
+    // bg-porcelana/95 y el hero, los modales y las líneas finas perdían
     // su fondo o borde sin ningún error.
-    expect(colores['cream-canvas']!({ opacityValue: '0.95' })).toBe(
-      'color-mix(in srgb, var(--color-cream-canvas) 95%, transparent)'
+    expect(colores['porcelana']!({ opacityValue: '0.95' })).toBe(
+      'color-mix(in srgb, var(--color-porcelana) 95%, transparent)'
     )
-    expect(colores['forest-shadow']!({ opacityValue: '0.8' })).toBe(
-      'color-mix(in srgb, var(--color-forest-shadow) 80%, transparent)'
+    expect(colores['tinta']!({ opacityValue: '0.8' })).toBe(
+      'color-mix(in srgb, var(--color-tinta) 80%, transparent)'
     )
   })
 

@@ -1,6 +1,11 @@
 /*
-  Design system tokens.
-  Warm, farm-stand-meets-modern-typography aesthetic.
+  Estilos globales — mundo "La mesa" (ver docs/DESIGN.md).
+
+  Aquí viven solo tres cosas: la base (html, body, foco, selección, barra de
+  desplazamiento), los componentes que se repiten (botones, plato, cota,
+  chips) y el movimiento (aparición al hacer scroll y entrada del hero).
+  Los valores salen de `presentation/theme/tokens.css`; no se escribe ningún
+  color ni tamaño suelto.
 */
 
 @import './presentation/theme/tokens.css';
@@ -12,12 +17,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    color-scheme: light;
-    scrollbar-color: var(--color-deep-forest) var(--color-cream-canvas);
+    background: var(--color-mantel);
+    scrollbar-color: var(--color-brasa) var(--color-mantel);
   }
 
   section[id] {
-    scroll-margin-top: 72px;
+    scroll-margin-top: 64px;
   }
 
   html,
@@ -26,7 +31,7 @@
   }
 
   body {
-    @apply bg-cream-canvas font-body text-forest-shadow antialiased;
+    @apply bg-mantel font-body text-body text-tinta antialiased;
     font-feature-settings: 'kern', 'liga';
   }
 
@@ -41,64 +46,109 @@
     text-wrap: pretty;
   }
 
+  /* Precios y medidas: cifras de ancho fijo para que se alineen en columna. */
+  .cifras {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
   ::selection {
-    background: var(--color-primary, var(--color-lime-glow));
-    color: var(--color-on-primary, var(--color-forest-shadow));
+    background: var(--color-brasa);
+    color: var(--color-on-brasa);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-deep-forest);
+    outline: 3px solid var(--color-focus);
     outline-offset: 3px;
+  }
+
+  /* Sobre el mantel el naranja de foco se pierde: se usa el color del texto. */
+  [data-superficie='mantel'] :focus-visible {
+    outline-color: var(--color-on-mantel);
   }
 
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-cream-canvas);
+    background: var(--color-mantel);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-deep-forest);
-    border: 3px solid var(--color-cream-canvas);
+    background: var(--color-brasa);
+    border: 2px solid var(--color-mantel);
+    border-radius: 999px;
   }
 }
 
 @layer components {
-  /* Pill CTA Button (Lime Fill) */
+  /* Contenedor de página: ancho máximo y márgenes laterales fluidos. */
+  .pagina {
+    @apply mx-auto w-full max-w-page;
+    padding-inline: var(--page-gutter);
+  }
+
+  .seccion {
+    padding-block: var(--section-y);
+  }
+
+  /* ── Botones (todos ≥ 48 px de alto, pastilla) ───────────────────── */
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-chip px-6 py-3 font-body text-body font-bold leading-none transition duration-200 ease-salida active:scale-[0.97];
+  }
+
+  /* Sobre porcelana: botón del color del restaurante. */
   .btn-primary {
-    @apply inline-flex items-center justify-center font-body font-bold text-[16px] px-[24px] py-[16px] rounded-buttons tracking-[0.017em] transition-transform hover:scale-[1.02] active:scale-[0.98];
-    background: var(--color-primary, var(--color-lime-glow));
-    color: var(--color-on-primary, var(--color-forest-shadow));
+    @apply btn bg-mantel text-on-mantel hover:brightness-110;
   }
 
-  /* Pill Outline Button (Forest Border) */
+  /* Sobre el mantel: botón de porcelana. */
+  .btn-porcelana {
+    @apply btn bg-porcelana text-tinta hover:bg-white;
+  }
+
+  /* La acción de realidad aumentada: siempre naranja brasa. */
+  .btn-ar {
+    @apply btn bg-brasa text-on-brasa hover:bg-brasa-deep;
+  }
+
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-transparent border-[2px] border-deep-forest text-deep-forest font-body font-bold text-[16px] px-[20px] py-[12px] rounded-buttons transition-colors hover:bg-deep-forest hover:text-cream-canvas;
+    @apply btn border-2 border-current bg-transparent hover:bg-tinta/5;
   }
 
-  /* Ghost Text Link */
-  .ghost-link {
-    @apply inline-flex items-center gap-1 bg-transparent text-forest-shadow font-body font-bold text-[16px] hover:underline;
+  [data-superficie='mantel'] .btn-secondary {
+    @apply hover:bg-on-mantel/10;
   }
 
-  /* Online Only Badge */
-  .badge-online {
-    @apply absolute top-4 left-4 font-body font-bold text-[12px] uppercase tracking-[0.05em] px-[12px] py-[4px] rounded-badges;
-    background: var(--color-primary, var(--color-lime-glow));
-    color: var(--color-on-primary, var(--color-forest-shadow));
+  /* Enlace de texto con flecha (acción secundaria dentro de un plato). */
+  .enlace {
+    @apply inline-flex min-h-12 items-center gap-1.5 font-body font-bold underline decoration-2 underline-offset-4;
   }
 
-  /* Split Content Section */
-  .split-section {
-    @apply bg-sage-mist py-[80px] lg:py-[120px];
+  /* ── Plato: círculo de porcelana sobre la mesa ───────────────────── */
+  .plato {
+    @apply relative aspect-square w-full rounded-full bg-porcelana p-[3.5%] shadow-plato;
   }
-  .split-section--alt {
-    @apply bg-warm-sand py-[80px] lg:py-[120px];
+  .plato > img {
+    @apply h-full w-full rounded-full object-cover;
   }
 
-  /* Eyebrow Label */
-  .eyebrow {
-    @apply font-body font-bold text-[14px] uppercase tracking-[0.05em] text-forest-shadow mb-[16px];
+  /* Cota: la medida real del plato, dibujada como en un plano. */
+  .cota {
+    @apply inline-flex items-center gap-2 font-body text-small font-bold uppercase tracking-wider;
+  }
+  .cota::before,
+  .cota::after {
+    content: '';
+    @apply block h-px w-6 bg-current opacity-60;
+  }
+
+  /* Chip de categoría de la carta. */
+  .chip {
+    @apply inline-flex min-h-12 shrink-0 items-center rounded-chip border-2 border-tinta/20 bg-porcelana px-5 font-body text-body font-bold text-tinta transition-colors duration-200 hover:border-tinta;
+  }
+
+  /* Rótulo corto sobre un plato (Agotado, Nuevo…). */
+  .sello {
+    @apply inline-flex items-center rounded-chip bg-tinta px-3 py-1 font-body text-small font-bold text-porcelana;
   }
 }
 
@@ -113,6 +163,70 @@
   }
 }
 
+/* ── Movimiento ──────────────────────────────────────────────────────
+   Un solo momento autoral: los platos "se sirven". El contenido es visible
+   por defecto; `useRevealOnScroll` solo arma (oculta) lo que está debajo de
+   la pantalla, así que sin JavaScript nunca queda nada invisible. */
+[data-reveal='armed'] {
+  opacity: 0;
+  transform: translateY(28px) scale(0.94);
+}
+[data-reveal='in'] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s var(--ease-salida),
+    transform 0.9s var(--ease-salida);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Entrada del hero: el plato llega desde abajo y la cota se traza. */
+@keyframes servir {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.9) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes trazar {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-plato {
+  animation: servir 1.1s var(--ease-salida) 0.15s both;
+}
+.hero-anillo {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: trazar 1.6s var(--ease-salida) 0.7s forwards;
+}
+.hero-texto > * {
+  animation: aparecer 0.8s var(--ease-salida) both;
+}
+.hero-texto > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.hero-texto > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.hero-texto > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -124,5 +238,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .hero-anillo {
+    stroke-dashoffset: 0;
+  }
+  [data-reveal='armed'] {
+    opacity: 1;
+    transform: none;
   }
 }

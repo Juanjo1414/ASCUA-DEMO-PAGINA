@@ -26,85 +26,25 @@ export default {
     extend: {
       fontFamily: {
         display: ['var(--font-display)'],
-        'serif-accent': ['var(--font-serif-accent)'],
+        accent: ['var(--font-accent)'],
         body: ['var(--font-body)'],
-        'body-regular': ['var(--font-body-regular)'],
       },
       colors: {
-        'deep-forest': token('deep-forest'),
-        'lime-glow': token('lime-glow'),
-        'sage-mist': token('sage-mist'),
-        'warm-sand': token('warm-sand'),
-        'cream-canvas': token('cream-canvas'),
-        'forest-shadow': token('forest-shadow'),
-        'pure-ink': token('pure-ink'),
-        'warm-gray': token('warm-gray'),
-        'slate-gray': token('slate-gray'),
+        mantel: token('mantel'),
+        'on-mantel': token('on-mantel'),
+        'on-mantel-soft': token('on-mantel-soft'),
+        'mantel-deep': token('mantel-deep'),
+        porcelana: token('porcelana'),
+        'porcelana-dim': token('porcelana-dim'),
+        tinta: token('tinta'),
+        'tinta-soft': token('tinta-soft'),
+        linea: token('linea'),
+        brasa: token('brasa'),
+        'brasa-deep': token('brasa-deep'),
+        'on-brasa': token('on-brasa'),
+        error: token('error'),
       },
       fontSize: {
-        caption: [
-          'var(--text-caption)',
-          {
-            lineHeight: 'var(--leading-caption)',
-            letterSpacing: 'var(--tracking-caption)',
-          },
-        ],
-        'body-sm': [
-          'var(--text-body-sm)',
-          {
-            lineHeight: 'var(--leading-body-sm)',
-            letterSpacing: 'var(--tracking-body-sm)',
-          },
-        ],
-        body: [
-          'var(--text-body)',
-          {
-            lineHeight: 'var(--leading-body)',
-            letterSpacing: 'var(--tracking-body)',
-          },
-        ],
-        'body-lg': [
-          'var(--text-body-lg)',
-          {
-            lineHeight: 'var(--leading-body-lg)',
-            letterSpacing: 'var(--tracking-body-lg)',
-          },
-        ],
-        subheading: [
-          'var(--text-subheading)',
-          {
-            lineHeight: 'var(--leading-subheading)',
-            letterSpacing: 'var(--tracking-subheading)',
-          },
-        ],
-        'heading-sm': [
-          'var(--text-heading-sm)',
-          {
-            lineHeight: 'var(--leading-heading-sm)',
-            letterSpacing: 'var(--tracking-heading-sm)',
-          },
-        ],
-        heading: [
-          'var(--text-heading)',
-          {
-            lineHeight: 'var(--leading-heading)',
-            letterSpacing: 'var(--tracking-heading)',
-          },
-        ],
-        'heading-lg': [
-          'var(--text-heading-lg)',
-          {
-            lineHeight: 'var(--leading-heading-lg)',
-            letterSpacing: 'var(--tracking-heading-lg)',
-          },
-        ],
-        'display-sm': [
-          'var(--text-display-sm)',
-          {
-            lineHeight: 'var(--leading-display-sm)',
-            letterSpacing: 'var(--tracking-display-sm)',
-          },
-        ],
         display: [
           'var(--text-display)',
           {
@@ -112,27 +52,37 @@ export default {
             letterSpacing: 'var(--tracking-display)',
           },
         ],
-        'display-lg': [
-          'var(--text-display-lg)',
+        h2: [
+          'var(--text-h2)',
           {
-            lineHeight: 'var(--leading-display-lg)',
-            letterSpacing: 'var(--tracking-display-lg)',
+            lineHeight: 'var(--leading-h2)',
+            letterSpacing: 'var(--tracking-h2)',
           },
         ],
+        h3: [
+          'var(--text-h3)',
+          {
+            lineHeight: 'var(--leading-h3)',
+            letterSpacing: 'var(--tracking-h3)',
+          },
+        ],
+        lead: ['var(--text-lead)', { lineHeight: 'var(--leading-lead)' }],
+        body: ['var(--text-body)', { lineHeight: 'var(--leading-body)' }],
+        small: ['var(--text-small)', { lineHeight: 'var(--leading-small)' }],
       },
       borderRadius: {
-        cards: 'var(--radius-cards)',
-        small: 'var(--radius-small)',
-        badges: 'var(--radius-badges)',
-        images: 'var(--radius-images)',
-        inputs: 'var(--radius-inputs)',
-        buttons: 'var(--radius-buttons)',
+        card: 'var(--radius-card)',
+        chip: 'var(--radius-chip)',
       },
       boxShadow: {
-        xl: 'var(--shadow-xl)',
+        plato: 'var(--shadow-plato)',
+        hoja: 'var(--shadow-hoja)',
       },
       maxWidth: {
         page: 'var(--page-max-width)',
+      },
+      transitionTimingFunction: {
+        salida: 'var(--ease-salida)',
       },
     },
   },

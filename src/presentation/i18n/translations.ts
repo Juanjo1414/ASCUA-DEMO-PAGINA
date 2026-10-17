@@ -8,16 +8,38 @@ export const translations = {
     error: {
       title: 'Algo salió mal',
       retry: 'Volver a intentar',
+      body: 'Revisa tu conexión y toca Reintentar.',
     },
+    loading: 'Preparando tu plato…',
     nav: {
       menu: 'Carta',
       contacto: 'Contacto',
       reservar: 'Reservar mesa',
+      comoFunciona: 'Cómo funciona',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
+      home: 'inicio',
     },
     hero: {
       headline: ['Cocina de autor.', 'Servida con fuego.'],
-      cta: 'Reservar mesa',
+      cta: 'Ver la carta',
       ar: 'Mira la carta sobre tu mesa, en RA',
+      sizeReal: '{cm} cm · tamaño real',
+      starDish: 'Plato estrella',
+    },
+    featured: {
+      heading: 'Lo más pedido',
+      lead: 'Los favoritos de la casa. Toca uno y míralo sobre tu mesa.',
+      hint: 'Desliza para ver más',
+    },
+    howItWorks: {
+      heading: 'Tu plato, en tu mesa',
+      lead: 'Sin descargar nada: se abre desde este mismo navegador. Funciona mejor con buena luz.',
+      note: 'El plato aparece en su tamaño real.',
+    },
+    survey: {
+      heading: '¿Cómo te fue con esta carta?',
+      body: 'Cuéntanos en un minuto. Tu opinión ayuda a mejorar la experiencia.',
     },
 
     menuSection: {
@@ -27,6 +49,8 @@ export const translations = {
       destacado: 'Míralo sobre tu mesa antes de pedirlo.',
       destacadoBody:
         'Dos platos de la carta se pueden poner sobre tu mesa en realidad aumentada, a tamaño real, desde el navegador del celular. Sin descargar nada.',
+      categories: 'Categorías de la carta',
+      soldOut: 'Agotado',
       dishes: [
         {
           name: 'Lubina a la plancha',
@@ -105,7 +129,7 @@ export const translations = {
     },
     cta: {
       title: 'Tu mesa te espera.',
-      body: 'Abrimos de martes a domingo, desde las 7 p.m. Reserva con un día de anticipación.',
+      body: 'Escríbenos por WhatsApp y te guardamos tu lugar.',
       button: 'Reservar mesa',
     },
     contact: {
@@ -130,6 +154,7 @@ export const translations = {
       },
       addressTitle: 'Dirección',
       hoursTitle: 'Horario',
+      directions: 'Cómo llegar',
     },
     footer: {
       tagline: 'Cocina de autor, servida con fuego.',
@@ -145,16 +170,38 @@ export const translations = {
     error: {
       title: 'Something went wrong',
       retry: 'Try again',
+      body: 'Check your connection and tap Try again.',
     },
+    loading: 'Preparing your dish…',
     nav: {
       menu: 'Menu',
       contacto: 'Contact',
       reservar: 'Book a table',
+      comoFunciona: 'How it works',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      home: 'home',
     },
     hero: {
       headline: ['Chef-driven cooking.', 'Served with fire.'],
-      cta: 'Book a table',
+      cta: 'See the menu',
       ar: 'See the menu on your table, in AR',
+      sizeReal: '{cm} cm · real size',
+      starDish: 'Signature dish',
+    },
+    featured: {
+      heading: 'Most ordered',
+      lead: 'The house favorites. Tap one and see it on your table.',
+      hint: 'Swipe for more',
+    },
+    howItWorks: {
+      heading: 'Your dish, on your table',
+      lead: 'Nothing to download: it opens right in this browser. Works best in good light.',
+      note: 'The dish appears at its real size.',
+    },
+    survey: {
+      heading: 'How was this menu for you?',
+      body: 'Tell us in one minute. Your opinion helps improve the experience.',
     },
 
     menuSection: {
@@ -164,6 +211,8 @@ export const translations = {
       destacado: 'See it on your table before you order.',
       destacadoBody:
         'Two dishes on the menu can be placed on your table in augmented reality, at real size, from your phone’s browser. Nothing to download.',
+      categories: 'Menu categories',
+      soldOut: 'Sold out',
       dishes: [
         {
           name: 'Pan-seared sea bass',
@@ -239,7 +288,7 @@ export const translations = {
     },
     cta: {
       title: 'Your table is waiting.',
-      body: 'Open Tuesday to Sunday, from 7 p.m. Book at least a day ahead.',
+      body: 'Message us on WhatsApp and we’ll save your spot.',
       button: 'Book a table',
     },
     contact: {
@@ -263,6 +312,7 @@ export const translations = {
       },
       addressTitle: 'Address',
       hoursTitle: 'Hours',
+      directions: 'Get directions',
     },
     footer: {
       tagline: 'Chef-driven cooking, served with fire.',

@@ -1,28 +1,34 @@
 /**
- * Sección de la carta: lista de platos (destacados con AR primero) y el
- * flujo completo de "Ver en mi mesa" (guía de 3 pasos → lanzamiento → visor
- * en pantalla si no hay AR nativo).
+ * Zona de platos de la landing: "Lo más pedido", un espacio para contenido
+ * intermedio (`children`, p. ej. "Cómo funciona") y la carta completa por
+ * categorías. Además es dueña del flujo completo de "Ver en mi mesa": guía de
+ * 3 pasos → lanzamiento → visor en pantalla si no hay AR nativo.
  *
  * Lo usa `RestaurantPage`. Decide si mostrar la guía de AR (primera vez por
  * dispositivo, vía `UiPreferencesStore`) o lanzar directo si el comensal ya
  * la vio. No decide qué lanzador de AR usar: eso es trabajo del caso de uso
- * `launchDishAr` y del dominio (`selectArLaunchMode`).
+ * `launchDishAr` y del dominio (`selectArLaunchMode`). También escucha el
+ * evento `EVENTO_VER_EN_MESA` para que la portada pueda abrir el mismo flujo.
  */
-import { useEffect, useRef, useState } from 'react'
-import { gsap } from '@/presentation/effects/gsap'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useRevealOnScroll } from '@/presentation/hooks/useRevealOnScroll'
 import { useLanguage } from '@/presentation/i18n/useLanguage'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
 import { useDependencies } from '@/presentation/state/DependenciesContext'
+import {
+  EVENTO_VER_EN_MESA,
+  type VerEnMesaDetalle,
+} from '@/presentation/state/arEvents'
 import ArDishModal from './ArDishModal'
 import ArGuideModal from './ArGuideModal'
+import Destacados from './Destacados'
 import { DishCard } from './menu/DishCard'
 import { launchDishAr } from '@/application/use-cases/launchDishAr'
-import type { Dish } from '@/domain/dish'
+import { selectFeaturedDishes, type Dish } from '@/domain/dish'
 
-export default function Menu() {
+export default function Menu({ children }: { children?: ReactNode }) {
   const { t, lang } = useLanguage()
-  const raiz = useRef<HTMLDivElement>(null)
   const [activo, setActivo] = useState<{ dish: Dish; mode: string } | null>(
     null
   )
@@ -88,87 +94,90 @@ export default function Menu() {
     })
   }
 
-  const platos = restaurant
-    ? restaurant.categorias.flatMap((cat) => cat.platos)
-    : []
-  const destacados = platos.filter((p) => p.modelo && p.modelo.aprobado)
-  const resto = platos.filter((p) => !p.modelo || !p.modelo.aprobado)
+  const featured = restaurant ? selectFeaturedDishes(restaurant.categorias) : []
 
+  // El manejador cambia en cada render (usa el estado de la guía); el evento
+  // se registra una sola vez y siempre llama a la versión más reciente.
+  const alVerEnMesa = useRef<(dishId: string) => void>(() => {})
   useEffect(() => {
-    const el = raiz.current
-    if (!el) return
-    const reducido = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches
-
-    // We only keep fade up animations to maintain simplicity
-    if (reducido) return
-
-    const ctx = gsap.context(() => {
-      el.querySelectorAll('[data-sube]').forEach((item) => {
-        gsap.from(item, {
-          y: 40,
-          opacity: 0,
-          duration: 1.1,
-          ease: 'expo.out',
-          scrollTrigger: { trigger: item, start: 'top 88%', once: true },
-        })
-      })
-    }, el)
-    return () => ctx.revert()
+    alVerEnMesa.current = (dishId: string) => {
+      const plato = restaurant?.categorias
+        .flatMap((cat) => cat.platos)
+        .find((p) => p.id === dishId)
+      if (plato && !soldOutDict[plato.id]) handleArClick(plato)
+    }
+  })
+  useEffect(() => {
+    const escuchar = (e: Event) =>
+      alVerEnMesa.current((e as CustomEvent<VerEnMesaDetalle>).detail.dishId)
+    window.addEventListener(EVENTO_VER_EN_MESA, escuchar)
+    return () => window.removeEventListener(EVENTO_VER_EN_MESA, escuchar)
   }, [])
+
+  const raiz = useRef<HTMLDivElement>(null)
+  useRevealOnScroll(raiz, `${restaurant?.slug ?? ''}-${lang}`)
 
   if (!restaurant) return null
 
+  const hayVariasCategorias = restaurant.categorias.length > 1
+
   return (
-    <section id="menu" ref={raiz} className="split-section">
-      <div className="mx-auto max-w-page px-5 sm:px-6 lg:px-10">
-        <div data-sube className="max-w-2xl mb-20">
-          <p className="eyebrow">{t.menuSection.title}</p>
-          <h2 className="font-display text-display text-forest-shadow mb-6">
-            {t.menuSection.heading}
-          </h2>
-          <p className="text-body text-forest-shadow max-w-[48ch]">
-            {t.menuSection.body}
-          </p>
-        </div>
+    <div ref={raiz}>
+      <Destacados
+        dishes={featured}
+        lang={lang}
+        t={t}
+        soldOut={soldOutDict}
+        onArClick={handleArClick}
+        on3dClick={(d) => setActivo({ dish: d, mode: '3d' })}
+      />
 
-        {/* Destacados (Con AR) */}
-        {destacados.length > 0 && (
-          <div className="mb-24">
-            <h3 className="font-display text-heading text-forest-shadow mb-12">
-              {t.menuSection.destacado}
-            </h3>
+      {children}
 
-            <ul className="grid gap-x-6 gap-y-16 md:grid-cols-3">
-              {destacados.map((plato) => (
-                <DishCard
-                  key={plato.id}
-                  dish={plato}
-                  lang={lang}
-                  t={t}
-                  isSoldOut={!!soldOutDict[plato.id]}
-                  onArClick={handleArClick}
-                  on3dClick={(d) => setActivo({ dish: d, mode: '3d' })}
-                />
-              ))}
-            </ul>
+      <section id="menu" className="seccion bg-porcelana text-tinta">
+        <div className="pagina grid gap-8 lg:grid-cols-[15rem_1fr] lg:gap-16">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <h2 className="text-h2">{t.menuSection.heading}</h2>
+            {hayVariasCategorias && (
+              <nav
+                aria-label={t.menuSection.categories}
+                className="no-scrollbar sticky top-16 z-20 -mx-[var(--page-gutter)] mt-6 flex gap-2 overflow-x-auto bg-porcelana px-[var(--page-gutter)] py-3 lg:static lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0"
+              >
+                {restaurant.categorias.map((cat) => (
+                  <a key={cat.id} href={`#cat-${cat.id}`} className="chip">
+                    {cat.nombre[lang] || cat.nombre.es}
+                  </a>
+                ))}
+              </nav>
+            )}
           </div>
-        )}
 
-        {/* El resto de la carta */}
-        <ul className="grid gap-x-6 gap-y-16 md:grid-cols-3 lg:grid-cols-4 pt-16 border-t border-deep-forest/20">
-          {resto.map((plato) => (
-            <DishCard
-              key={plato.id}
-              dish={plato}
-              lang={lang}
-              t={t}
-              isSoldOut={!!soldOutDict[plato.id]}
-            />
-          ))}
-        </ul>
-      </div>
+          <div className="flex flex-col gap-14">
+            {restaurant.categorias.map((cat) => (
+              <div key={cat.id} id={`cat-${cat.id}`} className="scroll-mt-32">
+                {hayVariasCategorias && (
+                  <h3 className="text-h3">
+                    {cat.nombre[lang] || cat.nombre.es}
+                  </h3>
+                )}
+                <ul className="mt-2">
+                  {cat.platos.map((plato) => (
+                    <DishCard
+                      key={plato.id}
+                      dish={plato}
+                      lang={lang}
+                      t={t}
+                      isSoldOut={!!soldOutDict[plato.id]}
+                      onArClick={handleArClick}
+                      on3dClick={(d) => setActivo({ dish: d, mode: '3d' })}
+                    />
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {activo && activo.dish.modelo && (
         <ArDishModal
@@ -199,6 +208,6 @@ export default function Menu() {
           if (dish) abrirAr(dish)
         }}
       />
-    </section>
+    </div>
   )
 }

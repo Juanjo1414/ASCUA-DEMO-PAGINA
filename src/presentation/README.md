@@ -25,8 +25,8 @@ llegan vía `useDependencies()`, inyectadas desde
 - `theme/` — `tokens.css`: los tokens de diseño (colores, tipografías)
   que traduce `docs/DESIGN.md`. Prohibido un color o fuente "quemada" en
   un componente: todo sale de aquí.
-- `effects/` — configuración única de GSAP/ScrollTrigger para toda la
-  app.
+- Movimiento: solo CSS (`src/index.css`) y el hook
+  `hooks/useRevealOnScroll.ts`; no hay librería de animación.
 
 ## Cómo llegan las dependencias
 

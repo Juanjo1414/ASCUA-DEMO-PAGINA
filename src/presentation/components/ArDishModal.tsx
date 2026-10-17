@@ -61,17 +61,17 @@ export default function ArDishModal({
       aria-modal="true"
       aria-label={dish.name}
       onClick={onClose}
-      className="fixed inset-0 z-[90] flex items-center justify-center bg-forest-shadow/90 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[90] flex items-center justify-center bg-tinta/90 p-4 backdrop-blur-sm"
     >
       <div
         onClick={(event) => event.stopPropagation()}
-        className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-warm-gray/30 bg-forest-shadow p-6"
+        className="relative w-full max-w-lg overflow-hidden rounded-3xl bg-tinta p-6"
       >
         <button
           type="button"
           onClick={onClose}
           aria-label={t.ar.close}
-          className="absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-full border border-warm-gray/30 bg-deep-forest/80 text-cream-canvas transition-colors hover:bg-lime-glow hover:text-forest-shadow"
+          className="absolute right-4 top-4 z-10 grid h-12 w-12 place-items-center rounded-full bg-porcelana text-tinta transition-colors hover:bg-brasa"
         >
           <X size={18} strokeWidth={2} />
         </button>
@@ -79,12 +79,12 @@ export default function ArDishModal({
         <ArViewer glb={asset.glbUrl} poster={asset.posterUrl} alt={dish.name} />
 
         <div className="mt-5">
-          <p className="font-display text-lg font-semibold tracking-tight text-cream-canvas">
+          <p className="font-display text-h3 font-bold text-porcelana">
             {dish.name}
           </p>
-          <p className="mt-1 text-sm text-warm-gray">{dish.description}</p>
+          <p className="mt-1 text-body text-porcelana/80">{dish.description}</p>
           {arUnavailable && <InAppBrowserNotice inAppName={inAppName} t={t} />}
-          <p className="mt-3 text-xs text-warm-gray/70">{t.ar.disclaimer}</p>
+          <p className="mt-3 text-small text-porcelana/70">{t.ar.disclaimer}</p>
         </div>
       </div>
     </div>

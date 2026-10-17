@@ -81,7 +81,7 @@ export default function ArGuideModal({
       }`}
     >
       <div
-        className="absolute inset-0 bg-forest-shadow/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-tinta/80 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -90,18 +90,18 @@ export default function ArGuideModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="guide-title"
-        className={`relative w-full max-w-md overflow-hidden bg-cream-canvas p-6 shadow-2xl transition-transform duration-300 border border-warm-gray/10 ${
+        className={`relative w-full max-w-md overflow-hidden rounded-card bg-porcelana p-6 text-tinta shadow-plato transition-transform duration-300 ${
           isOpen ? 'translate-y-0 scale-100' : 'translate-y-8 scale-95'
         }`}
       >
-        <div className="flex items-center justify-between border-b border-warm-gray/10 pb-4">
-          <h2 id="guide-title" className="font-display text-2xl font-medium">
+        <div className="flex items-center justify-between border-b border-linea pb-4">
+          <h2 id="guide-title" className="font-display text-h3 font-bold">
             {texts.title}
           </h2>
           <button
             onClick={onClose}
             aria-label={t.ar?.close || 'Cerrar'}
-            className="p-2 transition-colors hover:text-deep-forest"
+            className="grid h-12 w-12 place-items-center rounded-full transition-colors hover:bg-tinta/5"
           >
             <X size={24} strokeWidth={1.5} />
           </button>
@@ -113,14 +113,14 @@ export default function ArGuideModal({
             if (!Icon) return null
             return (
               <li key={i} className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-deep-forest/5 text-deep-forest">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-porcelana-dim text-tinta">
                   <Icon size={20} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-medium">
+                  <h3 className="font-display text-xl font-bold">
                     {step.title}
                   </h3>
-                  <p className="mt-1 text-sm text-slate-gray">{step.desc}</p>
+                  <p className="mt-1 text-body text-tinta-soft">{step.desc}</p>
                 </div>
               </li>
             )

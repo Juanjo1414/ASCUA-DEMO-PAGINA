@@ -312,25 +312,28 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   (`feedbackFormUrl`). Hasta entonces el validador muestra la advertencia
   y el pie usa el formulario genérico.
 
-### R-5-bis — Rediseño con `frontend-design` y `ui-ux-pro-max`
+### R-5-bis — Rediseño "La mesa" de la landing del restaurante (HECHO, falta QA de Juan)
 
-- Juan no está conforme con cómo se ve el diseño actual, más allá de los
-  4 bugs puntuales ya corregidos (hero roto, logo, barra fija, Lighthouse).
-  Pide usar las skills `frontend-design:frontend-design` y `ui-ux-pro-max`
-  para que la página se vea profesional y bien diseñada.
-- **Alcance aclarado por Juan (2026-10-11): no es solo la sección de la
-  carta (`Menu.tsx`) — es toda la página del restaurante**
-  (`RestaurantPage.tsx` completa: `Nav`, `Hero`, `Menu`, `Reserva`,
-  `Contacto`, `Pie`, y los componentes de AR que se ven desde ahí), usando
-  las mismas skills.
-- Esto es un trabajo de diseño más grande que un fix puntual: toca pasar
-  por dirección visual (tipografía, paleta, espaciado, jerarquía) antes de
-  tocar componentes, y mostrarle a Juan capturas antes/después de cambios
-  grandes (regla de CLAUDE.md: "cambios visuales grandes: proponer a Juan
-  con capturas antes/después").
-- **Siguiente paso exacto:** correr `frontend-design:frontend-design`
-  y/o `ui-ux-pro-max` sobre toda `RestaurantPage.tsx` cuando Juan confirme
-  por dónde empezar (toda la página de una vez, o sección por sección).
+- Dirección "La mesa" (ver `docs/DESIGN.md`): el color del restaurante es el
+  mantel, los platos son círculos de porcelana, "Ver en mi mesa" siempre en
+  naranja brasa. Paleta derivada de `tema.primario`.
+- Nuevo: `Destacados.tsx` + `menu/FeaturedDish.tsx` ("Lo más pedido"),
+  `ComoFunciona.tsx` (3 pasos ilustrados, solo si hay AR),
+  `hooks/useRevealOnScroll.ts` (movimiento solo CSS), `state/arEvents.ts`.
+  Reescritos: `Nav`, `Hero`, `Menu`, `DishCard`, `Reserva`, `Contacto`, `Pie`,
+  `LoadingScreen`, `FloatingHelp`, `ExpiredPage`, `NotFoundPage`, tokens y Tailwind.
+- Dominio: campo opcional `destacado` por plato (A elegida por Juan),
+  `selectFeaturedDishes`, `selectStarDish`, `hasArDishes`.
+- Fuentes autoalojadas nuevas (Bricolage Grotesque, Hanken Grotesk, Young
+  Serif); se quitaron DM Sans, Fraunces y la dependencia `gsap`.
+- Responsive: 360 a 1280 px; sin scroll horizontal (el script de capturas no avisó).
+- Se quitaron textos inventados que se mostraban en todos los restaurantes
+  (horario "martes a domingo", eslogan genérico, enlace a Instagram).
+- **Pendiente de Juan:** probar en su iPhone y Android sobre el preview;
+  el demo no tiene ningún modelo 3D aprobado, así que la portada muestra
+  "Ver la carta" y no "Ver en mi mesa" hasta que apruebe uno.
+- **Siguiente paso:** QA visual de Juan, y decidir si el favicon/`theme-color`
+  global y la landing `/` se alinean al nuevo sistema (ver R-5-ter).
 
 ### R-5-ter — Rediseñar la landing genérica (`/`)
 
@@ -341,7 +344,10 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
   de presentación del producto.
 - Juan pide rediseñarla con las mismas skills (`frontend-design:frontend-design`,
   `ui-ux-pro-max`), manteniendo la regla de no listar restaurantes.
-- **Siguiente paso exacto:** incluir `/` en el mismo rediseño de R-5-bis
+- **Avance:** `LandingPage.tsx` (`/`) fue escrita por otra sesión el 2026-10-16
+  (con prueba propia) y solo se reestilizó con los tokens nuevos, sin cambiar
+  su contenido. Revisar con Juan si se rediseña a fondo.
+- **Siguiente paso exacto (original):** incluir `/` en el mismo rediseño de R-5-bis
   (incluso podría ir primero, ya que no depende de datos de ningún
   restaurante — es la pieza más simple y aislada para validar la nueva
   dirección visual antes de aplicarla a toda la carta).

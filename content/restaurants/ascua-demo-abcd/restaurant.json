@@ -48,6 +48,7 @@
         },
         {
           "id": "filete",
+          "destacado": true,
           "nombre": { "es": "Filete a la parrilla", "en": "Grilled steak" },
           "descripcion": {
             "es": "Puré de papa, espárragos y zanahorias baby asadas.",
@@ -58,6 +59,7 @@
         },
         {
           "id": "tagliatelle",
+          "destacado": true,
           "nombre": {
             "es": "Tagliatelle con hongos",
             "en": "Mushroom tagliatelle"
@@ -71,6 +73,7 @@
         },
         {
           "id": "vieiras",
+          "destacado": true,
           "nombre": {
             "es": "Vieiras sobre risotto",
             "en": "Scallops over risotto"
@@ -104,6 +107,7 @@
         },
         {
           "id": "langosta",
+          "destacado": true,
           "nombre": {
             "es": "Langosta con cabello de ángel",
             "en": "Lobster with angel hair"

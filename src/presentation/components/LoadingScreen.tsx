@@ -1,17 +1,21 @@
 /**
- * Pantalla de carga inicial con el logo del restaurante, que se desliza
- * hacia arriba cuando el contenido ya está listo.
+ * Pantalla de carga inicial: el nombre del restaurante y un plato que se
+ * dibuja sobre el mantel con "Preparando tu plato…". Cuando el contenido está
+ * listo se desliza hacia arriba.
  *
- * Lo usa `RestaurantPage` mientras `useRestaurant` resuelve el fetch.
- * Respeta `prefers-reduced-motion`: si el comensal lo activó, desaparece de
- * inmediato en vez de animarse.
+ * Lo usa `RestaurantPage` mientras `useRestaurant` resuelve el fetch. Respeta
+ * `prefers-reduced-motion`: si el comensal lo activó, desaparece de inmediato
+ * en vez de animarse. Se monta dentro del contenedor `.tema`, así que ya usa
+ * el color del restaurante.
  */
 import { useEffect, useState } from 'react'
 import { useAtomValue } from 'jotai'
 import { restaurantAtom } from '@/presentation/state/restaurantStore'
+import { useLanguage } from '@/presentation/i18n/useLanguage'
 
 /** @param isReady - Si ya hay datos del restaurante para mostrar la carta. */
 export default function LoadingScreen({ isReady = true }) {
+  const { t } = useLanguage()
   const [reducido] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
@@ -32,25 +36,49 @@ export default function LoadingScreen({ isReady = true }) {
 
   return (
     <div
-      aria-hidden="true"
-      className="fixed inset-0 z-[100] grid place-items-center bg-deep-forest transition-transform duration-700"
+      role="status"
+      data-superficie="mantel"
+      className="fixed inset-0 z-[100] grid place-items-center bg-mantel text-on-mantel transition-transform duration-700"
       style={{
         transform: fase === 'sube' ? 'translateY(-100%)' : 'translateY(0)',
         transitionTimingFunction: 'cubic-bezier(0.76, 0, 0.24, 1)',
       }}
     >
-      <div className="flex flex-col items-center">
-        {restaurant?.tema?.logo ? (
-          <img
-            src={restaurant.tema.logo}
-            alt={restaurant.nombre}
-            className="h-16 w-auto object-contain brightness-0 invert"
+      <div className="flex flex-col items-center gap-8 px-6 text-center">
+        <svg
+          viewBox="0 0 100 100"
+          aria-hidden="true"
+          className="h-28 w-28 -rotate-90"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="46"
+            pathLength="1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            className="hero-anillo"
           />
-        ) : (
-          <p className="font-body font-bold text-xl uppercase tracking-[0.5em] text-cream-canvas">
-            {restaurant?.nombre || 'ascua'}
-          </p>
-        )}
+          <circle
+            cx="50"
+            cy="50"
+            r="30"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            opacity="0.5"
+          />
+        </svg>
+        <div className="flex flex-col gap-2">
+          {restaurant && (
+            <p className="font-display text-h3 font-bold">
+              {restaurant.nombre}
+            </p>
+          )}
+          <p className="text-on-mantel-soft">{t.loading}</p>
+        </div>
       </div>
     </div>
   )

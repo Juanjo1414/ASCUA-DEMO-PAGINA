@@ -22,6 +22,7 @@ Edita el archivo `restaurant.json` en la nueva carpeta con los datos del restaur
 - **`heroImagen`** (Opcional): Ruta de la imagen principal de la portada (`assets/hero.webp`). La plantilla no trae una por defecto a propósito: si no la agregas, la portada usa automáticamente la foto del primer plato destacado. Solo agrega esta clave si vas a subir una foto de portada distinta.
 - **`tema`**: Configura el color primario, el par tipográfico (`sans` o `editorial`) y logo.
 - **`contacto`**: Ingresa el WhatsApp real al cual llegarán los pedidos.
+- **`destacado: true`** (en cada plato que quieras en "Lo más pedido", máximo 5): la landing los muestra primero, grandes. Si ninguno lo lleva, esa sección no aparece.
 - **`feedbackFormUrl`** (recomendado): enlace `https` al Google Form propio del restaurante, donde los comensales dejan su opinión (ver 2.1). Si falta, las opiniones van al formulario genérico de PITS y el dueño no las ve; `npm run content:validate` te avisa con una advertencia.
 
 ### 2.1 Crear el Google Form de feedback del restaurante

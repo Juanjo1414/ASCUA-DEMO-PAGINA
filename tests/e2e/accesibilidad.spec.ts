@@ -43,6 +43,29 @@ test.describe('Accesibilidad (axe-core, WCAG 2.1 A/AA)', () => {
     )
     await page.getByRole('button', { name: 'Ver en mi mesa' }).first().click()
     await expect(page.getByRole('dialog')).toBeVisible()
+    // El modal aparece con un fundido de 300 ms; si axe mide a mitad de la
+    // transición, calcula el contraste con color semitransparente y falla a
+    // veces (intermitente en Mobile Safari). Se espera a que termine.
+    await page.waitForTimeout(500)
+
+    const results = await new AxeBuilder({ page })
+      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+      .analyze()
+
+    const seriasOCriticas = results.violations.filter(
+      (v) => v.impact === 'serious' || v.impact === 'critical'
+    )
+
+    expect(seriasOCriticas, JSON.stringify(seriasOCriticas, null, 2)).toEqual(
+      []
+    )
+  })
+
+  test('la landing genérica no tiene violaciones serias ni críticas', async ({
+    page,
+  }) => {
+    await page.goto('/')
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])

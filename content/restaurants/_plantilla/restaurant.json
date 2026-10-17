@@ -35,6 +35,7 @@
       "platos": [
         {
           "id": "hamburguesa-casa",
+          "destacado": true,
           "nombre": {
             "es": "Hamburguesa de la Casa",
             "en": "House Burger"
