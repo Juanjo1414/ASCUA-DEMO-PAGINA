@@ -40,7 +40,11 @@ export async function validateContent(contentDir: string = CONTENT_DIR) {
   const dirs = await fs.readdir(contentDir, { withFileTypes: true })
   let hasErrors = false
   let hasWarnings = false
-  const globalHashes = new Map<string, string>() // hash -> path
+  // hash de archivo -> en qué restaurante y con qué ruta se vio primero
+  const globalHashes = new Map<
+    string,
+    { folderName: string; assetPath: string }
+  >()
 
   for (const dirent of dirs) {
     if (!dirent.isDirectory()) continue
@@ -146,17 +150,19 @@ export async function validateContent(contentDir: string = CONTENT_DIR) {
           }
         }
 
-        // Hash para detectar duplicados
+        // Hash para detectar copias entre restaurantes (ej. un plato pegado
+        // de otro cliente). Reutilizar la misma foto DENTRO del mismo
+        // restaurante es normal (p. ej. el heroImagen suele ser la foto de
+        // un plato destacado) y no se avisa para eso.
         const hash = await hashFile(fullPath)
-        if (globalHashes.has(hash)) {
+        const existente = globalHashes.get(hash)
+        if (existente && existente.folderName !== folderName) {
           console.warn(
-            `⚠️ [${folderName}] Asset duplicado detectado: ${assetPath} es igual a ${globalHashes.get(
-              hash
-            )}`
+            `⚠️ [${folderName}] Asset duplicado detectado: ${assetPath} es igual a ${existente.folderName}/${existente.assetPath}`
           )
           hasWarnings = true
-        } else {
-          globalHashes.set(hash, `${folderName}/${assetPath}`)
+        } else if (!existente) {
+          globalHashes.set(hash, { folderName, assetPath })
         }
       }
 

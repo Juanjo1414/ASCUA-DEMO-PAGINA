@@ -165,3 +165,69 @@ describe('validateContent — formulario de feedback propio (P-701-bis)', () => 
     await fs.rm(root, { recursive: true, force: true })
   })
 })
+
+describe('validateContent — hashes duplicados solo entre restaurantes distintos', () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  it('no avisa si el mismo restaurante reutiliza su propia foto (ej. heroImagen = foto de un plato)', async () => {
+    const root = await crearRestauranteDePrueba({
+      aprobadoPor: 'Juan',
+      fechaAprobacion: '2026-10-12',
+    })
+    // La demo real hace justo esto: heroImagen apunta a la misma foto que
+    // ya usa un plato destacado.
+    const restaurantJsonPath = path.join(root, 'prueba-abcd', 'restaurant.json')
+    const data = JSON.parse(await fs.readFile(restaurantJsonPath, 'utf8'))
+    data.heroImagen = 'assets/foto.webp'
+    await fs.writeFile(restaurantJsonPath, JSON.stringify(data, null, 2))
+
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    await validateContent(root)
+
+    expect(
+      warnSpy.mock.calls.some((call) =>
+        String(call[0]).includes('Asset duplicado')
+      )
+    ).toBe(false)
+
+    await fs.rm(root, { recursive: true, force: true })
+  })
+
+  it('sí avisa si dos restaurantes distintos comparten el mismo archivo (posible copia)', async () => {
+    const rootA = await crearRestauranteDePrueba({
+      aprobadoPor: 'Juan',
+      fechaAprobacion: '2026-10-12',
+    })
+    const rootB = await fs.mkdtemp(path.join(os.tmpdir(), 'ascua-validate-b-'))
+    const dirB = path.join(rootB, 'otro-restau-xyz1')
+    await fs.cp(path.join(rootA, 'prueba-abcd'), dirB, { recursive: true })
+    const jsonB = path.join(dirB, 'restaurant.json')
+    const dataB = JSON.parse(await fs.readFile(jsonB, 'utf8'))
+    dataB.slug = 'otro-restau-xyz1'
+    dataB.nombre = 'Otro restaurante'
+    await fs.writeFile(jsonB, JSON.stringify(dataB, null, 2))
+    // Combinar las dos carpetas en un mismo content/ para que el validador
+    // las compare entre sí (es como corre en CI, sobre content/restaurants/).
+    await fs.cp(
+      path.join(rootA, 'prueba-abcd'),
+      path.join(rootB, 'prueba-abcd'),
+      {
+        recursive: true,
+      }
+    )
+
+    const warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    await validateContent(rootB)
+
+    expect(
+      warnSpy.mock.calls.some((call) =>
+        String(call[0]).includes('Asset duplicado')
+      )
+    ).toBe(true)
+
+    await fs.rm(rootA, { recursive: true, force: true })
+    await fs.rm(rootB, { recursive: true, force: true })
+  })
+})
