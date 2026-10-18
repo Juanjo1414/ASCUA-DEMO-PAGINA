@@ -379,21 +379,36 @@ más varios bugs visuales no detectados antes (ver `docs/revision/inventario.md`
 
 1. ~~Feedback (P-701-bis)~~ — **hecho** (falta solo que Juan cree el
    Google Form de la demo y pegue su URL en `feedbackFormUrl`).
-2. ~~Rediseño R-5-bis/R-5-ter~~ — **hecho y en el preview de `dev/Juanjo`**.
-   Falta: **QA de Juan en iPhone y Android** sobre
-   `https://dev-juanjo.ascua-demo-pagina.pages.dev`
-   (`docs/runbooks/qa-dispositivos.md`).
-3. Limpieza menor pendiente: `Menu.tsx` y `Contacto.tsx` pasan de ~200
-   líneas (213); revisar si vale la pena dividirlos.
-4. R-8 (P-601: generar modelos 3D reales — Juan ya tiene `HF_TOKEN` y
-   Docker listos; falta escribir el script de orquestación). **Hoy la
-   demo no tiene ningún plato con modelo aprobado**, así que el botón
+2. ~~Rediseño R-5-bis/R-5-ter~~ — **hecho, QA de Juan en iPhone/Android
+   confirmado sobre el preview.**
+3. ~~Bug "Cómo funciona" sin sección~~ — **corregido** (R-5-bis fix): el
+   enlace del nav ya se oculta junto con la sección cuando no hay platos
+   con AR aprobado.
+4. ~~PR `dev/Juanjo → main`~~ — **mergeado el 2026-10-17** (PR #1, commit
+   de merge `3f9ab57`). Antes de abrirlo se corrió `code-review` (8
+   agentes), `/security-review` (sin hallazgos de alta confianza) y
+   `engineering:deploy-checklist`; los bugs reales que encontró el
+   code-review (flag `agotado` ignorado, fallo silencioso de AR, validador
+   case-sensitive, `canQuickLook`/`canSceneViewer` sin descontar navegador
+   embebido, título de Scene Viewer fijo en español, tokens quemados en
+   `QrPage.tsx`) se corrigieron en el commit `aa594e3` antes de mergear.
+   `https://ascua-demo-pagina.pages.dev` (producción) ya sirve el
+   rediseño "La mesa".
+   - Nota operativa: el primer `smoke` test de producción falló porque la
+     variable de GitHub Actions `PROD_URL` estaba guardada sin el esquema
+     (`ascua-demo-pagina.pages.dev` en vez de `https://...`); se corrigió
+     la variable y el rerun quedó en verde. No era un problema del código.
+5. Limpieza menor pendiente, sin urgencia: `Menu.tsx` y `Contacto.tsx`
+   pasan de ~200 líneas (213); `buildMenuView` (caso de uso) sigue sin
+   conectarse a `presentation` (duplica localización de nombres/AR en
+   `DishCard`/`FeaturedDish`). Juan ya dijo que esto no es prioridad.
+6. **Siguiente, por orden explícito de Juan: R-8 (P-601, generar modelos
+   3D reales)** — Juan ya tiene `HF_TOKEN` y Docker listos; falta escribir
+   el script de orquestación contra el repo hermano `ASCUA-DEMO-AR`. **Hoy
+   la demo no tiene ningún plato con modelo aprobado**, así que el botón
    "Ver en mi mesa" no aparece en ningún plato — es el hueco más visible
-   que queda antes de mostrarle la demo a un restaurante real.
-5. Preparar (sin abrir) el PR `dev/Juanjo → main` con la plantilla del
-   repositorio y `engineering:deploy-checklist`, cuando Juan lo pida. Al
-   mergear, `https://ascua-demo-pagina.pages.dev` (producción, sin rama)
-   por fin mostrará el rediseño.
+   antes de mostrarle la demo a un restaurante real. Después de esto:
+   seguir con el trabajo de diseño adicional que Juan mencionó.
 
 ## Línea base verificada (2026-10-09)
 
